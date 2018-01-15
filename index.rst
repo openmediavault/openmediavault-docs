@@ -5,11 +5,11 @@
 Linux.
 
 * It's available for x86 and ARM platforms.
-* Features a full Web Administration interface
+* Features a full Web Administration interface.
 * Can be controlled via SSH, if enabled.
 * Access to file storage is possible with a variety of different protocols such
   as FTP, SMB/CIFS or NFS and can be controlled with Access Right Management
-  for Users and Groups.
+  for users and groups.
 
 |omv| is primarily designed to be used in home environments or small home
 offices, but is not limited to those scenarios. It is a simple and easy to use
@@ -25,6 +25,7 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    :caption: Contents:
 
    copyright
+   prerequisites
    installation/index
 
 

@@ -17,3 +17,10 @@ lines:
 	$ cd venv
 	$ source bin/activate
 	$ pip install -r ../requirements.txt
+
+Build the HTML code
+-------------------
+
+	$ sphinx-autobuild ../ ../_build/html
+
+Now open <http://localhost:8000/> in your browser to view the Wiki page.

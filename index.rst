@@ -18,13 +18,14 @@ needing expert level knowledge of Networking and Storage Systems.
 
 The System is built on a modular design and can be easily extended with plugins
 available right after installation of the base system. Additional 3rd-party
-plugins are available via the OMV-Extras repository.
+plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    copyright
+   installation/index
 
 
 

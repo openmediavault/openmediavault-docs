@@ -27,3 +27,10 @@ Cleanup the generated HTML
 --------------------------
 
 	$ make clean
+
+reStructured text cheat-sheets
+------------------------------
+* http://www.sphinx-doc.org/en/stable/rest.html
+* http://docutils.sourceforge.net/docs/user/rst/quickref.html
+* https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst
+* https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html

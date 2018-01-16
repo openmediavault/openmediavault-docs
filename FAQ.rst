@@ -41,7 +41,7 @@ Why does the system rewrites a configuration file(s) that I have manually edited
 	OMV takes full control of some system services. This services include monit, ntp, samba, network, proftpd, nginx, php5-fpm, etc.
 
 How can I modify an internal value of some service |omv| has control over?
-	Read :doc:`here <various/advancedsettings>` for advanced configurations.
+	Read :doc:`here <various/advset>` for advanced configurations.
 
 How can I modify or add a network configuration of :file:`/etc/network/interfaces` with some custom options the |webui| does not provide?
 	The interfaces file is controlled by |omv|. To add network interfaces that are not configurable through the |webui| or other options not present, you need to use  :doc:`advanced settings <various/advancedsettings>`.

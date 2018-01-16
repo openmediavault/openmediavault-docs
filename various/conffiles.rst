@@ -2,9 +2,9 @@ Configuration files
 =====
 
 
-The following is the list of file you should not edit by hand. Openmediavault has complete control over these files and any changes will be overwrriten on demand.
+The following is the list of file you should not edit by hand. |omv| has complete control over these files and any changes will be overwrriten on demand.
 
-**Filesystem:** :file:`/etc/fstab` This file contains all mount entries, physical and network ones. Openmediavault identifies them by using the «openmediavault» tags, in between those you should not delete entries or change options. Any new mount drive or network entry will rewrite fstab in between those lines, reverting any changes you have done. Please refer here for advanced editing options of fstab.
+**Filesystem:** :file:`/etc/fstab` This file contains all mount entries, physical and network ones. |omv| identifies them by using the «openmediavault» tags, in between those you should not delete entries or change options. Any new mount drive or network entry will rewrite fstab in between those lines, reverting any changes you have done. Please refer here for advanced editing options of fstab.
 
 **Network:** :file:`/etc/network/interfaces` The explanation is already in the :doc:`FAQ </FAQ>`
 
@@ -22,6 +22,6 @@ The following is the list of file you should not edit by hand. Openmediavault ha
 
 **NFS:** :file:`/etc/exports` Use environmental variables if you want to change the pseudo root filesystem options for NFSv4.
 
-**APT** 
+**APT**
 	- :file:`/etc/apt/sources.list` This is default debian repository server file. Read more information here.
 	- :file:`/etc/apt/sources.list.d/openmediavault.list` This is the server package repository for OMV.

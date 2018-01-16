@@ -46,7 +46,7 @@ Repositories
 ----
 
 **Debian**
-The OS repositories are in this file /etc/apt/sources.list The default contents are
+The OS repositories are in this file ``/etc/apt/sources.list`` The default contents are:
 
 |omv| 2.0 (Wheezy)::
 
@@ -75,4 +75,5 @@ The OS repositories are in this file /etc/apt/sources.list The default contents 
 
 You should not include any external repositories in this file. If you have problem with the standard repo or a different mirror you selected during install, you can use netselect-apt 1). This software can give you the fastest ten mirrors closest to your location. The you can change the first two lines with the new mirror servers. Security repo does automatic mirroring so don't change it.
 
-Debian provides the :file:`/etc/apt/sources.d/` folder for adding external repositories.
+External
+	Debian provides the :file:`/etc/apt/sources.d/` folder for adding external repositories.

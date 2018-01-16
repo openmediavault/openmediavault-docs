@@ -31,7 +31,7 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    plugins
    FAQ
    support
-   media
+   press
    contributors
    copyright
 

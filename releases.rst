@@ -1,6 +1,5 @@
-
 Releases
-=============
+========
 
 
 .. csv-table:: |omv| historical releases
@@ -15,5 +14,3 @@ Releases
    2.0,Stoneburner,Debian 7,EOL,Jun 2015
    3.0,Erasmus,Debian 8, Current, Jun 2016
    4.0,Arrakis,Debian 9,In Development,Q2 2018 (Estimate)
-
-

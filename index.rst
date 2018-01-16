@@ -24,7 +24,6 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    :maxdepth: 3
    :caption: Contents:
 
-   copyright
    prerequisites
    installation/index
    releases
@@ -32,6 +31,9 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    support
    FAQ
    features
+   contributors
+   copyright
+
 
 
 Indices and tables

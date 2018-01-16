@@ -13,19 +13,15 @@ can do this the following way:
 To initially setup the virtual Python environment simply execute the following
 lines:
 
-	$ virtualenv -p python3 venv
-	$ cd venv
-	$ source bin/activate
-	$ pip install -r ../requirements.txt
+	$ make buildvenv
 
 Build the HTML code
 -------------------
 
-	$ cd venv
-	$ source bin/activate
-	$ cd .. && make autobuild
+	$ make autobuild
 
-Now open <http://localhost:8000/> in your browser to view the Wiki page.
+Now open <http://localhost:8000/> in your browser to view the documentation.
+Any changes to the documentation code will be rendered now immediatelly.
 
 Cleanup the generated HTML
 --------------------------

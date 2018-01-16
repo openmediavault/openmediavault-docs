@@ -1,13 +1,10 @@
 FAQ
 ----
 
-
 **Frequently Asked Questions**
 
-
 What is OMV?
-	OMV is an abbreviation of |omv|
-
+	OMV is an abbreviation of |omv|.
 
 Is |omv| a fork of FreeNAS?
 	No
@@ -20,34 +17,34 @@ Can I use a usb flash drive (stick) for installing the system?
 	Yes, but the installation does not have any optimizations to reduce writes into the OS disk. Your usb media will most likely start failing within a few weeks of usage. Most common symptom is basic command execution does not work, denied login, etc.
 
 What is the file :file:`/etc/openmediavault/config.xml` for?
-	Is the database configuration store file for |omv|. When a change is performed in the webUI, the config value is stored and/or retrieve by rpc to/from this file. If this is a save change, then mkconf passes the value to the service configuration file and reloads the daemon in case is necessary.
+	Is the database configuration store file for |omv|. When a change is performed in the |webui|, the config value is stored and/or retrieve by rpc to/from this file. If this is a save change, then mkconf passes the value to the service configuration file and reloads the daemon in case is necessary.
 
 Can I upgrade to Debian Testing/Unstable (Debian Testing/Sid) or use Ubuntu as a base distribution?
 	Yes you can. But you will end up most likely with a broken web interface and possibly broken system. |omv| releases are heavily tight to their Debian base distro.
 
-I´ve lost the WebInterface password. How do I reset it?
-	Simply connect via ssh to your server or login locally on your machine and type in: omv-firstaid . There is an option to reset your password. More information about [[openmediavault:features:omv-firstaid|omv-firstaid]]
+I´ve lost the |webui| password. How do I reset it?
+	Simply connect via ssh to your server or login locally on your machine and type in: ``omv-firstaid``. There is an option to reset your password.
 
-Can I backup or restore and existing OpenMediaVaut configuration?
-	No. You can keep the file :file:`/etc/openmediavault/config.xml` for references purposes if you decide to go for a clean re-install
+Can I backup or restore and existing |omv| configuration?
+	No. You can keep the file :file:`/etc/openmediavault/config.xml` for references purposes if you decide to go for a clean re-install.
 
 What is the default HTTP engine of |omv|?
-	NGINX. The last version of OMV with Apache was 0.5 Sardoukar.
+	NGINX. The last version of |omv| with Apache was 0.5 Sardoukar.
 
 Can I use Apache as HTTP engine?
-	You can use it but is not supported. Eventually every |omv| package upgrade will activate NGINX again leaving you with a broken webUI. You can run a parallel Apache instance to Nginx just make sure the ports are different otherwise your OMV webUI will not work.
+	You can use it but is not supported. Eventually every |omv| package upgrade will activate NGINX again leaving you with a broken |webui|. You can run a parallel Apache instance to Nginx just make sure the ports are different otherwise your |omv| |webui| will not work.
 
-How can use the default http engine to hold my own web page?
-	Do not modify |omv| default nginx files. Read `Nginx <http://nginx.org/en/docs/|documentation>`_. You can place your website configurations at :file:`/etc/nginx/sites-available,enabled`.
+How can use the default HTTP engine to hold my own web page?
+	Do not modify |omv| default NGINX files. You can place your website configurations at :file:`/etc/nginx/sites-available` and enable it with ``nginx_ensite <SITE>``. Read more information in the `NGINX documentation <http://nginx.org/en/docs/>`_.
 
 Why does the system rewrites a configuration file(s) that I have manually edited?
 	OMV takes full control of some system services. This services include monit, ntp, samba, network, proftpd, nginx, php5-fpm, etc.
 
-How can I modify an internal value of some service |omv| has control of?
+How can I modify an internal value of some service |omv| has control over?
 	Read :doc:`here <various/advancedsettings>` for advanced configurations.
 
-How can I modify or add a network configuration of :file:`/etc/network/interfaces` with some custom options the webUI does not provide?
-	The interfaces file is controlled by |omv|. To add network interfaces that are not configurable through the webGUI or other options not present, you need to use  :doc:`advanced settings <various/advancedsettings>`.
+How can I modify or add a network configuration of :file:`/etc/network/interfaces` with some custom options the |webui| does not provide?
+	The interfaces file is controlled by |omv|. To add network interfaces that are not configurable through the |webui| or other options not present, you need to use  :doc:`advanced settings <various/advancedsettings>`.
 
 Why my disks mount paths have a long alphanumeric number?
 	The long number is called UUID, it is used by fstab to mount disks. This number is unique per filesystem (or at least unlikely possible that another filesystem comes with an identical one). This helps maintaing the mount points. The old linux way (sda1, sdb1, etc) is not guaranteed that /sda1 is the same disk on next reboot. If you have trouble identiying them in terminal, you can always create a pool with symlinks to each file system with easy to remember names.
@@ -67,8 +64,8 @@ Can I install |omv| on top a running Debian system?
 Which are the files that should not be edited by the user?
 	There are several services that |omv| takes control of, The recommended list is here.
 
-What is the permissions/ownership of folders in OMV created by shared folders?
-	The default is folders in ''2775'' mode, with ''root:users'' ownership. This means all users created in the webUI can read, write to folders created by the system in the data drives using the default.
+What is the permissions/ownership of folders in |omv| created by shared folders?
+	The default is folders in ``2775`` mode, with ``root:users`` ownership. This means all users created in the |webui| can read, write to folders created by the system in the data drives using the default.
 
 Why are my filesystems mounted as noexec?
 	This is a security measure to avoid the placement of malicious scripts in the shared folders. This will prevent any script execution in those paths, including compiling packages and binaries.
@@ -78,11 +75,11 @@ Why are my filesystems mounted as noexec?
 I need to delete a shared folder, why the delete button is greyed/disabled?
 	Shared folder configurations can be used across different services. If you need to remove a shared folder configuration you need to unlink it from every service is attached to it before the delete button becomes available. At the moment there is no internal database backend that can display information about which service is holding which shares.
 
-What is the :file:`omv-mkconf` command for?
-	:file:`omv-mkconf` is a terminal console command that is used by the backend of OMV to pipe directives and values to service configuration files. The arguments that omv-mkconf accepts are related to the name of the service it configures. Type ''omv-mkconf'' in terminal, press TAB key, and the terminal will display all available arguments.
+What is the ``omv-mkconf`` command for?
+	``omv-mkconf`` is a terminal console command that is used by the backend of |omv| to pipe directives and values to service configuration files. The arguments that ``omv-mkconf`` accepts are related to the name of the service it configures. Type ``omv-mkconf`` in terminal, press TAB key, and the terminal will display all available arguments.
 
 I want to experiment with |omv| or make changes to the code
-	As a true open source system you can do whatever you want with it. The recommendation is you don't do it in your home appliance server to avoid breaking the web interface. The best thing to do is to use a Virtual Machine. In `Sourceforge <http://sourceforge.net/projects/openmediavault/files/vm/VirtualBox%20images/>`_ you can find a preconfigured OpenMediaVault virtual disk ready to launch.
+	As a true open source system you can do whatever you want with it. The recommendation is you don't do it in your home appliance server to avoid breaking the web interface. The best thing to do is to use a Virtual Machine. In `Sourceforge <http://sourceforge.net/projects/openmediavault/files/vm/VirtualBox%20images/>`_ you can find a preconfigured |omv| virtual disk ready to launch.
 
-What is the ''omv-update'' and ''omv-release-upgrade'' do?
-	Information about those commands are in the update/upgrade section
+What is the ``omv-update`` and ``omv-release-upgrade`` do?
+	Information about those commands are in the update/upgrade section.

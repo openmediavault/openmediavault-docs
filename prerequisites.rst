@@ -3,7 +3,7 @@ Prerequisites
 
 Before installing |omv| make sure your hardware is supported.
 
-* CPU: Any i486 or amd64 compatible processor.
+* CPU: Any i486, amd64 or arm compatible processor.
 * RAM: 1 GiB capacity
 * HDD:
   * System Drive: min. 4 GiB capacity

@@ -27,6 +27,10 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    copyright
    prerequisites
    installation/index
+   releases
+   plugins
+   support
+   FAQ
 
 
 

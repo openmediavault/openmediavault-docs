@@ -68,7 +68,7 @@ Which are the files that should not be edited by the user?
 	There are several services that |omv| takes control of, The recommended list is here.
 
 What is the permissions/ownership of folders in OMV created by shared folders?
-	The default is folders in ''2775'' mode, with ''root:users'' ownership. This means all users created in the webUI can read, write to folders created by the system in the data drives using the default.
+	The default is folders in ``2775`` mode, with ``root:users`` ownership. This means all users created in the webUI can read, write to folders created by the system in the data drives using the default.
 
 Why are my filesystems mounted as noexec?
 	This is a security measure to avoid the placement of malicious scripts in the shared folders. This will prevent any script execution in those paths, including compiling packages and binaries.
@@ -78,11 +78,11 @@ Why are my filesystems mounted as noexec?
 I need to delete a shared folder, why the delete button is greyed/disabled?
 	Shared folder configurations can be used across different services. If you need to remove a shared folder configuration you need to unlink it from every service is attached to it before the delete button becomes available. At the moment there is no internal database backend that can display information about which service is holding which shares.
 
-What is the :file:`omv-mkconf` command for?
-	:file:`omv-mkconf` is a terminal console command that is used by the backend of OMV to pipe directives and values to service configuration files. The arguments that omv-mkconf accepts are related to the name of the service it configures. Type ''omv-mkconf'' in terminal, press TAB key, and the terminal will display all available arguments.
+What is the ``omv-mkconf`` command for?
+	``omv-mkconf`` is a terminal console command that is used by the backend of OMV to pipe directives and values to service configuration files. The arguments that omv-mkconf accepts are related to the name of the service it configures. Type ``omv-mkconf`` in terminal, press TAB key, and the terminal will display all available arguments.
 
 I want to experiment with |omv| or make changes to the code
 	As a true open source system you can do whatever you want with it. The recommendation is you don't do it in your home appliance server to avoid breaking the web interface. The best thing to do is to use a Virtual Machine. In `Sourceforge <http://sourceforge.net/projects/openmediavault/files/vm/VirtualBox%20images/>`_ you can find a preconfigured OpenMediaVault virtual disk ready to launch.
 
-What is the ''omv-update'' and ''omv-release-upgrade'' do?
+What is the ``omv-update`` and ``omv-release-upgrade`` do?
 	Information about those commands are in the update/upgrade section

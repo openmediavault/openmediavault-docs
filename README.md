@@ -34,3 +34,12 @@ reStructured text cheat-sheets
 * http://docutils.sourceforge.net/docs/user/rst/quickref.html
 * https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst
 * https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html
+
+Contribute to the documentation
+-------------------------------
+To contribute to the documentation simply clone this repository, make your
+changes and create a PR (pull request).
+
+License
+-------
+CC BY-SA 3.0

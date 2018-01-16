@@ -3,12 +3,13 @@ Filesystems
 
 
 Overview
-	The filesystem section of the |omv| wen interface is where you integrate disk volumes to be part of the server. Drives/filesystems that are not mounted through the web interface are not registered in the backend database, this means you cannot use volumes to create shared folders if they were not mounted properly. **This is very important**, users that come from an existing debian installation with filesystem mounts already present in their fstab file will see that no volumes will be available for creating shared folders even if they are mounted. For the disks to be properly integrated is better that you delete all fstab lines execept rootfs and swap, reboot your server and start mounting the disks through the web interface.
+	The filesystem section of the |omv| web interface is where you integrate disk volumes to be part of the server. Drives/filesystems that are not mounted through the web interface are not registered in the backend database, this means you cannot use volumes to create shared folders if they were not mounted properly. *This is very important*, users that come from an existing debian installation with filesystems already present in their fstab file will see that no volumes will be available for creating shared folders even if they are mounted. For the disks to be properly integrated is better that you delete all fstab lines execept rootfs and swap, reboot your server and start mounting the disks through the web interface.
 
 	The mount process acts like many other services in |omv|, first it writes a database entry in config.xml, this entry contains essential information:
 
 	- UUID of the mounted entry inside config.xml <uuid>
 	- Predictable device path of the filesystem  <fsname>
+	- Target mount directory <dir>
 	- Filesystem options <opts>
 	- Filesystem type (ext3, ext4, etc) <type>
 	
@@ -18,8 +19,8 @@ Overview
 
 		<mntent>
 			<uuid>f767ee54-eb3a-44c5-b159-1840a289c84b</uuid>
-			<fsname>7f2d80ba-2a7c-4708-b601-673b304243fa</fsname>
-			<dir>/media/7f2d80ba-2a7c-4708-b601-673b304243fa</dir>
+			<fsname>/dev/disk/by-label/VOLUME1</fsname>
+			<dir>/srv/dev-disk-by-label-VOLUME1</dir>
 			<type>ext4</type>
 			<opts>defaults,nofail,user_xattr,noexec,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0,acl</opts>
 			<freq>0</freq>
@@ -34,7 +35,7 @@ Resize
 
 .. warning::
 	Filesystems greater than 16TB in ext4
-		The default mkfs.ext4 of Debian Wheezy does not use the 64bit flag for filesystems under 16TB, this is a serious problem since arrays without that flag won't be able to expand and there is no workaround more than reformat.
+		The default mkfs.ext4 of Debian Wheezy does not use the 64bit flag for filesystems under 16TB, this is a serious problem since RAID arrays without that flag won't be able to expand and there is no workaround more than reformat.
 		Version 1.8 introduced the flag as default for newly created ext4 filesystems, independant of the size. However the current resize2fs tool in Debian Wheezy cannot handle the flag for expanding the size, so you need newer version of e2fsprogs. For avoiding recompiling the package, you can boot systemrescuecd and perform the expansion using gparted.
 
 Delete
@@ -69,6 +70,6 @@ Supported Filesystems
 
 .. note::
 	ZFS
-		Support for zfs is available through `ZoL <http://zfsonlinux.org/>`_ an uses a third party plugin provided by omv-extras. The development of the plugin was done in conjunction with core of |omv|, so new code was added in the filesystem backend to improve support for Zfs. The plugin registers datasets and pools in the internal database so you can create shared folders for zfs volumes. The creation of zvols is automatically recognized by |omv| so you can format them and mount them in the web interface. The iscsiplugin can also use these zvols block devices to export LUN's.
+		Support for zfs is available through `ZoL <http://zfsonlinux.org/>`_ an uses a third party plugin provided by omv-extras. The development of the plugin was done in conjunction with core of |omv|, so new code was added in the filesystem backend to improve support for zfs. The plugin registers datasets and pools in the internal database so you can create shared folders for zfs volumes. The creation of zvols is automatically recognized by |omv| so you can format them and mount them in the web interface. The iscsiplugin can also use these zvols block devices to export LUN's.
 
 

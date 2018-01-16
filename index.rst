@@ -16,7 +16,7 @@ offices, but is not limited to those scenarios. It is a simple and easy to use
 out-of-the-box solution that everyone can install and administer without
 needing expert level knowledge of Networking and Storage Systems.
 
-The System is built on a modular design and can be easily extended with plugins
+The system is built on a modular design and can be easily extended with plugins
 available right after installation of the base system. Additional 3rd-party
 plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
 

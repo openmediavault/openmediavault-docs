@@ -21,9 +21,9 @@ lines:
 Build the HTML code
 -------------------
 
-	$ virtualenv -p python3 venv
-	$ source venv/bin/activate
-	$ make autobuild
+	$ cd venv
+	$ source bin/activate
+	$ cd .. && make autobuild
 
 Now open <http://localhost:8000/> in your browser to view the Wiki page.
 

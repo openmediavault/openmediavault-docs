@@ -14,7 +14,9 @@ community. The current support channels are:
 
 **IRC**
 
-There is also the official IRC channel, more info :doc:`here <various/irc>`
+We have a support IRC channel at freenode servers, just type ``/join #openmediavault``
+in your favourite IRC client, type your question and wait for someone available
+to help you.
 
 **Facebook**
 

@@ -21,7 +21,7 @@ available right after installation of the base system. Additional 3rd-party
 plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    copyright
@@ -31,7 +31,7 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    plugins
    support
    FAQ
-
+   features
 
 
 Indices and tables

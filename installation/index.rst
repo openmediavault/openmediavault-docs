@@ -3,24 +3,27 @@
 Installation
 ############
 
-You can install |omv| in 3 easy steps.
 
-Make sure your hardware is supported:
-   Before you proceed check if your hardware is supported on the system :doc:`requirements page </prerequisites>`.
+Before you begin:
+	- Check if your hardware is supported on the system :doc:`requirements page </prerequisites>`.
+	- `Download <https://sourceforge.net/projects/openmediavault/files/>`_. an installation image file for your system. Openmediavault provides iso installers for x86 architecture and several preconfigured images for arm devices.
+	- Disconnect all harddisks except the future system drive. This way you avoid an accidental install on a storage drive (which will be configured after installation anyway).
 
+Burn the installer:
+	For x86 architecture you can burn the iso directly into a usb drive using `etcher <https://etcher.io/>`_ or  dd linux utility. If you have a CD-DVD burner, you can burn the iso into an optical media then boot from CD or DVD.
+	Etcher can also be used to transfer arm images into sd cards. 
 
-Install the software:
-   Choose your Installation target and follow the instructions.
+Boot the installer:
+	For x86 architecture, enter BIOS configuration, select to boot either from USB or CD and reboot. 
+	ARM images are ready to go, so boot from sd card and wait for the initial setup to complete. This takes around 30 minutes in slow devices like raspberry pi.
 
-   **Dedicated Drive**  Adviced Method, This runs OMV from its own drive. A typical HDD will have much more endurance than USB flash media
+Installer:
+	The current iso installer is reduced to have minimal interaction. You will prompted to select location, language and root password. The installer will pick the first available disk to deploy the the OS. Once the installer finished the system will reboot, make sure you remove the installer and select BIOS to boot from the disk where |omv| was installed. You can also start connecting any data drives you previously disconnected before install or reinstall
 
-   **USB Flash Drive**  The operative system will be running from usb drives. This helps liberating a SATA port that can be used for data drives. Read :doc:`here </FAQ>` for information.
-
-   You can read at top of of each method if its suitable for you situation,
-   just pick the one that suits you best.
 
 First time use:
-   Your NAS is installed and ready to be used for the for the first time.
+   If you have a screen attached, KVM or IMPI console the login screen will display the current ip address assigned for the web interface. Open your browser and type that IP address. The default username:password is :code:`admin:openmediavault`, the root password is the one you setup during install.
+   For arm images the root password is the same as admin password.
 
 .. toctree::
   :maxdepth: 2

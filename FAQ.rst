@@ -44,7 +44,7 @@ Why does the system rewrites a configuration file(s) that I have manually edited
 	OMV takes full control of some system services. This services include monit, ntp, samba, network, proftpd, nginx, php5-fpm, etc.
 
 How can I modify an internal value of some service OpenMediaVault has control of?
-	Read :doc:`here <various/advancedsettings>` for advanced configurations.
+	Read :doc:`here <various/advset>` for advanced configurations.
 
 How can I modify or add a network configuration of :file:`/etc/network/interfaces` with some custom options the webUI does not provide?
 	The interfaces file is controlled by OpenMediaVault. To add network interfaces that are not configurable through the webGUI or other options not present, you need to use  :doc:`advanced settings <various/advancedsettings>`
@@ -65,7 +65,7 @@ Can I install OpenMediaVault on top a running Debian system?
 	Yes, but is not recommended that the running OS has a desktop environment installed.
 
 Which are the files that should not be edited by the user?
-	There are several services that OpenMediaVault takes control of, The recommended list is here.
+	There are several services that OpenMediaVault takes control of, The list is :doc:`here <various/conffiles>`.
 
 What is the permissions/ownership of folders in OMV created by shared folders?
 	The default is folders in ''2775'' mode, with ''root:users'' ownership. This means all users created in the webUI can read, write to folders created by the system in the data drives using the default.
@@ -82,7 +82,7 @@ What is the :file:`omv-mkconf` command for?
 	:file:`omv-mkconf` is a terminal console command that is used by the backend of OMV to pipe directives and values to service configuration files. The arguments that omv-mkconf accepts are related to the name of the service it configures. Type ''omv-mkconf'' in terminal, press TAB key, and the terminal will display all available arguments.
 
 I want to experiment with OpenMediaVault or make changes to the code
-	As a true open source system you can do whatever you want with it. The recommendation is you don't do it in your home appliance server to avoid breaking the web interface. The best thing to do is to use a Virtual Machine. In [[http://sourceforge.net/projects/openmediavault/files/vm/VirtualBox%20images/|Sourceforge]] you can find a preconfigured OpenMediaVault virtual disk ready to launch. 
+	As a true open source system you can do whatever you want with it. The recommendation is you don't do it in your home appliance server to avoid breaking the web interface. The best thing to do is to use a Virtual Machine. In `sourceforge <http://sourceforge.net/projects/openmediavault/files/vm/VirtualBox%20images/>`_ you can find a preconfigured |omv| esxi image with disks ready to launch. 
 
 What is the ''omv-update'' and ''omv-release-upgrade'' do?
 	Information about those commands are in the update/upgrade section

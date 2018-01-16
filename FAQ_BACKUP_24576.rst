@@ -85,4 +85,3 @@ I want to experiment with |omv| or make changes to the code
 	As a true open source system you can do whatever you want with it. The recommendation is you don't do it in your home appliance server to avoid breaking the web interface. The best thing to do is to use a Virtual Machine. In `Sourceforge <http://sourceforge.net/projects/openmediavault/files/vm/VirtualBox%20images/>`_ you can find a preconfigured OpenMediaVault virtual disk ready to launch.
 
 What is the ``omv-update`` and ``omv-release-upgrade`` do?
-	Information about those commands are in the update/upgrade section

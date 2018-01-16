@@ -24,13 +24,14 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    :maxdepth: 3
    :caption: Contents:
 
+   releases
    prerequisites
    installation/index
-   releases
-   plugins
-   support
-   FAQ
    features
+   plugins
+   FAQ
+   support
+   media
    contributors
    copyright
 

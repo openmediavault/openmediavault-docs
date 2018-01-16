@@ -5,8 +5,7 @@ System
 
 General settings
 ----
-**General settings:** Change webGUI listening port, SSL and force SSL. Change admin password
-
+**General settings:** Change |webui| listening port, SSL and force SSL. Change admin password
 
 **Notification system:** Integrated into several services in the form of email, these include scheduled tasks, services monitoring, SMART, MDADM and cron-apt. Since |omv| 3.0 is possible to add third party notification systems by using scripts, more information `here <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/usr/share/openmediavault/notification/sink.d/README>`_ and an `example <https://forum.openmediavault.org/index.php/Thread/14919-GUIDE-Use-Telegram-as-notification-service/>`_.
 
@@ -59,8 +58,8 @@ Services
 **TFTP:** A basic configuration panel is provided. This can complement a PXE server to deploy local network installations.
 
 .. note::
-	
-	In omv4 tftp has been removed from core |omv|, and it now can be installed as an official plugin.
+
+	In |omv| version 4 the TFTP has been removed from core, and it now can be installed as an official plugin.
 
 Diagnostics
 ----
@@ -71,4 +70,3 @@ Diagnostics
 **System Logs:** Interface to view and download logs from syslog, boot, message, auth, ftp, rsync and samba. Plugins can attach their logs here using the framework.
 
 **Services:** View status (enabled/disabled and running/not running) of services. Detailed information is provided by default for Samba, FTP and SSH. Plugins can use this tab to integrate their service information.
-

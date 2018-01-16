@@ -43,13 +43,8 @@ Why does the system rewrites a configuration file(s) that I have manually edited
 How can I modify an internal value of some service |omv| has control over?
 	Read :doc:`here <various/advancedsettings>` for advanced configurations.
 
-<<<<<<< HEAD
-How can I modify or add a network configuration of :file:`/etc/network/interfaces` with some custom options the web interace does not provide?
-	The interfaces file is controlled by |omv|. To add network interfaces that are not configurable through the webGUI or other options not present, you need to use  :doc:`advanced settings <various/advset>`.
-=======
 How can I modify or add a network configuration of :file:`/etc/network/interfaces` with some custom options the |webui| does not provide?
 	The interfaces file is controlled by |omv|. To add network interfaces that are not configurable through the |webui| or other options not present, you need to use  :doc:`advanced settings <various/advancedsettings>`.
->>>>>>> upstream/master
 
 Why my disks mount paths have a long alphanumeric number?
 	The long number is called UUID, it is used by fstab to mount disks. This number is unique per filesystem (or at least unlikely possible that another filesystem comes with an identical one). This helps maintaing the mount points. The old linux way (sda1, sdb1, etc) is not guaranteed that /sda1 is the same disk on next reboot. If you have trouble identiying them in terminal, you can always create a pool with symlinks to each file system with easy to remember names.
@@ -69,13 +64,8 @@ Can I install |omv| on top a running Debian system?
 Which are the files that should not be edited by the user?
 	There are several services that |omv| takes control of, The recommended list is here.
 
-<<<<<<< HEAD
-What is the permissions/ownership of folders in OMV created by shared folders?
-	The default is folders in ``2775`` mode, with ``root:users`` ownership. This means all users created in the webUI can read, write to folders created by the system in the data drives using the default.
-=======
 What is the permissions/ownership of folders in |omv| created by shared folders?
 	The default is folders in ``2775`` mode, with ``root:users`` ownership. This means all users created in the |webui| can read, write to folders created by the system in the data drives using the default.
->>>>>>> upstream/master
 
 Why are my filesystems mounted as noexec?
 	This is a security measure to avoid the placement of malicious scripts in the shared folders. This will prevent any script execution in those paths, including compiling packages and binaries.
@@ -86,18 +76,10 @@ I need to delete a shared folder, why the delete button is greyed/disabled?
 	Shared folder configurations can be used across different services. If you need to remove a shared folder configuration you need to unlink it from every service is attached to it before the delete button becomes available. At the moment there is no internal database backend that can display information about which service is holding which shares.
 
 What is the ``omv-mkconf`` command for?
-<<<<<<< HEAD
-	``omv-mkconf`` is a terminal console command that is used by the backend of OMV to pipe directives and values to service configuration files. The arguments that omv-mkconf accepts are related to the name of the service it configures. Type ``omv-mkconf`` in terminal, press TAB key, and the terminal will display all available arguments.
-=======
 	``omv-mkconf`` is a terminal console command that is used by the backend of |omv| to pipe directives and values to service configuration files. The arguments that ``omv-mkconf`` accepts are related to the name of the service it configures. Type ``omv-mkconf`` in terminal, press TAB key, and the terminal will display all available arguments.
->>>>>>> upstream/master
 
 I want to experiment with |omv| or make changes to the code
 	As a true open source system you can do whatever you want with it. The recommendation is you don't do it in your home appliance server to avoid breaking the web interface. The best thing to do is to use a Virtual Machine. In `Sourceforge <http://sourceforge.net/projects/openmediavault/files/vm/VirtualBox%20images/>`_ you can find a preconfigured |omv| virtual disk ready to launch.
 
 What is the ``omv-update`` and ``omv-release-upgrade`` do?
-<<<<<<< HEAD
-	Information about those commands are in the software :doc:`section </various/apt>`
-=======
-	Information about those commands are in the update/upgrade section.
->>>>>>> upstream/master
+	Information about those commands are in the software :doc:`section </various/apt>`.

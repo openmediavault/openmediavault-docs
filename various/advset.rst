@@ -33,6 +33,9 @@ For example we are going to change the default sftp server for SSH service.
 Make your changes, save, restart engined service openmediavault-engined restart
 and run omv-mkconf ssh, finally reload the SSH service via |webui| or systemd.
 
+The list of environmental variables used for ``/etc/fstab`` filesystem with the
+defaults options and how to use them is described :doc:`here </various/fs_env_vars>`.
+
 The mkconf folder
 -----------------
 

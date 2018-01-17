@@ -189,7 +189,7 @@ Disabled by default, the anonymous user is mapped to the system user ftp and nog
 
 FTP(S/ES)
 ^^^^
-OpenMediaVault provides two SSL/TLS modes for encrypting the FTP communication implicit and explicit FTPS
+|omv| provides two SSL/TLS modes for encrypting the FTP communication implicit and explicit FTPS
 
 The differences and features are explained `here <https://en.wikipedia.org/wiki/FTPS>`_ and `here <http://www.jscape.com/blog/bid/75602/Understanding-Key-Differences-Between-FTP-FTPS-and-SFTP>`_
 
@@ -199,7 +199,7 @@ Tips
 ^^^^
 
 Login Group
-	By default all OpenMediaVault users created in the web interface can gain login into FTP. You can restrict to read only or read write, there is no deny access, but the user has no privileges he would not see that folder. If you want to add a layer of extra security for the login, you can create a control group to restrict login to FTP. You first create a group for example ftp_users, then at the end of the general extra options of the server we add:
+	By default all |omv| users created in the |webui| can gain login into FTP. You can restrict to read only or read write, there is no deny access, but the user has no privileges he would not see that folder. If you want to add a layer of extra security for the login, you can create a control group to restrict login to FTP. You first create a group for example ftp_users, then at the end of the general extra options of the server we add:
 
 	.. code-block:: xml
 
@@ -210,7 +210,7 @@ Login Group
 	Users *not belonging to that group* can't log in to the FTP server.
 
 Home Folders
-	There is not straightforward way of doing this in the web interface, but if you really need home folders for FTP, you can change the default vroot path with environmental variable
+	There is not straightforward way of doing this in the |webui|, but if you really need home folders for FTP, you can change the default vroot path with environmental variable
 
 	``OMV_PROFTPD_MODAUTH_DEFAULTROOT=“~”``
 
@@ -224,7 +224,7 @@ NFS
 
 Overview
 ^^^^
-The configuration of the server is done using the common `NFS guidelines <https://help.ubuntu.com/community/SettingUpNFSHowTo>`_ . Shared folders are actually binded to the /export directory. You can check by examining the ``/etc/fstab`` file after you have added a folder to the server. Then all folders are configured to share in /etc/exports as follows:::
+The configuration of the server is done using the common `NFS guidelines <https://help.ubuntu.com/community/SettingUpNFSHowTo>`_. Shared folders are actually binded to the /export directory. You can check by examining the ``/etc/fstab`` file after you have added a folder to the server. Then all folders are configured to share in /etc/exports as follows:::
 
 	/export/Shared_1 (fsid=1,rw,subtree_check,secure,root_squash)
 	/export/Videos 10.10.0.0/24 (fsid=2,rw,subtree_check,secure,nroot_squash)
@@ -233,13 +233,13 @@ The configuration of the server is done using the common `NFS guidelines <https:
 Server Shares
 ^^^^
 
-The following options are available to configure from the web interface:
+The following options are available to configure from the |webui|:
 
 	- **Shared folder:** Select a folder, the system will add an bind entry to fstab, mount that bind and add it to /etc/exports file
 	- **Client:** Enter a single ip, host or network cidr notation. Only one entry is allowed at the moment. You can leave it empty if you do not want network security.
 	- **Privilege:** This will append read write (rw) or read-only (ro) to ``/etc/exports``. [1]_
 	- **Extra options:** Add options according the `exports manual <https://linux.die.net/man/5/exports>`_. If squash options are not specified, the mkconf script will add ``root_squash`` by default which is not displayed in the text field.
-	
+
 	The server also shares by default the pseudo root filesystem of /exports as NFSv4.
 
 Clients
@@ -271,7 +271,7 @@ Macos/OSX
 
 	Example: ``sudo mount -t nfs -o resvport,rw 192.168.3.1:/export/Videos /private/nfs``
 
-Debian 
+Debian
 	Debian distributions (and many others) always include the group users with gid=100 by default, if you want to resolve permissions easily for all users of a PC using linux add anonuid=100 in extra options. This will force all mounts to use that gid.
 
 Symlinks
@@ -286,7 +286,7 @@ SSH
 
 Overview
 ^^^^
-Secure shell comes disabled by default in OMV, if you install |omv| on top a Debian installation, the systemd unit will be disabled after the server packages are installed. Just login into web interface to re-enable the ssh service.
+Secure shell comes disabled by default in OMV, if you install |omv| on top a Debian installation, the systemd unit will be disabled after the server packages are installed. Just login into |webui| to re-enable the ssh service.
 
 The configuration options are minimal, But you can:
 

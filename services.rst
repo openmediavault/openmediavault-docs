@@ -12,7 +12,7 @@ General
 
 The server configures samba as standalone mode. The default global section is as follows:
 
-..  code-block:: conf
+..  code-block::conf
 
 	[global]
 	workgroup = HOME
@@ -52,7 +52,7 @@ The server configures samba as standalone mode. The default global section is as
 
 Shares are configured in this way:
 
-..  code-block:: conf
+..  code-block::conf
 
 	[MyDocuments]
 	path = /media//dev/disk/by-label/VOLUME1/Documents/
@@ -163,12 +163,18 @@ Then that alias will have privileges assigned:::
 By default you're not allowed to write in the when you login, this means you cannot create folders in the landing directory, you have to enter one of the shared folders. Also due to the nature of the chroot, creating top level folders is pointless since they will be actually stored in /srv/ftp and not in the media disks.
 
 Remote Access
-^^^^
+^^^^^^^^^^^^^
+
 FTP is a protocol intended for use in LAN and WAN. For accessing WAN you need to forward in your router the server port (default 21) and the passive range.
 
 Anonymous Login
-^^^^
-Disabled by default, the anonymous user is mapped to the system user ftp and nogroup. There is no write access for anonymous and this is configured in the proftpd.conf file and cannot be changed as is hard coded into the default configuration script of the server. In this case there is no environmental variable to change that behaviour.::
+^^^^^^^^^^^^^^^
+
+Disabled by default, the anonymous user is mapped to the system user ftp and
+nogroup. There is no write access for anonymous and this is configured in the
+proftpd.conf file and cannot be changed as is hard coded into the default
+configuration script of the server. In this case there is no environmental
+variable to change that behaviour::
 
 	<Anonymous ~ftp>
 	  User ftp
@@ -188,10 +194,10 @@ Disabled by default, the anonymous user is mapped to the system user ftp and nog
 
 
 FTP(S/ES)
-^^^^
-|omv| provides two SSL/TLS modes for encrypting the FTP communication implicit and explicit FTPS
+^^^^^^^^^
+|omv| provides two SSL/TLS modes for encrypting the FTP communication implicit and explicit FTPS.
 
-The differences and features are explained `here <https://en.wikipedia.org/wiki/FTPS>`_ and `here <http://www.jscape.com/blog/bid/75602/Understanding-Key-Differences-Between-FTP-FTPS-and-SFTP>`_
+The differences and features are explained `here <https://en.wikipedia.org/wiki/FTPS>`_ and `here <http://www.jscape.com/blog/bid/75602/Understanding-Key-Differences-Between-FTP-FTPS-and-SFTP>`_.
 
 Enabling FTP over SSL/TLS requires first that you create or import a certificate in the corresponding section. Once the certficate is there you can choose it from SSL/TLS section in FTP. The default FTPS of the server is explicit, you can click the checkbox to enable implicit. If you choose implicit make sure you forward port 900 in your router to port 21 in your NAS server if you're accessing from WAN, otherwise the client will probably display ECONREFUSED.
 
@@ -210,10 +216,7 @@ Login Group
 	Users *not belonging to that group* can't log in to the FTP server.
 
 Home Folders
-	There is not straightforward way of doing this in the |webui|, but if you really need home folders for FTP, you can change the default vroot path with environmental variable
-
-	``OMV_PROFTPD_MODAUTH_DEFAULTROOT=“~”``
-
+	There is not straightforward way of doing this in the |webui|, but if you really need home folders for FTP, you can change the default vroot path with environmental variable ``OMV_PROFTPD_MODAUTH_DEFAULTROOT=“~”``.
 	What will happen here if users will log in straight into their home folders. If you add shared folders to the server they will be displayed inside the user home folder plus any other folder present in their home folder.
 
 LetsEncrypt
@@ -223,7 +226,8 @@ NFS
 ====
 
 Overview
-^^^^
+^^^^^^^^
+
 The configuration of the server is done using the common `NFS guidelines <https://help.ubuntu.com/community/SettingUpNFSHowTo>`_. Shared folders are actually binded to the /export directory. You can check by examining the ``/etc/fstab`` file after you have added a folder to the server. Then all folders are configured to share in /etc/exports as follows:::
 
 	/export/Shared_1 (fsid=1,rw,subtree_check,secure,root_squash)
@@ -231,7 +235,7 @@ The configuration of the server is done using the common `NFS guidelines <https:
 
 
 Server Shares
-^^^^
+^^^^^^^^^^^^^
 
 The following options are available to configure from the |webui|:
 
@@ -243,25 +247,33 @@ The following options are available to configure from the |webui|:
 	The server also shares by default the pseudo root filesystem of /exports as NFSv4.
 
 Clients
-^^^^
+^^^^^^^
 To access NFS shares using any debian derived linux distro:
 
-``mount 172.34.3.12:/ /mnt/nfs`` Mount as NFSv4 all folders in ``/export/`` in ``/mnt/nfs``
+* Mount as NFSv4 all folders in ``/export/`` in ``/mnt/nfs``::
 
-``mount 172.34.3.12:/export /mnt/nfs`` Mount as NFSv3 all folders inside ``/export`` in ``/mnt/nfs``
+  $ mount 172.34.3.12:/ /mnt/nfs
 
-``mount 172.34.3.12:/export/Videos /mnt/nfs`` Mount as NFSv3 the folder ``/export/Videos`` in ``/mnt/nfs``
+* Mount as NFSv3 all folders inside ``/export`` in ``/mnt/nfs``::
 
-``mount 172.34.3.12:/Videos /mnt/nfs`` Mount as NFSv4 the folder ``/export/Videos`` in ``/mnt/nfs``
+  $ mount 172.34.3.12:/export /mnt/nfs
+
+* Mount as NFSv3 the folder ``/export/Videos`` in ``/mnt/nfs``::
+
+  $ mount 172.34.3.12:/export/Videos /mnt/nfs
+
+* Mount as NFSv4 the folder ``/export/Videos`` in ``/mnt/nfs``::
+
+  $ mount 172.34.3.12:/Videos /mnt/nfs
 
 Check your distro on how to proceed with different NFS versions.
 
 NFSv4 Pseudo root filesystem
-^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The default /export folder is shared with this default options ``ro,wdelay,root_squash,no_subtree_check,fsid=0`` only available to change via environmental variables, so be aware that mounting this path you will encounter permission problems.
 
 Permissions
-^^^^
+^^^^^^^^^^^
 NFS relies on uid/gid matching at the remote/local filesystem and it doesn't provide any authentication/security at all. Basic security is provided by using network allow, and squash options. If you want extra security in NFS, you will need to configure it to use kerberos ticketing system.
 
 Tips
@@ -269,7 +281,8 @@ Tips
 Macos/OSX
 	If you want to mount your NFS exports, add insecure in extra opions or use ``resvport`` in the command line.
 
-	Example: ``sudo mount -t nfs -o resvport,rw 192.168.3.1:/export/Videos /private/nfs``
+	Example:
+	 ``sudo mount -t nfs -o resvport,rw 192.168.3.1:/export/Videos /private/nfs``
 
 Debian
 	Debian distributions (and many others) always include the group users with gid=100 by default, if you want to resolve permissions easily for all users of a PC using linux add anonuid=100 in extra options. This will force all mounts to use that gid.
@@ -285,7 +298,7 @@ SSH
 ====
 
 Overview
-^^^^
+^^^^^^^^
 Secure shell comes disabled by default in OMV, if you install |omv| on top a Debian installation, the systemd unit will be disabled after the server packages are installed. Just login into |webui| to re-enable the ssh service.
 
 The configuration options are minimal, But you can:
@@ -298,7 +311,7 @@ The configuration options are minimal, But you can:
 
 An extra text field is provided to enter more options. Examine first the file /etc/ssh/sshd_config before adding extra options otherwise the option you might want to add will not be applied. In that case you need to use change the environmental variable.
 
-Normal |omv| users created in the webGUI can access the remote shell by adding them to ssh group. Using PKA for users, requires keys to be added to their profile, you can do this in the Users section. The key has to be added in `RFC 4716 <https://tools.ietf.org/html/rfc4716>`_ format. To do that run ssh-keygen -e -f nameofthekey.pub, then paste the output in the users profile.
+Normal |omv| users created in the |webui| can access the remote shell by adding them to ssh group. Using PKA for users, requires keys to be added to their profile, you can do this in the Users section. The key has to be added in `RFC 4716 <https://tools.ietf.org/html/rfc4716>`_ format. To do that run ssh-keygen -e -f nameofthekey.pub, then paste the output in the users profile.
 
 If you have disabled root login and need to perform root operations in the terminal, you can swap to root by typing su or su - in terminal to be prompted for root password. If you want to use sudo for root operations then you need to add the user to the sudo group.
 
@@ -314,10 +327,10 @@ The SFTP server comes enabled by default for root and ssh group. So POSIX folder
 
 
 Netatalk
-====
+========
 
 RSync
-====
+=====
 
 
 .. [1] This is not standard |omv| privileges as in the shared folder section

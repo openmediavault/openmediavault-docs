@@ -16,9 +16,8 @@ Before you begin:
 Install |omv|:
     Choose your Installation target and follow the instructions.
 
-    * :doc:`Dedicated Drive </installation/via_iso>` - Adviced method via ISO image. This runs OMV from its own drive.
-    * :doc:`USB Flash Drive </installation/on_usb>` - This runs |omv| from a USB flash-drive.
-    * Shared Data Drive	- This runs |omv| from a drive that also contains your data.
+    * :doc:`Dedicated drive </installation/via_iso>` - Adviced method via ISO image. This runs OMV from its own drive.
+    * :doc:`USB flash dive </installation/on_usb>` - This runs |omv| from a USB flash dive.
     * :doc:`Debian Operating System </installation/on_debian>` - This runs |omv| as a services on top of a Debian OS.
 
 First time use:

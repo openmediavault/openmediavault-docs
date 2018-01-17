@@ -5,7 +5,7 @@ Services
 Samba
 ====
 
-Samba server comes from Debian software repositories. Openmediavault developer does not mantain this package, all bug, hotfixes and features come from Debian. Advanced features like spotlight server or time machine support is not available because they have not reach yet stable Debian or the Debian developers have not made it available in their build.
+Samba server comes from Debian software repositories. |omv| developer does not mantain this package, all bug, hotfixes and features come from Debian. Advanced features like spotlight server or time machine support is not available because they have not reach yet stable Debian or the Debian developers have not made it available in their build.
 
 General
 ^^^^
@@ -53,7 +53,7 @@ The server configures samba as standalone mode. The default global configuration
 Shares are configured in this way:
 
 ..  code-block:: conf
-	
+
 	[MyDocuments]
 	path = /media//dev/disk/by-label/VOLUME1/Documents/
 	guest ok = no
@@ -70,8 +70,8 @@ Shares are configured in this way:
 	force directory mode = 0755
 	hide dot files = yes
 	valid users = "john"
-	invalid users = 
-	read list = 
+	invalid users =
+	read list =
 	write list = "john"
 
 
@@ -80,7 +80,7 @@ You can add extra options in the general and share configuration at the bottom, 
 Privileges
 ^^^^
 
-The login access in samba is configured using privileges. This means they will not act in the file system layer they will run in the samba authentication layer. From there the access can be controlled to be read only or read/write access and guest account access. This is done with the PRIVILEGES button in the shared folder section not the ACL. 
+The login access in samba is configured using privileges. This means they will not act in the file system layer they will run in the samba authentication layer. From there the access can be controlled to be read only or read/write access and guest account access. This is done with the PRIVILEGES button in the shared folder section not the ACL.
 Privileges only gets only login access and from there determines if user can read or write. If write access is enabled and files/folders have restricted permissions then you will still not be able to write to folder using samba.
 
 Share types
@@ -95,7 +95,7 @@ Share types
 This means that every user will have to provide valid OMV credentials to access that share. Also this type of shares requires at least one definition of a valid user, otherwise the directive would be empty. THIS WILL ALLOW EVERY USER TO LOG INTO THE SHARE.
 
 
-**Semi-public:** 
+**Semi-public:**
 *When login is not provided, the guest user is used. This is the "guest allowed" option from the samba share option*::
 	guest ok = yes
 	read list = User1, @Group1
@@ -103,7 +103,7 @@ This means that every user will have to provide valid OMV credentials to access 
 
 Notice here if you have a user that you have not set up privileges for (thank means blank tick boxes) he will be able to login anyway and have write access.
 
-**Public only:** *The guest user is always used. This is the Guest Only option in the samba share configuration.*:: 
+**Public only:** *The guest user is always used. This is the Guest Only option in the samba share configuration.*::
 
 	guest ok = yes
 	guest only = yes
@@ -123,10 +123,10 @@ How do I enter credentials in a semi-public share?
 	In Mac OS X you can use CMD+K (if you are in Finder)
 
 Why the login keeps saying access denied?
-	This is more likely caused by two things: Permission issue (ACL or non default POSIX permission mode/ownership). You need to fix the permissions in the shared folder. Samba runs as privileged (root) user, even so if parts of path don't have adecuate permissions you can still get access denied. 
+	This is more likely caused by two things: Permission issue (ACL or non default POSIX permission mode/ownership). You need to fix the permissions in the shared folder. Samba runs as privileged (root) user, even so if parts of path don't have adecuate permissions you can still get access denied.
 
 Why I can't edit files that other users have created?
-	The default umask in samba is 644 for files. So to enable flexible sharing tick Enable permission inheritance in the samba share settings this will force 664 creation mode. Files created previously need to change their permission mode. Use reset permission utility. Check also that you don't have read only enabled. This option overrides privileges and POSIX.
+	The default umask in samba is 644 for files. So to enable flexible sharing tick Enable permission inheritance in the samba share settings this will force ``664`` creation mode. Files created previously need to change their permission mode. Use reset permission utility. Check also that you don't have read only enabled. This option overrides privileges and POSIX.
 
 
 Netatalk

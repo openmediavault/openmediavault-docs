@@ -2,7 +2,7 @@ Advanced Configuration
 ======================
 
 |omv| is not a replacement for webmin, where you can configure all options in
-the web interface. Options are already preconfigured to make it easier for the
+the |webui|. Options are already preconfigured to make it easier for the
 average user to install and start using the NAS server.
 
 As mentioned before in the :doc:`FAQ </FAQ>` |omv| takes full control of some

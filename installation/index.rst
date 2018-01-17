@@ -11,7 +11,7 @@ Before you begin:
 
 Burn the installer:
 	For x86 architecture you can burn the iso directly into a usb drive using `etcher <https://etcher.io/>`_ or  dd linux utility. If you have a CD-DVD burner, you can burn the iso into an optical media then boot from CD or DVD.
-	Etcher can also be used to transfer arm images into sd cards. 
+	Etcher can also be used to transfer arm images into sd cards.
 
 Boot the installer:
 	For x86 architecture, enter BIOS configuration, select to boot either from USB or CD and reboot. 
@@ -22,7 +22,7 @@ Installer:
 
 
 First time use:
-   If you have a screen attached, KVM or IMPI console the login screen will display the current ip address assigned for the web interface. Open your browser and type that IP address. The default username:password is :code:`admin:openmediavault`, the root password is the one you setup during install.
+   If you have a screen attached, KVM or IMPI console the login screen will display the current ip address assigned for the |webui|. Open your browser and type that IP address. The default username:password is :code:`admin:openmediavault`, the root password is the one you setup during install.
    For arm images the root password is the same as admin password.
 
 .. toctree::

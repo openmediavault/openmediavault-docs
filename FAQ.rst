@@ -20,7 +20,7 @@ What is the file :file:`/etc/openmediavault/config.xml` for?
 	Is the database configuration store file for |omv|. When a change is performed in the |webui|, the config value is stored and/or retrieve by rpc to/from this file. If this is a save change, then mkconf passes the value to the service configuration file and reloads the daemon in case is necessary.
 
 Can I upgrade to Debian Testing/Unstable (Debian Testing/Sid) or use Ubuntu as a base distribution?
-	Yes you can. But you will end up most likely with a broken web interface and possibly broken system. |omv| releases are heavily tight to their Debian base distro.
+	Yes you can. But you will end up most likely with a broken |webui| and possibly broken system. |omv| releases are heavily tight to their Debian base distro.
 
 I´ve lost the |webui| password. How do I reset it?
 	Simply connect via ssh to your server or login locally on your machine and type in: ``omv-firstaid``. There is an option to reset your password.
@@ -79,7 +79,7 @@ What is the ``omv-mkconf`` command for?
 	``omv-mkconf`` is a terminal console command that is used by the backend of |omv| to pipe directives and values to service configuration files. The arguments that ``omv-mkconf`` accepts are related to the name of the service it configures. Type ``omv-mkconf`` in terminal, press TAB key, and the terminal will display all available arguments.
 
 I want to experiment with |omv| or make changes to the code
-	As a true open source system you can do whatever you want with it. The recommendation is you don't do it in your home appliance server to avoid breaking the web interface. The best thing to do is to use a Virtual Machine. In `Sourceforge <http://sourceforge.net/projects/openmediavault/files/vm/VirtualBox%20images/>`_ you can find a preconfigured |omv| virtual disk ready to launch.
+	As a true open source system you can do whatever you want with it. The recommendation is you don't do it in your home appliance server to avoid breaking the |webui|. The best thing to do is to use a Virtual Machine. In `Sourceforge <http://sourceforge.net/projects/openmediavault/files/vm/VirtualBox%20images/>`_ you can find a preconfigured |omv| virtual disk ready to launch.
 
 What is the ``omv-update`` and ``omv-release-upgrade`` do?
 	Information about those commands are in the software :doc:`section </various/apt>`.

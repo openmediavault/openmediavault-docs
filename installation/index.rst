@@ -13,30 +13,17 @@ Before you begin:
 	  avoid an accidental install on a storage drive (which will be configured
 	  after installation anyway).
 
-Burn the installer:
-	For x86 architecture you can burn the ISO directly into a usb drive using
-	`etcher <https://etcher.io/>`_ or  dd linux utility. If you have a CD-DVD
-	burner, you can burn the ISO into an optical media then boot from CD or DVD.
-	Etcher can also be used to transfer arm images into SD cards.
+Install |omv|:
+    Choose your Installation target and follow the instructions.
 
-Boot the installer:
-	For x86 architecture, enter BIOS configuration, select to boot either from
-	USB or CD and reboot. ARM images are ready to go, so boot from sd card and
-	wait for the initial setup to complete. This takes around 30 minutes in
-	slow devices like Raspberry PI.
-
-Installer:
-	The current ISO installer is reduced to have minimal interaction. You will
-	prompted to select location, language and root password. The installer will
-	pick the first available disk to deploy the the OS. Once the installer
-	finished the system will reboot, make sure you remove the installer and
-	select BIOS to boot from the disk where |omv| was installed. You can also
-	start connecting any data drives you previously disconnected before install
-	or reinstall.
+    * :doc:`Dedicated Drive </installation/via_iso>` - Adviced method via ISO image. This runs OMV from its own drive.
+    * :doc:`USB Flash Drive </installation/on_usb>` - This runs |omv| from a USB flash-drive.
+    * Shared Data Drive	- This runs |omv| from a drive that also contains your data.
+    * :doc:`Debian Operating System </installation/on_debian>` - This runs |omv| as a services on top of a Debian OS.
 
 First time use:
    If you have a screen attached, KVM or IMPI console the login screen will
-   display the current ip address assigned for the |webui|. Open your browser
+   display the current IP address assigned for the |webui|. Open your browser
    and type that IP address. The default username:password is
    ``admin:openmediavault``, the root password is the one you setup during
    install.

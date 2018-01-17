@@ -75,13 +75,13 @@ Shares are configured in this way:
 	write list = "john"
 
 
-You can add extra options in the general and share configuration at the bottom, where you have a multi line text field. This options are hardcoded in the mkconf script but they can be changed using :doc:`environmental variables </various/advset>`
+You can add extra options in the general and share configuration at the bottom, where you have a multi line text field. This options are hardcoded in the mkconf script but they can be changed using :doc:`environmental variables </various/advset>`.
 
 Privileges
 ^^^^
 
-The login access in samba is configured using privileges. This means they will not act in the file system layer they will run in the samba authentication layer. From there the access can be controlled to be read only or read/write access and guest account access. This is done with the PRIVILEGES button in the shared folder section not the ACL.
-Privileges only gets only login access and from there determines if user can read or write. If write access is enabled and files/folders have restricted permissions then you will still not be able to write to folder using samba.
+The login access in Samba is configured using privileges. This means they will not act in the file system layer they will run in the samba authentication layer. From there the access can be controlled to be read only or read/write access and guest account access. This is done with the PRIVILEGES button in the shared folder section not the ACL.
+Privileges only gets only login access and from there determines if user can read or write. If write access is enabled and files/folders have restricted permissions then you will still not be able to write to folder using Samba.
 
 Share types
 ^^^^
@@ -92,8 +92,10 @@ Share types
 	read list = User1, @Group1
 	write list = User2, @Group2
 
-This means that every user will have to provide valid OMV credentials to access that share. Also this type of shares requires at least one definition of a valid user, otherwise the directive would be empty. THIS WILL ALLOW EVERY USER TO LOG INTO THE SHARE.
+This means that every user will have to provide valid OMV credentials to access that share. Also this type of shares requires at least one definition of a valid user, otherwise the directive would be empty.
 
+.. note::
+	This will allow every user to log into the share.
 
 **Semi-public:**
 *When login is not provided, the guest user is used. This is the "guest allowed" option from the samba share option*::
@@ -126,7 +128,7 @@ Why the login keeps saying access denied?
 	This is more likely caused by two things: Permission issue (ACL or non default POSIX permission mode/ownership). You need to fix the permissions in the shared folder. Samba runs as privileged (root) user, even so if parts of path don't have adecuate permissions you can still get access denied.
 
 Why I can't edit files that other users have created?
-	The default umask in samba is 644 for files. So to enable flexible sharing tick Enable permission inheritance in the samba share settings this will force ``664`` creation mode. Files created previously need to change their permission mode. Use reset permission utility. Check also that you don't have read only enabled. This option overrides privileges and POSIX.
+	The default umask in samba is ``644`` for files. So to enable flexible sharing tick Enable permission inheritance in the samba share settings this will force ``664`` creation mode. Files created previously need to change their permission mode. Use reset permission utility. Check also that you don't have read only enabled. This option overrides privileges and POSIX.
 
 
 Netatalk

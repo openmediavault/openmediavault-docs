@@ -14,7 +14,7 @@ Does |omv| have drivers for my hardware?
 	The Jessie backport kernel 4.9 is the default kernel used by Stretch (Debian 9.3) at the moment, so it provides support for newer hardware.
 
 Can I use a usb flash drive (stick) for installing the system?
-	Yes, but the installation does not have any optimizations to reduce writes into the OS disk. Your usb media will most likely start failing within a few weeks of usage. Most common symptom is basic command execution does not work, denied login, etc.
+	Yes, but the installation does not have any optimizations to reduce writes into the OS disk. Your usb media will most likely start failing within a few weeks of usage. Most common symptom is basic command execution does not work, denied login, etc. More information `here <https://forum.openmediavault.org/index.php/Thread/6438-Tutorial-Experimental-Third-party-Plugin-available-Reducing-OMV-s-disk-writes-al/>`_
 
 What is the file :file:`/etc/openmediavault/config.xml` for?
 	Is the database configuration store file for |omv|. When a change is performed in the |webui|, the config value is stored and/or retrieve by rpc to/from this file. If this is a save change, then mkconf passes the value to the service configuration file and reloads the daemon in case is necessary.
@@ -38,7 +38,7 @@ How can use the default HTTP engine to hold my own web page?
 	Do not modify |omv| default NGINX files. You can place your website configurations at :file:`/etc/nginx/sites-available` and enable it with ``nginx_ensite <SITE>``. Read more information in the `NGINX documentation <http://nginx.org/en/docs/>`_.
 
 Why does the system rewrites a configuration file(s) that I have manually edited?
-	OMV takes full control of some system services. This services include monit, ntp, samba, network, proftpd, nginx, php5-fpm, etc.
+	OMV takes full control of some system services. This services include monit, ntp, samba, network, proftpd, nginx, php5-fpm, etc. Read :doc:`here </various/files>`.
 
 How can I modify an internal value of some service |omv| has control over?
 	Read :doc:`here <various/advset>` for advanced configurations.

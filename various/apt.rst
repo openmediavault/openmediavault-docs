@@ -4,7 +4,7 @@ Software
 Overview
 ----
 
-|omv| is under a Debian distribution. It uses apt to install packages. All
+Openmediavault is a Debian based distribution. It uses apt to install packages. All
 standard Debian packages are upgraded using the official Debian mirrors. |omv|
 packages are upgraded using the http://packages.openmediavault.org repository.
 

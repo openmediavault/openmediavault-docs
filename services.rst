@@ -114,7 +114,7 @@ With these options valid, read only and write user directives will be ignored wh
 
 .. note::
 	- The guest account is mapped to system account nobody, he doesn’t belong to group users, thus he HAS BY DEFAULT NO WRITE ACCESS just READ. This is can be reverted modifying the POSIX permissions of the share to 777.
-	- These directives are NOT ACL
+	- These directives are NOT ACL.
 
 
 Questions:

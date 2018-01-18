@@ -19,6 +19,7 @@ Installation variants:
     * :doc:`Dedicated drive </installation/via_iso>` - Adviced method via ISO image. This runs |omv| from its own drive.
     * :doc:`USB flash drive </installation/on_usb>` - This runs |omv| from a USB flash drive.
     * :doc:`Debian OS </installation/on_debian>` - This runs |omv| on top of an existing Debian OS.
+	* :doc:`SD card </installation/via_image>` - This runs |omv| from a SD card.
 
 First time use:
    If you have a screen attached, KVM or IMPI console the login screen will

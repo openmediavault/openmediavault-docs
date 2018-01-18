@@ -11,15 +11,12 @@ Burn the installer
 	$ sudo dd if=xxx.iso of=/dev/sdX bs=4096
 
 	If you have a CD-DVD burner, you can burn the ISO into an optical media
-	then boot from CD or DVD. Etcher can also be used to transfer arm images
-	into SD cards.
+	then boot from CD or DVD.
 
 Boot the installer
 ------------------
 	For x86 architecture, enter BIOS configuration, select to boot either from
-	USB or CD and reboot. ARM images are ready to go, so boot from sd card and
-	wait for the initial setup to complete. This takes around 30 minutes in
-	slow devices like Raspberry PI.
+	USB or CD and reboot.
 
 Installer
 ---------

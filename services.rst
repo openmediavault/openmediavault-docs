@@ -77,11 +77,15 @@ Shares are configured in this way:
 
 You can add extra options in the general and share configuration at the bottom, where you have a multi line text field. This options are hardcoded in the mkconf script but they can be changed using :doc:`environmental variables </various/advset>`.
 
+
 Privileges
 ^^^^
 
 The login access in Samba is configured using privileges. This means they will not act in the file system layer they will run in the samba authentication layer. From there the access can be controlled to be read only or read/write access and guest account access. This is done with the PRIVILEGES button in the shared folder section not the ACL.
 Privileges only gets only login access and from there determines if user can read or write. If write access is enabled and files/folders have restricted permissions then you will still not be able to write to folder using Samba.
+
+.. important::
+	samba does not use PAM for login, it has a different password database. When the admin changes a username password (or the username changes his) using the |webui| what |omv| does is that it changes both the linux login password and the samba internal database. If a username changes his password using shell, this will not be reflected in samba log in.
 
 Share types
 ^^^^
@@ -125,10 +129,12 @@ How do I enter credentials in a semi-public share?
 	In Mac OS X you can use CMD+K (if you are in Finder)
 
 Why the login keeps saying access denied?
-	This is more likely caused by two things: Permission issue (ACL or non default POSIX permission mode/ownership). You need to fix the permissions in the shared folder. Samba runs as privileged (root) user, even so if parts of path don't have adecuate permissions you can still get access denied.
+	This is more likely caused by two things: 
+		- Permission issue (ACL or non default POSIX permission mode/ownership). You need to fix the permissions in the shared folder. Samba runs as privileged (root) user, even so if parts of path don't have adecuate permissions you can still get access denied.
+		- Out of sync password in between linux and samba. This is very rare but it has happened. Test in ssh the following [tt]smbpasswd username[/tt] enter password and try and login again.
 
 Why I can't edit files that other users have created?
-	The default umask in samba is ``644`` for files. So to enable flexible sharing tick Enable permission inheritance in the samba share settings this will force ``664`` creation mode. Files created previously need to change their permission mode. Use reset permission utility. Check also that you don't have read only enabled. This option overrides privileges and POSIX.
+	The default umask in samba is ``644`` for files. To enable flexible sharing check Enable permission inheritance in the samba share settings, this will force ``664`` creation mode. Files created previously need to change their permission mode. Check also that you don't have read only enabled. This option overrides privileges and POSIX.
 
 FTP
 ====
@@ -228,10 +234,13 @@ NFS
 Overview
 ^^^^^^^^
 
-The configuration of the server is done using the common `NFS guidelines <https://help.ubuntu.com/community/SettingUpNFSHowTo>`_. Shared folders are actually binded to the /export directory. You can check by examining the ``/etc/fstab`` file after you have added a folder to the server. Then all folders are configured to share in /etc/exports as follows:::
+The configuration of the server is done using the common `NFS guidelines <https://help.ubuntu.com/community/SettingUpNFSHowTo>`_. Shared folders are actually binded to the /export directory. You can check by examining the ``/etc/fstab`` file after you have added a folder to the server. All NFS server configured folders are in /etc/exports as follows:::
 
 	/export/Shared_1 (fsid=1,rw,subtree_check,secure,root_squash)
 	/export/Videos 10.10.0.0/24 (fsid=2,rw,subtree_check,secure,nroot_squash)
+	/export (ro,fsid=0,root_squash,no_subtree_check,hide)
+
+The first two lines are examples, the last line is the NFSv4 pseudo file system. [1]_ [2]_
 
 
 Server Shares
@@ -240,8 +249,8 @@ Server Shares
 The following options are available to configure from the |webui|:
 
 	- **Shared folder:** Select a folder, the system will add an bind entry to fstab, mount that bind and add it to /etc/exports file
-	- **Client:** Enter a single ip, host or network cidr notation. Only one entry is allowed at the moment. You can leave it empty if you do not want network security.
-	- **Privilege:** This will append read write (rw) or read-only (ro) to ``/etc/exports``. [1]_
+	- **Client:** Enter a single ip, host or network CIDR notation. Only one entry is allowed at the moment. You can leave it empty if you do not want network security.
+	- **Privilege:** This will append read write (rw) or read-only (ro) to ``/etc/exports``. [3]_
 	- **Extra options:** Add options according the `exports manual <https://linux.die.net/man/5/exports>`_. If squash options are not specified, the mkconf script will add ``root_squash`` by default which is not displayed in the text field.
 
 	The server also shares by default the pseudo root filesystem of /exports as NFSv4.
@@ -281,8 +290,9 @@ Tips
 Macos/OSX
 	If you want to mount your NFS exports, add insecure in extra opions or use ``resvport`` in the command line.
 
-	Example:
-	 ``sudo mount -t nfs -o resvport,rw 192.168.3.1:/export/Videos /private/nfs``
+	Example::
+	
+	$ sudo mount -t nfs -o resvport,rw 192.168.3.1:/export/Videos /private/nfs
 
 Debian
 	Debian distributions (and many others) always include the group users with gid=100 by default, if you want to resolve permissions easily for all users of a PC using linux add anonuid=100 in extra options. This will force all mounts to use that gid.
@@ -326,11 +336,119 @@ The SFTP server comes enabled by default for root and ssh group. So POSIX folder
 
 
 
-Netatalk
-========
+Netatalk (plugin)
+=====
+
+Overview
+^^^^
+Netatalk software was expected to reach version 3.x with Debian Jessie. Unfortunatly due to some unresolved issue with the maintainers, Debian team `opted <https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=690227>`_ to leave it out of Jessie and future releases. Debian Wheezy was the latest release with netatalk. To avoid loosing netatalk as a plugin |omv| uses a debianized source of netatalk 3.x maintained by Adrian Knoth [4]_. Openmediavault does not maintain this software.
+
+Configuration
+^^^^
+The server panel provides minimal options to the server, but it has an extra field in case you need `more directives <http://netatalk.sourceforge.net/3.1/htmldocs/afp.conf.5.html>`_. The default configuration file is located in ``/etc/netatalk/afp.conf``, the global section by default is as follow::
+	
+	[Global]
+	max connections = 20
+	mac charset = MAC_ROMAN
+	unix charset = LOCALE
+	guest account = nobody
+	uam list = uams_dhx.so,uams_dhx2.so
+	save password = no
+
+Netatalk provides PAM modules, so a change of password in terminal or web interface should be reflected inmediately in AFP login.
+
+Shared Folders
+^^^^
+The plugin uses the privileges database, so in the same way |omv| configures samba shares, the login is controlled using valid, read and write directives in the software layer, not the filesystem. This is an example of a share in netatalk with default options::
+
+	[Documents]
+	path = /media/dev-disk-by-label-VOLUME1/documents
+	read only = no
+	unix priv = yes
+	file perm = 0664
+	directory perm = 0775
+	umask = 0002
+	invisible dots = no
+	time machine = no
+	valid users = "mike"
+	invalid users = 
+	rolist = 
+	rwlist = "mike"
+
+Password
+	In case you don't want to use privileges you can assign a single password (no username) to the share.
+
+Time Machine
+	Support for the Apple backup software was added in netatalk 2.x, and improved in 3.x. Just check the box in the share options to make announce an individual share as a time machine server. 
+
+Guest Access
+	You can select guest access which by default is read only. A second checkbox is provided for giving write access to guest.
+
+Quota
+	You can define a size limit, in case you have multiple time machine volumes and want to prevent them to fill up the data drives.
 
 RSync
 =====
 
+The server can be configured to act as a client to pull and push data to remote locations as well as act an rsync daemon server, where other clients can retrieve or store data from/to the server. In rsync languague, the shared folders are called modules. Since |omv| version 3.0 is possible now to create remote rsync jobs using ssh as transport shell.
 
-.. [1] This is not standard |omv| privileges as in the shared folder section
+The rsync is divided in two tabs
+
+Jobs (client)
+^^^^
+Based on cron, the tasks can be configured to run at certain time or make it repetive. A few of the options explained
+
+Type
+	- Local: This will run an rsync in between two internal folders of the server. For example you can use this to move data across different disks in your system
+	- Remote: This will deactivate destination folder, and instead you'll need to place a destination server address. You can select here:
+
+		Mode (remote)
+			- Push: store contents to a remote server
+			- Pull: Retrieve contents from a remote server
+
+	Selecting one or the other will invert the folder as source or destination, the same as the server address.
+
+Destination/Source Shared Folder
+	Choose a shared folder where you want the contents to be stored (pull) or you want the contents from that folder to be sent to a remote server (push)
+
+Destination/Source Server
+	You need to put address server host or ip.
+
+	Examples:
+
+	If you are targeting the job against an rsync daemon server:
+	::
+		rsync://10.10.10.12/ModuleName
+		username@10.10.10.12::ModuleName
+		rsync://username@10.10.10.12:873/ModuleName
+
+	If you are going to connect to another server just using ssh with PKA:
+	::
+		username@10.10.0.12:/srv/dev-disk-by-label-VOLUME1/Documents
+
+	.. warning::
+		When the rsync task is configured using ssh with PKA, the script that runs the jobs is non-interactive, this means there cannot be a neither a passphrase for the private key or a login password. Make sure your private is not created with a password (in case is imported). Also make sure the remote server can accept PKA and not enforce password login.
+
+Password (remote)
+	This is a password that is configured for the remote rsync daemon module. Is not the username login password defined in the Rights Management section of the server. Read ahead in server tab.
+
+There are options are available which are the most commonly used in rsync. At the end there is an extra text field where you add more `options <http://linux.die.net/man/1/rsync>`_.
+
+Server
+^^^^
+
+This is the place for configuring the rsync daemon and it's modules (shared folder).
+
+Settings
+	Change listening port of the daemon and add extra configurations `directives <https://www.samba.org/ftp/rsync/rsyncd.conf.html>`_text field.
+
+Modules
+	This is where you add shared folders to be available to the daemon. The options are explained in the module web panel. If you want to protect the modules you can select the next tab and choose a server username and establish a password. Documentation for the extra options for the modules is provided by rsyncd manual.
+
+Actual configuration
+	The server makes the tasks run byt placing them in ``/etc/cron.d/openmediavault-rsync`` as single lines per tasks. You can see the cron time at the beginning, then user (root) and target file that holds the actual rsync file with the final command. The files are stored in ``/var/lib/openmediavault/cron.d/rsync-<LONG-UUID>`` if you want to examine your full rsync command.
+
+
+.. [1] https://help.ubuntu.com/community/NFSv4Howto#NFSv4_without_Kerberos
+.. [2] https://www.centos.org/docs/5/html/5.1/Deployment_Guide/s3-nfs-server-config-exportfs-nfsv4.html
+.. [3] This is not standard |omv| privileges as in the shared folder section

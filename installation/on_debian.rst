@@ -26,7 +26,7 @@ Add the package repositories::
     # deb http://downloads.sourceforge.net/project/openmediavault/packages erasmus partner
     EOF
 
-Install the |omv| package::
+Install the |omv| 3 (Erasmus) package::
 
     export LANG=C
     export DEBIAN_FRONTEND=noninteractive
@@ -59,7 +59,7 @@ Add the package repositories::
     # deb http://downloads.sourceforge.net/project/openmediavault/packages arrakis partner
     EOF
 
-Install the |omv| package::
+Install the |omv| 4 (Arrakis) package::
 
     export LANG=C
     export DEBIAN_FRONTEND=noninteractive

@@ -10,7 +10,7 @@ Samba server comes from Debian software repositories. |omv| developer does not m
 General
 ^^^^
 
-The server configures samba as standalone mode. The default global section is as follows:
+The server configures Samba as standalone mode. The default global section is as follows:
 
 ..  code-block::conf
 
@@ -81,11 +81,11 @@ You can add extra options in the general and share configuration at the bottom, 
 Privileges
 ^^^^
 
-The login access in Samba is configured using privileges. This means they will not act in the file system layer they will run in the samba authentication layer. From there the access can be controlled to be read only or read/write access and guest account access. This is done with the PRIVILEGES button in the shared folder section not the ACL.
+The login access in Samba is configured using privileges. This means they will not act in the file system layer they will run in the Samba authentication layer. From there the access can be controlled to be read only or read/write access and guest account access. This is done with the PRIVILEGES button in the shared folder section not the ACL.
 Privileges only gets only login access and from there determines if user can read or write. If write access is enabled and files/folders have restricted permissions then you will still not be able to write to folder using Samba.
 
 .. important::
-	samba does not use PAM for login, it has a different password database. When the admin changes a username password (or the username changes his) using the |webui| what |omv| does is that it changes both the linux login password and the samba internal database. If a username changes his password using shell, this will not be reflected in samba log in.
+	Samba does not use PAM for login, it has a different password database. When the admin changes a username password (or the username changes his) using the |webui| what |omv| does is that it changes both the linux login password and the Samba internal database. If a username changes his password using shell, this will not be reflected in Samba log in.
 
 Share types
 ^^^^
@@ -102,14 +102,14 @@ This means that every user will have to provide valid OMV credentials to access 
 	This will allow every user to log into the share.
 
 **Semi-public:**
-*When login is not provided, the guest user is used. This is the "guest allowed" option from the samba share option*::
+*When login is not provided, the guest user is used. This is the "guest allowed" option from the Samba share option*::
 	guest ok = yes
 	read list = User1, @Group1
 	write list = User2, @Group2
 
 Notice here if you have a user that you have not set up privileges for (thank means blank tick boxes) he will be able to login anyway and have write access.
 
-**Public only:** *The guest user is always used. This is the Guest Only option in the samba share configuration.*::
+**Public only:** *The guest user is always used. This is the Guest Only option in the Samba share configuration.*::
 
 	guest ok = yes
 	guest only = yes
@@ -129,12 +129,16 @@ How do I enter credentials in a semi-public share?
 	In Mac OS X you can use CMD+K (if you are in Finder)
 
 Why the login keeps saying access denied?
-	This is more likely caused by two things: 
+	This is more likely caused by two things:
 		- Permission issue (ACL or non default POSIX permission mode/ownership). You need to fix the permissions in the shared folder. Samba runs as privileged (root) user, even so if parts of path don't have adecuate permissions you can still get access denied.
-		- Out of sync password in between linux and samba. This is very rare but it has happened. Test in ssh the following [tt]smbpasswd username[/tt] enter password and try and login again.
+		- Out of sync password in between linux and Samba. This is very rare but it has happened. Test in ssh the following [tt]smbpasswd username[/tt] enter password and try and login again.
 
 Why I can't edit files that other users have created?
-	The default umask in samba is ``644`` for files. To enable flexible sharing check Enable permission inheritance in the samba share settings, this will force ``664`` creation mode. Files created previously need to change their permission mode. Check also that you don't have read only enabled. This option overrides privileges and POSIX.
+	The default umask in Samba is ``644`` for files. To enable flexible sharing
+	check `Enable permission inheritance` in the Samba share settings, this will
+	force ``664`` creation mode. Files created previously need to change their
+	permission mode. Check also that you don't have read only enabled. This
+	option overrides privileges and POSIX.
 
 FTP
 ====
@@ -291,7 +295,7 @@ Macos/OSX
 	If you want to mount your NFS exports, add insecure in extra opions or use ``resvport`` in the command line.
 
 	Example::
-	
+
 	$ sudo mount -t nfs -o resvport,rw 192.168.3.1:/export/Videos /private/nfs
 
 Debian
@@ -346,7 +350,7 @@ Netatalk software was expected to reach version 3.x with Debian Jessie. Unfortun
 Configuration
 ^^^^
 The server panel provides minimal options to the server, but it has an extra field in case you need `more directives <http://netatalk.sourceforge.net/3.1/htmldocs/afp.conf.5.html>`_. The default configuration file is located in ``/etc/netatalk/afp.conf``, the global section by default is as follow::
-	
+
 	[Global]
 	max connections = 20
 	mac charset = MAC_ROMAN
@@ -359,7 +363,7 @@ Netatalk provides PAM modules, so a change of password in terminal or web interf
 
 Shared Folders
 ^^^^
-The plugin uses the privileges database, so in the same way |omv| configures samba shares, the login is controlled using valid, read and write directives in the software layer, not the filesystem. This is an example of a share in netatalk with default options::
+The plugin uses the privileges database, so in the same way |omv| configures Samba shares, the login is controlled using valid, read and write directives in the software layer, not the filesystem. This is an example of a share in netatalk with default options::
 
 	[Documents]
 	path = /media/dev-disk-by-label-VOLUME1/documents
@@ -371,15 +375,15 @@ The plugin uses the privileges database, so in the same way |omv| configures sam
 	invisible dots = no
 	time machine = no
 	valid users = "mike"
-	invalid users = 
-	rolist = 
+	invalid users =
+	rolist =
 	rwlist = "mike"
 
 Password
 	In case you don't want to use privileges you can assign a single password (no username) to the share.
 
 Time Machine
-	Support for the Apple backup software was added in netatalk 2.x, and improved in 3.x. Just check the box in the share options to make announce an individual share as a time machine server. 
+	Support for the Apple backup software was added in netatalk 2.x, and improved in 3.x. Just check the box in the share options to make announce an individual share as a time machine server.
 
 Guest Access
 	You can select guest access which by default is read only. A second checkbox is provided for giving write access to guest.

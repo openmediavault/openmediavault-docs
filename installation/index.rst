@@ -14,18 +14,18 @@ Before you begin:
 	  after installation anyway).
 
 Installation variants:
-    Choose your installation variant and follow the instructions.
+	Choose your installation variant and follow the instructions.
 
-    * :doc:`Dedicated drive </installation/via_iso>` - Adviced method via ISO image. This runs |omv| from its own drive.
-    * :doc:`USB flash drive </installation/on_usb>` - This runs |omv| from a USB flash drive.
-    * :doc:`Debian OS </installation/on_debian>` - This runs |omv| on top of an existing Debian OS.
+	* :doc:`Dedicated drive </installation/via_iso>` - Adviced method via ISO image. This runs |omv| from its own drive.
+	* :doc:`USB flash drive </installation/on_usb>` - This runs |omv| from a USB flash drive.
+	* :doc:`Debian OS </installation/on_debian>` - This runs |omv| on top of an existing Debian OS.
 	* :doc:`SD card </installation/via_image>` - This runs |omv| from a SD card.
 
 First time use:
-   If you have a screen attached, KVM or IMPI console the login screen will
-   display the current IP address assigned for the |webui|. Open your browser
-   and type that IP address. The default |webui| login credential is
-   ``admin:openmediavault``, the ``root`` password is the one you setup during
-   installation.
+	If you have a screen attached, KVM or IMPI console the login screen will
+	display the current IP address assigned for the |webui|. Open your browser
+	and type that IP address. The default |webui| login credential is
+	``admin:openmediavault``, the ``root`` password is the one you setup during
+	installation.
 
-   For ARM images the root password is the same as admin password.
+	For ARM images the root password is the same as admin password.

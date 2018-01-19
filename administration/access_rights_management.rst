@@ -99,7 +99,7 @@ fields.
 Edit
 ^^^^
 Just to add or remove members from groups. Default groups created in the
-|webui| have a gid greater than 1000. Same as usernames that are created
+|webui| have a gid greater than ``1000``. Same as usernames that are created
 in CLI they are not stored in the internal database. Just edit, insert a
 comment.
 
@@ -170,12 +170,12 @@ When a plugin or a service uses a |sf| its stores the uuid only. Later on
 using helper scripts or internal CLI |omv| commands the path can be obtained
 just by using the :code:`uuid` number.
 A shared folder can be used across all over the system backend. Is available
-to select it in sharing services (FTP, Samba, RSync, etc) at the same time.
+to select it in sharing services (FTP, Samba, RSync, etc.) at the same time.
 Plugins can use them also just by using the shared folder combo class.
 
 .. note::
 	- A |sf| belongs to an |omv| filesystem entry. Is not possible to unmount the filesystem volume without deleting the folder configuraton from the |webui|.
-	- If a |sf| is being used by a service (FTP, plugins, etc) is not possible to delete it. Is necessary to disengage the |sf| from the service(s) or section(s) that is holding it before proceeding with removal of the configuration. This will also prevent to unmount a device from the |webui| in the filesystem section if there is still a |sf| associated with it.
+	- If a |sf| is being used by a service (FTP, plugins, etc.) is not possible to delete it. Is necessary to disengage the |sf| from the service(s) or section(s) that is holding it before proceeding with removal of the configuration. This will also prevent to unmount a device from the |webui| in the filesystem section if there is still a |sf| associated with it.
 	- Due to the design of the software is not possible at the moment to know what section or service is holding which |sf|.
 
 Edit

@@ -11,7 +11,7 @@ Overview
 	- Predictable device path of the filesystem  <fsname>
 	- Target mount directory <dir>
 	- Filesystem options <opts>
-	- Filesystem type (ext3, ext4, etc) <type>
+	- Filesystem type (EXT3, EXT4, etc.) <type>
 
 	You can inspect a mntent entry in config.xml it should look like this:
 

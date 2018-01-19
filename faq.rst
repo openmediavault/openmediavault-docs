@@ -47,7 +47,7 @@ How can I modify or add a network configuration of :file:`/etc/network/interface
 	The interfaces file is controlled by |omv|. To add network interfaces that are not configurable through the |webui| or other options not present, you need to use  :doc:`advanced settings <various/advset>`.
 
 Why my disks mount paths have a long alphanumeric number?
-	The long number is called UUID, it is used by fstab to mount disks. This number is unique per filesystem (or at least unlikely possible that another filesystem comes with an identical one). This helps maintaing the mount points. The old linux way (sda1, sdb1, etc) is not guaranteed that /sda1 is the same disk on next reboot. If you have trouble identiying them in terminal, you can always create a pool with symlinks to each file system with easy to remember names.
+	The long number is called UUID, it is used by fstab to mount disks. This number is unique per filesystem (or at least unlikely possible that another filesystem comes with an identical one). This helps maintaing the mount points. The old linux way (sda1, sdb1, etc.) is not guaranteed that /sda1 is the same disk on next reboot. If you have trouble identiying them in terminal, you can always create a pool with symlinks to each file system with easy to remember names.
 
 	This behaviour has been deprecated now in current omv releases including stable (Jessie). The default creation of mount paths is documented `here <https://github.com/openmediavault/openmediavault/blob/20ec529737e6eca2e1f98d0b3d1ade16a3c338e1/deb/openmediavault/usr/share/openmediavault/engined/rpc/filesystemmgmt.inc#L823-L833>`_.
 

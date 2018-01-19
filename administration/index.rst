@@ -8,5 +8,5 @@ Administration
 
    certificates
    access_rights_management
-   services
+   services/index
    cron

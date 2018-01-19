@@ -1,5 +1,5 @@
-Netatalk (plugin)
-#################
+Netatalk :fa:`puzzle-piece`
+###########################
 
 Overview
 --------

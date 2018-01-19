@@ -69,7 +69,7 @@ Privileges
 
 The button opens a windows that displays all current exisiting |sf| and their
 privileges for the particular user selected. How the privileges are stored is
-described further down in the |sf| `section <#shared-folder>`_.
+described further down in the `shared folder <#shared-folder>`_ section.
 
 Settings
 ^^^^^^^^

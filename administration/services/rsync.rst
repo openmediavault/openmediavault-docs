@@ -2,68 +2,99 @@ RSync
 #####
 
 The server can be configured to act as a client to pull and push data to remote
-locations as well as act an rsync daemon server, where other clients can
-retrieve or store data from/to the server. In rsync languague, the shared
+locations as well as act an RSync daemon server, where other clients can
+retrieve or store data from/to the server. In RSync languague, the shared
 folders are called modules. Since |omv| version 3.0 is possible now to create
-remote rsync jobs using ssh as transport shell.
-The rsync is divided in two tabs:
+remote RSync jobs using ssh as transport shell.
+The RSync is divided in two tabs:
+
+.. _admin_rsync_jobs_client:
 
 Jobs (client)
 -------------
 
-Based on cron, the tasks can be configured to run at certain time or make it repetive. A few of the options explained:
+Based on cron, the tasks can be configured to run at certain time or make it
+repetive. A few of the options explained:
 
 Type
-	- Local: This will run an rsync in between two internal folders of the server. For example you can use this to move data across different disks in your system
-	- Remote: This will deactivate destination folder, and instead you'll need to place a destination server address. You can select here:
+	- Local: This will run an RSync in between two internal folders of the
+	  server. For example you can use this to move data across different disks
+	  in your system
+	- Remote: This will deactivate destination folder, and instead you'll need
+	  to place a destination server address. You can select here:
 
 		Mode (remote)
 			- Push: store contents to a remote server
 			- Pull: Retrieve contents from a remote server
 
-	Selecting one or the other will invert the folder as source or destination, the same as the server address.
+	Selecting one or the other will invert the folder as source or destination,
+	the same as the server address.
 
 Destination/Source Shared Folder
-	Choose a shared folder where you want the contents to be stored (pull) or you want the contents from that folder to be sent to a remote server (push)
+	Choose a shared folder where you want the contents to be stored (pull) or
+	you want the contents from that folder to be sent to a remote server (push).
 
 Destination/Source Server
 	You need to put address server host or ip.
 
 	Examples:
 
-	If you are targeting the job against an rsync daemon server::
+	If you are targeting the job against an RSync daemon server::
 
 		rsync://10.10.10.12/ModuleName
 		username@10.10.10.12::ModuleName
 		rsync://username@10.10.10.12:873/ModuleName
 
-	If you are going to connect to another server just using ssh with public key::
-	
+	If you are going to connect to another server just using SSH with
+	public key::
+
 		username@10.10.0.12:/srv/dev-disk-by-label-VOLUME1/Documents
 
 .. warning::
-	When the rsync task is configured using ssh with PKA, the script that runs the jobs is non-interactive, this means there cannot be a neither a passphrase for the private key or a login password. Make sure your private is not created with a password (in case is imported). Also make sure the remote server can accept PKA and not enforce password login.
+	When the RSync task is configured using ssh with PKA, the script that runs
+	the jobs is non-interactive, this means there cannot be a neither a
+	passphrase for the private key or a login password. Make sure your
+	private is not created with a password (in case is imported). Also make
+	sure the remote server can accept PKA and not enforce password login.
 
 **Authentication (remote)**
 
-	- **Password**: For the remote rsync daemon module. Is not the username login password defined in the Rights Management section of the server. Read ahead in server tab.
-	- **Public Key**: Select a key. These are created/imported from ``General->Certificates->SSH`` `section <certificates.html#ssh-secure-shell>`_.
+	- **Password**: For the remote RSync daemon module. Is not the username
+	  login password defined in the Rights Management section of the server.
+	  Read ahead in server tab.
+	- **Public Key**: Select a key. These are created/imported from
+	  ``General | Certificates | SSH`` :ref:`section <admin_certificate_ssh>`.
 
-There are options are available which are the most commonly used in rsync. At the end there is an extra text field where you add more `options <http://linux.die.net/man/1/rsync>`_.
+There are options are available which are the most commonly used in RSync.
+At the end there is an extra text field where you add more
+`options <http://linux.die.net/man/1/rsync>`_.
 
 Server
 ------
 
-This is the place for configuring the rsync daemon and it's modules (shared folder).
+This is the place for configuring the RSync daemon and it's modules
+(shared folder).
 
 Settings
-	Change listening port of the daemon and add extra configurations `directives <https://www.samba.org/ftp/rsync/rsyncd.conf.html>`_ text field.
+	Change listening port of the daemon and add extra configurations
+	`directives <https://www.samba.org/ftp/rsync/rsyncd.conf.html>`_
+	text field.
 
 Modules
-	This is where you add shared folders to be available to the daemon. The options are explained in the module web panel. If you want to protect the modules you can select the next tab and choose a server username and establish a password. Be aware the password is only for the modules, is not the linux password. Documentation for the extra options for the modules is provided by rsyncd manual.
+	This is where you add shared folders to be available to the daemon. The
+	options are explained in the module web panel. If you want to protect the
+	modules you can select the next tab and choose a server username and
+	establish a password. Be aware the password is only for the modules, is
+	not the linux password. Documentation for the extra options for the
+	modules is provided by rsyncd manual.
 
 Configuration
-	The server makes the tasks run by placing them in ``/etc/cron.d/openmediavault-rsync`` in one line per job. You can see the cron time at the beginning, then user (root) and target file that holds the actual rsync file with the final command. The files are stored in ``/var/lib/openmediavault/cron.d/``, prefixed with ``rsync`` and a <uuid>. A default ssh rsync job looks like this.
+	The server makes the tasks run by placing them in
+	:file:`/etc/cron.d/openmediavault-rsync` in one line per job. You can see the
+	cron time at the beginning, then user (root) and target file that holds
+	the actual RSync file with the final command. The files are stored in
+	:file:`/var/lib/openmediavault/cron.d/`, prefixed with :code:`rsync` and a
+	:code:`<uuid>`. A default SSH RSync job looks like this.
 
 .. code-block:: shell
 

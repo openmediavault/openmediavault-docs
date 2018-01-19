@@ -4,7 +4,9 @@ SSH
 Overview
 --------
 
-Secure shell comes disabled by default in OMV, if you install |omv| on top a Debian installation, the systemd unit will be disabled after the server packages are installed. Just login into |webui| to re-enable the ssh service.
+Secure shell comes disabled by default in |omv|, if you install |omv| on top a
+Debian installation, the systemd unit will be disabled after the server
+packages are installed. Just login into |webui| to re-enable the ssh service.
 
 The configuration options are minimal, But you can:
 
@@ -20,7 +22,7 @@ Normal |omv| users created in the |webui| can access the remote shell by adding 
 
 $ ssh-keygen -e -f nameofthekey.pub
 
-You can paste the output in the users profile. ``Access Right Management->Users->$username->Edit->Public Keys``
+You can paste the output in the users profile at ``Access Right Management | Users | <USERNAME> | Edit | Public Keys``.
 
 You can add as many keys as you want. The public key looks like this::
 

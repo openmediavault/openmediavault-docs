@@ -8,13 +8,13 @@ Essential elements:
 
 	**Backend** PHP code, executes several tasks.
 
-	**config.xml** Database file in xml format, located in ``/etc/openmediavault`` We will refer in this explantion just as config.xml
+	**config.xml** Database file in xml format, located in :file:`/etc/openmediavault` We will refer in this explantion just as config.xml
 
-	**omv-mkconf** Shell script that accepts arguments. The name of the argument is related to the service it configures. ie: omv-mkconf samba, omv-mkconf sharedfolders and so on. The arguments are all files located in ``/usr/share/openmediavault/mkconf`` folder.
+	**omv-mkconf** Shell script that accepts arguments. The name of the argument is related to the service it configures. ie: omv-mkconf samba, omv-mkconf sharedfolders and so on. The arguments are all files located in :file:`/usr/share/openmediavault/mkconf` folder.
 
 	**omv-engined** RPC daemon that runs all the php backend code. The nginx web server connects to this daemon through the fastcgi php socket. If an error appears in the |webui| that indicates no connection to the php socket means the daemon is not running.
 
-	**Listeners** Php backend code that listens to changes in the database. They are located in the modules section of the code ``/usr/share/openmediavault/engined/modules``
+	**Listeners** Php backend code that listens to changes in the database. They are located in the modules section of the code :file:`/usr/share/openmediavault/engined/modules`.
 
 	**/var/lib/openmediavault/dirtymodules.json** File that enumerates all sections that need to be reconfigured after the database has been written.
 
@@ -25,7 +25,7 @@ Essential elements:
 Read
 ----
 
-When a user clicks on a panel, the javascript code retrieves values from config.xml using a rpc call. The rpc call has two main components the usually the service name of the section (is in the js code) and the method, usually named ``getSettings``. In chrome browser you can hit F12 to open the developer console, go to samba section. Then in the network section of the console you can see several rpc.php calls. Find the one related to samba, right click and select copy as cURL.
+When a user clicks on a panel, the javascript code retrieves values from config.xml using a rpc call. The rpc call has two main components the usually the service name of the section (is in the js code) and the method, usually named :code:`getSettings`. In chrome browser you can hit F12 to open the developer console, go to samba section. Then in the network section of the console you can see several rpc.php calls. Find the one related to samba, right click and select copy as cURL.
 
 This is the json payload sent to omv-engined:
 
@@ -118,9 +118,9 @@ And the response:
 
 Write
 ----
-A user can do a simple task as to create a shared folder or change some settings in a service section. Whenever the user hits the save button, all fields from the section are submitted from the frontend via rpc to the internal database in config.xml, even the ones that are not changed. This is similar on what happens when reading values the method here is named differently when saving: ``setSettings``.
+A user can do a simple task as to create a shared folder or change some settings in a service section. Whenever the user hits the save button, all fields from the section are submitted from the frontend via rpc to the internal database in :file:`config.xml`, even the ones that are not changed. This is similar on what happens when reading values the method here is named differently when saving: :code:`setSettings`.
 
-Stopping here, you can examine by yourself config.xml in terminal and see all the new stored values, what follows is that usually a yellow button will appear to indicate you need to apply changes. The yellow button happens for one reason only: the dirtymodules.json file.
+Stopping here, you can examine by yourself :file:`config.xml` in terminal and see all the new stored values, what follows is that usually a yellow button will appear to indicate you need to apply changes. The yellow button happens for one reason only: the dirtymodules.json file.
 
 So the save button does two things actually, sends information to config.xml and what is called mark the relevant module as dirty. As en example: Making a change in general samba or its shares will create a dirtymodules file like this:
 
@@ -139,15 +139,15 @@ After you hit the apply button, this very long  `function <https://github.com/op
 
 In the following order, this will happen on background:
 
-``omv-mkconf samba`` -> ``/etc/samba/smb.conf`` will be completly rewritten.
+:command:`omv-mkconf samba` -> :file:`/etc/samba/smb.conf` will be completly rewritten.
 
-``omv-mkconf zeroconf`` --> All files at ``/etc/avahi/services/{ftp,smb,web,ssh,nfs}.service`` will be rewritten.
+:command:`omv-mkconf zeroconf` --> All files at :file:`/etc/avahi/services/{ftp,smb,web,ssh,nfs}.service` will be rewritten.
 
 After that is time for daemon reload, so:
 
-``systemctl stop samba`` followed by ``systemctl start samba`` --> Samba daemon is restarted
+:command:`systemctl stop samba` followed by :command:`systemctl start samba` --> Samba daemon is restarted
 
-``systemctl stop avahi-daemon`` followed by ``systemctl start avahi-daemon`` --> avahi daemon is restarted
+:command:`systemctl stop avahi-daemon` followed by :command:`systemctl start avahi-daemon` --> avahi daemon is restarted
 
 That php function performs also checks for dependancies, in case a configuration needs to be reconfigured or reloaded before/after another one.
 

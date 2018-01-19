@@ -125,8 +125,9 @@ With these options valid, read only and write user directives will be ignored wh
 	- These directives are NOT ACL.
 
 
-Questions:
+Questions
 ----
+
 How do I enter credentials in a semi-public share?
 	In most cases the user will always be logged as guest.
 	You have to use windows map network drive feature to provide other login credentials different from guest.

@@ -1,5 +1,5 @@
 How does it works?
-####
+##################
 
 |omv| is a complex piece of software. Developers can easily understand how it works by looking at the source code and developing plugins. For the average user is a little bit more complicated. Some of the mechanics on how it works are explained 	ahead.
 
@@ -20,7 +20,7 @@ Essential elements:
 
 
 |webui| values to/from the database
-^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Read
 ----
@@ -31,7 +31,7 @@ This is the json payload sent to omv-engined:
 
 .. code-block:: json
 
-	{  
+	{
 	   "service":"SMB",
 	   "method":"getSettings",
 	   "params":null,
@@ -42,8 +42,8 @@ and the response:
 
 .. code-block:: json
 
- {  
-   "response":{  
+ {
+   "response":{
       "enable":true,
       "workgroup":"HOME",
       "serverstring":"%h server",
@@ -67,10 +67,10 @@ Just after the one before, another call, this time to get the samba share list:
 
 .. code-block:: json
 
-	{  
+	{
 	   "service":"SMB",
 	   "method":"getShareList",
-	   "params":{  
+	   "params":{
 	      "start":0,
 	      "limit":25,
 	      "sortfield":"sharedfoldername",
@@ -84,11 +84,11 @@ And the response:
 
 .. code-block:: json
 
-	{  
-	   "response":{  
+	{
+	   "response":{
 	      "total":1,
-	      "data":[  
-	         {  
+	      "data":[
+	         {
 	            "uuid":"9e4c8405-b01c-40b6-8c46-af6be17a1ff6",
 	            "enable":true,
 	            "sharedfolderref":"7ee2e4d0-8173-442b-88b9-63b4c731f920",
@@ -117,7 +117,8 @@ And the response:
 
 
 Write
-----
+-----
+
 A user can do a simple task as to create a shared folder or change some settings in a service section. Whenever the user hits the save button, all fields from the section are submitted from the frontend via rpc to the internal database in :file:`config.xml`, even the ones that are not changed. This is similar on what happens when reading values the method here is named differently when saving: :code:`setSettings`.
 
 Stopping here, you can examine by yourself :file:`config.xml` in terminal and see all the new stored values, what follows is that usually a yellow button will appear to indicate you need to apply changes. The yellow button happens for one reason only: the dirtymodules.json file.
@@ -125,7 +126,7 @@ Stopping here, you can examine by yourself :file:`config.xml` in terminal and se
 So the save button does two things actually, sends information to config.xml and what is called mark the relevant module as dirty. As en example: Making a change in general samba or its shares will create a dirtymodules file like this:
 
 .. code-block:: json
-	
+
 	[
 	    "samba",
 	    "zeroconf"
@@ -133,7 +134,7 @@ So the save button does two things actually, sends information to config.xml and
 
 
 Reconfiguring services
-----
+----------------------
 
 After you hit the apply button, this very long  `function <https://github.com/openmediavault/openmediavault/blob/9ddc8b66f3f666987157a0e7b84d57e7c10f9ba4/deb/openmediavault/usr/share/openmediavault/engined/rpc/config.inc#L72-L204>`_ will get executed.
 
@@ -166,11 +167,8 @@ What can break the web interface?
 
 	All of the above errors should be able to be corrected with omv-firstaid. Offending files in sites-available should be removed from there to start the nginx server.
 
-
-
 .. note::
 
 	As noticed how |omv| works, the software does not parses configuration files. Any changes users add manually to smb.conf or proftpd.conf will not be reflected in the |webui|. This why some hardcoded values are suggested to be done via environmental variables. It can happen that a plugin marks samba as dirty by design then the apply button will rewrite everything and restart it also.
-
 
 Not every component in |omv| is executed in the way described above. For example the filesystem backend has a much more complex mechanics.

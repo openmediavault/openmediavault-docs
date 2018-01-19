@@ -10,7 +10,7 @@ community. The current support channels are:
 
 **Bugtracker**
 
-`<http://bugtracker.openmediavault.org>`_
+`<http://bugtracker.openmediavault.org/>`_
 
 **Forum**
 
@@ -24,11 +24,11 @@ to help you.
 
 **Facebook**
 
-`<https://www.facebook.com/openmediavault>`_
+`<https://www.facebook.com/openmediavault/>`_
 
 **Twitter**
 
-`<https://twitter.com/OpenMediaVault>`_
+`<https://twitter.com/OpenMediaVault/>`_
 
 **Discord**
 

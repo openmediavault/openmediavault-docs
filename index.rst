@@ -21,26 +21,20 @@ available right after installation of the base system. Additional 3rd-party
 plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
 
    releases
    prerequisites
    installation/index
    features
-   certificates
-   ARM
-   services
-   cron
+   administration/index
    plugins
    FAQ
    support
    press
    contributors
    copyright
-
-
-
 
 Indices and tables
 ==================

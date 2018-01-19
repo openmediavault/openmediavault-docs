@@ -32,10 +32,10 @@ The server configures all tasks done in the |webui| creating this file ``/etc/cr
 
 
 
-The scheduled cron time and the commands are called as script files located in this folder ``/var/lib/openmediavault/cron.d/``. All files in there are prefixed with ``username`` and the internal database uuid.
+Per line is the cron time or interval, username and the command. The actual command is wrapped in a shell script located in this folder ``/var/lib/openmediavault/cron.d/``. All files in there are prefixed with ``username`` and the internal database uuid.
 
 .. warning::
-	- When using a single command to be executed, make sure this does not have any bashism. This because the cron gets executed in pure shell #!/bin/sh. If you need to use something in bash wrap your command(s) in a bash script.
+	- When using a single command to be executed, make sure this does not have any bashism. This because the cron wrapper script gets executed in pure shell #!/bin/sh. If you need to use something in bash wrap your command(s) in a bash script.
 	- @hourly, @daily, @weekly and @monthly are just nicknames. If you select @daily and your computer is shutdown at midnight the task will not run [1]_.
 
 .. [1]  https://linux.die.net/man/5/crontab

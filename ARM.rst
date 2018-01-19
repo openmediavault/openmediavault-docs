@@ -11,15 +11,17 @@ Add
 ^^^^
 
 Information
-	The configuration panel gives you options to add, edit or remove users. When a user is created |omv| backend executes ``useradd`` in non-interactive mode with all the information passed from the text fields, this also creates an entry in ``/etc/passwd``, a hashed password in ``/etc/shadow`` and the corresponding password in the samba password database. 
+	The configuration panel gives you options to add, edit or remove users. When a user is created |omv| backend executes ``useradd`` in non-interactive mode with all the information passed from the text fields, this also creates an entry in ``/etc/passwd``, a hashed password in ``/etc/shadow`` and the password for the samba database. 
 
 	The mail field is used for cron jobs when the task is selected to run as specific user. By default users are created with ``/bin/nologin`` shell, this will prevent local and remote console access.
 
 Group
-	Add or remove users from specific groups. In linux groups can be used to control access to certain features and also for permissions. Adding a user to the ``sudo`` group will give root privileges on shell or adding a user to ``saned`` will give user access to scanners. By default all users created in the |webui| are added to the ``users`` group (gid=100). 
+	Add or remove users from specific groups. In linux groups can be used to control access to certain features and also for permissions. Adding a user to the ``sudo`` group will give root privileges on shell or adding a user to ``saned`` will give user access to scanners.
+
+	By default all users created in the |webui| are added to the ``users`` group (gid=100). 
 
 Public Key
-	Add or remove public keys for remote access for a user.
+	Add or remove public keys for `remote ssh access <services.html#id7>`_ for a user.
 
 .. :note:
 	- The user information information (except password) is also stored in the internal |omv|database, along with the public keys
@@ -50,7 +52,7 @@ The button opens a windows that displays all current exisitng |sf| and their pri
 Settings
 ^^^^
 
-This option is to select a shared folder as root folder for home folder. New users created in the |webui|. Existing users created before this setting was enabled will not have their home folders moved to that location. You can manually edit ``/etc/passwd`` to point them to the new location.
+This option is to select a shared folder as root folder for home folder for users created in the |webui|. Existing users created before this setting was enabled will not have their home folders moved to that location. You can manually edit ``/etc/passwd`` to point them to the new location and move the contents.
 
 
 Group
@@ -66,7 +68,7 @@ Bulk import works in similar as user account import. Just a csv text, delimited 
 
 Edit
 ^^^^
-Just to add or remove members from groups. Default groups created in the |webui| have a gid greater than 1000. Same as usernames that are created in CLI they are not stored in the internal database. Just edit, insert a comment. 
+Just to add or remove members from groups. Default groups created in the |webui| have a GID greater than 1000. Same as usernames that are created in CLI they are not stored in the internal database. Just edit, insert a comment to store them.
 
 Shared Folder
 ====
@@ -152,5 +154,8 @@ Privileges
 Same as in the user section, the window here is relative to the shared folder. It will display for the selected |sf| all the |omv| users/groups and their corresponding privileges. As you can see from the code block in the `add section <#id3>`_ privileges are expressed in the internal database in the same manner as permissions in linux, simplified using the octal mode: read/write(7), read-only(5) and no access(0).
 
 When a privilege is changed in the |webui| it descents into all relevant services (SMB, FTP and AFP). |omv| will reconfigure everything that is using a |sf|, this includes daemon files and stop/start daemons. This is important as some services or plugins might not use privileges but they will have their daemon restarted as they are using a |sf|.
+
+Also privileges apply to all services, a read/write will be the same in samba, ftp and netatalk for the same user if the same |sf| is used across all three services. In previous versions of |omv| it was possible to overcome this creating a different |sf| using the same path but different logical name, in current |omv| version 3.x and 4.x this is no longer possible.
+
 
 As explained here privileges can be edited from `shared folder <#shared-folder>`_ or `users <#user>`_ section. But is also possible to edit privileges from the |sf| combo selection. Example: go to ``Services -> SMB/CIFS -> Shares -> Edit``, the loupe next to |sf| field will display privileges and allow to edit them.

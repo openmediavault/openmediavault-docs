@@ -5,12 +5,12 @@ Services
 Samba
 ====
 
-Samba server comes from Debian software repositories. |omv| developer does not mantain this package, all bug, hotfixes and features come from Debian. Advanced features like spotlight server or time machine support is not available because they have not reach yet stable Debian or the Debian developers have not made it available in their build.
+Samba server comes from Debian software repositories. |omv| developer does not mantain this package, all bugs, fixes and features come from Debian. Advanced features like spotlight server or time machine support is not available because they have not reach yet stable Debian or the Debian developers have not made it available in their build.
 
 General
 ----
 
-The server configures Samba as standalone mode. The default global section
+The server configures Samba as standalone mode. The default global section:
 
 .. code-block:: guess
 
@@ -308,7 +308,7 @@ Debian
 	Debian distributions (and many others) always include the group users with ``gid=100`` by default, if you want to resolve permissions easily for all users of a PC using linux add ``anonuid=100`` in extra options. This will force all mounts to use that gid.
 
 Symlinks
-	This are not followed outside of their export path, so they have to be relative.
+	They cannot escape outside of their export path, so they have to be relative.
 
 Remote access
 	NFS was designed to be used as a local network protocol. Do not expose the NFS server to the internet. If you still need access use a VPN.
@@ -331,7 +331,7 @@ The configuration options are minimal, But you can:
 
 An extra text field is provided to enter more options. Examine first the file /etc/ssh/sshd_config before adding extra options otherwise the option you might want to add will not be applied. In that case you need to use change the environmental variable.
 
-Normal |omv| users created in the |webui| can access the remote shell by adding them to the ssh group. Using PKA for users requires keys to be added to their profile, you can do this in the Users section. The key has to be added in `RFC 4716 <https://tools.ietf.org/html/rfc4716>`_ format. To do that run::
+Normal |omv| users created in the |webui| can access the remote shell by adding them to the ssh group. Using PKA for users requires at least one key to be added to their profile, you can do this in the Users section. The key has to be added in `RFC 4716 <https://tools.ietf.org/html/rfc4716>`_ format. To do that run::
 
 $ ssh-keygen -e -f nameofthekey.pub
 
@@ -447,8 +447,8 @@ Type
 
 	Selecting one or the other will invert the folder as source or destination, the same as the server address.
 
-Destination/Source Shared Folder
-	Choose a shared folder where you want the contents to be stored (pull) or you want the contents from that folder to be sent to a remote server (push)
+Destination/Source Folder
+	Choose a |sf| where you want the contents to be stored (pull) or you want the contents from that directory to be sent to a remote server (push)
 
 Destination/Source Server
 	You need to put address server host or ip.
@@ -466,7 +466,7 @@ Destination/Source Server
 		username@10.10.0.12:/srv/dev-disk-by-label-VOLUME1/Documents
 
 .. warning::
-	When the rsync task is configured using ssh with PKA, the script that runs the jobs is non-interactive, this means there cannot be a neither a passphrase for the private key or a login password. Make sure your private is not created with a password (in case is imported). Also make sure the remote server can accept PKA and not enforce password login.
+	When the rsync task is configured using ssh with PKA, the script that runs the jobs is non-interactive, this means there cannot be a neither a passphrase for the private key or a login password. Make sure your private is not created with a password (in case is imported). Also make sure the remote server can accept PKA and does not enforce password login.
 
 **Authentication (remote)**
 	
@@ -475,19 +475,8 @@ Destination/Source Server
 
 There are options are available which are the most commonly used in rsync. At the end there is an extra text field where you add more `options <http://linux.die.net/man/1/rsync>`_.
 
-Server
-----
-
-This is the place for configuring the rsync daemon and it's modules (shared folder).
-
-Settings
-	Change listening port of the daemon and add extra configurations `directives <https://www.samba.org/ftp/rsync/rsyncd.conf.html>`_ text field.
-
-Modules
-	This is where you add shared folders to be available to the daemon. The options are explained in the module web panel. If you want to protect the modules you can select the next tab and choose a server username and establish a password. Be aware the password is only for the modules, is not the linux password. Documentation for the extra options for the modules is provided by rsyncd manual.
-
 Configuration
-	The server makes the tasks run by placing them in ``/etc/cron.d/openmediavault-rsync`` in one line per job. You can see the cron time at the beginning, then user (root) and target file that holds the actual rsync file with the final command. The files are stored in ``/var/lib/openmediavault/cron.d/``, prefixed with ``rsync`` and a <uuid>. A default ssh rsync job looks like this.
+	The tasks are ran by placing them in ``/etc/cron.d/openmediavault-rsync`` in one line per job in crontab language. First goes the time schedule, then running user (root) and command, which in this case is wrapper file that holds the actual rsync command. These files are stored in ``/var/lib/openmediavault/cron.d/``, prefixed with ``rsync`` and and the internal <uuid>. A default ssh rsync job looks like this:
 
 .. code-block:: shell
 
@@ -513,6 +502,17 @@ Configuration
 	rsync --verbose --log-file="/var/log/rsync.log" --rsh "ssh -p 22" --recursive --times --archive --perms '/srv/dev-disk-by-label-VOLUME1/backupdir/' 'username@backupserver.com:/opt/backup' & wait $!
 	omv_log "\nThe synchronisation has completed successfully."
 
+
+Server
+----
+
+Configure the rsync daemon and it's modules (shared folder).
+
+Settings
+	Change listening port of the daemon and add extra configurations `directives <https://www.samba.org/ftp/rsync/rsyncd.conf.html>`_ text field.
+
+Modules
+	This is where you add shared folders to the rsyncd server. The options are explained in the module web window when you click add. If you want to protect the modules you can select the next tab and choose a server username and establish a password. Be aware the password is only for the rsyncd modules, is not the linux password. Documentation for the extra options for the modules is provided by rsyncd manual.
 
 
 

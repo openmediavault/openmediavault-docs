@@ -1,7 +1,7 @@
 Access Rights Management
 ####
 
-In this section you can access information of |omv| users, groups and shared folders. 
+In this section you can create and access information of |omv| users, groups and shared folders. 
 
 User
 ====
@@ -16,7 +16,7 @@ Information
 	The mail field is used for cron jobs when the task is selected to run as specific user. By default users are created with ``/bin/nologin`` shell, this will prevent local and remote console access.
 
 Group
-	Add or remove users from specific groups. In linux groups can be used to control access to certain features and also for permissions. Adding a user to the ``sudo`` group will give root privileges on shell. By default all users created in the |webui| are added to the ``users`` group (gid=100). 
+	Add or remove users from specific groups. In linux groups can be used to control access to certain features and also for permissions. Adding a user to the ``sudo`` group will give root privileges on shell or adding a user to ``saned`` will give user access to scanners. By default all users created in the |webui| are added to the ``users`` group (gid=100). 
 
 Public Key
 	Add or remove public keys for remote access for a user.
@@ -24,6 +24,7 @@ Public Key
 .. :note:
 	- The user information information (except password) is also stored in the internal |omv|database, along with the public keys
 	- The grid parses information from the internal database and also from ``/etc/passwd`` entries with a uid higher than 1000. If you created a user in terminal then is not in the internal database. Just simply click edit and add some information to store in the internal database.
+	- A user can log into the web interface to see his own profile information. Depending if the adminstrator has setup the username account to allow changes, they can change their password and mail account.
 
 
 Import
@@ -39,11 +40,11 @@ Example::
 	user2;1002;user2;user2@my.com;password2;;0
 	user3;1003;user3;user3@example.com;password3;;1
 
-Paste the contents into the import dialog
+Paste the contents into the import dialog. The last field is a boolean for allowing the user to change his account.
 
 Privileges
 ^^^^
-The button will display all current exisitng |sf| and their privileges for the particular user selected. How the privileges are stored is described further down in the |sf| `section <#shared-folder>`_
+The button opens a windows that displays all current exisitng |sf| and their privileges for the particular user selected. How the privileges are stored is described further down in the |sf| `section <#shared-folder>`_
 
 
 Settings
@@ -57,22 +58,27 @@ Group
 
 Add
 ^^^^
+Create groups and select the members. You can select current |omv| users and system accounts. Information is stored in ``config.xml`` and ``/etc/group``.
+
+Import
+^^^^
+Bulk import works in similar as user account import. Just a csv text, delimited with ``;``. The dialog displays the necessary fields. 
 
 Edit
 ^^^^
+Just to add or remove members from groups. Default groups created in the |webui| have a gid greater than 1000. Same as usernames that are created in CLI they are not stored in the internal database. Just edit, insert a comment. 
 
 Shared Folder
 ====
 
 Add
 ^^^^
-A shared folder in |omv| is an internal database object configuration that has been created using the |webui|. The |sf| has four main components:
+A shared folder in |omv| is an internal database object configuration that has been created using the |webui|. The |sf| these main components:
 	
 	- **Name:** The logical name. This can override the path name. Typing a name here will fill the path with the same string.
 	- **Device:** The parent filesystem associated with the |sf|.
 	- **Path:** The relative path to the mounted device. To share the whole disk just type ``/``.
-	- **Permissions:** The default descriptive text will create the |sf| with ``root:users`` and ``775`` permission mode. 
-
+	- **Permissions:** The default descriptive text will create the |sf| with ``root:users`` ownership and ``775`` permission mode. 
 	**Available modes**
 
 	.. csv-table::
@@ -118,7 +124,7 @@ Some of the elements explained:
     - **name**: logical name given to the |sf|.
     - **mntent**: This the associated filesystem reference. The number is in the ``uuid`` format, in the the fstab ``config.xml`` section should contain a <mntent> reference with this number.
     - **reldirpath**: Path relative to the parent filesystem.
-    - **privileges**: The perms mode is used in the same way as octal file permissions. 0 no access, 5 read only and 7 read/write. 
+    - **privileges**: Users associated with the |sf| and their access level. 
 
 When a plugin or a service uses a |sf| its stores the uuid only. Later on using helper scripts or internal CLI |omv| commands the path can be obtained just by using the ``uuid`` number.
 
@@ -127,8 +133,8 @@ A shared folder can be used across all over the system backend. Is available to 
 
 .. note::
 	- A |sf| belongs to an |omv| filesystem entry. Is not possible to unmount the filesystem volume without deleting the folder configuraton from the |webui|.
-	- If a |sf| is being used by a service (ftp, plugins, etc) is not possible to delete it. Is necessary to disengage the |sf| from the service that is holding it before proceeding with removal of the configuration. This will also prevent to unmount a device from the |webui| in the filesystem section if there is still a |sf| associated with it.
-	- Due to the design of the software is not possible at the moment to know what service is holding which |sf|.
+	- If a |sf| is being used by a service (ftp, plugins, etc) is not possible to delete it. Is necessary to disengage the |sf| from the service(s) or section(s) that is holding it before proceeding with removal of the configuration. This will also prevent to unmount a device from the |webui| in the filesystem section if there is still a |sf| associated with it.
+	- Due to the design of the software is not possible at the moment to know what section or service is holding which |sf|.
 
 
 Edit
@@ -139,4 +145,12 @@ Edit |sf| is possible, but it has some limitations. The logical name cannot be c
 .. warning::
 
 	**NFS Server**: Editing the parent device will not descent into ``/etc/fstab``. Make sure you edit the share in the NFS section so the bind can be remounted.
-	
+
+Privileges
+^^^^
+
+Same as in the user section, the window here is relative to the shared folder. It will display for the selected |sf| all the |omv| users/groups and their corresponding privileges. As you can see from the code block in the `add section <#id3>`_ privileges are expressed in the internal database in the same manner as permissions in linux, simplified using the octal mode: read/write(7), read-only(5) and no access(0).
+
+When a privilege is changed in the |webui| it descents into all relevant services (SMB, FTP and AFP). |omv| will reconfigure everything that is using a |sf|, this includes daemon files and stop/start daemons. This is important as some services or plugins might not use privileges but they will have their daemon restarted as they are using a |sf|.
+
+As explained here privileges can be edited from `shared folder <#shared-folder>`_ or `users <#user>`_ section. But is also possible to edit privileges from the |sf| combo selection. Example: go to ``Services -> SMB/CIFS -> Shares -> Edit``, the loupe next to |sf| field will display privileges and allow to edit them.

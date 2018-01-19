@@ -3,7 +3,7 @@ Scheduled Jobs
 
 Overview
 ----
-You can configure common and repetitive command(s) or scripts in this section. Is based on cron using the Minute - Hour - Day - Week - Month crontab syntax [1]_. Due to web framework limitation, ranges are not supported. If you need a range you can configure a task for each day or simply use terminal with::
+You can configure common and repetitive command(s) or scripts in this section. Is based on cron using the ``minute hour day Week month`` crontab syntax [1]_. Due to web framework limitation, ranges are not supported. If you need a range you can configure a task for each day or simply use terminal with::
 
 $ crontab -e
 
@@ -12,9 +12,9 @@ The grid panel reflects all current created cron jobs done via the |webui|. The 
 Options
 ----
 
-**Username:** Under what user should the command/script be executed. You can select root, system users and |omv| users.
+**Username:** Under what user should the command/script be executed. You can select root, system accounts and |omv| users.
 
-**Mail Notification:** Send all the command/script output to the mail defined in the username profile. If the task is running as root, the mail recipient will be the one defined in notifications for primary and secondary delivery. If |omv| user is defined in the task and has an email configured in his profile the notification will be sent to that mail address.
+**Mail Notification:** Send all the command/script output to the mail defined in the username profile. If the task is running as root, the mail recipient will be the one defined in notifications for primary and secondary delivery. If |omv| user is defined in the task and has an email configured in his :doc:`profile </ARM>` the notification will be sent to that mail address.
 
 Configuration
 ----

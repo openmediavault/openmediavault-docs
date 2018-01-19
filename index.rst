@@ -28,13 +28,16 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    prerequisites
    installation/index
    features
+   ARM
    services
+   cron
    plugins
    FAQ
    support
    press
    contributors
    copyright
+
 
 
 

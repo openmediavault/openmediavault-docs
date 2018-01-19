@@ -35,10 +35,3 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    press
    contributors
    copyright
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

@@ -181,12 +181,12 @@ Then that alias will have privileges assigned:::
 By default you're not allowed to write in the when you login, this means you cannot create folders in the landing directory, you have to enter one of the shared folders. Also due to the nature of the chroot, creating top level folders is pointless since they will be actually stored in /srv/ftp and not in the media disks.
 
 Remote Access
-------------^
+----
 
 FTP is a protocol intended for use in LAN and WAN. For accessing WAN it is required to forward the server port (default 21) and the passive range to the |omv| server.
 
 Anonymous Login
-------------^^^
+-----
 
 Disabled by default, the anonymous user is mapped to the system user ftp and nogroup. There is no write access for anonymous and this is configured in the ``/etc/proftpd/proftpd.conf`` file and cannot be changed as is hard coded into the default configuration script of the server. In this case there is no environmental variable to change that behaviour::
 
@@ -208,7 +208,7 @@ Disabled by default, the anonymous user is mapped to the system user ftp and nog
 
 
 FTP(S/ES)
---------^
+----
 |omv| provides two SSL/TLS modes for encrypting the FTP communication implicit and explicit FTPS.
 
 The differences and features are explained `here <https://en.wikipedia.org/wiki/FTPS>`_ and `here <http://www.jscape.com/blog/bid/75602/Understanding-Key-Differences-Between-FTP-FTPS-and-SFTP>`_.
@@ -234,13 +234,15 @@ Home Folders
 	What will happen here if users will log in straight into their home folders. If you add shared folders to the server they will be displayed inside the user home folder plus any other folder present in their home folder.
 
 LetsEncrypt
-	TO Be added
+	Just import your LE certificate in the ``General->Certificates->SSL`` `section <certificates.html#ssl-secure-socket-layer>`_. Then in the TLS/SSL tab, select the imported cert from the dropdown menu. Do not enable implicit ssl. You need also to add the chain file. So in the extra option field text add:
+
+	``TLSCACertificateFile <yourpathtoLE>/etc/letsencrypt/live/<yourdomain>/chain.pem``
 
 NFS
 ====
 
 Overview
---------
+----
 
 The configuration of the server is done using the common `NFS guidelines <https://help.ubuntu.com/community/SettingUpNFSHowTo>`_. Shared folders are actually binded to the /export directory. You can check by examining the ``/etc/fstab`` file after you have added a folder to the server. All NFS server configured folders are in /etc/exports as follows:::
 
@@ -252,7 +254,7 @@ The first two lines are examples, the last line is the NFSv4 pseudo file system.
 
 
 Server Shares
-------------^
+----
 
 The following options are available to configure from the |webui|:
 
@@ -264,7 +266,7 @@ The following options are available to configure from the |webui|:
 	The server also shares by default the pseudo root filesystem of /exports as NFSv4.
 
 Clients
-----^^^
+----
 To access NFS shares using any debian derived linux distro:
 
 * Mount as NFSv4 all folders in ``/export/`` in ``/mnt/nfs``::
@@ -285,12 +287,12 @@ To access NFS shares using any debian derived linux distro:
 
 Check your distro on how to proceed with different NFS versions.
 
-NFSv4 Pseudo root filesystem
-----------------------------
+NFSv4 Pseudo filesystem
+----
 The default /export folder is shared with this default options ``ro,wdelay,root_squash,no_subtree_check,fsid=0`` only available to change via environmental variables, so be aware that mounting this path you will encounter permission problems.
 
 Permissions
---------^^^
+----
 NFS relies on uid/gid matching at the remote/local filesystem and it doesn't provide any authentication/security at all. Basic security is provided by using network allow, and squash options. If you want extra security in NFS, you will need to configure it to use kerberos ticketing system.
 
 Tips
@@ -316,7 +318,7 @@ SSH
 ====
 
 Overview
---------
+----
 Secure shell comes disabled by default in OMV, if you install |omv| on top a Debian installation, the systemd unit will be disabled after the server packages are installed. Just login into |webui| to re-enable the ssh service.
 
 The configuration options are minimal, But you can:
@@ -466,10 +468,10 @@ Destination/Source Server
 .. warning::
 	When the rsync task is configured using ssh with PKA, the script that runs the jobs is non-interactive, this means there cannot be a neither a passphrase for the private key or a login password. Make sure your private is not created with a password (in case is imported). Also make sure the remote server can accept PKA and not enforce password login.
 
-Authentication (remote)
+**Authentication (remote)**
 	
-	- **Password**: The password is for a remote rsync daemon module. Is not the username login password defined in the Rights Management section of the server. Read ahead in server tab.
-	- **Public Key**: Select a key. These are created/imported from ``General->Certificates->SSH``.
+	- **Password**: For the remote rsync daemon module. Is not the username login password defined in the Rights Management section of the server. Read ahead in server tab.
+	- **Public Key**: Select a key. These are created/imported from ``General->Certificates->SSH`` `section <certificates.html#ssh-secure-shell>`_.
 
 There are options are available which are the most commonly used in rsync. At the end there is an extra text field where you add more `options <http://linux.die.net/man/1/rsync>`_.
 
@@ -485,7 +487,7 @@ Modules
 	This is where you add shared folders to be available to the daemon. The options are explained in the module web panel. If you want to protect the modules you can select the next tab and choose a server username and establish a password. Be aware the password is only for the modules, is not the linux password. Documentation for the extra options for the modules is provided by rsyncd manual.
 
 Configuration
-	The server makes the tasks run by placing them in ``/etc/cron.d/openmediavault-rsync`` one line per job. You can see the cron time at the beginning, then user (root) and target file that holds the actual rsync file with the final command. The files are stored in ``/var/lib/openmediavault/cron.d/``, prefixed with ``rsync`` and a <uuid>. A default ssh rsync job looks like this.
+	The server makes the tasks run by placing them in ``/etc/cron.d/openmediavault-rsync`` in one line per job. You can see the cron time at the beginning, then user (root) and target file that holds the actual rsync file with the final command. The files are stored in ``/var/lib/openmediavault/cron.d/``, prefixed with ``rsync`` and a <uuid>. A default ssh rsync job looks like this.
 
 .. code-block:: shell
 

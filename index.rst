@@ -28,6 +28,7 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    prerequisites
    installation/index
    features
+   certificates
    ARM
    services
    cron

@@ -23,7 +23,7 @@ Can I upgrade to Debian Testing/Unstable (Debian Testing/Sid) or use Ubuntu as a
 	Yes you can. But you will end up most likely with a broken |webui| and possibly broken system. |omv| releases are heavily tight to their Debian base distro.
 
 I´ve lost the |webui| password. How do I reset it?
-	Simply connect via ssh to your server or login locally on your machine and type in: ``omv-firstaid``. There is an option to reset your password.
+	Simply connect via ssh to your server or login locally on your machine and type in: :command:`omv-firstaid`. There is an option to reset your password.
 
 Can I backup or restore and existing |omv| configuration?
 	No. You can keep the file :file:`/etc/openmediavault/config.xml` for references purposes if you decide to go for a clean re-install.
@@ -35,7 +35,7 @@ Can I use Apache as HTTP engine?
 	You can use it but is not supported. Eventually every |omv| package upgrade will activate NGINX again leaving you with a broken |webui|. You can run a parallel Apache instance to Nginx just make sure the ports are different otherwise your |omv| |webui| will not work.
 
 How can use the default HTTP engine to hold my own web page?
-	Do not modify |omv| default NGINX files. You can place your website configurations at :file:`/etc/nginx/sites-available` and enable it with ``nginx_ensite <SITE>``. Read more information in the `NGINX documentation <http://nginx.org/en/docs/>`_.
+	Do not modify |omv| default NGINX files. You can place your website configurations at :file:`/etc/nginx/sites-available` and enable it with :command:`nginx_ensite <SITE>`. Read more information in the `NGINX documentation <http://nginx.org/en/docs/>`_.
 
 Why does the system rewrites a configuration file(s) that I have manually edited?
 	OMV takes full control of some system services. This services include monit, ntp, samba, network, proftpd, nginx, php5-fpm, etc. Read :doc:`here </various/files>`.
@@ -75,11 +75,11 @@ Why are my filesystems mounted as noexec?
 I need to delete a shared folder, why the delete button is greyed/disabled?
 	Shared folder configurations can be used across different services. If you need to remove a shared folder configuration you need to unlink it from every service is attached to it before the delete button becomes available. At the moment there is no internal database backend that can display information about which service is holding which shares.
 
-What is the ``omv-mkconf`` command for?
-	``omv-mkconf`` is a terminal console command that is used by the backend of |omv| to pipe directives and values to service configuration files. The arguments that ``omv-mkconf`` accepts are related to the name of the service it configures. Type ``omv-mkconf`` in terminal, press TAB key, and the terminal will display all available arguments.
+What is the :command:`omv-mkconf` command for?
+	:command:`omv-mkconf` is a terminal console command that is used by the backend of |omv| to pipe directives and values to service configuration files. The arguments that :command:`omv-mkconf` accepts are related to the name of the service it configures. Type :command:`omv-mkconf` in terminal, press TAB key, and the terminal will display all available arguments.
 
 I want to experiment with |omv| or make changes to the code
 	As a true open source system you can do whatever you want with it. The recommendation is you don't do it in your home appliance server to avoid breaking the |webui|. The best thing to do is to use a Virtual Machine. In `Sourceforge <http://sourceforge.net/projects/openmediavault/files/vm/VirtualBox%20images/>`_ you can find a preconfigured |omv| virtual disk ready to launch.
 
-What is the ``omv-update`` and ``omv-release-upgrade`` do?
+What is the :command:`omv-update` and :command:`omv-release-upgrade` do?
 	Information about those commands are in the software :doc:`section </various/apt>`.

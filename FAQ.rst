@@ -1,5 +1,5 @@
 FAQ
-----
+===
 
 **Frequently Asked Questions**
 
@@ -44,7 +44,7 @@ How can I modify an internal value of some service |omv| has control over?
 	Read :doc:`here <various/advset>` for advanced configurations.
 
 How can I modify or add a network configuration of :file:`/etc/network/interfaces` with some custom options the |webui| does not provide?
-	The interfaces file is controlled by |omv|. To add network interfaces that are not configurable through the |webui| or other options not present, you need to use  :doc:`advanced settings <various/advancedsettings>`.
+	The interfaces file is controlled by |omv|. To add network interfaces that are not configurable through the |webui| or other options not present, you need to use  :doc:`advanced settings <various/advset>`.
 
 Why my disks mount paths have a long alphanumeric number?
 	The long number is called UUID, it is used by fstab to mount disks. This number is unique per filesystem (or at least unlikely possible that another filesystem comes with an identical one). This helps maintaing the mount points. The old linux way (sda1, sdb1, etc) is not guaranteed that /sda1 is the same disk on next reboot. If you have trouble identiying them in terminal, you can always create a pool with symlinks to each file system with easy to remember names.

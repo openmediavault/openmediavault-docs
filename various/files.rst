@@ -6,9 +6,9 @@ The following is the list of files you should not edit by hand. |omv| has comple
 
 **Filesystem:** ``/etc/fstab`` This file contains all mount entries, physical and network ones. |omv| identifies them by using the «openmediavault» tags, in between those you should not delete entries or change options. Any new mount drive or network entry will rewrite fstab in between those lines, reverting any changes you have done. Please refer :doc:`here </various/fs_env_vars>` for editing options of fstab entries. You can add any content you want outside the tags.
 
-**Network:** ``/etc/network/interfaces`` The explanation is already in the :doc:`FAQ </FAQ>`
+**Network:** ``/etc/network/interfaces`` The explanation is already in the :doc:`FAQ </faq>`
 
-**NGINX:** ``/etc/nginx/openmediavault-webgui.d/security.conf`` ``/etc/nginx/sites-enabled/openmediavault-webgui`` 
+**NGINX:** ``/etc/nginx/openmediavault-webgui.d/security.conf`` ``/etc/nginx/sites-enabled/openmediavault-webgui``
 
 **PHP5-FPM:** ``/etc/php5/fpm/pool.d/openmediavault-webgui.conf``
 

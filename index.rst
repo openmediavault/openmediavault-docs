@@ -30,7 +30,7 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    features
    administration/index
    plugins
-   FAQ
+   faq
    support
    press
    contributors

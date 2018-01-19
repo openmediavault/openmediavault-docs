@@ -19,7 +19,7 @@ Group
 	Add or remove users from specific groups. In linux groups can be used to control access to certain features and also for permissions. Adding a user to the ``sudo`` group will give root privileges on shell or adding a user to ``saned`` will give user access to scanners. By default all users created in the |webui| are added to the ``users`` group (gid=100).
 
 Public Key
-	Add or remove public keys for remote access for a user.
+	Add or remove public keys for `remote ssh access <services.html#id7>`_ for a user.
 
 .. :note:
 	- The user information information (except password) is also stored in the internal |omv|database, along with the public keys
@@ -50,7 +50,7 @@ The button opens a windows that displays all current exisitng |sf| and their pri
 Settings
 ^^^^^^^^
 
-This option is to select a shared folder as root folder for home folder. New users created in the |webui|. Existing users created before this setting was enabled will not have their home folders moved to that location. You can manually edit ``/etc/passwd`` to point them to the new location.
+This option is to select a shared folder as root folder for home folder for users created in the |webui|. Existing users created before this setting was enabled will not have their home folders moved to that location. You can manually edit ``/etc/passwd`` to point them to the new location and move the contents.
 
 Group
 =====

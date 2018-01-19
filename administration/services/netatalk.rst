@@ -7,7 +7,8 @@ Overview
 Netatalk software was expected to reach version 3.x with Debian Jessie. Unfortunatly due to some unresolved issue with the maintainers, Debian team `opted <https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=690227>`_ to leave it out of Jessie and future releases. Debian Wheezy was the latest release with netatalk. To avoid loosing netatalk as a plugin |omv| uses a debianized source of netatalk 3.x maintained by Adrian Knoth [1]_. Openmediavault does not maintain this software.
 
 Configuration
-----
+-------------
+
 The server panel provides minimal options to the server, but it has an extra field in case you need `more directives <http://netatalk.sourceforge.net/3.1/htmldocs/afp.conf.5.html>`_. The default configuration file is located in ``/etc/netatalk/afp.conf``. This is the default global section:
 
 .. code-block:: guess

@@ -1,19 +1,16 @@
 FTP
-####
+###
 
 Overview
 --------
 
 On top of the proftpd debian package, |omv| uses the vroot module by Castaglia. The server is configured using a DefaultRoot for this folder ``/srv/ftp``. Adding folders to the chroot is done by using vroot aliases.
-
 This is the default behavoiour of the FTP server and cannot be changed. The vroot default path can be changed with environmental variables. The chroot also prevent symlinks for escaping that path, however you can use symlinks that point inside the chroot.
-
 So any time you add a shared folder to the FTP, OMV will create first a vroot alias:::
 
 	<IfModule mod_vroot.c>
 	  VRootAlias "/media/dev-disk-by-label-VOLUME1/videos" "Videos"
 	</IfModule>
-
 
 Then that alias will have privileges assigned:::
 
@@ -56,14 +53,11 @@ Disabled by default, the anonymous user is mapped to the system user ftp and nog
 	  </Directory>
 	</Anonymous>
 
-
 FTP(S/ES)
 ---------
 
 |omv| provides two SSL/TLS modes for encrypting the FTP communication implicit and explicit FTPS.
-
 The differences and features are explained `here <https://en.wikipedia.org/wiki/FTPS>`_ and `here <http://www.jscape.com/blog/bid/75602/Understanding-Key-Differences-Between-FTP-FTPS-and-SFTP>`_.
-
 Enabling FTP over SSL/TLS requires first that you create or import a certificate in the corresponding section. Once the certficate is there you can choose it from SSL/TLS section in FTP. The default FTPS of the server is explicit, you can click the checkbox to enable implicit. If you choose implicit make sure you forward port 900 in your router to port 21 in your NAS server if you're accessing from WAN, otherwise the client will probably display ECONREFUSED.
 
 Tips

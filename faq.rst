@@ -79,7 +79,14 @@ What is the :command:`omv-mkconf` command for?
 	:command:`omv-mkconf` is a terminal console command that is used by the backend of |omv| to pipe directives and values to service configuration files. The arguments that :command:`omv-mkconf` accepts are related to the name of the service it configures. Type :command:`omv-mkconf` in terminal, press TAB key, and the terminal will display all available arguments.
 
 I want to experiment with |omv| or make changes to the code
-	As a true open source system you can do whatever you want with it. The recommendation is you don't do it in your home appliance server to avoid breaking the |webui|. The best thing to do is to use a Virtual Machine. In `Sourceforge <http://sourceforge.net/projects/openmediavault/files/vm/VirtualBox%20images/>`_ you can find a preconfigured |omv| virtual disk ready to launch.
+	As a true open source system you can do whatever you want with it. The
+	recommendation is you don't do it in your home appliance server to avoid
+	breaking the |webui|. The best thing to do is to use a Virtual Machine.
+	On `Sourceforge <http://sourceforge.net/projects/openmediavault/files/vm/VirtualBox%20images/>`_
+	you can find a preconfigured |omv| virtual disk ready to launch.
+	Alternatively checkout the |omv| `GIT repository <https://scm.openmediavault.org/>`_
+	and use `Vagrant <https://www.vagrantup.com/>`_ to create a virtual
+	maschine.
 
 What is the :command:`omv-update` and :command:`omv-release-upgrade` do?
 	Information about those commands are in the software :doc:`section </various/apt>`.

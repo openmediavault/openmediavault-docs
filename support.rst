@@ -4,13 +4,17 @@ Support
 At present there are many ways of getting support, many of them are done by the
 community. The current support channels are:
 
-**Forum**
+**Code**
 
-`<https://forum.openmediavault.org/>`_
+`<https://scm.openmediavault.org/>`_
 
 **Bugtracker**
 
 `<http://bugtracker.openmediavault.org>`_
+
+**Forum**
+
+`<https://forum.openmediavault.org/>`_
 
 **IRC**
 

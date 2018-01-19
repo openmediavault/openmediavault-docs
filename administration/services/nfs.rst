@@ -2,7 +2,7 @@ NFS
 ####
 
 Overview
-----
+--------
 
 The configuration of the server is done using the common `NFS guidelines <https://help.ubuntu.com/community/SettingUpNFSHowTo>`_. Shared folders are actually binded to the /export directory. You can check by examining the ``/etc/fstab`` file after you have added a folder to the server. All NFS server configured folders are in /etc/exports as follows:::
 
@@ -14,7 +14,7 @@ The first two lines are examples, the last line is the NFSv4 pseudo file system.
 
 
 Server Shares
-----
+-------------
 
 The following options are available to configure from the |webui|:
 
@@ -26,7 +26,8 @@ The following options are available to configure from the |webui|:
 	The server also shares by default the pseudo root filesystem of /exports as NFSv4.
 
 Clients
-----
+-------
+
 To access NFS shares using any debian derived linux distro:
 
 * Mount as NFSv4 all folders in ``/export/`` in ``/mnt/nfs``::
@@ -48,15 +49,18 @@ To access NFS shares using any debian derived linux distro:
 Check your distro on how to proceed with different NFS versions.
 
 NFSv4 Pseudo filesystem
-----
+-----------------------
+
 The default /export folder is shared with this default options ``ro,wdelay,root_squash,no_subtree_check,fsid=0`` only available to change via environmental variables, so be aware that mounting this path you will encounter permission problems.
 
 Permissions
-----
+-----------
+
 NFS relies on uid/gid matching at the remote/local filesystem and it doesn't provide any authentication/security at all. Basic security is provided by using network allow, and squash options. If you want extra security in NFS, you will need to configure it to use kerberos ticketing system.
 
 Tips
 ----
+
 Macos/OSX
 	If you want to mount your NFS exports, add insecure in extra opions or use ``resvport`` in the command line.
 

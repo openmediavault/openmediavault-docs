@@ -2,7 +2,7 @@ FTP
 ####
 
 Overview
-----
+--------
 
 On top of the proftpd debian package, |omv| uses the vroot module by Castaglia. The server is configured using a DefaultRoot for this folder ``/srv/ftp``. Adding folders to the chroot is done by using vroot aliases.
 
@@ -31,12 +31,12 @@ Then that alias will have privileges assigned:::
 By default you're not allowed to write in the when you login, this means you cannot create folders in the landing directory, you have to enter one of the shared folders. Also due to the nature of the chroot, creating top level folders is pointless since they will be actually stored in /srv/ftp and not in the media disks.
 
 Remote Access
-----
+-------------
 
 FTP is a protocol intended for use in LAN and WAN. For accessing WAN it is required to forward the server port (default 21) and the passive range to the |omv| server.
 
 Anonymous Login
------
+---------------
 
 Disabled by default, the anonymous user is mapped to the system user ftp and nogroup. There is no write access for anonymous and this is configured in the ``/etc/proftpd/proftpd.conf`` file and cannot be changed as is hard coded into the default configuration script of the server. In this case there is no environmental variable to change that behaviour::
 
@@ -58,7 +58,8 @@ Disabled by default, the anonymous user is mapped to the system user ftp and nog
 
 
 FTP(S/ES)
-----
+---------
+
 |omv| provides two SSL/TLS modes for encrypting the FTP communication implicit and explicit FTPS.
 
 The differences and features are explained `here <https://en.wikipedia.org/wiki/FTPS>`_ and `here <http://www.jscape.com/blog/bid/75602/Understanding-Key-Differences-Between-FTP-FTPS-and-SFTP>`_.

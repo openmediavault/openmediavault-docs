@@ -1,8 +1,9 @@
 Netatalk (plugin)
-=====
+#################
 
 Overview
-----
+--------
+
 Netatalk software was expected to reach version 3.x with Debian Jessie. Unfortunatly due to some unresolved issue with the maintainers, Debian team `opted <https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=690227>`_ to leave it out of Jessie and future releases. Debian Wheezy was the latest release with netatalk. To avoid loosing netatalk as a plugin |omv| uses a debianized source of netatalk 3.x maintained by Adrian Knoth [1]_. Openmediavault does not maintain this software.
 
 Configuration
@@ -22,7 +23,8 @@ The server panel provides minimal options to the server, but it has an extra fie
 Netatalk provides PAM modules, so a change of password in terminal or web interface should be reflected inmediately in AFP login.
 
 Shared Folders
-----
+--------------
+
 The plugin uses the privileges database, so in the same way |omv| configures Samba shares, the login is controlled using valid, read and write directives in the software layer, not the filesystem. This is an example of a share in netatalk with default options:
 
 .. code-block:: guess
@@ -52,4 +54,5 @@ Guest Access
 
 Quota
 	You can define a size limit, in case you have multiple time machine volumes and want to prevent them to fill up the data drives.
+
 .. [1] https://github.com/adiknoth/netatalk-debian

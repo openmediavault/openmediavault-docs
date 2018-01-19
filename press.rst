@@ -1,5 +1,5 @@
 Press releases, reviews and external references
-=====
+===============================================
 
 	- Dec 2008, FreeNAS: BSD Line and Linux Fork `Linux magazine <http://www.linux-magazine.com/Online/News/FreeNAS-BSD-Line-and-Linux-Fork>`_
 	- October 2011 "First version of the NAS distribution |omv|" `pro-linux.de <http://www.pro-linux.de/news/1/17630/erste-version-der-nas-distribution-openmediavault.html|pro-linux.de>`_ (German)

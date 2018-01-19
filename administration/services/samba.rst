@@ -4,7 +4,7 @@ Samba
 Samba server comes from Debian software repositories. |omv| developer does not mantain this package, all bug, hotfixes and features come from Debian. Advanced features like spotlight server or time machine support is not available because they have not reach yet stable Debian or the Debian developers have not made it available in their build.
 
 General
-----
+-------
 
 The server configures Samba as standalone mode. The default global section
 
@@ -76,7 +76,7 @@ You can add extra options in the general and share configuration at the bottom, 
 
 
 Privileges
-----
+----------
 
 The login access in Samba is configured using privileges. This means they will not act in the file system layer they will run in the Samba authentication layer. From there the access can be controlled to be read only or read/write access and guest account access. This is done with the PRIVILEGES button in the shared folder section not the ACL.
 Privileges only gets only login access and from there determines if user can read or write. If write access is enabled and files/folders have restricted permissions then you will still not be able to write to folder using Samba.
@@ -85,7 +85,8 @@ Privileges only gets only login access and from there determines if user can rea
 	Samba does not use PAM for login, it has a different password database. When the admin changes a username password (or the username changes his) using the |webui| what |omv| does is that it changes both the linux login password and the Samba internal database. If a username changes his password using shell, this will not be reflected in Samba log in.
 
 Share types
-----
+-----------
+
 **Non-public (Private):** *Login always required, Guest Allowed denied*
 
 .. code-block:: guess
@@ -126,7 +127,7 @@ With these options valid, read only and write user directives will be ignored wh
 
 
 Questions
-----
+---------
 
 How do I enter credentials in a semi-public share?
 	In most cases the user will always be logged as guest.

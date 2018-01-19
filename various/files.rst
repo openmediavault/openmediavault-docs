@@ -1,5 +1,5 @@
 Configuration files
-=====
+===================
 
 
 The following is the list of files you should not edit by hand. |omv| has complete control over these files and any changes will be overwrriten on demand.

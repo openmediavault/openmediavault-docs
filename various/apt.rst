@@ -1,15 +1,15 @@
 Software
-####
+########
 
 Overview
-----
+--------
 
 |omv| is a Debian based distribution. It uses apt to install packages. All
 standard Debian packages are upgraded using the official Debian mirrors. |omv|
 packages are upgraded using the http://packages.openmediavault.org repository.
 
 Update Manager
-----
+--------------
 
 The update manager displays all available packages for upgrade. You can select
 them if you want to do individual or mass upgrade. The server uses cron-apt to
@@ -18,7 +18,7 @@ have notifications enabled you receive an email every time packages are ready
 for install.
 
 Using CLI
-----
+---------
 
 **apt-get**
 
@@ -44,7 +44,7 @@ includes moving to a new base distribution. For example: Debian Squeeze to
 Wheezy or Wheezy to Jessie,
 
 Installing plugins
-----
+------------------
 
 The plugins can installed either by repository selecting from the available
 list or uploading the deb package. If the plugin requires some extra software
@@ -52,7 +52,7 @@ it will fetch all remaining packages from either Debian mirrors or another
 repo the plugin specifies.
 
 Installing Software
-----
+-------------------
 
 You have to your availability all Debian software repository to install in
 your server
@@ -70,7 +70,7 @@ your server
 	$ apt-get purge <packagename>
 
 Repositories
-----
+------------
 
 **Debian**
 

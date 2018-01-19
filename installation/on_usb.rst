@@ -1,5 +1,3 @@
-.. _installation_index:
-
 Installation on USB
 ###################
 

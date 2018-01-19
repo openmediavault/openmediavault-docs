@@ -2,7 +2,8 @@ SSH
 ####
 
 Overview
-----
+--------
+
 Secure shell comes disabled by default in OMV, if you install |omv| on top a Debian installation, the systemd unit will be disabled after the server packages are installed. Just login into |webui| to re-enable the ssh service.
 
 The configuration options are minimal, But you can:
@@ -37,7 +38,8 @@ The comment string is very important. This will help you track down when you nee
 
 
 Admin Tasks
-----
+-----------
+
 If root login has been disabled and need to perform administrative tasks in the terminal, swap to root by typing using::
 
 $ su

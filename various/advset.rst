@@ -8,7 +8,7 @@ average user to install and start using the NAS server.
 As mentioned before in the :doc:`FAQ </faq>` |omv| takes full control of some
 services, making difficult to intervene configuration files. Changes manually
 added to configuration files will eventually rewritten at some stage by the
-system. The list of common files not to intervene is listed :doc:`here </various/conffiles>`.
+system.
 
 To overcome this there are some options available to modify some of the default
 |omv| configuration options and values, like the use of environmental variables.

@@ -1,12 +1,16 @@
 RSync
 #####
 
-The server can be configured to act as a client to pull and push data to remote locations as well as act an rsync daemon server, where other clients can retrieve or store data from/to the server. In rsync languague, the shared folders are called modules. Since |omv| version 3.0 is possible now to create remote rsync jobs using ssh as transport shell.
-
-The rsync is divided in two tabs
+The server can be configured to act as a client to pull and push data to remote
+locations as well as act an rsync daemon server, where other clients can
+retrieve or store data from/to the server. In rsync languague, the shared
+folders are called modules. Since |omv| version 3.0 is possible now to create
+remote rsync jobs using ssh as transport shell.
+The rsync is divided in two tabs:
 
 Jobs (client)
-----
+-------------
+
 Based on cron, the tasks can be configured to run at certain time or make it repetive. A few of the options explained:
 
 Type
@@ -27,14 +31,14 @@ Destination/Source Server
 
 	Examples:
 
-	If you are targeting the job against an rsync daemon server:
-	::
+	If you are targeting the job against an rsync daemon server::
+
 		rsync://10.10.10.12/ModuleName
 		username@10.10.10.12::ModuleName
 		rsync://username@10.10.10.12:873/ModuleName
 
-	If you are going to connect to another server just using ssh with public key:
-	::
+	If you are going to connect to another server just using ssh with public key::
+	
 		username@10.10.0.12:/srv/dev-disk-by-label-VOLUME1/Documents
 
 .. warning::
@@ -48,7 +52,7 @@ Destination/Source Server
 There are options are available which are the most commonly used in rsync. At the end there is an extra text field where you add more `options <http://linux.die.net/man/1/rsync>`_.
 
 Server
-----
+------
 
 This is the place for configuring the rsync daemon and it's modules (shared folder).
 

@@ -1,5 +1,3 @@
-.. _installation_index:
-
 Installation using an ISO image
 ###############################
 

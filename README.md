@@ -24,8 +24,8 @@ Build the HTML code
 Now open <http://localhost:8000/> in your browser to view the documentation.
 Any changes to the documentation code will be rendered now immediatelly.
 
-Cleanup the generated HTML
---------------------------
+Cleanup the HTML code
+---------------------
 
 	$ make clean
 
@@ -36,8 +36,8 @@ reStructured text cheat-sheets
 * https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst
 * https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html
 
-Contribute to the documentation
--------------------------------
+Contribute
+----------
 To contribute to the documentation simply clone this repository, make your
 changes and create a PR (pull request).
 

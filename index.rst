@@ -4,7 +4,7 @@
 |omv| is a complete network attached storage (NAS) solution based on Debian
 Linux.
 
-* It's available for x86 and ARM platforms.
+* It's available for x86-64 and ARM platforms.
 * Features a full Web Administration interface.
 * Can be controlled via SSH, if enabled.
 * Access to file storage is possible with a variety of different protocols such

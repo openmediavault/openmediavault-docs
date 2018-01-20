@@ -11,7 +11,7 @@ Hostname and domain settings.
 Interfaces
 ==========
 
-The grid only displays configured interfaces done through the |webui|. If you see this panel empty and your default interface was configured by DHCP or static during install is normal. The installer does not setup the network using |omv|, it just configures ``/etc/network/interfaces``.
+The grid only displays configured interfaces done through the |webui|. If you see this panel empty and your default interface was configured by DHCP or static during install is normal. The installer does not setup the network using |omv|, it just configures :file:`/etc/network/interfaces`.
 
 
 Ethernet
@@ -41,7 +41,7 @@ Bond
 The configuration window provides all available `modes <https://www.kernel.org/doc/Documentation/networking/bonding.txt>`_ for the bond driver. To configure bonding, you need at least two physical network interfaces. The |webui| lets you select less than two, this is by design for configuration purposes. The workflow is as follow for dual nics:
 
 - If you have the primary NIC already working either by the installer, go and configure it through the |webui| as static. If set as static using the same IP address given by DHCP you should still be in control of the |webui|.
-- Click ``Network->Interfaces->Add->Bond``, select the second available NIC, select the bond mode, enter the IP field values except gateway and DNS. Save and hit apply. 
+- Click ``Network | Interfaces | Add | Bond``, select the second available NIC, select the bond mode, enter the IP field values except gateway and DNS. Save and hit apply. 
 - Log out and access now the |webui| using the IP address assigned in the bond interface just created.
 - Now select the primary interface configured through |webui| in the first step, and delete it. Save and hit apply
 - Select the newly created bond interface, click edit add now the physical nic that was deleted from the step before should be available to select. Save and hit apply
@@ -62,7 +62,7 @@ If the network options
 Proxy
 =====
 
-This panel configures proxies using system wide enviromemtal variables. Every software that obbeys linux proxy environmental variables should be able to use the proxy configurations. This is useful for example if there are many Debian servers in the network, when performing ``apt`` operations, packages can be cached in the proxy if this configured appropiatly to reduce download bandwidth. 
+This panel configures proxies using system wide enviromemtal variables. Every software that obbeys Linux proxy environmental variables should be able to use the proxy configurations. This is useful for example if there are many Debian servers in the network, when performing ``apt`` operations, packages can be cached in the proxy if this configured appropiatly to reduce download bandwidth. 
 
 The variables name are::
 
@@ -99,10 +99,3 @@ $ iptables-save > /tmp/file.txt
 If you have no problems with the information in the ruleset then you can create a text link::
 
 $ iptables-save | curl -F 'sprunge=<-' http://sprunge.us
-
-
-
-
-
- 
-

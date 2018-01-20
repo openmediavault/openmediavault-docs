@@ -1,61 +1,57 @@
 Access Rights Management
 ########################
 
-In this section you can create and access information of |omv| users, groups
+In this section you can create, edit and access information of |omv| users, groups
 and shared folders.
 
 User
 ====
 
-Create or modify users and configuration of home folders.
+Create or modify users information and configuration of home folders.
 
 Add
 ^^^^
 
 Information
-	The configuration panel gives you options to add, edit or remove users.
-	When a user is created |omv| backend executes :command:`useradd` in
-	non-interactive mode with all the information passed from the text fields,
-	this also creates an entry in :file:`/etc/passwd`, a hashed password in
-	:file:`/etc/shadow` and the corresponding password in the samba password
-	database.
+	The configuration panel gives you options to add, edit or remove users. The grid dispays all
+	|omv| current users.
+
+	When a user is created |omv| backend executes :command:`useradd` in non-interactive 
+	mode with all the information passed from the web text fields, this also command creates an 
+	entry in :file:`/etc/passwd`, a hashed password in :file:`/etc/shadow`. Samba service is watching any changes
+	in users database section so it also sets the password in the samba tdbsam storage backend.
 
 	The mail field is used for cron jobs when the task is selected to run as
 	specific user. By default users are created with :command:`/bin/nologin`
 	shell, this will prevent local and remote console access.
 
 Group
-	Add or remove users from specific groups. In linux groups can be used to
-	control access to certain features and also for permissions. Adding a user
-	to the ``sudo`` group will give root privileges on shell or adding a user
-	to ``saned`` will give user access to scanners. By default all users
-	created in the |webui| are added to the ``users`` group (``gid=100``).
+	Add or remove users from specific groups. In linux groups can be used to control 
+	access to certain features and also for permissions. 
+
+	Adding a user to the ``sudo`` group will give him root privileges, adding 
+	a user to ``saned`` will give access to scanners, etc. By default all users created using 
+	the |webui| are added to the ``users`` group (``gid=100``).
 
 Public Key
-	Add or remove public keys for remote access for a user.
+	Add or remove :doc:`public keys </administration/services/ssh>` for granting remote access for users. 
 
-.. :note:
-	- The user information information (except password) is also stored in the
-	  internal |omv|database, along with the public keys
-	- The grid parses information from the internal database and also from
-	  :file:`/etc/passwd` entries with a uid higher than 1000. If you created a
-	  user in terminal then is not in the internal database. Just simply click
-	  edit and add some information to store in the internal database.
-	- A user can log into the web interface to see his own profile information.
-	  Depending if the adminstrator has setup the username account to allow
-	  changes, they can change their password and mail account.
+.. note::
+
+	- The user profile information (except password) is also stored in the internal |omv|database, along with the public keys.
+	- The grid shows information from internal database and also parses information from :file:`/etc/passwd` lines with a `UID` number higher than 1000. A user created in terminal is not in the internal database. This causes trouble will samba, as their is no user/password entry in the tdbsam file. Just click edit for the user, enter the same or new password, now the user has the linux and samba password synced.
+	- A user can log into the web interface to see his own profile information. Depending if the adminstrator has setup the username account to allow changes, they can change their password and mail account.
 
 Import
 ^^^^^^
 
-This can help when you need to bulk create users in one go. Create an
-spreadsheet with the corresponding data as described in the field text, save
-it as CSV (make sure the field separator is semicolon :code:`;`), then just
+Designed for bulk user creation. Create a spreadsheet with the corresponding data as
+described in window the field text, save it as CSV (make sure the field separator is semicolon :code:`;`), then just
 simply::
 
 $ cat usersfile.csv
 
-Example::
+Example outputs::
 
 	user1;1001;user1;user1@myserver.com;password1;sudo;1
 	user2;1002;user2;user2@my.com;password2;;0
@@ -68,16 +64,17 @@ Privileges
 ^^^^^^^^^^
 
 The button opens a windows that displays all current exisiting |sf| and their
-privileges for the particular user selected. How the privileges are stored is
+privileges for selected user from the grid. How the privileges are stored is
 described further down in the `shared folder <#shared-folder>`_ section.
 
 Settings
 ^^^^^^^^
 
-This option is to select a shared folder as root folder for home folder. New
-users created in the |webui|. Existing users created before this setting was
-enabled will not have their home folders moved to that location. You can
-manually edit :file:`/etc/passwd` to point them to the new location.
+Option to select a |sf| as root for home folders for new users created in the 
+|webui|. Previously existing users created before enabling this setting will not have
+their home folders moved to this new location. You can manually edit :file:`/etc/passwd` 
+to point them to the new location. Also existing users data in default linux location :file:`/home`
+has to be moved manually.
 
 Group
 =====
@@ -99,18 +96,20 @@ fields.
 Edit
 ^^^^
 Just to add or remove members from groups. Default groups created in the
-|webui| have a gid greater than ``1000``. Same as usernames that are created
-in CLI they are not stored in the internal database. Just edit, insert a
-comment.
+|webui| have a ``GID`` greater than ``1000``. Same as usernames, groups created
+in terminal are not stored in the internal database. Just edit, insert a
+comment and their information should now be stored in ``config.xml``.
 
 Shared Folder
 =============
 
+Shared folder in |omv| is an internal database object configuration that
+has been created using the |webui|.
+
 Add
 ^^^
 
-A shared folder in |omv| is an internal database object configuration that
-has been created using the |webui|. The |sf| these main components:
+When a |sf| is created using the add button, the windows form displays the following options:
 
 	- **Name:** The logical name. This can override the path name. Typing a
 	  name here will fill the path with the same string.
@@ -166,22 +165,33 @@ Some of the elements explained:
     - **reldirpath**: Path relative to the parent filesystem.
     - **privileges**: Users associated with the |sf| and their access level.
 
-When a plugin or a service uses a |sf| its stores the uuid only. Later on
-using helper scripts or internal CLI |omv| commands the path can be obtained
-just by using the :code:`uuid` number.
+When a plugin or a service uses a |sf| its stores the uuid value only. Later on
+using helper scripts or internal |omv| functions the full path can be obtained
+just by using the :code:`uuid`. An example in shell::
+
+$ . /usr/share/openmediavault/scripts/helper-functions && omv_get_sharedfolder_path 9535a292-11e2-4528-8ae2-e1be17cf1fde
+
+This returns::
+
+$ /srv/dev-disk-by-label-VOLUME1/data_general/videos
+
+More information about `helper functions <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/usr/share/openmediavault/scripts/helper-functions>`_.
+
 A shared folder can be used across all over the system backend. Is available
 to select it in sharing services (FTP, Samba, RSync, etc.) at the same time.
 Plugins can use them also just by using the shared folder combo class.
 
 .. note::
-	- A |sf| belongs to an |omv| filesystem entry. Is not possible to unmount the filesystem volume without deleting the folder configuraton from the |webui|.
-	- If a |sf| is being used by a service (FTP, plugins, etc.) is not possible to delete it. Is necessary to disengage the |sf| from the service(s) or section(s) that is holding it before proceeding with removal of the configuration. This will also prevent to unmount a device from the |webui| in the filesystem section if there is still a |sf| associated with it.
+	- A |sf| belongs to an internal |omv| database filesystem entry. Is not possible to unmount the filesystem without deleting the folder configuraton from the |webui|.
+	- If a |sf| is being used by a service (FTP, plugins, etc.) is not possible to delete it. Is necessary to disengage the |sf| from the service(s) or section(s) that is holding it before proceeding with removal. This will also prevent to unmount a device from the |webui| in the filesystem section if there is still a |sf| associated with it.
 	- Due to the design of the software is not possible at the moment to know what section or service is holding which |sf|.
 
 Edit
 ^^^^
 
-Edit |sf| is possible, but it has some limitations. The logical name cannot be changed, but you can change the default permissions and the parent device volume. Editing the parent device should decent into every service that is using a |sf|. The backend will reconfigure all services and stop/start daemons accordingly.
+Edit |sf| is possible, but it has some limitations. You can only change the parent device volume. Once the parent device is changed the backend will reconfigure every service that is using a |sf| and stop/start daemons accordingly.
+
+Be aware that changing the parent device volume will not move the data from one filesystem to another.
 
 .. warning::
 
@@ -192,15 +202,17 @@ Privileges
 
 Same as in the user section, the window here is relative to the shared folder.
 It will display for the selected |sf| all the |omv| users/groups and their
-corresponding privileges. As you can see from the code block in the
-`add section <#id3>`_ privileges are expressed in the internal database in the
-same manner as permissions in Linux, simplified using the octal mode:
-read/write(7), read-only(5) and no access(0).
-When a privilege is changed in the |webui| it descents into all relevant
-services (SMB, FTP and AFP). |omv| will reconfigure everything that is using
-a |sf|, this includes daemon files and stop/start daemons. This is important
-as some services or plugins might not use privileges but they will have
-their daemon restarted as they are using a |sf|. As explained here privileges
-can be edited from `shared folder <#shared-folder>`_ or `users <#user>`_
+corresponding privileges. 
+
+As you can see from the code block in the `add section <#id3>`_ privileges are 
+expressed in the internal database in the same manner as permissions in Linux, simplified 
+using the octal mode: *read/write(7)*, *read-only(5)* *and no access(0)*.
+
+If a privilege is changed, it means a change in the |sf| database section. This database 
+event will trigger a reconfiguration of SMB, FTP and AFP, it will also restart all the 
+above daemons. A plugin using |sf|, but not the privilege information from the database 
+entry should not get reconfigured/restarted if a change occurs just in privileges.
+
+Privileges can be edited from `shared folder <#shared-folder>`_ or `users <#user>`_
 section. But it is also possible to edit privileges from the |sf| combo
-selection.
+selection, just click the :fa:`search` to left side of the drop down menu.

@@ -16,9 +16,18 @@ The configuration options are minimal, But you can:
 - Enable compression
 - Enable tunneling (for SOCKS and port forward)
 
-An extra text field is provided to enter more options. Examine first the file /etc/ssh/sshd_config before adding extra options otherwise the option you might want to add will not be applied. In that case you need to use change the environmental variable.
+An extra text field is provided to enter more options. Examine first the
+file :file:`/etc/ssh/sshd_config` before adding extra options otherwise the
+option you might want to add will not be applied. In that case you need to
+use change the environmental variable.
 
-Normal |omv| users created in the |webui| can access the remote shell by adding them to the ssh group. Using PKA for users requires keys to be added to their profile, you can do this in the Users section. The key has to be added in `RFC 4716 <https://tools.ietf.org/html/rfc4716>`_ format. To do that run::
+.. _ssh_convert_rfc4716:
+
+Normal |omv| users created in the |webui| can access the remote shell by
+adding them to the ssh group. Using PKA for users requires keys to be added
+to their profile, you can do this in the Users section. The key has to be
+added in `RFC 4716 <https://tools.ietf.org/html/rfc4716>`_ format. To do
+that run::
 
 $ ssh-keygen -e -f nameofthekey.pub
 

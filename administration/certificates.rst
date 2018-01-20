@@ -30,9 +30,10 @@ The :code:`<uuid>` suffix is the internal |omv| reference number.
 .. note::
 
 	The public key is not displayed in RFC 4716. In case the remote server is
-	also |omv| based, you need to `convert <services.html#id7>`_ it the
-	appropiate format.
+	also |omv| based, you need to :ref:`convert <ssh_convert_rfc4716>`
+	it the appropiate format.
 
+.. _admin_certificate_ssl:
 
 SSL (Secure Socket Layer)
 =========================
@@ -63,5 +64,5 @@ LetsEncrypt
 ===========
 
 Lets Encrypt certificates can be imported directly, just locate your
-:file:`etc/letsencrypt/live/<mydomain.com>/{cert,privkey}.pem` files and copy
+:file:`/etc/letsencrypt/live/<mydomain.com>/{cert,privkey}.pem` files and copy
 their contents in their respective field. No need to convert.

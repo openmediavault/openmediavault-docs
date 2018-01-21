@@ -216,3 +216,29 @@ entry should not get reconfigured/restarted if a change occurs just in privilege
 Privileges can be edited from `shared folder <#shared-folder>`_ or `users <#user>`_
 section. But it is also possible to edit privileges from the |sf| combo
 selection, just click the :fa:`search` to left side of the drop down menu.
+
+
+ACL (Access Control List)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Provides fine grained permission control besides the standard POSIX permissions. The usage of ACL is not recommended for the average home user. If a server is using an extensive list of users then ACL could suit better [1]_ [2]_.
+
+The expanded ACL window displays three panels. Left one is a browser of the selected |sf|, so you can see the apply ACL to the current folder or a subdirectory and so on.
+
+The left panel displays all current |omv| users and system accounts and their current ACL of the selected folder. This panel actually reads ACL from the selected folder.
+
+The bottom panel displays the standard POSIX permission of the selected folder or subfolders in a user friendly interface.
+
+If you want just to reset linux permissions, just use the recursive checkbox and change options only in the bottom panel, and not selecting any ACL user/group in left panel.
+
+The ACL is applied using :command:`setfacl` [3]_ and read with :command:`getfacl` [4]_.
+
+.. note::
+	
+	* |omv| mounts all Linux filesystems with ACL enabled. Only native linux POSIX filesystems support ACL. The button gets disabled for HFS+, NTFS, FAT, etc. 
+	* ZFS provides ACL support, just need to enable the pool/dataset property.
+
+.. [1] https://help.ubuntu.com/community/FilePermissionsACLs
+.. [2] http://vanemery.net/Linux/ACL/linux-acl.html
+.. [3] https://linux.die.net/man/1/setfacl
+.. [4] https://linux.die.net/man/1/getfacl

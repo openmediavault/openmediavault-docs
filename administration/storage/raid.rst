@@ -59,6 +59,6 @@ After synthing is finish is necessary to expand the filesystem usinn the resize 
 .. warning::
 
 	* If your MD array and filesystem was created with |omv| or Debian before December 2014, then please read :doc:`here <filesystems>`.
-	* Do not use RAID arrays in production with drives connected via USB, neither hubs or different ports. This includes low power devices that do not have a SATA controller, e.g. Raspberry Pi. pogoplugs and any low entry arm SBC.
+	* Do not use RAID arrays in production with drives connected via USB, neither hubs or different ports. This includes low power devices that do not have a SATA controller, e.g. Raspberry Pi, Pogoplugs and any low entry ARM SBC.
 
 .. [1] https://raid.wiki.kernel.org/index.php/Linux_Raid

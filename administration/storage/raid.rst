@@ -1,7 +1,6 @@
 RAID
 ####
 
-
 |omv| uses linux software RAID driver (MD) and the mdadm utility to create arrays [1]_. Arrays created in any other linux distro should be recognized inmmediatly by the server. In most cases you can skip to the filesystem array and proceed to mount to integrate the filesystem into the database.
 
 Overview
@@ -23,28 +22,24 @@ Create
 	   "6", "RAID6", "4", "Yes", "Yes"
 	   "10", "Stripped Mirror", "4", "Yes", "No"
 
-
 .. note::
 	* RAID4 and FAULTY levels are not supported in the |webui|.
 	* RAID1+0 is possible by stripping two mirrors. The create window should display both mirrors if they do not have any filesystem signatures yet.
 
-
 Detail
 	Displays extended information of the array the output comes from :command:`mdadm –detail /dev/mdX`
-Grow 
+Grow
 	Add disk(s) into the array.
-Recover 
+Recover
 	If the array comes from another linux server you can use this button to reassemble the array in the current server
 Remove
 	This is used to remove failed disks, in case one needs be replaced.
-
 Delete
-	Stop the array and zero the superblock all devices conforming the array (script /usr/sbin/omv-rmraid). Use with caution. 
-
+	Stop the array and zero the superblock all devices conforming the array (script :command:`/usr/sbin/omv-rmraid`). Use with caution.
 
 Mdadm works better with unpartitioned disks, plain raw block devices. Before creating MD RAID in your system make sure disks are clean before. In the physical disk section you can perform a quick or full wipe. Quick wipe is enough to delete partition tables.
 
-Degraded array creation in not possible in the |webui|, however the array can be created in terminal using mdadm if you want for example to convert a raid from level 1 to 5 or 6.
+Degraded array creation in not possible in the |webui|, however the array can be created in terminal using mdadm if you want for example to convert a RAID from level 1 to 5 or 6.
 
 Mail notifications are integrated for mdadm, these are sent everytime an array enters degraded state.
 
@@ -63,8 +58,7 @@ After synthing is finish is necessary to expand the filesystem usinn the resize 
 
 .. warning::
 
-	* If your MD array and filesystem was created with |omv| or Debian before December 2014, then please read :doc:`here </various/filesystems>`
+	* If your MD array and filesystem was created with |omv| or Debian before December 2014, then please read :doc:`here </various/filesystems>`.
 	* Do not use RAID arrays in production with drives connected via USB, neither hubs or different ports. This includes low power devices that do not have a SATA controller, e.g. Raspberry Pi. pogoplugs and any low entry arm SBC.
-
 
 .. [1] https://raid.wiki.kernel.org/index.php/Linux_Raid

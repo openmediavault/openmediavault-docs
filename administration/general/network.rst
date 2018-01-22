@@ -61,7 +61,7 @@ Advanced Interface Configuration
 Proxy
 =====
 
-This panel configures the server proxies using system wide enviromemtal variables. Every software that obbeys Linux proxy environmental variables should be able to use the proxy. This is useful for example if there are many Debian servers in the network, when performing ``apt`` operations, packages can be cached in the proxy if this configured appropiatly to reduce download bandwidth. 
+This panel configures the server proxies using system wide enviromemtal variables. Every software that obbeys Linux proxy environmental variables should be able to use the proxy. This is useful for example if there are many Debian servers in the network, when performing :command:`apt` operations, packages can be cached in the proxy if this configured appropiatly to reduce download bandwidth. 
 
 The variables name are::
 
@@ -78,7 +78,7 @@ Service Discovery
 This panel configures avahi-daemon announce services. You can disable selectively by service and/or change the common name announce. Plugins can add their service here also.
 Avahi announces are recognized by Linux file browsers by default. Mac OSX only recognizes SMB and AFP protocol in their sidebar. 
 
-Windows does not understand avahi announces. Samba announces to windows client using the NetBios daemon (nmbd). If windows network section does not display the samba server this settings do not change that behaviour.
+Windows does not understand avahi announces. Samba announces to windows client using the NetBIOS daemon (nmbd). If windows network section does not display the samba server this settings do not change that behaviour.
 
 Firewall
 ========

@@ -31,6 +31,7 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    administration/index
    plugins
    faq
+   troubleshooting
    support
    press
    contributors

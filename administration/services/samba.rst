@@ -136,7 +136,7 @@ How do I enter credentials in a semi-public share?
 
 Why the login keeps saying access denied?
 	This is more likely caused by two things:
-		- Permission issue (ACL or non default POSIX permission mode/ownership). Ffix the permissions in the shared folder. Samba runs as privileged (root) user, even so if parts of path don't have adecuate permissions, it will still respond access denied.
+		- Permission issue (ACL or non default POSIX permission mode/ownership). Fix the permissions in the shared folder. Samba runs as privileged (root) user, even so if parts of path don't have adecuate permissions, it will still respond access denied.
 		- Out of sync password in between linux and Samba. This is very rare but it has happened. Test in ssh the following [tt]smbpasswd username[/tt] enter password and try and login again.
 
 Why I can't edit files that other users have created?

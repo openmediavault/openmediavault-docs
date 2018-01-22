@@ -10,7 +10,7 @@ Notifications are integrated with smartmontools. Changes in S.M.A.R.T values are
 General
 -------
 
-This enables smartd(smart daemon). The daemon will periodically check disks attributes and compare them with previous check. You can select the daemon not to poll information if the disks are in certain power state.
+This enables smartd (SMART daemon). The daemon will periodically check disks attributes and compare them with previous check. You can select the daemon not to poll information if the disks are in certain power state.
 
 Temperature is a very critical attribute. Select the desired limits for smart monitoring to report on changes [3]_.
 
@@ -19,7 +19,7 @@ Devices
 -------
 The grid displays all curremt block devices in the system, not just the ones with SMART capabilities. From this grid by selecting a drive you can configure if you want smartmontools to watch and inform for any SMART attributes changes during uptime using the edit button.
 
-Smartmontools is configured in this file ``/etc/smartd.conf``
+Smartmontools is configured in this file :file:`/etc/smartd.conf`.
 
 The information button displays several tabs which provide friendly parsed information about the drive. The last tab has all the information in raw text.
 

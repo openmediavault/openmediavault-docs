@@ -6,9 +6,7 @@ Administration
 .. toctree::
    :maxdepth: 3
 
-   certificates
+   general/index
    storage/index
    access_rights_management
    services/index
-   cron
-   network

@@ -15,12 +15,12 @@ Options
 
 **Username:** Under what user should the command/script be executed. You can select root, system accounts and |omv| users.
 
-**Mail Notification:** Send all the command/script output to the mail defined in the username profile. If the task is running as root, the mail recipient will be the one defined in notifications for primary and secondary delivery. If |omv| user is defined in the task and has an email configured in his :doc:`profile <./access_rights_management>` the notification will be sent to that mail address.
+**Mail Notification:** Send all the command/script output to the mail defined in the username profile. If the task is running as root, the mail recipient will be the one defined in notifications for primary and secondary delivery. If |omv| user is defined in the task and has an email configured in his :doc:`profile </administration/access_rights_management>` the notification will be sent to that mail address.
 
 Configuration
 -------------
 
-The server configures all tasks done in the |webui| creating this file ``/etc/cron.d/openmediavault-userdefined`` on demand as single lines per job.
+The server configures all tasks done in the |webui| creating this file :file:`/etc/cron.d/openmediavault-userdefined` on demand as single lines per job.
 
 .. code-block:: guess
 
@@ -31,7 +31,7 @@ The server configures all tasks done in the |webui| creating this file ``/etc/cr
 	50 18 * * * root /var/lib/openmediavault/cron.d/userdefined-69a1cf21-3099-4d37-bb8f-df3fecfac988 >/dev/null 2>&1
 	@daily root /var/lib/openmediavault/cron.d/userdefined-f04f0bbb-03d3-4d45-9efb-e1e980cbbaf3 >/dev/null 2>&1
 
-Per line is the cron time or interval, username and the command. The actual command is wrapped in a shell script located in this folder ``/var/lib/openmediavault/cron.d/``. All files in there are prefixed with ``username`` and the internal database uuid.
+First is the cron time or interval, then username finally the command. The actual command is wrapped in a shell script located in this folder :file:`/var/lib/openmediavault/cron.d/`. All files in there are prefixed with ``username`` and the internal database uuid.
 
 .. warning::
 	- When using a single command to be executed, make sure this does not have any bashism. This because the cron wrapper script gets executed in pure shell #!/bin/sh. If you need to use something in bash wrap your command(s) in a bash script.

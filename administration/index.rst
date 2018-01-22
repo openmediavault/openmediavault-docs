@@ -7,6 +7,7 @@ Administration
    :maxdepth: 3
 
    certificates
+   storage/index
    access_rights_management
    services/index
    cron

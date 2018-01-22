@@ -72,14 +72,14 @@ A default share example:
 	write list = "john"
 
 
-You can add extra options in the general and share configuration at the bottom, where you have a multi line text field. This options are hardcoded in the mkconf script but they can be changed using :doc:`environmental variables </various/advset>`.
+Is possible to add extra options in the general and share configuration at the bottom with a multi line text field. This options are hardcoded in the mkconf script but they can be changed using :doc:`environmental variables </various/advset>`.
 
 
 Privileges
 ----------
 
 The login access in Samba is configured using privileges. This means they will not act in the file system layer they will run in the Samba authentication layer. From there the access can be controlled to be read only or read/write access and guest account access. This is done with the PRIVILEGES button in the shared folder section not the ACL.
-Privileges only gets only login access and from there determines if user can read or write. If write access is enabled and files/folders have restricted permissions then you will still not be able to write to folder using Samba.
+Privileges only gets only login access and from there determines if user can read or write. If write access is enabled and files/folders that have restricted permissions then write access is not possible using Samba.
 
 .. important::
 	Samba does not use PAM for login, it has a different password database. When the admin changes a username password (or the username changes his) using the |webui| what |omv| does is that it changes both the linux login password and the Samba internal database. If a username changes his password using shell, this will not be reflected in Samba log in.
@@ -110,7 +110,7 @@ This means that every user will have to provide valid OMV credentials to access 
 	read list = User1, @Group1
 	write list = User2, @Group2
 
-Notice here if you have a user that you have not set up privileges for (thank means blank tick boxes) he will be able to login anyway and have write access.
+Notice here if users are not set up privileges (thank means blank tick boxes) anyone will be able to login anyway and have write access.
 
 **Public only:** *The guest user is always used. This is the Guest Only option in the Samba share configuration.*
 
@@ -131,12 +131,12 @@ Questions
 
 How do I enter credentials in a semi-public share?
 	In most cases the user will always be logged as guest.
-	You have to use windows map network drive feature to provide other login credentials different from guest.
-	In Mac OS X you can use CMD+K (if you are in Finder)
+	Use windows map network drive feature to provide other login credentials different from guest.
+	In Mac OS X use CMD+K (if using Finder)
 
 Why the login keeps saying access denied?
 	This is more likely caused by two things:
-		- Permission issue (ACL or non default POSIX permission mode/ownership). You need to fix the permissions in the shared folder. Samba runs as privileged (root) user, even so if parts of path don't have adecuate permissions you can still get access denied.
+		- Permission issue (ACL or non default POSIX permission mode/ownership). Ffix the permissions in the shared folder. Samba runs as privileged (root) user, even so if parts of path don't have adecuate permissions, it will still respond access denied.
 		- Out of sync password in between linux and Samba. This is very rare but it has happened. Test in ssh the following [tt]smbpasswd username[/tt] enter password and try and login again.
 
 Why I can't edit files that other users have created?

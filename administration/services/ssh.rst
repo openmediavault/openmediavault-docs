@@ -4,11 +4,11 @@ SSH
 Overview
 --------
 
-Secure shell comes disabled by default in |omv|, if you install |omv| on top a
+Secure shell comes disabled by default in |omv|, when installing |omv| on top a
 Debian installation, the systemd unit will be disabled after the server
 packages are installed. Just login into |webui| to re-enable the ssh service.
 
-The configuration options are minimal, But you can:
+The configuration options are minimal, But is possible to:
 
 - Disable the root login
 - Disable password authentication
@@ -18,22 +18,21 @@ The configuration options are minimal, But you can:
 
 An extra text field is provided to enter more options. Examine first the
 file :file:`/etc/ssh/sshd_config` before adding extra options otherwise the
-option you might want to add will not be applied. In that case you need to
-use change the environmental variable.
+option will not be applied. In that case is necessary change the environmental variable.
 
 .. _ssh_convert_rfc4716:
 
 Normal |omv| users created in the |webui| can access the remote shell by
 adding them to the ssh group. Using PKA for users requires keys to be added
-to their profile, you can do this in the Users section. The key has to be
+to their profile, this is done in the Users section. The key has to be
 added in `RFC 4716 <https://tools.ietf.org/html/rfc4716>`_ format. To do
 that run::
 
 $ ssh-keygen -e -f nameofthekey.pub
 
-You can paste the output in the users profile at ``Access Right Management | Users | <USERNAME> | Edit | Public Keys``.
+Paste the output in the users profile at ``Access Right Management | Users | <USERNAME> | Edit | Public Keys``.
 
-You can add as many keys as you want. The public key looks like this::
+The number of keys per user is unlimited. A public key in FRC 4716 looks like this::
 
 	---- BEGIN SSH2 PUBLIC KEY ----
 	Comment: "iPhone user1"
@@ -45,7 +44,7 @@ You can add as many keys as you want. The public key looks like this::
 	aFobBSlhQ3ESCYWNXTS3bF
 	---- END SSH2 PUBLIC KEY ----
 
-The comment string is very important. This will help you track down when you need to revoke the key in case it gets lost or stolen.
+The comment string is very important. This will help track down when is necessary to revoke the key in case it gets lost or stolen.
 
 
 Admin Tasks
@@ -61,7 +60,7 @@ The SFTP server comes enabled by default for root and ssh group. So POSIX folder
 
 .. note::
 	**Remote WAN access**
-		- Forward in your router a port different than 22. This will minimize bots fingering the ssh server.
+		- Forward in router/firewall a port different than 22. This will minimize bots fingering the ssh server.
 		- Always use PKA.
 		- Disable password login.
 		- Disable root login.

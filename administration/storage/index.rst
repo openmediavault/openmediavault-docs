@@ -6,6 +6,7 @@ Storage
 .. toctree::
    :maxdepth: 2
 
-   filesystems
-   raid
+   disks
    smart
+   raid
+   filesystems

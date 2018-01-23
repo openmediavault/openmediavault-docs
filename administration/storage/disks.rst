@@ -1,9 +1,9 @@
 Disks
 #####
 
-An overview of all physical disks attached to the server. Displays basic information to identify disks, such as: manufacturer, model, serial number and capacity. A hidden column also displays the linux block device identification symlinks ``/dev/disk/{by-id,by-path,by-uuid}``.
+An overview of all physical disks attached to the server. Displays basic information to identify disks, such as: manufacturer, model, serial number and capacity. A hidden column also displays the linux block device identification symlinks :file:`/dev/disk/{by-id,by-path,by-uuid}`.
 
-Be aware that when attaching disks via USB (A docking station, cage, adapter, etc) the internal disk information will not pass, the backend will display probably the USB-SATA controller information. The capacity should remain the same. This is a response given by the backend with ``DiskMgnt::getList`` service-method using a rock64 SBC board with a docking station attached via the USB 3.0 port:
+Be aware that when attaching disks via USB (a docking station, cage, adapter, etc.) the internal disk information will not pass, the backend will display probably the USB-SATA controller information. The capacity should remain the same. This is a response given by the backend with ``DiskMgnt::getList`` service-method using a rock64 SBC board with a docking station attached via the USB 3.0 port:
 
 .. code-block:: json
 

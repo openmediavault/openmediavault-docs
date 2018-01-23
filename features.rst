@@ -28,7 +28,7 @@ Storage
 
 **S.M.A.R.T.:** Based on smartmontools [3]_, It can display advanced information of S.M.A.R.T values in the webUI. It can also schedule health tests as well as send notifications when S.M.A.R.T. attributes values change.
 
-**RAID Management:** Based Linux RAID [4]_, you can create arrays in different 6 different configurations. Levels available are linear, 0, 1, 10, 5 and 6. The array can have disks removed or expanded using the web interface.
+**RAID Management:** Based Linux RAID [4]_, create arrays in different 6 different configurations. Levels available are linear, 0, 1, 10, 5 and 6. The array can have disks removed or expanded using the web interface.
 
 **File Systems:** Volume format, device mmount and unmount. More information :doc:`here </various/filesystems>`.
 

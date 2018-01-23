@@ -4,7 +4,7 @@ Power Management
 Monitoring
 ^^^^^^^^^^
 
-Configures cpufrequtils and sets the default options for the governor to be **conservative** by default only in x86 architectures if enabled. If architecture is different then governor is set as **ondemand**.
+Configures cpufrequtils and sets the default options for the governor to be **conservative** by default in x86 architectures if enabled. If architecture is different then governor is set as **ondemand**.
 
 :file:`/etc/default/crupfrequtils`
 

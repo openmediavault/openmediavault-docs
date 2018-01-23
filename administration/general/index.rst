@@ -8,5 +8,6 @@ General
 
    network
    cron
+   powermanagement
    certificates
    

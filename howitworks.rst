@@ -25,7 +25,7 @@ Essential elements:
 Read
 ----
 
-When a user clicks on a panel, the javascript code retrieves values from config.xml using a rpc call. The rpc call has two main components the usually the service name of the section (is in the js code) and the method, usually named :code:`getSettings`. In chrome browser you can hit F12 to open the developer console, go to samba section. Then in the network section of the console you can see several rpc.php calls. Find the one related to samba, right click and select copy as cURL.
+When a user clicks on a panel, the javascript code retrieves values from config.xml using a rpc call. The rpc call has two main components usually the service name of the section (is in the js code) and the method, usually named :code:`getSettings`. In chrome browser hit F12 to open the developer console, go to samba section. Then in the network section of the console will show several rpc.php calls. Find the one related to samba, right click and select copy as cURL.
 
 This is the json payload sent to omv-engined:
 
@@ -119,9 +119,9 @@ And the response:
 Write
 -----
 
-A user can do a simple task as to create a shared folder or change some settings in a service section. Whenever the user hits the save button, all fields from the section are submitted from the frontend via rpc to the internal database in :file:`config.xml`, even the ones that are not changed. This is similar on what happens when reading values the method here is named differently when saving: :code:`setSettings`.
+A user can do a simple task as to create a shared folder or change some settings in a service section. Whenever the user hits the save button, all fields from the section are submitted from the frontend via rpc to the internal database in :file:`config.xml`, even the ones that are not changed. This is similar on what happens when reading values however the method here is named differently when saving: :code:`setSettings`.
 
-Stopping here, you can examine by yourself :file:`config.xml` in terminal and see all the new stored values, what follows is that usually a yellow button will appear to indicate you need to apply changes. The yellow button happens for one reason only: the dirtymodules.json file.
+Stopping here, examining :file:`config.xml` in terminal will see all the new stored values, what follows is that usually a yellow button will appear to indicate that is necessary to apply changes. The yellow button happens for one reason only: the dirtymodules.json file.
 
 So the save button does two things actually, sends information to config.xml and what is called mark the relevant module as dirty. As en example: Making a change in general samba or its shares will create a dirtymodules file like this:
 
@@ -136,7 +136,7 @@ So the save button does two things actually, sends information to config.xml and
 Reconfiguring services
 ----------------------
 
-After you hit the apply button, this very long  `function <https://github.com/openmediavault/openmediavault/blob/9ddc8b66f3f666987157a0e7b84d57e7c10f9ba4/deb/openmediavault/usr/share/openmediavault/engined/rpc/config.inc#L72-L204>`_ will get executed.
+When yellow apply button is pressed, this very long php `function <https://github.com/openmediavault/openmediavault/blob/9ddc8b66f3f666987157a0e7b84d57e7c10f9ba4/deb/openmediavault/usr/share/openmediavault/engined/rpc/config.inc#L72-L204>`_ gets executed.
 
 In the following order, this will happen on background:
 
@@ -153,7 +153,7 @@ After that is time for daemon reload, so:
 That php function performs also checks for dependancies, in case a configuration needs to be reconfigured or reloaded before/after another one.
 
 Why is zeroconf marked dirty?
-	Because the samba |omv| `code <https://github.com/openmediavault/openmediavault/blob/a846afb5a648cb89b2dad0fdf25ee7b261d89a78/deb/openmediavault/usr/share/openmediavault/engined/module/samba.inc#L266-L269>`_ indicates that whenever a change is performed in his section, zeroconf must be marked dirty. This is by design as you have realized avahi announces individual samba shares, so if a share is added or removed avahi needs all his service files completly rewritten.
+	Because the samba |omv| `code <https://github.com/openmediavault/openmediavault/blob/a846afb5a648cb89b2dad0fdf25ee7b261d89a78/deb/openmediavault/usr/share/openmediavault/engined/module/samba.inc#L266-L269>`_ indicates that whenever a change is performed in his section, zeroconf must be marked dirty. This is by design, avahi is configured to announce samba server if is enabled, so needs to know if |omv| Samba server is enabled or disabled. If the database shows it is disabled the avahi servie file will be removed
 	The module backend is something all plugins can use. For example a plugin that wants to use the privilege database model will have to listen to any changes in the |sf| database so it can reconfigure his files acordingly.
 
 What can break the web interface?

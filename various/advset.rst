@@ -13,6 +13,9 @@ system.
 To overcome this there are some options available to modify some of the default
 |omv| configuration options and values, like the use of environmental variables.
 
+
+.. _environmental_variable:
+
 Environmental Variables
 -----------------------
 

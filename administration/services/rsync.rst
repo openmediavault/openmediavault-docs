@@ -69,32 +69,14 @@ There are options are available which are the most commonly used in RSync.
 At the end there is an extra text field where you add more
 `options <http://linux.die.net/man/1/rsync>`_.
 
-Server
-------
-
-This is the place for configuring the RSync daemon and it's modules
-(shared folder).
-
-Settings
-	Change listening port of the daemon and add extra configurations
-	`directives <https://www.samba.org/ftp/rsync/rsyncd.conf.html>`_
-	text field.
-
-Modules
-	This is where you add shared folders to be available to the daemon. The
-	options are explained in the module web panel. If you want to protect the
-	modules you can select the next tab and choose a server username and
-	establish a password. Be aware the password is only for the modules, is
-	not the linux password. Documentation for the extra options for the
-	modules is provided by rsyncd manual.
-
 Configuration
-	The server makes the tasks run by placing them in
-	:file:`/etc/cron.d/openmediavault-rsync` in one line per job. You can see the
-	cron time at the beginning, then user (root) and target file that holds
-	the actual RSync file with the final command. The files are stored in
+	|omv| makes the tasks run by placing them in
+	:file:`/etc/cron.d/openmediavault-rsync` one line per job. The
+	cron time at the beginning, then user (root) and the target file that holds
+	the actual RSync file with the final command, is configured in the same way as 
+	:doc:`scheduled tasks </administration/general/cron>` The files are stored in
 	:file:`/var/lib/openmediavault/cron.d/`, prefixed with :code:`rsync` and a
-	:code:`<uuid>`. A default SSH RSync job looks like this.
+	:code:`<uuid>`. A default SSH RSync job looks like this:
 
 .. code-block:: shell
 
@@ -119,3 +101,24 @@ Configuration
 	ssh-add /etc/ssh/openmediavault-484a6837-5170-468c-aa8f-0e3cb92a641e >/dev/null
 	rsync --verbose --log-file="/var/log/rsync.log" --rsh "ssh -p 22" --recursive --times --archive --perms '/srv/dev-disk-by-label-VOLUME1/backupdir/' 'username@backupserver.com:/opt/backup' & wait $!
 	omv_log "\nThe synchronisation has completed successfully."
+
+Server
+------
+
+This is the place for configuring the RSync daemon and it's modules
+(shared folder).
+
+Settings
+	Change listening port of the daemon and add extra configurations
+	`directives <https://www.samba.org/ftp/rsync/rsyncd.conf.html>`_
+	text field.
+
+Modules
+	This is where you add shared folders to be available to the daemon. The
+	options are explained in the module web panel. If you want to protect the
+	modules you can select the next tab and choose a server username and
+	establish a password. Be aware the password is only for the modules, is
+	not the linux password. Documentation for the extra options for the
+	modules is provided by rsyncd manual.
+
+The above server settings are sent to this file :file:`/etc/rsyncd.conf`.

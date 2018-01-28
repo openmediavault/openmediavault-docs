@@ -7,6 +7,7 @@ General
    :maxdepth: 2
 
    network
+   notifications
    cron
    powermanagement
    certificates

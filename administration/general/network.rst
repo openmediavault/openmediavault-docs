@@ -27,7 +27,7 @@ Wake on LAN (WOL)
 Wireless
 ^^^^^^^^
 
-Support for wireless network was added in |omv| 3.0. The configuration window displays the same IP configuration fields as ethernet, plus the relevant wireless values: SSID (the wireless network name) and the password. Please be aware wireless should not be used in a production server. This feature is intended extreme cases. Whenever is possible please always use ethernet for a NAS server.
+Support for wireless network was added in |omv| 3.0. The configuration window displays the same IP configuration fields as ethernet, plus the relevant wireless values: SSID (the wireless network name) and the password. Please be aware wireless should not be used in a production server. This feature is intended for extreme cases. Whenever is possible please always use ethernet for a NAS server.
 
 
 Vlan
@@ -40,17 +40,18 @@ Bond
 
 The configuration window provides all available `modes <https://www.kernel.org/doc/Documentation/networking/bonding.txt>`_ for the bond driver. To configure bonding, is necessary at least two physical network interfaces. The |webui| allows the selection of less than two, this is by design for configuration purposes. The workflow is as follow for dual nics:
 
-- If the primary NIC is already working either by the installer, configure it through the |webui| as static. If set as static using the same IP address given by DHCP, the |webui| it should not be necessary to re-login.
-- Click ``Network | Interfaces | Add | Bond``, select the second available NIC, select the bond mode, enter the IP field values except gateway and DNS. Save and hit apply. 
+- If the primary NIC is already working either by the installer, configure it through the |webui| as static. If set as static using the same IP address given by DHCP, it should not be necessary to re-login to the |webui|.
+- Click ``Network | Interfaces | Add | Bond``, select the second available NIC, select the bond mode, fill the IP field and subnet mask values, leave gateway and DNS empty. Save and hit apply. 
 - Log out and access the |webui| using the new IP address assigned to the bond interface created.
 - Now select the primary interface configured through |webui| in the first step, and delete it. Save and hit apply. 
-- Select the newly created bond interface, click edit add now the physical nic that was deleted from the step before should be available to select. Save and hit apply
+- Select the newly created bond interface, click edit add now the physical nic that was deleted from the step before should be available to select. Save and hit apply.
+- The dashboard should now report the bond interface information (including speed).
 
 
 .. note::
 
 	* 802.3ad LACP (Link Aggregation) mode only works if physical interfaces are connected to a managed switch that supports aggregation.
-	* Is not possible to achieve 2GBit bandwidth (or more depending on the ammount of nics) in a single client. Even if the client also has a LACP bonded nic or 10Gbit card as there is no multipath support in samba or other |omv| services like Windows server has for file sharing using SMB.
+	* Is not possible to achieve 2GBit bandwidth (or more depending on the ammount of nics) in a single client using LACP. Even if the client also has a LACP bonded nic or 10Gbit card as there is no multipath support in samba or other |omv| services like Windows server has for file sharing using SMB.
 	* Higher speeds using link aggregation are limited by disk speed. When serving simultaneous clients make sure the phisical media is capable (SSD or RAID array) of reaching the speed of the bonded nic.
 
 
@@ -83,11 +84,11 @@ Windows does not understand avahi announces. Samba announces to windows client u
 Firewall
 ========
 
-This is grid panel for adding iptables rules. This can be useful if you need to secure access in your local network. At the moment is only possible to add rules to the OUTPUT and INPUT chains.
+This is grid panel for adding iptables rules. This can be useful if you need to secure access in your local network. At the moment is only possible to add rules to the OUTPUT and INPUT chains in the filter table. The configuration to load the rules at boot or network restart is located in this file :file:`/etc/network/if-pre-up.d/openmediavault-iptables`. The mkconf |omv| script uses a run-parts folder :file:`/usr/share/mkconf/iptables.d` where is possbile to store custom scripts to add rules to the NAT and RAW table or the FORWARD chain,
 
 .. tip::
 	* To avoid locking yourself out while testing, create a cron command to run every five minutes that flushes the OUTPUT/INPUT chain.
-	``*/5 * * * * root iptables -F INPUT && iptables -F OUTPUT``
+	``*/5 * * * * root /sbin/iptables -F INPUT && /sbin/iptables -F OUTPUT``
 
 	* Before adding the last rule to reject all, add a rule before the reject all, to LOG everything. This will help understand why some rules do not work. The log is saved in dmesg or syslog.
 

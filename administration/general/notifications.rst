@@ -2,7 +2,7 @@ Notifications
 #############
 
 
-Notifications work in the form of email. The backend software used here is postfix [1]_ configured as a MTA. The options allow to configure to send mail via smtp servers using the standard port or use SSL/TLS. The |webui| allows inputing two delivery addresses. Both are assigned to the root user. 
+Notifications work in the form of email. The backend software used here is postfix [1]_ configured as a MTA. The options allow to configure to send mail via SMTP servers using the standard port or use SSL/TLS. The |webui| allows inputing two delivery addresses. Both are assigned to the root user. 
 
 
 Configuration
@@ -48,7 +48,7 @@ The server will send notifications for this events:
 
 	- Log in from browser (If cookies are allowed, then it just sends once). 
 	- Use of sudo by a user not in allowed group.
-	- Sumaary of locked users by pam_tally2 [2]_. This happens when a user or admin attemps fails to log in for more than three times.
+	- Summary of locked users by pam_tally2 [2]_. This happens when a user or admin attempts fails to log in for more than three times.
 	- MD RAID events: degraded, reshape, etc. [D]
 	- Monit software: php-fpm, nginx, netatalk, rrdcached, collectd and omv-engined. [D]
 	- Monit filesystem: usage and mount points. [D]
@@ -82,7 +82,7 @@ Gmail can be used in notifications. If you have 2FA enabled for the account, the
 SSL
 ===
 
-If the remote smtp server uses port 465, |omv| will reconfigure the MTA to use the corresponding directives as documented in postfix for `wrapper mode <http://www.postfix.org/TLS_README.html>`_.
+If the remote SMTP server uses port 465, |omv| will reconfigure the MTA to use the corresponding directives as documented in postfix for `wrapper mode <http://www.postfix.org/TLS_README.html>`_.
 
 Third Party Notifications
 =========================

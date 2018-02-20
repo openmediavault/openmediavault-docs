@@ -23,6 +23,14 @@ Can I use a usb flash drive (stick) for installing the system?
 	few weeks of usage. Most common symptom is basic command execution does
 	not work, denied login, etc. More information `here <https://forum.openmediavault.org/index.php/Thread/6438-Tutorial-Experimental-Third-party-Plugin-available-Reducing-OMV-s-disk-writes-al/>`_.
 
+Can I give access to non-admin users to the web control panel?
+	No. By default non-admin users can only access their account profile, they can change
+	password and their email address if the admin has allowed changes on their account.
+	However the current |webui| framework is designed for developers to create plugins where
+	they can give limited or full access to non-admin users to their plugin. An examples is in the
+	`openvpn plugin <https://github.com/OpenMediaVault-Plugin-Developers/openmediavault-openvpn>`_
+	by omv-extras.
+
 What is the file :file:`/etc/openmediavault/config.xml` for?
 	Is the database configuration store file for |omv|. When a change is
 	performed in the |webui|, the config value is stored and/or retrieve by
@@ -89,7 +97,7 @@ I don't have a data disk, and I want to use my OS disk for storing data?
 	files are separated from data disks.
 
 	However if the OS disk is partitioned the system will recognise the extra
-	partitions besides rootfs if is formatted. You can mount and to create
+	partitions besides rootfs if is formatted. You can mount it and use it for
 	shared folders.
 
 	The current installer does not provide access to the partition manager,
@@ -98,17 +106,15 @@ I don't have a data disk, and I want to use my OS disk for storing data?
 	SystemRescueCd.
 
 Can I install |omv| on top a running Debian system?
-	Yes, but is not recommended that the running OS has a desktop environment
+	Yes, but is not recommended that the running OS not have a desktop environment
 	installed.
-
-Which are the files that should not be edited by the user?
-	There are several services that |omv| takes control of, The recommended
-	list is here.
 
 What is the permissions/ownership of folders in |omv| created by shared folders?
 	The default is folders in ``2775`` mode, with ``root:users`` ownership.
 	This means all users created in the |webui| can read, write to folders
-	created by the system in the data drives using the default.
+	created by the system in the data drives using the default. The setgid allows
+	group inheritance, meaning new files/folders bellow will always have the group
+	users (GID=100) membership.
 
 Why are my filesystems mounted as noexec?
 	This is a security measure to avoid the placement of malicious scripts in

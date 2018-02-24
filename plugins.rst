@@ -38,4 +38,4 @@ The following is the list of official plugins by |omv|.
 3rd party
 ---------
 
-An overview of the third party plugin list can be found `here <http://www.omv-extras.org/>`_.
+An overview of the third party plugin list can be found at `omv-extras.org <http://www.omv-extras.org/>`_.

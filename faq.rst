@@ -150,7 +150,7 @@ I want to experiment with |omv| or make changes to the code
 
 Why there is no iscsitarget plugin in |omv| 4?
 	The iscsitarget software is divided in two parts. The `userland tools <https://packages.debian.org/source/jessie/iscsitarget>`_
-	and the `kernel modules <https://packages.debian.org/jessie/iscsitarget-dkms>`_ both are provided by debian repository system.
+	and the `kernel modules <https://packages.debian.org/jessie/iscsitarget-dkms>`_ both are provided by Debian repository system.
 	Kernel modules are come in the form of `DKMS <https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support>`_. 
 	The upstream software is mantained in `sourceforge <https://sourceforge.net/projects/iscsitarget/files/iscsitarget/>`_.
 	Debian only provides packages up to Jessie, this is because the DKMS modules do not built in kernels higher than 4.x.

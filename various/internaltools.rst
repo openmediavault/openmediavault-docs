@@ -18,7 +18,7 @@ To read values in the database the tool needs as last argument the datamodel pat
 
 Lets read all the registered filesystems that have been mounted through the |webui|. Type the following command as root::
 
-	$ omv-confdbadm read --prettify conf.system.filesystem.mountpoint
+	# omv-confdbadm read --prettify conf.system.filesystem.mountpoint
 
 Output returns:
 
@@ -73,7 +73,7 @@ The first one is a native ext4 filesystem, the second object is storage pool, th
 
 **Filtering:** Get all filesystem mountpoints::
 
-	$ omv-confdbadm read conf.system.filesystem.mountpoint  | jq -r '.[]|.dir'
+	# omv-confdbadm read conf.system.filesystem.mountpoint  | jq -r '.[]|.dir'
 
 Output returns::
 
@@ -85,7 +85,7 @@ Output returns::
 
 **Selecting:** Get all objects with a filesystem of ext4::
 
-	$ omv-confdbadm read conf.system.filesystem.mountpoint  | jq -r '.[]|select(.type=="ext4")'
+	# omv-confdbadm read conf.system.filesystem.mountpoint  | jq -r '.[]|select(.type=="ext4")'
 
 Output returns:
 
@@ -107,7 +107,7 @@ Output returns:
 
 Add the noexec flag to this filesystem object ``567c2bd4-3d82-45b2-b34b-a6d38e680ed3``, we need to pass the whole json object as argument::
 
-	$ omv-confdbadm update conf.system.filesystem.mountpoint '{"freq":0,"hidden":false,"passno":2,"opts":"defaults,noexec,noauto,user_xattr,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0,acl","dir":"/media/dev-disk-by-label-ironwolf_3TB_1","uuid":"567c2bd4-3d82-45b2-b34b-a6d38e680ed3","fsname":"/dev/disk/by-label/ironwolf_3TB_1","type":"ext4"}'
+	# omv-confdbadm update conf.system.filesystem.mountpoint '{"freq":0,"hidden":false,"passno":2,"opts":"defaults,noexec,noauto,user_xattr,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0,acl","dir":"/media/dev-disk-by-label-ironwolf_3TB_1","uuid":"567c2bd4-3d82-45b2-b34b-a6d38e680ed3","fsname":"/dev/disk/by-label/ironwolf_3TB_1","type":"ext4"}'
 
 
 Remove a filesystem from the database, this time we pass only the corresponing uuid of the object::
@@ -122,7 +122,7 @@ This tool can execute rpc commands. This is identical of what the web frontend u
 
 **Example 1:** Get all mounted filesystems, including rootfs::
 
- $ omv-rpc -u admin 'FileSystemMgmt' 'enumerateMountedFilesystems' '{"includeroot": true}' 
+ # omv-rpc -u admin 'FileSystemMgmt' 'enumerateMountedFilesystems' '{"includeroot": true}' 
 
 Output returns:
 
@@ -205,7 +205,7 @@ Output returns:
 
 **Example 2:** Get all block devices with no filesystem signatures. This is used by the RAID creation window::
 
-	$ omv-rpc -u admin 'RaidMgmt' 'getCandidates' | jq
+	# omv-rpc -u admin 'RaidMgmt' 'getCandidates' | jq
 
 
 Output returns:

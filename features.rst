@@ -30,7 +30,7 @@ Storage
 
 **RAID Management:** Based Linux RAID [4]_, create arrays in different 6 different configurations. Levels available are linear, 0, 1, 10, 5 and 6. The array can have disks removed or expanded using the web interface.
 
-**File Systems:** Volume format, device mmount and unmount. More information :doc:`here </various/filesystems>`.
+**File Systems:** Volume format, device mount and unmount. More information in the :doc:`filesystem section </administration/storage/filesystems>`.
 
 **LVM:** Enhanced by the LVM2 plugin, the system has the capability of formatting disks or partitions as LVM that can be used in volume groups to create logical partitions.
 

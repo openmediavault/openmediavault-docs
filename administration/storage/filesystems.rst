@@ -28,18 +28,18 @@ Overview
 			<hidden>0</hidden>
 		</mntent>
 
-	With the mntent entry in config.xml, mkconf fstab script writes the appropiate line in ``/etc/fstab``. You can indentify entries in ``/etc/fstab`` created by the |webui| by looking at «openmediavault» tags. Is important to mention to not alter the information in bewteen these tags. If you delete or modify a fstab option (noexec or quota for example) the next time you mount a new disk into the server, the mkconf will pipe the original value there again. If you need persistent change read :doc:`here </various/fs_env_vars>`. Finally the backend will proceed to mount the filesystem. After this the volume is ready for creating shared folders.
+	With the mntent entry in config.xml, mkconf fstab script writes the appropiate line in ``/etc/fstab``. You can indentify entries in ``/etc/fstab`` created by the |webui| by looking at «openmediavault» tags. Is important to mention to not alter the information in bewteen these tags. If you delete or modify a fstab option (noexec or quota for example) the next time you mount a new disk into the server, the mkconf will pipe the original value there again. If you need persistent change use :doc:`environmental variables </various/fs_env_vars>`. Finally the backend will proceed to mount the filesystem. After this the volume is ready for creating shared folders.
 
 Resize
-	The resize button is used for exanding filesystems. This can ocurr if you decide to resize a disk partition or you have grown a RAID array.
+	The resize button is used for expanding filesystems. This can ocurr if you decide to resize a disk partition or you have grown a RAID array by adding one or more disks.
 
 .. warning::
 	Filesystems greater than 16TB in ext4
 		The default mkfs.ext4 of Debian Wheezy does not use the 64bit flag for filesystems under 16TB, this is a serious problem since RAID arrays without that flag won't be able to expand and there is no workaround more than reformat.
-		Version 1.8 introduced the flag as default for newly created ext4 filesystems, independant of the size. However the current resize2fs tool in Debian Wheezy cannot handle the flag for expanding the size, so you need newer version of e2fsprogs. For avoiding recompiling the package, you can boot systemrescuecd and perform the expansion using gparted.
+		Version 1.8 introduced the flag as default for newly created ext4 filesystems, independant of the size. However the current resize2fs tool in Debian Wheezy cannot handle the flag for expanding the size. To overcome this a newer version of e2fsprogs is necessary. For avoiding recompiling the package, you can boot systemrescuecd and perform the expansion using gparted.
 
 Delete
-	The delete button actually deletes filesystems, using wipefs -a. This will flush filesystem, raid or partition-table signatures (magic strings). Be careful using this. The button is disabled until the filesystem is actually unmounted.
+	The delete button actually deletes filesystems, using :command:`wipefs -a`. This will flush filesystem, raid or partition-table signatures (magic strings). Be careful using this. The button is disabled until the filesystem is actually unmounted.
 
 Unmount
 	Disabled until you have deleted all shared folders asociated with that volume. Unmount will remove the entry from config.xml and /etc/fstab.

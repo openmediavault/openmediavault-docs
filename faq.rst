@@ -148,5 +148,17 @@ I want to experiment with |omv| or make changes to the code
 	and use `Vagrant <https://www.vagrantup.com/>`_ to create a virtual
 	machine.
 
+Why there is no iscsitarget plugin in |omv| 4?
+	The iscsitarget software is divided in two parts. The `userland tools <https://packages.debian.org/source/jessie/iscsitarget>`_
+	and the `kernel modules <https://packages.debian.org/jessie/iscsitarget-dkms>`_ both are provided by Debian repository system.
+	Kernel modules are come in the form of `DKMS <https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support>`_. 
+	The upstream software is mantained in `sourceforge <https://sourceforge.net/projects/iscsitarget/files/iscsitarget/>`_.
+	Debian only provides packages up to Jessie, this is because the DKMS modules do not built in kernels higher than 4.x.
+	The last commit upstream was in 2010, right now iscsitarget is abandoned software.
+
+	It is possible to use iscsitarget plugin in |omv| 3 or lower versions by using kernels lower than 4.x.
+
+	The intention is to migrate core underlaying software from iscsitarget to `LIO targetcli <http://linux-iscsi.org/wiki/Targetcli>`_  
+
 What is the :command:`omv-update` and :command:`omv-release-upgrade` for?
 	Information about those commands are in the software :doc:`section </various/apt>`.

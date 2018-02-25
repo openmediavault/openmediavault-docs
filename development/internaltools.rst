@@ -11,7 +11,7 @@ Most users tend to access/modify the database by using nano::
 
 $ nano /etc/openmediavault/config.xml
 
-This is a problem as sometimes a wrong pressed key can add strange chars out of the xml tags an make the database unreadable by the backend. 
+This is a problem as sometimes a wrong pressed key can add strange chars out of the xml tags and make the database unreadable by the backend. 
 
 omv-confdbadm is a tool written in python for retrieving, storing or deleting values from/to the database. This tool combined with jq [1]_ provides an easier method for interacting with the database using Shell/BASH.
 

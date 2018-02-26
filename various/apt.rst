@@ -96,14 +96,20 @@ contents are:
 	deb http://ftp.debian.org/debian/ stretch-updates main contrib non-free
 	deb http://security.debian.org/ stretch/updates main contrib non-free
 
-You should not include any external repositories in this file. If you have
-problem with the standard repo or a different mirror you selected during
-install, you can use netselect-apt 1). This software can give you the fastest
-ten mirrors closest to your location. The you can change the first two lines
-with the new mirror servers. Security repo does automatic mirroring so don't
-change it.
+The above repositories point directly to US servers. Since Debian Wheezy now is possible to use
+the redirector address, you only need to change the codename release. The redirector
+finds the closest mirror automatically. This is can be used as default for Debian Stretch::
+
+	deb http://deb.debian.org/debian/ stretch main contrib non-free
+	deb http://deb.debian.org/debian/ stretch-updates main contrib non-free
+	deb http://deb.debian.org/debian-security stretch/updates main contrib non-free
+
 
 **External**
 
 Debian provides the :file:`/etc/apt/sources.d/` folder for adding external
-repositories.
+repositories. If there is need to add a repository from a testing or unstable
+Debian just to install recent software make sure the packages are properly pinned [1]_
+to avoid the system becoming unstable for adding core unsupported software my mistake.
+
+.. [1] https://wiki.debian.org/AptPreferences

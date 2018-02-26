@@ -106,7 +106,7 @@ I don't have a data disk, and I want to use my OS disk for storing data?
 	SystemRescueCd.
 
 Can I install |omv| on top a running Debian system?
-	Yes, but is not recommended that the running OS not have a desktop environment
+	Yes, but it is recommended that the current running OS not to have a desktop environment
 	installed.
 
 What is the permissions/ownership of folders in |omv| created by shared folders?

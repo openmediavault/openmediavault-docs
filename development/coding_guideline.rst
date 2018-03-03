@@ -155,7 +155,7 @@ Documentation comments
 
         /**
          * Get the filesystem label.
-         * @return The filesystem label, otherwise FALSE.
+         * @return string The filesystem label, otherwise FALSE.
          */
         public function getLabel() {
             ...
@@ -163,8 +163,8 @@ Documentation comments
 
         /**
          * Enumerate all disk devices on the system.
-         * @return An array containing physical disk device objects with the
-         *   fields \em devicename, \em devicefile, \em model, \em size,
+         * @return array An array containing physical disk device objects with
+         *   the fields \em devicename, \em devicefile, \em model, \em size,
          *   \em description, \em vendor, \em serialnumber, \em israid and
          *   \em isrootdevice.
          */
@@ -177,12 +177,12 @@ Documentation comments
          * be added to the hard disk objects if there exists additional hard
          * disk parameters (e.g. S.M.A.R.T. or AAM) that can be defined
          * individually per hard disk.
-         * @param data An array containing the following fields:
+         * @param array data An array containing the following fields:
          *   \em start The index where to start.
          *   \em limit The number of objects to process.
          *   \em sortfield The name of the column used to sort.
          *   \em sortdir The sort direction, ASC or DESC.
-         * @return An array containing the requested objects. The field
+         * @return array An array containing the requested objects. The field
          *   \em total contains the total number of objects, \em data contains
          *   the object array. An exception will be thrown in case of an error.
          */

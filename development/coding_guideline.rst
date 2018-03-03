@@ -62,7 +62,7 @@ Variables
         $outputFileName
 
 Constants
-    Constants should start with OMV_ and should be all upper case.
+    Constants should start with OMV\_ and should be all upper case.
 
     .. code-block:: php
 

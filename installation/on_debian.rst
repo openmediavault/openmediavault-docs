@@ -5,7 +5,7 @@ You can install |omv| on a Debian installation as well. To do so, simply
 install the system using the `Debian netinst images <https://www.debian.org/CD/netinst/>`_.
 After that apply the following commands. Please do **not** install a graphical
 environment, use a minimal server installation only. For a step by step
-install guide have a look `here <https://www.pcsuggest.com/debian-minimal-install-guide/>`_.
+install guide have a look into the `Debian minimal install guide <https://www.pcsuggest.com/debian-minimal-install-guide/>`_.
 
 Debian 8 (Jessie)
 -----------------

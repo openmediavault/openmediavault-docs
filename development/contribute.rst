@@ -30,6 +30,7 @@ Code contributions
     * The feature/improvement must be implemented as generic as possible.
     * The code/feature/improvement must not affect existing functionality.
     * The `GitHub pull request <https://github.com/openmediavault/openmediavault/pulls>`_ must be signed.
+    * You have to subscribe the CLA online via GitHub.
 
 How to become a translator?
     If you want to help translating the |omv| |webui| please do the following:

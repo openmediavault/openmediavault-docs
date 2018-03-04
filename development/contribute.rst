@@ -29,7 +29,8 @@ Code contributions
     * The :doc:`coding guidelines <coding_guideline>` must be followed.
     * The feature/improvement must be implemented as generic as possible.
     * The code/feature/improvement must not affect existing functionality.
-    * The `GitHub pull request <https://github.com/openmediavault/openmediavault/pulls>`_ must be signed.
+    * The `GitHub pull request <https://github.com/openmediavault/openmediavault/pulls>`_
+      must be signed via ``Signed-off-by: Frank Mustermann <frank.mustermann@xxx.yyy>``.
     * You have to subscribe the CLA online via GitHub.
 
 How to become a translator?

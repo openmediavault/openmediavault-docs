@@ -6,13 +6,13 @@ Overview
 
 On top of the proftpd debian package, |omv| uses the vroot module by Castaglia. The server is configured using a DefaultRoot for this folder :file:`/srv/ftp`. Adding folders to the chroot is done by using vroot aliases.
 This is the default behavoiour of the FTP server and cannot be changed. The vroot default path can be changed with environmental variables. The chroot also prevent symlinks for escaping that path, however you can use symlinks that point inside the chroot.
-So any time you add a shared folder to the FTP, OMV will create first a vroot alias:::
+So any time you add a shared folder to the FTP, OMV will create first a vroot alias::
 
 	<IfModule mod_vroot.c>
 	  VRootAlias "/media/dev-disk-by-label-VOLUME1/videos" "Videos"
 	</IfModule>
 
-Then that alias will have privileges assigned:::
+Then that alias will have privileges assigned::
 
 	<Directory /Videos>
 	  <Limit ALL>

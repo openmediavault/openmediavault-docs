@@ -65,7 +65,7 @@ Install the |omv| 4 (Arrakis) package::
     apt-get update
     apt-get --allow-unauthenticated install openmediavault-keyring
     apt-get update
-    apt-get --yes --auto-remove --show-upgraded \
+    apt-get --yes --auto-remove --show-upgraded --allow-unauthenticated \
         --allow-downgrades --allow-change-held-packages \
         --no-install-recommends \
         --option Dpkg::Options::="--force-confdef" \

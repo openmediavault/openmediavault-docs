@@ -12,5 +12,6 @@ Releases
    0.5,Sardoukar,Debian 6,EOL,Ago 2013
    1.0,Kralizec,Debian 7,EOL,Sept 2014
    2.0,Stoneburner,Debian 7,EOL,Jun 2015
-   3.0,Erasmus,Debian 8, Current, Jun 2016
-   4.0,Arrakis,Debian 9,In Development,Q2 2018 (Estimate)
+   3.0,Erasmus,Debian 8,Maintenance mode, Jun 2016
+   4.0,Arrakis,Debian 9,Current,Apr 2018
+   5.0,???,Debian 10,In Development,2019

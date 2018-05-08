@@ -27,6 +27,11 @@ Troubleshooting
 
 ..
 
+:P: Samba share password is refused from Windows 10.
+:S: To fix the problem you need to change the `Network Security LAN Manager authentication level <https://social.technet.microsoft.com/Forums/windows/en-US/8249ad4c-69aa-41ba-8863-8ecd7a7a4d27/samba-share-password-refused>`_.
+
+..
+
 :P: The |webui| keeps rejecting my admin/user password.
 :S: If the password is correct then this is most likely caused by the rootfs partition being full. This command can help track which folders are the biggest :command:`df -hx --max-depth=1 /`
 

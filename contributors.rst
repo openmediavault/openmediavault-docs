@@ -99,6 +99,7 @@ Volker Theile
 * Jonatan Nyberg (Swedish)
 * Gyuris Gellért (Hungarian)
 * Miha Bezjak (Slovenian)
+* Jérémy D (French)
 
 **Code**
 

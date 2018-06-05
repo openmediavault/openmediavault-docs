@@ -24,7 +24,6 @@ The following is the list of official plugins by |omv|.
 
 * **ClamAV**: Provides antivirus scan for folders.
 * **Route**: Add static routes.
-* **iSCSITarget**: Control panel for sharing block devices in the network.
 * **Forked-daap**: Provides a daap protocol music server.
 * **LDAP**: Integrates the user management panel with a LDAP server.
 * **LVM2**: LVM managing. Create volume groups and logical partitions.

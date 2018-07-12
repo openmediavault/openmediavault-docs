@@ -14,4 +14,4 @@ Releases
    2.0,Stoneburner,Debian 7,EOL,Jun 2015
    3.0,Erasmus,Debian 8,EOL,Jun 2016
    4.0,Arrakis,Debian 9,Current,Apr 2018
-   5.0,???,Debian 10,In Development,2019
+   5.0,Usul,Debian 10,In Development,est. 2019

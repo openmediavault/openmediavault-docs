@@ -3,7 +3,7 @@ RSync
 
 The server can be configured to act as a client to pull and push data to remote
 locations as well as act an RSync daemon server, where other clients can
-retrieve or store data from/to the server. In RSync languague, the shared
+retrieve or store data from/to the server. In RSync language, the shared
 folders are called modules. Since |omv| version 3.0 is possible now to create
 remote RSync jobs using ssh as transport shell.
 The RSync is divided in two tabs:
@@ -14,7 +14,7 @@ Jobs (client)
 -------------
 
 Based on cron, the tasks can be configured to run at certain time or make it
-repetive. A few of the options explained:
+repetitive. A few of the options explained:
 
 Type
 	- Local: This will run an RSync in between two internal folders of the
@@ -52,9 +52,9 @@ Destination/Source Server
 
 .. warning::
 	When the RSync task is configured using ssh with PKA, the script that runs
-	the jobs is non-interactive, this means there cannot be a neither a
-	passphrase for the private key or a login password. Make sure your
-	private is not created with a password (in case is imported). Also make
+	the jobs is non-interactive, this means there cannot be neither a
+	passphrase for the private key nor a login password. Make sure your
+	private key is not created with a password (in case is imported). Also make
 	sure the remote server can accept PKA and not enforce password login.
 
 **Authentication (remote)**
@@ -65,8 +65,8 @@ Destination/Source Server
 	- **Public Key**: Select a key. These are created/imported from
 	  ``General | Certificates | SSH`` :ref:`section <admin_certificate_ssh>`.
 
-There are options are available which are the most commonly used in RSync.
-At the end there is an extra text field where you add more
+These are the options most commonly used in RSync.
+At the end there is an extra text field where you can add more
 `options <http://linux.die.net/man/1/rsync>`_.
 
 Configuration
@@ -105,8 +105,8 @@ Configuration
 Server
 ------
 
-This is the place for configuring the RSync daemon and it's modules
-(shared folder).
+This is the place for configuring the RSync daemon and its modules
+(shared folders).
 
 Settings
 	Change listening port of the daemon and add extra configurations

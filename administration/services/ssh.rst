@@ -32,7 +32,7 @@ $ ssh-keygen -e -f nameofthekey.pub
 
 Paste the output in the users profile at ``Access Right Management | Users | <USERNAME> | Edit | Public Keys``.
 
-The number of keys per user is unlimited. A public key in FRC 4716 looks like this::
+The number of keys per user is unlimited. A public key in RFC 4716 looks like this::
 
 	---- BEGIN SSH2 PUBLIC KEY ----
 	Comment: "iPhone user1"
@@ -50,7 +50,7 @@ The comment string is very important. This will help track down when is necessar
 Admin Tasks
 -----------
 
-If root login has been disabled and need to perform administrative tasks in the terminal, swap to root by typing using::
+If root login has been disabled and need to perform administrative tasks in the terminal, swap to root by typing::
 
 $ su
 

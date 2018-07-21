@@ -27,13 +27,13 @@ Can I give access to non-admin users to the web control panel?
 	No. By default non-admin users can only access their account profile, they can change
 	password and their email address if the admin has allowed changes on their account.
 	However the current |webui| framework is designed for developers to create plugins where
-	they can give limited or full access to non-admin users to their plugin. An examples is in the
+	they can give limited or full access to non-admin users to their plugin. An example is in the
 	`openvpn plugin <https://github.com/OpenMediaVault-Plugin-Developers/openmediavault-openvpn>`_
 	by omv-extras.
 
 What is the file :file:`/etc/openmediavault/config.xml` for?
 	Is the database configuration store file for |omv|. When a change is
-	performed in the |webui|, the config value is stored and/or retrieve by
+	performed in the |webui|, the config value is stored and/or retrieved by
 	RPC to/from this file. If this is a save change, then mkconf passes the
 	value to the service configuration file and reloads the daemon in case
 	is necessary.
@@ -82,9 +82,9 @@ How can I modify or add a network configuration of :file:`/etc/network/interface
 Why my disks mount paths have a long alphanumeric number?
 	The long number is called UUID, it is used by fstab to mount disks. This
 	number is unique per filesystem (or at least unlikely possible that
-	another filesystem comes with an identical one). This helps maintaing the
+	another filesystem comes with an identical one). This helps maintaining the
 	mount points. The old linux way (sda1, sdb1, etc.) is not guaranteed that
-	/sda1 is the same disk on next reboot. If having trouble identiying them
+	/sda1 is the same disk on next reboot. If having trouble identifying them
 	in terminal, create a pool with symlinks to each file system with easy to
 	remember names.
 
@@ -113,7 +113,7 @@ What is the permissions/ownership of folders in |omv| created by shared folders?
 	The default is folders in ``2775`` mode, with ``root:users`` ownership.
 	This means all users created in the |webui| can read, write to folders
 	created by the system in the data drives using the default. The setgid allows
-	group inheritance, meaning new files/folders bellow will always have the group
+	group inheritance, meaning new files/folders below will always have the group
 	users (GID=100) membership.
 
 Why are my filesystems mounted as noexec?
@@ -151,8 +151,8 @@ I want to experiment with |omv| or make changes to the code
 Why there is no iscsitarget plugin in |omv| 4?
 	The iscsitarget software is divided in two parts. The `userland tools <https://packages.debian.org/source/jessie/iscsitarget>`_
 	and the `kernel modules <https://packages.debian.org/jessie/iscsitarget-dkms>`_ both are provided by Debian repository system.
-	Kernel modules are come in the form of `DKMS <https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support>`_. 
-	The upstream software is mantained in `sourceforge <https://sourceforge.net/projects/iscsitarget/files/iscsitarget/>`_.
+	Kernel modules come in the form of `DKMS <https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support>`_. 
+	The upstream software is maintained in `sourceforge <https://sourceforge.net/projects/iscsitarget/files/iscsitarget/>`_.
 	Debian only provides packages up to Jessie, this is because the DKMS modules do not built in kernels higher than 4.x.
 	The last commit upstream was in 2010, right now iscsitarget is abandoned software.
 

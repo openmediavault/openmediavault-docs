@@ -4,7 +4,7 @@ NFS
 Overview
 --------
 
-The configuration of the server is done using the common `NFS guidelines <https://help.ubuntu.com/community/SettingUpNFSHowTo>`_. Shared folders are actually binded to the /export directory. You can check by examining the ``/etc/fstab`` file after you have added a folder to the server. All NFS server configured folders are in /etc/exports as follows:::
+The configuration of the server is done using the common `NFS guidelines <https://help.ubuntu.com/community/SettingUpNFSHowTo>`_. Shared folders are actually binded to the /export directory. You can check by examining the ``/etc/fstab`` file after you have added a folder to the server. All NFS server configured folders are in /etc/exports as follows::
 
 	/export/Shared_1 (fsid=1,rw,subtree_check,secure,root_squash)
 	/export/Videos 10.10.0.0/24 (fsid=2,rw,subtree_check,secure,nroot_squash)
@@ -62,7 +62,7 @@ Tips
 ----
 
 Macos/OSX
-	If you want to mount your NFS exports, add insecure in extra opions or use ``resvport`` in the command line.
+	If you want to mount your NFS exports, add insecure in extra options or use ``resvport`` in the command line.
 
 	Example::
 
@@ -75,7 +75,7 @@ Symlinks
 	This are not followed outside of their export path, so they have to be relative.
 
 Remote access
-	NFS was designed to be used as a local network protocol. Do not expose the NFS server to the internet. If you still need access use a VPN.
+	NFS was designed to be used as a local network protocol. Do not expose the NFS server to the Internet. If you still need access use a VPN.
 
 .. [1] https://help.ubuntu.com/community/NFSv4Howto#NFSv4_without_Kerberos
 .. [2] https://www.centos.org/docs/5/html/5.1/Deployment_Guide/s3-nfs-server-config-exportfs-nfsv4.html

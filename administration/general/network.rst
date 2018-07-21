@@ -17,7 +17,7 @@ The grid only displays configured interfaces done through the |webui|. If you se
 Ethernet
 ^^^^^^^^
 
-Just select DHCP or static. |omv| is a server so the recommended setting is to have static IP address. If you have a proper network infrastructure (separate router and switch ). In a reboot if the router fails to boot, you can still access the |webui| through the switch bridge. If the switch also fails to you can use a direct ethernet connection as you already know the assigned IP assigned to the server NIC.
+Just select DHCP or static. |omv| is a server so the recommended setting is to have static IP address. If you have a proper network infrastructure (separate router and switch ). In a reboot if the router fails to boot, you can still access the |webui| through the switch bridge. If the switch also fails you can use a direct ethernet connection as you already know the IP address assigned to the server NIC.
 
 When using static configuration be aware that the configuration window does not expand completly, scrolling down are the IPv6 fields and DNS fields. The DNS setting is essential for fetching updates, do not leave empty. A common value is to use the same IP address as the gateway, if unsure just use google DNS ``8.8.8.8``.
 

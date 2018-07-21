@@ -13,11 +13,11 @@ Add
 ^^^^
 
 Information
-	The configuration panel gives you options to add, edit or remove users. The grid dispays all
+	The configuration panel gives you options to add, edit or remove users. The grid displays all
 	|omv| current users.
 
 	When a user is created |omv| backend executes :command:`useradd` in non-interactive 
-	mode with all the information passed from the web text fields, this also command creates an 
+	mode with all the information passed from the web text fields, this command also creates an 
 	entry in :file:`/etc/passwd`, a hashed password in :file:`/etc/shadow`. Samba service is watching any changes
 	in users database section so it also sets the password in the samba tdbsam storage backend.
 
@@ -38,15 +38,15 @@ Public Key
 
 .. note::
 
-	- The user profile information (except password) is also stored in the internal |omv|database, along with the public keys.
-	- The grid shows information from internal database and also parses information from :file:`/etc/passwd` lines with a `UID` number higher than 1000. A user created in terminal is not in the internal database. This causes trouble will samba, as their is no user/password entry in the tdbsam file. Just click edit for the user, enter the same or new password, now the user has the linux and samba password synced.
+	- The user profile information (except password) is also stored in the internal |omv| database, along with the public keys.
+	- The grid shows information from internal database and also parses information from :file:`/etc/passwd` lines with a `UID` number higher than 1000. A user created in terminal is not in the internal database. This causes trouble with samba, as there is no user/password entry in the tdbsam file. Just click edit for the user, enter the same or new password, now the user has the linux and samba password synced.
 	- A user can log into the web interface to see his own profile information. Depending if the adminstrator has setup the username account to allow changes, they can change their password and mail account.
 
 Import
 ^^^^^^
 
 Designed for bulk user creation. Create a spreadsheet with the corresponding data as
-described in window the field text, save it as CSV (make sure the field separator is semicolon :code:`;`), then just
+described in the import dialog window, save it as CSV (make sure the field separator is semicolon :code:`;`), then just
 simply::
 
 $ cat usersfile.csv
@@ -63,7 +63,7 @@ allowing the user to change his account.
 Privileges
 ^^^^^^^^^^
 
-The button opens a windows that displays all current exisiting |sf| and their
+The button opens a window that displays all current exisiting |sf| and their
 privileges for selected user from the grid. How the privileges are stored is
 described further down in the `shared folder <#shared-folder>`_ section.
 
@@ -109,7 +109,7 @@ has been created using the |webui|.
 Add
 ^^^
 
-When a |sf| is created using the add button, the windows form displays the following options:
+When a |sf| is created using the add button, the window form displays the following options:
 
 	- **Name:** The logical name. This can override the path name. Typing a
 	  name here will fill the path with the same string.
@@ -161,11 +161,11 @@ Some of the elements explained:
 
     - **uuid**: Internal database reference number.
     - **name**: logical name given to the |sf|.
-    - **mntent**: This the associated filesystem reference. The number is in the :code:`uuid` format, in the the fstab ``config.xml`` section should contain a :code:`<mntent>` reference with this number.
+    - **mntent**: the associated filesystem reference. The number is in the :code:`uuid` format, the fstab section in ``config.xml`` should contain a :code:`<mntent>` reference with this number.
     - **reldirpath**: Path relative to the parent filesystem.
     - **privileges**: Users associated with the |sf| and their access level.
 
-When a plugin or a service uses a |sf| its stores the uuid value only. Later on
+When a plugin or a service uses a |sf| it stores the uuid value only. Later on
 using helper scripts or internal |omv| functions the full path can be obtained
 just by using the :code:`uuid`. An example in shell::
 
@@ -182,7 +182,7 @@ to select it in sharing services (FTP, Samba, RSync, etc.) at the same time.
 Plugins can use them also just by using the shared folder combo class.
 
 .. note::
-	- A |sf| belongs to an internal |omv| database filesystem entry. Is not possible to unmount the filesystem without deleting the folder configuraton from the |webui|.
+	- A |sf| belongs to an internal |omv| database filesystem entry. Is not possible to unmount the filesystem without deleting the folder configuration from the |webui|.
 	- If a |sf| is being used by a service (FTP, plugins, etc.) is not possible to delete it. Is necessary to disengage the |sf| from the service(s) or section(s) that is holding it before proceeding with removal. This will also prevent to unmount a device from the |webui| in the filesystem section if there is still a |sf| associated with it.
 	- Due to the design of the software is not possible at the moment to know what section or service is holding which |sf|.
 

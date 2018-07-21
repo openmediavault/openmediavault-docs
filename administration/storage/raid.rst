@@ -6,7 +6,7 @@ RAID
 Overview
 --------
 
-The grid panel shows all currently available MD arrays. There is no internal database section for RAID arrays, so every arrays that is assembled in the server should be displayed here.
+The grid panel shows all currently available MD arrays. There is no internal database section for RAID arrays, so every array that is assembled in the server should be displayed here.
 
 Create
 	The following table displays levels available in the |webui|:
@@ -27,7 +27,7 @@ Create
 	* RAID1+0 is possible by stripping two mirrors. The create window should display both mirrors if they do not have any filesystem signatures yet.
 
 Detail
-	Displays extended information of the array the output comes from :command:`mdadm –detail /dev/mdX`
+	Displays extended information of the array, the output comes from :command:`mdadm –detail /dev/mdX`
 Grow
 	Add disk(s) into the array.
 Recover
@@ -35,7 +35,7 @@ Recover
 Remove
 	This is used to remove failed disks, in case one needs be replaced.
 Delete
-	Stop the array and zero the superblock all devices conforming the array (script :command:`/usr/sbin/omv-rmraid`). Use with caution.
+	Stop the array and zero the superblock of all devices conforming the array (script :command:`/usr/sbin/omv-rmraid`). Use with caution.
 
 Mdadm works better with unpartitioned disks, plain raw block devices. Before creating MD RAID in your system make sure disks are clean before. In the physical disk section you can perform a quick or full wipe. Quick wipe is enough to delete partition tables.
 
@@ -50,11 +50,11 @@ Before growing array is better to clean the partition table of the new disk, spe
 
 $ mdadm --zero-superblock /dev/sdX
 
-After adding a disk to the array, the re-syncthing process will begin inmediatly. Depending on the size of the disks this process can take several hours or even days, this is because mdadm tries to balance resources and keep usability of the system not using high CPU and RAM. To speed the process::
+After adding a disk to the array, the re-synching process will begin inmediatly. Depending on the size of the disks this process can take several hours or even days, this is because mdadm tries to balance resources and keep usability of the system not using high CPU and RAM. To speed the process::
 
 $ echo ${value} > /proc/sys/dev/raid/speed_limit_min #value is interpreted as kbytes/seconds
 
-After synthing is finish is necessary to expand the filesystem usinn the resize button.
+After synching is finish is necessary to expand the filesystem using the resize button.
 
 .. warning::
 

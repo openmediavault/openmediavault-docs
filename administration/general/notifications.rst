@@ -58,7 +58,7 @@ The server will send notifications for this events:
 	- Cron-apt: Summary of upgrade packages available. [D]
 	- SMART: Report of attribute changes. [D]
 
-Options marked with [D] can be disabled selectivly. The rest only when the whoe notification backend is disabled. 
+Options marked with [D] can be disabled selectivly. The rest only when the whole notification backend is disabled. 
 
 Gmail
 =====

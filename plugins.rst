@@ -3,8 +3,8 @@ Plugins
 
 You can add more features & apps by simply selecting the software you need, we
 call this plugins. Plugins are possible due to the modular design of |omv| and
-are the prefered way to extend your NAS. Its still possible install regular
-sofware or containerized software like Docker. Plugins only exist for your
+are the prefered way to extend your NAS. It is still possible to install regular
+software or containerized software like Docker. Plugins only exist for your
 convenience.
 
 Benefits
@@ -13,7 +13,7 @@ Benefits
 Compared to adding regular software, plugins offer the following benefits:
 
 * Easier to install - You just click on what you want.
-* Easier to configure - its often preconfigured so you don't have to.
+* Easier to configure - it is often preconfigured so you don't have to.
 * Automatic updates - ensure Stability & Security.
 * A Webinterface - is added when needed for your ease of use.
 

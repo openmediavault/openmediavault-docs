@@ -23,7 +23,7 @@ Troubleshooting
 ..
 
 :P: Samba is slow.
-:S: Read these threads - `Tunning Samba for more speed <http://forum.openmediavault.org/index.php/Thread/12986-Tunning-Samba-for-more-speed/>`_ and `Tuning Samba for more speed 2 <http://forum.openmediavault.org/index.php/Thread/14615-Tuning-Samba-for-more-speed-2//>`_
+:S: Read these threads - `Tuning Samba for more speed <http://forum.openmediavault.org/index.php/Thread/12986-Tunning-Samba-for-more-speed/>`_ and `Tuning Samba for more speed 2 <http://forum.openmediavault.org/index.php/Thread/14615-Tuning-Samba-for-more-speed-2//>`_
 
 ..
 

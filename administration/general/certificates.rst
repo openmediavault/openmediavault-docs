@@ -64,5 +64,5 @@ LetsEncrypt
 ===========
 
 Lets Encrypt certificates can be imported directly, just locate your
-:file:`/etc/letsencrypt/live/<mydomain.com>/{cert,privkey}.pem` files and copy
+:file:`/etc/letsencrypt/live/<mydomain.com>/{fullchain,privkey}.pem` files and copy
 their contents in their respective field. No need to convert.

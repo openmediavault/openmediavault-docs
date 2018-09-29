@@ -10,7 +10,7 @@ Configuration
 
 The central MTA configuration is stored in :file:`/etc/postfix/main.cf`
 
-|omv| creates the :file:`/etc/postfix/recipients_canonical` to define the root (admin) and normal users mail addresses when added via the |webui|. Example::
+|omv| creates the :file:`/etc/postfix/recipient_canonical` to define the root (admin) and normal users mail addresses when added via the |webui|. Example::
 
 	root rootthe@gmail.com
 	mike mikeadmin@themailco.com

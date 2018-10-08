@@ -50,7 +50,7 @@ Before growing array is better to clean the partition table of the new disk, spe
 
 $ mdadm --zero-superblock /dev/sdX
 
-After adding a disk to the array, the re-synching process will begin inmediatly. Depending on the size of the disks this process can take several hours or even days, this is because mdadm tries to balance resources and keep usability of the system not using high CPU and RAM. To speed the process::
+After adding a disk to the array, the re-synching process will begin immediately. Depending on the size of the disks this process can take several hours or even days, this is because mdadm tries to balance resources and keep usability of the system not using high CPU and RAM. To speed the process::
 
 $ echo ${value} > /proc/sys/dev/raid/speed_limit_min #value is interpreted as kbytes/seconds
 

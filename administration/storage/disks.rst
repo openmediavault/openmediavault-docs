@@ -106,7 +106,7 @@ After that it ensures is clean by using dd::
 
 $ dd if=/dev/zero of=/dev/sdX bs=4M count=1
 
-Which erases the beggining of the disk.
+Which erases the beginning of the disk.
 
 The secure mode will rewrite the block device entirely. This process takes a long time and is only one iteration. It uses this command::
 

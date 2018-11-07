@@ -16,8 +16,8 @@ Information
 	The configuration panel gives you options to add, edit or remove users. The grid displays all
 	|omv| current users.
 
-	When a user is created |omv| backend executes :command:`useradd` in non-interactive 
-	mode with all the information passed from the web text fields, this command also creates an 
+	When a user is created |omv| backend executes :command:`useradd` in non-interactive
+	mode with all the information passed from the web text fields, this command also creates an
 	entry in :file:`/etc/passwd`, a hashed password in :file:`/etc/shadow`. Samba service is watching any changes
 	in users database section so it also sets the password in the samba tdbsam storage backend.
 
@@ -26,15 +26,15 @@ Information
 	shell, this will prevent local and remote console access.
 
 Group
-	Add or remove users from specific groups. In linux groups can be used to control 
-	access to certain features and also for permissions. 
+	Add or remove users from specific groups. In linux groups can be used to control
+	access to certain features and also for permissions.
 
-	Adding a user to the ``sudo`` group will give him root privileges, adding 
-	a user to ``saned`` will give access to scanners, etc. By default all users created using 
+	Adding a user to the ``sudo`` group will give him root privileges, adding
+	a user to ``saned`` will give access to scanners, etc. By default all users created using
 	the |webui| are added to the ``users`` group (``gid=100``).
 
 Public Key
-	Add or remove :doc:`public keys </administration/services/ssh>` for granting remote access for users. 
+	Add or remove :doc:`public keys </administration/services/ssh>` for granting remote access for users.
 
 .. note::
 
@@ -53,12 +53,17 @@ $ cat usersfile.csv
 
 Example outputs::
 
-	user1;1001;user1;user1@myserver.com;password1;sudo;1
-	user2;1002;user2;user2@my.com;password2;;0
-	user3;1003;user3;user3@example.com;password3;;1
+	# <name>;<uid>;<comment>;<email>;<password>;<shell>;<group,group,...>;<disallowusermod>
+	user1;1001;user1;user1@myserver.com;password1;/bin/bash;sudo;1
+	user2;1002;user2;user2@my.com;password2;/bin/sh;;0
+	user3;1003;user3;user3@example.com;password3;/bin/false;;1
+	user4;1004;user4;user4@test.com;password4;;;1
 
-Paste the contents into the import dialog. The last field is a boolean for
-allowing the user to change his account.
+.. note::
+	- :file:`/etc/shells` will give you a list of valid shells.
+	- The last field is	a boolean for allowing the user to change his account.
+
+Paste the contents into the import dialog.
 
 Privileges
 ^^^^^^^^^^
@@ -70,9 +75,9 @@ described further down in the `shared folder <#shared-folder>`_ section.
 Settings
 ^^^^^^^^
 
-Option to select a |sf| as root for home folders for new users created in the 
+Option to select a |sf| as root for home folders for new users created in the
 |webui|. Previously existing users created before enabling this setting will not have
-their home folders moved to this new location. You can manually edit :file:`/etc/passwd` 
+their home folders moved to this new location. You can manually edit :file:`/etc/passwd`
 to point them to the new location. Also existing users data in default linux location :file:`/home`
 has to be moved manually.
 
@@ -202,15 +207,15 @@ Privileges
 
 Same as in the user section, the window here is relative to the shared folder.
 It will display for the selected |sf| all the |omv| users/groups and their
-corresponding privileges. 
+corresponding privileges.
 
-As you can see from the code block in the `add section <#id3>`_ privileges are 
-expressed in the internal database in the same manner as permissions in Linux, simplified 
+As you can see from the code block in the `add section <#id3>`_ privileges are
+expressed in the internal database in the same manner as permissions in Linux, simplified
 using the octal mode: *read/write(7)*, *read-only(5)* *and no access(0)*.
 
-If a privilege is changed, it means a change in the |sf| database section. This database 
-event will trigger a reconfiguration of SMB, FTP and AFP, it will also restart all the 
-above daemons. A plugin using |sf|, but not the privilege information from the database 
+If a privilege is changed, it means a change in the |sf| database section. This database
+event will trigger a reconfiguration of SMB, FTP and AFP, it will also restart all the
+above daemons. A plugin using |sf|, but not the privilege information from the database
 entry should not get reconfigured/restarted if a change occurs just in privileges.
 
 Privileges can be edited from `shared folder <#shared-folder>`_ or `users <#user>`_
@@ -234,8 +239,8 @@ If you want just to reset linux permissions, just use the recursive checkbox and
 The ACL is applied using :command:`setfacl` [3]_ and read with :command:`getfacl` [4]_.
 
 .. note::
-	
-	* |omv| mounts all Linux filesystems with ACL enabled. Only native linux POSIX filesystems support ACL. The button gets disabled for HFS+, NTFS, FAT, etc. 
+
+	* |omv| mounts all Linux filesystems with ACL enabled. Only native linux POSIX filesystems support ACL. The button gets disabled for HFS+, NTFS, FAT, etc.
 	* ZFS provides ACL support, just need to enable the pool/dataset property.
 
 .. [1] https://help.ubuntu.com/community/FilePermissionsACLs

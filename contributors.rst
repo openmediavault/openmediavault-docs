@@ -100,6 +100,7 @@ Volker Theile
 * Gyuris Gellért (Hungarian)
 * Miha Bezjak (Slovenian)
 * Jérémy D (French)
+* Herald Yu (Chinese)
 
 **Code**
 

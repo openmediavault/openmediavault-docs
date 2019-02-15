@@ -1,7 +1,7 @@
 Copyright
 =========
 
-|omv| is Copyright |copy| 2009-2018 by Volker Theile (volker.theile@openmediavault.org).
+|omv| is Copyright |copy| 2009-2019 by Volker Theile (volker.theile@openmediavault.org).
 All rights reserved.
 
 |omv| is free software: you can redistribute it and/or modify it under the

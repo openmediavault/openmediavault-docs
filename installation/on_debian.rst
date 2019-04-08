@@ -43,7 +43,7 @@ Install the |omv| 3 (Erasmus) package::
 Debian 9 (Stretch)
 ------------------
 
-Install HTTPS transport for APT to prevent MITM attact while downloading keyring::
+Install HTTPS transport for APT to prevent MITM attack while downloading keyring::
 
     apt-get update
     apt-get --yes apt-transport-https

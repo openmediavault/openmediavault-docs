@@ -43,10 +43,15 @@ Install the |omv| 3 (Erasmus) package::
 Debian 9 (Stretch)
 ------------------
 
+Install HTTPS transport for APT to prevent MITM attact while downloading keyring::
+
+    apt-get update
+    apt-get --yes apt-transport-https
+
 Add the package repositories::
 
     cat <<EOF >> /etc/apt/sources.list.d/openmediavault.list
-    deb http://packages.openmediavault.org/public arrakis main
+    deb https://packages.openmediavault.org/public arrakis main
     # deb http://downloads.sourceforge.net/project/openmediavault/packages arrakis main
     ## Uncomment the following line to add software from the proposed repository.
     # deb http://packages.openmediavault.org/public arrakis-proposed main

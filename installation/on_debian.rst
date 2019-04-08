@@ -52,14 +52,14 @@ Add the package repositories::
 
     cat <<EOF >> /etc/apt/sources.list.d/openmediavault.list
     deb https://packages.openmediavault.org/public arrakis main
-    # deb http://downloads.sourceforge.net/project/openmediavault/packages arrakis main
+    # deb https://downloads.sourceforge.net/project/openmediavault/packages arrakis main
     ## Uncomment the following line to add software from the proposed repository.
-    # deb http://packages.openmediavault.org/public arrakis-proposed main
-    # deb http://downloads.sourceforge.net/project/openmediavault/packages arrakis-proposed main
+    # deb https://packages.openmediavault.org/public arrakis-proposed main
+    # deb https://downloads.sourceforge.net/project/openmediavault/packages arrakis-proposed main
     ## This software is not part of OpenMediaVault, but is offered by third-party
     ## developers as a service to OpenMediaVault users.
-    # deb http://packages.openmediavault.org/public arrakis partner
-    # deb http://downloads.sourceforge.net/project/openmediavault/packages arrakis partner
+    # deb https://packages.openmediavault.org/public arrakis partner
+    # deb https://downloads.sourceforge.net/project/openmediavault/packages arrakis partner
     EOF
 
 Install the |omv| 4 (Arrakis) package::

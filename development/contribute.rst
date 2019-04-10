@@ -15,6 +15,7 @@ Why do i have to subscribe a CLA when contributing to the |omv| project?
     * Django's `CLA FAQ <https://www.djangoproject.com/foundation/cla/faq>`_
     * Karl Fogel's `Producing Open Source Software <http://producingoss.com/en/copyright-assignment.html>`_ on CLAs
     * The `Wikipedia article <http://en.wikipedia.org/wiki/Contributor_license_agreement>`_ on CLAs
+    * `Gemeinsame Durchsetzung der Rechte <https://www.golem.de/news/programmierer-wenn-der-urheber-gegen-das-urheberrecht-verliert-1904-140463-3.html>`_
 
 Can I submit patches without having signed the CLA?
     No. All contributors and patch submitters must sign the CLA before they

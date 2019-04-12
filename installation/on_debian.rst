@@ -46,7 +46,7 @@ Debian 9 (Stretch)
 Install HTTPS transport for APT to prevent MITM attack while downloading keyring::
 
     apt-get update
-    apt-get --yes apt-transport-https
+    apt-get install --yes apt-transport-https
 
 Add the package repositories::
 

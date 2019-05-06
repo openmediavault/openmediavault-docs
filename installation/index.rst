@@ -9,7 +9,7 @@ Before you begin:
 	- `Download <https://sourceforge.net/projects/openmediavault/files/>`_ an
 	  installation image file for your system. |omv| provides ISO installers
 	  for x86 architecture and several preconfigured images for ARM devices.
-	- Disconnect all harddisks except the future system drive. This way you
+	- Disconnect all disk devices except the one for the system drive. This way you
 	  avoid an accidental install on a storage drive (which will be configured
 	  after installation anyway).
 

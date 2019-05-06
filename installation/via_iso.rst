@@ -1,6 +1,16 @@
 Installation using an ISO image
 ###############################
 
+.. important::
+
+	Disconnect all disk devices except the one that will be used for the
+	operating system before starting the installation.
+
+.. warning::
+
+	The operating system/root filesystem will consume the whole space of the
+	picked disk device. All existing data on that disk device will get lost.
+
 Burn the installer
 ------------------
 	For x86 architecture you can burn the ISO directly into a USB drive using
@@ -20,11 +30,12 @@ Installer
 ---------
 	The current ISO installer is reduced to have minimal interaction. You will
 	prompted to select location, language and root password. The installer will
-	pick the first available disk to deploy the the OS. Once the installer
-	finished the system will reboot, make sure you remove the installer and
-	select BIOS to boot from the disk where |omv| was installed. You can also
-	start connecting any data drives you previously disconnected before install
-	or reinstall.
+	pick the first available disk to deploy the the OS.
+
+	Once the installer finished the system will reboot, make sure you remove the
+	installer and select BIOS to boot from the disk where |omv| was installed.
+	You can also start connecting any data drives you previously disconnected
+	before install or reinstall.
 
 	.. figure:: /_static/images/install_via_iso/install_1.png
 	.. figure:: /_static/images/install_via_iso/install_2.png

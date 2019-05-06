@@ -101,6 +101,7 @@ Volker Theile
 * Miha Bezjak (Slovenian)
 * Jérémy D (French)
 * Herald Yu (Chinese)
+* Axel Cantenys (French)
 
 **Code**
 

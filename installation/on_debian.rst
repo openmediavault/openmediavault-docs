@@ -1,11 +1,15 @@
 Installation on Debian
 ######################
 
-You can install |omv| on a Debian installation as well. To do so, simply
-install the system using the `Debian netinst images <https://www.debian.org/CD/netinst/>`_.
-After that apply the following commands. Please do **not** install a graphical
-environment, use a minimal server installation only. For a step by step
-install guide have a look into the `Debian minimal install guide <https://www.pcsuggest.com/debian-minimal-install-guide/>`_.
+You can install |omv| on a Debian installation as well. 
+
+To do so, on x86 simply install the system using the `Debian netinst images
+<https://www.debian.org/CD/netinst/>`_. After that apply the commands below. 
+Please do **not** install a graphical environment, use a minimal server 
+installation only. For a step by step install guide have a look into the 
+`Debian minimal install guide <https://www.pcsuggest.com/debian-minimal-install-guide/>`_.
+
+On ARM devices check if there's an appropriate [Armbian](https://www.armbian.com/download/) Stretch (OMV4) or Buster (OMV5) image available. After installing Armbian then use the `armbian-config` tool to install OMV in a single step with all performance and reliability tweaks included. If there's no Armbian for your device simply follow the steps outlined below.
 
 Debian 8 (Jessie)
 -----------------

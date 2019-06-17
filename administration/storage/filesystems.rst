@@ -3,7 +3,7 @@ Filesystems
 
 
 Overview
-	The filesystem section of the |omv| |webui| is where you integrate disk volumes to be part of the server. Drives/filesystems that are not mounted through the |webui| are not registered in the backend database, this means you cannot use volumes to create shared folders if they were not mounted properly. *This is very important*, users that come from an existing debian installation with filesystems already present in their fstab file will see that no volumes will be available for creating shared folders even if they are mounted. For the disks to be properly integrated is better that you delete all fstab lines execept rootfs and swap, reboot your server and start mounting the disks through the |webui|.
+	The filesystem section of the |omv| |webui| is where you integrate disk volumes to be part of the server. Drives/filesystems that are not mounted through the |webui| are not registered in the backend database, this means you cannot use volumes to create shared folders if they were not mounted properly. *This is very important*, users that come from an existing debian installation with filesystems already present in their fstab file will see that no volumes will be available for creating shared folders even if they are mounted. For the disks to be properly integrated it is better to delete all fstab lines except rootfs and swap, reboot your server and start mounting the disks through the |webui|.
 
 	The mount process acts like many other services in |omv|, first it writes a database entry in config.xml, this entry contains essential information:
 
@@ -28,7 +28,7 @@ Overview
 			<hidden>0</hidden>
 		</mntent>
 
-	With the mntent entry in config.xml, mkconf fstab script writes the appropiate line in ``/etc/fstab``. You can indentify entries in ``/etc/fstab`` created by the |webui| by looking at «openmediavault» tags. Is important to mention to not alter the information in bewteen these tags. If you delete or modify a fstab option (noexec or quota for example) the next time you mount a new disk into the server, the mkconf will pipe the original value there again. If you need persistent change use :doc:`environmental variables </various/fs_env_vars>`. Finally the backend will proceed to mount the filesystem. After this the volume is ready for creating shared folders.
+	With the mntent entry in config.xml, mkconf fstab script writes the appropiate line in ``/etc/fstab``. You can indentify entries in ``/etc/fstab`` created by the |webui| by looking at «openmediavault» tags. Is important to mention to not alter the information in between these tags. If you delete or modify a fstab option (noexec or quota for example) the next time you mount a new disk into the server, the mkconf will pipe the original value there again. If you need persistent change use :doc:`environmental variables </various/fs_env_vars>`. Finally the backend will proceed to mount the filesystem. After this the volume is ready for creating shared folders.
 
 Resize
 	The resize button is used for expanding filesystems. This can ocurr if you decide to resize a disk partition or you have grown a RAID array by adding one or more disks.

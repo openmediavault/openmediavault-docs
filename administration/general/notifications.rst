@@ -110,11 +110,13 @@ Your script's filename must adhere to the following standards:
 		- The LANANA-assigned namespace (^[a-z0-9]+$)
 		- The LSB hierarchical and reserved namespaces (^_?([a-z0-9_.]+-)+[a-z0-9]+$)
 		- The Debian cron script namespace (^[a-zA-Z0-9_-]+$)
+		
 	- Start with a number like this: :file:`<##>pushnotification`
 
 .. note::
 	- Do not add an extension to your script in the run-parts directory, otherwise it will get excluded.
 	- Make sure the script file is executable. In this case also make sure the script is not a symlink to a mounted filesystem with noexec flag.
+
 
 .. [1] http://www.postfix.org
 .. [2] http://www.linux-pam.org/Linux-PAM-html/sag-pam_tally2.html

@@ -103,6 +103,16 @@ Also the following positional arguments are passed::
 
 Most modern non mail notifications systems have a documented API, where you can send text using curl payloads with a secret TOKEN. So most common case would be to use MESSAGE_FILE variable only in your script.
 
+Your script's filename must adhere to the following standards:
+	
+	- Must belong to one or more of the following namespaces:
+		
+		- The LANANA-assigned namespace (^[a-z0-9]+$)
+		- The LSB hierarchical and reserved namespaces (^_?([a-z0-9_.]+-)+[a-z0-9]+$)
+		- The Debian cron script namespace (^[a-zA-Z0-9_-]+$)
+		
+	- Start with a number like this: :file:`<##>pushnotification`
+
 .. note::
 	- Do not add an extension to your script in the run-parts directory, otherwise it will get excluded.
 	- Make sure the script file is executable. In this case also make sure the script is not a symlink to a mounted filesystem with noexec flag.

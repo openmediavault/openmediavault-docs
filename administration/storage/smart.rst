@@ -1,7 +1,7 @@
 SMART
 #####
 
-Modern hard disks drives (and SSD's) have firmware inside that reports several attributes (usually called S.M.A.R.T values) through sensors that are relevant to assest the device condition. Those values and what they mean are explained by `here <https://en.wikipedia.org/wiki/S.M.A.R.T.>`_. Not all drives report the same amount of attributes, but all of them report some common ones which are known to be the bests for assesing health [1]_.
+Modern hard disks drives (and SSD's) have firmware inside that reports several attributes (usually called S.M.A.R.T values) through sensors that are relevant to assess the device condition. Those values and what they mean are explained by `here <https://en.wikipedia.org/wiki/S.M.A.R.T.>`_. Not all drives report the same amount of attributes, but all of them report some common ones which are known to be the best for assessing health [1]_.
 
 There are several tools for accessing those attributes. |omv| reads and monitors hard drives smart values using smartmontools [2]_.
 

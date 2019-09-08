@@ -7,7 +7,7 @@ Before installing |omv| make sure your hardware is supported.
 * **RAM**: 1 GiB capacity
 * **HDD**:
 
-  * **System Drive**: min. 4 GiB capacity
+  * **System Drive**: min. 4 GiB capacity (but more than the capacity of the RAM)
   * **Data Drive**: capacity according to your needs
 
 .. note::

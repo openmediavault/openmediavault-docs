@@ -36,7 +36,7 @@ Support for wireless network was added in |omv| 3.0. The configuration window di
 Whenever possible,  use Ethernet for a NAS server. Wireless should not be used in a production server; this feature is intended for extreme cases only. 
 
 
-Vlan
+VLAN
 ^^^^
 
 If your network supports VLAN, just add the parent interface and the VLAN id.

@@ -39,7 +39,7 @@ Whenever possible,  use Ethernet for a NAS server. Wireless should not be used i
 Vlan
 ^^^^
 
-If your network supports Vlan, just add the parent interface and the VLAN id.
+If your network supports VLAN, just add the parent interface and the VLAN id.
 
 Bond
 ^^^^

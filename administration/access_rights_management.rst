@@ -29,7 +29,7 @@ Group
 	Add or remove users from specific groups. In linux groups can be used to control
 	access to certain features and also for permissions.
 
-	Adding a user to the ``sudo`` group will give him root privileges, adding
+	Adding a user to the ``sudo`` group will give them root privileges, adding
 	a user to ``saned`` will give access to scanners, etc. By default all users created using
 	the |webui| are added to the ``users`` group (``gid=100``).
 
@@ -40,7 +40,7 @@ Public Key
 
 	- The user profile information (except password) is also stored in the internal |omv| database, along with the public keys.
 	- The grid shows information from internal database and also parses information from :file:`/etc/passwd` lines with a `UID` number higher than 1000. A user created in terminal is not in the internal database. This causes trouble with samba, as there is no user/password entry in the tdbsam file. Just click edit for the user, enter the same or new password, now the user has the linux and samba password synced.
-	- A user can log into the web interface to see his own profile information. Depending if the adminstrator has setup the username account to allow changes, they can change their password and mail account.
+	- A user can log into the web interface to see their own profile information. Depending if the adminstrator has setup the username account to allow changes, they can change their password and mail account.
 
 Import
 ^^^^^^
@@ -61,7 +61,7 @@ Example outputs::
 
 .. note::
 	- :file:`/etc/shells` will give you a list of valid shells.
-	- The last field is	a boolean for allowing the user to change his account.
+	- The last field is	a boolean for allowing the user to change their account.
 
 Paste the contents into the import dialog.
 

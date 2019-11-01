@@ -48,7 +48,7 @@ number:
 
 :file:`/etc/ssl/certificates/openmediavault-<uuid>.cert`
 
-Private key file with the same :code:`<uuid>` suffix from to his certificate
+Private key file with the same :code:`<uuid>` suffix as their certificate
 pair.
 
 :file:`/etc/ssl/private/openmediavault-<uuid>.key`

@@ -82,7 +82,7 @@ The login access in Samba is configured using privileges. This means they will n
 Privileges only gets login access and from there determines if user can read or write. If write access is enabled but files/folders have restricted permissions then write access is not possible using Samba.
 
 .. important::
-	Samba does not use PAM for login, it has a different password database. When the admin changes a username password (or the username changes his) using the |webui| what |omv| does is that it changes both the linux login password and the Samba internal database. If a username changes his password using shell, this will not be reflected in Samba log in.
+	Samba does not use PAM for login, it has a different password database. When the admin changes a username password (or the user changes their own) using the |webui| what |omv| does is that it changes both the linux login password and the Samba internal database. If a username changes their password using shell, this will not be reflected in Samba log in.
 
 Share types
 -----------
@@ -122,7 +122,7 @@ Notice here if users are not set up privileges (that means blank tick boxes) any
 With these options valid, read only and write user directives will be ignored when mkconf regenerates the ``/etc/samba/smb.conf`` file.
 
 .. note::
-	- The guest account is mapped to system account nobody, he doesn’t belong to group users, thus he HAS BY DEFAULT NO WRITE ACCESS just READ. This can be reverted modifying the POSIX permissions of the share to 777.
+	- The guest account is mapped to system account nobody, it doesn’t belong to group users, thus it has, by default, NO WRITE ACCESS just READ. This can be reverted modifying the POSIX permissions of the share to 777.
 	- These directives are NOT ACL.
 
 

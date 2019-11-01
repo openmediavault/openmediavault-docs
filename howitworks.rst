@@ -1,7 +1,7 @@
 How does it works?
 ##################
 
-|omv| is a complex piece of software. Developers can easily understand how it works by looking at the source code and developing plugins. For the average user is a little bit more complicated. Some of the mechanics on how it works are explained 	ahead.
+|omv| is a complex piece of software. Developers can easily understand how it works by looking at the source code and developing plugins. For the average user it is a little bit more complicated. Some of the mechanics on how it works are explained ahead.
 
 Essential elements:
 	**Frontend** The |webui|, is written in javascript using the extjs sencha framework. Is rendered using the nginx http engine.
@@ -153,8 +153,8 @@ After that is time for daemon reload, so:
 That php function performs also checks for dependancies, in case a configuration needs to be reconfigured or reloaded before/after another one.
 
 Why is zeroconf marked dirty?
-	Because the samba |omv| `code <https://github.com/openmediavault/openmediavault/blob/a846afb5a648cb89b2dad0fdf25ee7b261d89a78/deb/openmediavault/usr/share/openmediavault/engined/module/samba.inc#L266-L269>`_ indicates that whenever a change is performed in his section, zeroconf must be marked dirty. This is by design, avahi is configured to announce samba server if is enabled, so needs to know if |omv| Samba server is enabled or disabled. If the database shows it is disabled the avahi servie file will be removed
-	The module backend is something all plugins can use. For example a plugin that wants to use the privilege database model will have to listen to any changes in the |sf| database so it can reconfigure his files acordingly.
+	Because the samba |omv| `code <https://github.com/openmediavault/openmediavault/blob/a846afb5a648cb89b2dad0fdf25ee7b261d89a78/deb/openmediavault/usr/share/openmediavault/engined/module/samba.inc#L266-L269>`_ indicates that whenever a change is performed in this section, zeroconf must be marked dirty. This is by design, avahi is configured to announce samba server if is enabled, so needs to know if |omv| Samba server is enabled or disabled. If the database shows it is disabled the avahi servie file will be removed
+	The module backend is something all plugins can use. For example, a plugin that wants to use the privilege database model will have to listen to any changes in the |sf| database so it can reconfigure its files acordingly.
 
 What can break the web interface?
 	As explained, the |webui| depends on several third party software components.

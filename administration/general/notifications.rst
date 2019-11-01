@@ -18,7 +18,7 @@ The central MTA configuration is stored in :file:`/etc/postfix/main.cf`
 
 When a scheduled task is defined to run as a certain user the output generated from that task, will be sent to that user defined mail.
 
-The last line is the catch all address. For example a scheduled task set to be run as user with no mail defined in his profile will get the output generated sent to the catch all address (``rootthe@gmail.com``). The same will happen with any other mail action intended for an undefined user (not in that list)
+The last line is the catch all address. For example a scheduled task set to be run as user with no mail defined in their profile will get the output generated sent to the catch all address (``rootthe@gmail.com``). The same will happen with any other mail action intended for an undefined user (not in that list)
 
 Mails can be sent from terminal also with mail command. :command:`mail` receives from stdin.
 

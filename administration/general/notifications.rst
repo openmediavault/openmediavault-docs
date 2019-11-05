@@ -78,6 +78,9 @@ Gmail can be used in notifications. If you have 2FA enabled for the account, the
 .. note::
 	Aliases are allowed. This is good for filtering later in gmail. ``rootthe@gmail.com`` can be ``rootthe+server1@gmail.com`` or ``rootthe+whatever@gmail.com``
 
+.. note::
+	Gmail requires "access for less secure applications" to be enabled, in order for |omv| to send notifications using ``smtp.gmail.com``.  `Enable access for less secure applications <https://myaccount.google.com/lesssecureapps>`_ ::         
+
 
 SSL
 ===

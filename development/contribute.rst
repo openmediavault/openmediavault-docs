@@ -32,7 +32,7 @@ Code contributions
     * The code/feature/improvement must not affect existing functionality.
     * Each commit in a `GitHub pull request <https://github.com/openmediavault/openmediavault/pulls>`_
       must be signed via ``Signed-off-by: Frank Mustermann <frank.mustermann@xxx.yyy>``.
-    * If the PR fixes an `Github issue <https://github.com/openmediavault/openmediavault/issues>`_,
+    * If the PR fixes a `Github issue <https://github.com/openmediavault/openmediavault/issues>`_,
       then the line ``Fixes: https://github.com/openmediavault/openmediavault/issues/<ISSUE_NR>``
       must be included.
     * You have to subscribe the CLA online via GitHub.

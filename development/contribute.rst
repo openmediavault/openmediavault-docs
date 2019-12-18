@@ -35,7 +35,7 @@ Code contributions
     * If the PR fixes a `GitHub issue <https://github.com/openmediavault/openmediavault/issues>`_,
       then the line ``Fixes: https://github.com/openmediavault/openmediavault/issues/<ISSUE_NR>``
       must be included.
-    * You have to subscribe the CLA online via GitHub.
+    * You have to sign the CLA online via GitHub.
 
 How to become a translator?
     If you want to help translating the |omv| |webui| please do the following:

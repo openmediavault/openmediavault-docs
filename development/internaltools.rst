@@ -258,7 +258,7 @@ helper-functions (Shell)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-|omv| ships with this file :file:`/usr/share/openemdiavault/scripts/helper-functions` that contains several POSIX shell functions. This are intended to make it easier for developers to create mkconf or postinst/postrm scripts. To test them just run in terminal::
+|omv| ships with this file :file:`/usr/share/openmediavault/scripts/helper-functions` that contains several POSIX shell functions. These are intended to make it easier for developers to create mkconf or postinst/postrm scripts. To test them just run in terminal::
  
  $ source /usr/share/openmediavault/scripts/helper-functions
 
@@ -272,7 +272,7 @@ Returns::
 
 	/media/dev-disk-by-label-VOLUME1/Videos/Unsorted
 
-**Example 2:** Database nodes need to be created when a plugin is installed and removed when is purged. This is from omvextras MiniDLNA plugin `postinst file <https://github.com/OpenMediaVault-Plugin-Developers/openmediavault-minidlna/blob/master/debian/postinst>`_ ::
+**Example 2:** Database nodes need to be created when a plugin is installed and removed when it is purged. This is from omvextras MiniDLNA plugin `postinst file <https://github.com/OpenMediaVault-Plugin-Developers/openmediavault-minidlna/blob/master/debian/postinst>`_ ::
 
 	omv_config_add_node "/config/services" "${SERVICE_XPATH_NAME}"
 	omv_config_add_key "${SERVICE_XPATH}" "enable" "0"

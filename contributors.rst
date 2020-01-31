@@ -102,6 +102,7 @@ Volker Theile
 * Jérémy D (French)
 * Herald Yu (Chinese)
 * Axel Cantenys (French)
+* Abo Khalid (Arabic)
 
 **Code**
 

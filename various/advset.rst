@@ -33,8 +33,12 @@ For example we are going to change the default sftp server for SSH service.
 
 :code:`OMV_SSHD_SUBSYSTEM_SFTP=“/usr/lib/openssh/sftp-server”`
 
-Make your changes, save, restart engined service openmediavault-engined restart
-and run omv-mkconf ssh, finally reload the SSH service via |webui| or systemd.
+Make your changes and save them. To apply the custom settings you need
+to execute::
+
+  # monit restart omv-engined
+  # omv-salt stage run prepare
+  # omv-salt stage run deploy
 
 The list of environmental variables used for ``/etc/fstab`` filesystem with the
 defaults options and how to use them is described :doc:`here </various/fs_env_vars>`.

@@ -35,7 +35,7 @@ Add the package repositories::
     # deb https://downloads.sourceforge.net/project/openmediavault/packages usul partner
     EOF
 
-Install the |omv| 5 (Usul) package::
+Install the |omv| package::
 
     export LANG=C.UTF-8
     export DEBIAN_FRONTEND=noninteractive

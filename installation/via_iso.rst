@@ -11,6 +11,10 @@ Installation using an ISO image
 	The operating system/root filesystem will consume the whole space of the
 	picked disk device. All existing data on that disk device will get lost.
 
+Download
+--------
+	You can down load the ISO images `here <https://sourceforge.net/projects/openmediavault/files/>`_.
+
 Burn the installer
 ------------------
 	For x86 architecture you can burn the ISO directly into a USB drive using

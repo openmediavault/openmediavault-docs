@@ -50,5 +50,4 @@ Install the |omv| 5 (Usul) package::
         --option DPkg::Options::="--force-confold" \
         install openmediavault-keyring openmediavault
 
-    # Populate the database.
     omv-confdbadm populate

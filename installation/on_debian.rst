@@ -15,6 +15,12 @@ Buster (Debian 10) image available. After installing Armbian then use the
 tweaks included. If there's no Armbian for your device simply follow the steps outlined
 below.
 
+Install the openmediavault keyring manually::
+
+    apt-get install --yes gnupg
+    wget -O "/etc/apt/trusted.gpg.d/openmediavault-archive-keyring.asc" https://packages.openmediavault.org/public/archive.key
+    apt-key add "/etc/apt/trusted.gpg.d/openmediavault-archive-keyring.asc"
+
 Add the package repositories::
 
     cat <<EOF >> /etc/apt/sources.list.d/openmediavault.list

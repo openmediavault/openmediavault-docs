@@ -2,8 +2,8 @@ Troubleshooting
 ===============
 
 
-:Problem: Web interface has missing fields and/or items showing that have been uninstalled.
-:Solution: Clear your browser cache.
+:P: Web interface has missing fields and/or items showing that have been uninstalled.
+:S: Clear your browser cache.
 
 ..
 

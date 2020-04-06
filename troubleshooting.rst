@@ -39,3 +39,19 @@ Troubleshooting
 
 :P: I have problem accessing the |webui| with Firefox.
 :S: Try the solution mentioned in the `Sencha ExtJS forum <https://www.sencha.com/forum/showthread.php?310206-ExtJ-6-doest-not-work-on-Linux-with-Firefox-45&p=1155250&viewfull=1#post1155250>`_ or the `Mozilla bugtracker <https://bugzilla.mozilla.org/show_bug.cgi?id=1301327>`_.
+
+..
+
+:P: I am using JMicron drive enclosures and some of my drives are not appearing.
+:S: This is likely because JMicron controllers incorrectly report identical serial numbers and other data which confuses various systems.
+You can "fix" this by adding a rule to /lib/udev/rules.d/60-persistent-storage.rules after the entry for "Fall back usb_id for USB devices"
+::
+ #JMicron drive fix
+ KERNEL=="sd*", ENV{ID_VENDOR}=="JMicron", SUBSYSTEMS=="usb", PROGRAM="/root/serial.sh %k", ENV{ID_SERIAL}="USB-%c", ENV{ID_SERIAL_SHORT}="%c"
+
+You will also need to create `/root/serial.sh` containing the following:
+::
+    #!/bin/bash
+    /sbin/hdparm -I /dev/$1 | grep 'Serial Number' | awk '{print $3}'
+
+This will ensure that unique paths are created based on the serial number of the actual drives and not the enclosures.

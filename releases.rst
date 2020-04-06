@@ -13,6 +13,6 @@ Releases
    1.0,Kralizec,Debian 7,EOL,Sept 2014
    2.0,Stoneburner,Debian 7,EOL,Jun 2015
    3.0,Erasmus,Debian 8,EOL,Jun 2016
-   4.0,Arrakis,Debian 9,Oldstable,Apr 2018
+   4.0,Arrakis,Debian 9,Oldstable (EOL 30.06.2020),Apr 2018
    5.0,Usul,Debian 10,Stable,Mar 2020
    6.0,xxx,Debian 1x,In Development,est. Q1/2021

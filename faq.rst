@@ -23,6 +23,9 @@ Can I use a usb flash drive (stick) for installing the system?
 	few weeks of usage. Most common symptom is basic command execution does
 	not work, denied login, etc. More information `here <https://forum.openmediavault.org/index.php/Thread/6438-Tutorial-Experimental-Third-party-Plugin-available-Reducing-OMV-s-disk-writes-al/>`_.
 
+What are the default credentials for the UI?
+    Use the user 'admin' and the password 'openmediavault' for the first login.
+
 Can I give access to non-admin users to the web control panel?
 	No. By default non-admin users can only access their account profile, they can change
 	password and their email address if the admin has allowed changes on their account.

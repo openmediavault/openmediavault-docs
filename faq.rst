@@ -32,11 +32,9 @@ Can I give access to non-admin users to the web control panel?
 	by omv-extras.
 
 What is the file :file:`/etc/openmediavault/config.xml` for?
-	Is the database configuration store file for |omv|. When a change is
+	It is the database configuration store file for |omv|. When a change is
 	performed in the |webui|, the config value is stored and/or retrieved by
-	RPC to/from this file. If this is a save change, then mkconf passes the
-	value to the service configuration file and reloads the daemon in case
-	is necessary.
+	RPC to/from this file.
 
 Can I upgrade to Debian Testing/Unstable (Debian Testing/Sid) or use Ubuntu as a base distribution?
 	Yes. But the end is most likely a broken |webui| and possibly broken
@@ -74,21 +72,24 @@ Why does the system rewrites a configuration file(s) that I have manually edited
 How can I modify an internal value of some service |omv| has control over?
 	Read :doc:`here <various/advset>` for advanced configurations.
 
-How can I modify or add a network configuration of :file:`/etc/network/interfaces` with some custom options the |webui| does not provide?
-	The interfaces file is controlled by |omv|. To add network interfaces
-	that are not configurable through the |webui| or other options not present,
-	use  :doc:`advanced settings <various/advset>`.
+How can I modify or add a network configuration with some custom options the |webui| does not provide?
+    Starting with |omv| 5 systemd-networkd is used to configure the network.
+    The interfaces file :file:`/etc/network/interfaces` is controlled by |omv| but
+    not used anymore.
+    To add network interfaces that are not configurable through the |webui| or other
+    options not present, use :doc:`advanced settings <various/advset>`.
+    Alternatively write your own systemd-networkd configuration files.
 
 Why my disks mount paths have a long alphanumeric number?
 	The long number is called UUID, it is used by fstab to mount disks. This
 	number is unique per filesystem (or at least unlikely possible that
 	another filesystem comes with an identical one). This helps maintaining the
 	mount points. The old linux way (sda1, sdb1, etc.) is not guaranteed that
-	/sda1 is the same disk on next reboot. If having trouble identifying them
+	/dev/sda1 is the same disk on next reboot. If having trouble identifying them
 	in terminal, create a pool with symlinks to each file system with easy to
 	remember names.
 
-	This behaviour has been deprecated now in current omv releases including
+	This behaviour has been deprecated now in current |omv| releases including
 	stable (Jessie). The default creation of mount paths is documented
 	`here <https://github.com/openmediavault/openmediavault/blob/20ec529737e6eca2e1f98d0b3d1ade16a3c338e1/deb/openmediavault/usr/share/openmediavault/engined/rpc/filesystemmgmt.inc#L823-L833>`_.
 
@@ -116,7 +117,7 @@ What is the permissions/ownership of folders in |omv| created by shared folders?
 	group inheritance, meaning new files/folders below will always have the group
 	users (GID=100) membership.
 
-Why are my filesystems mounted as noexec?
+Why are my filesystems mounted as ``noexec``?
 	This is a security measure to avoid the placement of malicious scripts in
 	the shared folders. This will prevent any script execution in those paths,
 	including compiling packages and binaries.
@@ -147,18 +148,6 @@ I want to experiment with |omv| or make changes to the code
 	Alternatively checkout the |omv| `GIT repository <https://scm.openmediavault.org/>`_
 	and use `Vagrant <https://www.vagrantup.com/>`_ to create a virtual
 	machine.
-
-Why there is no iscsitarget plugin in |omv| 4?
-	The iscsitarget software is divided in two parts. The `userland tools <https://packages.debian.org/source/jessie/iscsitarget>`_
-	and the `kernel modules <https://packages.debian.org/jessie/iscsitarget-dkms>`_ both are provided by Debian repository system.
-	Kernel modules come in the form of `DKMS <https://en.wikipedia.org/wiki/Dynamic_Kernel_Module_Support>`_. 
-	The upstream software is maintained in `sourceforge <https://sourceforge.net/projects/iscsitarget/files/iscsitarget/>`_.
-	Debian only provides packages up to Jessie, this is because the DKMS modules do not built in kernels higher than 4.x.
-	The last commit upstream was in 2010, right now iscsitarget is abandoned software.
-
-	It is possible to use iscsitarget plugin in |omv| 3 or lower versions by using kernels lower than 4.x.
-
-	The intention is to migrate core underlaying software from iscsitarget to `LIO targetcli <http://linux-iscsi.org/wiki/Targetcli>`_  
 
 What is the :command:`omv-update` and :command:`omv-release-upgrade` for?
 	Information about those commands are in the software :doc:`section </various/apt>`.

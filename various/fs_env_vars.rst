@@ -41,6 +41,6 @@ Change the opts line removing the noexec, should look like this::
     <opts>defaults,nofail,user_xattr,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0,acl</opts>
 
 
-Save the file with CTRL+X, run: ``omv-mkconf fstab``
+Save the file with CTRL+X, run: ``omv-salt deploy run fstab``
 
 You should be able to see the new options at ``/etc/fstab``, finally reboot the system and check with ``cat /proc/mounts`` that the noexec flag is no longer present for that particular mount.

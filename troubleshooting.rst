@@ -42,6 +42,10 @@ Troubleshooting
 
         # JMicron drive fix
         KERNEL=="sd*", ENV{ID_VENDOR}=="JMicron", SUBSYSTEMS=="usb", PROGRAM="/root/serial.sh %k", ENV{ID_SERIAL}="USB-%c", ENV{ID_SERIAL_SHORT}="%c"
+    
+    Just in case the udev rule above will not work, replace the ENV{ID_VENDOR}=="JMicron" parameter with ATTRS{idVendor} and ATTRS{idProduct} data coming from lsusb command output as follows (example coming from JMicron JM20337 USB PATA/SATA bridge chipset):
+    
+        KERNEL=="sd*", ATTRS{idVendor}=="152d", ATTRS{idProduct}=="2338", SUBSYSTEMS=="usb", PROGRAM="/root/serial.sh %k", ENV{ID_SERIAL}="USB-%c", ENV{ID_SERIAL_SHORT}="%c"
 
     You will also need to create :file:`/root/serial.sh` containing the following::
 

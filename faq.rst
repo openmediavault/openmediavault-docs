@@ -49,7 +49,8 @@ I´ve lost the |webui| password. How do I reset it?
 	|webui| password.
 
 Can I backup or restore an existing |omv| configuration?
-	No. Keep the file :file:`/etc/openmediavault/config.xml` for references
+	There is no regular backup/restore procedure, but yes, in some way:
+	keep the file :file:`/etc/openmediavault/config.xml` for references
 	purposes if the option is to go for a clean re-install.
 
 What is the default HTTP engine of |omv|?

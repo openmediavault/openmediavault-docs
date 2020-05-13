@@ -48,7 +48,7 @@ I´ve lost the |webui| password. How do I reset it?
 	and type in: :command:`omv-firstaid`. There is an option to reset the
 	|webui| password.
 
-Can I backup or restore and existing |omv| configuration?
+Can I backup or restore an existing |omv| configuration?
 	No. Keep the file :file:`/etc/openmediavault/config.xml` for references
 	purposes if the option is to go for a clean re-install.
 

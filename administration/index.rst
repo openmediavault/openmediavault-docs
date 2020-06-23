@@ -10,3 +10,4 @@ Administration
    storage/index
    access_rights_management
    services/index
+   ../various/advset

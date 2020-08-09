@@ -30,3 +30,13 @@ First time use:
 	installation.
 
 	For ARM images the root password is the same as admin password.
+
+.. note::
+   |omv| will enable SSH access for the user ``root`` by default to be
+   able to access a headless system in case of a broken installation or
+   other maintenance situations. You can disable this behaviour in the
+   ``Services | SSH`` page.
+
+   To still get ``root`` access you need to create a non-privileged user
+   and add them to the ``ssh`` and ``sudo`` groups. After that you can
+   SSH into the system with this non-privileged user and run ``sudo su``.

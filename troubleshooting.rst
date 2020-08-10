@@ -30,22 +30,19 @@ Troubleshooting
 
     If the password is correct then this is most likely caused by the rootfs partition being full. This command can help track which folders are the biggest :command:`df -hx --max-depth=1 /`
 
-* **I have problem accessing the |webui| with Firefox.**
+* **I have problem accessing the web interface with Firefox.**
 
     Try the solution mentioned in the `Sencha ExtJS forum <https://www.sencha.com/forum/showthread.php?310206-ExtJ-6-doest-not-work-on-Linux-with-Firefox-45&p=1155250&viewfull=1#post1155250>`_ or the `Mozilla bugtracker <https://bugzilla.mozilla.org/show_bug.cgi?id=1301327>`_.
 
 * **I am using JMicron drive enclosures and some of my drives are not appearing.**
 
     This is likely because JMicron controllers incorrectly report identical serial numbers and other data which confuses various systems.
+    |omv| provides an `UDEV rules database <https://github.com/openmediavault/openmediavault/pull/746>`_ which will fix that issue for several USB PATA/SATA bridge controllers.
+    If your hardware still does not work, then please provide the information mentioned in that pull request and open a new tracker issue.
 
-    You can "fix" this by adding a rule to :file:`/lib/udev/rules.d/60-persistent-storage.rules` after the entry for "Fall back usb_id for USB devices"::
+    Alternatively you can manually "fix" this by adding a rule to :file:`/lib/udev/rules.d/60-persistent-storage.rules` after the entry for "Fall back usb_id for USB devices"::
 
         # JMicron drive fix
-        KERNEL=="sd*", ENV{ID_VENDOR}=="JMicron", SUBSYSTEMS=="usb", PROGRAM="/root/serial.sh %k", ENV{ID_SERIAL}="USB-%c", ENV{ID_SERIAL_SHORT}="%c"
-
-    You will also need to create :file:`/root/serial.sh` containing the following::
-
-        #!/bin/bash
-        /sbin/hdparm -I /dev/$1 | grep 'Serial Number' | awk '{print $3}'
+        KERNEL=="sd*", ENV{ID_VENDOR}=="JMicron", SUBSYSTEMS=="usb", PROGRAM="serial_id %N", ENV{ID_SERIAL}="USB-%c", ENV{ID_SERIAL_SHORT}="%c"
 
     This will ensure that unique paths are created based on the serial number of the actual drives and not the enclosures.

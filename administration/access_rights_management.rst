@@ -40,7 +40,8 @@ Public Key
 
 	- The user profile information (except password) is also stored in the internal |omv| database, along with the public keys.
 	- The grid shows information from internal database and also parses information from :file:`/etc/passwd` lines with a `UID` number higher than 1000. A user created in terminal is not in the internal database. This causes trouble with samba, as there is no user/password entry in the tdbsam file. Just click edit for the user, enter the same or new password, now the user has the linux and samba password synced.
-	- A user can log into the web interface to see their own profile information. Depending if the adminstrator has setup the username account to allow changes, they can change their password and mail account.
+	- A user can log into the |webui| to see their own profile information. Depending if the administrator has setup the username account to allow changes, they can change their password and mail account.
+	- A non-privileged user can become a |webui| administrator by adding them to the ``openmediavault-admin`` group.
 
 Import
 ^^^^^^

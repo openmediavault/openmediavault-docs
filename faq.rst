@@ -26,13 +26,14 @@ Can I use a usb flash drive (stick) for installing the system?
 What are the default credentials for the UI?
     Use the user 'admin' and the password 'openmediavault' for the first login.
 
-Can I give access to non-admin users to the web control panel?
-	No. By default non-admin users can only access their account profile, they can change
-	password and their email address if the admin has allowed changes on their account.
+Can I give administrator privileges to non-privileged users to access the web control panel?
+	Yes. By default non-privileged users can only access their account profile, they can change
+	password and their email address if the administrator has allowed changes on their account.
 	However the current |webui| framework is designed for developers to create plugins where
-	they can give limited or full access to non-admin users to their plugin. An example is in the
+	they can give limited or full access to non-privileged users. An example is the
 	`openvpn plugin <https://github.com/OpenMediaVault-Plugin-Developers/openmediavault-openvpn>`_
-	by omv-extras.
+	by `omv-extras.org <https://omv-extras.org>`_.
+	A non-privileged user can become a |webui| administrator by adding them to the ``openmediavault-admin`` group.
 
 What is the file :file:`/etc/openmediavault/config.xml` for?
 	It is the database configuration store file for |omv|. When a change is

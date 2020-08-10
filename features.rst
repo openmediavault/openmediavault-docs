@@ -7,11 +7,11 @@ System
 General settings
 ----------------
 
-**General settings:** Change |webui| listening port, SSL and force SSL. Change admin password
+**General settings:** Change |webui| listening port, SSL and force SSL. Change admin password.
 
 **Notification system:** Integrated into several services in the form of email using Postfix [1]_ backend as MTA, these include scheduled tasks, services monitoring, S.M.A.R.T., MDADM and cron-apt. Since |omv| 3.0 is possible to add also third party notification systems by using scripts, more information `here <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/usr/share/openmediavault/notification/sink.d/README>`_ and real example on how to use it `here <https://forum.openmediavault.org/index.php/Thread/14919-GUIDE-Use-Telegram-as-notification-service/>`_.
 
-**Network configuration:** The web interface provides configuration options for ethernet, WiFi (only WPA/WPA2 supported), bond and vlan interfaces. This also includes a panel for firewall configuration.
+**Network configuration:** The |webui| provides configuration options for ethernet, WiFi (only WPA/WPA2 supported), bond and vlan interfaces. This also includes a panel for firewall configuration.
 
 **Certificates:** Create or import existing SSL and SSH certificates. This certificates can be used for securing the |webui| or SSH access. Plugins can use the backend framework to select the available certificates.
 
@@ -28,7 +28,7 @@ Storage
 
 **S.M.A.R.T.:** Based on smartmontools [3]_, It can display advanced information of S.M.A.R.T values in the webUI. It can also schedule health tests as well as send notifications when S.M.A.R.T. attributes values change.
 
-**RAID Management:** Based Linux RAID [4]_, create arrays in 6 different configurations. Levels available are linear, 0, 1, 10, 5 and 6. The array can have disks removed or expanded using the web interface.
+**RAID Management:** Based Linux RAID [4]_, create arrays in 6 different configurations. Levels available are linear, 0, 1, 10, 5 and 6. The array can have disks removed or expanded using the |webui|.
 
 **File Systems:** Volume format, device mount and unmount. More information in the :doc:`filesystem section </administration/storage/filesystems>`.
 

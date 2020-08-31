@@ -67,9 +67,9 @@ Gmail can be used in notifications. If you have 2FA enabled for the account, the
 
 	SMTP Server: smtp.gmail.com
 	SMTP Port: 587
-	SSL/TLS: Yes
+	Encryption mode: STARTTLS
 	Sender email: rootthe@gmail.com (include domain)
-	Authentication: Yes
+	Authentication required: Yes
 	Username: rootthe@gmail.com (include domain)
 	Password: <the app password here>
 	Primary email: rootthe@gmail.com

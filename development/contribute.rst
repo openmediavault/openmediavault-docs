@@ -36,6 +36,7 @@ Code contributions
       then the line ``Fixes: https://github.com/openmediavault/openmediavault/issues/<ISSUE_NR>``
       must be included.
     * You have to sign the CLA online via GitHub.
+    * Make sure your PR has only one commit.
 
 How to become a translator?
     If you want to help translating the |omv| |webui| please do the following:

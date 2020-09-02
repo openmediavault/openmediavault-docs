@@ -8,8 +8,10 @@ SPHINXPROJ    = openmediavault-wiki
 SOURCEDIR     = .
 BUILDDIR      = _build
 VENVDIR       = venv
+PORT          = 8000
 
 # Helper targets to create the isolated Python environment.
+# E.g. `make PORT=8001 autobuild`
 venv:
 	( \
 		virtualenv -p python3 $(VENVDIR); \
@@ -22,7 +24,7 @@ buildvenv: venv
 autobuild: venv
 	( \
 		. $(VENVDIR)/bin/activate; \
-		sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)/html" \
+		sphinx-autobuild --port $(PORT) "$(SOURCEDIR)" "$(BUILDDIR)/html" \
 	)
 
 # Put it first so that "make" without argument is like "make help".

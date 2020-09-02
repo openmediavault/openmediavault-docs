@@ -9,6 +9,7 @@ license agreement for contributions. You also do not change your rights to
 use your own contributions for any other purpose.
 
 Why do i have to subscribe a CLA when contributing to the |omv| project?
+------------------------------------------------------------------------
     * http://oss-watch.ac.uk/resources/cla
     * http://www.golem.de/1107/85208.html
     * `Rechtliche Sicherheit bei Open-Source-Beiträgen <https://www.heise.de/developer/artikel/Rechtliche-Sicherheit-bei-Open-Source-Beitraegen-3807788.html>`_
@@ -18,12 +19,14 @@ Why do i have to subscribe a CLA when contributing to the |omv| project?
     * `Gemeinsame Durchsetzung der Rechte <https://www.golem.de/news/programmierer-wenn-der-urheber-gegen-das-urheberrecht-verliert-1904-140463-3.html>`_
 
 Can I submit patches without having signed the CLA?
+---------------------------------------------------
     No. All contributors and patch submitters must sign the CLA before they
     submit anything substantial. Trivial patches like spelling fixes or missing
     words won't require an agreement, since anybody could do those. However,
     almost anything will require a CLA.
 
-Code contributions
+Contributions rules
+-------------------
     Code contributions must satisfy the following conditions. Contributions
     that do not fulfill these conditions will not be accepted.
 
@@ -38,6 +41,7 @@ Code contributions
     * You have to sign the CLA online via GitHub.
 
 How to become a translator?
+---------------------------
     If you want to help translating the |omv| |webui| please do the following:
 
     * Subscribe the `CLA <https://www.openmediavault.org/contributoragreement.html>`_

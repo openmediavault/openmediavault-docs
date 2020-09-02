@@ -25,8 +25,8 @@ Can I submit patches without having signed the CLA?
     words won't require an agreement, since anybody could do those. However,
     almost anything will require a CLA.
 
-Contributions rules
--------------------
+Contribution rules
+------------------
     Code contributions must satisfy the following conditions. Contributions
     that do not fulfill these conditions will not be accepted.
 

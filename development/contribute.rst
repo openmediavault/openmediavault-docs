@@ -33,7 +33,7 @@ Contribution rules
     * The :doc:`coding guidelines <coding_guideline>` must be followed.
     * The feature/improvement must be implemented as generic as possible.
     * The code/feature/improvement must not affect existing functionality.
-    * Each commit in a `GitHub pull request <https://github.com/openmediavault/openmediavault/pulls>`_
+    * Each commit message in a `GitHub pull request <https://github.com/openmediavault/openmediavault/pulls>`_
       must be signed via ``Signed-off-by: Frank Mustermann <frank.mustermann@xxx.yyy>``.
     * If the PR fixes a `GitHub issue <https://github.com/openmediavault/openmediavault/issues>`_,
       then the line ``Fixes: https://github.com/openmediavault/openmediavault/issues/<ISSUE_NR>``

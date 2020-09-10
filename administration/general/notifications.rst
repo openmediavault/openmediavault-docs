@@ -2,7 +2,7 @@ Notifications
 #############
 
 
-Notifications work in the form of email. The backend software used here is postfix [1]_ configured as a MTA. The options allow to configure to send mail via SMTP servers using the standard port or use SSL/TLS. The |webui| allows inputing two delivery addresses. Both are assigned to the root user. 
+Notifications work in the form of email. The backend software used here is postfix [1]_ configured as a MTA. The options allow to configure to send mail via SMTP servers using the standard port or use SSL/TLS. The |webui| allows inputing two delivery addresses. Both are assigned to the root user.
 
 
 Configuration
@@ -28,7 +28,7 @@ Examples 1::
 
 Mail will be delivered to ``mikeadmin@themailco.com`` as it is defined in canonical_recipients. The delivery address can be explicit also::
 
-$ echo "Message body" | mail -s "Test subject" mikeadmin@themailco.com	
+$ echo "Message body" | mail -s "Test subject" mikeadmin@themailco.com
 
 
 Examples 2::
@@ -46,7 +46,7 @@ Events
 
 The server will send notifications for this events:
 
-	- Log in from browser (If cookies are allowed, then it just sends once). 
+	- Log in from browser (If cookies are allowed, then it just sends once).
 	- Use of sudo by a user not in allowed group.
 	- Summary of locked users by pam_tally2 [2]_. This happens when a user or admin attempts fails to log in for more than three times.
 	- MD RAID events: degraded, reshape, etc. [D]
@@ -58,7 +58,7 @@ The server will send notifications for this events:
 	- Cron-apt: Summary of upgrade packages available. [D]
 	- SMART: Report of attribute changes. [D]
 
-Options marked with [D] can be disabled selectivly. The rest only when the whole notification backend is disabled. 
+Options marked with [D] can be disabled selectivly. The rest only when the whole notification backend is disabled.
 
 Gmail
 =====
@@ -79,7 +79,7 @@ Gmail can be used in notifications. If you have 2FA enabled for the account, the
 	Aliases are allowed. This is good for filtering later in gmail. ``rootthe@gmail.com`` can be ``rootthe+server1@gmail.com`` or ``rootthe+whatever@gmail.com``
 
 .. note::
-	Gmail requires "access for less secure applications" to be enabled, in order for |omv| to send notifications using ``smtp.gmail.com``.  `Enable access for less secure applications <https://myaccount.google.com/lesssecureapps>`_ ::         
+	Gmail requires "access for less secure applications" to be enabled, in order for |omv| to send notifications using ``smtp.gmail.com``.  `Enable access for less secure applications <https://myaccount.google.com/lesssecureapps>`_ ::
 
 
 SSL
@@ -107,18 +107,18 @@ Also the following positional arguments are passed::
 Most modern non mail notifications systems have a documented API, where you can send text using curl payloads with a secret TOKEN. So most common case would be to use MESSAGE_FILE variable only in your script.
 
 Your script's filename must adhere to the following standards:
-	
+
 	- Must belong to one or more of the following namespaces:
-		
+
 		- The LANANA-assigned namespace (^[a-z0-9]+$)
 		- The LSB hierarchical and reserved namespaces (^_?([a-z0-9_.]+-)+[a-z0-9]+$)
 		- The Debian cron script namespace (^[a-zA-Z0-9_-]+$)
-		
+
 	- Start with a number like this: :file:`<##>pushnotification`
 
 .. note::
 	- Do not add an extension to your script in the run-parts directory, otherwise it will get excluded.
-	- Make sure the script file is executable. In this case also make sure the script is not a symlink to a mounted filesystem with noexec flag.
+	- Make sure the script file is executable. In this case also make sure the script is not a symlink to a mounted filesystem with `noexec` flag.
 
 
 .. [1] http://www.postfix.org

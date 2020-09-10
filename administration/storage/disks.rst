@@ -7,14 +7,14 @@ Be aware that when attaching disks via USB (a docking station, cage, adapter, et
 
 .. code-block:: json
 
-	{  
-	   "response":{  
+	{
+	   "response":{
 	      "total":3,
-	      "data":[  
-	         {  
+	      "data":[
+	         {
 	            "devicename":"mmcblk1",
 	            "devicefile":"/dev/mmcblk1",
-	            "devicelinks":[  
+	            "devicelinks":[
 	               "/dev/disk/by-id/mmc-SL16G_0x0091d901",
 	               "/dev/disk/by-path/platform-ff500000.dwmmc"
 	            ],
@@ -26,10 +26,10 @@ Be aware that when attaching disks via USB (a docking station, cage, adapter, et
 	            "israid":false,
 	            "isroot":true
 	         },
-	         {  
+	         {
 	            "devicename":"sda",
 	            "devicefile":"/dev/sda",
-	            "devicelinks":[  
+	            "devicelinks":[
 	               "/dev/disk/by-path/platform-xhci-hcd.8.auto-usb-0:1:1.0-scsi-0:0:0:0",
 	               "/dev/disk/by-id/usb-USB_3.0_HDD_Docking_Station_2017101701E0-0:0"
 	            ],
@@ -41,10 +41,10 @@ Be aware that when attaching disks via USB (a docking station, cage, adapter, et
 	            "israid":false,
 	            "isroot":false
 	         },
-	         {  
+	         {
 	            "devicename":"sdb",
 	            "devicefile":"/dev/sdb",
-	            "devicelinks":[  
+	            "devicelinks":[
 	               "/dev/disk/by-id/usb-USB_3.0_HDD_Docking_Station_2017101701E0-0:1",
 	               "/dev/disk/by-path/platform-xhci-hcd.8.auto-usb-0:1:1.0-scsi-0:0:0:1"
 	            ],
@@ -79,18 +79,18 @@ All the above options are configured using hdparm [1]_. The APM values from the 
 seven steps with a small description to make it easier for the user to select. If you want to experiment with intermediate values then
 you can edit :file:`/etc/openmediavault/config.xml` find this xpath ``/storage/hdparm``, change the values for the disk, finally run::
 
-$ omv-mkconf hdparm
+$ omv-salt deploy run hdparm
 
 Reboot, check if APM has been set with::
 
 $ hdparm -I /dev/sdX
 
-When setting a spindown time make sure APM is set bellow 128, otherwise it will not work. The web framework does 
+When setting a spindown time make sure APM is set bellow 128, otherwise it will not work. The web framework does
 not narrow the APM options if spin down time is set, or disables the spindown menu when a value higher than 128 is selected.
 
 .. note::
-	For changes to be permanent, settings are stored in this file :file:`/etc/hdparm.conf`, however those settings are 
-	applied using a ``UDEV ADD+`` that executes :file:`/lib/udev/hdparm` which parses that file. For changes to be applied 
+	For changes to be permanent, settings are stored in this file :file:`/etc/hdparm.conf`, however those settings are
+	applied using a ``UDEV ADD+`` that executes :file:`/lib/udev/hdparm` which parses that file. For changes to be applied
 	inmediatly server needs to be suspended/resumed or rebooted.
 
 Wipe

@@ -3,11 +3,11 @@ Filesystem Environmental Variables
 
 This is the current filesystem mount options passed when a mount button is executed in the |webui|::
 
-    OMV_FSTAB_MNTOPS_EXT2="defaults,nofail,user_xattr,noexec"
-    OMV_FSTAB_MNTOPS_EXT3="defaults,nofail,user_xattr,noexec,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0"
-    OMV_FSTAB_MNTOPS_EXT4="defaults,nofail,user_xattr,noexec,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0"
-    OMV_FSTAB_MNTOPS_JFS="defaults,nofail,noexec,usrquota,grpquota"
-    OMV_FSTAB_MNTOPS_XFS="defaults,nofail,noexec,usrquota,grpquota"
+    OMV_FSTAB_MNTOPS_EXT2="defaults,nofail,user_xattr"
+    OMV_FSTAB_MNTOPS_EXT3="defaults,nofail,user_xattr,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0"
+    OMV_FSTAB_MNTOPS_EXT4="defaults,nofail,user_xattr,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0"
+    OMV_FSTAB_MNTOPS_JFS="defaults,nofail,usrquota,grpquota"
+    OMV_FSTAB_MNTOPS_XFS="defaults,nofail,usrquota,grpquota"
     OMV_FSTAB_MNTOPS_VFAT="defaults,nofail"
     OMV_FSTAB_MNTOPS_NTFS="defaults,nofail"
     OMV_FSTAB_MNTOPS_HFSPLUS="defaults,nofail,force"
@@ -21,7 +21,7 @@ This variables can be changed using the same method described :doc:`here </vario
 
     # nano /etc/openmediavault/config.xml
 
-In this example we remove the `noexec` flag. First locate the `<fstab>` section, in there you will find several <mntent> entries that belongs to all registered filesystems. You should be able to recognise it by the label. Once there you can remove the `noexec` flag, in the `<opts>` line.
+In this example we remove the `noexec` flag. First locate the `<fstab>` section, in there you will find several `<mntent>` entries that belongs to all registered filesystems. You should be able to recognise it by the label. Once there you can remove the `noexec` flag, in the `<opts>` line.
 
 .. code-block:: xml
 
@@ -41,6 +41,6 @@ Change the opts line removing the `noexec`, should look like this::
     <opts>defaults,nofail,user_xattr,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0,acl</opts>
 
 
-Save the file with CTRL+X, run: ``omv-salt deploy run fstab``
+Save the file with CTRL+X, run: :command:`omv-salt deploy run fstab`
 
-You should be able to see the new options at ``/etc/fstab``, finally reboot the system and check with ``cat /proc/mounts`` that the noexec flag is no longer present for that particular mount.
+You should be able to see the new options at ``/etc/fstab``, finally reboot the system and check with :command:`cat /proc/mounts` that the `noexec` flag is no longer present for that particular mount.

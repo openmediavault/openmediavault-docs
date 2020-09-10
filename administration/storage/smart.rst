@@ -22,7 +22,7 @@ Smartmontools is configured in this file :file:`/etc/smartd.conf`.
 
 The information button displays several tabs which provide friendly parsed information about the drive. The last tab has all the information in raw text.
 
-The grid columns shows different identification values for the drive, the last one (Status) reports a green icon if drive is in good condition or red if drive needs some attention, if you hover on the icon a tooltup that will report more details. The code that reports the red icon is based on this function `here <https://github.com/openmediavault/openmediavault/blob/9ddc8b66f3f666987157a0e7b84d57e7c10f9ba4/deb/openmediavault/usr/share/php/openmediavault/system/storage/smartinformation.inc#L93-L98>`_ and `here <https://github.com/openmediavault/openmediavault/blob/9ddc8b66f3f666987157a0e7b84d57e7c10f9ba4/deb/openmediavault/usr/share/php/openmediavault/system/storage/smartinformation.inc#L235-L262>`_, so basically the red icon will be triggered only on attributes with the prefailure (P) flag when:
+The grid columns shows different identification values for the drive, the last one (Status) reports a green icon if drive is in good condition or red if drive needs some attention, if you hover on the icon a tooltip that will report more details. The code that reports the red icon is based on this function `here <https://github.com/openmediavault/openmediavault/blob/9ddc8b66f3f666987157a0e7b84d57e7c10f9ba4/deb/openmediavault/usr/share/php/openmediavault/system/storage/smartinformation.inc#L93-L98>`_ and `here <https://github.com/openmediavault/openmediavault/blob/9ddc8b66f3f666987157a0e7b84d57e7c10f9ba4/deb/openmediavault/usr/share/php/openmediavault/system/storage/smartinformation.inc#L235-L262>`_, so basically the red icon will be triggered only on attributes with the prefailure (P) flag when:
 
 - Any attribute (P) current value is equal or less than threshold --> Bad attribute now
 
@@ -46,7 +46,7 @@ Gives an option to select four different scheduled tests:
 
 These tests and what they do are explained `here <https://www.smartmontools.org/wiki/TocDoc#SMARTTesting>`_ and `here <https://www.thomas-krenn.com/en/wiki/SMART_tests_with_smartctl#Long_Test>`_.
 
-SMART only realloactes a bad sector on write. A manual method to force reallocating the pending(s) sector(s) is decribed `here <https://www.thomas-krenn.com/en/wiki/Analyzing_a_Faulty_Hard_Disk_using_Smartctl>`_.
+SMART only reallocates a bad sector on write. A manual method to force reallocating the pending(s) sector(s) is described `here <https://www.thomas-krenn.com/en/wiki/Analyzing_a_Faulty_Hard_Disk_using_Smartctl>`_.
 
 .. [1] https://www.backblaze.com/blog/what-smart-stats-indicate-hard-drive-failures/
 .. [2] https://www.smartmontools.org/

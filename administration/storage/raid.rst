@@ -1,7 +1,7 @@
 RAID
 ####
 
-|omv| uses linux software RAID driver (MD) and the mdadm utility to create arrays [1]_. Arrays created in any other linux distro should be recognized inmmediatly by the server. In most cases you can skip to the filesystem array and proceed to mount to integrate the filesystem into the database.
+|omv| uses linux software RAID driver (MD) and the mdadm utility to create arrays [1]_. Arrays created in any other linux distro should be recognized immediately by the server. In most cases you can skip to the filesystem array and proceed to mount to integrate the filesystem into the database.
 
 Overview
 --------

@@ -173,4 +173,4 @@ texinfo_documents = [
 # Adding Custom CSS or JavaScript.
 # http://docs.readthedocs.io/en/latest/guides/adding-custom-css.html
 def setup(app):
-    app.add_stylesheet('openmediavault.css')
+    app.add_css_file('openmediavault.css')

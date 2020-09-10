@@ -11,7 +11,7 @@ Most users tend to access/modify the database by using nano::
 
 $ nano /etc/openmediavault/config.xml
 
-This is a problem as sometimes a wrong pressed key can add strange chars out of the xml tags and make the database unreadable by the backend. 
+This is a problem as sometimes a wrong pressed key can add strange chars out of the xml tags and make the database unreadable by the backend.
 
 omv-confdbadm is a tool written in python for retrieving, storing or deleting values from/to the database. This tool combined with jq [1]_ provides an easier method for interacting with the database using Shell/BASH.
 
@@ -104,14 +104,14 @@ Output returns:
 	}
 
 
-**Write:** This tool can also modify values in the database. 
+**Write:** This tool can also modify values in the database.
 
-Add the noexec flag to this filesystem object ``567c2bd4-3d82-45b2-b34b-a6d38e680ed3``, we need to pass the whole json object as argument::
+Add the `noexec` flag to this filesystem object ``567c2bd4-3d82-45b2-b34b-a6d38e680ed3``, we need to pass the whole json object as argument::
 
 	# omv-confdbadm update conf.system.filesystem.mountpoint '{"freq":0,"hidden":false,"passno":2,"opts":"defaults,noexec,noauto,user_xattr,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0,acl","dir":"/media/dev-disk-by-label-ironwolf_3TB_1","uuid":"567c2bd4-3d82-45b2-b34b-a6d38e680ed3","fsname":"/dev/disk/by-label/ironwolf_3TB_1","type":"ext4"}'
 
 
-Remove a filesystem from the database, this time we pass only the corresponing uuid of the object::
+Remove a filesystem from the database, this time we pass only the corresponding uuid of the object::
 
 	# omv-confdbadm delete --uuid 567c2bd4-3d82-45b2-b34b-a6d38e680ed3 conf.system.filesystem.mountpoint
 
@@ -123,7 +123,7 @@ This tool can execute rpc commands. This is identical of what the web frontend u
 
 **Example 1:** Get all mounted filesystems, including rootfs::
 
- # omv-rpc -u admin 'FileSystemMgmt' 'enumerateMountedFilesystems' '{"includeroot": true}' 
+ # omv-rpc -u admin 'FileSystemMgmt' 'enumerateMountedFilesystems' '{"includeroot": true}'
 
 Output returns:
 
@@ -259,7 +259,7 @@ helper-functions (Shell)
 
 
 |omv| ships with this file :file:`/usr/share/openmediavault/scripts/helper-functions` that contains several POSIX shell functions. These are intended to make it easier for developers to create mkconf or postinst/postrm scripts. To test them just run in terminal::
- 
+
  $ source /usr/share/openmediavault/scripts/helper-functions
 
 Type ``omv_``, press tab key to autocomplete, this will show all functions and a small description in the name.

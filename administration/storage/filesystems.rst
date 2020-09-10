@@ -5,15 +5,15 @@ Filesystems
 Overview
 	The filesystem section of the |omv| |webui| is where you integrate disk volumes to be part of the server. Drives/filesystems that are not mounted through the |webui| are not registered in the backend database, this means you cannot use volumes to create shared folders if they were not mounted properly. *This is very important*, users that come from an existing debian installation with filesystems already present in their fstab file will see that no volumes will be available for creating shared folders even if they are mounted. For the disks to be properly integrated it is better to delete all fstab lines except rootfs and swap, reboot your server and start mounting the disks through the |webui|.
 
-	The mount process acts like many other services in |omv|, first it writes a database entry in config.xml, this entry contains essential information:
+	The mount process acts like many other services in |omv|, first it writes a database entry in ``config.xml``, this entry contains essential information:
 
-	- UUID of the mounted entry inside config.xml <uuid>
-	- Predictable device path of the filesystem  <fsname>
-	- Target mount directory <dir>
-	- Filesystem options <opts>
-	- Filesystem type (EXT3, EXT4, etc.) <type>
+	- UUID of the database object `<uuid>`
+	- Predictable device path of the filesystem `<fsname>`
+	- Target mount directory `<dir>`
+	- Filesystem options `<opts>`
+	- Filesystem type (EXT3, EXT4, etc.) `<type>`
 
-	You can inspect a mntent entry in config.xml it should look like this:
+	You can inspect a `mntent` entry in ``config.xml`` it should look like this:
 
 	.. code-block:: xml
 
@@ -22,27 +22,27 @@ Overview
 			<fsname>/dev/disk/by-label/VOLUME1</fsname>
 			<dir>/srv/dev-disk-by-label-VOLUME1</dir>
 			<type>ext4</type>
-			<opts>defaults,nofail,user_xattr,noexec,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0,acl</opts>
+			<opts>defaults,nofail,user_xattr,usrjquota=aquota.user,grpjquota=aquota.group,jqfmt=vfsv0,acl</opts>
 			<freq>0</freq>
 			<passno>2</passno>
 			<hidden>0</hidden>
 		</mntent>
 
-	With the mntent entry in config.xml, mkconf fstab script writes the appropiate line in ``/etc/fstab``. You can identify entries in ``/etc/fstab`` created by the |webui| by looking at «openmediavault» tags. It is important to mention to not alter the information in between these tags. If you delete or modify a fstab option (noexec or quota for example) the next time you mount a new disk into the server, the mkconf will pipe the original value there again. If you need persistent change use :doc:`environmental variables </various/fs_env_vars>`. Finally the backend will proceed to mount the filesystem. After this the volume is ready for creating shared folders.
+	With the `mntent` entry in ``config.xml``, :command:``omv-salt deploy run fstab` script writes the appropriate line in ``/etc/fstab``. You can identify entries in ``/etc/fstab`` created by the |webui| by looking at «openmediavault» tags. It is important to mention to not alter the information in between these tags. If you delete or modify a fstab option (`noexec` or `quota` for example) the next time you mount a new disk into the server, :command:`omv-salt deploy run fstab` will deploy the original value there again. If you need persistent change use :doc:`environmental variables </various/fs_env_vars>`. Finally the backend will proceed to mount the filesystem. After this the volume is ready for creating shared folders.
 
 Resize
-	The resize button is used for expanding filesystems. This can ocurr if you decide to resize a disk partition or you have grown a RAID array by adding one or more disks.
+	The resize button is used for expanding filesystems. This can occur if you decide to resize a disk partition or you have grown a RAID array by adding one or more disks.
 
 .. warning::
 	Filesystems greater than 16TB in ext4
-		The default mkfs.ext4 of Debian Wheezy does not use the 64bit flag for filesystems under 16TB, this is a serious problem since RAID arrays without that flag won't be able to expand and there is no workaround more than reformat.
-		Version 1.8 introduced the flag as default for newly created ext4 filesystems, independant of the size. However the current resize2fs tool in Debian Wheezy cannot handle the flag for expanding the size. To overcome this a newer version of e2fsprogs is necessary. For avoiding recompiling the package, you can boot systemrescuecd and perform the expansion using gparted.
+		The default :command:`mkfs.ext4` of Debian Wheezy does not use the 64bit flag for filesystems under 16TB, this is a serious problem since RAID arrays without that flag won't be able to expand and there is no workaround more than reformat.
+		Version 1.8 introduced the flag as default for newly created ext4 filesystems, independent of the size. However the current :command:`resize2fs` tool in Debian Wheezy cannot handle the flag for expanding the size. To overcome this a newer version of e2fsprogs is necessary. For avoiding recompiling the package, you can boot systemrescuecd and perform the expansion using gparted.
 
 Delete
 	The delete button actually deletes filesystems, using :command:`wipefs -a`. This will flush filesystem, raid or partition-table signatures (magic strings). Be careful using this. The button is disabled until the filesystem is actually unmounted.
 
 Unmount
-	Disabled until you have deleted all shared folders asociated with that volume. Unmount will remove the entry from config.xml and /etc/fstab.
+	Disabled until you have deleted all shared folders associated with that volume. Unmount will remove the entry from ``config.xml`` and ``/etc/fstab``.
 
 Supported Filesystems
 	|omv| supports the following filesystems that can be mounted through the |webui|:

@@ -4,7 +4,7 @@ Power Management
 Monitoring
 ^^^^^^^^^^
 
-Configures cpufrequtils and sets the default options for the governor to be **conservative** by default in x86 architectures if enabled. If architecture is different then governor is set as **ondemand**.
+Configures `cpufrequtils` and sets the default options for the governor to be **conservative** by default in x86 architectures if enabled. If architecture is different then governor is set as **ondemand**.
 
 :file:`/etc/default/cpufrequtils`
 
@@ -33,7 +33,7 @@ Configures the action to take when pressing the mechanical power button of the s
 Scheduled
 ^^^^^^^^^
 
-Based on cron, is possible to define shutdown, hibernation or suspend times for the server
+Based on cron, is possible to define shutdown, hibernation or suspend times for the server.
 
 
 

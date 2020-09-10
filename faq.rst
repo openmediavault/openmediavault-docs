@@ -107,7 +107,7 @@ I don't have a data disk, and I want to use my OS disk for storing data?
 	shared folders.
 
 	The current installer does not provide access to the partition manager,
-	use a plain Debian iso then install |omv| on top and acommodate the
+	use a plain Debian iso then install |omv| on top and accommodate the
 	partitions, or resize the partition after installing using Gparted or
 	SystemRescueCd.
 
@@ -122,14 +122,6 @@ What is the permissions/ownership of folders in |omv| created by shared folders?
 	group inheritance, meaning new files/folders below will always have the group
 	users (GID=100) membership.
 
-Why are my filesystems mounted as ``noexec``?
-	This is a security measure to avoid the placement of malicious scripts in
-	the shared folders. This will prevent any script execution in those paths,
-	including compiling packages and binaries.
-
-	If you need to remove the noexc flag, use advanced settings as decribed
-	:doc:`here </various/fs_env_vars>`.
-
 I need to delete a shared folder, why the delete button is greyed/disabled?
 	Shared folder configurations can be used across different services. When
 	removing a shared folder configuration is necessary to unlink it from
@@ -137,11 +129,11 @@ I need to delete a shared folder, why the delete button is greyed/disabled?
 	At the moment there is no internal database backend that can display
 	information about which service is holding which shares.
 
-What is the :command:`omv-mkconf` command for?
-	:command:`omv-mkconf` is a terminal console command that is used by the
+What is the :command:`omv-salt` command for?
+	:command:`omv-salt` is a terminal console command that is used by the
 	backend of |omv| to pipe directives and values to service configuration
-	files. The arguments that :command:`omv-mkconf` accepts are related to the
-	name of the service it configures. Type :command:`omv-mkconf` in terminal,
+	files. The arguments that :command:`omv-salt` accepts are related to the
+	name of the service it configures. Type :command:`omv-salt` in terminal,
 	press TAB key, and the terminal will display all available arguments.
 
 I want to experiment with |omv| or make changes to the code

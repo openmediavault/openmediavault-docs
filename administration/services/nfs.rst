@@ -69,7 +69,7 @@ Macos/OSX
 	$ sudo mount -t nfs -o resvport,rw 192.168.3.1:/export/Videos /private/nfs
 
 Debian
-	Debian distributions (and many others) always include the group users with ``gid=100`` by default, if you want to resolve permissions easily for all users of a PC using linux add ``anonuid=100`` in extra options. This will force all mounts to use that gid.
+	Debian distributions (and many others) always include the group users with ``gid=100`` by default, if you want to resolve permissions easily for all users of a PC using linux add ``anongid=100`` in extra options. This will force all mounts to use that gid.
 
 Symlinks
 	This are not followed outside of their export path, so they have to be relative.

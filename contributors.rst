@@ -103,6 +103,7 @@ Volker Theile
 * Herald Yu (Chinese)
 * Axel Cantenys (French)
 * Abo Khalid (Arabic)
+* Kevin Leclercq (French)
 
 **Code**
 

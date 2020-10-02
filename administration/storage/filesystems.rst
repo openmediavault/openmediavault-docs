@@ -28,7 +28,7 @@ Overview
 			<hidden>0</hidden>
 		</mntent>
 
-	With the `mntent` entry in ``config.xml``, :command:``omv-salt deploy run fstab` script writes the appropriate line in ``/etc/fstab``. You can identify entries in ``/etc/fstab`` created by the |webui| by looking at «openmediavault» tags. It is important to mention to not alter the information in between these tags. If you delete or modify a fstab option (`noexec` or `quota` for example) the next time you mount a new disk into the server, :command:`omv-salt deploy run fstab` will deploy the original value there again. If you need persistent change use :doc:`environmental variables </various/fs_env_vars>`. Finally the backend will proceed to mount the filesystem. After this the volume is ready for creating shared folders.
+	With the `mntent` entry in ``config.xml``, :command:`omv-salt deploy run fstab` script writes the appropriate line in ``/etc/fstab``. You can identify entries in ``/etc/fstab`` created by the |webui| by looking at «openmediavault» tags. It is important to mention to not alter the information in between these tags. If you delete or modify a fstab option (`noexec` or `quota` for example) the next time you mount a new disk into the server, :command:`omv-salt deploy run fstab` will deploy the original value there again. If you need persistent change use :doc:`environmental variables </various/fs_env_vars>`. Finally the backend will proceed to mount the filesystem. After this the volume is ready for creating shared folders.
 
 Resize
 	The resize button is used for expanding filesystems. This can occur if you decide to resize a disk partition or you have grown a RAID array by adding one or more disks.

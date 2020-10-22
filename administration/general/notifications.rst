@@ -2,7 +2,7 @@ Notifications
 #############
 
 
-Notifications work in the form of email. The backend software used here is postfix [1]_ configured as a MTA. The options allow to configure to send mail via SMTP servers using the standard port or use SSL/TLS. The |webui| allows inputing two delivery addresses. Both are assigned to the root user.
+Notifications work in the form of email. The backend software used here is postfix [1]_ configured as a MTA in satellite mode. The options allow to configure to send mail via SMTP servers using the standard port or use SSL/TLS. The |webui| allows inputing two delivery addresses. Both are assigned to the root user.
 
 
 Configuration
@@ -41,6 +41,7 @@ Mail will delivered to ``rootthe@gmail.com`` because user **john** does not have
 .. warning::
 	|omv| stores the configuration values in the database (including the password). Before posting information for support please sanitize the values.
 
+
 Events
 ======
 
@@ -60,10 +61,11 @@ The server will send notifications for this events:
 
 Options marked with [D] can be disabled selectivly. The rest only when the whole notification backend is disabled.
 
+
 Gmail
 =====
 
-Gmail can be used in notifications. If you have 2FA enabled for the account, then is necessary to create an `app password <https://myaccount.google.com/apppasswords>`_ ::
+Gmail can be used in notifications. If you have 2FA enabled for the account, then is necessary to create an `app password <https://myaccount.google.com/apppasswords>`_ ::.
 
 	SMTP Server: smtp.gmail.com
 	SMTP Port: 587
@@ -76,16 +78,11 @@ Gmail can be used in notifications. If you have 2FA enabled for the account, the
 	Secondary email: optional
 
 .. note::
-	Aliases are allowed. This is good for filtering later in gmail. ``rootthe@gmail.com`` can be ``rootthe+server1@gmail.com`` or ``rootthe+whatever@gmail.com``
+	Aliases are allowed. This is good for filtering later in gmail. ``rootthe@gmail.com`` can be ``rootthe+server1@gmail.com`` or ``rootthe+whatever@gmail.com``.
 
 .. note::
-	Gmail requires "access for less secure applications" to be enabled, in order for |omv| to send notifications using ``smtp.gmail.com``.  `Enable access for less secure applications <https://myaccount.google.com/lesssecureapps>`_ ::
+	Gmail requires "access for less secure applications" to be enabled, in order for |omv| to send notifications using ``smtp.gmail.com``.  `Enable access for less secure applications <https://myaccount.google.com/lesssecureapps>`_ ::.
 
-
-SSL
-===
-
-If the remote SMTP server uses port 465, |omv| will reconfigure the MTA to use the corresponding directives as documented in postfix for `wrapper mode <http://www.postfix.org/TLS_README.html>`_.
 
 Third Party Notifications
 =========================
@@ -104,7 +101,7 @@ Also the following positional arguments are passed::
 	$2 The FROM email address (OMV_NOTIFICATION_FROM)
 	$3 The TO recipient email adresses (OMV_NOTIFICATION_RECIPIENT)
 
-Most modern non mail notifications systems have a documented API, where you can send text using curl payloads with a secret TOKEN. So most common case would be to use MESSAGE_FILE variable only in your script.
+Most modern non mail notifications systems have a documented API, where you can send text using curl payloads with a secret `TOKEN`. So most common case would be to use `OMV_NOTIFICATION_MESSAGE_FILE` variable only in your script.
 
 Your script's filename must adhere to the following standards:
 

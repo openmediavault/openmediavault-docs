@@ -1,5 +1,5 @@
 Custom Configuration
-====================
+####################
 
 |omv| is not a replacement for webmin, where you can configure all options in
 the |webui|. Options are already preconfigured to make it easier for the
@@ -13,40 +13,54 @@ added to configuration files will eventually overwritten at some stage by the
 To overcome this there are some options available to modify some of the default
 |omv| configuration options and values, like the use of environmental variables.
 
-
 .. _environmental_variable:
 
 Environmental Variables
------------------------
+=======================
 
 The |webui| does not provide access to ALL the configuration aspects of a complex
 system like |omv|. However, the system allows to change some advanced settings
-through the use of environment variables. To set or change these variables,
-login to your |omv| system using SSH and edit the file :file:`/etc/default/openmediavault`.
+through the use of environment variables.
 
-Put the variable you want to change at the end of the file with the new value.
-Ensure the value is declared with double quotes.
+List environment variables
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For example we are going to change the default sftp server for SSH service.
+A list of available environment variables can be collected via::
 
-:code:`OMV_SSHD_SUBSYSTEM_SFTP=“/usr/lib/openssh/sftp-server”`
+	# omv-env list
 
-Make your changes and save them. To apply the custom settings you need
-to execute the following commands as root::
+To get a list of all configured environment variables use the following command::
+
+	# omv-env get
+
+To get the value of a specific environment variable use::
+
+	# omv-env get <OMV_NAME_OF_VARIABLE>
+
+The list of environmental variables used for ``/etc/fstab`` filesystem with the
+defaults options and how to use them is described :doc:`here </various/fs_env_vars>`.
+
+Modify environment variables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To set or change these variables, run the following command::
+
+	# omv-env set <OMV_NAME_OF_VARIABLE> <VALUE>
+	# omv-env set OMV_SSHD_SUBSYSTEM_SFTP "/usr/lib/openssh/sftp-server"
+
+The configured environment variables are located in the file :file:`/etc/default/openmediavault`.
+
+Apply changes
+^^^^^^^^^^^^^
+
+To apply the custom settings you need to execute the following commands as root::
 
   # monit restart omv-engined
   # omv-salt stage run prepare
   # omv-salt stage run deploy
 
-A list of available environment variables can be collected via::
-
-  # grep -r "default:OMV_" /srv/salt/omv/ | cut -d ":" -f3 | cut -d "'" -f1 | sort | uniq
-
-The list of environmental variables used for ``/etc/fstab`` filesystem with the
-defaults options and how to use them is described :doc:`here </various/fs_env_vars>`.
-
 The SaltStack states
---------------------
+====================
 
 If you want to deploy custom configuration settings, then you could
 add additional Salt states. Please check out the SaltStack documentation

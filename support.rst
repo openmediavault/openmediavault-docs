@@ -35,7 +35,8 @@ to help you.
 Since last year there is also a discord group. You can get access by clicking
 `here <https://discord.gg/ZjknBdg>`_.
 
-Make sure you provide as much information as you can when posting in the forum
-or bugtracker and describing your problem. If you have an error in the |webui|
-make sure you take screenshots of the backtrace, to identify properly what's
-failing.
+.. note::
+   Make sure you provide as much information as you can when posting in the forum
+   or bugtracker and describing your problem. If you have an error in the |webui|
+   make sure you take screenshots of the backtrace, to identify properly what's
+   failing.

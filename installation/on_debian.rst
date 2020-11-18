@@ -15,6 +15,9 @@ Buster (Debian 10) image available. After installing Armbian then use the
 tweaks included. If there's no Armbian for your device simply follow the steps outlined
 below.
 
+On `Raspberry Pi OS <https://www.raspberrypi.org/software/operating-systems/>`_ the below
+instructions only partially work. Please refer to a specific `installation script <https://github.com/OpenMediaVault-Plugin-Developers/installScript>`_
+
 Install the openmediavault keyring manually::
 
     apt-get install --yes gnupg

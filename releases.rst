@@ -9,7 +9,7 @@ Releases
    0.2,Ix,Debian 6,EOL,Oct 2011
    0.3,Omnious,Debian 6,EOL,Jul 2012
    0.4,Fedaykin,Debian 6,EOL,Sep 2012
-   0.5,Sardoukar,Debian 6,EOL,Ago 2013
+   0.5,Sardoukar,Debian 6,EOL,Aug 2013
    1.0,Kralizec,Debian 7,EOL,Sept 2014
    2.0,Stoneburner,Debian 7,EOL,Jun 2015
    3.0,Erasmus,Debian 8,EOL,Jun 2016

@@ -11,3 +11,4 @@ Press releases, reviews and external references
 	- August 2015 "The open-source NAs distro for media lovers" :download:`ACP Magazine Australia </_static/images/apcmag.jpg>`
 	- Distribution Release: |omv| 2.1 `Distrowatch <http://distrowatch.com/?newsid=08998>`_
 	- September 2014, |omv| 1.0 review `Linuxbsdos.com <http://linuxbsdos.com/2014/09/17/openmediavault-1-0-review/>`_
+.

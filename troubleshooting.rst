@@ -2,7 +2,7 @@ Troubleshooting
 ===============
 
 
-* **Web interface has missing fields and/or items showing that have been uninstalled.**
+* **Web interface has missing fields and / or items showing that have been uninstalled.**
 
     Clear your browser cache.
 

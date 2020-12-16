@@ -1,6 +1,6 @@
 
 **New User Guide - Draft**
-
+##########################
 |
 
 .. image:: /new_user_guide/images/underconstruction.jpg

@@ -278,7 +278,7 @@ server.
 Pre-2011 Intel and AMD CPU's
 ----------------------------
 `Plex <https://support.plex.tv/hc/en-us/articles/200250377-Transcoding-Media>`_, a popular media server, recommends at least 2000 on the CPU's 
-`PassMark <http://www.python.org/>`_ score for each concurrent 1080p transcoded stream.  
+`PassMark <https://www.cpubenchmark.net/cpu_list.php>`_ score for each concurrent 1080p transcoded stream.  
 `(See the advice article here) <https://support.plex.tv/hc/en-us/articles/201774043-What-kind-of-CPU-do-I-need-for-my-Server->`_   However, this advice 
 applies to pre-2011 Intel and AMD CPU's.  
 

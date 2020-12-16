@@ -28,6 +28,7 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    prerequisites
    installation/index
    features
+   new_user_guide/newuserguide
    administration/index
    plugins
    faq

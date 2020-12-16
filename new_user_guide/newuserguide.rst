@@ -1,6 +1,6 @@
 
-**New User Guide - Draft**
-##########################
+New User Guide
+##############
 |
 
 .. image:: /new_user_guide/images/underconstruction.jpg
@@ -32,7 +32,7 @@
 |
 
 Introduction to Openmediavault
-##############################
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Openmediavault is a File Server / NAS system designed to work on most modern IBM compatible PC systems, to include typical amd64 or i386 PC’s and select ARM devices. Openmediavault (OMV) can be thought of as filling a role similar to Microsoft's Server Essentials, but extends far beyond the role of a basic File Server with additional functionality added VIA plugin’s and Dockers. OMV is designed to work with popular client operating systems and multiple filesystem types, utilizing proven data sharing techniques on small and medium sized Local Area Networks.
 

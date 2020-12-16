@@ -265,3 +265,93 @@ run in the early morning hours when user access would not be affected.
 In addition, R-PI's suffer from USB under powering in models 2B and 3X.  
 See notes regarding this issue in USB Power - A Common Raspberry PI problem
 
+Where CPU Power may be Needed – “Transcoding”
+=============================================
+If a users' primary consideration in setting a up a media server, CPU 
+selection or identification may need to be carefully considered. 
+Transcoding is a process for translating media file formats into types 
+that mobile devices understand.  Since mobile devices are low powered, 
+they're not capable of re-processing high resolution media files 
+smoothly so the processing burden is often transferred to the media 
+server.
+
+Pre-2011 Intel and AMD CPU's
+----------------------------
+`Plex <https://support.plex.tv/hc/en-us/articles/200250377-Transcoding-Media>`_, a popular media server, recommends at least 2000 on the CPU's 
+`PassMark <http://www.python.org/>`_ score for each concurrent 1080p transcoded stream.  
+`(See the advice article here) <https://support.plex.tv/hc/en-us/articles/201774043-What-kind-of-CPU-do-I-need-for-my-Server->`_   However, this advice 
+applies to pre-2011 Intel and AMD CPU's.  
+
+Look up an older CPU here `PassMark CPU Benchmarks <https://www.cpubenchmark.net/cpu_list.php>`_
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+2011 and Newer Intel CPU's
+--------------------------
+
+As of the beginning of the Sandy Bridge CPU series in 2011 and later, a core has 
+been added to Intel CPU's for the sole purpose of video transcoding.  CPU's with 
+Quick Sync, to include Celeron and Atom models that are relatively low powered, do 
+a good job of transcoding for portable devices.
+
+If NAS administrators have numerous smart phone users, in their homes or 
+businesses, who will be watching transcoded video on the small screen, CPU loading 
+and Video processing features may require some additional thought and research.  
+
+
+Additional reading: 
+`Intel Quick Sync versus similar AMD technology <https://www.macxdvd.com/mac-dvd-video-converter-how-to/what-is-intel-quick-sync-video.htm>`_
+
+Selecting a Boot Drive
+======================
+
+Nearly any type of hard drive, SSD, or flash device (USB thumb-drives and 
+SD-cards) 8GB or larger, will function as an OMV boot drive.
+
+However, some notions of achieving a “Faster” or a “Better Performing NAS server” 
+by using certain types of fast boot media should be dispelled.
+
+Server booting requirements and considerations are different when compared to 
+desktop and business workstation requirements.
+
+* Given OMV's lean configuration, boot times can be fast.  Boot times of 1 minute and Shutdown times of 20 seconds are common, even when using relatively slow flash media such as USB thumb-drives and SD-cards.  (Recent models can be quite fast – check their benchmarks.)
+
+* Typically servers are rebooted no more than once a week.  When automated, a reboot event is usually scheduled after-hours when users are not affected.  
+
+* After the boot process is complete, most of OMV's file server functions are running from RAM.
+
+**Conclusion – for Linux file server operations, fast boot media is not important.**
+
+* “The WEB/GUI is more responsive with fast media.”
+
+This is the single instance where an SSD or a spinning hard drive may create the illusion of higher performance.  In the traditional role of a NAS as a File Server, when the server boots, the Linux kernel and most of the necessary processes required to act as a File Server are loaded into RAM - the fastest possible media for execution.
+Navigating OMV's WEB/GUI interface is another matter.  Loading WEB pages may call files from the boot drive, which may make the server appear to be slower, when using slow media.  However, the speed of the boot drive has little impact on overall file server function and actual NAS performance.
+
+*The above assumes that adequate RAM has been provisioned.*
+
+Final Notes on Choosing a Boot Drive
+------------------------------------
+
+OMV's boot requirements are very modest:
+While some users prefer traditional hard drives or SSD's, the boot 
+requirement can be served with USB thumb-drives and SD-cards, 8GB or 
+larger.
+
+With USB connections on the *outside* of a PC case, cloning USB drives for operating system backup is an easy process.  Given this consideration, some users prefer USB thumb-drives and other external flash media to internal drives.  Further, given the ease of operating system recovery in the event of a boot drive failure, beginners are encouraged to consider using flash media.
+
+If flash media is used:
+New name brand drives are recommended such as Samsung, SanDisk, etc.  
+While not absolutely essential for the purpose; USB3 thumb-drives are 
+preferred, due to their more advanced controllers, and SD-cards branded 
+A1 for their improved random read/write performance.  **USB3** thumb-drives 
+and **A1** spec'ed SD-cards are faster and, generally speaking, more 
+reliable than similar items with older specifications.
+
+While boot drive size matters, bigger is not always better.  An 
+acceptable size trade off for wear leveling and speed of cloning is 
+between 16 and 32GB.  (“**Wear leveling**” will be explained during the 
+installation and configuration of the flash-memory plugin.)  

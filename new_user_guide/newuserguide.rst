@@ -49,9 +49,9 @@ small-to-medium-sized businesses, Openmediavault is designed for
 flexibility.
 
 .. image:: /new_user_guide/images/2_Intro.jpg
-    :width: 433px
+    :width: 1024px
     :align: center
-    :height: 289px
+    :height: 443px
     :alt: 
 |
 .. image:: /new_user_guide/images/divider.png
@@ -504,7 +504,7 @@ For assistance in creating a bootable ISO thumb-drive, see the following link.
 
 `How to install an ISO file on a USB drive <https://www.lifewire.com/how-to-burn-an-iso-file-to-a-usb-drive-2619270>`_
 
-|  
+|    
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
     :align: center
@@ -518,12 +518,195 @@ For assistance in creating a bootable ISO thumb-drive, see the following link.
     :align: center
     :height: 75px
     :alt:
-|
+|  
 
 Preparing Flash Media 
 ---------------------
 
 To use flash media as a boot drive, a couple utilities are recommended:
+
+`SDFormatter <https://www.sdcard.org/downloads/formatter_4/eula_windows/index.html/>`_ (get 
+the latest version), and `h2testw1.4 <http://www.heise.de/ct/Redaktion/bo/downloads/h2testw_1.4.zip>`_ .
+
+* SDFormatter installs in the same manner as a typical Windows program.  
+
+* h2testw 1.4 is stand-alone “portable” application.  Simply unzip h2testw_1.4 onto the desktop, open the folder, and double click the executable.
+
+Due to the rise in counterfeit media and media that reports a fake size, it's recommended that all USB thumb-drives, new or used, be formatted with SDFormatter and tested with  h2testw1.4  before using them.
+|  
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+|  
+
+Format and Test Flash Media
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Using SDFormatter, do a clean format:
+(While SDFormatter was designed for SD-cards, it can format USB thumb-drives 
+for error testing.  For those who would prefer a formatter specifically for a 
+USB thumb-drive; `HPUSBDISK.EXE <https://www.mediafire.com/file/693jiig27dk846h/HPUSBDisk.exe/file/>`_  )
+
+SDFormatter will detect a USB thumb-drive.  A volume label is optional and the 
+default options are fine.
+
+.. image:: /new_user_guide/images/3_SDFormatter.jpg
+    :width: 472px
+    :align: center
+    :height: 538px
+    :alt:
+
+Click on **Format**
+
+|    
+
+After the drive format is completed, open **h2testw** and select your language.
+
+Then, click on **Select target**
+
+.. image:: /new_user_guide/images/4_H2testw.jpg
+    :width: 433px
+    :align: center
+    :height: 270px
+    :alt:
+
+|    
+
+Under **Computer**, select the flash media previously formatted.
+
+.. image:: /new_user_guide/images/5_H2testw_2.jpg
+    :width: 390px
+    :align: center
+    :height: 398px
+    :alt:
+
+|  
+
+Select **Write+Verify**.  (Do not check endless verify)|
+
+.. image:: /new_user_guide/images/6_H2testw_3.jpg
+    :width: 486px
+    :align: center
+    :height: 296px
+    :alt:
+
+|  
+
+A dialog box similar to the following may pop up, drawing attention to a **1MB** difference.  
+
+Ignore it and click on **OK**.
+
+.. image:: /new_user_guide/images/7_H2testw_4.jpg
+    :width: 497px
+    :align: center
+    :height: 199px
+    :alt:
+
+|
+
+“Without errors” is the desired outcome. 
+
+(If media tests with errors or is much smaller than is indicated by its labeled 
+size, don't use it.)  
+
+.. image:: /new_user_guide/images/8_H2testw_5.jpg
+    :width: 417px
+    :align: center
+    :height: 357px
+    :alt:
+
+After H2testw verifies the USB thumb-drive, do one more clean format, using 
+SDFormatter, before using the thumb-drive.
+
+|  
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+|  
+
+amd64 – Openmediavault Installation
+===================================
+
+If your PC platform won't boot onto a CD or USB thumb-drive with the installation 
+ISO, it may be necessary to change the boot order in BIOS, to set the 
+CD/DVD drive or USB boot to the top of the boot order.  This link may provide 
+assistance on this topic. → `How To Enter BIOS <https://www.lifewire.com/how-to-enter-bios-2624481>`_   
+
+If difficulties are encountered during the ISO installation, consider 
+the → `Alternate 64bit installation guide <http://https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Adden-C-Installing_OMV5_on_32-bit_i386.pdf/>`_ 
+Or use `the Wiki <https://wiki.omv-extras.org/doku.php?id=installing_omv5_i386_32_bit_pc>`_ .
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+| 
+
+An installation walk through:
+| 
+
+Boot Menu:  Select **Install**
+
+.. image:: /new_user_guide/images/9_Install_Menu.jpg
+    :width: 987px
+    :align: center
+    :height: 504px
+    :alt:
+
+|
+
+Select a Language:  **(As needed)**
+
+.. image:: /new_user_guide/images/10_Language.jpg
+    :width: 790px
+    :align: center
+    :height: 592px
+    :alt:
+
+|  
+
+Select your Location:  **(As appropriate.)**
+
+.. image:: /new_user_guide/images/11_Location.jpg
+    :width: 790px
+    :align: center
+    :height: 592px
+    :alt:
+
+|
+
+Configure the Keyboard: **(Select as appropriate)**
+
+.. image:: /new_user_guide/images/12_Key_Board.jpg
+    :width: 794px
+    :align: center
+    :height: 596px
+    :alt:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

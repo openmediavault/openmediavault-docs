@@ -407,9 +407,11 @@ hardware.)
 Installing on Single Board Computers (SBC's)
 ********************************************
 
+
 Installation guides for SBC installations are available 
-in `PDF's <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5-on-Raspberry-PI-s-Armbian-Supported-SBC-s/?postID=214407#post214407>`_ 
+in `PDF's <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5-on-Raspberry-PI-s-Armbian-Supported-SBC-s/?postID=214407#post214407/>`_ 
 or in a `Wiki <https://wiki.omv-extras.org/>`_ .
+
 
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
@@ -422,9 +424,11 @@ or in a `Wiki <https://wiki.omv-extras.org/>`_ .
 Installing on i386 32-bit Platforms
 ***********************************
 
+
 An installation guide for 32-bit installations is available 
-in `PDF <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5-on-Raspberry-PI-s-Armbian-Supported-SBC-s/?postID=214407#post214407>`_ 
+in `PDF <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5-on-Raspberry-PI-s-Armbian-Supported-SBC-s/?postID=214407#post214407/>`_ 
 or in a `Wiki <https://wiki.omv-extras.org/>`_ .
+
 
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
@@ -516,6 +520,10 @@ For assistance in creating a bootable ISO thumb-drive, see the following link.
     :alt:
 |
 
+Preparing Flash Media 
+---------------------
+
+To use flash media as a boot drive, a couple utilities are recommended:
 
 
 

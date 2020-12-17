@@ -408,7 +408,7 @@ Installing on Single Board Computers (SBC's)
 ********************************************
 
 Installation guides for SBC installations are available 
-in `PDF's <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5-on-Raspberry-PI-s-Armbian-Supported-SBC-s/?postID=214407#post214407`_ 
+in `PDF <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5-on-Raspberry-PI-s-Armbian-Supported-SBC-s/?postID=214407#post214407`_ 
 or in a `Wiki <https://wiki.omv-extras.org/>`_ .
 
 .. image:: /new_user_guide/images/divider.png
@@ -423,7 +423,7 @@ Installing on i386 32-bit Platforms
 ***********************************
 
 An installation guide for 32-bit installations is available 
-in `PDF's <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5-on-Raspberry-PI-s-Armbian-Supported-SBC-s/?postID=214407#post214407`_ 
+in `PDF <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5-on-Raspberry-PI-s-Armbian-Supported-SBC-s/?postID=214407#post214407`_ 
 or in a `Wiki <https://wiki.omv-extras.org/>`_ .
 
 .. image:: /new_user_guide/images/divider.png
@@ -485,7 +485,7 @@ on a Windows Computer or a MAC.  If help is needed for this process, see the
 following link.
 
 `How to burn an ISO image in Windows 7, 8, 10 <https://www.lifewire.com/how-to-burn-an-iso-image-file-to-a-dvd-2626156>`_
-|  
+   
 
 Creating a Bootable ISO Thumb-drive
 -----------------------------------

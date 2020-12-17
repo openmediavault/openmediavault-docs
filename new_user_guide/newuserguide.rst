@@ -18,9 +18,9 @@ New User Guide
 |
 
 .. image:: /new_user_guide/images/1_Title_page.jpg
-    :width: 516px
+    :width: 588px
     :align: center
-    :height: 344px
+    :height: 439px
     :alt: 
 |
 .. image:: /new_user_guide/images/divider.png
@@ -355,3 +355,169 @@ While boot drive size matters, bigger is not always better.  An
 acceptable size trade off for wear leveling and speed of cloning is 
 between 16 and 32GB.  (“**Wear leveling**” will be explained during the 
 installation and configuration of the flash-memory plugin.)  
+
+The flash-memory plugin is required for flash media.  It's purpose and 
+installation is detailed in  The Flash Memory Plugin. 
+
+**Use-case exceptions where boot media larger than 32GB may be useful:**
+
+* Running applications that utilize WEB interfaces, such as Plex, Emby, etc.
+
+* Hosting Web or Media Servers with extensive content.
+
+* Hosting Virtualized Guest operating systems with desktops.  (Does not apply to ARM platforms. ARM platforms can not virtualize i386 or amd64 platforms. )
+
+(There's no penalty for starting with a smaller boot drive. Moving to a larger 
+drive, if needed, can be done later.)
+
+Note:   Buying flash devices on-line, even from reputable retailers, comes 
+with the substantial risk of buying fakes.  Buying flash drives, in sealed 
+packaging, from walk-in retail stores with liberal return policies is recommended.  The use of cheap generics, fakes or knockoffs is highly discouraged.  They tend to have a short life and they're known to cause problems, even if they initially test error-free.  
+In addition, to detect fakes or defective media *even when new*; all SD-cards 
+and USB thumb-drives, should be formatted and tested in accordance with the 
+process outlined under Format and Testing Flash Media.  If they fail error 
+testing, return them for a refund.
+
+Hardware - The Bottom Line
+==========================
+
+Again, OMV/Debian's hardware requirements are modest.  Nearly any IBM 
+compatible PC or Laptop produced in the last 10 years could be re-purposed 
+as an OMV server.
+
+However, it should be noted that newer hardware is, generally speaking, more 
+power efficient and it's higher performing.  The power costs of running older 
+equipment that is on-line, 24 hours a day, can easily pay for newer, more 
+power efficient equipment over time.
+
+Further, the supported ARM platforms are both power efficient and capable of 
+providing file server functions in a home environment.  (Again, performance 
+expectations should be adjusted in accordance with the capabilities of the 
+hardware.)
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+|
+|
+********************************************
+Installing on Single Board Computers (SBC's)
+********************************************
+
+Installation guides for SBC installations are available 
+in `PDF's <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5-on-Raspberry-PI-s-Armbian-Supported-SBC-s/?postID=214407#post214407`_ 
+or in a `Wiki <https://wiki.omv-extras.org/>`_ .
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+|
+|
+***********************************
+Installing on i386 32-bit Platforms
+***********************************
+
+An installation guide for 32-bit installations is available 
+in `PDF's <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5-on-Raspberry-PI-s-Armbian-Supported-SBC-s/?postID=214407#post214407`_ 
+or in a `Wiki <https://wiki.omv-extras.org/>`_ .
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt
+|
+|
+************************
+amd64 (64-bit) Platforms
+************************
+
+This guide assumes the user will be installing from a CD, burned 
+from an image found in OMV's files 
+repository `OMV's files repository <https://sourceforge.net/projects/openmediavault/files/>`_ , 
+using 64 bit hardware.  
+
+Downloading
+===========
+
+Beginners should download the latest stable version from `Sourceforge.net <https://sourceforge.net/projects/openmediavault/files/>`_ 
+and copy or download the SHA or MD5 checksums for the ISO.  The 
+checksum value will be used with the MD5 SHA checksum utility.  
+
+.. note:: Windows Notepad can open MD5 files by selecting “**All Files**”, next to the file name drop down.  
+
+.. warning:: If users install Beta versions of OMV, they are agreeing to be a “tester”.  As part of being a tester, users may experience issues or bugs that can not be resolved which may result in **lost data**.  Plan accordingly, with full data backup.**
+
+Verify the download
+-------------------
+
+After the download is complete, verify the download with a  
+`MD5 & SHA chechsum utility <http://md5-sha-checksum-utility.en.lo4d.com//>`_.  
+MD5 and SHA hashes check for image corruption that may have occurred 
+during the download.   
+
+.. note:: Beginners - DO NOT SKIP THIS STEP.  The chance of image corruption is high when downloading and it's pointless to build a server with flawed software.  Even the **slightest** corruption of the installation ISO may ruin your installation and the effects may not be noticed until well after your server is built and in use.  Headaches can be avoided by checking the image.
+|  
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+|  
+|  
+
+Installing - amd64 Platforms
+============================
+|  
+| 
+
+Burning a source CD
+-------------------
+
+Assuming a CD/DVD drive is installed; in most cases, double clicking an 
+installation file, with an **.ISO** extension, will trigger a CD burning utility 
+on a Windows Computer or a MAC.  If help is needed for this process, see the 
+following link.
+
+`How to burn an ISO image in Windows 7, 8, 10 <https://www.lifewire.com/how-to-burn-an-iso-image-file-to-a-dvd-2626156>`_
+|  
+
+Creating a Bootable ISO Thumb-drive
+-----------------------------------
+
+For PC's without an Optical drive; the OMV ISO can be installed using a 
+Thumbdrive as the ISO source, and install the Debian/OMV system to a second 
+thumb drive.
+
+**Before creating an ISO thumb-drive consider checking the drive using the utilities and process described below in**, Preparing Flash Media.
+
+For assistance in creating a bootable ISO thumb-drive, see the following link.
+
+`How to install an ISO file on a USB drive <https://www.lifewire.com/how-to-burn-an-iso-file-to-a-usb-drive-2619270>`_
+
+|  
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+**If installing to a standard hard drive or SSD, skip to** Installing Openmediavault.
+ 
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+|
+
+
+
+
+
+

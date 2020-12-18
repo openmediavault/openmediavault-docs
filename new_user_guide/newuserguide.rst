@@ -104,7 +104,6 @@ has developer experience, (BASH, PHP, Python, Javascript) the project
 would like to hear from you.  Users with Linux experience are invited to 
 help out on the `OMV Forum <https://forum.openmediavault.org/index.php/BoardList/>`_ . 
 
-
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
     :align: center
@@ -120,10 +119,9 @@ thing.  By extension,  methods and methodology become progressively more
 advanced as a user's skill level increases.  With these notes in mind, 
 methods found in this guide may not be considered as “Best Practice”, especially from a hardened security perspective.  The purpose and intent of this guide is to provide a walk-through to get users up and running as quickly and easily as possible.
 
-* This guide contains links to external sources of information and 
-software.  It's best used on a PC connected to the Internet.
-* This is a community document and a work in progress.  Input and 
-feedback are welcome and can be sent to: omvguide@gmail.com 
+* This guide contains links to external sources of information and software.  It's best used on a PC connected to the Internet.
+
+* This is a community document and a work in progress.  Input and feedback are welcome and can be sent to: omvguide@gmail.com 
 
 Beginners:
 ==========
@@ -254,7 +252,8 @@ running at 100%, OMV my not show up on the network and / or network
 shares may not open.  This may give the false impression that there's a 
 software or permissions problem.  In other instances, the WEB GUI login 
 page may not respond.
-These issues may appear to be software related problems, but that's not 
+
+These issues may appear to be software related, but that's not 
 always the case.  Older R-PI's are very easily over stressed and, during 
 periods where the CPU is running at 100%, they may not respond to 
 external input.  With this performance limitation in mind, earlier 
@@ -279,7 +278,7 @@ Pre-2011 Intel and AMD CPU's
 ----------------------------
 `Plex <https://support.plex.tv/hc/en-us/articles/200250377-Transcoding-Media>`_, a popular media server, recommends at least 2000 on the CPU's 
 `PassMark <https://www.cpubenchmark.net/cpu_list.php>`_ score for each concurrent 1080p transcoded stream.  
-`(See the advice article here) <https://support.plex.tv/hc/en-us/articles/201774043-What-kind-of-CPU-do-I-need-for-my-Server->`_   However, this advice 
+(See the advice article → ` here) <https://support.plex.tv/hc/en-us/articles/201774043-What-kind-of-CPU-do-I-need-for-my-Server->`_   However, this advice 
 applies to pre-2011 Intel and AMD CPU's.  
 
 Look up an older CPU here `PassMark CPU Benchmarks <https://www.cpubenchmark.net/cpu_list.php>`_
@@ -370,9 +369,10 @@ installation is detailed in  The Flash Memory Plugin.
 (There's no penalty for starting with a smaller boot drive. Moving to a larger 
 drive, if needed, can be done later.)
 
-Note:   Buying flash devices on-line, even from reputable retailers, comes 
-with the substantial risk of buying fakes.  Buying flash drives, in sealed 
-packaging, from walk-in retail stores with liberal return policies is recommended.  The use of cheap generics, fakes or knockoffs is highly discouraged.  They tend to have a short life and they're known to cause problems, even if they initially test error-free.  
+.. note::   Buying flash devices on-line, even from reputable retailers, comes with the substantial risk of buying fakes.
+
+Buying flash drives, in sealed packaging, from walk-in retail stores with liberal return 
+policies is recommended.  The use of cheap generics, fakes or knockoffs is highly discouraged.  They tend to have a short life and they're known to cause problems, even if they initially test error-free.  
 In addition, to detect fakes or defective media *even when new*; all SD-cards 
 and USB thumb-drives, should be formatted and tested in accordance with the 
 process outlined under Format and Testing Flash Media.  If they fail error 
@@ -402,7 +402,7 @@ hardware.)
     :alt:
 
 |
-|
+
 ********************************************
 Installing on Single Board Computers (SBC's)
 ********************************************
@@ -419,7 +419,7 @@ or in a `Wiki <https://wiki.omv-extras.org/>`_ .
     :height: 75px
     :alt:
 |
-|
+
 ***********************************
 Installing on i386 32-bit Platforms
 ***********************************
@@ -436,7 +436,7 @@ or in a `Wiki <https://wiki.omv-extras.org/>`_ .
     :height: 75px
     :alt
 |
-|
+
 ************************
 amd64 (64-bit) Platforms
 ************************
@@ -445,6 +445,13 @@ This guide assumes the user will be installing from a CD, burned
 from an image found in OMV's files 
 repository `OMV's files repository <https://sourceforge.net/projects/openmediavault/files/>`_ , 
 using 64 bit hardware.  
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+|
 
 Downloading
 ===========
@@ -455,7 +462,7 @@ checksum value will be used with the MD5 SHA checksum utility.
 
 .. note:: Windows Notepad can open MD5 files by selecting “**All Files**”, next to the file name drop down.  
 
-.. warning:: If users install Beta versions of OMV, they are agreeing to be a “tester”.  As part of being a tester, users may experience issues or bugs that can not be resolved which may result in **lost data**.  Plan accordingly, with full data backup.**
+.. warning:: If users install Beta versions of OMV, they are agreeing to be a “tester”.  As part of being a tester, users may experience issues or bugs that can not be resolved which may result in **lost data**.  Plan accordingly, with full data backup.
 
 Verify the download
 -------------------
@@ -555,9 +562,9 @@ SDFormatter will detect a USB thumb-drive.  A volume label is optional and the
 default options are fine.
 
 .. image:: /new_user_guide/images/3_SDFormatter.jpg
-    :width: 472px
+    :width: 372px
     :align: center
-    :height: 538px
+    :height: 438px
     :alt:
 
 Click on **Format**
@@ -654,7 +661,7 @@ Or use `the Wiki <https://wiki.omv-extras.org/doku.php?id=installing_omv5_i386_3
 An installation walk through:
 | 
 
-Boot Menu:  Select **Install**
+**Boot Menu:**  Select **Install**
 
 .. image:: /new_user_guide/images/9_Install_Menu.jpg
     :width: 987px
@@ -664,27 +671,27 @@ Boot Menu:  Select **Install**
 
 |
 
-Select a Language:  **(As needed)**
+**Select a Language:**  **(As needed)**
 
 .. image:: /new_user_guide/images/10_Language.jpg
     :width: 790px
     :align: center
-    :height: 592px
+    :height: 423px
     :alt:
 
 |  
 
-Select your Location:  **(As appropriate.)**
+**Select your Location:**  **(As appropriate.)**
 
 .. image:: /new_user_guide/images/11_Location.jpg
     :width: 790px
     :align: center
-    :height: 592px
+    :height: 423px
     :alt:
 
 |
 
-Configure the Keyboard: **(Select as appropriate)**
+**Configure the Keyboard:** **(Select as appropriate)**
 
 .. image:: /new_user_guide/images/12_Key_Board.jpg
     :width: 794px
@@ -692,23 +699,272 @@ Configure the Keyboard: **(Select as appropriate)**
     :height: 596px
     :alt:
 
+| 
+
+**Configure the Network:**
+
+While the default hostname is fine, 
+a server name that is a bit shorter might be easier to work 
+with later on.  (Something like **OMV1**).
+
+.. image:: /new_user_guide/images/13_Config_Network.jpg
+    :width: 791px
+    :align: center
+    :height: 276px
+    :alt:
+|  
+**Configure the Network:**
+
+If applicable, enter your domain name suffix.  Otherwise, for home users and businesses with 
+peer to peer networks, the default entry is fine.
+
+.. image:: /new_user_guide/images/14_Config_Network2.jpg
+    :width: 779px
+    :align: center
+    :height: 263px
+    :alt:
+
+|  
+
+**Set up users and passwords:**
+
+Follow the on screen guidance for setting the root password.  While not recommended, it 
+would be better to write down the **root password**, then to forget it.
+
+.. image:: /new_user_guide/images/15_root_password.jpg
+    :width: 779px
+    :align: center
+    :height: 263px
+    :alt:
+
+|
+
+**Set up users and passwords:**
+
+Follow the on screen guidance for setting up a new admin user and password. 
+
+.. image:: /new_user_guide/images/16_Create_User.jpg
+    :width: 779px
+    :align: center
+    :height: 263px
+    :alt:
+
+|  
+
+**Configure the Clock:**
+
+Select your time zone.
+
+(NO PIC)
+
+|  
+
+**Partition Disks 1:**
+
+If two storage devices are available for installation, this screen is displayed.
+
+.. image:: /new_user_guide/images/17_Partition_Disks1.jpg
+    :width: 785px
+    :align: center
+    :height: 232px
+    :alt:
+
+|
+
+**Partition Disks 2:** 
+
+If installing to a single internal drive, there will be only one selection 
+available.  In this particular example, the installation is placed on a USB thumb-drive
+
+.. image:: /new_user_guide/images/18_Partition_Disks2.jpg
+    :width: 775px
+    :align: center
+    :height: 322px
+    :alt:
+
+|
+Partition Disks 3:
+
+(No Pic)
+
+A 3rd window asks for confirmation of partition selections. Select Yes.
+
+.. note::  If installing to a USB drive, at this point, it is possible to an error may pop-up regarding partitioning the drive, and recommend a reboot.  Follow the recommendation.  After the reboot, the partition operation should succeed the 2nd time around.
+
+|  
+
+**The system installs..........**
+
+|
+
+**Configure the Package Manager:  Debian Archive Mirror Country**
+
+(NO PIC)
+
+While the advice given in this screen is true, without testing, there's no way to know 
+which Debian archive mirror is best. Without testing, picking your country or the closest 
+location to your country would be the logical choice.
+
+|
+
+**Configure the Package Manager:  Debian Archive Mirror**
+
+(NO PIC)
+
+The default choice is usually best.
+
+|
+
+**Configure the Package Manager:  HTTP proxy**
+
+In most cases this entry will be blank.
+
+(If a proxy is required, note the form of entry required in the dialog box.)
+
+.. image:: /new_user_guide/images/19_Proxy.jpg
+    :width: 786px
+    :align: center
+    :height: 284px
+    :alt:
+
+|  
+
+.. note::   If installing to a hard drive, the following screen may or may not appear. 
+
+**Install the GRUB Boot Loader on a Hard Disk:**
+
+Select the appropriate boot disk in your server.
+
+Generally the boot drive will be **/dev/sda** which is, in most cases, the first sata port.
+
+.. image:: /new_user_guide/images/20_Install_Grub.jpg
+    :width: 786px
+    :align: center
+    :height: 284px
+    :alt:
+
+|
+
+**Finish the Installation:**  Accept the default.
+
+.. image:: /new_user_guide/images/21_Finish_Install.jpg
+    :width: 788px
+    :align: center
+    :height: 215px
+    :alt:
+
+|
+
+**Installation Complete:**
+
+**Remove the CD or USB installation source**, then hit ENTER.
+
+(Otherwise, the installation process may re-start.)
+
+.. image:: /new_user_guide/images/22_Finish_Install2.jpg
+    :width: 788px
+    :align: center
+    :height: 215px
+    :alt:
+
+|
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+|  
+
+First Boot
+==========
+
+Allow the installation to boot.  Normally, the text above the login prompt will provide an **IP address** to be used for opening the console in a web browser.  If an IP address is available, skip the following and proceed to
+ OMV - Initial Configuration
 
 
+.. note:: **There are two exception cases on the first boot that users should be aware of.**
 
+1.) **No address from the DHCP server:**
 
+Normally, DHCP will assign an IP address to OMV and the address will be printed 
+to the screen.  However, on odd occasions the following issue may be observed.
 
+.. image:: /new_user_guide/images/23_DHCP_fail.jpg
+    :width: 720px
+    :align: center
+    :height: 282px
+    :alt:
 
+This is due to a slow response from your DHCP server, during a fast boot process.
 
+|
 
+**An easy method of finding the IP address is:**
 
+At the login prompt type ``root``
 
+Enter your previously set root password.
 
+At the # prompt type: ``ip addr``
 
+.. image:: /new_user_guide/images/24_DHCP_fail2.jpg
+    :width: 722px
+    :align: center
+    :height: 264px
+    :alt:
 
+To access the WEB control panel, the IP address for the wired Ethernet 
+interface is needed.  In this case it's **192.168.1.55**  (**/24**, the subnet mask, 
+can be ignored.)
 
+| 
 
+2.) **An odd IP address is assigned, that is not in the user's network:**
 
+In the following example, the actual network is 192.168.**1**.0/24
 
+.. image:: /new_user_guide/images/25_DHCP_fail3.jpg
+    :width: 560px
+    :align: center
+    :height: 328px
+    :alt:
+
+This is usually a one time event where the fix is simple – simply login as root and type ``reboot`` on the command line.  The address will be correct the second time around.
+
+|  
+
+**With a known IP address, proceed to** OMV - Initial Configuration .
+
+|
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+***************************
+OMV - Initial Configuration
+***************************
+|
+
+Web console login
+==================
+
+In a web browser, type in the IP address provided by the first boot screen:
+
+Set the language of your choice.
+
+The user name is ``admin`` and default password is ``openmediavault``  
+
+(In the following, by clicking on the **eye icon**, the default password is shown unmasked.)
+
+.. image:: /new_user_guide/images/26_Int_Config1.jpg
+    :width: 734px
+    :align: center
+    :height: 480px
+    :alt:
+
+|  
 
 
 

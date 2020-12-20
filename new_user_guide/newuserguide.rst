@@ -1,6 +1,8 @@
 
-New User Guide
-##############
+ 
+**New User Guide**
+
+
 |
 
 .. image:: /new_user_guide/images/underconstruction.jpg
@@ -10,11 +12,13 @@ New User Guide
     :alt: Under Construction
 
 |
+
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
     :align: center
     :height: 75px
     :alt:
+
 |
 
 .. image:: /new_user_guide/images/1_Title_page.jpg
@@ -22,12 +26,15 @@ New User Guide
     :align: center
     :height: 439px
     :alt: 
+
 |
+
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
     :align: center
     :height: 75px
     :alt:
+
 |
 |
 
@@ -53,15 +60,20 @@ flexibility.
     :align: center
     :height: 443px
     :alt: 
+
 |
+
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
     :align: center
     :height: 75px
     :alt:
+
 |
+
 History
 =======
+
 Openmediavault's history began with Volker Theile, who was the only 
 active developer of the FreeNAS project by the end of 2009.   Volker 
 became interested in completely rewriting FreeNAS, for use on Linux.  
@@ -109,7 +121,9 @@ help out on the `OMV Forum <https://forum.openmediavault.org/index.php/BoardList
     :align: center
     :height: 75px
     :alt:
+
 |
+
 ****************
 About this Guide
 ****************
@@ -158,6 +172,7 @@ the operating system, backing up the boot drive is highly recommended.
     :alt:
 
 |
+
 ********
 Hardware
 ********
@@ -167,7 +182,7 @@ hardware requirements for specific “use cases” vary widely.  The
 following is intended only as general guidance.  
 
 Compatibility:
-============
+==============
 
 OMV 5.X is currently supported by Debian 10, “Buster”.  
 Compatible hardware and other requirements of Debian Linux are available 
@@ -188,7 +203,7 @@ scripted process referenced in; “Installing on i386 32-bit Platforms”.
 The OMV project does not provide integrated 32 bit installation ISO's.
 
 ARM Hardware:
-============
+=============
 
 The OMV project provides scripted installation support for ARM Single 
 Board Computer (SBC) platforms.  Supported platforms are the Raspberry 
@@ -332,6 +347,8 @@ Navigating OMV's WEB/GUI interface is another matter.  Loading WEB pages may cal
 
 *The above assumes that adequate RAM has been provisioned.*
 
+| 
+
 Final Notes on Choosing a Boot Drive
 ------------------------------------
 
@@ -377,6 +394,7 @@ In addition, to detect fakes or defective media *even when new*; all SD-cards
 and USB thumb-drives, should be formatted and tested in accordance with the 
 process outlined under Format and Testing Flash Media.  If they fail error 
 testing, return them for a refund.
+|
 
 Hardware - The Bottom Line
 ==========================
@@ -418,6 +436,7 @@ or in a `Wiki <https://wiki.omv-extras.org/>`_ .
     :align: center
     :height: 75px
     :alt:
+
 |
 
 ***********************************
@@ -691,12 +710,13 @@ An installation walk through:
 
 |
 
+
 **Configure the Keyboard:** **(Select as appropriate)**
 
 .. image:: /new_user_guide/images/12_Key_Board.jpg
     :width: 794px
     :align: center
-    :height: 596px
+    :height: 426px
     :alt:
 
 | 
@@ -710,7 +730,7 @@ with later on.  (Something like **OMV1**).
 .. image:: /new_user_guide/images/13_Config_Network.jpg
     :width: 791px
     :align: center
-    :height: 276px
+    :height: 197px
     :alt:
 |  
 **Configure the Network:**
@@ -721,7 +741,7 @@ peer to peer networks, the default entry is fine.
 .. image:: /new_user_guide/images/14_Config_Network2.jpg
     :width: 779px
     :align: center
-    :height: 263px
+    :height: 188px
     :alt:
 
 |  
@@ -746,7 +766,7 @@ Follow the on screen guidance for setting up a new admin user and password.
 .. image:: /new_user_guide/images/16_Create_User.jpg
     :width: 779px
     :align: center
-    :height: 263px
+    :height: 188px
     :alt:
 
 |  
@@ -766,7 +786,7 @@ If two storage devices are available for installation, this screen is displayed.
 .. image:: /new_user_guide/images/17_Partition_Disks1.jpg
     :width: 785px
     :align: center
-    :height: 232px
+    :height: 165px
     :alt:
 
 |
@@ -779,7 +799,7 @@ available.  In this particular example, the installation is placed on a USB thum
 .. image:: /new_user_guide/images/18_Partition_Disks2.jpg
     :width: 775px
     :align: center
-    :height: 322px
+    :height: 230px
     :alt:
 
 |
@@ -824,7 +844,7 @@ In most cases this entry will be blank.
 .. image:: /new_user_guide/images/19_Proxy.jpg
     :width: 786px
     :align: center
-    :height: 284px
+    :height: 203px
     :alt:
 
 |  
@@ -840,7 +860,7 @@ Generally the boot drive will be **/dev/sda** which is, in most cases, the first
 .. image:: /new_user_guide/images/20_Install_Grub.jpg
     :width: 786px
     :align: center
-    :height: 284px
+    :height: 203px
     :alt:
 
 |
@@ -850,7 +870,7 @@ Generally the boot drive will be **/dev/sda** which is, in most cases, the first
 .. image:: /new_user_guide/images/21_Finish_Install.jpg
     :width: 788px
     :align: center
-    :height: 215px
+    :height: 153px
     :alt:
 
 |
@@ -864,7 +884,7 @@ Generally the boot drive will be **/dev/sda** which is, in most cases, the first
 .. image:: /new_user_guide/images/22_Finish_Install2.jpg
     :width: 788px
     :align: center
-    :height: 215px
+    :height: 153px
     :alt:
 
 |
@@ -965,6 +985,139 @@ The user name is ``admin`` and default password is ``openmediavault``
     :alt:
 
 |  
+|  
+SSH Login:
+----------
+
+Under Services, SSH, check that the toggle switch for “**Permit root login**” is **ON**  (Green) .  
+If necessary make the change and Save.  After clicking on “**Save**” a yellow 
+banner “**The configuration has been changed**” will appear.  For the change to be 
+applied, the **Apply** button must be clicked.
+
+.. note:: The yellow confirmation banner is a final “SANITY” check and, in most cases, is required to finalize changes.)
+
+
+.. image:: /new_user_guide/images/27_Permit_Root.jpg
+    :width: 698px
+    :align: center
+    :height: 509px
+    :alt:
+
+|  
+|  
+*************************************
+Quick Start Guide for Advanced Users:
+*************************************
+
+* In the left hand column, start at the top with **General Settings**, and work your way down, choosing and activating the services and features you need for your use case.
+* For amd64 and i386 users, a static address for the OMV server and setting the address of a `public DNS server <https://wiki.ipfire.org/dns/public-servers>`_ is recommended.  (SBC users, see the section, **Network Interfaces – SBC Users.**) As an example:  Googles servers 8.8.8.8 and 8.8.4.4 support DNSSEC for better security, and “Anycast” which will direct DNS queries to a nearby server with low network latency.  There are several choices for Public servers that support these features. `List of Public DNS Servers <https://wiki.ipfire.org/dns/public-servers>`_ .
+* For a browseable network share, a minimum of one shared folder would need to be configured and that folder would need to be added to SMB/CIF to be visible on the network.  
+
+.. image:: /new_user_guide/images/28_Quick_Start.jpg
+    :width: 816px
+    :align: center
+    :height: 542px
+    :alt:
+|  
+|  
+***********************
+Basic OMV Configuration
+***********************
+
+This section will guide new users through the initial setup of OMV.  It 
+addresses how to add a plugin, enabling OMV-Extras, how to setup a 
+shared folder and make it browseable on the network with an SMB/CIF share.
+
+System Settings
+===============
+
+Under **System**, **General Settings**, in the **Web Administration** tab:
+
+To allow a bit more time for configuration in the GUI, **beginners should consider lengthening the automatic log out time**.  
+When the yellow banner appears, click **Apply**.
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+In the **Web Administrator Password** tab, enter a **strong password**, confirm it and Save.  
+(This is one of a few instances where the yellow “confirmation” banner does not appear.)  
+This setting changes the GUI login password.  The user “**admin**” will remain the same.   
+
+.. image:: /new_user_guide/images/29_Admin_PW.jpg
+    :width: 673px
+    :align: center
+    :height: 488px
+    :alt:
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+Under **System**, **Date & Time** 
+
+(No Pic) 
+
+Select your **Time Zone** and “toggle ON” **Use NTP Server**.  When OMV toggle switches are **ON**, they're green. **OFF** is gray.
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+Under, **System**, **Network**, **General** tab.
+
+**Hostname**: 
+The hostname is the name that will appear on your network and on the command line.  While the default is fine, the hostname can be changed here.  
+
+**Domain name**:
+If needed, the Domain suffix can be changed here.  (Very few users will use Fully Qualified Domain Names.) 
+
+.. image:: /new_user_guide/images/30_Host_Domain.jpg
+    :width: 781px
+    :align: center
+    :height: 446px
+    :alt:
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+Network Interfaces – SBC Users
+------------------------------
+
+Part of the SBC installation process was setting the wired interface to DHCP.  SBC users should consider leaving their wired network interface set to DHCP, until Docker and Portainer are installed.
+
+If a static IP address is needed:
+
+Note that your SBC has been assigned an IP address by your LAN's DHCP server.  (Typically, a router.) See your router's documentation for information on setting a “Static”, or  “Reserved” DHCP lease.
+
+Network Interfaces – i386/amd64 Users
+-------------------------------------
+
+Under, **System**, **Network**, **Interfaces** tab:
+Highlight / click on the **interface** found under the **Name** column, and click the **Edit** button.  
+(*As of the release of **Debian 9/OMV4**, the interface name might not be the traditional **eth0**.  A variety of names may be found, such as **eno1** or others.   Use the first interface line/name found.*) 
+
+* It is recommended that users assign a static IP address to the new OMV server that is outside the range of the network's DHCP server.
+* It is also recommended that users set a public DNS address.  A list of public DNS servers is available → `here <https://wiki.ipfire.org/dns/public-servers>`_ .  Use a server that supports **DNSSEC**, for better security, and **Anycast**, for low latency end point servers that are closer to user locations.
+* The Netmask will be as shown, in most cases, and the Gateway address will be the address of the user's router.
+
+**Note** When saving a new static IP address, the user will be “**going out on a limb and cutting it off**”.  Since the address provided by the network DHCP server is different from the static IP address chosen by the user, when the new address is changed, saved and applied, the GUI web page will stop responding.  This is normal and expected.  Type the new address, entered in the dialog box, into the URL line of your Web browser to reconnect.
+
+.. image:: /new_user_guide/images/30_IP_Address.jpg
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
 
 
 

@@ -1,15 +1,14 @@
-
- 
-**New User Guide**
-
-
-|
+**************
+New User Guide
+**************
 
 .. image:: /new_user_guide/images/underconstruction.jpg
     :width: 200px
     :align: center
     :height: 200px
     :alt: Under Construction
+
+In the interim, a complete copy of the User Guide is available → `here <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Getting_Started-OMV5.pdf>`_ .
 
 |
 

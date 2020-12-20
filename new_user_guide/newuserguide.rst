@@ -245,8 +245,8 @@ of **Single Board Computer** (hereafter referred to as an "**SBC**")
 that are supported by Armbian, Raspbian, and OMV.  While most will 
 support file server operations for a few users, if running server 
 add-on's or Dockers is a requirement, research the chosen SBC carefully 
-before buying.  Armbian's `Armbian's <https://forum.armbian.com/>`_ or 
-OMV's `OMV's <https://forum.openmediavault.org/>`_ forums may be of 
+before buying.  `Armbian's <https://forum.armbian.com/>`_ 
+or `OMV's <https://forum.openmediavault.org/>`_ forums may be of 
 assistance, along with Internet product reviews.
 *When considering an SBC as a primary NAS server for home use, note 
 that support for SBC's is for **the current OMV release only**.  
@@ -1112,6 +1112,146 @@ Highlight / click on the **interface** found under the **Name** column, and clic
 **Note** When saving a new static IP address, the user will be “**going out on a limb and cutting it off**”.  Since the address provided by the network DHCP server is different from the static IP address chosen by the user, when the new address is changed, saved and applied, the GUI web page will stop responding.  This is normal and expected.  Type the new address, entered in the dialog box, into the URL line of your Web browser to reconnect.
 
 .. image:: /new_user_guide/images/30_IP_Address.jpg
+    :width: 757px
+    :align: center
+    :height: 574px
+    :alt:
+
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+|
+
+Server Notifications
+--------------------
+
+Under **System**, **Notification**, **Settings**:  
+
+If enabled, E-mail entries in the **Settings** Tab are required if users want to take 
+advantage of automated server notifications and reports.  Other actions and scripts, 
+in **Scheduled Jobs** for example, can use this information to E-mail a report of task 
+execution or status, as users may deem necessary. 
+
+To gather the required information for entry in the **Settings** Tab, users should refer 
+to the settings for their E-mail clients.  Note that most ISP's are using **SSL/TLS** secured 
+E-mail connections.
+
+**Fill in** * **fields with user E-mail requirements and settings.**
+
+.. image:: /new_user_guide/images/31_Notifications.jpg
+    :width: 831px
+    :align: center
+    :height: 645px
+    :alt:
+
+|
+
+The **Notifications** tab allows the selection of various functions for monitoring and error reporting.
+
+If using a minimalist platform, such as older hardware or SBC's,  E-mail's regarding system 
+resources, memory, etc., may become bothersome.  Unchecking **Enabled** boxes under **System** would 
+eliminate excess E-mails, while maintaining **Storage reports** on hard drive health and file system errors.
+
+.. image:: /new_user_guide/images/32_Notifications2.jpg
+    :width: 831px
+    :align: center
+    :height: 645px
+    :alt:
+
+
+.. note:: Using Storage Notifications is highly recommended.  
+If SMART is **enabled**, under **Storage**, **SMART**, and short drive self-tests are 
+enabled on spinning drives in the **Scheduled Tests** tab, the system may notify the user of 
+hard drive errors *before* a hard drive fails completely.
+
+For an explanation of drive self-tests and an example of how to set up a drive self-test, see the section;  
+Drive Self-Tests
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+|
+
+(Optional)
+
+Under **System**, **Power Management**
+
+* In the **Settings** Tab, toggle **monitoring on** (recommended).
+* In the Power button drop down, amd64 and i386 users should select the action preferred.  Since power buttons are not available on some SBC installations, SBB users may chose to select “Nothing”.
+* The Scheduled Jobs tab allows for the automation of a various power related tasks, such as an scheduled reboot.
+
+.. image:: /new_user_guide/images/33_Power_Mangement.jpg
+    :width: 566px
+    :align: center
+    :height: 304px
+    :alt:
+
+|  
+
+(Optional)
+
+Under **System**, **Monitoring**:
+
+The initial recommended setting is **Enabled**.
+(Information gathered may be of use in diagnosing potential problems.)
+
+.. image:: /new_user_guide/images/34_Sys_Monitoring.jpg
+    :width: 566px
+    :align: center
+    :height: 304px
+    :alt:
+
+|  
+
+Under **System**, **Update Management**:
+
+First, click on the **Check** button, to refresh available updates for your platform.  
+(This may take a few minutes)
+
+Checking the box by **Package information** will update all packages at once.  (Recommended for beginners.)  Otherwise, individual packages may be selected as desired or needed.  
+
+**amd64** and **i386** users may be offered a list of “firmware updates”.  Select firmware updates that apply to your specific hardware.  However, there's no “penalty” for selecting firmware updates that do not apply.
+
+Beginners should leave the 2nd Tab, Settings, with default settings.
+
+.. image:: /new_user_guide/images/35_Update_Management.jpg
+    :width: 566px
+    :align: center
+    :height: 304px
+    :alt:
+
+|
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+|
+
+OMV-Extras
+==========
+
+.. note::  The following does not apply to SBC or i386 users.  When using the scripted install, OMV-Extras is installed with OMV by default.))
+
+amd64 users will have a basic set of plugin's appropriate for a basic NAS / File Server.  To 
+enable the full range of plugin's available on OMV, the installation of OMV-Extras is 
+required.  For a preview of what is available visit `omv-extras.org <http://omv-extras.org>`_ and select 
+the version of OMV that's being installed. 
+
+ For **amd64** users who installed OMV on **SD-cards** or **USB thumb-drives**; installing 
+ OMV-Extras is a prerequisite for installing the **flash-memory plugin**. The flash-memory 
+ plugin is **required** for flash media boot drives.
+
+.. image:: /new_user_guide/images/divider.png
     :width: 400px
     :align: center
     :height: 75px

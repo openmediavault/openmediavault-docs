@@ -1,6 +1,6 @@
-**************
+##############
 New User Guide
-**************
+##############
 
 .. image:: /new_user_guide/images/underconstruction.jpg
     :width: 200px

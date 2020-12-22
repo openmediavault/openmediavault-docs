@@ -295,7 +295,7 @@ Pre-2011 Intel and AMD CPU's
 (See the advice article → ` here) <https://support.plex.tv/hc/en-us/articles/201774043-What-kind-of-CPU-do-I-need-for-my-Server->`_   However, this advice 
 applies to pre-2011 Intel and AMD CPU's.  
 
-Look up an older CPU here `PassMark CPU Benchmarks <https://www.cpubenchmark.net/cpu_list.php>`_
+Look up an older CPU here →  `PassMark CPU Benchmarks <https://www.cpubenchmark.net/cpu_list.php>`_
 
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
@@ -353,7 +353,9 @@ Navigating OMV's WEB/GUI interface is another matter.  Loading WEB pages may cal
 
 *The above assumes that adequate RAM has been provisioned.*
 
-| .. image:: /new_user_guide/images/divider.png
+|
+
+ .. image:: /new_user_guide/images/divider.png
     :width: 400px
     :align: center
     :height: 75px
@@ -1496,14 +1498,193 @@ following will be the foundation for creating a “**Network Share**”, covered
     :height: 75px
     :alt:
 
+Under **Access Rights Management**, click on **Shared Folders**, then click on the **Add** button.  
+
+| In the following example, next to:
+
+|   **Name:**  Add your new shared folder's **name**.  
+|   **Device:**  Click on the drop down and select the drive that was previously added and formatted. \  
+|   **Path:** Accept the default  
+|   **Permissions:**  Click on the drop down and select **Everyone: read/write**  
+
+.. image:: /new_user_guide/images/42_shared_folder.jpg
+    :width: 782px
+    :align: center
+    :height:492px
+    :alt:
+
+Click the **Save** button.
+
+| 
+
+**The End Result:**
+
+.. image:: /new_user_guide/images/43_shared_folder2.jpg
+    :width: 704px
+    :align: center
+    :height: 299px
+    :alt:
 
 
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
 
+Creating a SMB/CIF “Samba” Network Share
+========================================
 
+In order to make your shared folder viewable in **Windows Explorer**, 
+under **Network**, it's necessary to make it a Samba share using the SMB 
+(Server Messaging Block) protocol.  OMV makes setting up a Samba network 
+share an easy task.
 
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
 
+Under **Services**, click on **SMB/CIF**.   In the **Settings** tab toggle **Enable** to **On** 
+(green) and set your workgroup name.  (In Windows, the default workgroup name is, 
+WORKGROUP.)  Leave the remainder of settings in this tab at their defaults, and 
+click on Save.  (Confirm with “**Apply**” when the yellow banner pops up.)
 
+.. image:: /new_user_guide/images/44_Samba.jpg
+    :width: 668px
+    :align: center
+    :height: 430px
+    :alt:
 
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
 
+Click on the Shares Tab and the +Add button.
 
+In the popup dialog box, set the following:
+
+|    **Shared folder**: Click on the drop down and select **Music** (or the name for the shared folder previously created.)
+|    **Public:**   Click on the drop down and select the **Guests Allowed**
+
+Scroll down with the right scroll bar and toggle **ON** (green), **Extended attributes** and **Store DOS attributes**.  
+
+(Leave the remaining settings at defaults.)  
+
+Click **Save** and confirm with “**Apply**” when the yellow banner appears.  The final result should appear as follows.
+
+.. image:: /new_user_guide/images/45_Samba2.jpg
+    :width: 719px
+    :align: center
+    :height: 389px
+    :alt:
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+Explore the New Network Share
+=============================
+
+You should now have a browseable Server with a Network share named Music, so let's take a look.
+Open Windows explorer, scroll down to Network and click on it.  There's the new server OPENMEDIAVAULT.
+
+.. image:: /new_user_guide/images/46_Samba3.jpg
+    :width: 719px
+    :align: center
+    :height: 389px
+    :alt:
+
+*A few minutes may be required for the Windows Network to “Discover” the new server.  If users are using **Windows 10 PC's**, and the server and share do not appear, see this networking How To.*
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+Now let's look at the server's new Samba share.  It's there and browseable.
+
+.. image:: /new_user_guide/images/47_Samba4.jpg
+    :width: 540px
+    :align: center
+    :height: 415px
+    :alt:
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+This share is “writable” with a standard “Copy and Paste”, from a client PC.
+
+.. image:: /new_user_guide/images/48_Samba5.jpg
+    :width: 540px
+    :align: center
+    :height: 415px
+    :alt:
+
+Congratulations!  You now have a functional NAS that can be expanded to accommodate additional network shares.  Simply repeat the processes in Creating A Network Share to create and make additional shares visible on your network.
+
+|
+
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+|
+
+******************************************
+The Flash Memory Plugin - amd64 users only
+******************************************
+
+amd64 users who installed OMV **on flash media** will need to install the flash memory plugin.
+
+| 
+
+Flash Media and Wear Leveling
+=============================
+
+While modern flash media drive is solid state, it's life is limited by the number of write cycles 
+it can withstand before it goes “read only”.  When a specified number of flash memory blocks refuse 
+to erase, the device's controller will set it “read only”.  At that point, the device's useful life 
+is over.
+
+To extend the life of flash media, most modern flash devices have **wear leveling** built into their 
+controllers.  If blocks are written, but not erased, they experience no wear.  If blocks are erased, 
+the next new write is set on adjacent blocks that have never been written before.  As data is erased 
+and written, blocks are used starting at the beginning of the device's addressable storage range and 
+proceeding, in sequence, working toward the end.  When the end of the range is reached, the process 
+starts at the beginning and cycles through again.  This wear leveling process avoids writing a 
+single location to failure, and spreads wear evenly throughout.
+
+With wear leveling and two drives of the same type, a drive that is twice the size will last roughly 
+two times longer than the smaller drive.  While this is a strong vote for using a larger flash drive, 
+when backups are considered, drives of twice the size also take twice as long to image and their 
+image files are twice as large.  (When using flash media as a boot drive, a practical trade-off 
+should be considered in the suggested 16 to 32GB range.)
+
+The Purpose of the Plugin
+=========================
+
+The primary purpose of the Flash Memory Plugin is to reduce the frequency of writes to flash media 
+by consolidating very small writes into one, larger, bulk write.  This reduces the number of blocks 
+physically written to the Flash Device being used as the boot drive.  The plugin can reduce the number 
+of blocks written to the Flash drive by an order of magnitude or, potentially, 1/10th the amount that 
+would otherwise be written.  By extension, a drive of a given size might last up to 10 times longer 
+than it would without the Flash Media plugin.
+
+Installing the Plugin
+=====================
+
+The prerequisite for installing this plugin is the installation of OMVExtras.  If OMVExtras is not 
+installed, it is required to proceed.
 

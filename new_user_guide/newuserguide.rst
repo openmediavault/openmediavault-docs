@@ -12,7 +12,7 @@ In the interim, a complete copy of the User Guide is available → `here <https:
 
 |
 
-.. image:: /new_user_guide/images/divider.png
+.. image:: /new_user_guide/images/divider-c.png
     :width: 400px
     :align: center
     :height: 75px
@@ -28,7 +28,7 @@ In the interim, a complete copy of the User Guide is available → `here <https:
 
 |
 
-.. image:: /new_user_guide/images/divider.png
+.. image:: /new_user_guide/images/divider-c.png
     :width: 400px
     :align: center
     :height: 75px
@@ -170,7 +170,7 @@ the operating system, backing up the boot drive is highly recommended.
     :height: 75px
     :alt:
 
-|
+
 
 ********
 Hardware
@@ -319,6 +319,13 @@ and Video processing features may require some additional thought and research.
 Additional reading: 
 `Intel Quick Sync versus similar AMD technology <https://www.macxdvd.com/mac-dvd-video-converter-how-to/what-is-intel-quick-sync-video.htm>`_
 
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+
 Selecting a Boot Drive
 ======================
 
@@ -346,7 +353,11 @@ Navigating OMV's WEB/GUI interface is another matter.  Loading WEB pages may cal
 
 *The above assumes that adequate RAM has been provisioned.*
 
-| 
+| .. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
 
 Final Notes on Choosing a Boot Drive
 ------------------------------------
@@ -393,7 +404,12 @@ In addition, to detect fakes or defective media *even when new*; all SD-cards
 and USB thumb-drives, should be formatted and tested in accordance with the 
 process outlined under Format and Testing Flash Media.  If they fail error 
 testing, return them for a refund.
-|
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
 
 Hardware - The Bottom Line
 ==========================
@@ -491,19 +507,19 @@ MD5 and SHA hashes check for image corruption that may have occurred
 during the download.   
 
 .. note:: Beginners - DO NOT SKIP THIS STEP.  The chance of image corruption is high when downloading and it's pointless to build a server with flawed software.  Even the **slightest** corruption of the installation ISO may ruin your installation and the effects may not be noticed until well after your server is built and in use.  Headaches can be avoided by checking the image.
-|  
+
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
     :align: center
     :height: 75px
     :alt:
 |  
-|  
+ 
 
 Installing - amd64 Platforms
 ============================
 |  
-| 
+
 
 Burning a source CD
 -------------------
@@ -1247,15 +1263,246 @@ enable the full range of plugin's available on OMV, the installation of OMV-Extr
 required.  For a preview of what is available visit `omv-extras.org <http://omv-extras.org>`_ and select 
 the version of OMV that's being installed. 
 
- For **amd64** users who installed OMV on **SD-cards** or **USB thumb-drives**; installing 
- OMV-Extras is a prerequisite for installing the **flash-memory plugin**. The flash-memory 
- plugin is **required** for flash media boot drives.
+For **amd64** users who installed OMV on **SD-cards** or **USB thumb-drives**; installing 
+OMV-Extras is a prerequisite for installing the **flash-memory plugin**. The flash-memory 
+plugin is **required** for flash media boot drives.
 
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
     :align: center
     :height: 75px
     :alt:
+
+Installing OMV-Extras
+---------------------
+
+To enable OMV-Extras, a file is downloaded that will be used in the server console.
+Select the following link and download the associated file for OMV5.
+
+`omv-extras.org/openmediavault-omvextrasorg_latest_all5.deb <omv-extras.org/openmediavault-omvextrasorg_latest_all5.deb>`_ 
+
+.. image:: /new_user_guide/images/36_omv-extras.jpg
+    :width: 559px
+    :align: center
+    :height: 402px
+    :alt:
+
+Save the file.
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+Under **System**, **Plugins**:
+Click on the **Upload** button.  **Browse** to the file downloaded, above.  Select 
+it and click **OK**.
+
+.. image:: /new_user_guide/images/37_omv-extras2.jpg
+    :width: 688px
+    :align: center
+    :height: 360px
+    :alt:
+
+A dialog window will popup that says, “Checking for Plugins”.  
+(OMV-Extras is being added to the default plugin list.)  
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+
+In the same window (**System**, **Plugins**) scroll to the bottom.
+
+Select **openmediavualt-omvextrasorg**  and click the **Install** button.
+
+38_omv-extras3.jpg
+
+.. image:: /new_user_guide/images/37_omv-extras2.jpg
+    :width: 770px
+    :align: center
+    :height: 539px
+    :alt:
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+(Optional, but recommended)
+
+Under **System**, **OMV-Extras**:
+
+In the **Settings** Tab, highlight **OMV-Extras.org Testing** and click **Edit**.  **Enable** and Save.
+
+.. image:: /new_user_guide/images/39_omv-extras4.jpg
+    :width: 657px
+    :align: center
+    :height: 342px
+    :alt:
+
+To insure that all plugins are available, go back to System, Plugins, and 
+click the Check button.  This will refresh the page and fully populate it with 
+plugins that may be missing.
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+A Basic Data Drive
+==================
+
+|
+
+General
+-------
+
+OMV is capable of setting up basic Linux file systems in the GUI, up to, and including, 
+modern “Copy on Write” file systems such as ZFS which combine check summed files, 
+RAID functions, and Logical Volume Management into a single package.  However, 
+advanced file systems add complexity which can make administration of a NAS 
+server more challenging for a beginner. 
+
+Until some experience is gained, it is recommended that Linux/NAS beginners use single 
+disks with a native Linux file system.  In the processes described in the following, 
+EXT4 will be used with a single data drive.
+
+Some Windows users will want to use USB attached hard drives that are formatted NTFS.  
+While this is possible, the drive would need to remain attached or, at a minimum, be 
+connected to the server when OMV boots.  It would be better to use a Linux formatted drive 
+and create a Samba share (SMB/CIF) for Windows clients, as described in Setting up a 
+Shared Folder and Creating a SMB/CIF “Samba” share.
+
+A Samba (SMB/CIF) network share understands the Windows file format and can be configured 
+to accommodate DOS and extended file attributes.  Samba serves as a transparent “translator” 
+for Windows data storage.
+
+|
+
+RAID+USB = Potential Problems
+-----------------------------
+
+Setting up RAID of any type using “USB to drive” connections is discouraged.  RAID over 
+USB has known problems. The USB interface (there are several flavors) may filter some 
+the characteristics of hard drives, fail to pass SMART stat's and ATA drive commands, delay 
+the assembly of a RAID array, etc. While USB may work in some RAID cases, it's not as 
+reliable as using a standard hard drive interface. If RAID of any type is considered to be 
+a requirement, drives should be connected with SATA or SAS ports. 
+
+If users choose to use RAID over USB connections, it is done at their own risk with the 
+potential for the total loss of stored data.  RAID issues involving SBC's, USB connected 
+hard drives, or USB RAID enclosures are not supported on the forum.
+
+RAID is often confused with backup which is far more important.  For more information, see 
+the explanation of backup, in Backups and Backup-strategy.
+
+|
+
+Data Storage - Size matters
+---------------------------
+
+In general terms, beginners should do a rough calculation of their storage requirement. When 
+selecting a data drive, the initial fill rate should be between 25 and 50%.  As an example, 
+if the calculated data to be stored on the NAS is 1TB, the selected drive should be between 
+2 and 4TB.  With 50%+ drive free space (2 to 3TB) additional data can be accommodated, 
+without the need to expand in the immediate future.  When the fill percentage reaches 75%, 
+it's time to plan for more storage. 
+
+|
+
+Data Drive Set Up
+-----------------
+
+ .. note:: Note for Beginners and SBC users: OMV is designed to segregate the Operating System (the boot drive) from data storage.  This is “best practice” when setting up a server.  Accordingly, OMV reserves the drive it is installed on exclusively for the OS.  By default, the GUI will not allow the boot drive to be selected when creating a data share.  A second hard drive or SSD is required for data storage.
+
+
+
+With a data drive installed or connected.
+
+Under **Storage**, **Disks**:
+
+**Highlight the data disk** and click on **Wipe**.  When prompted, click **Quick** and **Yes**.  
+(*Reformatting a disk with GPT formatting present may result in an error.  Simply re-run the wipe operation a 2nd time.*)
+
+.. image:: /new_user_guide/images/40_disks1.jpg
+    :width: 844px
+    :align: center
+    :height: 555px
+    :alt:
+
+((The first device in the above list **/dev/sda** is the boot drive.))
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+Under **Storage**, **File Systems**:
+
+Click on **Create**.  In the Popup Window use the **drop down** to **select the drive** 
+previously wiped.  Provide a **Label** of your choice, accept the default File System **EXT4** 
+and click on **OK**.  Confirm the “format device” warning.
+
+Allow a few minutes for the format to complete.  When the message 
+“**File system creation has completed successfully**” is displayed, click on **Close**.
+
+.. image:: /new_user_guide/images/41_disks2.jpg
+    :width: 844px
+    :align: center
+    :height: 555px
+    :alt:
+
+**In the same Window**:
+
+Click on the newly created **file system line**, and click on the **Mount** button.  When the yellow confirmation banner appears, click on **Apply**.
+
+The Data Drive is now prepared for a Shared Folder.
+
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+************************
+Creating A Network Share
+************************
+
+Network shares are the primary reason for setting up and running a NAS.   While 
+easy access to data provides convenience to users, storing and backing up data in a 
+centralized location makes it much more manageable.
+
+|
+
+Setting up a Shared Folder
+==========================
+
+The majority of the files and folders in a new OMV installation are controlled by 
+the root user.  One of the purposes of a **Shared Folder** is to set permissions that 
+will allow regular users access to folders and files used for data storage.  A shared 
+folder could also be called a “base share”.  The shared folder created in the 
+following will be the foundation for creating a “**Network Share**”, covered later.
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+
+
+
+
+
+
+
 
 
 

@@ -292,7 +292,7 @@ Pre-2011 Intel and AMD CPU's
 ----------------------------
 `Plex <https://support.plex.tv/hc/en-us/articles/200250377-Transcoding-Media>`_, a popular media server, recommends at least 2000 on the CPU's 
 `PassMark <https://www.cpubenchmark.net/cpu_list.php>`_ score for each concurrent 1080p transcoded stream.  
-(See the advice article → ` here) <https://support.plex.tv/hc/en-us/articles/201774043-What-kind-of-CPU-do-I-need-for-my-Server->`_   However, this advice 
+See the advice article → `here <https://support.plex.tv/hc/en-us/articles/201774043-What-kind-of-CPU-do-I-need-for-my-Server->`_   However, this advice 
 applies to pre-2011 Intel and AMD CPU's.  
 
 Look up an older CPU here →  `PassMark CPU Benchmarks <https://www.cpubenchmark.net/cpu_list.php>`_
@@ -353,7 +353,7 @@ Navigating OMV's WEB/GUI interface is another matter.  Loading WEB pages may cal
 
 *The above assumes that adequate RAM has been provisioned.*
 
-|
+
 
  .. image:: /new_user_guide/images/divider.png
     :width: 400px
@@ -436,7 +436,7 @@ hardware.)
     :height: 75px
     :alt:
 
-|
+
 
 ********************************************
 Installing on Single Board Computers (SBC's)
@@ -466,7 +466,7 @@ in `PDF <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5
 or in a `Wiki <https://wiki.omv-extras.org/>`_ .
 
 
-.. image:: /new_user_guide/images/divider.png
+.. image:: /new_user_guide/images/divider-c.png
     :width: 400px
     :align: center
     :height: 75px
@@ -487,7 +487,7 @@ using 64 bit hardware.
     :align: center
     :height: 75px
     :alt:
-|
+
 
 Downloading
 ===========
@@ -499,6 +499,8 @@ checksum value will be used with the MD5 SHA checksum utility.
 .. note:: Windows Notepad can open MD5 files by selecting “**All Files**”, next to the file name drop down.  
 
 .. warning:: If users install Beta versions of OMV, they are agreeing to be a “tester”.  As part of being a tester, users may experience issues or bugs that can not be resolved which may result in **lost data**.  Plan accordingly, with full data backup.
+
+|
 
 Verify the download
 -------------------
@@ -515,7 +517,7 @@ during the download.
     :align: center
     :height: 75px
     :alt:
-|  
+ 
  
 
 Installing - amd64 Platforms
@@ -532,7 +534,8 @@ on a Windows Computer or a MAC.  If help is needed for this process, see the
 following link.
 
 `How to burn an ISO image in Windows 7, 8, 10 <https://www.lifewire.com/how-to-burn-an-iso-image-file-to-a-dvd-2626156>`_
-   
+
+|  
 
 Creating a Bootable ISO Thumb-drive
 -----------------------------------
@@ -547,7 +550,7 @@ For assistance in creating a bootable ISO thumb-drive, see the following link.
 
 `How to install an ISO file on a USB drive <https://www.lifewire.com/how-to-burn-an-iso-file-to-a-usb-drive-2619270>`_
 
-|    
+
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
     :align: center
@@ -561,7 +564,7 @@ For assistance in creating a bootable ISO thumb-drive, see the following link.
     :align: center
     :height: 75px
     :alt:
-|  
+  
 
 Preparing Flash Media 
 ---------------------
@@ -584,7 +587,7 @@ Due to the rise in counterfeit media and media that reports a fake size, it's re
     :height: 75px
     :alt:
 
-|  
+  
 
 Format and Test Flash Media
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -605,7 +608,11 @@ default options are fine.
 
 Click on **Format**
 
-|    
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:  
 
 After the drive format is completed, open **h2testw** and select your language.
 
@@ -617,7 +624,11 @@ Then, click on **Select target**
     :height: 270px
     :alt:
 
-|    
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:   
 
 Under **Computer**, select the flash media previously formatted.
 
@@ -627,7 +638,11 @@ Under **Computer**, select the flash media previously formatted.
     :height: 398px
     :alt:
 
-|  
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:  
 
 Select **Write+Verify**.  (Do not check endless verify)|
 
@@ -637,11 +652,14 @@ Select **Write+Verify**.  (Do not check endless verify)|
     :height: 296px
     :alt:
 
-|  
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
 
-A dialog box similar to the following may pop up, drawing attention to a **1MB** difference.  
-
-Ignore it and click on **OK**.
+| A dialog box similar to the following may pop up, drawing attention to a **1MB** difference.  
+| Ignore it and click on **OK**.
 
 .. image:: /new_user_guide/images/7_H2testw_4.jpg
     :width: 497px
@@ -649,12 +667,14 @@ Ignore it and click on **OK**.
     :height: 199px
     :alt:
 
-|
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
 
-“Without errors” is the desired outcome. 
-
-(If media tests with errors or is much smaller than is indicated by its labeled 
-size, don't use it.)  
+| “Without errors” is the desired outcome. 
+| (If media tests with errors or is much smaller than is indicated by its labeled size, don't use it.)  
 
 .. image:: /new_user_guide/images/8_H2testw_5.jpg
     :width: 417px
@@ -665,14 +685,14 @@ size, don't use it.)
 After H2testw verifies the USB thumb-drive, do one more clean format, using 
 SDFormatter, before using the thumb-drive.
 
-|  
+
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
     :align: center
     :height: 75px
     :alt:
 
-|  
+ 
 
 amd64 – Openmediavault Installation
 ===================================
@@ -1281,7 +1301,7 @@ Installing OMV-Extras
 To enable OMV-Extras, a file is downloaded that will be used in the server console.
 Select the following link and download the associated file for OMV5.
 
-`omv-extras.org/openmediavault-omvextrasorg_latest_all5.deb <omv-extras.org/openmediavault-omvextrasorg_latest_all5.deb>`_ 
+`omvextrasorg for OMV5 <omv-extras.org/openmediavault-omvextrasorg_latest_all5.deb>`_ 
 
 .. image:: /new_user_guide/images/36_omv-extras.jpg
     :width: 559px
@@ -1687,4 +1707,120 @@ Installing the Plugin
 
 The prerequisite for installing this plugin is the installation of OMVExtras.  If OMVExtras is not 
 installed, it is required to proceed.
+
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+
+Under **System**, **Plugins**, scroll down to Section: **Filesystems**.
+
+Select **openmediavualt-flashmemory** and click the **Install** button.
+
+.. image:: /new_user_guide/images/49_OMVExtras.jpg
+    :width: 717px
+    :align: center
+    :height: 412px
+    :alt:
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+Under **Storage**, **Flash Memory**, the following screen is now available.
+
+.. image:: /new_user_guide/images/50_Flash_Mem.jpg
+    :width: 685px
+    :align: center
+    :height: 487px
+    :alt:
+
+The plugin will work as is, but it will be more effective if the guidance under **Notes (optional)** is followed. 
+While this guidance shows steps for nano, following are options with guidance that beginners may find easier to implement.
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+Flash Memory Plugin – Editing /etc/fstab
+----------------------------------------
+
+There are two options for editing /etc/fstab
+
+* (Option 1) A Linux command line text editor
+* (Option 2) WinSCP and Windows Notepad can be used if WinSCP is installed
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+Option 1: Editing /etc/fstab with nano
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The first example will use **nano**.  This option requires the installation of PuTTY which is detailed here.
+
+Using PuTTY, SSH into the server.  Log in as root and enter the root password.
+
+On the command line, type the following and hit enter.
+``nano /etc/fstab``
+
+.. note:: In nano, the mouse does not move the cursor.  The cursor is moved with the keyboard's arrow keys to the insertion point.  Type to insert text and use the backspace key to erase text if need.   If a mistake is made, exit without saving and go back in again.
+
+From the plugin's **Notes, Step 3**:
+
+* First:  We're going to add two statements **,noatime,nodiratime** to the **/** partition (the root partition) exactly as shown.  The text addition is highlighted in green.
+* Second:  Note the partition with **swap** in it.  Per Step 4, we're going to comment this line out, using a  **#**  at the beginning of the line.  The **#** is an addition, and is highlighted in green.
+51_Edit_fstab.jpg
+
+.. image:: /new_user_guide/images/51_Edit_fstab.jpg
+    :width: 946px
+    :align: center
+    :height: 481px
+    :alt:
+
+Use **Ctrl+o** to save, then **Ctrl+x** to exit
+
+Reboot the server.  
+On the command line, the following command can be used: ``reboot``
+
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+Option 2: Editing /etc/fstab with WinSCP and Notepad
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This option requires the installation of WinSCP which is detailed here .
+
+Users who are not comfortable with editing fstab using nano can use WinSCP 
+and Windows Notepad to make the needed changes.  If WinSCP is not installed, 
+this doc-link to → (WinSCP) will describe the process for installing WinSCP and 
+logging into the OMV server for the first time.
+
+When logged in, click on **/etc** in the left pane.  In the right pane, “**right**” 
+mouse click on **fstab**, select **Edit** and **Notepad**.
+
+.. image:: /new_user_guide/images/52_Edit_fstab2.jpg
+    :width: 750px
+    :align: center
+    :height: 542px
+    :alt:
+
+Notepad will open the fstab file.
+
+
+
+
+
 

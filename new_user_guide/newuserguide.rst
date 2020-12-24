@@ -62,7 +62,7 @@ flexibility.
 
 |
 
-.. image:: /new_user_guide/images/divider.png
+.. image:: /new_user_guide/images/divider-c.png
     :width: 400px
     :align: center
     :height: 75px
@@ -115,13 +115,12 @@ has developer experience, (BASH, PHP, Python, Javascript) the project
 would like to hear from you.  Users with Linux experience are invited to 
 help out on the `OMV Forum <https://forum.openmediavault.org/index.php/BoardList/>`_ . 
 
-.. image:: /new_user_guide/images/divider.png
+.. image:: /new_user_guide/images/divider-c.png
     :width: 400px
     :align: center
     :height: 75px
     :alt:
 
-|
 
 ****************
 About this Guide
@@ -164,7 +163,7 @@ In the beginning it's best to rely, primarily, on the GUI for
 configuration and control.  Otherwise, before attempting to customize 
 the operating system, backing up the boot drive is highly recommended.
 
-.. image:: /new_user_guide/images/divider.png
+.. image:: /new_user_guide/images/divider-c.png
     :width: 400px
     :align: center
     :height: 75px
@@ -288,6 +287,12 @@ they're not capable of re-processing high resolution media files
 smoothly so the processing burden is often transferred to the media 
 server.
 
+.. image:: /new_user_guide/images/divider.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
 Pre-2011 Intel and AMD CPU's
 ----------------------------
 `Plex <https://support.plex.tv/hc/en-us/articles/200250377-Transcoding-Media>`_, a popular media server, recommends at least 2000 on the CPU's 
@@ -297,11 +302,7 @@ applies to pre-2011 Intel and AMD CPU's.
 
 Look up an older CPU here →  `PassMark CPU Benchmarks <https://www.cpubenchmark.net/cpu_list.php>`_
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+
 
 2011 and Newer Intel CPU's
 --------------------------
@@ -401,11 +402,11 @@ drive, if needed, can be done later.)
 .. note::   Buying flash devices on-line, even from reputable retailers, comes with the substantial risk of buying fakes.
 
 Buying flash drives, in sealed packaging, from walk-in retail stores with liberal return 
-policies is recommended.  The use of cheap generics, fakes or knockoffs is highly discouraged.  They tend to have a short life and they're known to cause problems, even if they initially test error-free.  
-In addition, to detect fakes or defective media *even when new*; all SD-cards 
-and USB thumb-drives, should be formatted and tested in accordance with the 
-process outlined under Format and Testing Flash Media.  If they fail error 
-testing, return them for a refund.
+policies is recommended.  The use of cheap generics, fakes or knockoffs is highly discouraged.  
+They tend to have a short life and they're known to cause problems, even if they initially test 
+error-free.  In addition, to detect fakes or defective media *even when new*; all SD-cards 
+and USB thumb-drives, should be formatted and tested in accordance with the process outlined 
+under Format and Testing Flash Media.  If they fail error testing, return them for a refund.
 
 .. image:: /new_user_guide/images/divider.png
     :width: 400px
@@ -430,7 +431,7 @@ providing file server functions in a home environment.  (Again, performance
 expectations should be adjusted in accordance with the capabilities of the 
 hardware.)
 
-.. image:: /new_user_guide/images/divider.png
+.. image:: /new_user_guide/images/divider-c.png
     :width: 400px
     :align: center
     :height: 75px
@@ -448,7 +449,7 @@ in `PDF's <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OM
 or in a `Wiki <https://wiki.omv-extras.org/>`_ .
 
 
-.. image:: /new_user_guide/images/divider.png
+.. image:: /new_user_guide/images/divider-c.png
     :width: 400px
     :align: center
     :height: 75px
@@ -769,7 +770,9 @@ with later on.  (Something like **OMV1**).
     :align: center
     :height: 197px
     :alt:
+
 |  
+
 **Configure the Network:**
 
 If applicable, enter your domain name suffix.  Otherwise, for home users and businesses with 
@@ -993,7 +996,7 @@ This is usually a one time event where the fix is simple – simply login as roo
 **With a known IP address, proceed to** OMV - Initial Configuration .
 
 |
-.. image:: /new_user_guide/images/divider.png
+.. image:: /new_user_guide/images/divider-c.png
     :width: 400px
     :align: center
     :height: 75px
@@ -1040,8 +1043,14 @@ applied, the **Apply** button must be clicked.
     :height: 509px
     :alt:
 
-|  
-|  
+
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+
 *************************************
 Quick Start Guide for Advanced Users:
 *************************************
@@ -1055,8 +1064,13 @@ Quick Start Guide for Advanced Users:
     :align: center
     :height: 542px
     :alt:
-|  
-|  
+
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
 ***********************
 Basic OMV Configuration
 ***********************
@@ -1660,7 +1674,11 @@ Congratulations!  You now have a functional NAS that can be expanded to accommod
     :height: 75px
     :alt:
 
-|
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
 
 ******************************************
 The Flash Memory Plugin - amd64 users only
@@ -1779,7 +1797,7 @@ From the plugin's **Notes, Step 3**:
 
 * First:  We're going to add two statements **,noatime,nodiratime** to the **/** partition (the root partition) exactly as shown.  The text addition is highlighted in green.
 * Second:  Note the partition with **swap** in it.  Per Step 4, we're going to comment this line out, using a  **#**  at the beginning of the line.  The **#** is an addition, and is highlighted in green.
-51_Edit_fstab.jpg
+
 
 .. image:: /new_user_guide/images/51_Edit_fstab.jpg
     :width: 946px

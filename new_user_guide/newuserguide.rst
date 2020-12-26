@@ -270,11 +270,7 @@ they're not capable of re-processing high resolution media files
 smoothly so the processing burden is often transferred to the media
 server.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Pre-2011 Intel and AMD CPU's
 ----------------------------
@@ -303,12 +299,7 @@ and Video processing features may require some additional thought and research.
 Additional reading:
 `Intel Quick Sync versus similar AMD technology <https://www.macxdvd.com/mac-dvd-video-converter-how-to/what-is-intel-quick-sync-video.htm>`_
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
-
+----
 
 Selecting a Boot Drive
 ======================
@@ -337,11 +328,7 @@ Navigating |omv|'s WEB/GUI interface is another matter.  Loading WEB pages may c
 
 *The above assumes that adequate RAM has been provisioned.*
 
- .. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Final Notes on Choosing a Boot Drive
 ------------------------------------
@@ -389,11 +376,7 @@ error-free.  In addition, to detect fakes or defective media *even when new*; al
 and USB thumb-drives, should be formatted and tested in accordance with the process outlined
 under Format and Testing Flash Media.  If they fail error testing, return them for a refund.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Hardware - The Bottom Line
 ==========================
@@ -459,11 +442,7 @@ from an image found in |omv|'s files
 repository `openmediavault's files repository <https://sourceforge.net/projects/openmediavault/files/>`_ ,
 using 64 bit hardware.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Downloading
 ===========
@@ -486,11 +465,7 @@ during the download.
 
 .. note:: Beginners - DO NOT SKIP THIS STEP.  The chance of image corruption is high when downloading and it's pointless to build a server with flawed software.  Even the **slightest** corruption of the installation ISO may ruin your installation and the effects may not be noticed until well after your server is built and in use.  Headaches can be avoided by checking the image.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Installing - amd64 Platforms
 ============================
@@ -518,19 +493,11 @@ For assistance in creating a bootable ISO thumb-drive, see the following link.
 
 `How to install an ISO file on a USB drive <https://www.lifewire.com/how-to-burn-an-iso-file-to-a-usb-drive-2619270>`_
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 **If installing to a standard hard drive or SSD, skip to** Installing |omv|.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Preparing Flash Media
 ---------------------
@@ -546,11 +513,7 @@ the latest version), and `h2testw1.4 <http://www.heise.de/ct/Redaktion/bo/downlo
 
 Due to the rise in counterfeit media and media that reports a fake size, it's recommended that all USB thumb-drives, new or used, be formatted with SDFormatter and tested with  h2testw1.4  before using them.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Format and Test Flash Media
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -571,11 +534,7 @@ default options are fine.
 
 Click on **Format**
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 After the drive format is completed, open **h2testw** and select your language.
 
@@ -587,11 +546,7 @@ Then, click on **Select target**
     :height: 270px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Under **Computer**, select the flash media previously formatted.
 
@@ -601,11 +556,7 @@ Under **Computer**, select the flash media previously formatted.
     :height: 398px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Select **Write+Verify**.  (Do not check endless verify)
 
@@ -615,11 +566,7 @@ Select **Write+Verify**.  (Do not check endless verify)
     :height: 296px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 A dialog box similar to the following may pop up, drawing attention to a **1MB** difference.
 Ignore it and click on **OK**.
@@ -630,11 +577,7 @@ Ignore it and click on **OK**.
     :height: 199px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 “Without errors” is the desired outcome.
 (If media tests with errors or is much smaller than is indicated by its labeled size, don't use it.)
@@ -648,12 +591,7 @@ Ignore it and click on **OK**.
 After H2testw verifies the USB thumb-drive, do one more clean format, using
 SDFormatter, before using the thumb-drive.
 
-
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 amd64 – |omv| Installation
 ===================================
@@ -667,11 +605,7 @@ If difficulties are encountered during the ISO installation, consider
 the → `Alternate 64bit installation guide <http://https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Adden-C-Installing_OMV5_on_32-bit_i386.pdf/>`_
 Or use `the Wiki <https://wiki.omv-extras.org/doku.php?id=installing_omv5_i386_32_bit_pc>`_ .
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 An installation walk through:
 
@@ -848,11 +782,7 @@ Generally the boot drive will be **/dev/sda** which is, in most cases, the first
     :height: 153px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 First Boot
 ==========
@@ -996,11 +926,7 @@ Under **System**, **General Settings**, in the **Web Administration** tab:
 To allow a bit more time for configuration in the GUI, **beginners should consider lengthening the automatic log out time**.
 When the yellow banner appears, click **Apply**.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 In the **Web Administrator Password** tab, enter a **strong password**, confirm it and Save.
 (This is one of a few instances where the yellow “confirmation” banner does not appear.)
@@ -1012,11 +938,7 @@ This setting changes the GUI login password.  The user “**admin**” will rema
     :height: 488px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Under **System**, **Date & Time**
 
@@ -1024,11 +946,7 @@ Under **System**, **Date & Time**
 
 Select your **Time Zone** and “toggle ON” **Use NTP Server**.  When |omv| toggle switches are **ON**, they're green. **OFF** is gray.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Under, **System**, **Network**, **General** tab.
 
@@ -1044,11 +962,7 @@ If needed, the Domain suffix can be changed here.  (Very few users will use Full
     :height: 446px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Network Interfaces – SBC Users
 ------------------------------
@@ -1078,12 +992,7 @@ Highlight / click on the **interface** found under the **Name** column, and clic
     :height: 574px
     :alt:
 
-
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Server Notifications
 --------------------
@@ -1128,11 +1037,7 @@ hard drive errors *before* a hard drive fails completely.
 For an explanation of drive self-tests and an example of how to set up a drive self-test, see the section;
 Drive Self-Tests
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 (Optional)
 
@@ -1178,11 +1083,7 @@ Beginners should leave the 2nd Tab, Settings, with default settings.
     :height: 304px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 OMV-Extras
 ==========
@@ -1198,11 +1099,7 @@ For **amd64** users who installed |omv| on **SD-cards** or **USB thumb-drives**;
 OMV-Extras is a prerequisite for installing the **flash-memory plugin**. The flash-memory
 plugin is **required** for flash media boot drives.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Installing OMV-Extras
 ---------------------
@@ -1220,11 +1117,7 @@ Select the following link and download the associated file for OMV5.
 
 Save the file.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Under **System**, **Plugins**:
 Click on the **Upload** button.  **Browse** to the file downloaded, above.  Select
@@ -1239,12 +1132,7 @@ it and click **OK**.
 A dialog window will popup that says, “Checking for Plugins”.
 (OMV-Extras is being added to the default plugin list.)
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
-
+----
 
 In the same window (**System**, **Plugins**) scroll to the bottom.
 
@@ -1256,11 +1144,7 @@ Select **openmediavault-omvextrasorg** and click the **Install** button.
     :height: 539px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 (Optional, but recommended)
 
@@ -1278,11 +1162,7 @@ To insure that all plugins are available, go back to System, Plugins, and
 click the Check button.  This will refresh the page and fully populate it with
 plugins that may be missing.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 A Basic Data Drive
 ==================
@@ -1359,11 +1239,7 @@ Under **Storage**, **Disks**:
 
 ((The first device in the above list **/dev/sda** is the boot drive.))
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Under **Storage**, **File Systems**:
 
@@ -1409,11 +1285,7 @@ will allow regular users access to folders and files used for data storage.  A s
 folder could also be called a “base share”.  The |sf| created in the
 following will be the foundation for creating a “**Network Share**”, covered later.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Under **Access Rights Management**, click on **Shared Folders**, then click on the **Add** button.
 
@@ -1440,12 +1312,7 @@ Click the **Save** button.
     :height: 299px
     :alt:
 
-
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Creating a SMB/CIF “Samba” Network Share
 ========================================
@@ -1455,11 +1322,7 @@ under **Network**, it's necessary to make it a Samba share using the SMB
 (Server Messaging Block) protocol.  OMV makes setting up a Samba network
 share an easy task.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Under **Services**, click on **SMB/CIF**.   In the **Settings** tab toggle **Enable** to **On**
 (green) and set your workgroup name.  (In Windows, the default workgroup name is,
@@ -1472,11 +1335,7 @@ click on Save.  (Confirm with “**Apply**” when the yellow banner pops up.)
     :height: 430px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Click on the Shares Tab and the +Add button.
 
@@ -1497,11 +1356,7 @@ Click **Save** and confirm with “**Apply**” when the yellow banner appears. 
     :height: 389px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Explore the New Network Share
 =============================
@@ -1517,11 +1372,7 @@ Open Windows explorer, scroll down to Network and click on it.  There's the new 
 
 *A few minutes may be required for the Windows Network to “Discover” the new server.  If users are using **Windows 10 PC's**, and the server and share do not appear, see this networking How To.*
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Now let's look at the server's new Samba share.  It's there and browsable.
 
@@ -1531,11 +1382,7 @@ Now let's look at the server's new Samba share.  It's there and browsable.
     :height: 415px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 This share is “writable” with a standard “Copy and Paste”, from a client PC.
 
@@ -1603,13 +1450,7 @@ Installing the Plugin
 The prerequisite for installing this plugin is the installation of OMVExtras.  If OMVExtras is not
 installed, it is required to proceed.
 
-
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
-
+----
 
 Under **System**, **Plugins**, scroll down to Section: **Filesystems**.
 
@@ -1621,11 +1462,7 @@ Select **openmediavualt-flashmemory** and click the **Install** button.
     :height: 412px
     :alt:
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Under **Storage**, **Flash Memory**, the following screen is now available.
 
@@ -1638,11 +1475,7 @@ Under **Storage**, **Flash Memory**, the following screen is now available.
 The plugin will work as is, but it will be more effective if the guidance under **Notes (optional)** is followed.
 While this guidance shows steps for nano, following are options with guidance that beginners may find easier to implement.
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Flash Memory Plugin – Editing /etc/fstab
 ----------------------------------------
@@ -1652,11 +1485,7 @@ There are two options for editing /etc/fstab
 * (Option 1) A Linux command line text editor
 * (Option 2) WinSCP and Windows Notepad can be used if WinSCP is installed
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Option 1: Editing /etc/fstab with nano
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1687,11 +1516,7 @@ Use **Ctrl+o** to save, then **Ctrl+x** to exit
 Reboot the server.
 On the command line, the following command can be used: ``reboot``
 
-.. image:: /new_user_guide/images/divider.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
+----
 
 Option 2: Editing /etc/fstab with WinSCP and Notepad
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -76,7 +76,7 @@ The error `Unable to install GRUB in /dev/sda` occurs.
 		# Chroot.
 		chroot /target
 		# Replace [a-z] with the drive you want to install grub to.
-		# This is normally the drive you've selected to install OpenMediaVault on.
+		# This is normally the drive you've selected to install |omv| on.
 		grub-install /dev/sd[a-z]
 		# Update GRUB.
 		update-grub

@@ -10,11 +10,13 @@ New User Guide
 
 In the interim, a complete copy of the User Guide is available → `here <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Getting_Started-OMV5.pdf>`_ .
 
+
 .. image:: /new_user_guide/images/divider-c.png
     :width: 400px
     :align: center
     :height: 75px
     :alt:
+
 
 .. image:: /new_user_guide/images/1_Title_page.jpg
     :width: 588px
@@ -299,7 +301,7 @@ and Video processing features may require some additional thought and research.
 Additional reading:
 `Intel Quick Sync versus similar AMD technology <https://www.macxdvd.com/mac-dvd-video-converter-how-to/what-is-intel-quick-sync-video.htm>`_
 
-----
+
 
 Selecting a Boot Drive
 ======================
@@ -729,6 +731,8 @@ A 3rd window asks for confirmation of partition selections. Select Yes.
 While the advice given in this screen is true, without testing, there's no way to know
 which Debian archive mirror is best. Without testing, picking your country or the closest
 location to your country would be the logical choice.
+
+----
 
 **Configure the Package Manager:  Debian Archive Mirror**
 
@@ -1400,12 +1404,6 @@ Congratulations!  You now have a functional NAS that can be expanded to accommod
     :height: 75px
     :alt:
 
-.. image:: /new_user_guide/images/divider-c.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
-
 ******************************************
 The Flash Memory Plugin - amd64 users only
 ******************************************
@@ -1538,3 +1536,77 @@ mouse click on **fstab**, select **Edit** and **Notepad**.
     :alt:
 
 Notepad will open the fstab file.
+
+----
+
+First: Find the root partition -  it's the line with  /  and insert **noatime,nodiratime,** after **ext4** and **one space** as shown.
+
+Second: Find the swap partition – it's the line with **swap** and insert a **#** at the beginning of the line as shown.
+
+.. image:: /new_user_guide/images/53_Edit_fstab3.jpg
+    :width: 750px
+    :align: center
+    :height: 542px
+    :alt:
+
+| Do **File**, **Save**.  Close Notepad.
+| Exit WinSCP.
+| Reboot the server, from the GUI.  
+
+**Done**
+
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+*************************
+Final Installation Notes:
+*************************
+
+
+1. Permissions to the shared folder created in this guide, and the SMB network share layered on top of it, are completely open.  While these permission settings are OK for home environments, the server should not be exposed to the Internet by forwarding port 80 or 443.  As users gain knowledge and experience, they should consider tightening up permissions on the underlying Shared Folders and SMB/CIFS network shares.
+
+2. **Important:**  Put your new server on a good surge suppression power strip, at the absolute minimum. An UPS system is preferred and is best practice.  In consumer electronics, the majority of failures are related to power supplies and adverse conditions created by line power.  The prime causes of power issues and failures are short duration surges, high voltage spikes, brown-outs, and sustained over-volt or under-volt conditions.  A good UPS system is designed to counteract these problems.  Further, the file system on the boot drive is at risk of corruption from sudden (dirty) shutdowns due to power loss.  An UPS minimizes these risks. 
+
+
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+***************************************
+Utilities to Help With |omv| Management
+***************************************
+
+Being able to work from the command line would be very useful to users, 
+who may need to gather detailed information on the OS and platform 
+hardware, for troubleshooting and for an occasional edit to a 
+configuration file.  Much can be learned with the following utilities 
+that allow users to look at OMV “under the hood”.
+
+----
+
+WinSCP
+======
+
+WinSCP allows users, beginners and experienced alike, to visualize the Linux file structure in a manner similar to Windows Explorer.  WinSCP installs on a Window Client and connects to Linux servers, allowing users to work with their server remotely. 
+
+One of the more useful features of WinSCP is that it gives users the ability to edit Linux configuration files with a familiar editor like Notepad.  For experienced Linux Desktop users who would like to use WinSCP, it will run from WINE (in Linux Mint, Ubuntu and others)
+
+WinSCP can be downloaded here. → `WinSCP <https://winscp.net/eng/download.php>`_ 
+
+----
+
+Installing WinSCP
+-----------------
+
+During the installation process, if prompted, select the **Explorer Interface**.  
+This display shows the remote file system only.  If the Explorer Interface is 
+not offered it can be selected, after the installation, under View, 
+**Preferences**, **Environment**, **Interface**.
+
+----
+

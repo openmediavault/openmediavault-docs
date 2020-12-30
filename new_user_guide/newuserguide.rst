@@ -1798,9 +1798,9 @@ Backing Up Data
 
 
 .. image:: /new_user_guide/images/60_1rst_level_backup.jpg
-    :width: 400px
+    :width: 523px
     :align: center
-    :height: 335px
+    :height: 450px
     :alt:
 
 The scenario depicted in this graphic represents true backup.  There are two full copies of data.  

@@ -1811,5 +1811,152 @@ business use cases for a couple reasons.
 
 * If there's a drive error, an accidental deletion, a virus, or other data related issue; in RAID1 the effects are instantly replicated to the second drive.  With Rsync, both drives are independent and, in most cases, the second disk will be available after the source disk fails.  In any case, the Rsync replication interval allows time for admin intervention before the second disk is affected.  
 
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+***************************************
+Full Disk Mirroring / Backup with Rsync
+***************************************
+
+While individual shared folders can be replicated using Services, Rsync, a more efficient approach is using an Rsync Command line, in a scheduled job, under System, Scheduled Jobs to mirror a drive.  This method allows for replicating the file and folder contents of an entire data drive, to an external drive or a second internal drive of adequate size.  
+
+* To implement something similar to the following example; it's necessary to add and mount a destination drive, in accordance with the section labeled A Basic Data Drive. 
+* When formatted, the hard drives used in this example were labeled to indicate their function. 
+**This is a good practice that will help new users to easily identify drives and avoid admin mistakes.**
+* Dissimilar sized drives can be used, provide that the destination drive is large enough to hold the source drive's data.
+
+----
+
+The following Rsync command line is an example of how a data drive can be mirrored onto a second drive.
+
+``rsync -av --delete /srv/dev-disk-by-label-DATA/ /srv/dev-disk-by-label-RSYNC/``
+
+The source drive is on the left (ending with **DATA**) and the destination is on the right (ending with **RSYNC**).  In 
+this example, the entire contents of dev-disk-by-label-**DATA** would be copied to dev-disk-by-label-**RSYNC**
+
+The switches are:
+
+**-a  Archive Mode**.  Archive mode adds an array of options to an Rsync command. It's the equivalent of switches -r -l -p -t -g -o and -D which copies files and folders recursively, copies links and devices, preserves permissions, groups, owners and file time stamps.
+
+**-v  Increase Verbosity**.  This can be useful when examining Rsync command output or log files.
+
+**--delete    Deletes files in the destination drive that are not in the source**.  If accidental 
+deletion protection is desired, this switch could be left out of the command line.  However, from 
+time to time, it would necessary to be temporarily re-added the **--delete switch** to purge 
+previously deleted and unwanted files from the destination drive.
+
+----
+
+To find the appropriate Rsync command line entries for the user's server, under **Storage**, **File Systems** 
+click on **down arrow** at the top right edge of a column.  On the pop down menu, select **Columns** and check 
+the **Mount Point** box.
+
+Under the **Mount Point** column (red boxes) are the full paths needed for the source drive 
+(in this example **/srv/dev-disk-by-label-DATA**) and the destination drive 
+(in this example **/srv/dev-disk-by-label-RSYNC**).
+
+.. image:: /new_user_guide/images/61_rsync.jpg
+    :width: 1094px
+    :align: center
+    :height: 525px
+    :alt:
+
+To construct the appropriate command line, add a slash “/” after each drive path, in the full 
+command line as follows:
+
+``rsync -av --delete /srv/dev-disk-by-label-DATA``**/** ``/srv/dev-disk-by-label-RSYNC``**/**
+
+.. warning:: **Beginners Warning, Note and Sanity Check**
+*  Getting the source (left) and destination (right) in the correct order, in the command line, is **CRUCIAL**.  If they're accidentally *reversed*, the **empty** source drive will delete all data on the **destination** drive.  
+*  The safest option would be to leave the switch **--delete** out of the command line until it confirmed that two full copies exist.
+
+----
+
+As previously mentioned, this Rsync operation can be manually run or automated under:
+**System**, **Scheduled Jobs**, as shown in the illustration.  Copy and paste the Rsync command 
+line into the command box and select scheduling parameters as desired.
+
+.. image:: /new_user_guide/images/62_rsync2.jpg
+    :width: 833px
+    :align: center
+    :height: 589px
+    :alt:
+
+User Options for Backup:
+
+* **Automated:**
+
+As configured above, and **ENABLED** (green), this Scheduled Job will run the Rsync command 
+line once a week, on Monday, at 05:00AM.  After the first run of the command, which may 
+take an extended period to complete, a week or more would be a good backup interval.  Generally 
+speaking, the backup interval should be long enough to allow for the discovery of a data 
+disaster (drive failure, a virus, accidentally deleted files, etc.), with some time to 
+intervene before the next automated backup replicates the problem to the 2nd drive.  This is 
+also a drawback of using automation; if data loss or corruption is not noticed by the user, 
+those problems will be replicated to the back up drive during the next Rsync event.  Longer 
+automated backup intervals, such as two weeks or even a month, allow more time to discover issues 
+and disable replication.
+
+* **Manual Run:**
+
+If the job is **disabled** (the **ENABLED** toggle switch is gray), the job won't run automatically. 
+However, the job can be run manually, at any time, by clicking on the job and the Run button.  
+This may be the best option for users who do not check their server regularly.
+
+* Delete Protection:
+
+Removing the **--delete** switch from the command adds delete protection, and may allow the retrieval 
+of files accidentally deleted from the source drive.  As previously noted, to clean up the 
+destination drive of intentionally deleted and unwanted files, the --delete switch could be manually 
+entered into the command line, from time to time, as may be deemed necessary. 
+
+**Keep in mind:  In the event of a failing or failed data drive it is crucial that the drive-to-drive Rsync job – if automated – is turned OFF.  Similarly, after noting a problem, do not run the job manually.** \
+
+The Bottom Line:
+
+The additional cost for full data backup using Rsync is the cost of an external drive, or an 
+additional internal drive, of adequate size. For the insurance provided, the additional cost is very 
+reasonable. 
+
+----
+
+Recovery from a Data Drive failure - Using an Rsync'ed backup
+=============================================================
+
+General:
+--------
+
+*Again, as a reminder, when the NAS primary drive is failing or has failed, it's crucial to 
+turn **OFF** an automated drive-to-drive Rsync command line.*
+
+
+Restoration Without a Replacement Drive:
+----------------------------------------
+
+Without a replacement drive on site, which would be the most likely case for most home users 
+and small businesses, the backup Rsync'ed “destination” disk can become the data source for 
+network shares.  This involves repointing existing shared folders, from the old drive location, 
+to the backup drive.  All simple services layered on top of the shared folder, to include 
+SMB/CIF shares and other shared folder services, will follow the shared folder to the new 
+location on the back up drive.
+
+Repointing a Shared Folder:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In the following example, the data drive has failed and it's been determined that it's not 
+repairable.  Under **Storage**, **File Systems** we have a **missing** source drive (labeled DATA) that's 
+**referenced**.
+
+.. image:: /new_user_guide/images/63_rsync_recover.jpg
+    :width: 960px
+    :align: center
+    :height: 347px
+    :alt:
+
+.. note::  There may be **Error** dialog boxes regarding the failed mount of existing shared folders.  With a missing and referenced drive, this is to be expected.
+
 ----
 

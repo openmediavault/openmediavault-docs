@@ -1800,7 +1800,7 @@ Backing Up Data
 .. image:: /new_user_guide/images/60_1rst_level_backup.jpg
     :width: 400px
     :align: center
-    :height: 75px
+    :height: 335px
     :alt:
 
 The scenario depicted in this graphic represents true backup.  There are two full copies of data.  

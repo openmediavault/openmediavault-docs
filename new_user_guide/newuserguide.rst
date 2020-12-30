@@ -1610,3 +1610,206 @@ not offered it can be selected, after the installation, under View,
 
 ----
 
+On the first run, the login screen is presented.  Click on **New Site** and type in the **IP address** of the new server.
+
+Click on **Save**.
+
+.. image:: /new_user_guide/images/54_WinSCP.jpg
+    :width: 515px
+    :align: center
+    :height: 349px
+    :alt:
+
+----
+
+In Site name: The server's IP address is displayed.  Optionally, the site name can be changed.  If using WinSCP for a single server, a desktop short cut may be useful.  Click on **OK**.
+
+
+.. image:: /new_user_guide/images/55_WinSCP2.jpg
+    :width: 416px
+    :align: center
+    :height: 269px
+    :alt:
+
+----
+
+The **login screen** will come back.  Double click on the new site name.  The following is normal for the first SSH connection to any client or server. Click **Yes**. 
+
+.. image:: /new_user_guide/images/56_WinSCP3.jpg
+    :width: 496px
+    :align: center
+    :height: 286px
+    :alt:
+
+The first prompt is for the username.  Enter ``root``
+
+The second prompt is for the root password.  Enter the root ``password``.
+
+.. note::  R-PI users would enter the user ``pi`` and the pi ``password`` or a previously added user with admin privileges.  Due to the restrictions of a non-root “sudo” environment, WinSCP will be restricted from root functions.  This restriction can be mitigated, but it's beyond the scope of this guide.  
+
+The following link may of assistance:  Connect as root (sudo) using WINSCP **
+
+----
+
+WinSCP opens with a two pane window. Selections are made in the left 
+pane; operations are done on the right.  The folder srv was selected on the 
+left.  **dev-disk-by-label-DATA** was highlighted on the right.  A right 
+click of the mouse brings up an operations menu.  **Properties** was 
+selected.  In this particular popup,  permissions could be changed.  
+(Without backup, this is NOT a recommended action for beginners.  Backup 
+is covered later.) 
+
+.. image:: /new_user_guide/images/57_WinSCP4.jpg
+    :width: 686px
+    :align: center
+    :height: 678px
+    :alt:
+
+In a similar manner, a configuration file can be highlighted in the 
+right pane.  A right click of the mouse brings up the menu, select **EDIT** 
+and Windows notepad, or the internal editor can be used for editing 
+configuration files.  Either choice is much easier than using **nano** or 
+**vi** on the Linux command line.
+
+While they can be done in WinSCP, very large file copies, moves, or deletes 
+are best done using Midnight Commander.
+
+----
+
+PuTTY
+=====
+
+PuTTY is similar to a Window's command prompt, but it allows users to 
+work on OMV's command line from a remote PC.   If PuTTY was not 
+installed as part of your installation process, install it on a Windows 
+PC.  It's available here. → `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_
+
+Using PuTTY is as simple as typing in the server's IP address in the 
+**Host Name** field and clicking on open.  There will be a warning for a 
+first time connection – click **OK**.  Then, login on the command line.
+
+.. image:: /new_user_guide/images/58_PuTTY.jpg
+    :width: 591px
+    :align: center
+    :height: 521px
+    :alt:
+
+----
+
+MC (Midnight Commander)
+=======================
+
+Midnight Commander is a command line file utility that utilizes a very 
+cleverly created graphical environment.  It's very useful for 
+navigating through OMV's directory structure.  It excels in efficient 
+copying, moving, and deleting folders and files.
+
+The installation process:
+
+* Use PuTTY to get to OMV's command line.
+* Log in as ``root``.
+* On the command line type the following;  ``apt-get install mc``
+* When prompted continue with “``Y``”
+(R-PI users will log in as ``pi`` and use ``sudo apt-get install mc``)
+
+When the installation finishes, on the command line, type ``mc``
+
+Midnight Command is a two pane window where the source is the left pane 
+and the destination is the right pane.  Copies and moves are done, left 
+to right.  Since it's possible to navigate to any location on the OMV 
+host, in either pane, the source and destination can be set for any 
+location.
+
+A mouse works in MC.  Click on the various menu items at the top and 
+bottom, to select them. Similarly, files or folders can be selected by 
+clicking on them.  To level up, click on the ``/..`` at the top left of 
+either window.  
+
+.. image:: /new_user_guide/images/59_mc.jpg
+    :width: 841px
+    :align: center
+    :height: 525px
+    :alt:
+
+.. warning::  Beginners - Midnight Commander is powerful and potentially dangerous.  MC does not have “Undo”.  A careless operation on the boot drive, such as accidental file “Move” or “Delete”, can ruin your installation.
+
+Work with MC carefully and before doing anything extensive with it, the appropriate backups are recommended.  Operating System Backup – Data Backup.
+
+----
+
+Win32DiskImager
+===============
+
+Win32DiskImager is a utility that's designed to write raw image files to SD-cards and 
+USB drives.  What makes it stand out from similar utilities is that it can “read” a flash 
+drive and create an image file from the contents of the device.  If users decide to use an 
+SD-card or a USB thumb-drive as a boot drive; the ability to read flash media devices makes 
+`Win32DiskImager <https://sourceforge.net/projects/win32diskimager/>`_  useful for cloning 
+flash boot drives. 
+
+Details for using Win32DiskImager are found in Operating System Backup, under  Cloning Flash Media.
+
+----
+
+Virtual Box
+===========
+
+Virtual Box is a cross platform virtualization platform that will work with both servers and 
+clients.  For learning about OMV, there simply is no better tool than working with an OMV Virtual 
+Machine (VM).  An OMV VM can be built, configured, and put on the local network complete with shares, 
+in the same manner as real hardware.  VM's can be created, cloned, used for test beds, and destroyed 
+without consequence.  Many advanced OMV users fully test upgrades, Docker's, plugin's, server add-ons 
+and changes in configuration, in OMV VM's before upgrading or reconfiguring their real-world servers.
+
+If users have a Windows client with at least 6GB RAM and plenty of hard disk space, installing Virtual 
+Box is highly recommended. → `Virtual Box <https://www.virtualbox.org/>`_ 
+
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+***************************
+Backups and Backup-strategy
+***************************
+
+It's important to understand the concept of backup and why backup is important.  In understanding the 
+concept of backup, an automotive analogy may be helpful.  
+
+If one has a car and that car has a spare tire, is the “car” backed up?  The answer is “No”.  There 
+are a great number of things that can happen to a car that can disable it, until parts are replaced 
+or the car is otherwise repaired.  These items would include the battery, alternator, any component 
+of the ignition system, the transmission, the cooling system, etc., etc.  To backup the car, **a second 
+car is needed**.  This is why using RAID of any type is not backup.  At best RAID could be thought of 
+as a “spare tire” for a PC.
+
+Where the automotive analogy fails, generally speaking, is that when a car fails it can be repaired.  
+In computing, if a user's personal data is lost without backup, it's permanently lost.  There are 
+many possible events where data may be corrupted beyond recovery (viruses, ransomware) or is 
+completely lost due to drive failures, a failing drive controller, or other hardware failures.   This 
+is why real data back up is far more important than the computing equivalent of a spare tire (RAID).
+
+----
+
+Backing Up Data
+===============
+
+
+
+.. image:: /new_user_guide/images/60_1rst_level_backup.jpg
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+The scenario depicted in this graphic represents true backup.  There are two full copies of data.  
+With two separate copies, this backup strategy is superior to traditional RAID1 for home or small 
+business use cases for a couple reasons.
+
+* Rsync can be used with most USB connected hard drives where RAID1, when used with USB connected drives, is notably unreliable.
+
+* If there's a drive error, an accidental deletion, a virus, or other data related issue; in RAID1 the effects are instantly replicated to the second drive.  With Rsync, both drives are independent and, in most cases, the second disk will be available after the source disk fails.  In any case, the Rsync replication interval allows time for admin intervention before the second disk is affected.  
+
+----
+

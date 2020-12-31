@@ -1555,6 +1555,8 @@ Second: Find the swap partition – it's the line with **swap** and insert a **#
 
 **Done**
 
+.. note::  In the latest version of the Flash Memory plugin, there are extended instructions that go beyond editing etc/fstab.  Those instructions apply to mdadm RAID and are NOT for beginners.
+
 .. image:: /new_user_guide/images/divider-c.png
     :width: 400px
     :align: center
@@ -1906,14 +1908,15 @@ If the job is **disabled** (the **ENABLED** toggle switch is gray), the job won'
 However, the job can be run manually, at any time, by clicking on the job and the Run button.  
 This may be the best option for users who do not check their server regularly.
 
-* Delete Protection:
+* **Delete Protection:**
 
 Removing the **--delete** switch from the command adds delete protection, and may allow the retrieval 
 of files accidentally deleted from the source drive.  As previously noted, to clean up the 
 destination drive of intentionally deleted and unwanted files, the --delete switch could be manually 
 entered into the command line, from time to time, as may be deemed necessary. 
 
-**Keep in mind:  In the event of a failing or failed data drive it is crucial that the drive-to-drive Rsync job – if automated – is turned OFF.  Similarly, after noting a problem, do not run the job manually.** \
+**Keep in mind**:  In the event of a failing or failed data drive it is **crucial** that the 
+drive-to-drive Rsync job is turned **OFF**, if automated.  Similarly, after noting a problem, DO NOT run the job manually.** \
 
 The Bottom Line:
 
@@ -1956,7 +1959,70 @@ repairable.  Under **Storage**, **File Systems** we have a **missing** source dr
     :height: 347px
     :alt:
 
-.. note::  There may be **Error** dialog boxes regarding the failed mount of existing shared folders.  With a missing and referenced drive, this is to be expected.
+.. note::  There may be ERROR dialog boxes regarding the failed mount of existing shared folders.  With a missing but referenced drive, this is to be expected.  When all shares are redirected, these error messages will stop.
 
 ----
+
+The actual references to the failed DATA drive are the **Shared Folders** assigned to the drive, 
+named **Documents** and **Music** as follows:
+
+.. image:: /new_user_guide/images/64_rsync_recover2.jpg
+    :width: 960px
+    :align: center
+    :height: 347px
+    :alt:
+
+Since the DATA drive no longer exists and there's an *exact duplicate* of all folders and files on the 
+backup drive, we'll repoint the shared folder named **Documents** to the RSYNC backup.  Click on the 
+**Documents** Shared Folder, above, and the **Edit** button.
+
+----
+
+In the **Edit Shared Folder** Dialog Box, click the **drop down button** on the **Device** Line and select the 
+destination / backup drive.  (In this example the drive with **RSYNC** in the label is the backup.)  A 
+confirmation dialog box will prompt **“Do you really want to relocate the shared folder?”**  
+Click “**Yes**” and “**Save**”.
+
+(Remember that *all* contents of the now missing source drive and the destination drive were *identical* 
+as of the last backup, to include the path statement.  Changes are not necessary.  Repointing the 
+share is just a matter of selecting **the backup drive**.)
+
+.. image:: /new_user_guide/images/65_rsync_recover3.jpg
+    :width: 638px
+    :align: center
+    :height: 440px
+    :alt:
+
+Click on **Save**, confirm the change, and it's done.
+
+Do the same process for all remaining Shared Folders.  (In this example, Music was repointed as well, 
+but not shown.)  Again, error dialog boxes may appear during the process.  Acknowledge them (with **OK**)  
+but do not revert, or back out of change confirmations.  When all Shared Folders are redirected to the 
+backup drive and saved, the error dialog boxes will end.
+
+----
+
+In the final result:
+
+With one operation per shared folder, all shared folders have been redirected to the backup drive 
+labeled RSYNC.
+
+.. image:: /new_user_guide/images/66_rsync_recover4.jpg
+    :width: 638px
+    :align: center
+    :height: 440px
+    :alt:
+
+----
+
+In this case there were SMB network shares layered on top of the Shared Folders above.  The SMB 
+network shares followed their associated Shared Folders, without additional configuration, so SMB 
+shares are up and running on the Network.
+
+.. image:: /new_user_guide/images/67_rsync_recover5.jpg
+    :width: 638px
+    :align: center
+    :height: 440px
+    :alt:
+
 

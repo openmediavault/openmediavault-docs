@@ -2025,4 +2025,270 @@ shares are up and running on the Network.
     :height: 440px
     :alt:
 
+In addition, most simple services that are applied to these shared folders, would follow 
+the shared folder when it is repointed to the backup drive.
+
+----
+
+One last operation is needed to completely remove the failed DATA drive.  Go to **Storage**, 
+**File Systems** and note that missing drive DATA is no longer referenced.  When clicking on the 
+failed drive, the **Delete** button is now active.   **Delete** the drive.
+
+.. image:: /new_user_guide/images/68_rsync_recover6.jpg
+    :width: 638px
+    :align: center
+    :height: 440px
+    :alt:
+
+At this point, all shares in this example have been successfully redirected to the backup drive 
+and the server is fully functional again.
+
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+**************************************************
+Second Level Backup – Replication to a Second Host
+**************************************************
+
+.. image:: /new_user_guide/images/69_rsync_2L_backup.jpg
+    :width: 1115px
+    :align: center
+    :height: 532px
+    :alt:
+
+The first item to note, is that this scenario can be accomplished using a LAN client, as the second 
+host, and it could be a Windows client.  The additional cost would be the price of a second drive of 
+sufficient size (internal or external) to house the second copy of data, attached to a remote host.  
+The Remote Mount Plugin can mount a Windows network share (a user name and password with write access 
+is required) and Rsync can be configured to replicate NAS data to the Windows share.
+
+As illustrated above, the second host could be a low cost SBC.  This scenario can be designed with a 
+number of desirable features.
+
+* First, if backing-up to a second server platform, two fully independent copies of data are possible.
+* When using an SBC with OMV installed:
+
+If the primary server failed completely, the second platform can be configured to take over as a backup file server.  With all data backed up and resident on the SBC, this data can be made available to the network with SMB shares.
+
+* Other than re-homing clients to the shares on the backup device, there's no recovery time and no “crisis” involved in getting data back on-line.  It's already there.
+
+The costs for this level of backup are very reasonable, with the cost of a hard drive of adequate size 
+and an SBC.  Good performing SBC's are available for $50 USD or less.  Older PC platforms or laptops 
+could be configured as a backup server as well. 
+
+----
+
+As an illustration of the backup server concept, the following is a File explorer example of an OMV 
+NAS server and an SBC used for backing-up the main server's files.
+
+.. image:: /new_user_guide/images/69_rsync_2L_backup2.jpg
+    :width: 638px
+    :align: center
+    :height: 440px
+    :alt:
+
+This particular R-PI (OMV-RPI) is replicating all of the data shares of the OMV-SERVER and is 
+re-sharing the same data to the network.  Again, Rsync replication jobs of individual shares can be 
+scheduled as desired, or triggered manually.
+
+** The Practical details for setting up Primary Server to Backup Server share replication, using Remote Mount and Local Rsync Jobs will be covered in future documentation.**
+
+----
+
+While replication to an independent host is an excellent method of avoiding data loss catastrophes, 
+there are other potential events which can threaten irreplaceable data.  Fires, roof or plumbing leaks 
+and other unforeseen events can result in the loss of data, even on two independent hosts.  For these 
+reasons, backup professionals and experienced server administrators recommend an off-site copy.  While 
+this may seem extreme, it's actually fairly easy to accomplish.  It can be done with an SBC or an old 
+laptop, connected wirelessly, and housed in a utility shed with AC power.  Some users set up a backup 
+host in a family members' house, and replicate changed data over the internet.  
+
+In the bottom line, if users want to keep their irreplaceable data, an absolute minimum of two full 
+copies is recommended, with a 3rd off-site copy preferred.  As previously noted, effective backup 
+strategies do not have to be expensive and are relatively easy to set up.  
+
+For further information on Backup concepts and best practices, an excellent explanation of Backup is 
+provided by  `Backblaze.com <https://www.backblaze.com/blog/the-3-2-1-backup-strategy/>`_ .
+
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+************************
+Operating System Backup:
+************************
+
+By design, the OMV/Debian operating system installs on its own partition, segregated from data.  This 
+makes copying or cloning the OMV boot/OS drive an easy process.  So, one might ask, why is a clone or a 
+copy of the operating system important?
+
+Building OMV, from scratch, using the installer ISO is a 15-minute proposition, give or take. While it 
+takes longer, roughly 45 minutes to an hour, the actual hands-on portion of an SBC build is even less.  
+
+As users configure their servers, add services, reconfigure shares, move their data around, tweak 
+access controls, etc., servers tend to become “works in progress”. Configuring a server to the user's 
+preferences can be an evolution that may take weeks or even months.  If a complete server rebuild is 
+required, the customization, add-ons, and the collection of various user tweaks may take several hours 
+to recreate.  It is this time and effort that Operating System Backup will preserve.
+
+There are several ways to duplicate an operating system boot drive, but many can be technically 
+involved; requiring network access to remote servers, bootable utilities and somewhat complex processes.
+
+Given the low cost of flash media and with sockets mounted on the outside of a PC case, SD-cards and 
+USB thumb-drives lend themselves to cloning and very quick recovery.
+
+----
+
+The Benefits of Maintaining Operating System Backup
+===================================================
+
+In accordance with `“Murphy's Law” <http://murphys-laws.com/murphy/murphy-laws.html>`_, users may 
+encounter issues where things go wrong.  As examples, users may test software on their active server 
+or try new settings. On occasion, installing an add-on may have unintended consequences.  Trying new 
+settings or working on the command line, may break OMV in a way that might not be recoverable.  In 
+other cases, there may be instances where a software update goes south – the source repository may 
+go off-line in the middle of an update resulting in broken packages.
+
+In all of these cases, having a confirmed working clone of the boot drive will allow users to “drop 
+back” to a known good state.  The “FIX” would be as simple as shutting down and booting the server on 
+a known working clone.
+
+The advantages of maintaining operating system backup are obvious.  Beginners, with very little 
+knowledge of Linux, can work with their servers without fear, which facilitates learning.  If a Linux 
+update causes ill effects, it's possible to drop back and selectively install packages to isolate the 
+exact cause of the problem.  If an add-on update doesn't work (direct installed software, a plugin, 
+Docker, etc.), the user can gracefully back out of the update and leave the older (but working) 
+software package in place.
+
+It's the easiest, quickest, and most effective fix, for resolving problems with OMV and the underlying 
+Debian Operating System.
+
+**The practical issues of maintaining boot drive clones – when to update and rotate?**
+
+1. It makes sense to apply Linux Operating System updates and wait a week or so, to insure that all is 
+working and that there are no ill effects.  If all is well, update the backup and rotate.
+
+2. The above would also apply to add-on packages, Docker, or plugin upgrades. (Plex, Urbackup, Pi-Hole, 
+etc.)
+
+3. If a network share is added, deleted, or any aspect of the NAS is reconfigured that changes the 
+operation of the NAS; the backup would need to be updated.  (Otherwise, the configuration of the 
+previously cloned boot drive would not mesh with the configuration and contents of data storage drives.)
+
+4. If a cloning mistake is made (let's respect Murphy's Law), a 3rd clone could become a “fallback of 
+last resort”.  Given that Linux package upgrades and OMV sub-version upgrades have little to no effect 
+on network shares or the high level configuration of the NAS, a 3rd clone can be maintained that is 
+updated only when the NAS configuration is changed.
+
+----
+
+A Last Important Note About Backing Up your OS
+----------------------------------------------
+
+Just as it is in the commercial world, where support for a product may be discontinued, the open source 
+community is constantly moving forward as well.
+
+Users may believe that an ISO file, or image, contains all the software needed for a build.  In some 
+current build cases, that assumption would be incorrect.  Linux distro's, during the initial build and 
+to finalize the installation, may depend on on-line software repositories.  After the installation is 
+complete, patches and updates may be applied which rely on on-line repositories as well.
+
+Can it be assumed that those same software repositories and resources will be available on some future 
+date, exactly as they were at the time of a current build?  The answer is “No”.  Distributions of a 
+specific Linux version, complete with specific applications, fully patched and updated, can be built 
+for a **limited time**.
+
+Therefore, if users have extensively configured builds, are using specialty hardware (such as SBC's) or 
+are using OMV to serve a critical function; it would be wise to backup the boot drive to an image file, 
+or Clone the fully configured working installation to separate media, and save one or more copies for 
+future use.
+
+----
+
+Cloning Flash Media
+===================
+
+To avoid issues that can result from dissimilar sizes, it's best to clone images from/to identical 
+SD-cards or USB thumb-drives.  Otherwise, it's easier to clone if a new drive is slightly larger than 
+the working drive.
+
+(And while it's an advanced technique, `Gparted <https://gparted.org/livecd.php>`_ can be used to slightly shrink flash drive partitions, 
+to fit on the smaller of the two flash drives.)
+
+**The Cloning Process for USB thumbdrives and SD-Cards**
+
+* Install `Win32Diskimager <https://sourceforge.net/projects/win32diskimager/>`_ on a Windows PC.
+* Format the new SD-Card or USB thumb-drive with `SDFormatter <https://www.sdcard.org/downloads/formatter_4/eula_windows/index.html>`_
+* Test the new card or USB drive with h2testw1.4 `h2testw1.4 <http://www.heise.de/ct/Redaktion/bo/downloads/h2testw_1.4.zip>`_,   One test is enough.  (Do not select endless verify.)  
+
+If the device registers errors, or if the capacity is significantly different from what is that's 
+marked on the label (a fake), return it for refund or throw it away.
+
+**At this point you should consider marking your working SD-card (with permanent marker?) to make sure you don't mix it up with the blank card. Otherwise, it is possible to read a “blank card” and use the blank image to "overwrite" the working card.**
+
+* Insert the working card and start Win32Diskimager
+
+**SANITY Check**, make sure you inserted your working SD-card / USB thumb-drive at this point.
+
+**Note:**  Windows will not be able to read the format of the partitions on the working boot drive and 
+offer to format it for you.  **DO NOT** format the drive.  Close the dialog box with the **X**. 
+
+* In most instances, Win32Diskimager will detect USB thumb-drives and SD-cards, and set the Device drive letter.  However, it would be prudent to check the letter Windows assigns to the drive with Windows Explorer.
+
+* First click on the folder ICON and navigate to the location where you'll store your image file. Type a name in the file line. (OMV-RPI2.img was used for this example, but users can add a date to the name as well, such as OMV-RPI2-04-30-2018.img)
+
+* Check the box for “**Read Only Allocated Partition**”.  (With larger drives, this option avoids imaging unused space which saves significant time when reading a drive to a new image and, later, when writing the image to another drive.)
+
+* Click **Read**.
+
+
+.. image:: /new_user_guide/images/70_OS_backup.jpg
+    :width: 494px
+    :align: center
+    :height: 337px
+    :alt:
+
+When the **read** is done, this is **crucial**, click the **Verify Only** button. This will compare 
+the image file just created, to the boot drive.  **DO NOT SKIP Verification**.  (Win32Diskimager has a 
+known bug which may affect a very small number of use cases.)
+
+* If verification passes, pull the working boot drive and store it close by.  If verification FAILS, the image file is corrupt and cannot be used.
+
+**If the user/admin is running a business or is in another time sensitive scenario, where the NAS server can not be out of service for an extended period; the server can be booted on the source drive while the clone is being written.  Thereafter, the drive swap could be accomplished during a low use period.**
+
+While the resultant image file may be quite large, if the file is retained, it can be used to write 
+another thumbdrive at a later date.  In such a case, the image file itself can be saved as a dated 
+backup and archived.  The size of the image can be reduced significantly, by using 7zip to compress 
+it before storage.
+
+* Insert the new flash drive and start Etcher.  (Etcher typically detects flash drives as well.)
+
+* Select the image file previously created, verify the destination flash media drive, and click the FLASH! button.
+
+One of Etcher's features is that it writes the image and verifies it in a single operation.  If the 
+operation is successful, the working boot drive has been cloned.  Insert the new clone into the server 
+and boot it up.  With a successful boot up on the clone, user/admin's will have two verified copies 
+of their server's boot drive. 
+
+**Note** – Win32diskimager will write an SD-Card or USB drive, but verification is required and it's 
+a second operation.  Etcher combines the write and verification in a single process.  If users walk 
+away, during the write operation, which can take a long of time, Etcher is the best choice for writing 
+flash media. 
+
+----
+
+
+
+
+
+
+
+
+
+
 

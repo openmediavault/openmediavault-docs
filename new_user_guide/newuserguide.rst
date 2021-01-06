@@ -2280,15 +2280,161 @@ a second operation.  Etcher combines the write and verification in a single proc
 away, during the write operation, which can take a long of time, Etcher is the best choice for writing 
 flash media. 
 
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+******************************************
+Add-on's – Adding Value to Your OMV server
+******************************************
+
+General
+=======
+
+The OMV `OMV Forum <https://forum.openmediavault.org/index.php/BoardList/>`_ has an extensive 
+`Guides <https://forum.openmediavault.org/index.php/Board/29-Guides/>`_ section.  Whether a user's 
+preference is videos or printed text, there's something for everyone among the numerous “How-To's”.  
+Beginners and Advanced users alike should take a few minutes to familiarize themselves with the 
+content in the Guides section of the Forum.
+
+
+OMV's Plugin's
+==============
+
+OMV has numerous plugin's.  Some are integrated into the base package by OMV's developer Volker 
+Theile.  Examples are iSCSItarget, usbbackup, among others.
+
+Still more were created by OMV plugin developers, such as Remote Mount, the flash-memory plug-in, 
+backup plugins, and more.  
+
+Many plugins are integrations of third party packages such as SNAPRAID, MergerFS, etc.  While 
+questions or issues regarding the integration of plugin's, into OMV, are of interest to OMV's 
+developers, questions on the operation of plugin's are best directed to the application's supporting 
+web site.
+
+
+Dockers - General
+=================
+
+While Dockers are an avenue toward adding *extensive* functionality to OMV, they are an advanced topic 
+that may prove to be frustrating for beginners.  To get started, beginners should consider installing 
+Docker, then  Portainer, as found under System, OMV-Extras.  While it's command line oriented, this 
+`Docker Tutorial <https://docker-curriculum.com/>`_ is very helpful for understanding basic concepts.  
+User authored `Docker - How To's <https://forum.openmediavault.org/index.php/Board/29-Guides/>`_ can be 
+found on the OMV forum.
+
+
+So, What is a “Docker”?
+-----------------------
+
+Dockers are a type of Virtual Machine (VM) that share the Linux kernel and memory spaces with the 
+host.  A Docker is spawned from a Docker image.  The resultant VM equivalent, that's built from a 
+Docker image, is referred to as a “container”.  A container is fully self-sufficient, bare-bones, 
+Linux operating system.  The idea behind a Docker image is to create a Linux installation, that is 
+as small and as lean as possible, that includes all necessary dependencies required to run the 
+Docker application and nothing more.  Since these containers tend to be very small, they can 
+be constructed and destroyed in rapidly.  (After downloading, usually, in a matter of seconds.)
+
+Dockers are more resource efficient when compared to running a full VM in a hypervisor, due to 
+direct allocation of hardware resources.  Typically, VM hypervisors provision fixed blocks of memory 
+and may require access to dedicated hard disk space or block device partitions. Whether these 
+dedicated resources are used by the VM or not, they're no longer available to the Host operating 
+system or other VM's.  A Docker, on the other hand, uses the needed memory space to run its processes 
+and the host's hard drive for storage, without wasted resources.  Resource management is lean and 
+tight, allowing more Docker containers to run concurrently with much greater efficiency.
+
 ----
 
+Installing Docker
+-----------------
 
+Installing OMV-Extras is a prerequisite to installing Docker.
 
+----
 
+Under **System**, **OMV-Extras**, select the **Docker** tab. 
 
+**Before installing Docker**, take note of the Docker Storage location.   **/var/lib/docker** is on the 
+**boot drive**.  This location is not an issue for hard drives and SSD's of medium capacity 
+(notionally, 128GB or larger.)  However, when using flash media to boot (8 to 32GB), the boot drive 
+is not a good location for media servers or downloader type Dockers.  There are two possible solutions:
 
+* The easiest solution is to change the Docker Storage path to a data drive.  If the default path is 
+changed, downloader output and metadata created by media servers (Plex and others) will be stored on 
+a data drive by default.
 
+* A more advanced solution would be to leave the default storage location in place (var/lib/docker) 
+and configure the Downloaders and media servers to store their output and metadata on a data drive, 
+but this requires individual configuration of each Docker.
 
+.. image:: /new_user_guide/images/71_Docker.jpg
+    :width: 677px
+    :align: center
+    :height: 483px
+    :alt:
+
+To install Docker, click the **Docker Button** and select **Install**.
+
+An install dialog box will popup and scroll as files are downloaded and installed.  At the end, **Done** 
+will be displayed.  Click the **Close** button.
+
+The **Status** line will report: **Installed and running**.
+
+----
+
+Installing Portainer
+^^^^^^^^^^^^^^^^^^^^
+
+Under **System**, **OMV-Extras**, in the **Docker** tab, scroll down to the **Portainer** section.
+
+General:
+
+While Portainer is a Docker itself, it is the control interface through which Dockers are downloaded 
+and configured in OMV.
+
+Click the **Install Portainer** button.
+
+.. image:: /new_user_guide/images/72_Portainer.jpg
+    :width: 900px
+    :align: center
+    :height: 490px
+    :alt:
+
+An install dialog box will popup and scroll as files are downloaded and installed.  At the end, 
+**Done** will be displayed.  Click the **Close** button.
+
+----
+
+With a successful install, the **Status** line will change to reflect “**up**” time:
+
+.. image:: /new_user_guide/images/73_Portainer2.jpg
+    :width: 810px
+    :align: center
+    :height: 157px
+    :alt:
+
+Finally, click on the **Open Web** button.
+
+----
+
+At this point, Portainer is completely unconfigured.  The first configuration requirement is setting 
+a password for the Admin user.  Take note of this password.  It will be needed to log into 
+Portainer again.
+
+Then click on **Create User**
+
+.. image:: /new_user_guide/images/74_Portainer3.jpg
+    :width: 632px
+    :align: center
+    :height: 473px
+    :alt:
+
+In the next log in, there will be a login dialog with two empty fields.  Enter the username admin 
+in the top field and the password in the bottom field.
+
+----
 
 
 

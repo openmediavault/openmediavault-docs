@@ -2517,7 +2517,7 @@ post for more information:
 
 *****************************
 Hard Drive Failures and SMART
-*****************************=============================
+*****************************
 
 Hard drives are the hardware component most likely to fail, in a server, over time.  With continuous use, spinning hard 
 drives last roughly 4 to 7 years, but there are notable exceptions where hard drive life may be significantly shorter or 

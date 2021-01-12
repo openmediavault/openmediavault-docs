@@ -1563,6 +1563,125 @@ Second: Find the swap partition – it's the line with **swap** and insert a **#
     :height: 75px
     :alt:
 
+
+*****************************
+Hard Drive Health and SMART
+*****************************
+
+Hard drives are the hardware component most likely to fail, in a server, over time.  With continuous use, spinning hard 
+drives last roughly 4 to 7 years, but there are notable exceptions where hard drive life may be significantly shorter or 
+longer.
+
+Given that storage failure is inevitable, the best overall strategy to avoid losing data is 100% backup of the entire 
+data store.  Further, it is equally important to monitor the condition of a server's storage media to prevent silent 
+data corruption and, unknowingly, replicating corrupted data to a backup device.
+
+Another characteristic of hard drives is that they rarely fail all at once.  While it is possible for a drive to fail 
+abruptly, and without notice, it is a fairly rare occurrence.  Typically hard drives begin to fail slowly, 
+gradually accelerating toward a point in time where they become unreadable.  This unfortunate circumstance, data lost to 
+a corrupted or completely unreadable hard drive, might be avoidable with automated testing and monitoring.
+
+To protect the server's data, enabling SMART is strongly recommended.
+
+----
+
+Enable SMART
+============
+
+In **Storage**, **S.M.A.R.T.**, in the **Settings** tab, **enable** SMART.
+
+
+.. image:: /new_user_guide/images/78_SMART.jpg
+    :width: 826px
+    :align: center
+    :height: 470px
+    :alt:
+
+----
+
+Drive Self-Tests
+================
+
+Drive self-tests are a tool for early discovery of hard drive issues.  Periodic testing of hard drives will uncover the 
+majority of hard drive issues as they begin to develop and, hopefully, before a drive fails completely.   The following 
+illustration shows the setup for automated short tests, for an individual hard drive.  (Each hard drive will require its 
+own scheduled tests.)  In this example, a short self-test is run every Saturday at 1:00AM)
+
+.. image:: /new_user_guide/images/79_SMART2.jpg
+    :width: 1084px
+    :align: center
+    :height: 827px
+    :alt:
+
+A **Short** self-test runs for a few minutes and is an “on-line” procedure, meaning that drives are still accessible during 
+the test.  A **Long** self-test is an “off-line” test, meaning drives are not accessible during the test.  While a Short test 
+does a quick check of a drive's components, a Long test does everything in a Short test then checks the media (platters) 
+for bad sectors and other imperfections.  Repairs are made, if possible, such as reallocating bad sectors.  
+
+The down side of a Long test is that it is L-O-N-G, where drive size and spindle speed are factors in the length of the 
+test.  Long tests are off-line and, since entire platter surfaces are scanned, it may push a drive that's beginning to 
+failure closer to an actual failure as the test detects and attempts to repair problems.
+
+There are many opinions on which tests to use and the frequency of testing.
+
+* Some data center admins schedule short self-tests once a week and a long test once every 30 to 60 days.  (Remember, when scheduling a Long self-test, schedule it for after-hours periods where the server is not in use.)
+* Some home NAS admin's schedule a short test, once a week, skipping Long tests altogether.
+
+There's no exact right or wrong but the self-test tool should be used as an aid to monitor drive health, in avoiding 
+data corruption and loss.    
+
+----
+
+SMART Attributes
+================
+
+There are numerous SMART attributes to consider.  Unfortunately, only a handful are standardized among the various drive 
+OEM's and many have little to no practical meaning to the end user.  Given the variation between drive OEM's, the 
+interpretation of a specific SMART stat may require going to the drive OEM's support site.  
+
+A good explanation of individual SMART attributes, and a brief explanation for each, can be found → 
+here `here <https://en.wikipedia.org/wiki/S.M.A.R.T.>`_ .
+
+Where spinning drives are concerned, thanks to the ongoing 
+`BackBlaze drive study <https://www.backblaze.com/b2/hard-drive-test-data.html>`_ , a correlation has been made between 
+impending drive failure and specific SMART stat's.
+
+**SMART stats loosely related to drive failure:**
+
+**SMART 5 – Reallocated_Sector_Count**
+
+**SMART 187 – Reported_Uncorrectable_Errors**
+
+**SMART 188 – Command_Timeout**
+
+**SMART 197 – Current_Pending_Sector_Count**
+
+**SMART 198 – Offline_Uncorrectable**
+
+Any one count of the above stats may be meaningless, but it should be noted and closely monitored.  If any of the above 
+begin to increment upward, as of the 2nd or 3rd count, home or small business admins might want to consider ordering a 
+replacement drive.
+
+**SMART 199 - UltraDMA CRC errors**
+
+While not directly linked to drive failure, it's worth noting that counts on SMART stat 199 are usually hardware or 
+cable related.   This may be due to loose or a bad SATA / SAS cable, a connectivity problem, or an interface issue of some 
+kind with the motherboard or the drive interface board.
+
+
+Drive Failure - The Bottom Line
+===============================
+
+When using scheduled drive self-tests in conjunction with SMART E-mail notifications (see Server Notifications), server 
+admin's and home users will be afforded better protection against the data corruption and data loss due to a failing hard 
+drive.
+
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
 *************************
 Final Installation Notes:
 *************************
@@ -2508,120 +2627,6 @@ post for more information:
 
 `[How-To] Define exposed ports in Docker which do not interfere with other services/applications <https://forum.openmediavault.org/index.php/Thread/28506-How-To-Define-exposed-ports-in-Docker-which-do-not-interfere-with-other-services/>`_ 
 
-.. image:: /new_user_guide/images/divider-c.png
-    :width: 400px
-    :align: center
-    :height: 75px
-    :alt:
-
-
-*****************************
-Hard Drive Failures and SMART
-*****************************
-
-Hard drives are the hardware component most likely to fail, in a server, over time.  With continuous use, spinning hard 
-drives last roughly 4 to 7 years, but there are notable exceptions where hard drive life may be significantly shorter or 
-longer.
-
-Given that storage failure is inevitable, the best overall strategy to avoid losing data is 100% backup of the entire 
-data store.  Further, it is equally important to monitor the condition of a server's storage media to prevent silent 
-data corruption and, unknowingly, replicating corrupted data to a backup device.
-
-Another characteristic of hard drives is that they rarely fail all at once.  While it is possible for a drive to fail 
-abruptly, and without notice, it is a fairly rare occurrence.  Typically hard drives begin to fail slowly, 
-gradually accelerating toward a point in time where they become unreadable.  This unfortunate circumstance, data lost to 
-a corrupted or completely unreadable hard drive, might be avoidable with automated testing and monitoring.
-
-To protect the server's data, enabling SMART is strongly recommended.
-
-----
-
-Enable SMART
-============
-
-In **Storage**, **S.M.A.R.T.**, in the **Settings** tab, **enable** SMART.
-
-
-.. image:: /new_user_guide/images/78_SMART.jpg
-    :width: 826px
-    :align: center
-    :height: 470px
-    :alt:
-
-----
-
-Drive Self-Tests
-================
-
-Drive self-tests are a tool for early discovery of hard drive issues.  Periodic testing of hard drives will uncover the 
-majority of hard drive issues as they begin to develop and, hopefully, before a drive fails completely.   The following 
-illustration shows the setup for automated short tests, for an individual hard drive.  (Each hard drive will require its 
-own scheduled tests.)  In this example, a short self-test is run every Saturday at 1:00AM)
-
-.. image:: /new_user_guide/images/79_SMART2.jpg
-    :width: 1084px
-    :align: center
-    :height: 827px
-    :alt:
-
-A **Short** self-test runs for a few minutes and is an “on-line” procedure, meaning that drives are still accessible during 
-the test.  A **Long** self-test is an “off-line” test, meaning drives are not accessible during the test.  While a Short test 
-does a quick check of a drive's components, a Long test does everything in a Short test then checks the media (platters) 
-for bad sectors and other imperfections.  Repairs are made, if possible, such as reallocating bad sectors.  
-
-The down side of a Long test is that it is L-O-N-G, where drive size and spindle speed are factors in the length of the 
-test.  Long tests are off-line and, since entire platter surfaces are scanned, it may push a drive that's beginning to 
-failure closer to an actual failure as the test detects and attempts to repair problems.
-
-There are many opinions on which tests to use and the frequency of testing.
-
-* Some data center admins schedule short self-tests once a week and a long test once every 30 to 60 days.  (Remember, when scheduling a Long self-test, schedule it for after-hours periods where the server is not in use.)
-* Some home NAS admin's schedule a short test, once a week, skipping Long tests altogether.
-
-There's no exact right or wrong but the self-test tool should be used as an aid to monitor drive health, in avoiding 
-data corruption and loss.    
-
-----
-
-SMART Attributes
-================
-
-There are numerous SMART attributes to consider.  Unfortunately, only a handful are standardized among the various drive 
-OEM's and many have little to no practical meaning to the end user.  Given the variation between drive OEM's, the 
-interpretation of a specific SMART stat may require going to the drive OEM's support site.  
-
-A good explanation of individual SMART attributes, and a brief explanation for each, can be found → 
-here `here <https://en.wikipedia.org/wiki/S.M.A.R.T.>`_ .
-
-Where spinning drives are concerned, thanks to the ongoing 
-`BackBlaze drive study <https://www.backblaze.com/b2/hard-drive-test-data.html>`_ , a correlation has been made between 
-impending drive failure and specific SMART stat's.
-
-**SMART stats loosely related to drive failure:**
-
-**SMART 5 – Reallocated_Sector_Count**
-**SMART 187 – Reported_Uncorrectable_Errors**
-**SMART 188 – Command_Timeout**
-**SMART 197 – Current_Pending_Sector_Count**
-**SMART 198 – Offline_Uncorrectable**
-
-Any one count of the above stats may be meaningless, but it should be noted and closely monitored.  If any of the above 
-begin to increment upward, as of the 2nd or 3rd count, home or small business admins might want to consider ordering a 
-replacement drive.
-
-**SMART 199 - UltraDMA CRC errors**
-
-While not directly linked to drive failure, it's worth noting that counts on SMART stat 199 are usually hardware or 
-cable related.   This may be due to loose or a bad SATA / SAS cable, a connectivity problem, or an interface issue of some 
-kind with the motherboard or the drive interface board.
-
-
-Drive Failure - The Bottom Line
-===============================
-
-When using scheduled drive self-tests in conjunction with SMART E-mail notifications (see Server Notifications), server 
-admin's and home users will be afforded better protection against the data corruption and data loss due to a failing hard 
-drive.
 
 .. image:: /new_user_guide/images/divider-c.png
     :width: 400px

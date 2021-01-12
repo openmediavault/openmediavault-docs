@@ -31,7 +31,7 @@ In the interim, a complete copy of the User Guide is available → `here <https:
     :alt:
 
 ******************************
-Introduction to |omv|
+Introduction to Openmediavault
 ******************************
 
 |omv| is a File Server / NAS system designed to work on most
@@ -1174,7 +1174,7 @@ A Basic Data Drive
 General
 -------
 
-OMV is capable of setting up basic Linux file systems in the GUI, up to, and including,
+|omv| is capable of setting up basic Linux file systems in the GUI, up to, and including,
 modern “Copy on Write” file systems such as ZFS which combine check summed files,
 RAID functions, and Logical Volume Management into a single package.  However,
 advanced file systems add complexity which can make administration of a NAS
@@ -1186,7 +1186,7 @@ EXT4 will be used with a single data drive.
 
 Some Windows users will want to use USB attached hard drives that are formatted NTFS.
 While this is possible, the drive would need to remain attached or, at a minimum, be
-connected to the server when OMV boots.  It would be better to use a Linux formatted drive
+connected to the server when |omv| boots.  It would be better to use a Linux formatted drive
 and create a Samba share (SMB/CIF) for Windows clients, as described in Setting up a
 |sf| and Creating a SMB/CIF “Samba” share.
 
@@ -1224,7 +1224,7 @@ it's time to plan for more storage.
 Data Drive Set Up
 -----------------
 
- .. note:: Note for Beginners and SBC users: OMV is designed to segregate the Operating System (the boot drive) from data storage.  This is “best practice” when setting up a server.  Accordingly, OMV reserves the drive it is installed on exclusively for the OS.  By default, the GUI will not allow the boot drive to be selected when creating a data share.  A second hard drive or SSD is required for data storage.
+ .. note:: Note for Beginners and SBC users: |omv| is designed to segregate the Operating System |omv|(the boot drive) from data storage.  This is “best practice” when setting up a server.  Accordingly, |omv| reserves the drive it is installed on exclusively for the OS.  By default, the GUI will not allow the boot drive to be selected when creating a data share.  A second hard drive or SSD is required for data storage.
 
 
 
@@ -1283,7 +1283,7 @@ centralized location makes it much more manageable.
 Setting up a |sf|
 ==========================
 
-The majority of the files and folders in a new OMV installation are controlled by
+The majority of the files and folders in a new |omv| installation are controlled by
 the root user.  One of the purposes of a **Shared Folder** is to set permissions that
 will allow regular users access to folders and files used for data storage.  A shared
 folder could also be called a “base share”.  The |sf| created in the
@@ -1323,7 +1323,7 @@ Creating a SMB/CIF “Samba” Network Share
 
 In order to make your |sf| viewable in **Windows Explorer**,
 under **Network**, it's necessary to make it a Samba share using the SMB
-(Server Messaging Block) protocol.  OMV makes setting up a Samba network
+(Server Messaging Block) protocol.  |omv| makes setting up a Samba network
 share an easy task.
 
 ----
@@ -1524,7 +1524,7 @@ This option requires the installation of WinSCP which is detailed here .
 Users who are not comfortable with editing fstab using nano can use WinSCP
 and Windows Notepad to make the needed changes.  If WinSCP is not installed,
 this doc-link to → (WinSCP) will describe the process for installing WinSCP and
-logging into the OMV server for the first time.
+logging into the |omv| server for the first time.
 
 When logged in, click on **/etc** in the left pane.  In the right pane, “**right**”
 mouse click on **fstab**, select **Edit** and **Notepad**.
@@ -1587,7 +1587,7 @@ Being able to work from the command line would be very useful to users,
 who may need to gather detailed information on the OS and platform 
 hardware, for troubleshooting and for an occasional edit to a 
 configuration file.  Much can be learned with the following utilities 
-that allow users to look at OMV “under the hood”.
+that allow users to look at |omv| “under the hood”.
 
 ----
 
@@ -1682,7 +1682,7 @@ PuTTY
 =====
 
 PuTTY is similar to a Window's command prompt, but it allows users to 
-work on OMV's command line from a remote PC.   If PuTTY was not 
+work on |omv|'s command line from a remote PC.   If PuTTY was not 
 installed as part of your installation process, install it on a Windows 
 PC.  It's available here. → `PuTTY <https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html>`_
 
@@ -1703,12 +1703,12 @@ MC (Midnight Commander)
 
 Midnight Commander is a command line file utility that utilizes a very 
 cleverly created graphical environment.  It's very useful for 
-navigating through OMV's directory structure.  It excels in efficient 
+navigating through |omv|'s directory structure.  It excels in efficient 
 copying, moving, and deleting folders and files.
 
 The installation process:
 
-* Use PuTTY to get to OMV's command line.
+* Use PuTTY to get to |omv|'s command line.
 * Log in as ``root``.
 * On the command line type the following;  ``apt-get install mc``
 * When prompted continue with “``Y``”
@@ -1718,7 +1718,7 @@ When the installation finishes, on the command line, type ``mc``
 
 Midnight Command is a two pane window where the source is the left pane 
 and the destination is the right pane.  Copies and moves are done, left 
-to right.  Since it's possible to navigate to any location on the OMV 
+to right.  Since it's possible to navigate to any location on the |omv| 
 host, in either pane, the source and destination can be set for any 
 location.
 
@@ -1757,11 +1757,11 @@ Virtual Box
 ===========
 
 Virtual Box is a cross platform virtualization platform that will work with both servers and 
-clients.  For learning about OMV, there simply is no better tool than working with an OMV Virtual 
-Machine (VM).  An OMV VM can be built, configured, and put on the local network complete with shares, 
+clients.  For learning about |omv|, there simply is no better tool than working with an |omv| Virtual 
+Machine (VM).  An |omv| VM can be built, configured, and put on the local network complete with shares, 
 in the same manner as real hardware.  VM's can be created, cloned, used for test beds, and destroyed 
-without consequence.  Many advanced OMV users fully test upgrades, Docker's, plugin's, server add-ons 
-and changes in configuration, in OMV VM's before upgrading or reconfiguring their real-world servers.
+without consequence.  Many advanced |omv| users fully test upgrades, Docker's, plugin's, server add-ons 
+and changes in configuration, in |omv| VM's before upgrading or reconfiguring their real-world servers.
 
 If users have a Windows client with at least 6GB RAM and plenty of hard disk space, installing Virtual 
 Box is highly recommended. → `Virtual Box <https://www.virtualbox.org/>`_ 
@@ -2069,7 +2069,7 @@ As illustrated above, the second host could be a low cost SBC.  This scenario ca
 number of desirable features.
 
 * First, if backing-up to a second server platform, two fully independent copies of data are possible.
-* When using an SBC with OMV installed:
+* When using an SBC with |omv| installed:
 
 If the primary server failed completely, the second platform can be configured to take over as a backup file server.  With all data backed up and resident on the SBC, this data can be made available to the network with SMB shares.
 
@@ -2081,7 +2081,7 @@ could be configured as a backup server as well.
 
 ----
 
-As an illustration of the backup server concept, the following is a File explorer example of an OMV 
+As an illustration of the backup server concept, the following is a File explorer example of an |omv| 
 NAS server and an SBC used for backing-up the main server's files.
 
 .. image:: /new_user_guide/images/69_rsync_2L_backup2.jpg
@@ -2124,10 +2124,10 @@ Operating System Backup:
 ************************
 
 By design, the OMV/Debian operating system installs on its own partition, segregated from data.  This 
-makes copying or cloning the OMV boot/OS drive an easy process.  So, one might ask, why is a clone or a 
+makes copying or cloning the |omv| boot/OS drive an easy process.  So, one might ask, why is a clone or a 
 copy of the operating system important?
 
-Building OMV, from scratch, using the installer ISO is a 15-minute proposition, give or take. While it 
+Building |omv|, from scratch, using the installer ISO is a 15-minute proposition, give or take. While it 
 takes longer, roughly 45 minutes to an hour, the actual hands-on portion of an SBC build is even less.  
 
 As users configure their servers, add services, reconfigure shares, move their data around, tweak 
@@ -2150,7 +2150,7 @@ The Benefits of Maintaining Operating System Backup
 In accordance with `“Murphy's Law” <http://murphys-laws.com/murphy/murphy-laws.html>`_, users may 
 encounter issues where things go wrong.  As examples, users may test software on their active server 
 or try new settings. On occasion, installing an add-on may have unintended consequences.  Trying new 
-settings or working on the command line, may break OMV in a way that might not be recoverable.  In 
+settings or working on the command line, may break |omv| in a way that might not be recoverable.  In 
 other cases, there may be instances where a software update goes south – the source repository may 
 go off-line in the middle of an update resulting in broken packages.
 
@@ -2165,7 +2165,7 @@ exact cause of the problem.  If an add-on update doesn't work (direct installed 
 Docker, etc.), the user can gracefully back out of the update and leave the older (but working) 
 software package in place.
 
-It's the easiest, quickest, and most effective fix, for resolving problems with OMV and the underlying 
+It's the easiest, quickest, and most effective fix, for resolving problems with |omv| and the underlying 
 Debian Operating System.
 
 **The practical issues of maintaining boot drive clones – when to update and rotate?**
@@ -2181,7 +2181,7 @@ operation of the NAS; the backup would need to be updated.  (Otherwise, the conf
 previously cloned boot drive would not mesh with the configuration and contents of data storage drives.)
 
 4. If a cloning mistake is made (let's respect Murphy's Law), a 3rd clone could become a “fallback of 
-last resort”.  Given that Linux package upgrades and OMV sub-version upgrades have little to no effect 
+last resort”.  Given that Linux package upgrades and |omv| sub-version upgrades have little to no effect 
 on network shares or the high level configuration of the NAS, a 3rd clone can be maintained that is 
 updated only when the NAS configuration is changed.
 
@@ -2204,7 +2204,7 @@ specific Linux version, complete with specific applications, fully patched and u
 for a **limited time**.
 
 Therefore, if users have extensively configured builds, are using specialty hardware (such as SBC's) or 
-are using OMV to serve a critical function; it would be wise to backup the boot drive to an image file, 
+are using |omv| to serve a critical function; it would be wise to backup the boot drive to an image file, 
 or Clone the fully configured working installation to separate media, and save one or more copies for 
 future use.
 
@@ -2293,37 +2293,37 @@ Add-on's – Adding Value to Your OMV server
 General
 =======
 
-The OMV `OMV Forum <https://forum.openmediavault.org/index.php/BoardList/>`_ has an extensive 
+The `|omv| Forum <https://forum.openmediavault.org/index.php/BoardList/>`_ has an extensive 
 `Guides <https://forum.openmediavault.org/index.php/Board/29-Guides/>`_ section.  Whether a user's 
 preference is videos or printed text, there's something for everyone among the numerous “How-To's”.  
 Beginners and Advanced users alike should take a few minutes to familiarize themselves with the 
 content in the Guides section of the Forum.
 
 
-OMV's Plugin's
+|omv|'s Plugins
 ==============
 
-OMV has numerous plugin's.  Some are integrated into the base package by OMV's developer Volker 
+|omv| has numerous plugin's.  Some are integrated into the base package by |omv|'s developer Volker 
 Theile.  Examples are iSCSItarget, usbbackup, among others.
 
-Still more were created by OMV plugin developers, such as Remote Mount, the flash-memory plug-in, 
+Still more were created by |omv| plugin developers, such as Remote Mount, the flash-memory plug-in, 
 backup plugins, and more.  
 
 Many plugins are integrations of third party packages such as SNAPRAID, MergerFS, etc.  While 
-questions or issues regarding the integration of plugin's, into OMV, are of interest to OMV's 
-developers, questions on the operation of plugin's are best directed to the application's supporting 
+questions or issues regarding the integration of plugin's, into |omv|, are of interest to |omv|'s 
+developers, questions regarding the **operation** of plugins are best directed to the application's supporting 
 web site.
 
 
 Dockers - General
 =================
 
-While Dockers are an avenue toward adding *extensive* functionality to OMV, they are an advanced topic 
+While Dockers are an avenue toward adding *extensive* functionality to |omv|, they are an advanced topic 
 that may prove to be frustrating for beginners.  To get started, beginners should consider installing 
 Docker, then  Portainer, as found under System, OMV-Extras.  While it's command line oriented, this 
 `Docker Tutorial <https://docker-curriculum.com/>`_ is very helpful for understanding basic concepts.  
 User authored `Docker - How To's <https://forum.openmediavault.org/index.php/Board/29-Guides/>`_ can be 
-found on the OMV forum.
+found on the |omv| forum.
 
 
 So, What is a “Docker”?
@@ -2392,7 +2392,7 @@ Under **System**, **OMV-Extras**, in the **Docker** tab, scroll down to the **Po
 General:
 
 While Portainer is a Docker itself, it is the control interface through which Dockers are downloaded 
-and configured in OMV.
+and configured in |omv|.
 
 Click the **Install Portainer** button.
 
@@ -2435,6 +2435,349 @@ In the next log in, there will be a login dialog with two empty fields.  Enter t
 in the top field and the password in the bottom field.
 
 ----
+
+When this screen pops up, Click on **Local**, then **Connect**
+
+.. image:: /new_user_guide/images/75_Portainer4.jpg
+    :width: 742px
+    :align: center
+    :height: 465px
+    :alt:
+
+----
+
+**Dismiss** the News and Click on **Local**
+
+The following screen will now be the “**Home**” screen.  Using “Local” menu selections on the 
+left, this is where Docker Images are downloaded, containers are created, etc.
+
+.. image:: /new_user_guide/images/76_Portainer5.jpg
+    :width: 1029px
+    :align: center
+    :height: 433px
+    :alt:
+
+This concludes the installation of Docker and Portainer.
+
+----
+
+Dockers - It's about choices
+============================
+
+While there are 100,000+ Dockers, available on the `Docker Hub <https://hub.docker.com/explore/>`_ , all are not created equal.  The 
+offerings, from Docker authors, range from a one-off experiment with no documentation (users are 
+on their own) to organizations like Linuxserver.io that specialize in building first-rate 
+Docker images.  `Linuxserver.io <https://www.linuxserver.io/>`_ offers Dockers that have been thoroughly tested, they support 
+multiple architectures, they provide detailed container setup instructions, their offerings 
+are “Tagged” and they retain inventories of their older images.
+
+----
+
+Selecting a Docker - Primary Considerations
+-------------------------------------------
+
+**First:**
+
+When installing a Docker, for the greatest chance of success, it is suggested that users follow the guidance provided in 
+`Guides Section <https://forum.openmediavault.org/index.php/Board/29-Guides/>`_ of the |omv| forum.
+
+**Second:**
+
+Potential Docker users should first look for Dockers that support their **architecture**.  The three primary architectures 
+supported by |omv| are **ARMHF** or **ARM64**,  **i386**(32 bit), and **amd64*(64 bit).  In most cases, 32bit Dockers will run 
+on 64bit hardware.  \**\While there may be exceptions, i386 and amd64 Docker images may not run on ARM platforms. 
+“**Multi-arch**” (multiple architecture) Docker images are more platform flexible.\**\
+
+**Third:**
+
+To increase the chance of success, when attempting to install a Docker without a guide, look for the more popular Dockers 
+with the highest number of “**pulls**” on the Docker Hub.
+ `(hub.docker.com) <https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=+plex&starCount=0>`_  
+ There are good reasons why these Dockers are broadly popular – they tend to work.
+
+ **Forth:**
+
+In the vast majority of cases, Dockers that fail to work won't have anything to do with |omv| or the Docker Plugin.  Their 
+issues tend to be with selecting the **wrong architecture**, selecting the **wrong network mode** (host, bridged, macvlan) for 
+the application, other configuration issues (such as port 80 OMV/Docker conflicts), permissions problems or the Dockers 
+themselves.
+
+Since most Dockers share Network ports with the host (|omv|), it's important to use ports that are not currently in use.  To 
+get a better understanding of network ports and for commands that will reveal ports that are in use, refer to this forum 
+post for more information:
+
+`[How-To] Define exposed ports in Docker which do not interfere with other services/applications <https://forum.openmediavault.org/index.php/Thread/28506-How-To-Define-exposed-ports-in-Docker-which-do-not-interfere-with-other-services/>`_ 
+
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+********************
+When things go wrong
+********************
+
+First take note of any error dialog boxes.  On most Windows and Linux machines it's possible to copy and paste the text out 
+of a dialog box by holding down the left mouse button and dragging the mouse pointer over text, to highlight it.  Then use 
+the keys with Ctrl+c  (to copy), then click in a Notepad document and use Ctrl+v (to paste).  This basic information will 
+be helpful, in searching out the details related to the problem.
+
+
+The First Resource – The Internet
+=================================
+
+Users should search the internet first.  The solutions for many generic problems can be found with 
+`google <https://www.google.com/>`_ ,  `yippy <https://yippy.com/>`_ ,  `duckduckgo <https://duckduckgo.com/>`_ , and 
+other search engines.  When searching on key words that match error message or the problem users may be 
+having, in some cases, answers can be found quickly in real time.  This is the fastest and often the best way to learn how 
+to fix server problems.  Since |omv| is based on “**Debian**”, it may be a useful search term.
+
+While the search function of the |omv| forum site will produce “hits” on search criteria, it is by no means all inclusive.  
+If **OMV** is included in search criteria, a Google search may generate more result hits on information found on the |omv| 
+forum, than the forum's integrated search function.
+
+With information from searches, users should make an effort to address their own issues.  This approach tends to be the path 
+to the fastest answers and greatly facilitates the learning process.
+
+The Openmediavault Forum
+========================
+
+→ `Forum <https://forum.openmediavault.org/index.php/BoardList/>`_      
+
+When coming to the forum for help:
+
+First search the forum.  In many cases, user problems can be resolved with a few searches and a bit of reading.  However, 
+look at the dates of posts and the version of |omv| referenced.  Posts that are 3 or more years old may not apply to the 
+current |omv| version.
+
+If posting a problem on the forum, start at the forum index, and look for the category that looks to be appropriate for 
+the post.  Along with an explanation of the the issue, the |omv| version, the appropriate logs and command line output, if 
+known, and the hardware platform in use are the absolute minimums required.  Realize that, without information, even the 
+most experienced users, Moderators, and / or Developers will not be able to provide assistance.
+
+* Ask the right questions.  For beginners, this can be deceptively difficult.  There's some “straight forward” guidance on this topic here →  Ask the right questions.
+* While |omv|'s forum is known for responsiveness, it's unrealistic to expect answers in real time. It may be a matter of days before a forum member, who is familiar with the described problem, will read and respond to a post.
+* When looking at answers, try to focus on the information presented, not the perceived tone. Remember that support is provided “gratis”, so act accordingly.
+* Be open-minded.  The reason why users post on the forum should be because they couldn't solve a problem on their own.  With that in mind, when an experienced forum user replies, taking the time to make a suggestion or requesting more information, forum users should follow up and post the result. Whether the issue is fixed or not, user posts help other users with the same or a similar problem.
+* If a forum post or a “How To” fixes your problem, or gets you through a configuration issue, consider giving the author a “Like” or “Thanks”.  The gesture is free and it's an indicator to other users who may have the same problem.  In essence, you'd be saying “I agree” or “this worked for me”.
+* When users are experiencing problems with their data store (a file system issue, a hard drive, array, etc.) the working assumption on the part of experienced forum users and moderators will be that users have full data backup.  Accordingly, recommendations for correcting filesystems, hard drives, and RAID array issues may result in the loss of data.  Keep this in mind.
+
+---- 
+
+Hard Drive Failures and SMART
+=============================
+
+Hard drives are the hardware component most likely to fail, in a server, over time.  With continuous use, spinning hard 
+drives last roughly 4 to 7 years, but there are notable exceptions where hard drive life may be significantly shorter or 
+longer.
+
+Given that storage failure is inevitable, the best overall strategy to avoid losing data is 100% backup of the entire 
+data store.  Further, it is equally important to monitor the condition of a server's storage media to prevent silent 
+data corruption and, unknowingly, replicating corrupted data to a backup device.
+
+Another characteristic of hard drives is that they rarely fail all at once.  While it is possible for a drive to fail 
+abruptly, and without notice, it is a fairly rare occurrence.  Typically hard drives begin to fail slowly, 
+gradually accelerating toward a point in time where they become unreadable.  This unfortunate circumstance, data lost to 
+a corrupted or completely unreadable hard drive, might be avoidable with automated testing and monitoring.
+
+To protect the server's data, enabling SMART is strongly recommended.
+
+----
+
+Enable SMART
+------------
+
+In **Storage**, **S.M.A.R.T.**, in the **Settings** tab, **enable** SMART.
+
+
+.. image:: /new_user_guide/images/78_SMART.jpg
+    :width: 826px
+    :align: center
+    :height: 470px
+    :alt:
+
+----
+
+Drive Self-Tests
+----------------
+
+Drive self-tests are a tool for early discovery of hard drive issues.  Periodic testing of hard drives will uncover the 
+majority of hard drive issues as they begin to develop and, hopefully, before a drive fails completely.   The following 
+illustration shows the setup for automated short tests, for an individual hard drive.  (Each hard drive will require its 
+own scheduled tests.)  In this example, a short self-test is run every Saturday at 1:00AM)
+
+.. image:: /new_user_guide/images/79_SMART2.jpg
+    :width: 1084px
+    :align: center
+    :height: 827px
+    :alt:
+
+A **Short** self-test runs for a few minutes and is an “on-line” procedure, meaning that drives are still accessible during 
+the test.  A **Long** self-test is an “off-line” test, meaning drives are not accessible during the test.  While a Short test 
+does a quick check of a drive's components, a Long test does everything in a Short test then checks the media (platters) 
+for bad sectors and other imperfections.  Repairs are made, if possible, such as reallocating bad sectors.  
+
+The down side of a Long test is that it is L-O-N-G, where drive size and spindle speed are factors in the length of the 
+test.  Long tests are off-line and, since entire platter surfaces are scanned, it may push a drive that's beginning to 
+failure closer to an actual failure as the test detects and attempts to repair problems.
+
+There are many opinions on which tests to use and the frequency of testing.
+
+* Some data center admins schedule short self-tests once a week and a long test once every 30 to 60 days.  (Remember, when scheduling a Long self-test, schedule it for after-hours periods where the server is not in use.)
+* Some home NAS admin's schedule a short test, once a week, skipping Long tests altogether.
+
+There's no exact right or wrong but the self-test tool should be used as an aid to monitor drive health, in avoiding 
+data corruption and loss.    
+
+----
+
+SMART Attributes
+----------------
+There are numerous SMART attributes to consider.  Unfortunately, only a handful are standardized among the various drive 
+OEM's and many have little to no practical meaning to the end user.  Given the variation between drive OEM's, the 
+interpretation of a specific SMART stat may require going to the drive OEM's support site.  
+
+A good explanation of individual SMART attributes, and a brief explanation for each, can be found → 
+here `here <https://en.wikipedia.org/wiki/S.M.A.R.T.>`_ .
+
+Where spinning drives are concerned, thanks to the ongoing 
+`BackBlaze drive study <https://www.backblaze.com/b2/hard-drive-test-data.html>`_ , a correlation has been made between 
+impending drive failure and specific SMART stat's.
+
+**SMART stats loosely related to drive failure:**
+
+**SMART 5 – Reallocated_Sector_Count**
+**SMART 187 – Reported_Uncorrectable_Errors**
+**SMART 188 – Command_Timeout**
+**SMART 197 – Current_Pending_Sector_Count**
+**SMART 198 – Offline_Uncorrectable**
+
+Any one count of the above stats may be meaningless, but it should be noted and closely monitored.  If any of the above 
+begin to increment upward, as of the 2nd or 3rd count, home or small business admins might want to consider ordering a 
+replacement drive.
+
+**SMART 199 - UltraDMA CRC errors**
+
+While not directly linked to drive failure, it's worth noting that counts on SMART stat 199 are usually hardware or 
+cable related.   This may be due to loose or a bad SATA / SAS cable, a connectivity problem, or an interface issue of some 
+kind with the motherboard or the drive interface board.
+
+
+Drive Failure - The Bottom Line
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When using scheduled drive self-tests in conjunction with SMART E-mail notifications (see Server Notifications), server 
+admin's and home users will be afforded better protection against the data corruption and data loss due to a failing hard 
+drive.
+
+----
+
+Common Problems
+===============
+
+Problem: After a reboot, the web page is not available.  (Bad Gateway or 404 error.)
+
+Solution: This may happen on an odd occasion.  Instead of doing a dirty shutdown, SSH in with PuTTY, and issue the command:  reboot.  The system will reboot.  Login.
+
+
+Problem: Web interface has missing fields and/or items showing that have been uninstalled.
+
+Solution: Clear your browser cache and, always, login to the Web console using the user, admin.
+
+
+Problem: I mounted the drive using the command line and I can't select that drive in the shared folder device dropdown.
+
+Solution: Never mount a drive with anything other than the OMV web interface. This creates the necessary database entries to populate the device dropdown.
+
+
+Problem: I only see a few items in the web interface like the user section of Access Rights Management.
+
+Solution: You did not login as the admin user. This is the only user that can access everything.
+
+Problem: Samba is slow.
+
+Solution: Read these threads - Tuning Samba for more speed and Tuning Samba for more speed 2
+(**This does not apply to SBC images – Samba has already been optimization on these platforms.**)
+
+Problem: You see an error where a domain name/host could not be resolved
+
+Solution: You probably need to set your DNS server in System -> Network -> Interfaces
+
+
+Problem: "No Network Interfaces" when looking at the console, after boot up.
+
+Solution: Most of the time, this is caused by the system taking too long to get a DHCP IP address before the message is written. The adapter's address can be checked by logging in with any user (root is a good choice) and typing ip addr  
+
+
+Problem: I have an SBC and I'm having trouble with RAID. (OR) I have USB connected RAID array.
+N/A: USB RAID is not supported. 
+
+----
+
+USB Power - A Common Raspberry PI problem
+-----------------------------------------
+
+General:
+^^^^^^^^
+
+Many problems with R-PI's, in versions prior to the R-PI4, are related to under-powering.  While the R-PI4 is 
+much improved, depending on the power requirements of connected periferals, it is not exempt from power problems.  
+The issues caused by under-powering can range from bizarre behavior to data corruption on storage devices.
+
+Do I have a problem?
+^^^^^^^^^^^^^^^^^^^^
+
+With all peripherals attached that are normally used – use the command ``dmesg`` on the CLI and scroll through the 
+output.  If an undervoltage situation exists, it will be noted in the output.
+
+What is the problem?
+^^^^^^^^^^^^^^^^^^^^
+
+Beyond using a power supply with the appropriate current rating for the R-PI model, it should be noted that a USB power 
+source must meet certain voltage specifications “at the socket”.  In essence, the output voltage of a USB power supply 
+can't be increased to compensate for external voltage losses typical when using a long USB cable with small gauge wire.
+
+Making matters worse is, models prior to the R-PI4 use a micro USB plug as the power connection.  The tiny contacts of 
+a micro USB connection, combined with cables for micro USB that have small gauge wires, drop power supply voltage 
+significantly.
+
+----
+
+**Consider the following chart of voltage losses, versus wire length and gauge**
+
+(Note that voltage drops increase as current draw requirements rise.)
+
+.. image:: /new_user_guide/images/80_R-PI_Power.jpg
+    :width: 451px
+    :align: center
+    :height: 286px
+    :alt:
+
+
+Potential Remedies:
+^^^^^^^^^^^^^^^^^^^
+
+* 0Use a power supply that meets at least the minimum recommended current rating for the R-PI model being used.
+* Use the shortest possible USB cable.  Cables that are 1 foot / 30cm or less, made of thick gauge wire are  preferred.  If a short USB cable is not long enough to place an R-PI in a convenient location, use an AC extension cord rather than a long USB cable.
+* Avoid using direct connected USB powered hard drives.  The additional current load will drop voltage and may stress a weak power supply.  A self powered USB hub or a drive dock is preferred. 
+* Avoid leaving peripherals attached, such as a monitor, keyboard or a mouse.  Even when they're not used, they consume power.
+
+.. image:: /new_user_guide/images/divider-c.png
+    :width: 400px
+    :align: center
+    :height: 75px
+    :alt:
+
+**************
+A Closing Note
+**************
+
+We, who support the Openmediavault project, hope you've found this guide to be useful and that your Openmediavault 
+server is easy to use, efficient and enjoyable. 
+
+
+
 
 
 

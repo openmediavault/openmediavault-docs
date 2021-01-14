@@ -62,7 +62,7 @@ flexibility.
 History
 =======
 
-|omv|'s history began with Volker Theile, who was the only
+Openmediavault's history began with Volker Theile, who was the only
 active developer of the FreeNAS project by the end of 2009.   Volker
 became interested in completely rewriting FreeNAS, for use on Linux.
 Initially, he named the rewritten package **coreNAS** .  Shortly
@@ -134,9 +134,9 @@ duplicate.
 
 Advanced Users:
 ===============
-|omv| was designed to be intuitive for advanced users and beginners alike.
-After the installation is complete, for a streamlined setup, see the
-Quick Start Guide.
+Openmediavault was designed to be intuitive for advanced users and beginners alike.
+After the installation is complete, for a streamlined setup, see the 
+`Quick Start Guide <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#quick-start-guide-for-advanced-users>`_ .  
 
 A Cautionary Note for Advanced Users:
 -------------------------------------
@@ -182,7 +182,7 @@ running quickly.
 =======================
 
 While |omv| is supported by 32 bit Debian installations, it's a two step
-scripted process referenced in; “Installing on i386 32-bit Platforms”.
+scripted process referenced in; `Installing on i386 32-bit Platforms`_ . 
 The |omv| project does not provide integrated 32 bit installation ISO's.
 
 ARM Hardware:
@@ -190,9 +190,12 @@ ARM Hardware:
 
 The |omv| project provides scripted installation support for ARM Single
 Board Computer (SBC) platforms.  Supported platforms are the Raspberry
-Pi, models 2B and higher, and the various ARM platforms supported by
-Armbian.
+Pi, models 2B and higher, and various ARM platforms supported by
+the `Armbian Project <https://www.armbian.com/download/>`_ .
+
 Minimum Hardware requirements
+=============================
+
 |omv|/Debian will run on I386, AMD64, and select ARM platforms with 1GB
 of ram or less, but performance expectations should be adjusted
 accordingly.  The system boot drive should have a minimum of 8GB capacity.
@@ -232,10 +235,8 @@ add-on's or Dockers is a requirement, research the chosen SBC carefully
 before buying.  `Armbian's <https://forum.armbian.com/>`_
 or `openmediavault's <https://forum.openmediavault.org/>`_ forums may be of
 assistance, along with Internet product reviews.
-*When considering an SBC as a primary NAS server for home use, note
-that support for SBC's is for **the current openmediavault release only**.
-Accordingly, SBC users should read the ending cautionary note in Operating System
-Backup.*
+*When considering an SBC as a primary NAS server for home use, note that support for SBC's is for* **the current openmediavault release only**.
+*Accordingly, SBC users should read the ending cautionary note in* `Operating System Backup`_ .
 
 Raspberry PI's
 ^^^^^^^^^^^^^^
@@ -260,7 +261,7 @@ file server for 1 or 2 user home environments, where multitasking is
 less likely.  If running automated tasks, it's best to schedule them to
 run in the early morning hours when user access would not be affected.
 In addition, R-PI's suffer from USB under powering in models 2B and 3X.
-See notes regarding this issue in USB Power - A Common Raspberry PI problem
+See notes regarding this issue in `USB Power - A Common Raspberry PI problem`_ .    
 
 Where CPU Power may be Needed – “Transcoding”
 =============================================
@@ -278,7 +279,7 @@ Pre-2011 Intel and AMD CPU's
 ----------------------------
 `Plex <https://support.plex.tv/hc/en-us/articles/200250377-Transcoding-Media>`_, a popular media server, recommends at least 2000 on the CPU's
 `PassMark <https://www.cpubenchmark.net/cpu_list.php>`_ score for each concurrent 1080p transcoded stream.
-See the advice article → `here <https://support.plex.tv/hc/en-us/articles/201774043-What-kind-of-CPU-do-I-need-for-my-Server->`_   However, this advice
+See the advice article → `here <https://support.plex.tv/hc/en-us/articles/201774043-What-kind-of-CPU-do-I-need-for-my-Server->`_   However note that this advice
 applies to pre-2011 Intel and AMD CPU's.
 
 Look up an older CPU here →  `PassMark CPU Benchmarks <https://www.cpubenchmark.net/cpu_list.php>`_
@@ -289,9 +290,9 @@ Look up an older CPU here →  `PassMark CPU Benchmarks <https://www.cpubenchmar
 --------------------------
 
 As of the beginning of the Sandy Bridge CPU series in 2011 and later, a core has
-been added to Intel CPU's for the sole purpose of video transcoding.  CPU's with
-Quick Sync, to include Celeron and Atom models that are relatively low powered, do
-a good job of transcoding for portable devices.
+been added to Intel CPU's for the sole purpose of video transcoding.  CPU's with 
+`Quick Sync <https://en.wikipedia.org/wiki/Intel_Quick_Sync_Video>`_  , to include Celeron and Atom models that are 
+relatively low powered, do a good job of transcoding for portable devices.
 
 If NAS administrators have numerous smart phone users, in their homes or
 businesses, who will be watching transcoded video on the small screen, CPU loading
@@ -301,7 +302,7 @@ and Video processing features may require some additional thought and research.
 Additional reading:
 `Intel Quick Sync versus similar AMD technology <https://www.macxdvd.com/mac-dvd-video-converter-how-to/what-is-intel-quick-sync-video.htm>`_
 
-
+----
 
 Selecting a Boot Drive
 ======================
@@ -325,8 +326,13 @@ desktop and business workstation requirements.
 
 * “The WEB/GUI is more responsive with fast media.”
 
-This is the single instance where an SSD or a spinning hard drive may create the illusion of higher performance.  In the traditional role of a NAS as a File Server, when the server boots, the Linux kernel and most of the necessary processes required to act as a File Server are loaded into RAM - the fastest possible media for execution.
-Navigating |omv|'s WEB/GUI interface is another matter.  Loading WEB pages may call files from the boot drive, which may make the server appear to be slower, when using slow media.  However, the speed of the boot drive has little impact on overall file server function and actual NAS performance.
+This is the single instance where an SSD or a spinning hard drive may create the illusion of higher performance.  In 
+the traditional role of a NAS as a File Server, when the server boots, the Linux kernel and most of the necessary 
+processes required to act as a File Server are loaded into RAM - the fastest possible media for execution.
+
+Navigating |omv|'s WEB/GUI interface is another matter.  Loading WEB pages may call files from the boot drive, which may 
+make the server appear to be slower, when using slow media.  However, the speed of the boot drive has little impact on 
+overall file server function and actual NAS performance.
 
 *The above assumes that adequate RAM has been provisioned.*
 
@@ -335,15 +341,19 @@ Navigating |omv|'s WEB/GUI interface is another matter.  Loading WEB pages may c
 Final Notes on Choosing a Boot Drive
 ------------------------------------
 
-|omv|'s boot requirements are very modest:
+Openmediavault’s boot requirements are very modest:
 While some users prefer traditional hard drives or SSD's, the boot
 requirement can be served with USB thumb-drives and SD-cards, 8GB or
 larger.
 
-With USB connections on the *outside* of a PC case, cloning USB drives for operating system backup is an easy process.  Given this consideration, some users prefer USB thumb-drives and other external flash media to internal drives.  Further, given the ease of operating system recovery in the event of a boot drive failure, beginners are encouraged to consider using flash media.
+With USB connections on the *outside* of a PC case, cloning USB drives for `operating system backup`_ is an easy 
+process.  Given this consideration, some users prefer USB thumb-drives and other external flash media to internal 
+drives.  Further, given the ease of operating system recovery in the event of a boot drive failure, beginners are 
+encouraged to consider using flash media.
 
 If flash media is used:
-New name brand drives are recommended such as Samsung, SanDisk, etc.
+
+**New** name brand drives are recommended such as Samsung, SanDisk, etc.
 While not absolutely essential for the purpose; USB3 thumb-drives are
 preferred, due to their more advanced controllers, and SD-cards branded
 A1 for their improved random read/write performance.  **USB3** thumb-drives
@@ -356,7 +366,7 @@ between 16 and 32GB.  (“**Wear leveling**” will be explained during the
 installation and configuration of the flash-memory plugin.)
 
 The flash-memory plugin is required for flash media.  It's purpose and
-installation is detailed in  The Flash Memory Plugin.
+installation is detailed in `The Flash Memory Plugin <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#the-flash-memory-plugin-amd64-users-only>`_ .   
 
 **Use-case exceptions where boot media larger than 32GB may be useful:**
 
@@ -376,7 +386,7 @@ policies is recommended.  The use of cheap generics, fakes or knockoffs is highl
 They tend to have a short life and they're known to cause problems, even if they initially test
 error-free.  In addition, to detect fakes or defective media *even when new*; all SD-cards
 and USB thumb-drives, should be formatted and tested in accordance with the process outlined
-under Format and Testing Flash Media.  If they fail error testing, return them for a refund.
+under `Format and Test Flash Media`_ . 
 
 ----
 
@@ -433,7 +443,7 @@ or in a `Wiki <https://wiki.omv-extras.org/>`_ .
     :width: 400px
     :align: center
     :height: 75px
-    :alt
+    :alt:
 
 ************************
 amd64 (64-bit) Platforms
@@ -1578,7 +1588,7 @@ data corruption and, unknowingly, replicating corrupted data to a backup device.
 
 Another characteristic of hard drives is that they rarely fail all at once.  While it is possible for a drive to fail 
 abruptly, and without notice, it is a fairly rare occurrence.  Typically hard drives begin to fail slowly, 
-gradually accelerating toward a point in time where they become unreadable.  This unfortunate circumstance, data lost to 
+gradually accelerating toward a point in time where they become unreadable.  This unfortunate circumstance, where data lost to 
 a corrupted or completely unreadable hard drive, might be avoidable with automated testing and monitoring.
 
 To protect the server's data, enabling SMART is strongly recommended.
@@ -2772,7 +2782,7 @@ significantly.
 Potential Remedies:
 ^^^^^^^^^^^^^^^^^^^
 
-* 0Use a power supply that meets at least the minimum recommended current rating for the R-PI model being used.
+* Use a power supply that meets at least the minimum recommended current rating for the R-PI model being used.
 * Use the shortest possible USB cable.  Cables that are 1 foot / 30cm or less, made of thick gauge wire are  preferred.  If a short USB cable is not long enough to place an R-PI in a convenient location, use an AC extension cord rather than a long USB cable.
 * Avoid using direct connected USB powered hard drives.  The additional current load will drop voltage and may stress a weak power supply.  A self powered USB hub or a drive dock is preferred. 
 * Avoid leaving peripherals attached, such as a monitor, keyboard or a mouse.  Even when they're not used, they consume power.

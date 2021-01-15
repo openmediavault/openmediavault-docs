@@ -459,7 +459,7 @@ using 64 bit hardware.
 Downloading
 ===========
 
-Beginners should download the latest stable version from `Sourceforge.net <https://sourceforge.net/projects/openmediavault/files/>`_
+Beginners should download **the latest stable version** from `Sourceforge.net <https://sourceforge.net/projects/openmediavault/files/>`_
 and copy or download the SHA or MD5 checksums for the ISO.  The
 checksum value will be used with the MD5 SHA checksum utility.
 
@@ -499,7 +499,7 @@ For PC's without an Optical drive; the |omv| ISO can be installed using a
 Thumbdrive as the ISO source, and install the Debian/|omv| system to a second
 thumb drive.
 
-**Before creating an ISO thumb-drive consider checking the drive using the utilities and process described below in**, Preparing Flash Media.
+**Before creating an ISO thumb-drive consider checking the drive using the utilities and process described below in**, `Preparing Flash Media`_ .
 
 For assistance in creating a bootable ISO thumb-drive, see the following link.
 
@@ -507,7 +507,7 @@ For assistance in creating a bootable ISO thumb-drive, see the following link.
 
 ----
 
-**If installing to a standard hard drive or SSD, skip to** Installing |omv|.
+**If installing to a standard hard drive or SSD, skip to** `openmediavault installation <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#amd64-omv-installation>`_ . 
 
 ----
 
@@ -519,9 +519,9 @@ To use flash media as a boot drive, a couple utilities are recommended:
 `SDFormatter <https://www.sdcard.org/downloads/formatter_4/eula_windows/index.html/>`_ (get
 the latest version), and `h2testw1.4 <http://www.heise.de/ct/Redaktion/bo/downloads/h2testw_1.4.zip>`_ .
 
-* SDFormatter installs in the same manner as a typical Windows program.
+* `SDFormatter <https://www.sdcard.org/downloads/formatter_4/eula_windows/index.html/>`_ installs in the same manner as a typical Windows program.
 
-* h2testw 1.4 is stand-alone “portable” application.  Simply unzip h2testw_1.4 onto the desktop, open the folder, and double click the executable.
+* `h2testw1.4 <http://www.heise.de/ct/Redaktion/bo/downloads/h2testw_1.4.zip>`_ is stand-alone “portable” application.  Simply unzip h2testw_1.4 onto the desktop, open the folder, and double click the executable.
 
 Due to the rise in counterfeit media and media that reports a fake size, it's recommended that all USB thumb-drives, new or used, be formatted with SDFormatter and tested with  h2testw1.4  before using them.
 
@@ -591,8 +591,8 @@ Ignore it and click on **OK**.
 
 ----
 
-“Without errors” is the desired outcome.
-(If media tests with errors or is much smaller than is indicated by its labeled size, don't use it.)
+“**Without errors**” is the desired outcome.
+(If media tests with errors or is much smaller than is indicated by it's labeled size, don't use it.)
 
 .. image:: /new_user_guide/images/8_H2testw_5.jpg
     :width: 417px
@@ -629,6 +629,8 @@ An installation walk through:
     :height: 504px
     :alt:
 
+----
+
 **Select a Language:**  **(As needed)**
 
 .. image:: /new_user_guide/images/10_Language.jpg
@@ -636,6 +638,8 @@ An installation walk through:
     :align: center
     :height: 423px
     :alt:
+
+----
 
 **Select your Location:**  **(As appropriate.)**
 
@@ -645,6 +649,8 @@ An installation walk through:
     :height: 423px
     :alt:
 
+----
+
 **Configure the Keyboard:** **(Select as appropriate)**
 
 .. image:: /new_user_guide/images/12_Key_Board.jpg
@@ -652,6 +658,8 @@ An installation walk through:
     :align: center
     :height: 426px
     :alt:
+
+----
 
 **Configure the Network:**
 
@@ -665,6 +673,8 @@ with later on.  (Something like **OMV1**).
     :height: 197px
     :alt:
 
+----
+
 **Configure the Network:**
 
 If applicable, enter your domain name suffix.  Otherwise, for home users and businesses with
@@ -675,6 +685,8 @@ peer to peer networks, the default entry is fine.
     :align: center
     :height: 188px
     :alt:
+
+----
 
 **Set up users and passwords:**
 
@@ -687,6 +699,8 @@ would be better to write down the **root password**, then to forget it.
     :height: 263px
     :alt:
 
+----
+
 **Set up users and passwords:**
 
 Follow the on screen guidance for setting up a new admin user and password.
@@ -697,11 +711,15 @@ Follow the on screen guidance for setting up a new admin user and password.
     :height: 188px
     :alt:
 
+----
+
 **Configure the Clock:**
 
 Select your time zone.
 
 (NO PIC)
+
+----
 
 **Partition Disks 1:**
 
@@ -712,6 +730,8 @@ If two storage devices are available for installation, this screen is displayed.
     :align: center
     :height: 165px
     :alt:
+
+----
 
 **Partition Disks 2:**
 
@@ -724,6 +744,8 @@ available.  In this particular example, the installation is placed on a USB thum
     :height: 230px
     :alt:
 
+----
+
 Partition Disks 3:
 
 (No Pic)
@@ -733,6 +755,8 @@ A 3rd window asks for confirmation of partition selections. Select Yes.
 .. note::  If installing to a USB drive, at this point, it is possible to an error may pop-up regarding partitioning the drive, and recommend a reboot.  Follow the recommendation.  After the reboot, the partition operation should succeed the 2nd time around.
 
 **The system installs..........**
+
+----
 
 **Configure the Package Manager:  Debian Archive Mirror Country**
 
@@ -750,6 +774,8 @@ location to your country would be the logical choice.
 
 The default choice is usually best.
 
+----
+
 **Configure the Package Manager:  HTTP proxy**
 
 In most cases this entry will be blank.
@@ -761,6 +787,8 @@ In most cases this entry will be blank.
     :align: center
     :height: 203px
     :alt:
+
+----
 
 .. note::   If installing to a hard drive, the following screen may or may not appear.
 
@@ -776,6 +804,8 @@ Generally the boot drive will be **/dev/sda** which is, in most cases, the first
     :height: 203px
     :alt:
 
+----
+
 **Finish the Installation:**  Accept the default.
 
 .. image:: /new_user_guide/images/21_Finish_Install.jpg
@@ -783,6 +813,8 @@ Generally the boot drive will be **/dev/sda** which is, in most cases, the first
     :align: center
     :height: 153px
     :alt:
+
+----
 
 **Installation Complete:**
 
@@ -804,6 +836,7 @@ First Boot
 Allow the installation to boot.  Normally, the text above the login prompt will provide an **IP address** to be used for opening the console in a web browser.
 If an IP address is available, skip the following and proceed to `Initial Configuration`_.
 
+----
 
 .. note:: **There are two exception cases on the first boot that users should be aware of.**
 
@@ -818,7 +851,9 @@ to the screen.  However, on odd occasions the following issue may be observed.
     :height: 282px
     :alt:
 
-This is due to a slow response from your DHCP server, during a fast boot process.
+This is usually due to a slow response from your DHCP server, during a fast boot process.
+
+----
 
 **An easy method of finding the IP address is:**
 
@@ -838,6 +873,8 @@ To access the WEB control panel, the IP address for the wired Ethernet
 interface is needed.  In this case it's **192.168.1.55**  (**/24**, the subnet mask,
 can be ignored.)
 
+----
+
 2.) **An odd IP address is assigned, that is not in the user's network:**
 
 In the following example, the actual network is 192.168.**1**.0/24
@@ -849,6 +886,8 @@ In the following example, the actual network is 192.168.**1**.0/24
     :alt:
 
 This is usually a one time event where the fix is simple – simply login as root and type ``reboot`` on the command line.  The address will be correct the second time around.
+
+----
 
 **With a known IP address, proceed to** `Initial Configuration`_.
 
@@ -878,6 +917,8 @@ The user name is ``admin`` and default password is ``openmediavault``
     :align: center
     :height: 480px
     :alt:
+
+----
 
 SSH Login:
 ----------
@@ -909,7 +950,7 @@ Quick Start Guide for Advanced Users:
 *************************************
 
 * In the left hand column, start at the top with **General Settings**, and work your way down, choosing and activating the services and features you need for your use case.
-* For amd64 and i386 users, a static address for the |omv| server and setting the address of a `public DNS server <https://wiki.ipfire.org/dns/public-servers>`_ is recommended.  (SBC users, see the section, **Network Interfaces – SBC Users.**) As an example:  Googles servers 8.8.8.8 and 8.8.4.4 support DNSSEC for better security, and “Anycast” which will direct DNS queries to a nearby server with low network latency.  There are several choices for Public servers that support these features. `List of Public DNS Servers <https://wiki.ipfire.org/dns/public-servers>`_ .
+* For amd64 and i386 users, a static address for the |omv| server and setting the address of a `public DNS server <https://wiki.ipfire.org/dns/public-servers>`_ is recommended.  (SBC users, see the section, `Network Interfaces – SBC Users`_ .) As an example:  Googles servers 8.8.8.8 and 8.8.4.4 support **DNSSEC** for better security, and “**Anycast**” which will direct DNS queries to a nearby server with low network latency.  There are several choices for Public servers that support these features. `List of Public DNS Servers <https://wiki.ipfire.org/dns/public-servers>`_ .
 * For a browsable network share, a minimum of one |sf| would need to be configured and that folder would need to be added to SMB/CIF to be visible on the network.
 
 .. image:: /new_user_guide/images/28_Quick_Start.jpg
@@ -981,7 +1022,13 @@ If needed, the Domain suffix can be changed here.  (Very few users will use Full
 Network Interfaces – SBC Users
 ------------------------------
 
-Part of the SBC installation process was setting the wired interface to DHCP.  SBC users should consider leaving their wired network interface set to DHCP, until Docker and Portainer are installed.
+Part of the **SBC** installation process was setting the wired interface to DHCP.  SBC users 
+should consider leaving their wired network interface set to DHCP, 
+until `Docker <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#installing-docker>`_ and 
+`Portainer <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#installing-portainer>`_ are installed.
+
+
+
 
 If a static IP address is needed:
 
@@ -995,10 +1042,15 @@ Highlight / click on the **interface** found under the **Name** column, and clic
 (*As of the release of **Debian 9/OMV4**, the interface name might not be the traditional **eth0**.  A variety of names may be found, such as **eno1** or others.   Use the first interface line/name found.*)
 
 * It is recommended that users assign a static IP address to the new |omv| server that is outside the range of the network's DHCP server.
-* It is also recommended that users set a public DNS address.  A list of public DNS servers is available → `here <https://wiki.ipfire.org/dns/public-servers>`_ .  Use a server that supports **DNSSEC**, for better security, and **Anycast**, for low latency end point servers that are closer to user locations.
+* It is also recommended that users consider using a public DNS address.  A list of public DNS servers is available → `here <https://wiki.ipfire.org/dns/public-servers>`_ .  Use a server that supports **DNSSEC**, for better security, and **Anycast**, for low latency end point servers that are closer to user locations.
 * The Netmask will be as shown, in most cases, and the Gateway address will be the address of the user's router.
 
-**Note** When saving a new static IP address, the user will be “**going out on a limb and cutting it off**”.  Since the address provided by the network DHCP server is different from the static IP address chosen by the user, when the new address is changed, saved and applied, the GUI web page will stop responding.  This is normal and expected.  Type the new address, entered in the dialog box, into the URL line of your Web browser to reconnect.
+.. note:: When saving a new static IP address, the user will be “**going out on a limb and cutting it off**”.
+
+Since the address provided by the network DHCP server is different from the static IP address chosen by 
+the user, when the new address is changed, saved and applied, the GUI web page will stop responding.  
+This is normal and expected.  Type the new address, entered in the dialog box, into the URL line of 
+your Web browser to reconnect.
 
 .. image:: /new_user_guide/images/30_IP_Address.jpg
     :width: 757px
@@ -1030,6 +1082,8 @@ E-mail connections.
     :height: 645px
     :alt:
 
+----
+
 The **Notifications** tab allows the selection of various functions for monitoring and error reporting.
 
 If using a minimalist platform, such as older hardware or SBC's,  E-mail's regarding system
@@ -1043,13 +1097,13 @@ eliminate excess E-mails, while maintaining **Storage reports** on hard drive he
     :alt:
 
 
-.. note:: Using Storage Notifications is highly recommended.
+.. note:: Using Storage Notifications is *highly* recommended.
 If SMART is **enabled**, under **Storage**, **SMART**, and short drive self-tests are
 enabled on spinning drives in the **Scheduled Tests** tab, the system may notify the user of
 hard drive errors *before* a hard drive fails completely.
 
 For an explanation of drive self-tests and an example of how to set up a drive self-test, see the section;
-Drive Self-Tests
+`Drive Self-Tests`_ 
 
 ----
 
@@ -1059,7 +1113,7 @@ Under **System**, **Power Management**
 
 * In the **Settings** Tab, toggle **monitoring on** (recommended).
 * In the Power button drop down, amd64 and i386 users should select the action preferred.  Since power buttons are not available on some SBC installations, SBB users may chose to select “Nothing”.
-* The Scheduled Jobs tab allows for the automation of a various power related tasks, such as an scheduled reboot.
+* The **Scheduled Jobs** tab allows for the automation of a various power related tasks, such as an scheduled reboot.
 
 .. image:: /new_user_guide/images/33_Power_Mangement.jpg
     :width: 566px
@@ -1080,6 +1134,8 @@ The initial recommended setting is **Enabled**.
     :height: 304px
     :alt:
 
+----
+
 Under **System**, **Update Management**:
 
 First, click on the **Check** button, to refresh available updates for your platform.
@@ -1089,7 +1145,7 @@ Checking the box by **Package information** will update all packages at once.  (
 
 **amd64** and **i386** users may be offered a list of “firmware updates”.  Select firmware updates that apply to your specific hardware.  However, there's no “penalty” for selecting firmware updates that do not apply.
 
-Beginners should leave the 2nd Tab, Settings, with default settings.
+Beginners should leave the 2nd Tab, **Settings**, with default settings.
 
 .. image:: /new_user_guide/images/35_Update_Management.jpg
     :width: 566px

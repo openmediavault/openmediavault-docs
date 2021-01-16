@@ -214,7 +214,7 @@ boot drive should have at least 16GB capacity, for longer life.
 Recommended Hardware and Considerations for a good use experience
 =================================================================
 
-i386 or amd64
+amd64
 -------------
 
 * Intel i3 (or equivalent AMD processor), 4GB ram or better (ECC preferred) and a 16GB system boot drive will provide good performance in home or small business use cases.
@@ -231,7 +231,7 @@ Performance levels vary greatly among the various models
 of **Single Board Computer** (hereafter referred to as an "**SBC**")
 that are supported by Armbian, Raspbian, and |omv|.  While most will
 support file server operations for a few users, if running server
-add-on's or Dockers is a requirement, research the chosen SBC carefully
+add-on's or Dockers is a requirement, research supported SBC's carefully
 before buying.  `Armbian's <https://forum.armbian.com/>`_
 or `openmediavault's <https://forum.openmediavault.org/>`_ forums may be of
 assistance, along with Internet product reviews.
@@ -1165,9 +1165,7 @@ enable the full range of plugin's available on |omv|, the installation of OMV-Ex
 required.  For a preview of what is available visit `omv-extras.org <http://omv-extras.org>`_ and select
 the version of |omv| that's being installed.
 
-For **amd64** users who installed |omv| on **SD-cards** or **USB thumb-drives**; installing
-OMV-Extras is a prerequisite for installing the **flash-memory plugin**. The flash-memory
-plugin is **required** for flash media boot drives.
+.. note:: For **amd64** users who installed |omv| on **SD-cards** or **USB thumb-drives**;  The flash-memory plugin is **required** for flash media boot drives. Installing **OMV-Extras** is a prerequisite for installing the **flash-memory plugin**.
 
 ----
 
@@ -1177,7 +1175,7 @@ Installing OMV-Extras
 To enable OMV-Extras, a file is downloaded that will be used in the server console.
 Select the following link and download the associated file for OMV5.
 
-`omvextrasorg for OMV5 <omv-extras.org/openmediavault-omvextrasorg_latest_all5.deb>`_
+`omvextrasorg for OMV5 <http://omv-extras.org/openmediavault-omvextrasorg_latest_all5.deb>`_ 
 
 .. image:: /new_user_guide/images/36_omv-extras.jpg
     :width: 559px
@@ -1220,7 +1218,7 @@ Select **openmediavault-omvextrasorg** and click the **Install** button.
 
 Under **System**, **OMV-Extras**:
 
-In the **Settings** Tab, highlight **OMV-Extras.org Testing** and click **Edit**.  **Enable** and Save.
+In the **Settings** Tab, highlight **OMV-Extras.org Testing** and click **Edit**.  **Enable** and **Save**.
 
 .. image:: /new_user_guide/images/39_omv-extras4.jpg
     :width: 657px
@@ -1228,8 +1226,8 @@ In the **Settings** Tab, highlight **OMV-Extras.org Testing** and click **Edit**
     :height: 342px
     :alt:
 
-To insure that all plugins are available, go back to System, Plugins, and
-click the Check button.  This will refresh the page and fully populate it with
+To insure that all plugins are available, go back to **System**, **Plugins**, and
+click the **Check** button.  This will refresh the page and fully populate it with
 plugins that may be missing.
 
 ----
@@ -1240,7 +1238,7 @@ A Basic Data Drive
 General
 -------
 
-|omv| is capable of setting up basic Linux file systems in the GUI, up to, and including,
+Openmediavault is capable of setting up basic Linux file systems in the GUI, up to, and including,
 modern “Copy on Write” file systems such as ZFS which combine check summed files,
 RAID functions, and Logical Volume Management into a single package.  However,
 advanced file systems add complexity which can make administration of a NAS
@@ -1250,15 +1248,15 @@ Until some experience is gained, it is recommended that Linux/NAS beginners use 
 disks with a native Linux file system.  In the processes described in the following,
 EXT4 will be used with a single data drive.
 
-Some Windows users will want to use USB attached hard drives that are formatted NTFS.
-While this is possible, the drive would need to remain attached or, at a minimum, be
-connected to the server when |omv| boots.  It would be better to use a Linux formatted drive
-and create a Samba share (SMB/CIF) for Windows clients, as described in Setting up a
-|sf| and Creating a SMB/CIF “Samba” share.
+Some Windows users will want to use USB attached hard drives that are formatted NTFS by Windows.  
+While this is possible, there are technical limitations to consider that are beyond the scope of 
+this guide.  
 
-A Samba (SMB/CIF) network share understands the Windows file format and can be configured
-to accommodate DOS and extended file attributes.  Samba serves as a transparent “translator”
-for Windows data storage.
+A far easier and better approach would be to format all server connected drives, using openmediavault's 
+GUI, and create a Samba share (SMB/CIF) for Windows clients, as described in `Setting up a Shared Folder`_  
+and `Creating a SMB/CIF “Samba” share`_ .  A Samba (SMB/CIF) network share understands the Windows file 
+format and can be configured to accommodate DOS and extended file attributes.  Samba serves as a 
+transparent “translator” for Windows data storage.
 
 RAID+USB = Potential Problems
 -----------------------------
@@ -1275,7 +1273,7 @@ potential for the total loss of stored data.  RAID issues involving SBC's, USB c
 hard drives, or USB RAID enclosures are not supported on the forum.
 
 RAID is often confused with backup which is far more important.  For more information, see
-the explanation of backup, in Backups and Backup-strategy.
+the explanation of backup, in `Backups and Backup-strategy`_ .
 
 Data Storage - Size matters
 ---------------------------
@@ -1287,12 +1285,14 @@ if the calculated data to be stored on the NAS is 1TB, the selected drive should
 without the need to expand in the immediate future.  When the fill percentage reaches 75%,
 it's time to plan for more storage.
 
+----
+
 Data Drive Set Up
 -----------------
 
- .. note:: Note for Beginners and SBC users: |omv| is designed to segregate the Operating System |omv|(the boot drive) from data storage.  This is “best practice” when setting up a server.  Accordingly, |omv| reserves the drive it is installed on exclusively for the OS.  By default, the GUI will not allow the boot drive to be selected when creating a data share.  A second hard drive or SSD is required for data storage.
+ .. note:: Note for Beginners and SBC users: Openmediavault is designed to separate the Operating System |omv|(the boot drive) from data storage.  This is “best practice” when setting up a server.  Accordingly, |omv| reserves the drive it is installed on exclusively for the OS.  By default, the GUI will not allow the boot drive to be selected when creating a data share.  A second hard drive or SSD is required for data storage.
 
-
+----
 
 With a data drive installed or connected.
 
@@ -1302,9 +1302,9 @@ Under **Storage**, **Disks**:
 (*Reformatting a disk with GPT formatting present may result in an error.  Simply re-run the wipe operation a 2nd time.*)
 
 .. image:: /new_user_guide/images/40_disks1.jpg
-    :width: 844px
+    :width: 760px
     :align: center
-    :height: 555px
+    :height: 500px
     :alt:
 
 ((The first device in the above list **/dev/sda** is the boot drive.))
@@ -1321,9 +1321,9 @@ Allow a few minutes for the format to complete.  When the message
 “**File system creation has completed successfully**” is displayed, click on **Close**.
 
 .. image:: /new_user_guide/images/41_disks2.jpg
-    :width: 844px
+    :width: 760px
     :align: center
-    :height: 555px
+    :height: 500px
     :alt:
 
 **In the same Window**:
@@ -1366,13 +1366,18 @@ In the following example, next to:
 |   **Path:** Accept the default
 |   **Permissions:**  Click on the drop down and select **Everyone: read/write**
 
+
 .. image:: /new_user_guide/images/42_shared_folder.jpg
     :width: 782px
     :align: center
-    :height:492px
+    :height: 492px
     :alt:
 
+
 Click the **Save** button.
+
+----
+
 
 **The End Result:**
 
@@ -1381,6 +1386,7 @@ Click the **Save** button.
     :align: center
     :height: 299px
     :alt:
+
 
 ----
 
@@ -1407,7 +1413,7 @@ click on Save.  (Confirm with “**Apply**” when the yellow banner pops up.)
 
 ----
 
-Click on the Shares Tab and the +Add button.
+Click on the **Shares** Tab and the **+Add** button.
 
 In the popup dialog box, set the following:
 
@@ -1440,7 +1446,7 @@ Open Windows explorer, scroll down to Network and click on it.  There's the new 
     :height: 389px
     :alt:
 
-*A few minutes may be required for the Windows Network to “Discover” the new server.  If users are using **Windows 10 PC's**, and the server and share do not appear, see this networking How To.*
+A few minutes may be required for the Windows Network to “Discover” the new server.  If users are using **Windows 10 PC's** and the server and share does not appear at a client, see this networking `How To <https://forum.openmediavault.org/index.php/Thread/27179-HOW-TO-Connect-to-OMV-SMB-shares-with-Windows-10-and-Microsoft-Servers/?postID=203732#post203732%23post168753>`_ .  
 
 ----
 
@@ -1462,7 +1468,9 @@ This share is “writable” with a standard “Copy and Paste”, from a client
     :height: 415px
     :alt:
 
-Congratulations!  You now have a functional NAS that can be expanded to accommodate additional network shares.  Simply repeat the processes in Creating A Network Share to create and make additional shares visible on your network.
+Congratulations!  You now have a functional NAS that can be expanded to accommodate additional network 
+shares.  Simply repeat the processes in `Creating A Network Share`_ to create and make additional shares 
+visible on your network.
 
 .. image:: /new_user_guide/images/divider-c.png
     :width: 400px
@@ -1474,7 +1482,7 @@ Congratulations!  You now have a functional NAS that can be expanded to accommod
 The Flash Memory Plugin - amd64 users only
 ******************************************
 
-amd64 users who installed |omv| **on flash media** will need to install the flash memory plugin.
+**amd64** users who installed |omv| **on flash media** will need to install the flash memory plugin.
 
 Flash Media and Wear Leveling
 =============================
@@ -1493,10 +1501,10 @@ starts at the beginning and cycles through again.  This wear leveling process av
 single location to failure, and spreads wear evenly throughout.
 
 With wear leveling and two drives of the same type, a drive that is twice the size will last roughly
-two times longer than the smaller drive.  While this is a strong vote for using a larger flash drive,
-when backups are considered, drives of twice the size also take twice as long to image and their
-image files are twice as large.  (When using flash media as a boot drive, a practical trade-off
-should be considered in the suggested 16 to 32GB range.)
+two times longer than the smaller drive. This may seem like is a strong vote for using a larger flash 
+drive.  However, when backups are considered, drives of twice the size also take twice as long to image 
+and their image files are twice as large.  (When using flash media as a boot drive, a practical 
+trade-off should be considered in the suggested 16 to 32GB range.)
 
 The Purpose of the Plugin
 =========================
@@ -1511,7 +1519,7 @@ than it would without the Flash Media plugin.
 Installing the Plugin
 =====================
 
-The prerequisite for installing this plugin is the installation of OMVExtras.  If OMVExtras is not
+The prerequisite for installing this plugin is the installation of `OMV-Extras`_ .  If `OMV-Extras`_ is not
 installed, it is required to proceed.
 
 ----
@@ -1547,7 +1555,7 @@ Flash Memory Plugin – Editing /etc/fstab
 There are two options for editing /etc/fstab
 
 * (Option 1) A Linux command line text editor
-* (Option 2) WinSCP and Windows Notepad can be used if WinSCP is installed
+* (Option 2) WinSCP and Windows Notepad can be used if `WinSCP`_ is installed
 
 ----
 
@@ -1561,35 +1569,40 @@ Using PuTTY, SSH into the server.  Log in as root and enter the root password.
 On the command line, type the following and hit enter.
 ``nano /etc/fstab``
 
-.. note:: In nano, the mouse does not move the cursor.  The cursor is moved with the keyboard's arrow keys to the insertion point.  Type to insert text and use the backspace key to erase text if need.   If a mistake is made, exit without saving and go back in again.
+.. note:: In nano, the mouse does not move the cursor.  The cursor is moved by the keyboard's arrow keys to the insertion point.  Type to insert text and use the backspace key to erase text if need.   If a mistake is made, exit without saving and go back in again.
+
+----
 
 From the plugin's **Notes, Step 3**:
 
 * First:  We're going to add two statements **,noatime,nodiratime** to the **/** partition (the root partition) exactly as shown.  The text addition is highlighted in green.
-* Second:  Note the partition with **swap** in it.  Per Step 4, we're going to comment this line out, using a  **#**  at the beginning of the line.  The **#** is an addition, and is highlighted in green.
+* Second:  Note the partition with **swap** in it.  Per Step 4, we're going to comment this line out using a  **#**  at the beginning of the line.  The **#** is an addition, and is highlighted in green.
 
 
 .. image:: /new_user_guide/images/51_Edit_fstab.jpg
-    :width: 946px
+    :width: 851px
     :align: center
-    :height: 481px
+    :height: 433px
     :alt:
 
 Use **Ctrl+o** to save, then **Ctrl+x** to exit
 
 Reboot the server.
-On the command line, the following command can be used: ``reboot``
+On the command line, the following command can be used: ``reboot``  
+**Done.** 
+
+.. note::  In the latest version of the Flash Memory plugin, there are extended instructions that go beyond editing etc/fstab.  Those instructions apply to mdadm RAID and are NOT for beginners.
 
 ----
 
 Option 2: Editing /etc/fstab with WinSCP and Notepad
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This option requires the installation of WinSCP which is detailed here .
+This option requires the installation of `WinSCP`_ .
 
 Users who are not comfortable with editing fstab using nano can use WinSCP
 and Windows Notepad to make the needed changes.  If WinSCP is not installed,
-this doc-link to → (WinSCP) will describe the process for installing WinSCP and
+this doc-link to → `WinSCP`_ will describe the process for installing WinSCP and
 logging into the |omv| server for the first time.
 
 When logged in, click on **/etc** in the left pane.  In the right pane, “**right**”
@@ -1603,11 +1616,9 @@ mouse click on **fstab**, select **Edit** and **Notepad**.
 
 Notepad will open the fstab file.
 
-----
-
 First: Find the root partition -  it's the line with  /  and insert **noatime,nodiratime,** after **ext4** and **one space** as shown.
 
-Second: Find the swap partition – it's the line with **swap** and insert a **#** at the beginning of the line as shown.
+Second: Find the swap partition – it's the line with **swap** and insert a **#** at the beginning of the line as shown below.
 
 .. image:: /new_user_guide/images/53_Edit_fstab3.jpg
     :width: 750px

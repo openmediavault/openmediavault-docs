@@ -1669,12 +1669,14 @@ In **Storage**, **S.M.A.R.T.**, in the **Settings** tab, **enable** SMART.
 
 
 .. image:: /new_user_guide/images/78_SMART.jpg
-    :width: 826px
+    :width: 743px
     :align: center
-    :height: 470px
+    :height: 423px
     :alt:
 
+
 ----
+
 
 Drive Self-Tests
 ================
@@ -1685,9 +1687,9 @@ illustration shows the setup for automated short tests, for an individual hard d
 own scheduled tests.)  In this example, a short self-test is run every Saturday at 1:00AM)
 
 .. image:: /new_user_guide/images/79_SMART2.jpg
-    :width: 1084px
+    :width: 759px
     :align: center
-    :height: 827px
+    :height: 579px
     :alt:
 
 A **Short** self-test runs for a few minutes and is an “on-line” procedure, meaning that drives are still accessible during 
@@ -1697,7 +1699,7 @@ for bad sectors and other imperfections.  Repairs are made, if possible, such as
 
 The down side of a Long test is that it is L-O-N-G, where drive size and spindle speed are factors in the length of the 
 test.  Long tests are off-line and, since entire platter surfaces are scanned, it may push a drive that's beginning to 
-failure closer to an actual failure as the test detects and attempts to repair problems.
+fail closer to an actual failure as the test detects and attempts to repair problems.
 
 There are many opinions on which tests to use and the frequency of testing.
 
@@ -1723,7 +1725,10 @@ Where spinning drives are concerned, thanks to the ongoing
 `BackBlaze drive study <https://www.backblaze.com/b2/hard-drive-test-data.html>`_ , a correlation has been made between 
 impending drive failure and specific SMART stat's.
 
-**SMART stats loosely related to drive failure:**
+----
+
+SMART stats loosely related to drive failure
+--------------------------------------------
 
 **SMART 5 – Reallocated_Sector_Count**
 
@@ -1736,7 +1741,7 @@ impending drive failure and specific SMART stat's.
 **SMART 198 – Offline_Uncorrectable**
 
 Any one count of the above stats may be meaningless, but it should be noted and closely monitored.  If any of the above 
-begin to increment upward, as of the 2nd or 3rd count, home or small business admins might want to consider ordering a 
+begin to increment upward, as of the 3rd or 4th count, home or small business admins might want to consider ordering a 
 replacement drive.
 
 **SMART 199 - UltraDMA CRC errors**
@@ -1749,7 +1754,7 @@ kind with the motherboard or the drive interface board.
 Drive Failure - The Bottom Line
 ===============================
 
-When using scheduled drive self-tests in conjunction with SMART E-mail notifications (see Server Notifications), server 
+When using scheduled drive self-tests in conjunction with SMART E-mail notifications (see `Server Notifications`_ ), server 
 admin's and home users will be afforded better protection against the data corruption and data loss due to a failing hard 
 drive.
 
@@ -1764,9 +1769,19 @@ Final Installation Notes:
 *************************
 
 
-1. Permissions to the shared folder created in this guide, and the SMB network share layered on top of it, are completely open.  While these permission settings are OK for home environments, the server should not be exposed to the Internet by forwarding port 80 or 443.  As users gain knowledge and experience, they should consider tightening up permissions on the underlying Shared Folders and SMB/CIFS network shares.
+1. Permissions for the shared folder created in this guide, and the SMB network share layered on top of 
+it, are completely open.  While these permission settings are OK for home environments, the server 
+should not be exposed to the Internet by port forwarding. (Ports 80 or 443, for example.)  As users 
+gain knowledge and experience, they should consider tightening up permissions on the underlying 
+Shared Folders and SMB/CIFS network shares.
 
-2. **Important:**  Put your new server on a good surge suppression power strip, at the absolute minimum. An UPS system is preferred and is best practice.  In consumer electronics, the majority of failures are related to power supplies and adverse conditions created by line power.  The prime causes of power issues and failures are short duration surges, high voltage spikes, brown-outs, and sustained over-volt or under-volt conditions.  A good UPS system is designed to counteract these problems.  Further, the file system on the boot drive is at risk of corruption from sudden (dirty) shutdowns due to power loss.  An UPS minimizes these risks. 
+2. **Important:**  Put your new server on a good surge suppression power strip, at the absolute 
+minimum. An **UPS** system is **preferred** and is best practice.  In consumer electronics, the majority of 
+failures are related to power supplies and adverse conditions created by line power.  The prime causes 
+of power issues and failures are short duration surges, high voltage spikes, brown-outs, and sustained 
+over-volt or under-volt conditions.  A good UPS system is designed to counteract these problems.  
+Further, the file system on the boot drive is at risk of corruption from sudden (dirty) shutdowns due 
+to power loss.  An UPS minimizes these risks. 
 
 
 .. image:: /new_user_guide/images/divider-c.png
@@ -1774,6 +1789,7 @@ Final Installation Notes:
     :align: center
     :height: 75px
     :alt:
+
 
 ***************************************
 Utilities to Help With |omv| Management
@@ -1790,9 +1806,13 @@ that allow users to look at |omv| “under the hood”.
 WinSCP
 ======
 
-WinSCP allows users, beginners and experienced alike, to visualize the Linux file structure in a manner similar to Windows Explorer.  WinSCP installs on a Window Client and connects to Linux servers, allowing users to work with their server remotely. 
+WinSCP allows users, beginners and experienced alike, to visualize the Linux file structure in a manner 
+similar to Windows Explorer.  WinSCP installs on a Window Client and connects to Linux servers, allowing 
+users to work with their server remotely. 
 
-One of the more useful features of WinSCP is that it gives users the ability to edit Linux configuration files with a familiar editor like Notepad.  For experienced Linux Desktop users who would like to use WinSCP, it will run from WINE (in Linux Mint, Ubuntu and others)
+One of the more useful features of WinSCP is that it gives users the ability to edit Linux 
+configuration files with a familiar editor like Notepad.  For experienced Linux Desktop users who would 
+like to use WinSCP, it will run from **WINE** (in Linux Mint, Ubuntu and others)
 
 WinSCP can be downloaded here. → `WinSCP <https://winscp.net/eng/download.php>`_ 
 
@@ -1803,7 +1823,7 @@ Installing WinSCP
 
 During the installation process, if prompted, select the **Explorer Interface**.  
 This display shows the remote file system only.  If the Explorer Interface is 
-not offered it can be selected, after the installation, under View, 
+not offered it can be selected after the installation, under View, 
 **Preferences**, **Environment**, **Interface**.
 
 ----
@@ -1845,7 +1865,8 @@ The second prompt is for the root password.  Enter the root ``password``.
 
 .. note::  R-PI users would enter the user ``pi`` and the pi ``password`` or a previously added user with admin privileges.  Due to the restrictions of a non-root “sudo” environment, WinSCP will be restricted from root functions.  This restriction can be mitigated, but it's beyond the scope of this guide.  
 
-The following link may of assistance:  Connect as root (sudo) using WINSCP **
+The following link may of assistance:  `Connect as root (sudo) using WINSCP <https://adamosk.com/how-to-connect-as-root-sudo-using-winscp/>`_
+
 
 ----
 
@@ -1854,7 +1875,7 @@ pane; operations are done on the right.  The folder srv was selected on the
 left.  **dev-disk-by-label-DATA** was highlighted on the right.  A right 
 click of the mouse brings up an operations menu.  **Properties** was 
 selected.  In this particular popup,  permissions could be changed.  
-(Without backup, this is NOT a recommended action for beginners.  Backup 
+(Without backup, this is **NOT** a recommended action for beginners.  **Backup** 
 is covered later.) 
 
 .. image:: /new_user_guide/images/57_WinSCP4.jpg
@@ -1866,11 +1887,11 @@ is covered later.)
 In a similar manner, a configuration file can be highlighted in the 
 right pane.  A right click of the mouse brings up the menu, select **EDIT** 
 and Windows notepad, or the internal editor can be used for editing 
-configuration files.  Either choice is much easier than using **nano** or 
+configuration files.  Beginners will find either choice to be easier than using **nano** or 
 **vi** on the Linux command line.
 
 While they can be done in WinSCP, very large file copies, moves, or deletes 
-are best done using Midnight Commander.
+are best done using `Midnight Commander <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#mc-midnight-commander>`_ .
 
 ----
 
@@ -1898,13 +1919,13 @@ MC (Midnight Commander)
 =======================
 
 Midnight Commander is a command line file utility that utilizes a very 
-cleverly created graphical environment.  It's very useful for 
+cleverly created graphical interface.  It's very useful for 
 navigating through |omv|'s directory structure.  It excels in efficient 
 copying, moving, and deleting folders and files.
 
 The installation process:
 
-* Use PuTTY to get to |omv|'s command line.
+* Use **PuTTY** to get to |omv|'s command line.
 * Log in as ``root``.
 * On the command line type the following;  ``apt-get install mc``
 * When prompted continue with “``Y``”
@@ -1924,14 +1945,16 @@ clicking on them.  To level up, click on the ``/..`` at the top left of
 either window.  
 
 .. image:: /new_user_guide/images/59_mc.jpg
-    :width: 841px
+    :width: 757px
     :align: center
-    :height: 525px
+    :height: 472px
     :alt:
 
 .. warning::  Beginners - Midnight Commander is powerful and potentially dangerous.  MC does not have “Undo”.  A careless operation on the boot drive, such as accidental file “Move” or “Delete”, can ruin your installation.
 
-Work with MC carefully and before doing anything extensive with it, the appropriate backups are recommended.  Operating System Backup – Data Backup.
+Work with MC carefully and before doing anything extensive with it, the appropriate backups are 
+recommended.  `Operating System Backup`_ – `Data Backup <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#full-disk-mirroring-backup-with-rsync>`_ .
+
 
 ----
 

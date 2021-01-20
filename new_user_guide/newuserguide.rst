@@ -1968,7 +1968,13 @@ SD-card or a USB thumb-drive as a boot drive; the ability to read flash media de
 `Win32DiskImager <https://sourceforge.net/projects/win32diskimager/>`_  useful for cloning 
 flash boot drives. 
 
-Details for using Win32DiskImager are found in Operating System Backup, under  Cloning Flash Media.
+**There is a known bug in Win32DiskImager V1.0.0**  While the exact cause of the bug has not been 
+determined, the number of affected users is very 
+small.  However, this bug requires the use of the Verify Only button after every operation.  If 
+the Verification hash is successful, the operation is good.  If Verification fails, the read or 
+write has failed and the image file or flashed drive cannot be used.
+
+Details for using Win32DiskImager are found in `Operating System Backup`_ , under `Cloning Flash Media`_ .
 
 ----
 
@@ -2002,7 +2008,7 @@ If one has a car and that car has a spare tire, is the “car” backed up?  The
 are a great number of things that can happen to a car that can disable it, until parts are replaced 
 or the car is otherwise repaired.  These items would include the battery, alternator, any component 
 of the ignition system, the transmission, the cooling system, etc., etc.  To backup the car, **a second 
-car is needed**.  This is why using RAID of any type is not backup.  At best RAID could be thought of 
+car is needed**.  This is why using RAID of any type is not backup.  At best, RAID could be thought of 
 as a “spare tire” for a PC.
 
 Where the automotive analogy fails, generally speaking, is that when a car fails it can be repaired.  
@@ -2045,8 +2051,7 @@ Full Disk Mirroring / Backup with Rsync
 While individual shared folders can be replicated using Services, Rsync, a more efficient approach is using an Rsync Command line, in a scheduled job, under System, Scheduled Jobs to mirror a drive.  This method allows for replicating the file and folder contents of an entire data drive, to an external drive or a second internal drive of adequate size.  
 
 * To implement something similar to the following example; it's necessary to add and mount a destination drive, in accordance with the section labeled A Basic Data Drive. 
-* When formatted, the hard drives used in this example were labeled to indicate their function. 
-**This is a good practice that will help new users to easily identify drives and avoid admin mistakes.**
+* When formatted, the hard drives used in this example were labeled to indicate their function. This is a good practice that will help new users to easily identify drives and avoid admin mistakes.
 * Dissimilar sized drives can be used, provide that the destination drive is large enough to hold the source drive's data.
 
 ----
@@ -2060,13 +2065,13 @@ this example, the entire contents of dev-disk-by-label-**DATA** would be copied 
 
 The switches are:
 
-**-a  Archive Mode**.  Archive mode adds an array of options to an Rsync command. It's the equivalent of switches -r -l -p -t -g -o and -D which copies files and folders recursively, copies links and devices, preserves permissions, groups, owners and file time stamps.
+``-a``  **Archive Mode**.  Archive mode adds an array of options to an Rsync command. It's the equivalent of switches ``-r -l -p -t -g -o`` and ``-D`` which copies files and folders recursively, copies links and devices, preserves permissions, groups, owners and file time stamps.
 
-**-v  Increase Verbosity**.  This can be useful when examining Rsync command output or log files.
+``-v``  **Increase Verbosity**.  This can be useful when examining Rsync command output or log files.
 
-**--delete    Deletes files in the destination drive that are not in the source**.  If accidental 
+``--delete``    **Deletes files in the destination drive that are not in the source**.  If accidental 
 deletion protection is desired, this switch could be left out of the command line.  However, from 
-time to time, it would necessary to be temporarily re-added the **--delete switch** to purge 
+time to time, it would necessary to be temporarily re-added the ``--delete`` switch to purge 
 previously deleted and unwanted files from the destination drive.
 
 ----
@@ -2080,19 +2085,19 @@ Under the **Mount Point** column (red boxes) are the full paths needed for the s
 (in this example **/srv/dev-disk-by-label-RSYNC**).
 
 .. image:: /new_user_guide/images/61_rsync.jpg
-    :width: 1094px
+    :width: 766px
     :align: center
-    :height: 525px
+    :height: 367px
     :alt:
 
-To construct the appropriate command line, add a slash “/” after each drive path, in the full 
+To construct the appropriate command line, add a slash “**/**” after each drive path, in the full 
 command line as follows:
 
-``rsync -av --delete /srv/dev-disk-by-label-DATA``**/** ``/srv/dev-disk-by-label-RSYNC``**/**
+``rsync -av --delete /srv/dev-disk-by-label-DATA`` **/** ``/srv/dev-disk-by-label-RSYNC`` **/**
 
 .. warning:: **Beginners Warning, Note and Sanity Check**
 *  Getting the source (left) and destination (right) in the correct order, in the command line, is **CRUCIAL**.  If they're accidentally *reversed*, the **empty** source drive will delete all data on the **destination** drive.  
-*  The safest option would be to leave the switch **--delete** out of the command line until it confirmed that two full copies exist.
+*  The safest option would be to leave the switch ``--delete`` out of the command line until it is confirmed that two full copies exist.
 
 ----
 
@@ -2101,16 +2106,16 @@ As previously mentioned, this Rsync operation can be manually run or automated u
 line into the command box and select scheduling parameters as desired.
 
 .. image:: /new_user_guide/images/62_rsync2.jpg
-    :width: 833px
+    :width: 750px
     :align: center
-    :height: 589px
+    :height: 530px
     :alt:
 
 User Options for Backup:
 
 * **Automated:**
 
-As configured above, and **ENABLED** (green), this Scheduled Job will run the Rsync command 
+As configured above, and if **ENABLED** (green), this Scheduled Job will run the Rsync command 
 line once a week, on Monday, at 05:00AM.  After the first run of the command, which may 
 take an extended period to complete, a week or more would be a good backup interval.  Generally 
 speaking, the backup interval should be long enough to allow for the discovery of a data 
@@ -2124,7 +2129,7 @@ and disable replication.
 * **Manual Run:**
 
 If the job is **disabled** (the **ENABLED** toggle switch is gray), the job won't run automatically. 
-However, the job can be run manually, at any time, by clicking on the job and the Run button.  
+However, the job can be run manually, at any time, by clicking on the job and the **Run** button.  
 This may be the best option for users who do not check their server regularly.
 
 * **Delete Protection:**
@@ -2151,8 +2156,10 @@ Recovery from a Data Drive failure - Using an Rsync'ed backup
 General:
 --------
 
-*Again, as a reminder, when the NAS primary drive is failing or has failed, it's crucial to 
-turn **OFF** an automated drive-to-drive Rsync command line.*
+*Again, as a reminder, when the NAS primary drive is failing or has failed, it's crucial to turn **OFF** an automated drive-to-drive Rsync command line.*
+
+There are two basic options for restoring data with an Rsycn'ed backup drive - they are “with” or 
+“without” a replacement for the source data drive.
 
 
 Restoration Without a Replacement Drive:
@@ -2173,9 +2180,9 @@ repairable.  Under **Storage**, **File Systems** we have a **missing** source dr
 **referenced**.
 
 .. image:: /new_user_guide/images/63_rsync_recover.jpg
-    :width: 960px
+    :width: 864px
     :align: center
-    :height: 347px
+    :height: 312px
     :alt:
 
 .. note::  There may be ERROR dialog boxes regarding the failed mount of existing shared folders.  With a missing but referenced drive, this is to be expected.  When all shares are redirected, these error messages will stop.
@@ -2227,7 +2234,7 @@ With one operation per shared folder, all shared folders have been redirected to
 labeled RSYNC.
 
 .. image:: /new_user_guide/images/66_rsync_recover4.jpg
-    :width: 638px
+    :width: 606px
     :align: center
     :height: 440px
     :alt:
@@ -2239,7 +2246,7 @@ network shares followed their associated Shared Folders, without additional conf
 shares are up and running on the Network.
 
 .. image:: /new_user_guide/images/67_rsync_recover5.jpg
-    :width: 638px
+    :width: 606px
     :align: center
     :height: 440px
     :alt:
@@ -2254,7 +2261,7 @@ One last operation is needed to completely remove the failed DATA drive.  Go to 
 failed drive, the **Delete** button is now active.   **Delete** the drive.
 
 .. image:: /new_user_guide/images/68_rsync_recover6.jpg
-    :width: 638px
+    :width: 606px
     :align: center
     :height: 440px
     :alt:
@@ -2273,9 +2280,9 @@ Second Level Backup – Replication to a Second Host
 **************************************************
 
 .. image:: /new_user_guide/images/69_rsync_2L_backup.jpg
-    :width: 1115px
+    :width: 523px
     :align: center
-    :height: 532px
+    :height: 450px
     :alt:
 
 The first item to note, is that this scenario can be accomplished using a LAN client, as the second 
@@ -2306,7 +2313,7 @@ NAS server and an SBC used for backing-up the main server's files.
 .. image:: /new_user_guide/images/69_rsync_2L_backup2.jpg
     :width: 638px
     :align: center
-    :height: 440px
+    :height: 396px
     :alt:
 
 This particular R-PI (OMV-RPI) is replicating all of the data shares of the OMV-SERVER and is 
@@ -2436,8 +2443,8 @@ To avoid issues that can result from dissimilar sizes, it's best to clone images
 SD-cards or USB thumb-drives.  Otherwise, it's easier to clone if a new drive is slightly larger than 
 the working drive.
 
-(And while it's an advanced technique, `Gparted <https://gparted.org/livecd.php>`_ can be used to slightly shrink flash drive partitions, 
-to fit on the smaller of the two flash drives.)
+(And while it's an intermediate level technique, `Gparted <https://gparted.org/livecd.php>`_ can be used 
+to slightly shrink flash drive partitions, to fit on the smaller of the two flash drives.)
 
 **The Cloning Process for USB thumbdrives and SD-Cards**
 
@@ -2452,7 +2459,7 @@ marked on the label (a fake), return it for refund or throw it away.
 
 * Insert the working card and start Win32Diskimager
 
-**SANITY Check**, make sure you inserted your working SD-card / USB thumb-drive at this point.
+.. warning:: SANITY Check, make sure you inserted your working SD-card / USB thumb-drive at this point.
 
 **Note:**  Windows will not be able to read the format of the partitions on the working boot drive and 
 offer to format it for you.  **DO NOT** format the drive.  Close the dialog box with the **X**. 
@@ -2480,18 +2487,26 @@ known bug which may affect a very small number of use cases.)
 
 **If the user/admin is running a business or is in another time sensitive scenario, where the NAS server can not be out of service for an extended period; the server can be booted on the source drive while the clone is being written.  Thereafter, the drive swap could be accomplished during a low use period.**
 
+----
+
 While the resultant image file may be quite large, if the file is retained, it can be used to write 
 another thumbdrive at a later date.  In such a case, the image file itself can be saved as a dated 
 backup and archived.  The size of the image can be reduced significantly, by using 7zip to compress 
 it before storage.
 
-* Insert the new flash drive and start Etcher.  (Etcher typically detects flash drives as well.)
+----
+
+The last process uses `Etcher <http://https://etcher.io/>`_ to burn the image file and verify it in one 
+pass.  `Etcher <http://https://etcher.io/>`_ is a free utility that installs on Windows.
+
+* Insert the **new** flash drive and start `Etcher <http://https://etcher.io/>`_ .  (Etcher typically auto detects flash drives as well.)
+
 
 * Select the image file previously created, verify the destination flash media drive, and click the FLASH! button.
 
 One of Etcher's features is that it writes the image and verifies it in a single operation.  If the 
 operation is successful, the working boot drive has been cloned.  Insert the new clone into the server 
-and boot it up.  With a successful boot up on the clone, user/admin's will have two verified copies 
+and boot it up.  With a successful boot up on the clone, user/admin's will have two verified working copies 
 of their server's boot drive. 
 
 **Note** – Win32diskimager will write an SD-Card or USB drive, but verification is required and it's 
@@ -2512,7 +2527,7 @@ Add-on's – Adding Value to Your OMV server
 General
 =======
 
-The `|omv| Forum <https://forum.openmediavault.org/index.php/BoardList/>`_ has an extensive 
+The `openmediavault Forum <https://forum.openmediavault.org/index.php/BoardList/>`_ has an extensive 
 `Guides <https://forum.openmediavault.org/index.php/Board/29-Guides/>`_ section.  Whether a user's 
 preference is videos or printed text, there's something for everyone among the numerous “How-To's”.  
 Beginners and Advanced users alike should take a few minutes to familiarize themselves with the 
@@ -2522,15 +2537,15 @@ content in the Guides section of the Forum.
 |omv|'s Plugins
 ==============
 
-|omv| has numerous plugin's.  Some are integrated into the base package by |omv|'s developer Volker 
+Openmediavault has numerous plugin's.  Some are integrated into the base package by |omv|'s developer Volker 
 Theile.  Examples are iSCSItarget, usbbackup, among others.
 
 Still more were created by |omv| plugin developers, such as Remote Mount, the flash-memory plug-in, 
 backup plugins, and more.  
 
 Many plugins are integrations of third party packages such as SNAPRAID, MergerFS, etc.  While 
-questions or issues regarding the integration of plugin's, into |omv|, are of interest to |omv|'s 
-developers, questions regarding the **operation** of plugins are best directed to the application's supporting 
+questions or issues regarding the **integration of plugin's**, into |omv|, are of interest to |omv|'s 
+developers, questions regarding the **operation** of the base software package are best directed to the application's supporting 
 web site.
 
 
@@ -2569,7 +2584,7 @@ tight, allowing more Docker containers to run concurrently with much greater eff
 Installing Docker
 -----------------
 
-Installing OMV-Extras is a prerequisite to installing Docker.
+Installing `OMV-Extras`_ is a **prerequisite** to installing Docker.
 
 ----
 
@@ -2577,16 +2592,12 @@ Under **System**, **OMV-Extras**, select the **Docker** tab.
 
 **Before installing Docker**, take note of the Docker Storage location.   **/var/lib/docker** is on the 
 **boot drive**.  This location is not an issue for hard drives and SSD's of medium capacity 
-(notionally, 128GB or larger.)  However, when using flash media to boot (8 to 32GB), the boot drive 
+(notionally, 128GB or larger.)  However, when using flash media to boot (8 to 16GB), the boot drive 
 is not a good location for media servers or downloader type Dockers.  There are two possible solutions:
 
-* The easiest solution is to change the Docker Storage path to a data drive.  If the default path is 
-changed, downloader output and metadata created by media servers (Plex and others) will be stored on 
-a data drive by default.
+* The easiest solution is to change the Docker Storage path to a data drive.  If the default path is changed, downloader output and metadata created by media servers (Plex and others) will be stored on a data drive by default.
 
-* A more advanced solution would be to leave the default storage location in place (var/lib/docker) 
-and configure the Downloaders and media servers to store their output and metadata on a data drive, 
-but this requires individual configuration of each Docker.
+* A more advanced solution would be to leave the default storage location in place (var/lib/docker) and configure the Downloaders and media servers to store their output and metadata on a data drive, but this requires individual configuration of each Docker.
 
 .. image:: /new_user_guide/images/71_Docker.jpg
     :width: 677px
@@ -2608,7 +2619,7 @@ Installing Portainer
 
 Under **System**, **OMV-Extras**, in the **Docker** tab, scroll down to the **Portainer** section.
 
-General:
+**General:**
 
 While Portainer is a Docker itself, it is the control interface through which Dockers are downloaded 
 and configured in |omv|.
@@ -2616,9 +2627,9 @@ and configured in |omv|.
 Click the **Install Portainer** button.
 
 .. image:: /new_user_guide/images/72_Portainer.jpg
-    :width: 900px
+    :width: 810px
     :align: center
-    :height: 490px
+    :height: 441px
     :alt:
 
 An install dialog box will popup and scroll as files are downloaded and installed.  At the end, 
@@ -2629,9 +2640,9 @@ An install dialog box will popup and scroll as files are downloaded and installe
 With a successful install, the **Status** line will change to reflect “**up**” time:
 
 .. image:: /new_user_guide/images/73_Portainer2.jpg
-    :width: 810px
+    :width: 729px
     :align: center
-    :height: 157px
+    :height: 141px
     :alt:
 
 Finally, click on the **Open Web** button.
@@ -2642,7 +2653,7 @@ At this point, Portainer is completely unconfigured.  The first configuration re
 a password for the Admin user.  Take note of this password.  It will be needed to log into 
 Portainer again.
 
-Then click on **Create User**
+Click on **Create User**
 
 .. image:: /new_user_guide/images/74_Portainer3.jpg
     :width: 632px
@@ -2650,8 +2661,8 @@ Then click on **Create User**
     :height: 473px
     :alt:
 
-In the next log in, there will be a login dialog with two empty fields.  Enter the username admin 
-in the top field and the password in the bottom field.
+In the next log in, there will be a login dialog with two empty fields.  Enter the username **admin** 
+in the top field and the **password** in the bottom field.
 
 ----
 
@@ -2665,15 +2676,15 @@ When this screen pops up, Click on **Local**, then **Connect**
 
 ----
 
-**Dismiss** the News and Click on **Local**
+**Dismiss** the **News** and Click on **Local**
 
 The following screen will now be the “**Home**” screen.  Using “Local” menu selections on the 
 left, this is where Docker Images are downloaded, containers are created, etc.
 
 .. image:: /new_user_guide/images/76_Portainer5.jpg
-    :width: 1029px
+    :width: 720px
     :align: center
-    :height: 433px
+    :height: 303px
     :alt:
 
 This concludes the installation of Docker and Portainer.
@@ -2685,8 +2696,8 @@ Dockers - It's about choices
 
 While there are 100,000+ Dockers, available on the `Docker Hub <https://hub.docker.com/explore/>`_ , all are not created equal.  The 
 offerings, from Docker authors, range from a one-off experiment with no documentation (users are 
-on their own) to organizations like Linuxserver.io that specialize in building first-rate 
-Docker images.  `Linuxserver.io <https://www.linuxserver.io/>`_ offers Dockers that have been thoroughly tested, they support 
+on their own) to organizations like `Linuxserver.io <https://www.linuxserver.io/>`_ that specialize in building first-rate 
+Docker images.  Linuxserver.io offers Dockers that have been thoroughly tested, they support 
 multiple architectures, they provide detailed container setup instructions, their offerings 
 are “Tagged” and they retain inventories of their older images.
 
@@ -2702,22 +2713,22 @@ When installing a Docker, for the greatest chance of success, it is suggested th
 
 **Second:**
 
-Potential Docker users should first look for Dockers that support their **architecture**.  The three primary architectures 
+Potential Docker users must use Dockers that support their **architecture**.  The three primary architectures 
 supported by |omv| are **ARMHF** or **ARM64**,  **i386**(32 bit), and **amd64*(64 bit).  In most cases, 32bit Dockers will run 
 on 64bit hardware.  \**\While there may be exceptions, i386 and amd64 Docker images may not run on ARM platforms. 
 “**Multi-arch**” (multiple architecture) Docker images are more platform flexible.\**\
 
 **Third:**
 
-To increase the chance of success, when attempting to install a Docker without a guide, look for the more popular Dockers 
-with the highest number of “**pulls**” on the Docker Hub.
- `(hub.docker.com) <https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=+plex&starCount=0>`_  
- There are good reasons why these Dockers are broadly popular – they tend to work.
+To increase the chance of success, when attempting to install a Docker without a guide, look for the more 
+popular Dockers with the highest number of “**pulls**” on the Docker 
+Hub. `(hub.docker.com) <https://hub.docker.com/search/?isAutomated=0&isOfficial=0&page=1&pullCount=0&q=+plex&starCount=0>`_  
+There are good reasons why these Dockers are broadly popular – they tend to work.
 
- **Forth:**
+**Forth:**
 
-In the vast majority of cases, Dockers that fail to work won't have anything to do with |omv| or the Docker Plugin.  Their 
-issues tend to be with selecting the **wrong architecture**, selecting the **wrong network mode** (host, bridged, macvlan) for 
+In the *vast majority* of cases, Dockers that fail to work won't have anything to do with |omv| or Portainer.  Their 
+issues tend to originate from selecting the **wrong architecture**, selecting the **wrong network mode** (host, bridged, macvlan) for 
 the application, other configuration issues (such as port 80 OMV/Docker conflicts), permissions problems or the Dockers 
 themselves.
 
@@ -2772,60 +2783,30 @@ First search the forum.  In many cases, user problems can be resolved with a few
 look at the dates of posts and the version of |omv| referenced.  Posts that are 3 or more years old may not apply to the 
 current |omv| version.
 
-If posting a problem on the forum, start at the forum index, and look for the category that looks to be appropriate for 
-the post.  Along with an explanation of the the issue, the |omv| version, the appropriate logs and command line output, if 
-known, and the hardware platform in use are the absolute minimums required.  Realize that, without information, even the 
+If posting a problem on the forum, start at the `forum index <https://forum.openmediavault.org/index.php/BoardList/>`_
+, and look for the category that looks to be appropriate for the post.  Along with an explanation of 
+the the issue, the |omv| version, the appropriate logs and command line output, if known, and the 
+hardware platform in use are the absolute minimums required.  Realize that, without information, even the 
 most experienced users, Moderators, and / or Developers will not be able to provide assistance.
 
-* Ask the right questions.  For beginners, this can be deceptively difficult.  There's some “straight forward” guidance on this topic here →  Ask the right questions.
+* Ask the right questions.  For beginners, this can be deceptively difficult.  There's some “straight forward” guidance on this topic here → `Ask the right questions <http://www.catb.org/~esr/faqs/smart-questions.html#idm368>`_ .
 * While |omv|'s forum is known for responsiveness, it's unrealistic to expect answers in real time. It may be a matter of days before a forum member, who is familiar with the described problem, will read and respond to a post.
-* When looking at answers, try to focus on the information presented, not the perceived tone. Remember that support is provided “gratis”, so act accordingly.
+* When looking at answers, try to focus on the information presented, not the perceived tone. Remember that support is provided “**gratis**”, so act accordingly.
 * Be open-minded.  The reason why users post on the forum should be because they couldn't solve a problem on their own.  With that in mind, when an experienced forum user replies, taking the time to make a suggestion or requesting more information, forum users should follow up and post the result. Whether the issue is fixed or not, user posts help other users with the same or a similar problem.
 * If a forum post or a “How To” fixes your problem, or gets you through a configuration issue, consider giving the author a “Like” or “Thanks”.  The gesture is free and it's an indicator to other users who may have the same problem.  In essence, you'd be saying “I agree” or “this worked for me”.
-* When users are experiencing problems with their data store (a file system issue, a hard drive, array, etc.) the working assumption on the part of experienced forum users and moderators will be that users have full data backup.  Accordingly, recommendations for correcting filesystems, hard drives, and RAID array issues may result in the loss of data.  Keep this in mind.
+* When users are experiencing problems with their data store (a file system issue, a hard drive, array, etc.) the working assumption on the part of experienced forum users and moderators will be that **users have full data backup**.  Accordingly, recommendations for correcting filesystems, hard drives, and RAID array issues may result in the loss of data.  **Keep this in mind**.
 
 
 ----
 
-Common Problems
-===============
+Solutions to Common Problems
+============================
 
-Problem: After a reboot, the web page is not available.  (Bad Gateway or 404 error.)
+Follow this link to the maintained list on the forum. → `Solutions to Common Problems <https://forum.openmediavault.org/index.php?thread/21269-solutions-to-common-problems/>`_
 
-Solution: This may happen on an odd occasion.  Instead of doing a dirty shutdown, SSH in with PuTTY, and issue the command:  reboot.  The system will reboot.  Login.
+**Problem:** I have an SBC and I'm having trouble with RAID. (OR) I have a USB connected drives that I want to configure as a RAID array.
 
-
-Problem: Web interface has missing fields and/or items showing that have been uninstalled.
-
-Solution: Clear your browser cache and, always, login to the Web console using the user, admin.
-
-
-Problem: I mounted the drive using the command line and I can't select that drive in the shared folder device dropdown.
-
-Solution: Never mount a drive with anything other than the OMV web interface. This creates the necessary database entries to populate the device dropdown.
-
-
-Problem: I only see a few items in the web interface like the user section of Access Rights Management.
-
-Solution: You did not login as the admin user. This is the only user that can access everything.
-
-Problem: Samba is slow.
-
-Solution: Read these threads - Tuning Samba for more speed and Tuning Samba for more speed 2
-(**This does not apply to SBC images – Samba has already been optimization on these platforms.**)
-
-Problem: You see an error where a domain name/host could not be resolved
-
-Solution: You probably need to set your DNS server in System -> Network -> Interfaces
-
-
-Problem: "No Network Interfaces" when looking at the console, after boot up.
-
-Solution: Most of the time, this is caused by the system taking too long to get a DHCP IP address before the message is written. The adapter's address can be checked by logging in with any user (root is a good choice) and typing ip addr  
-
-
-Problem: I have an SBC and I'm having trouble with RAID. (OR) I have USB connected RAID array.
-N/A: USB RAID is not supported. 
+**Solution:** USB RAID is not supported.   
 
 ----
 
@@ -2843,7 +2824,7 @@ Do I have a problem?
 ^^^^^^^^^^^^^^^^^^^^
 
 With all peripherals attached that are normally used – use the command ``dmesg`` on the CLI and scroll through the 
-output.  If an undervoltage situation exists, it will be noted in the output.
+output.  If an **undervoltage** situation exists, it will be noted in the output.
 
 What is the problem?
 ^^^^^^^^^^^^^^^^^^^^
@@ -2888,8 +2869,8 @@ Potential Remedies:
 A Closing Note
 **************
 
-We, who support the Openmediavault project, hope you've found this guide to be useful and that you'll find your 
-Openmediavault server to be efficient, easy to use, and enjoyable. 
+We, who support the openmediavault project, hope you've found this guide to be useful and that you'll find your 
+openmediavault server to be efficient, easy to use, and enjoyable. 
 
 
 

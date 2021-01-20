@@ -1978,6 +1978,17 @@ Details for using Win32DiskImager are found in `Operating System Backup`_ , unde
 
 ----
 
+Etcher
+======
+
+`Etcher <http://www.python.org/>`_ is a utility similar to Win32DiskImager that installs on a Windows 
+client.  It's designed to write an image files to flash media.  In addition to the write operation, 
+Etcher verifies the the image has been written correctly as part of the write operation.  With two 
+available USB ports, the latest version of Etcher will clone flash media in an all-in-one operation.
+
+
+----
+
 Virtual Box
 ===========
 
@@ -2497,7 +2508,7 @@ it before storage.
 ----
 
 The last process uses `Etcher <http://https://etcher.io/>`_ to burn the image file and verify it in one 
-pass.  `Etcher <http://https://etcher.io/>`_ is a free utility that installs on Windows.
+pass.  `Etcher`_ is a free utility that installs on Windows.
 
 * Insert the **new** flash drive and start `Etcher <http://https://etcher.io/>`_ .  (Etcher typically auto detects flash drives as well.)
 

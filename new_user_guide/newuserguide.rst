@@ -374,7 +374,7 @@ installation is detailed in `The Flash Memory Plugin <https://openmediavault.rea
 
 * Hosting Web or Media Servers with extensive content.
 
-* Hosting Virtualized Guest operating systems with desktops.  (Does not apply to ARM platforms. ARM platforms can not virtualize i386 or amd64 platforms. )
+* Hosting Virtualized Guest operating systems with desktops.  (Does not apply to ARM platforms. ARM platforms can not virtualize i386 or amd64 operating systems. )
 
 (There's no penalty for starting with a smaller boot drive. Moving to a larger
 drive, if needed, can be done later.)
@@ -452,7 +452,8 @@ amd64 (64-bit) Platforms
 This guide assumes the user will be installing from a CD, burned
 from an image found in |omv|'s files
 repository `openmediavault's files repository <https://sourceforge.net/projects/openmediavault/files/>`_ ,
-using 64 bit hardware.
+using 64 bit hardware.    Information for creating a bootable USB thumb-drive, as a software source, 
+is provided as well.
 
 ----
 
@@ -499,15 +500,16 @@ For PC's without an Optical drive; the |omv| ISO can be installed using a
 Thumbdrive as the ISO source, and install the Debian/|omv| system to a second
 thumb drive.
 
-**Before creating an ISO thumb-drive consider checking the drive using the utilities and process described below in**, `Preparing Flash Media`_ .
-
 For assistance in creating a bootable ISO thumb-drive, see the following link.
 
-`How to install an ISO file on a USB drive <https://www.lifewire.com/how-to-burn-an-iso-file-to-a-usb-drive-2619270>`_
+`How to install an ISO file on a USB drive <https://www.lifewire.com/how-to-burn-an-iso-file-to-a-usb-drive-2619270>`_ 
+
+**Before creating an ISO thumb-drive consider checking the drive, to be used as a software source, using the utilities and process described below in**, `Preparing Flash Media`_ .
+
 
 ----
 
-**If installing to a standard hard drive or SSD, skip to** `openmediavault installation <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#amd64-omv-installation>`_ . 
+**If installing to a standard hard drive or SSD, skip to →** `openmediavault installation <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#amd64-omv-installation>`_ . 
 
 ----
 
@@ -531,6 +533,7 @@ Format and Test Flash Media
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Using SDFormatter, do a clean format:
+
 (While SDFormatter was designed for SD-cards, it can format USB thumb-drives
 for error testing.  For those who would prefer a formatter specifically for a
 USB thumb-drive; `HPUSBDISK.EXE <https://www.mediafire.com/file/693jiig27dk846h/HPUSBDisk.exe/file/>`_  )
@@ -546,7 +549,9 @@ default options are fine.
 
 Click on **Format**
 
+
 ----
+
 
 After the drive format is completed, open **h2testw** and select your language.
 
@@ -558,7 +563,9 @@ Then, click on **Select target**
     :height: 270px
     :alt:
 
+
 ----
+
 
 Under **Computer**, select the flash media previously formatted.
 
@@ -568,7 +575,9 @@ Under **Computer**, select the flash media previously formatted.
     :height: 398px
     :alt:
 
+
 ----
+
 
 Select **Write+Verify**.  (Do not check endless verify)
 
@@ -578,9 +587,11 @@ Select **Write+Verify**.  (Do not check endless verify)
     :height: 296px
     :alt:
 
+
 ----
 
-A dialog box similar to the following may pop up, drawing attention to a **1MB** difference.
+
+A dialog box similar to the following may pop up, drawing attention to a **1**MB difference.
 Ignore it and click on **OK**.
 
 .. image:: /new_user_guide/images/7_H2testw_4.jpg
@@ -589,7 +600,9 @@ Ignore it and click on **OK**.
     :height: 199px
     :alt:
 
+
 ----
+
 
 “**Without errors**” is the desired outcome.
 (If media tests with errors or is much smaller than is indicated by it's labeled size, don't use it.)
@@ -603,7 +616,9 @@ Ignore it and click on **OK**.
 After H2testw verifies the USB thumb-drive, do one more clean format, using
 SDFormatter, before using the thumb-drive.
 
+
 ----
+
 
 amd64 – |omv| Installation
 ===================================
@@ -690,13 +705,13 @@ peer to peer networks, the default entry is fine.
 
 **Set up users and passwords:**
 
-Follow the on screen guidance for setting the root password.  While not recommended, it
-would be better to write down the **root password**, then to forget it.
+Follow the on screen guidance for setting the **root password**.  While not recommended, it
+would be better to write down the root password, then to forget it.
 
 .. image:: /new_user_guide/images/15_root_password.jpg
-    :width: 779px
+    :width: 700px
     :align: center
-    :height: 263px
+    :height: 370px
     :alt:
 
 ----
@@ -706,9 +721,9 @@ would be better to write down the **root password**, then to forget it.
 Follow the on screen guidance for setting up a new admin user and password.
 
 .. image:: /new_user_guide/images/16_Create_User.jpg
-    :width: 779px
+    :width: 700px
     :align: center
-    :height: 188px
+    :height: 257px
     :alt:
 
 ----

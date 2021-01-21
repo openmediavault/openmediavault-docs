@@ -277,12 +277,12 @@ server.
 
 Pre-2011 Intel and AMD CPU's
 ----------------------------
-`Plex <https://support.plex.tv/hc/en-us/articles/200250377-Transcoding-Media>`_, a popular media server, recommends at least 2000 on the CPU's
+`Plex <https://www.plex.tv/>`_, a popular media server, recommends at least 2000 on the CPU's
 `PassMark <https://www.cpubenchmark.net/cpu_list.php>`_ score for each concurrent 1080p transcoded stream.
-See the advice article → `here <https://support.plex.tv/hc/en-us/articles/201774043-What-kind-of-CPU-do-I-need-for-my-Server->`_   However note that this advice
+See the advice article → `here <https://support.plex.tv/hc/en-us/articles/201774043-What-kind-of-CPU-do-I-need-for-my-Server->`_ .  However note that this advice
 applies to pre-2011 Intel and AMD CPU's.
 
-Look up an older CPU here →  `PassMark CPU Benchmarks <https://www.cpubenchmark.net/cpu_list.php>`_
+Look up an older CPU here →  `PassMark CPU Benchmarks <https://www.cpubenchmark.net/cpu_list.php>`_ .
 
 
 
@@ -332,7 +332,7 @@ processes required to act as a File Server are loaded into RAM - the fastest pos
 
 Navigating |omv|'s WEB/GUI interface is another matter.  Loading WEB pages may call files from the boot drive, which may 
 make the server appear to be slower, when using slow media.  However, the speed of the boot drive has little impact on 
-overall file server function and actual NAS performance.
+overall file server function and actual NAS file serving performance.
 
 *The above assumes that adequate RAM has been provisioned.*
 
@@ -2356,9 +2356,9 @@ provided by  `Backblaze.com <https://www.backblaze.com/blog/the-3-2-1-backup-str
     :height: 75px
     :alt:
 
-************************
-Operating System Backup:
-************************
+***********************
+Operating System Backup
+***********************
 
 By design, the OMV/Debian operating system installs on its own partition, segregated from data.  This 
 makes copying or cloning the |omv| boot/OS drive an easy process.  So, one might ask, why is a clone or a 

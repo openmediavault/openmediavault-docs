@@ -21,7 +21,7 @@ New User Guide
     :height: 75px
     :alt:
 
-For users who would prefer a downloadable copy of the New User Guide, it's available here. → `here <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Getting_Started-OMV5.pdf>`_ .
+For users who would prefer a downloadable copy of the New User Guide, it's available → `here <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Getting_Started-OMV5.pdf>`_ .
 
 ----
 

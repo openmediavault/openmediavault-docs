@@ -649,9 +649,9 @@ An installation walk through:
 **Select a Language:**  **(As needed)**
 
 .. image:: /new_user_guide/images/10_Language.jpg
-    :width: 790px
+    :width: 700px
     :align: center
-    :height: 423px
+    :height: 525px
     :alt:
 
 ----
@@ -659,9 +659,9 @@ An installation walk through:
 **Select your Location:**  **(As appropriate.)**
 
 .. image:: /new_user_guide/images/11_Location.jpg
-    :width: 790px
+    :width: 700px
     :align: center
-    :height: 423px
+    :height: 505px
     :alt:
 
 ----
@@ -669,9 +669,9 @@ An installation walk through:
 **Configure the Keyboard:** **(Select as appropriate)**
 
 .. image:: /new_user_guide/images/12_Key_Board.jpg
-    :width: 794px
+    :width: 700px
     :align: center
-    :height: 426px
+    :height: 525px
     :alt:
 
 ----
@@ -683,9 +683,9 @@ a server name that is a bit shorter might be easier to work
 with later on.  (Something like **OMV1**).
 
 .. image:: /new_user_guide/images/13_Config_Network.jpg
-    :width: 791px
+    :width: 700px
     :align: center
-    :height: 197px
+    :height: 244px
     :alt:
 
 ----
@@ -696,9 +696,9 @@ If applicable, enter your domain name suffix.  Otherwise, for home users and bus
 peer to peer networks, the default entry is fine.
 
 .. image:: /new_user_guide/images/14_Config_Network2.jpg
-    :width: 779px
+    :width: 700px
     :align: center
-    :height: 188px
+    :height: 236px
     :alt:
 
 ----
@@ -723,7 +723,7 @@ Follow the on screen guidance for setting up a new admin user and password.
 .. image:: /new_user_guide/images/16_Create_User.jpg
     :width: 700px
     :align: center
-    :height: 257px
+    :height: 188px
     :alt:
 
 ----
@@ -741,9 +741,9 @@ Select your time zone.
 If two storage devices are available for installation, this screen is displayed.
 
 .. image:: /new_user_guide/images/17_Partition_Disks1.jpg
-    :width: 785px
+    :width: 700px
     :align: center
-    :height: 165px
+    :height: 207px
     :alt:
 
 ----
@@ -754,9 +754,9 @@ If installing to a single internal drive, there will be only one selection
 available.  In this particular example, the installation is placed on a USB thumb-drive
 
 .. image:: /new_user_guide/images/18_Partition_Disks2.jpg
-    :width: 775px
+    :width: 700px
     :align: center
-    :height: 230px
+    :height: 291px
     :alt:
 
 ----
@@ -798,9 +798,9 @@ In most cases this entry will be blank.
 (If a proxy is required, note the form of entry required in the dialog box.)
 
 .. image:: /new_user_guide/images/19_Proxy.jpg
-    :width: 786px
+    :width: 700px
     :align: center
-    :height: 203px
+    :height: 253px
     :alt:
 
 ----
@@ -814,9 +814,9 @@ Select the appropriate boot disk in your server.
 Generally the boot drive will be **/dev/sda** which is, in most cases, the first sata port.
 
 .. image:: /new_user_guide/images/20_Install_Grub.jpg
-    :width: 786px
+    :width: 700px
     :align: center
-    :height: 203px
+    :height: 251px
     :alt:
 
 ----
@@ -824,9 +824,9 @@ Generally the boot drive will be **/dev/sda** which is, in most cases, the first
 **Finish the Installation:**  Accept the default.
 
 .. image:: /new_user_guide/images/21_Finish_Install.jpg
-    :width: 788px
+    :width: 700px
     :align: center
-    :height: 153px
+    :height: 191px
     :alt:
 
 ----
@@ -838,9 +838,9 @@ Generally the boot drive will be **/dev/sda** which is, in most cases, the first
 (Otherwise, the installation process may re-start.)
 
 .. image:: /new_user_guide/images/22_Finish_Install2.jpg
-    :width: 788px
+    :width: 700px
     :align: center
-    :height: 153px
+    :height: 172px
     :alt:
 
 ----

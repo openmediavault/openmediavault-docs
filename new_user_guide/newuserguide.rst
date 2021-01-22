@@ -43,9 +43,9 @@ small-to-medium-sized businesses, |omv| is designed for
 flexibility.
 
 .. image:: /new_user_guide/images/2_Intro.jpg
-    :width: 1024px
+    :width: 700px
     :align: center
-    :height: 443px
+    :height: 440px
     :alt:
 
 .. image:: /new_user_guide/images/divider-c.png
@@ -1084,7 +1084,7 @@ To gather the required information for entry in the **Settings** Tab, users shou
 to the settings for their E-mail clients.  Note that most ISP's are using **SSL/TLS** secured
 E-mail connections.
 
-**Fill in** * **fields with user E-mail requirements and settings.**
+**Fill in fields with user E-mail requirements and settings.**
 
 .. image:: /new_user_guide/images/31_Notifications.jpg
     :width: 700px
@@ -1101,9 +1101,9 @@ resources, memory, etc., may become bothersome.  Unchecking **Enabled** boxes un
 eliminate excess E-mails, while maintaining **Storage reports** on hard drive health and file system errors.
 
 .. image:: /new_user_guide/images/32_Notifications2.jpg
-    :width: 831px
+    :width: 564px
     :align: center
-    :height: 645px
+    :height: 489px
     :alt:
 
 
@@ -2518,7 +2518,7 @@ it before storage.
 ----
 
 The last process uses `Etcher <http://https://etcher.io/>`_ to burn the image file and verify it in one 
-pass.  `Etcher`_ is a free utility that installs on Windows.
+pass.  Etcher is a free utility that installs on Windows.
 
 * Insert the **new** flash drive and start `Etcher <http://https://etcher.io/>`_ .  (Etcher typically auto detects flash drives as well.)
 

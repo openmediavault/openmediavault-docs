@@ -2,21 +2,12 @@
 New User Guide
 ##############
 
-.. image:: /new_user_guide/images/underconstruction.jpg
-    :width: 200px
-    :align: center
-    :height: 200px
-    :alt: Under Construction
-
-In the interim, a complete copy of the User Guide is available → `here <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Getting_Started-OMV5.pdf>`_ .
-
 
 .. image:: /new_user_guide/images/divider-c.png
     :width: 400px
     :align: center
     :height: 75px
     :alt:
-
 
 .. image:: /new_user_guide/images/1_Title_page.jpg
     :width: 588px
@@ -30,16 +21,20 @@ In the interim, a complete copy of the User Guide is available → `here <https:
     :height: 75px
     :alt:
 
+For users who would prefer a downloadable copy of the New User Guide, it's available here. → `here <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Getting_Started-OMV5.pdf>`_ .
+
+----
+
 ******************************
 Introduction to Openmediavault
 ******************************
 
-|omv| is a File Server / NAS system designed to work on most
+Openmediavault is a File Server / NAS system designed to work on most
 modern IBM compatible PC systems, to include typical amd64 or i386 PC’s
-and select ARM devices. |omv| can be thought of as
+and select ARM devices. Openmediavault can be thought of as
 filling a role similar to Microsoft's Server Essentials, but extends
 far beyond the role of a basic File Server with additional functionality
-added VIA plugin’s and Dockers. |omv| is designed to work with popular
+added VIA plugin’s and Dockers. Openmediavault is designed to work with popular
 client operating systems and multiple filesystem types, utilizing proven
 data sharing techniques on small and medium sized Local Area Networks.
 
@@ -67,9 +62,9 @@ active developer of the FreeNAS project by the end of 2009.   Volker
 became interested in completely rewriting FreeNAS, for use on Linux.
 Initially, he named the rewritten package **coreNAS** .  Shortly
 thereafter, Volker discarded the name **coreNAS** in favor of
-**openmediavault** .  |omv|'s initial release was on 17
+**openmediavault** .  Openmediavault's initial release was on 17
 October 2011.  It's built upon very mature and proven software layers
-and is under constant development. |omv| relies on the Debian
+and is under constant development. Openmediavault relies on the Debian
 project and uses their system and repositories as a base.  The project
 focus is on creating and maintaining a stable and extensible NAS system
 that is intuitive and easy to use.
@@ -167,7 +162,7 @@ following is intended only as general guidance.
 Compatibility:
 ==============
 
-|omv| 5.X is currently supported by Debian 10, “Buster”.
+Openmediavault 5.X is currently supported by Debian 10, “Buster”.
 Compatible hardware and other requirements of Debian Linux are available
 at Debian.org
 
@@ -196,7 +191,7 @@ the `Armbian Project <https://www.armbian.com/download/>`_ .
 Minimum Hardware requirements
 =============================
 
-|omv|/Debian will run on I386, AMD64, and select ARM platforms with 1GB
+Openmediavault/Debian will run on I386, AMD64, and select ARM platforms with 1GB
 of ram or less, but performance expectations should be adjusted
 accordingly.  The system boot drive should have a minimum of 8GB capacity.
 
@@ -244,7 +239,7 @@ Raspberry PI's
 Given the current market for SBC's, the majority of SBC users will
 likely be owners of R-PI's.
 
-|omv| runs well on the R-PI 4.  While |omv| will run on an R-PI model 2B and
+Openmediavault runs well on the R-PI 4.  While |omv| will run on an R-PI model 2B and
 the various models of the R-PI 3, performance is poor.   What exactly
 does “poor performance” mean?  In this context, if the R-PI's CPU is
 running at 100%, |omv| my not show up on the network and / or network
@@ -620,7 +615,7 @@ SDFormatter, before using the thumb-drive.
 ----
 
 
-amd64 – |omv| Installation
+amd64 – Openmediavault Installation
 ===================================
 
 If your PC platform won't boot onto a CD or USB thumb-drive with the installation
@@ -861,9 +856,9 @@ Normally, DHCP will assign an IP address to |omv| and the address will be printe
 to the screen.  However, on odd occasions the following issue may be observed.
 
 .. image:: /new_user_guide/images/23_DHCP_fail.jpg
-    :width: 720px
+    :width: 700px
     :align: center
-    :height: 282px
+    :height: 242px
     :alt:
 
 This is usually due to a slow response from your DHCP server, during a fast boot process.
@@ -879,9 +874,9 @@ Enter your previously set root password.
 At the # prompt type: ``ip addr``
 
 .. image:: /new_user_guide/images/24_DHCP_fail2.jpg
-    :width: 722px
+    :width: 700px
     :align: center
-    :height: 264px
+    :height: 239px
     :alt:
 
 To access the WEB control panel, the IP address for the wired Ethernet
@@ -928,9 +923,9 @@ The user name is ``admin`` and default password is ``openmediavault``
 (In the following, by clicking on the **eye icon**, the default password is shown unmasked.)
 
 .. image:: /new_user_guide/images/26_Int_Config1.jpg
-    :width: 734px
+    :width: 700px
     :align: center
-    :height: 480px
+    :height: 458px
     :alt:
 
 ----
@@ -969,9 +964,9 @@ Quick Start Guide for Advanced Users:
 * For a browsable network share, a minimum of one |sf| would need to be configured and that folder would need to be added to SMB/CIF to be visible on the network.
 
 .. image:: /new_user_guide/images/28_Quick_Start.jpg
-    :width: 816px
+    :width: 700px
     :align: center
-    :height: 542px
+    :height: 465px
     :alt:
 
 .. image:: /new_user_guide/images/divider-c.png
@@ -1027,9 +1022,9 @@ The hostname is the name that will appear on your network and on the command lin
 If needed, the Domain suffix can be changed here.  (Very few users will use Fully Qualified Domain Names.)
 
 .. image:: /new_user_guide/images/30_Host_Domain.jpg
-    :width: 781px
+    :width: 700px
     :align: center
-    :height: 446px
+    :height: 400px
     :alt:
 
 ----
@@ -1068,9 +1063,9 @@ This is normal and expected.  Type the new address, entered in the dialog box, i
 your Web browser to reconnect.
 
 .. image:: /new_user_guide/images/30_IP_Address.jpg
-    :width: 757px
+    :width: 700px
     :align: center
-    :height: 574px
+    :height: 531px
     :alt:
 
 ----
@@ -1092,9 +1087,9 @@ E-mail connections.
 **Fill in** * **fields with user E-mail requirements and settings.**
 
 .. image:: /new_user_guide/images/31_Notifications.jpg
-    :width: 831px
+    :width: 700px
     :align: center
-    :height: 645px
+    :height: 543px
     :alt:
 
 ----
@@ -1163,9 +1158,9 @@ Checking the box by **Package information** will update all packages at once.  (
 Beginners should leave the 2nd Tab, **Settings**, with default settings.
 
 .. image:: /new_user_guide/images/35_Update_Management.jpg
-    :width: 566px
+    :width: 688px
     :align: center
-    :height: 304px
+    :height: 427px
     :alt:
 
 ----
@@ -1190,12 +1185,12 @@ Installing OMV-Extras
 To enable OMV-Extras, a file is downloaded that will be used in the server console.
 Select the following link and download the associated file for OMV5.
 
-`omvextrasorg for OMV5 <http://omv-extras.org/openmediavault-omvextrasorg_latest_all5.deb>`_ 
+→ `OMV-extras for OMV5 <http://omv-extras.org/openmediavault-omvextrasorg_latest_all5.deb>`_ 
 
 .. image:: /new_user_guide/images/36_omv-extras.jpg
-    :width: 559px
+    :width: 400px
     :align: center
-    :height: 402px
+    :height: 288px
     :alt:
 
 Save the file.
@@ -1222,9 +1217,9 @@ In the same window (**System**, **Plugins**) scroll to the bottom.
 Select **openmediavault-omvextrasorg** and click the **Install** button.
 
 .. image:: /new_user_guide/images/38_omv-extras3.jpg
-    :width: 770px
+    :width: 700px
     :align: center
-    :height: 539px
+    :height: 490px
     :alt:
 
 ----
@@ -1305,7 +1300,7 @@ it's time to plan for more storage.
 Data Drive Set Up
 -----------------
 
- .. note:: Note for Beginners and SBC users: Openmediavault is designed to separate the Operating System |omv|(the boot drive) from data storage.  This is “best practice” when setting up a server.  Accordingly, |omv| reserves the drive it is installed on exclusively for the OS.  By default, the GUI will not allow the boot drive to be selected when creating a data share.  A second hard drive or SSD is required for data storage.
+ .. note:: Note for Beginners and SBC users: Openmediavault is designed to separate the Operating System (the boot drive) from data storage.  This is “best practice” when setting up a server.  Accordingly, |omv| reserves the drive it is installed on exclusively for the OS.  By default, the GUI will not allow the boot drive to be selected when creating a data share.  A second hard drive or SSD is required for data storage.
 
 ----
 
@@ -1317,9 +1312,9 @@ Under **Storage**, **Disks**:
 (*Reformatting a disk with GPT formatting present may result in an error.  Simply re-run the wipe operation a 2nd time.*)
 
 .. image:: /new_user_guide/images/40_disks1.jpg
-    :width: 760px
+    :width: 700px
     :align: center
-    :height: 500px
+    :height: 460px
     :alt:
 
 ((The first device in the above list **/dev/sda** is the boot drive.))
@@ -1336,9 +1331,9 @@ Allow a few minutes for the format to complete.  When the message
 “**File system creation has completed successfully**” is displayed, click on **Close**.
 
 .. image:: /new_user_guide/images/41_disks2.jpg
-    :width: 760px
+    :width: 700px
     :align: center
-    :height: 500px
+    :height: 417px
     :alt:
 
 **In the same Window**:
@@ -1383,9 +1378,9 @@ In the following example, next to:
 
 
 .. image:: /new_user_guide/images/42_shared_folder.jpg
-    :width: 782px
+    :width: 700px
     :align: center
-    :height: 492px
+    :height: 440px
     :alt:
 
 
@@ -1397,9 +1392,9 @@ Click the **Save** button.
 **The End Result:**
 
 .. image:: /new_user_guide/images/43_shared_folder2.jpg
-    :width: 704px
+    :width: 700px
     :align: center
-    :height: 299px
+    :height: 297px
     :alt:
 
 
@@ -1410,7 +1405,7 @@ Creating a SMB/CIF “Samba” Network Share
 
 In order to make your |sf| viewable in **Windows Explorer**,
 under **Network**, it's necessary to make it a Samba share using the SMB
-(Server Messaging Block) protocol.  |omv| makes setting up a Samba network
+(Server Messaging Block) protocol.  Openmediavault makes setting up a Samba network
 share an easy task.
 
 ----
@@ -1544,9 +1539,9 @@ Under **System**, **Plugins**, scroll down to Section: **Filesystems**.
 Select **openmediavualt-flashmemory** and click the **Install** button.
 
 .. image:: /new_user_guide/images/49_OMVExtras.jpg
-    :width: 717px
+    :width: 700px
     :align: center
-    :height: 412px
+    :height: 402px
     :alt:
 
 ----
@@ -1595,9 +1590,9 @@ From the plugin's **Notes, Step 3**:
 
 
 .. image:: /new_user_guide/images/51_Edit_fstab.jpg
-    :width: 851px
+    :width: 700px
     :align: center
-    :height: 433px
+    :height: 356px
     :alt:
 
 Use **Ctrl+o** to save, then **Ctrl+x** to exit
@@ -1624,9 +1619,9 @@ When logged in, click on **/etc** in the left pane.  In the right pane, “**rig
 mouse click on **fstab**, select **Edit** and **Notepad**.
 
 .. image:: /new_user_guide/images/52_Edit_fstab2.jpg
-    :width: 750px
+    :width: 700px
     :align: center
-    :height: 542px
+    :height: 506px
     :alt:
 
 Notepad will open the fstab file.
@@ -1636,9 +1631,9 @@ First: Find the root partition -  it's the line with  /  and insert **noatime,no
 Second: Find the swap partition – it's the line with **swap** and insert a **#** at the beginning of the line as shown below.
 
 .. image:: /new_user_guide/images/53_Edit_fstab3.jpg
-    :width: 750px
+    :width: 700px
     :align: center
-    :height: 542px
+    :height: 329px
     :alt:
 
 | Do **File**, **Save**.  Close Notepad.
@@ -1684,9 +1679,9 @@ In **Storage**, **S.M.A.R.T.**, in the **Settings** tab, **enable** SMART.
 
 
 .. image:: /new_user_guide/images/78_SMART.jpg
-    :width: 743px
+    :width: 700px
     :align: center
-    :height: 423px
+    :height: 398px
     :alt:
 
 
@@ -1702,9 +1697,9 @@ illustration shows the setup for automated short tests, for an individual hard d
 own scheduled tests.)  In this example, a short self-test is run every Saturday at 1:00AM)
 
 .. image:: /new_user_guide/images/79_SMART2.jpg
-    :width: 759px
+    :width: 700px
     :align: center
-    :height: 579px
+    :height: 543px
     :alt:
 
 A **Short** self-test runs for a few minutes and is an “on-line” procedure, meaning that drives are still accessible during 
@@ -1859,9 +1854,9 @@ In Site name: The server's IP address is displayed.  Optionally, the site name c
 
 
 .. image:: /new_user_guide/images/55_WinSCP2.jpg
-    :width: 416px
+    :width: 400px
     :align: center
-    :height: 269px
+    :height: 259px
     :alt:
 
 ----
@@ -1869,9 +1864,9 @@ In Site name: The server's IP address is displayed.  Optionally, the site name c
 The **login screen** will come back.  Double click on the new site name.  The following is normal for the first SSH connection to any client or server. Click **Yes**. 
 
 .. image:: /new_user_guide/images/56_WinSCP3.jpg
-    :width: 496px
+    :width: 400px
     :align: center
-    :height: 286px
+    :height: 231px
     :alt:
 
 The first prompt is for the username.  Enter ``root``
@@ -1960,9 +1955,9 @@ clicking on them.  To level up, click on the ``/..`` at the top left of
 either window.  
 
 .. image:: /new_user_guide/images/59_mc.jpg
-    :width: 757px
+    :width: 700px
     :align: center
-    :height: 472px
+    :height: 437px
     :alt:
 
 .. warning::  Beginners - Midnight Commander is powerful and potentially dangerous.  MC does not have “Undo”.  A careless operation on the boot drive, such as accidental file “Move” or “Delete”, can ruin your installation.
@@ -2111,9 +2106,9 @@ Under the **Mount Point** column (red boxes) are the full paths needed for the s
 (in this example **/srv/dev-disk-by-label-RSYNC**).
 
 .. image:: /new_user_guide/images/61_rsync.jpg
-    :width: 766px
+    :width: 700px
     :align: center
-    :height: 367px
+    :height: 336px
     :alt:
 
 To construct the appropriate command line, add a slash “**/**” after each drive path, in the full 
@@ -2132,9 +2127,9 @@ As previously mentioned, this Rsync operation can be manually run or automated u
 line into the command box and select scheduling parameters as desired.
 
 .. image:: /new_user_guide/images/62_rsync2.jpg
-    :width: 750px
+    :width: 700px
     :align: center
-    :height: 530px
+    :height: 495px
     :alt:
 
 User Options for Backup:
@@ -2206,9 +2201,9 @@ repairable.  Under **Storage**, **File Systems** we have a **missing** source dr
 **referenced**.
 
 .. image:: /new_user_guide/images/63_rsync_recover.jpg
-    :width: 864px
+    :width: 700px
     :align: center
-    :height: 312px
+    :height: 253px
     :alt:
 
 .. note::  There may be ERROR dialog boxes regarding the failed mount of existing shared folders.  With a missing but referenced drive, this is to be expected.  When all shares are redirected, these error messages will stop.
@@ -2219,9 +2214,9 @@ The actual references to the failed DATA drive are the **Shared Folders** assign
 named **Documents** and **Music** as follows:
 
 .. image:: /new_user_guide/images/64_rsync_recover2.jpg
-    :width: 960px
+    :width: 700px
     :align: center
-    :height: 347px
+    :height: 336px
     :alt:
 
 Since the DATA drive no longer exists and there's an *exact duplicate* of all folders and files on the 
@@ -2260,9 +2255,9 @@ With one operation per shared folder, all shared folders have been redirected to
 labeled RSYNC.
 
 .. image:: /new_user_guide/images/66_rsync_recover4.jpg
-    :width: 606px
+    :width: 700px
     :align: center
-    :height: 440px
+    :height: 422px
     :alt:
 
 ----
@@ -2272,9 +2267,9 @@ network shares followed their associated Shared Folders, without additional conf
 shares are up and running on the Network.
 
 .. image:: /new_user_guide/images/67_rsync_recover5.jpg
-    :width: 606px
+    :width: 500px
     :align: center
-    :height: 440px
+    :height: 273px
     :alt:
 
 In addition, most simple services that are applied to these shared folders, would follow 
@@ -2287,9 +2282,9 @@ One last operation is needed to completely remove the failed DATA drive.  Go to 
 failed drive, the **Delete** button is now active.   **Delete** the drive.
 
 .. image:: /new_user_guide/images/68_rsync_recover6.jpg
-    :width: 606px
+    :width: 700px
     :align: center
-    :height: 440px
+    :height: 288px
     :alt:
 
 At this point, all shares in this example have been successfully redirected to the backup drive 
@@ -2306,9 +2301,9 @@ Second Level Backup – Replication to a Second Host
 **************************************************
 
 .. image:: /new_user_guide/images/69_rsync_2L_backup.jpg
-    :width: 523px
+    :width: 700px
     :align: center
-    :height: 450px
+    :height: 334px
     :alt:
 
 The first item to note, is that this scenario can be accomplished using a LAN client, as the second 
@@ -2337,9 +2332,9 @@ As an illustration of the backup server concept, the following is a File explore
 NAS server and an SBC used for backing-up the main server's files.
 
 .. image:: /new_user_guide/images/69_rsync_2L_backup2.jpg
-    :width: 638px
+    :width: 453px
     :align: center
-    :height: 396px
+    :height: 397px
     :alt:
 
 This particular R-PI (OMV-RPI) is replicating all of the data shares of the OMV-SERVER and is 
@@ -2500,9 +2495,9 @@ offer to format it for you.  **DO NOT** format the drive.  Close the dialog box 
 
 
 .. image:: /new_user_guide/images/70_OS_backup.jpg
-    :width: 494px
+    :width: 400px
     :align: center
-    :height: 337px
+    :height: 273px
     :alt:
 
 When the **read** is done, this is **crucial**, click the **Verify Only** button. This will compare 
@@ -2560,7 +2555,7 @@ Beginners and Advanced users alike should take a few minutes to familiarize them
 content in the Guides section of the Forum.
 
 
-|omv|'s Plugins
+Openmediavault's Plugins
 ==============
 
 Openmediavault has numerous plugin's.  Some are integrated into the base package by |omv|'s developer Volker 
@@ -2653,9 +2648,9 @@ and configured in |omv|.
 Click the **Install Portainer** button.
 
 .. image:: /new_user_guide/images/72_Portainer.jpg
-    :width: 810px
+    :width: 700px
     :align: center
-    :height: 441px
+    :height: 381px
     :alt:
 
 An install dialog box will popup and scroll as files are downloaded and installed.  At the end, 
@@ -2666,9 +2661,9 @@ An install dialog box will popup and scroll as files are downloaded and installe
 With a successful install, the **Status** line will change to reflect “**up**” time:
 
 .. image:: /new_user_guide/images/73_Portainer2.jpg
-    :width: 729px
+    :width: 700px
     :align: center
-    :height: 141px
+    :height: 136px
     :alt:
 
 Finally, click on the **Open Web** button.
@@ -2695,9 +2690,9 @@ in the top field and the **password** in the bottom field.
 When this screen pops up, Click on **Local**, then **Connect**
 
 .. image:: /new_user_guide/images/75_Portainer4.jpg
-    :width: 742px
+    :width: 700px
     :align: center
-    :height: 465px
+    :height: 450px
     :alt:
 
 ----
@@ -2708,9 +2703,9 @@ The following screen will now be the “**Home**” screen.  Using “Local” m
 left, this is where Docker Images are downloaded, containers are created, etc.
 
 .. image:: /new_user_guide/images/76_Portainer5.jpg
-    :width: 720px
+    :width: 700px
     :align: center
-    :height: 303px
+    :height: 295px
     :alt:
 
 This concludes the installation of Docker and Portainer.

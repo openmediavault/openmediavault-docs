@@ -1,5 +1,5 @@
-How does it works?
-##################
+How it works
+############
 
 |omv| is a complex piece of software. Developers can easily understand how it works by looking at the source code and developing plugins. For the average user it is a little bit more complicated. Some of the mechanics on how it works are explained ahead.
 

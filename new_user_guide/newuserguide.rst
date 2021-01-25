@@ -1688,6 +1688,26 @@ In **Storage**, **S.M.A.R.T.**, in the **Settings** tab, **enable** SMART.
 ----
 
 
+In **Storage**, **S.M.A.R.T.**, in the **Devices** tab:
+
+Click on a drive, then the **Edit** button.
+
+Activate monitoring and **Save**. 
+
+Do this for each drive.  Note that some types of flash devices (thumbdrives and SD-cards) may not be 
+monitored.  
+
+
+.. image:: /new_user_guide/images/79_SMART3.jpg
+    :width: 700px
+    :align: center
+    :height: 398px
+    :alt:
+
+
+----
+
+
 Drive Self-Tests
 ================
 

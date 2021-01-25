@@ -1748,8 +1748,7 @@ There are numerous SMART attributes to consider.  Unfortunately, only a handful 
 OEM's and many have little to no practical meaning to the end user.  Given the variation between drive OEM's, the 
 interpretation of a specific SMART stat may require going to the drive OEM's support site.  
 
-A good explanation of individual SMART attributes, and a brief explanation for each, can be found → 
- `here <https://en.wikipedia.org/wiki/S.M.A.R.T.>`_ .
+A good explanation of individual SMART attributes, and a brief explanation for each, can be found → `here <https://en.wikipedia.org/wiki/S.M.A.R.T.>`_ .
 
 Where spinning drives are concerned, thanks to the ongoing 
 `BackBlaze drive study <https://www.backblaze.com/b2/hard-drive-test-data.html>`_ , a correlation has been made between 

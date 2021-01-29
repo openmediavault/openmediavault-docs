@@ -2188,6 +2188,9 @@ The additional cost for full data backup using Rsync is the cost of an external 
 additional internal drive, of adequate size. For the insurance provided, the additional cost is very 
 reasonable. 
 
+.. note:: If errors occur when running the command line, see the following;
+→ `Rsync Drive Copy Errors`_
+
 ----
 
 Recovery from a Data Drive failure - Using an Rsync'ed backup
@@ -2844,9 +2847,41 @@ Solutions to Common Problems
 
 Follow this link to the maintained list on the forum. → `Solutions to Common Problems <https://forum.openmediavault.org/index.php?thread/21269-solutions-to-common-problems/>`_
 
+USB RAID
+--------
+
 **Problem:** I have an SBC and I'm having trouble with RAID. (OR) I have a USB connected drives that I want to configure as a RAID array.
 
-**Solution:** USB RAID is not supported.   
+**N/A:** USB RAID is not supported.   
+
+----
+
+Rsync Drive Copy Errors
+-----------------------
+
+**Problem:** Rsync shows errors “Operation not permitted (1)” or “renaming” with regard to the files ``aquota.user`` and ``aquota.group``.  These files are found at the root of data drives.
+
+In a very small number of instances, the quota service may interfere with an Rsync drive-to-drive copy.   
+
+**Solution 1:**
+
+Add the following exclude statements to the rsync command line:
+``--exclude='aquota.group' --exclude='aquota.user'`` 
+
+A full command line example:
+ 
+``rsync -av -–delete --exclude='aquota.group' --exclude='aquota.user' /srv/dev-disk-by-label-DATA/ /srv/dev-disk-by-label-RSYNC/``
+
+**Solution 2:**
+
+Turn the quota service off.
+
+``sudo /etc/init.d/quota stop``
+
+``sudo quotaoff --user --group /srv/dev-disk-by-label-DATA``
+``sudo quotaoff --user --group /srv/dev-disk-by-label-RSYNC``
+
+Optionally, delete the files ``aquota.group`` and ``aquota.user`` from the source and destination drives.
 
 ----
 

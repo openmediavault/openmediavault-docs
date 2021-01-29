@@ -2869,14 +2869,16 @@ Add the following exclude statements to the rsync command line:
 ``--exclude='aquota.group' --exclude='aquota.user'`` 
 
 A full command line example:
- 
-``rsync -av -–delete --exclude='aquota.group' --exclude='aquota.user' /srv/dev-disk-by-label-DATA/ /srv/dev-disk-by-label-RSYNC/``
+
+ ``rsync -av -–delete --exclude='aquota.group' --exclude='aquota.user' /srv/dev-disk-by-label-DATA/ /srv/dev-disk-by-label-RSYNC/``
 
 **Solution 2:**
 
 Turn the quota service off.
 
 ``sudo /etc/init.d/quota stop``
+
+(In the following examples, substitute the appropriate labels for the source and destination drives.)
 
 ``sudo quotaoff --user --group /srv/dev-disk-by-label-DATA``
 ``sudo quotaoff --user --group /srv/dev-disk-by-label-RSYNC``

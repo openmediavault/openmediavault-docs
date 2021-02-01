@@ -430,8 +430,8 @@ Installing on i386 32-bit Platforms
 
 
 An installation guide for 32-bit installations is available
-in `PDF <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5-on-Raspberry-PI-s-Armbian-Supported-SBC-s/?postID=214407#post214407/>`_
-or in a `Wiki <https://wiki.omv-extras.org/>`_ .
+in `PDF <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Adden-C-Installing_OMV5_on_32-bit_i386.pdf>`_
+or in a `Wiki <https://wiki.omv-extras.org/doku.php?id=installing_omv5_i386_32_bit_pc>`_ .
 
 
 .. image:: /new_user_guide/images/divider-c.png

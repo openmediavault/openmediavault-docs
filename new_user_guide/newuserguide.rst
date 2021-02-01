@@ -624,7 +624,7 @@ CD/DVD drive or USB boot to the top of the boot order.  This link may provide
 assistance on this topic. → `How To Enter BIOS <https://www.lifewire.com/how-to-enter-bios-2624481>`_
 
 If difficulties are encountered during the ISO installation, consider
-the → `Alternate 64bit installation guide <http://https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Adden-C-Installing_OMV5_on_32-bit_i386.pdf/>`_
+the → `Alternate 64bit installation guide <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Adden-C-Installing_OMV5_on_32-bit_i386.pdf/>`_
 Or use `the Wiki <https://wiki.omv-extras.org/doku.php?id=installing_omv5_i386_32_bit_pc>`_ .
 
 ----

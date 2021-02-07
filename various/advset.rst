@@ -40,7 +40,7 @@ to execute::
   # omv-mkconf ssh
   # systemctrl restart ssh
 
-The list of environmental variables used for ``/etc/fstab`` filesystem with the
+The list of environmental variables used for :file:`/etc/fstab` filesystem with the
 defaults options and how to use them is described :doc:`here </various/fs_env_vars>`.
 
 The mkconf folder

@@ -69,7 +69,7 @@ Paste the contents into the import dialog.
 Privileges
 ^^^^^^^^^^
 
-The button opens a window that displays all current exisiting |sf| and their
+The button opens a window that displays all current existing |sf| and their
 privileges for selected user from the grid. How the privileges are stored is
 described further down in the `shared folder <#shared-folder>`_ section.
 

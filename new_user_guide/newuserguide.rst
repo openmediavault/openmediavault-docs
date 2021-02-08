@@ -242,7 +242,7 @@ likely be owners of R-PI's.
 Openmediavault runs well on the R-PI 4.  While |omv| will run on an R-PI model 2B and
 the various models of the R-PI 3, performance is poor.   What exactly
 does “poor performance” mean?  In this context, if the R-PI's CPU is
-running at 100%, |omv| my not show up on the network and / or network
+running at 100%, |omv| may not show up on the network and / or network
 shares may not open.  This may give the false impression that there's a
 software or permissions problem.  In other instances, the |webui| login
 page may not respond.

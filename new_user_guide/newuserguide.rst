@@ -934,7 +934,7 @@ SSH Login:
 ----------
 
 Under Services, SSH, check that the toggle switch for “**Permit root login**” is **ON**  (Green) .
-If necessary make the change and Save.  After clicking on “**Save**” a yellow
+If necessary, make the change and **Save**.  After clicking on “**Save**” a yellow
 banner “**The configuration has been changed**” will appear.  For the change to be
 applied, the **Apply** button must be clicked.
 
@@ -1032,7 +1032,7 @@ If needed, the Domain suffix can be changed here.  (Very few users will use Full
 Network Interfaces – SBC Users
 ------------------------------
 
-Part of the **SBC** installation process was setting the wired interface to DHCP.  SBC users 
+Part of the **SBC** installation process is setting the wired interface to DHCP.  SBC users 
 should consider leaving their wired network interface set to DHCP, 
 until `Docker <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#installing-docker>`_ and 
 `Portainer <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#installing-portainer>`_ are installed.
@@ -2493,7 +2493,7 @@ to slightly shrink flash drive partitions, to fit on the smaller of the two flas
 
 * Install `Win32Diskimager <https://sourceforge.net/projects/win32diskimager/>`_ on a Windows PC.
 * Format the new SD-Card or USB thumb-drive with `SDFormatter <https://www.sdcard.org/downloads/formatter_4/eula_windows/index.html>`_
-* Test the new card or USB drive with h2testw1.4 `h2testw1.4 <http://www.heise.de/ct/Redaktion/bo/downloads/h2testw_1.4.zip>`_,   One test is enough.  (Do not select endless verify.)  
+* Test the new card or USB drive with `h2testw1.4 <http://www.heise.de/ct/Redaktion/bo/downloads/h2testw_1.4.zip>`_ .  One test is enough.  (Do not select endless verify.)  
 
 If the device registers errors, or if the capacity is significantly different from what is that's 
 marked on the label (a fake), return it for refund or throw it away.

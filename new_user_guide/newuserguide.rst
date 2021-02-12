@@ -2345,25 +2345,13 @@ If the primary server failed completely, the second platform can be configured t
 * Other than re-homing clients to the shares on the backup device, there's no recovery time and no “crisis” involved in getting data back on-line.  It's already there.
 
 The costs for this level of backup are very reasonable, with the cost of a hard drive of adequate size 
-and an SBC.  Good performing SBC's are available for $50 USD or less.  Older PC platforms or laptops 
+and an SBC.  Good performing SBC's are a low cost option.  Older PC platforms or laptops 
 could be configured as a backup server as well. 
 
-----
-
-As an illustration of the backup server concept, the following is a File explorer example of an |omv| 
-NAS server and an SBC used for backing-up the main server's files.
-
-.. image:: /new_user_guide/images/69_rsync_2L_backup2.jpg
-    :width: 453px
-    :align: center
-    :height: 397px
-    :alt:
-
-This particular R-PI (OMV-RPI) is replicating all of the data shares of the OMV-SERVER and is 
-re-sharing the same data to the network.  Again, Rsync replication jobs of individual shares can be 
-scheduled as desired, or triggered manually.
-
-** The Practical details for setting up Primary Server to Backup Server share replication, using Remote Mount and Local Rsync Jobs will be covered in future documentation.**
+The Practical details for setting up Primary Server to Backup Server share replication, 
+using Remote Mount and Local Rsync Jobs are covered here 
+→ `Wiki <https://wiki.omv-extras.org/doku.php?id=remote_mount_plugin_for_omv5>`_
+or `PDF <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Adden-D-Remote_Mount_Plugin.pdf>`_ .
 
 ----
 

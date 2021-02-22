@@ -53,8 +53,8 @@ pair.
 
 :file:`/etc/ssl/private/openmediavault-<uuid>.key`
 
-When importing existing ssl certificates make sure they are formated/converted
-appropiatly.
+When importing existing ssl certificates make sure they are formatted/converted
+appropriately.
 
 The command that creates the certificate runs in the PHP backend and is
 documented `here <https://github.com/openmediavault/openmediavault/blob/20ec529737e6eca2e1f98d0b3d1ade16a3c338e1/deb/openmediavault/usr/share/openmediavault/engined/rpc/certificatemgmt.inc#L234-L358>`_.

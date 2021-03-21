@@ -75,6 +75,8 @@ Install the |omv| 4 (Arrakis) package::
     export LANG=C
     export DEBIAN_FRONTEND=noninteractive
     export APT_LISTCHANGES_FRONTEND=none
+    wget -O "/etc/apt/trusted.gpg.d/openmediavault-archive-keyring.asc" https://packages.openmediavault.org/public/archive.key
+    apt-key add "/etc/apt/trusted.gpg.d/openmediavault-archive-keyring.asc"
     apt-get update
     apt-get --allow-unauthenticated install openmediavault-keyring
     apt-get update

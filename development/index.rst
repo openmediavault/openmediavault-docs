@@ -4,8 +4,9 @@ Development
 ###########
 
 .. toctree::
-   :maxdepth: 3
+	:maxdepth: 3
 
-   coding_guideline
-   contribute
-   internaltools
+	coding_guideline
+	contribute
+	internaltools
+	plugins

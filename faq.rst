@@ -146,5 +146,5 @@ I want to experiment with |omv| or make changes to the code
 	and use `Vagrant <https://www.vagrantup.com/>`_ to create a virtual
 	machine.
 
-What is the :command:`omv-update` and :command:`omv-release-upgrade` for?
+What is the :command:`omv-upgrade` and :command:`omv-release-upgrade` for?
 	Information about those commands are in the software :doc:`section </various/apt>`.

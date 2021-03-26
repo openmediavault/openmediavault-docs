@@ -50,7 +50,7 @@ A manifest file must follow the following schema:
         version: "1.0"
         type: component
         data:
-          name: ...
+          name: string
           type: navigationPage | formPage | selectionListPage | textPage | tabsPage | datatablePage | rrdPage
           config:
             ...

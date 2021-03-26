@@ -7,6 +7,9 @@ section describes how to implement such plugins.
 Plugins are implemented in a declarative manner, this means no JavaScript
 or TypeScript knowledge is needed.
 
+Overview
+========
+
 A plugin contains of various YAML files that have to be located in the
 directory :file:`/usr/share/openmediavault/workbench`. The following
 subdirectories each have a special meaning.
@@ -39,6 +42,9 @@ A manifest file must follow the following schema:
         type: component | dashboard-widget | log | navigation-item | route
         data:
           ...
+
+Directories
+===========
 
 component.d
 -----------
@@ -238,3 +244,9 @@ Example:
       title: _("Create")
       notificationTitle: _("Created on-access scan.")
       component: omv-services-clamav-onaccess-scan-form-page
+
+Build configuration
+===================
+
+To build and apply the final |webui| configuration you need to run ``omv-mkworkbench COMMAND``
+where ``COMMAND`` is ``all | dashboard | log | navigation | route | i18n``.

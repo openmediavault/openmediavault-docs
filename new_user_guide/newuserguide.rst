@@ -2860,7 +2860,7 @@ Add the following exclude statements to the rsync command line:
 
 A full command line example:
 
- ``rsync -av -–delete --exclude='aquota.group' --exclude='aquota.user' /srv/dev-disk-by-label-DATA/ /srv/dev-disk-by-label-RSYNC/``
+``rsync -av -–delete --exclude='aquota.group' --exclude='aquota.user' /srv/dev-disk-by-label-DATA/ /srv/dev-disk-by-label-RSYNC/``
 
 **Solution 2:**
 

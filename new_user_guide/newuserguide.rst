@@ -3,7 +3,7 @@ New User Guide
 ##############
 
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -15,7 +15,7 @@ New User Guide
     :height: 439px
     :alt:
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -48,7 +48,7 @@ flexibility.
     :height: 440px
     :alt:
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -98,7 +98,7 @@ has developer experience, (BASH, PHP, Python, Javascript) the project
 would like to hear from you.  Users with Linux experience are invited to
 help out on the `openmediavault Forum <https://forum.openmediavault.org/index.php/BoardList/>`_.
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -145,7 +145,7 @@ In the beginning it's best to rely, primarily, on the GUI for
 configuration and control.  Otherwise, before attempting to customize
 the operating system, backing up the boot drive is highly recommended.
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -402,7 +402,7 @@ providing file server functions in a home environment.  (Again, performance
 expectations should be adjusted in accordance with the capabilities of the
 hardware.)
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -418,7 +418,7 @@ in `PDF's <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OM
 or in a `Wiki <https://wiki.omv-extras.org/>`_ .
 
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -434,7 +434,7 @@ in `PDF <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Ad
 or in a `Wiki <https://wiki.omv-extras.org/doku.php?id=installing_omv5_i386_32_bit_pc>`_ .
 
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -901,7 +901,7 @@ This is usually a one time event where the fix is simple – simply login as roo
 
 **With a known IP address, proceed to** `Initial Configuration`_.
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -948,7 +948,7 @@ applied, the **Apply** button must be clicked.
     :alt:
 
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -969,7 +969,7 @@ Quick Start Guide for Advanced Users:
     :height: 465px
     :alt:
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -1342,7 +1342,7 @@ Click on the newly created **file system line**, and click on the **Mount** butt
 
 The Data Drive is now prepared for a |sf|.
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -1482,7 +1482,7 @@ Congratulations!  You now have a functional NAS that can be expanded to accommod
 shares.  Simply repeat the processes in `Creating A Network Share`_ to create and make additional shares 
 visible on your network.
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -1644,7 +1644,7 @@ Second: Find the swap partition – it's the line with **swap** and insert a **#
 
 .. note::  In the latest version of the Flash Memory plugin, there are extended instructions that go beyond editing etc/fstab.  Those instructions apply to mdadm RAID and are NOT for beginners.
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -1787,7 +1787,7 @@ When using scheduled drive self-tests in conjunction with SMART E-mail notificat
 admin's and home users will be afforded better protection against the data corruption and data loss due to a failing hard 
 drive.
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -1815,7 +1815,7 @@ Further, the file system on the boot drive is at risk of corruption from sudden 
 to power loss.  An UPS minimizes these risks. 
 
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -2033,7 +2033,7 @@ and changes in configuration, in |omv| VM's before upgrading or reconfiguring th
 If users have a Windows client with at least 6GB RAM and plenty of hard disk space, installing Virtual 
 Box is highly recommended. → `Virtual Box <https://www.virtualbox.org/>`_ 
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -2080,7 +2080,7 @@ business use cases for a couple reasons.
 
 * If there's a drive error, an accidental deletion, a virus, or other data related issue; in RAID1 the effects are instantly replicated to the second drive.  With Rsync, both drives are independent and, in most cases, the second disk will be available after the source disk fails.  In any case, the Rsync replication interval allows time for admin intervention before the second disk is affected.  
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -2314,7 +2314,7 @@ failed drive, the **Delete** button is now active.   **Delete** the drive.
 At this point, all shares in this example have been successfully redirected to the backup drive 
 and the server is fully functional again.
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -2372,7 +2372,7 @@ strategies do not have to be expensive and are relatively easy to set up.
 For further information on Backup concepts and best practices, an excellent explanation of Backup is 
 provided by  `Backblaze.com <https://www.backblaze.com/blog/the-3-2-1-backup-strategy/>`_ .
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -2547,7 +2547,7 @@ a second operation.  Etcher combines the write and verification in a single proc
 away, during the write operation, which can take a long of time, Etcher is the best choice for writing 
 flash media. 
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -2772,7 +2772,7 @@ post for more information:
 `[How-To] Define exposed ports in Docker which do not interfere with other services/applications <https://forum.openmediavault.org/index.php/Thread/28506-How-To-Define-exposed-ports-in-Docker-which-do-not-interfere-with-other-services/>`_ 
 
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px
@@ -2925,7 +2925,7 @@ Potential Remedies:
 * Avoid using direct connected USB powered hard drives.  The additional current load will drop voltage and may stress a weak power supply.  A self powered USB hub or a drive dock is preferred. 
 * Avoid leaving peripherals attached, such as a monitor, keyboard or a mouse.  Even when they're not used, they consume power.
 
-.. image:: /new_user_guide/images/divider-c.png
+.. image:: /new_user_guide/images/divider2.png
     :width: 400px
     :align: center
     :height: 75px

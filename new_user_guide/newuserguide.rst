@@ -634,7 +634,7 @@ An installation walk through:
 **Boot Menu:**  Select **Install**
 
 .. image:: /new_user_guide/images/9_Install_Menu.jpg
-    :width: 987px
+    :width: 700px
     :align: center
     :height: 504px
     :alt:

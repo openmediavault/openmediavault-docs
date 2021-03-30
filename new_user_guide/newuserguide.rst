@@ -2032,8 +2032,8 @@ in the same manner as real hardware.  VM's can be created, cloned, used for test
 without consequence.  Many advanced |omv| users fully test upgrades, Docker's, plugin's, server add-ons 
 and changes in configuration, in |omv| VM's before upgrading or reconfiguring their real-world servers.
 
-If users have a Windows client with at least 6GB RAM and plenty of hard disk space installing Virtual Box 
-on the client, to host test VM's of Openmediavault is highly recommended. → `Virtual Box <https://www.virtualbox.org/>`_ 
+If users have a Windows client with at least 6GB RAM and plenty of hard disk space, installing Virtual Box 
+on the client to host test VM's of Openmediavault is highly recommended. → `Virtual Box <https://www.virtualbox.org/>`_ 
 
 .. image:: /new_user_guide/images/divider2.png
     :width: 400px

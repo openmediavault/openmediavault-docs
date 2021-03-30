@@ -1122,7 +1122,7 @@ For an explanation of drive self-tests and an example of how to set up a drive s
 Under **System**, **Power Management**
 
 * In the **Settings** Tab, toggle **monitoring on** (recommended).
-* In the Power button drop down, amd64 and i386 users should select the action preferred.  Since power buttons are not available on some SBC installations, SBB users may chose to select “Nothing”.
+* In the Power button drop down, amd64 and i386 users should select the action preferred.  Since power buttons are not available on some SBC installations, SBC users may chose to select “Nothing”.
 * The **Scheduled Jobs** tab allows for the automation of a various power related tasks, such as an scheduled reboot.
 
 .. image:: /new_user_guide/images/33_Power_Mangement.jpg
@@ -1248,7 +1248,7 @@ A Basic Data Drive
 General
 -------
 
-Openmediavault is capable of setting up basic Linux file systems in the GUI, up to, and including,
+Openmediavault is capable of setting up basic Linux file systems in the GUI up to, and including,
 modern “Copy on Write” file systems such as ZFS which combine check summed files,
 RAID functions, and Logical Volume Management into a single package.  However,
 advanced file systems add complexity which can make administration of a NAS
@@ -1909,6 +1909,8 @@ selected.  In this particular popup,  permissions could be changed.
 (Without backup, this is **NOT** a recommended action for beginners.  **Backup** 
 is covered later.) 
 
+.. note:: As of **OMV 5.5.20**, data drives are mounted using **UUID** (Universally Unique Identifier). In WinSCP, the same path might appear as: /srv/dev-disk-by-**uuid-f188c8ad-74d3-443a-a23e-89711270367d**  (This is an example only – all disks will have a unique identifier.)
+
 .. image:: /new_user_guide/images/57_WinSCP4.jpg
     :width: 686px
     :align: center
@@ -2030,8 +2032,8 @@ in the same manner as real hardware.  VM's can be created, cloned, used for test
 without consequence.  Many advanced |omv| users fully test upgrades, Docker's, plugin's, server add-ons 
 and changes in configuration, in |omv| VM's before upgrading or reconfiguring their real-world servers.
 
-If users have a Windows client with at least 6GB RAM and plenty of hard disk space, installing Virtual 
-Box is highly recommended. → `Virtual Box <https://www.virtualbox.org/>`_ 
+If users have a Windows client with at least 6GB RAM and plenty of hard disk space installing Virtual Box 
+on the client, to host test VM's of Openmediavault is highly recommended. → `Virtual Box <https://www.virtualbox.org/>`_ 
 
 .. image:: /new_user_guide/images/divider2.png
     :width: 400px
@@ -2131,6 +2133,11 @@ Under the **Mount Point** column (red boxes) are the full paths needed for the s
     :align: center
     :height: 336px
     :alt:
+
+
+
+.. note:: As of **OMV 5.5.20**, data drives are mounted using **UUID** (Universally Unique Identifier). In WinSCP, the path under the mount point might appear as: /srv/dev-disk-by-**uuid-f188c8ad-74d3-443a-a23e-89711270367d**  (This is an example only – all disks will have a unique identifier.)  To avoid source and destination drive confusion when using UUID's:  The **Mount Point** Column, above, can be moved by “left clicking” the column head, holding and dragging it to the **Devices** and **Label** columns.
+
 
 To construct the appropriate command line, add a slash “**/**” after each drive path, in the full 
 command line as follows:

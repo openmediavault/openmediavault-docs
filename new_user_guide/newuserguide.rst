@@ -2033,7 +2033,7 @@ without consequence.  Many advanced |omv| users fully test upgrades, Docker's, p
 and changes in configuration, in |omv| VM's before upgrading or reconfiguring their real-world servers.
 
 If users have a Windows client with at least 6GB RAM and plenty of hard disk space, installing Virtual Box 
-on the client to host test VM's of Openmediavault is highly recommended. → `Virtual Box <https://www.virtualbox.org/>`_ 
+on the client to host test VM's of openmediavault is highly recommended. → `Virtual Box <https://www.virtualbox.org/>`_ 
 
 .. image:: /new_user_guide/images/divider2.png
     :width: 400px
@@ -2136,7 +2136,7 @@ Under the **Mount Point** column (red boxes) are the full paths needed for the s
 
 
 
-.. note:: As of **OMV 5.5.20**, data drives are mounted using **UUID** (Universally Unique Identifier). In WinSCP, the path under the mount point might appear as: /srv/dev-disk-by-**uuid-f188c8ad-74d3-443a-a23e-89711270367d**  (This is an example only – all disks will have a unique identifier.)  To avoid source and destination drive confusion when using UUID's:  The **Mount Point** Column, above, can be moved by “left clicking” the column head, holding and dragging it to the **Devices** and **Label** columns.
+.. note:: As of **OMV 5.5.20**, data drives are mounted using **UUID** (Universally Unique Identifier). The path under the **Mount Point** will be similar to: /srv/dev-disk-by-**uuid-f188c8ad-74d3-443a-a23e-89711270367d**  (This is an example only – all disks will have a unique identifier.)  To avoid source and destination drive confusion when using UUID's:  The **Mount Point** Column, above, can be moved by “left clicking” the column head, holding and dragging it to the **Devices** and **Label** columns.
 
 
 To construct the appropriate command line, add a slash “**/**” after each drive path, in the full 
@@ -2868,6 +2868,10 @@ Add the following exclude statements to the rsync command line:
 A full command line example:
 
 ``rsync -av -–delete --exclude='aquota.group' --exclude='aquota.user' /srv/dev-disk-by-label-DATA/ /srv/dev-disk-by-label-RSYNC/``
+
+.. note:: As of **OMV 5.5.20**, data drives are mounted using **UUID** (Universally Unique Identifier). Under **Storage**, **File Systems**, the path under the *Mount Point* column might appear as: /srv/dev-disk-by-**uuid-f188c8ad-74d3-443a-a23e-89711270367d**  (This is an example only – all disks will have a unique identifier.)  Check the Mount Point Column in File Systems for the appropriate path for aquota commands.
+
+
 
 **Solution 2:**
 

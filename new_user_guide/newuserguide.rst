@@ -414,7 +414,7 @@ Installing on Single Board Computers (SBC's)
 
 
 Installation guides for SBC installations are available
-in `PDF's <https://forum.openmediavault.org/index.php/Thread/28789-Installing-OMV5-on-Raspberry-PI-s-Armbian-Supported-SBC-s/?postID=214407#post214407/>`_
+in `PDF's <https://github.com/OpenMediaVault-Plugin-Developers/docs>`_
 or in a `Wiki <https://wiki.omv-extras.org/>`_ .
 
 

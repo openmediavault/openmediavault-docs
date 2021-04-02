@@ -27,7 +27,7 @@ The following is the list of official plugins by |omv|.
 * **Forked-daap**: Provides a daap protocol music server.
 * **LVM2**: LVM managing. Create volume groups and logical partitions.
 * **NUT**: Controlling and configuring UPS. The driver support is based on NUT.
-* **ShAirPort**: Provides Airtunes emulator. Stream music wirelessly to your iPod/iPad/iPhone/iTunes.
+* **Shairport**: Provides Airtunes emulator. Stream music wirelessly to your iPod/iPad/iPhone/iTunes.
 * **ShareRootFs**: Provides shared directires on root file sstem
 * **SNMP**: Provides Simple Network Management Protocol (SNMP). SNMP is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks 
 * **TFtp**: Provides Trivial File Transfer Protocol (TFTP). TFTP is a simple lockstep File Transfer Protocol which allows a client to get a file from or put a file onto a remote host

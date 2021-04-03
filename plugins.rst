@@ -28,7 +28,7 @@ The following is the list of official plugins by |omv|.
 * **LVM2**: LVM managing. Create volume groups and logical partitions.
 * **NUT**: Controlling and configuring UPS. The driver support is based on NUT.
 * **Shairport**: Provides Airtunes emulator. Stream music wirelessly to your iPod/iPad/iPhone/iTunes.
-* **ShareRootFs**: Provides shared directires on root file sstem
+* **ShareRootFs**: Provides shared directories on root file system.
 * **SNMP**: Provides Simple Network Management Protocol (SNMP). SNMP is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks.
 * **TFtp**: Provides Trivial File Transfer Protocol (TFTP). TFTP is a simple lockstep File Transfer Protocol which allows a client to get a file from or put a file onto a remote host.
 * **USB Backup**: Backup internal data to external disks on scheduled basis or on plug drive event.

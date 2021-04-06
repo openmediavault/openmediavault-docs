@@ -25,7 +25,7 @@ Using CLI
 If you want to update/upgrade in the console you can use ``apt-get update`` then
 ``apt-get upgrade``.
 
-**omv-update**
+**omv-upgrade**
 
 This is wrapper script that basically executes::
 

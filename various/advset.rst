@@ -37,7 +37,7 @@ To get the value of a specific environment variable use::
 
 	# omv-env get <OMV_NAME_OF_VARIABLE>
 
-The list of environmental variables used for ``/etc/fstab`` filesystem with the
+The list of environmental variables used for :file:`/etc/fstab` filesystem with the
 defaults options and how to use them is described :doc:`here </various/fs_env_vars>`.
 
 Modify environment variables

@@ -1572,7 +1572,7 @@ There are two options for editing /etc/fstab
 Option 1: Editing /etc/fstab with nano
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The first example will use **nano**.  This option requires the installation of PuTTY which is detailed here.
+The first example will use **nano**.  This option requires the installation of PuTTY which is detailed `here <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#putty>`_. 
 
 Using PuTTY, SSH into the server.  Log in as root and enter the root password.
 

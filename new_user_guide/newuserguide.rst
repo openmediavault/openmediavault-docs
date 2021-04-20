@@ -2394,7 +2394,7 @@ makes copying or cloning the |omv| boot/OS drive an easy process.  So, one might
 copy of the operating system important?
 
 Building |omv|, from scratch, using the installer ISO is a 15-minute proposition, give or take. While it 
-takes longer, roughly 45 minutes to an hour, the actual hands-on portion of an SBC build is even less.  
+takes longer, roughly 30 to 45 minutes, the actual hands-on portion of an SBC build is even less.  
 
 As users configure their servers, add services, reconfigure shares, move their data around, tweak 
 access controls, etc., servers tend to become “works in progress”. Configuring a server to the user's 

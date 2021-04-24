@@ -260,8 +260,8 @@ See notes regarding this issue in `USB Power - A Common Raspberry PI problem`_ .
 
 Where CPU Power may be Needed – “Transcoding”
 =============================================
-If a users' primary consideration in setting a up a media server, CPU
-selection or identification may need to be carefully considered.
+If a users' primary consideration is setting a up a media server, CPU selection 
+may need careful consideration.  
 Transcoding is a process for translating media file formats into types
 that mobile devices understand.  Since mobile devices are low powered,
 they're not capable of re-processing high resolution media files

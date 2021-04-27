@@ -23,8 +23,8 @@ New User Guide
 
 
 
-This document can be converted to a PDF file, in the users language of choice (see the following), at the 
-bottom left side corner of this page.  Click the drop down arrow next to **Read the Doc's     v: 5.x**  
+This document can be converted to a PDF file, at the bottom left side corner of this page.  
+Click the drop down arrow next to **Read the Doc's     v: 5.x**  
 
 - `Google Translate <https://translate.google.com/>`_ kann Wiki-Dokumente in Ihre Sprache übersetzen. Fügen Sie die Wiki-URL in das linke Fenster ein und öffnen Sie den übersetzten Link rechts.
 - `Google Translate <https://translate.google.com/>`_ puede traducir documentos wiki a su idioma. Pegue la URL de la wiki en la ventana izquierda y abra el enlace traducido a la derecha.

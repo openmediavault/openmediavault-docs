@@ -29,7 +29,7 @@ bottom left side corner of this page.  Click the drop down arrow next to **Read 
 - `Google Translate <https://translate.google.com/>`_ kann Wiki-Dokumente in Ihre Sprache übersetzen. Fügen Sie die Wiki-URL in das linke Fenster ein und öffnen Sie den übersetzten Link rechts.
 - `Google Translate <https://translate.google.com/>`_ puede traducir documentos wiki a su idioma. Pegue la URL de la wiki en la ventana izquierda y abra el enlace traducido a la derecha.
 - `Google Translate <https://translate.google.com/>`_ peut traduire des documents wiki dans votre langue. Collez l'url du wiki dans la fenêtre de gauche et ouvrez le lien traduit sur la droite.
-- `Google <https://translate.google.com/>`_翻訳はwikiドキュメントをあなたの言語に翻訳することができます。 左側のウィンドウにwikiのURLを貼り付け、右側の翻訳されたリンクを開きます。
+- `Google <https://translate.google.com/>`_ 翻訳はwikiドキュメントをあなたの言語に翻訳することができます。 左側のウィンドウにwikiのURLを貼り付け、右側の翻訳されたリンクを開きます。
 
 
 

@@ -15,4 +15,4 @@ Releases
    3.0,Erasmus,Debian 8,EOL,Jun 2016
    4.0,Arrakis,Debian 9,EOL,Apr 2018
    5.0,Usul,Debian 10,Stable,Mar 2020
-   6.0,Shaitan,Debian 1x,In Development,est. Q2/2021
+   6.0,Shaitan,Debian 11,In Development,est. Q4/2021

@@ -541,7 +541,7 @@ Using SDFormatter, do a clean format:
 
 (While SDFormatter was designed for SD-cards, it can format USB thumb-drives
 for error testing.  For those who would prefer a formatter specifically for a
-USB thumb-drive; `HPUSBDISK.EXE <https://www.mediafire.com/file/693jiig27dk846h/HPUSBDisk.exe/file/>`_  )
+USB thumb-drive; `HPUSBDISK.EXE <https://www.mediafire.com/file/693jiig27dk846h/HPUSBDisk.exe/file>`_  )
 
 SDFormatter will detect a USB thumb-drive.  A volume label is optional and the
 default options are fine.

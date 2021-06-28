@@ -8,4 +8,5 @@ Development
 
    coding_guideline
    contribute
+   howitworks
    internaltools

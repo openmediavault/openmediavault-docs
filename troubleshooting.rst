@@ -20,7 +20,11 @@ Troubleshooting
 
 * **Samba is slow.**
 
-    Read these threads - `Tuning Samba for more speed <http://forum.openmediavault.org/index.php/Thread/12986-Tunning-Samba-for-more-speed/>`_ and `Tuning Samba for more speed 2 <http://forum.openmediavault.org/index.php/Thread/14615-Tuning-Samba-for-more-speed-2//>`_
+    Read these threads 
+	
+	- `read/write performance for SMB shares hosted on RPi4 <https://forum.openmediavault.org/index.php?thread/37285-rpi4-read-write-performance-for-smb-shares/&postID=260232#post260232>`_ 
+	- `Tuning Samba for more speed <http://forum.openmediavault.org/index.php/Thread/12986-Tunning-Samba-for-more-speed/>`_ (note: written for OMV 2.x)
+	- `Tuning Samba for more speed 2 <http://forum.openmediavault.org/index.php/Thread/14615-Tuning-Samba-for-more-speed-2//>`_ (note: written for OMV 2.x)
 
 * **Samba share password is refused from Windows 10.**
 

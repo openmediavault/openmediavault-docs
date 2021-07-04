@@ -26,13 +26,21 @@ Troubleshooting
 
     To fix the problem you need to change the `Network Security LAN Manager authentication level <https://social.technet.microsoft.com/Forums/windows/en-US/8249ad4c-69aa-41ba-8863-8ecd7a7a4d27/samba-share-password-refused>`_.
 
-* **The |webui| keeps rejecting my admin/user password.**
+* **The |omv| |webui| keeps rejecting my admin/user password.**
 
     If the password is correct then this is most likely caused by the rootfs partition being full. This command can help track which folders are the biggest :command:`df -hx --max-depth=1 /`
 
 * **I have problem accessing the web interface with Firefox.**
 
     Try the solution mentioned in the `Sencha ExtJS forum <https://www.sencha.com/forum/showthread.php?310206-ExtJ-6-doest-not-work-on-Linux-with-Firefox-45&p=1155250&viewfull=1#post1155250>`_ or the `Mozilla bugtracker <https://bugzilla.mozilla.org/show_bug.cgi?id=1301327>`_.
+
+* **How to troubleshoot an error caused by an "Option" parameter passed to a plug-in**
+
+    To find the root cause, run the faulty systemd unit file yourself by executing:
+	# 
+	systemd restart <plug-in-daemon>
+	
+	If output of <plug-in> is now more vebose, then you will get a hint on STDOUT. If not, then you need to run journalctl -f in parallel to get the syslog output. Admittedly, not really novice friendly, but it's really not possible to do it any other way. OMV always tries to be as error/debug friendly as possible; by default. 
 
 * **I am using JMicron drive enclosures and some of my drives are not appearing.**
 

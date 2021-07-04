@@ -2,13 +2,17 @@ Troubleshooting
 ===============
 
 
-* ** |omv| |webui| has missing fields and/or items showing that have been uninstalled.**
+* **|omv| |webui| has missing fields and/or items showing that have been uninstalled.**
 
     Clear your browser cache.
 
-* **I mounted the drive using the command line or GUI tool and I can't pick that drive in the shared folder device dropdown.**
+* **The |omv| |webui| keeps rejecting my admin/user password.**
 
-    Never mount a drive with anything other than the |omv| |webui|. This creates the necessary database entries to populate the device dropdown.
+    If the password is correct then this is most likely caused by the rootfs partition being full. This command can help track which folders are the biggest :command:`df -hx --max-depth=1 /`
+
+* **I have problem accessing the  |omv| |webui| with Firefox.**
+
+    Try the solution mentioned in the `Sencha ExtJS forum <https://www.sencha.com/forum/showthread.php?310206-ExtJ-6-doest-not-work-on-Linux-with-Firefox-45&p=1155250&viewfull=1#post1155250>`_ or the `Mozilla bugtracker <https://bugzilla.mozilla.org/show_bug.cgi?id=1301327>`_.
 
 * **I only see a few items in the  |omv| |webui| interface like the user section of Access Rights Management.**
 
@@ -17,6 +21,10 @@ Troubleshooting
 * **I get an error every time I post in the forum especially if it is a long post and/or has links to external pages.**
 
     The error is deceiving. Please don't keep trying to post. The spam filter has flagged your post and it will need to be approved. Please be patient.
+
+* **I mounted the drive using the command line or GUI tool and I can't pick that drive in the shared folder device dropdown.**
+
+    Never mount a drive with anything other than the |omv| |webui|. This creates the necessary database entries to populate the device dropdown.
 
 * **Samba is slow.**
 
@@ -30,13 +38,6 @@ Troubleshooting
 
     To fix the problem you need to change the `Network Security LAN Manager authentication level <https://social.technet.microsoft.com/Forums/windows/en-US/8249ad4c-69aa-41ba-8863-8ecd7a7a4d27/samba-share-password-refused>`_.
 
-* **The |omv| |webui| keeps rejecting my admin/user password.**
-
-    If the password is correct then this is most likely caused by the rootfs partition being full. This command can help track which folders are the biggest :command:`df -hx --max-depth=1 /`
-
-* **I have problem accessing the  |omv| |webui| with Firefox.**
-
-    Try the solution mentioned in the `Sencha ExtJS forum <https://www.sencha.com/forum/showthread.php?310206-ExtJ-6-doest-not-work-on-Linux-with-Firefox-45&p=1155250&viewfull=1#post1155250>`_ or the `Mozilla bugtracker <https://bugzilla.mozilla.org/show_bug.cgi?id=1301327>`_.
 
 * **How to troubleshoot an error caused by an "Option" parameter passed to a plug-in**
 

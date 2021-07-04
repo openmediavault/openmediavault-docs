@@ -2,7 +2,7 @@ Troubleshooting
 ===============
 
 
-* **Web interface has missing fields and/or items showing that have been uninstalled.**
+* ** |omv| |webui| has missing fields and/or items showing that have been uninstalled.**
 
     Clear your browser cache.
 
@@ -10,7 +10,7 @@ Troubleshooting
 
     Never mount a drive with anything other than the |omv| |webui|. This creates the necessary database entries to populate the device dropdown.
 
-* **I only see a few items in the web interface like the user section of Access Rights Management.**
+* **I only see a few items in the  |omv| |webui| interface like the user section of Access Rights Management.**
 
     You did not login as the admin user. This is the only user that can access everything.
 
@@ -34,7 +34,7 @@ Troubleshooting
 
     If the password is correct then this is most likely caused by the rootfs partition being full. This command can help track which folders are the biggest :command:`df -hx --max-depth=1 /`
 
-* **I have problem accessing the web interface with Firefox.**
+* **I have problem accessing the  |omv| |webui| with Firefox.**
 
     Try the solution mentioned in the `Sencha ExtJS forum <https://www.sencha.com/forum/showthread.php?310206-ExtJ-6-doest-not-work-on-Linux-with-Firefox-45&p=1155250&viewfull=1#post1155250>`_ or the `Mozilla bugtracker <https://bugzilla.mozilla.org/show_bug.cgi?id=1301327>`_.
 

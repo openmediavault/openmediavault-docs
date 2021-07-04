@@ -105,6 +105,7 @@ Volker Theile
 * Abo Khalid (Arabic)
 * Kevin Leclercq (French)
 * Rudy ten Kate (Dutch)
+* Jonatan Nyberg (Swedish)
 
 **Code**
 

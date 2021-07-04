@@ -197,6 +197,8 @@ field is added as additional sort condition.
 Icons have to be specified like ``mdi:<NAME>`` or ``<NAME>``. For the first
 format please have a look `here <https://materialdesignicons.com/>`_ for available icons.
 For the latter please check `here <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/shared/enum/icon.enum.ts>`_.
+If possible, use the ``<NAME>`` format to ensure that uniform icons are
+used throughout the whole |webui|.
 
 Example:
 

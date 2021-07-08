@@ -4,7 +4,7 @@ How does it works?
 |omv| is a complex piece of software. Developers can easily understand how it works by looking at the source code and developing plugins. For the average user it is a little bit more complicated. Some of the mechanics on how it works are explained ahead.
 
 Essential elements:
-	**Frontend** The |webui|, is written in JavaScript using the ExtJS Sencha framework. The page is delivered using the nginx web server.
+	**Frontend** The |webui|, is written in TypeScript using the Angular and Angular Material frameworks. The page is delivered using the nginx web server.
 
 	**Backend** PHP code, executes several tasks.
 

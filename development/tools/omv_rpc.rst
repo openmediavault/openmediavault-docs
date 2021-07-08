@@ -1,7 +1,7 @@
 omv-rpc
 #######
 
-This tool can execute rpc commands. This is identical of what the web frontend uses to set/get information. It accepts service, method and parameters. RPC services can be found listed in `engined/rpc folder <https://github.com/openmediavault/openmediavault/tree/master/deb/openmediavault/usr/share/openmediavault/engined/rpc>`_
+This tool can execute RPC commands. This is identical of what the web frontend uses to set/get information. It accepts service, method and parameters. RPC services can be found listed in `engined/rpc folder <https://github.com/openmediavault/openmediavault/tree/master/deb/openmediavault/usr/share/openmediavault/engined/rpc>`_
 
 **Example 1:** Get all mounted filesystems, including rootfs::
 

@@ -1,5 +1,5 @@
-helper-functions (Shell)
-########################
+Shell helper-functions
+######################
 
 |omv| ships with this file :file:`/usr/share/openmediavault/scripts/helper-functions` that contains several POSIX shell functions. To test them just run in terminal::
 
@@ -15,7 +15,7 @@ Returns::
 
 	/media/dev-disk-by-label-VOLUME1/Videos/Unsorted
 
-**Example 2:** Database nodes need to be created when a plugin is installed and removed when it is purged. This is from omvextras MiniDLNA plugin `postinst file <https://github.com/OpenMediaVault-Plugin-Developers/openmediavault-minidlna/blob/master/debian/postinst>`_ ::
+**Example 2:** Database nodes need to be created when a plugin is installed and removed when it is purged. This is from omv-extras MiniDLNA plugin `postinst file <https://github.com/OpenMediaVault-Plugin-Developers/openmediavault-minidlna/blob/master/debian/postinst>`_ ::
 
 	omv_config_add_node "/config/services" "${SERVICE_XPATH_NAME}"
 	omv_config_add_key "${SERVICE_XPATH}" "enable" "0"
@@ -29,9 +29,7 @@ Returns::
 	omv_config_add_key "${SERVICE_XPATH}" "extraoptions" ""
 
 
-Notice in the postint file how it sources at the beginning ``helper-functions``.
+Notice in the :file:`postinst` file how it sources at the beginning ``helper-functions``.
 
 .. note::
 	What each function do and the parameters it accepts is documented in the `helper-functions file <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/usr/share/openmediavault/scripts/helper-functions>`_ .
-
-.. [1] https://stedolan.github.io/jq/manual/v1.5/

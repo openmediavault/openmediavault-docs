@@ -1,5 +1,5 @@
-omv-confdbadm (Database)
-########################
+omv-confdbadm
+#############
 
 Most users tend to access/modify the database by using nano::
 
@@ -7,7 +7,7 @@ Most users tend to access/modify the database by using nano::
 
 This is a problem as sometimes a wrong pressed key can add strange chars out of the xml tags and make the database unreadable by the backend.
 
-:command:`omv-confdbadm` is a tool written in python for retrieving, storing or deleting values from/to the database. This tool combined with jq [1]_ provides an easier method for interacting with the database using Shell/BASH.
+:command:`omv-confdbadm` is a tool written in python for retrieving, storing or deleting values from/to the database. This tool combined with :command:`jq` [1]_ provides an easier method for interacting with the database using Shell/BASH.
 
 To read values in the database the tool needs as last argument the datamodel path. You can find all data models path here :file:`/usr/share/openmediavault/datamodels/` prefixed with conf. Or list them with :command:`omv-confdbadm list-ids`
 
@@ -108,3 +108,5 @@ Add the `noexec` flag to this filesystem object ``567c2bd4-3d82-45b2-b34b-a6d38e
 Remove a filesystem from the database, this time we pass only the corresponding uuid of the object::
 
 	# omv-confdbadm delete --uuid 567c2bd4-3d82-45b2-b34b-a6d38e680ed3 conf.system.filesystem.mountpoint
+
+.. [1] https://stedolan.github.io/jq/manual/v1.5/

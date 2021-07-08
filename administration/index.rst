@@ -9,16 +9,16 @@ at the same time, which reduces unnecessary waiting times.
 
 .. note::
 
-	|omv| does not display the submodules that are affected by the
-	configuration changes. If you still want to know which submodules are
-	affected, simply run ``cat /var/lib/openmediavault/dirtymodules.json``
-	in the CLI.
+    |omv| does not display the submodules that are affected by the
+    configuration changes. If you still want to know which submodules are
+    affected, simply run ``cat /var/lib/openmediavault/dirtymodules.json``
+    in the CLI.
 
 .. toctree::
-   :maxdepth: 3
+    :maxdepth: 3
 
-   general/index
-   storage/index
-   access_rights_management
-   services/index
-   ../various/advset
+    general/index
+    storage/index
+    access_rights_management
+    services/index
+    ../various/advset

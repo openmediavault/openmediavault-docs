@@ -9,5 +9,5 @@ Development
 	coding_guideline
 	contribute
 	howitworks
-	internaltools
+	tools/index
 	plugins

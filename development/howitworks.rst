@@ -10,7 +10,7 @@ Essential elements:
 
 	**config.xml** Database file in XML format, located in :file:`/etc/openmediavault` We will refer in this explanation just as config.xml
 
-	**omv-salt** Tool to :doc:`deploy </development/internaltools/omv-salt>` the configuration and services.
+	**omv-salt** Tool to :doc:`deploy </development/tools/omv_salt>` the configuration and services.
 
 	**omv-engined** RPC daemon that runs all the PHP backend code. The nginx web server connects to this daemon through the FastCGI PHP socket. If an error appears in the |webui| that indicates no connection to the PHP socket means the daemon is not running.
 

@@ -63,11 +63,10 @@ The SaltStack states
 ====================
 
 If you want to deploy custom configuration settings, then you could
-add additional Salt states. Please check out the SaltStack documentation
-for more information how Salt and SLS files are working.
+add additional Salt states. Please check out the `SaltStack documentation <https://docs.saltproject.io/en/latest/>`_
+for more information about how it works and how to use it.
 
-The |omv| SLS files are located in :code:`/srv/salt/omv/`.
-
+The |omv| SLS files are located at :code:`/srv/salt/omv/`.
 
 Add custom states
 ^^^^^^^^^^^^^^^^^
@@ -103,6 +102,3 @@ Example::
 			mynetworks = 127.0.0.0/8 168.100.189.0/28
 
 For more file modifications please have a look into the `file module <https://docs.saltproject.io/en/latest/ref/modules/all/salt.modules.file.html>`_
-
-Please check the `Salt documentation <https://docs.saltproject.io/en/latest/>`_
-to get more information how it works and how to use it.

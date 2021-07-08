@@ -10,10 +10,6 @@ Troubleshooting
 
     If the password is correct then this is most likely caused by the rootfs partition being full. This command can help track which folders are the biggest :command:`df -hx --max-depth=1 /`
 
-* **I have problem accessing the  |omv| |webui| with Firefox.**
-
-    Try the solution mentioned in the `Sencha ExtJS forum <https://www.sencha.com/forum/showthread.php?310206-ExtJ-6-doest-not-work-on-Linux-with-Firefox-45&p=1155250&viewfull=1#post1155250>`_ or the `Mozilla bugtracker <https://bugzilla.mozilla.org/show_bug.cgi?id=1301327>`_.
-
 * **I only see a few items in the  |omv| |webui| interface like the user section of Access Rights Management.**
 
     You did not login as the admin user. This is the only user that can access everything.
@@ -28,9 +24,9 @@ Troubleshooting
 
 * **Samba is slow.**
 
-    Read these threads 
-	
-	- `read/write performance for SMB shares hosted on RPi4 <https://forum.openmediavault.org/index.php?thread/37285-rpi4-read-write-performance-for-smb-shares/&postID=260232#post260232>`_ 
+    Read these threads
+
+	- `read/write performance for SMB shares hosted on RPi4 <https://forum.openmediavault.org/index.php?thread/37285-rpi4-read-write-performance-for-smb-shares/&postID=260232#post260232>`_
 	- `Tuning Samba for more speed <http://forum.openmediavault.org/index.php/Thread/12986-Tunning-Samba-for-more-speed/>`_ (note: written for OMV 2.x)
 	- `Tuning Samba for more speed 2 <http://forum.openmediavault.org/index.php/Thread/14615-Tuning-Samba-for-more-speed-2//>`_ (note: written for OMV 2.x)
 
@@ -42,10 +38,10 @@ Troubleshooting
 * **How to troubleshoot an error caused by an "Option" parameter passed to a plug-in**
 
     To find the root cause, run the faulty systemd unit file yourself by executing:
-	# 
+	#
 	systemd restart <plug-in-daemon>
-	
-	If output of <plug-in> is now more vebose, then you will get a hint on STDOUT. If not, then you need to run journalctl -f in parallel to get the syslog output. Admittedly, not really novice friendly, but it's really not possible to do it any other way. OMV always tries to be as error/debug friendly as possible; by default. 
+
+	If output of <plug-in> is now more vebose, then you will get a hint on STDOUT. If not, then you need to run journalctl -f in parallel to get the syslog output. Admittedly, not really novice friendly, but it's really not possible to do it any other way. OMV always tries to be as error/debug friendly as possible; by default.
 
 * **I am using JMicron drive enclosures and some of my drives are not appearing.**
 

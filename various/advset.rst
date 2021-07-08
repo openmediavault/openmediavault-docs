@@ -67,3 +67,42 @@ add additional Salt states. Please check out the SaltStack documentation
 for more information how Salt and SLS files are working.
 
 The |omv| SLS files are located in :code:`/srv/salt/omv/`.
+
+
+Add custom states
+^^^^^^^^^^^^^^^^^
+
+If you want to customize the configuration of a service or any other
+application that  is managed by |omv|, then you need to know where to add
+your custom state file first. Start searching the location on `GitHub <https://scm.openmediavault.org/tree/master/deb/openmediavault/srv/salt/omv/deploy>`_.
+You will find the corresponding location below :file:`/src/salt/omv/deploy`
+in the root file system of your system. If there are no files starting
+with a number, e.g. :file:`90cron.sls`, then this service is not customizable.
+It is still possible, but is beyond the scope of this introduction. The
+states are executed in ascending order.
+
+Choose the order when your state needs to be executed and create a file
+like :file:`<N>xxxx.sls`, where N is between 0 and 100.
+
+To append something to an already existing configuration file use this YAML::
+
+	<UNIQUE_IDENTIFIER>:
+	  file.append:
+		- name: "<PATH_OF_THE_FILE>"
+		- text: |
+			<LINE1>
+			<LINE2>
+			<...>
+
+Example::
+
+	customize_postfix_main:
+	  file.append:
+		- name: "/etc/postfix/main.cf"
+		- text: |
+			mynetworks = 127.0.0.0/8 168.100.189.0/28
+
+For more file modifications please have a look into the `file module <https://docs.saltproject.io/en/latest/ref/modules/all/salt.modules.file.html>`_
+
+Please check the `Salt documentation <https://docs.saltproject.io/en/latest/>`_
+to get more information how it works and how to use it.

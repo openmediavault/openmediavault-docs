@@ -102,3 +102,7 @@ Example::
 			mynetworks = 127.0.0.0/8 168.100.189.0/28
 
 For more file modifications please have a look into the `file module <https://docs.saltproject.io/en/latest/ref/modules/all/salt.modules.file.html>`_
+
+Finally you need to deploy your changes by running::
+
+	# omv-salt deploy run <SERVICE_NAME>

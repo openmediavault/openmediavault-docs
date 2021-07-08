@@ -85,23 +85,23 @@ like :file:`<N>xxxx.sls`, where N is between 0 and 100.
 
 To append something to an already existing configuration file use this YAML::
 
-	<UNIQUE_IDENTIFIER>:
-	  file.append:
-		- name: "<PATH_OF_THE_FILE>"
-		- text: |
-			<LINE1>
-			<LINE2>
-			<...>
+    <UNIQUE_IDENTIFIER>:
+      file.append:
+        - name: "<PATH_OF_THE_FILE>"
+        - text: |
+            <LINE1>
+            <LINE2>
+            <...>
 
 Example::
 
-	customize_postfix_main:
-	  file.append:
-		- name: "/etc/postfix/main.cf"
-		- text: |
-			mynetworks = 127.0.0.0/8 168.100.189.0/28
+    customize_postfix_main:
+      file.append:
+        - name: "/etc/postfix/main.cf"
+        - text: |
+            mynetworks = 127.0.0.0/8 168.100.189.0/28
 
-For more file modifications please have a look into the `file module <https://docs.saltproject.io/en/latest/ref/modules/all/salt.modules.file.html>`_
+For more file modifications please have a look into the `file module <https://docs.saltproject.io/en/latest/ref/modules/all/salt.modules.file.html>`_.
 
 Finally you need to deploy your changes by running::
 

@@ -258,7 +258,7 @@ helper-functions (Shell)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 
-|omv| ships with this file :file:`/usr/share/openmediavault/scripts/helper-functions` that contains several POSIX shell functions. These are intended to make it easier for developers to create mkconf or postinst/postrm scripts. To test them just run in terminal::
+|omv| ships with this file :file:`/usr/share/openmediavault/scripts/helper-functions` that contains several POSIX shell functions. To test them just run in terminal::
 
  $ source /usr/share/openmediavault/scripts/helper-functions
 
@@ -286,7 +286,7 @@ Returns::
 	omv_config_add_key "${SERVICE_XPATH}" "extraoptions" ""
 
 
-Notice in the postint file how it sources at the beginning ``helper-functions``. The same happens in `mkconf scripts <https://github.com/openmediavault/openmediavault/tree/master/deb/openmediavault/usr/share/openmediavault/mkconf>`_ .
+Notice in the postint file how it sources at the beginning ``helper-functions``.
 
 .. note::
 	What each function do and the parameters it accepts is documented in the `helper-functions file <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/usr/share/openmediavault/scripts/helper-functions>`_ .

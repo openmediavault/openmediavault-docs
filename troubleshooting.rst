@@ -2,15 +2,15 @@ Troubleshooting
 ===============
 
 
-* **|omv| |webui| has missing fields and/or items showing that have been uninstalled.**
+* **The web interface has missing fields and/or items showing that have been uninstalled.**
 
     Clear your browser cache.
 
-* **The |omv| |webui| keeps rejecting my admin/user password.**
+* **The web interface keeps rejecting my admin/user password.**
 
     If the password is correct then this is most likely caused by the rootfs partition being full. This command can help track which folders are the biggest :command:`df -hx --max-depth=1 /`
 
-* **I only see a few items in the  |omv| |webui| interface like the user section of Access Rights Management.**
+* **I only see a few items in the web interface interface like the user section of Access Rights Management.**
 
     You did not login as the admin user. This is the only user that can access everything.
 

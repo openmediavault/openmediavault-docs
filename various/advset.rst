@@ -35,7 +35,7 @@ To get a list of all configured environment variables use the following command:
 
 To get the value of a specific environment variable use::
 
-	# omv-env get <OMV_NAME_OF_VARIABLE>
+	# omv-env get <VARIABLE_NAME>
 
 The list of environmental variables used for :file:`/etc/fstab` filesystem with the
 defaults options and how to use them is described :doc:`here </various/fs_env_vars>`.
@@ -45,7 +45,7 @@ Modify environment variables
 
 To set or change these variables, run the following command::
 
-	# omv-env set <OMV_NAME_OF_VARIABLE> <VALUE>
+	# omv-env set <VARIABLE_NAME> <VALUE>
 	# omv-env set OMV_SSHD_SUBSYSTEM_SFTP "/usr/lib/openssh/sftp-server"
 
 The configured environment variables are located in the file :file:`/etc/default/openmediavault`.
@@ -66,7 +66,7 @@ If you want to deploy custom configuration settings, then you could
 add additional Salt states. Please check out the `SaltStack documentation <https://docs.saltproject.io/en/latest/>`_
 for more information about how it works and how to use it.
 
-The |omv| SLS files are located at :code:`/srv/salt/omv/`.
+The |omv| SLS files are located at :file:`/srv/salt/omv/`.
 
 Add custom states
 ^^^^^^^^^^^^^^^^^
@@ -103,6 +103,6 @@ Example::
 
 For more file modifications please have a look into the `file module <https://docs.saltproject.io/en/latest/ref/modules/all/salt.modules.file.html>`_.
 
-Finally you need to deploy your changes by running::
+Finally you need to :doc:`deploy </development/internaltools/omv-salt>` your changes by running::
 
 	# omv-salt deploy run <SERVICE_NAME>

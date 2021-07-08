@@ -21,7 +21,7 @@ The following options are available to configure from the |webui|:
 	- **Shared folder:** Select a folder, the system will add an bind entry to fstab, mount that bind and add it to /etc/exports file
 	- **Client:** Enter a single ip, host or network CIDR notation. Only one entry is allowed at the moment. You can leave it empty if you do not want network security.
 	- **Privilege:** This will append read write (rw) or read-only (ro) to ``/etc/exports``. [3]_
-	- **Extra options:** Add options according the `exports manual <https://linux.die.net/man/5/exports>`_. If squash options are not specified, the mkconf script will add ``root_squash`` by default which is not displayed in the text field.
+	- **Extra options:** Add options according the `exports manual <https://linux.die.net/man/5/exports>`_.
 
 	The server also shares by default the pseudo root filesystem of /exports as NFSv4.
 

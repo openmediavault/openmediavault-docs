@@ -1,7 +1,7 @@
 Samba
 #####
 
-Samba server comes from Debian software repositories. |omv| developer does not mantain this package, all bug, hotfixes and features come from Debian. Advanced features like spotlight server or time machine support is not available because they have not reach yet stable Debian or the Debian developers have not made it available in their build.
+Samba server comes from Debian software repositories. |omv| developer does not maintain this package, all bug, hotfixes and features come from Debian. Advanced features like spotlight server or time machine support is not available because they have not reach yet stable Debian or the Debian developers have not made it available in their build.
 
 General
 -------
@@ -72,7 +72,7 @@ A default share example:
 	write list = "john"
 
 
-Is possible to add extra options in the general and share configuration at the bottom with a multi line text field. This options are hardcoded in the mkconf script but they can be changed using :doc:`environmental variables </various/advset>`.
+It is possible to add extra options in the general and share configuration page. Options that are managed by |omv| can be customized via :doc:`environmental variables </various/advset>`.
 
 
 Privileges
@@ -119,7 +119,7 @@ Notice here if users are not set up privileges (that means blank tick boxes) any
 	guest ok = yes
 	guest only = yes
 
-With these options valid, read only and write user directives will be ignored when mkconf regenerates the ``/etc/samba/smb.conf`` file.
+With these options valid, read only and write user directives will be ignored when the :file:`/etc/samba/smb.conf` is deployed by |omv|.
 
 .. note::
 	- The guest account is mapped to system account nobody, it doesn’t belong to group users, thus it has, by default, NO WRITE ACCESS just READ. This can be reverted modifying the POSIX permissions of the share to 777.

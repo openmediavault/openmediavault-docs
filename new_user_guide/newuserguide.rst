@@ -1546,7 +1546,7 @@ installed, it is required to proceed.
 
 Under **System**, **Plugins**, scroll down to Section: **Filesystems**.
 
-Select **openmediavualt-flashmemory** and click the **Install** button.
+Select **openmediavault-flashmemory** and click the **Install** button.
 
 .. image:: /new_user_guide/images/49_OMVExtras.jpg
     :width: 700px

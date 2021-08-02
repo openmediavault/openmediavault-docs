@@ -1814,7 +1814,7 @@ should not be exposed to the Internet by port forwarding. (Ports 80 or 443, for 
 gain knowledge and experience, they should consider tightening up permissions on the underlying 
 Shared Folders and SMB/CIFS network shares.
 
-Help with permissions in openmediavault, along with some practical examples, can be found here → `Wiki <https://wiki.omv-extras.org/doku.php?id=nas_permmissions_in_omv>`_ or `PDF <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Getting_Started-Permissions.pdf>`_ .
+Help with permissions in openmediavault, along with some practical examples, can be found here → `Wiki <https://wiki.omv-extras.org/doku.php?id=nas_permmissions_in_omv>` .
 
 2. **Important:**  Put your new server on a good surge suppression power strip, at the absolute 
 minimum. An **UPS** system is **preferred** and is best practice.  In consumer electronics, the majority of 

@@ -2193,9 +2193,9 @@ This may be the best option for users who do not check their server regularly.
 
 * **Delete Protection:**
 
-Removing the **--delete** switch from the command adds delete protection, and may allow the retrieval 
+Removing the ``--delete`` switch from the command adds delete protection, and may allow the retrieval 
 of files accidentally deleted from the source drive.  As previously noted, to clean up the 
-destination drive of intentionally deleted and unwanted files, the --delete switch could be manually 
+destination drive of intentionally deleted and unwanted files, the ``--delete`` switch could be manually 
 entered into the command line, from time to time, as may be deemed necessary. 
 
 **Keep in mind**:  In the event of a failing or failed data drive it is **crucial** that the 

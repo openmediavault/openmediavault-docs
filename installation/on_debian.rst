@@ -38,6 +38,9 @@ Add the package repositories::
     # deb https://downloads.sourceforge.net/project/openmediavault/packages usul partner
     EOF
 
+.. note::
+    If you are a user in mainland China, TUNA provides `mirroring services <https://mirrors.tuna.tsinghua.edu.cn/help/openmediavault/>`_.
+
 Install the |omv| package::
 
     export LANG=C.UTF-8

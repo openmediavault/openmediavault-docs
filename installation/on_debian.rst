@@ -18,8 +18,7 @@ below.
 On `Raspberry Pi OS <https://www.raspberrypi.org/software/operating-systems/>`_ the below
 instructions only partially work. Please refer to a specific `installation script <https://github.com/OpenMediaVault-Plugin-Developers/installScript>`_
 
-If you are a user in mainland China, TUNA provides mirroring services.
-Please see <https://mirrors.tuna.tsinghua.edu.cn/help/openmediavault/>
+If you are a user in mainland China, TUNA provides `mirroring services <https://mirrors.tuna.tsinghua.edu.cn/help/openmediavault/>`.
 
 Install the openmediavault keyring manually::
 

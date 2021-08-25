@@ -33,11 +33,6 @@ Overview
 Resize
 	The resize button is used for expanding filesystems. This can occur if you decide to resize a disk partition or you have grown a RAID array by adding one or more disks.
 
-.. warning::
-	Filesystems greater than 16TB in ext4
-		The default :command:`mkfs.ext4` of Debian Wheezy does not use the 64bit flag for filesystems under 16TB, this is a serious problem since RAID arrays without that flag won't be able to expand and there is no workaround more than reformat.
-		Version 1.8 introduced the flag as default for newly created ext4 filesystems, independent of the size. However the current :command:`resize2fs` tool in Debian Wheezy cannot handle the flag for expanding the size. To overcome this a newer version of e2fsprogs is necessary. For avoiding recompiling the package, you can boot systemrescuecd and perform the expansion using gparted.
-
 Delete
 	The delete button actually deletes filesystems, using :command:`wipefs -a`. This will flush filesystem, raid or partition-table signatures (magic strings). Be careful using this. The button is disabled until the filesystem is actually unmounted.
 

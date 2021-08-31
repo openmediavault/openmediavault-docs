@@ -65,12 +65,12 @@ The `name` field contains the unique identifier of the component. It is
 used to reference the component in a route configuration. The `type`
 field contains one of the following supported page types:
 
-- `formPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/limn-ui/models/form-page-config.type.ts>`_
-- `selectionListPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/limn-ui/models/selection-list-page-config.type.ts>`_
-- `textPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/limn-ui/models/text-page-config.type.ts>`_
-- `tabsPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/limn-ui/models/tabs-page-config.type.ts>`_
-- `datatablePage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/limn-ui/models/datatable-page-config.type.ts>`_
-- `rrdPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/limn-ui/models/rrd-page-config.type.ts>`_
+- `formPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/intuition/models/form-page-config.type.ts>`_
+- `selectionListPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/intuition/models/selection-list-page-config.type.ts>`_
+- `textPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/intuition/models/text-page-config.type.ts>`_
+- `tabsPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/intuition/models/tabs-page-config.type.ts>`_
+- `datatablePage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/intuition/models/datatable-page-config.type.ts>`_
+- `rrdPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/intuition/models/rrd-page-config.type.ts>`_
 
 The available properties of each type can be found in the corresponding models.
 

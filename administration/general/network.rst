@@ -113,7 +113,7 @@ services using :doc:`environment variables </various/advset>`.
 To get a list of supported environment variables, run the following
 command::
 
-    # omv-env list | grep grep ZEROCONF_ENABLED
+    # omv-env list | grep ZEROCONF_ENABLED
 
 To enable or disable a service use this command::
 

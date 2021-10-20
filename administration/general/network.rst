@@ -101,12 +101,34 @@ This settings do not configure |omv| to act as a proxy server.
 Service Discovery
 =================
 
-This panel configures the Zeroconf/mDNS announce service. You can disable
-selectively by service and/or change the common name announce.
-|omv| plugins can add their service here.
-Zeroconf/mDNS announces are recognized by Linux file browsers by default.
-Mac OSX only recognizes SMB and AFP protocol in their sidebar. Windows
-does not understand Zeroconf/mDNS announces.
+Announcing services via Zeroconf/mDNS is an essential feature of |omv|.
+A service will be automatically announced if it is enabled. This applies
+to NFS, FTP, Rsync, SMB/CIFS, SSH or the Workbench UI for example.
+Plugins may also announce their service via Zeroconf/mDNS.
+
+As this is an essential feature, this cannot be switched off in general.
+However, it is possible to deactivate the advertising of individual
+services using :doc:`environment variables </various/advset>`.
+
+To get a list of supported environment variables, run the following
+command::
+
+    # omv-env list | grep grep ZEROCONF_ENABLED
+
+To enable or disable a service use this command::
+
+    # omv-env set OMV_XXX_ZEROCONF_ENABLED [yes|true|1|no]
+
+Finally the modified environment variable(s) must be applied by running::
+
+    # omv-salt stage run prepare
+    # omv-salt deploy run avahi
+
+Example::
+
+    # omv-env set OMV_PROFTPD_ZEROCONF_ENABLED no
+    # omv-salt stage run prepare
+    # omv-salt deploy run avahi
 
 Firewall
 ========

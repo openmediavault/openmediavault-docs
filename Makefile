@@ -8,7 +8,7 @@ SPHINXPROJ    = openmediavault-wiki
 SOURCEDIR     = .
 BUILDDIR      = _build
 VENVDIR       = venv
-PORT          = 8000
+PORT          = 8080
 
 # Helper targets to create the isolated Python environment.
 # E.g. `make PORT=8001 autobuild`

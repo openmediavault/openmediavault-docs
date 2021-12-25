@@ -21,7 +21,7 @@ Build the HTML code
 
 	$ make autobuild
 
-Now open <http://localhost:8000/> in your browser to view the documentation.
+Now open <http://localhost:8080/> in your browser to view the documentation.
 Any changes to the documentation code will be rendered now immediatelly.
 
 Cleanup the HTML code

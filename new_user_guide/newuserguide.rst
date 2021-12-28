@@ -2877,7 +2877,7 @@ Add the following exclude statements to the rsync command line:
 
 A full command line example:
 
-``rsync -av -–delete --exclude='aquota.group' --exclude='aquota.user' /srv/dev-disk-by-label-DATA/ /srv/dev-disk-by-label-RSYNC/``
+``rsync -av --delete --exclude='aquota.group' --exclude='aquota.user' /srv/dev-disk-by-label-DATA/ /srv/dev-disk-by-label-RSYNC/``
 
 .. note:: As of **OMV 5.5.20**, data drives are mounted using **UUID** (Universally Unique Identifier). Under **Storage**, **File Systems**, the path under the *Mount Point* column might appear as: /srv/dev-disk-by-**uuid-f188c8ad-74d3-443a-a23e-89711270367d**  (This is an example only – all disks will have a unique identifier.)  Check the Mount Point Column in File Systems for the appropriate path for aquota commands.
 

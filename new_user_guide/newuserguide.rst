@@ -44,7 +44,7 @@ modern IBM compatible PC systems, to include typical amd64 or i386 PC’s
 and select ARM devices. Openmediavault can be thought of as
 filling a role similar to Microsoft's Server Essentials, but extends
 far beyond the role of a basic File Server with additional functionality
-added VIA plugin’s and Dockers. Openmediavault is designed to work with popular
+added VIA plugins and Dockers. Openmediavault is designed to work with popular
 client operating systems and multiple filesystem types, utilizing proven
 data sharing techniques on small and medium sized Local Area Networks.
 
@@ -1181,9 +1181,7 @@ OMV-Extras
 .. note::  The following does not apply to SBC or i386 users.  When using the scripted install, OMV-Extras is installed with OMV by default.))
 
 amd64 users will have a basic set of plugin's appropriate for a basic NAS / File Server.  To
-enable the full range of plugin's available on |omv|, the installation of OMV-Extras is
-required.  For a preview of what is available visit `omv-extras.org <http://omv-extras.org>`_ and select
-the version of |omv| that's being installed.
+enable the full range of plugin's available on |omv|, the installation of OMV-Extras is required.
 
 .. note:: For **amd64** users who installed |omv| on **SD-cards** or **USB thumb-drives**;  The flash-memory plugin is **required** for flash media boot drives. Installing **OMV-Extras** is a prerequisite for installing the **flash-memory plugin**.
 

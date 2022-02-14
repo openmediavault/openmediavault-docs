@@ -423,9 +423,7 @@ Installing on Single Board Computers (SBC's)
 ********************************************
 
 
-Installation guides for SBC installations are available
-in `PDF's <https://github.com/OpenMediaVault-Plugin-Developers/docs>`_
-or in a `Wiki <https://wiki.omv-extras.org/>`_ .
+Installation guides for → `SBC installations <https://wiki.omv-extras.org/>`_ .
 
 
 .. image:: /new_user_guide/images/divider2.png
@@ -438,10 +436,7 @@ or in a `Wiki <https://wiki.omv-extras.org/>`_ .
 Installing on i386 32-bit Platforms
 ***********************************
 
-
-An installation guide for 32-bit installations is available
-in `PDF <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Adden-C-Installing_OMV5_on_32-bit_i386.pdf>`_
-or in a `Wiki <https://wiki.omv-extras.org/doku.php?id=installing_omv5_i386_32_bit_pc>`_ .
+Installation guides for → `32-bit installations <https://wiki.omv-extras.org/>`_ .
 
 
 .. image:: /new_user_guide/images/divider2.png

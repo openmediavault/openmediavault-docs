@@ -629,8 +629,7 @@ CD/DVD drive or USB boot to the top of the boot order.  This link may provide
 assistance on this topic. → `How To Enter BIOS <https://www.lifewire.com/how-to-enter-bios-2624481>`_
 
 If difficulties are encountered during the ISO installation, consider
-the → `Alternate 64bit installation guide <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Adden-C-Installing_OMV5_on_32-bit_i386.pdf/>`_
-Or use `the Wiki <https://wiki.omv-extras.org/doku.php?id=installing_omv5_i386_32_bit_pc>`_ .
+the → `Alternate 64bit installation guide <https://wiki.omv-extras.org/doku.php?id=installing_omv5_i386_32_bit_pc/>`_ .
 
 ----
 
@@ -2362,8 +2361,7 @@ could be configured as a backup server as well.
 
 The Practical details for setting up Primary Server to Backup Server share replication, 
 using Remote Mount and Local Rsync Jobs are covered here 
-→ `Wiki <https://wiki.omv-extras.org/doku.php?id=remote_mount_plugin_for_omv5>`_
-or `PDF <https://github.com/OpenMediaVault-Plugin-Developers/docs/blob/master/Adden-D-Remote_Mount_Plugin.pdf>`_ .
+→ `Wiki <https://wiki.omv-extras.org/doku.php?id=remote_mount_plugin_for_omv5>`_ .
 
 ----
 

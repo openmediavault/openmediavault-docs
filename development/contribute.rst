@@ -47,6 +47,7 @@ How to become a translator?
 
     * Subscribe the `CLA <https://www.openmediavault.org/contributoragreement.html>`_
       and send it to the given email address.
-    * Create an account at Transifex and join the |omv| project as translator.
+    * Create an account at `Transifex <https://www.transifex.com/signup/open-source/?join_project=openmediavault>`_
+      and join the |omv| `project <https://translate.openmediavault.org>`_ as translator.
     * You will get notified when your request has been approved. You will be
       listed as contributor here.

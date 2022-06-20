@@ -117,7 +117,7 @@ command::
 
 To enable or disable a service use this command::
 
-    # omv-env set OMV_XXX_ZEROCONF_ENABLED [yes|true|1|no]
+    # omv-env set -- OMV_XXX_ZEROCONF_ENABLED [yes|true|1|no]
 
 Finally the modified environment variable(s) must be applied by running::
 
@@ -126,7 +126,7 @@ Finally the modified environment variable(s) must be applied by running::
 
 Example::
 
-    # omv-env set OMV_PROFTPD_ZEROCONF_ENABLED no
+    # omv-env set -- OMV_PROFTPD_ZEROCONF_ENABLED no
     # omv-salt stage run prepare
     # omv-salt deploy run avahi
 

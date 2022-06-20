@@ -45,8 +45,8 @@ Modify environment variables
 
 To set or change these variables, run the following command::
 
-	# omv-env set <VARIABLE_NAME> <VALUE>
-	# omv-env set OMV_SSHD_SUBSYSTEM_SFTP "/usr/lib/openssh/sftp-server"
+	# omv-env set -- <VARIABLE_NAME> <VALUE>
+	# omv-env set -- OMV_SSHD_SUBSYSTEM_SFTP "/usr/lib/openssh/sftp-server"
 
 The configured environment variables are located in the file :file:`/etc/default/openmediavault`.
 

@@ -46,7 +46,7 @@ the Linux standard SSL location.
 Certificate file with a :code:`<uuid>` suffix, which is the internal database
 number:
 
-:file:`/etc/ssl/certificates/openmediavault-<uuid>.cert`
+:file:`/etc/ssl/certs/openmediavault-<uuid>.cert`
 
 Private key file with the same :code:`<uuid>` suffix as their certificate
 pair.

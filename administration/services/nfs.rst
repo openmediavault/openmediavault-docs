@@ -19,9 +19,9 @@ Server Shares
 The following options are available to configure from the |webui|:
 
 	- **Shared folder:** Select a folder, the system will add an bind entry to fstab, mount that bind and add it to /etc/exports file
-	- **Client:** Enter a single ip, host or network CIDR notation. Only one entry is allowed at the moment. You can leave it empty if you do not want network security.
+	- **Client:** Enter a single IP, host, network in CIDR notation or wildcards. Only one entry is allowed. Check the `manual <https://manpages.debian.org/nfs-kernel-server/exports.5.en.html#Machine_Name_Formats>`_ about the machine name formats.
 	- **Privilege:** This will append read write (rw) or read-only (ro) to ``/etc/exports``. [3]_
-	- **Extra options:** Add options according the `exports manual <https://linux.die.net/man/5/exports>`_.
+	- **Extra options:** Add options according the `manual <https://manpages.debian.org/nfs-kernel-server/exports.5.en.html#General_Options>`_.
 
 	The server also shares by default the pseudo root filesystem of /exports as NFSv4.
 
@@ -79,4 +79,4 @@ Remote access
 
 .. [1] https://help.ubuntu.com/community/NFSv4Howto#NFSv4_without_Kerberos
 .. [2] https://www.centos.org/docs/5/html/5.1/Deployment_Guide/s3-nfs-server-config-exportfs-nfsv4.html
-.. [3] This is not standard |omv| privileges as in the shared folder section
+.. [3] This is not standard |omv| privileges as in the shared folder section.

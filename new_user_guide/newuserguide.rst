@@ -509,7 +509,8 @@ For assistance in creating a bootable ISO thumb-drive, see the following link.
 
 ----
 
-**If installing to a standard hard drive or SSD, skip to →** `openmediavault installation <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#amd64-omv-installation>`_ . 
+**If installing to a standard hard drive or SSD, skip to →** 
+`openmediavault installation <https://openmediavault.readthedocs.io/en/5.x/new_user_guide/newuserguide.html#amd64-openmediavault-installation>`_ .
 
 ----
 
@@ -2361,7 +2362,7 @@ could be configured as a backup server as well.
 
 The Practical details for setting up Primary Server to Backup Server share replication, 
 using Remote Mount and Local Rsync Jobs are covered here 
-→ `Wiki <https://wiki.omv-extras.org/doku.php?id=remote_mount_plugin_for_omv5>`_ .
+→ `Wiki <https://wiki.omv-extras.org/doku.php?id=omv5:omv5_plugins:remote_mount>`_ .
 
 ----
 
@@ -2414,7 +2415,7 @@ USB thumb-drives lend themselves to cloning and very quick recovery.
 The Benefits of Maintaining Operating System Backup
 ===================================================
 
-In accordance with `“Murphy's Law” <http://murphys-laws.com/murphy/murphy-laws.html>`_, users may 
+In accordance with `“Murphy's Law” <https://en.wikipedia.org/wiki/Murphy's_law>`_, users may 
 encounter issues where things go wrong.  As examples, users may test software on their active server 
 or try new settings. On occasion, installing an add-on may have unintended consequences.  Trying new 
 settings or working on the command line, may break |omv| in a way that might not be recoverable.  In 
@@ -2537,10 +2538,10 @@ it before storage.
 
 ----
 
-The last process uses `Etcher <http://https://etcher.io/>`_ to burn the image file and verify it in one 
+The last process uses `Etcher <https://www.balena.io/etcher/>`_ to burn the image file and verify it in one 
 pass.  Etcher is a free utility that installs on Windows.
 
-* Insert the **new** flash drive and start `Etcher <http://https://etcher.io/>`_ .  (Etcher typically auto detects flash drives as well.)
+* Insert the **new** flash drive and start `Etcher <https://www.balena.io/etcher/>`_ .  (Etcher typically auto detects flash drives as well.)
 
 
 * Select the image file previously created, verify the destination flash media drive, and click the FLASH! button.
@@ -2569,7 +2570,7 @@ General
 =======
 
 The `openmediavault Forum <https://forum.openmediavault.org/index.php/BoardList/>`_ has an extensive 
-`Guides <https://forum.openmediavault.org/index.php/Board/29-Guides/>`_ section.  Whether a user's 
+`Guides <https://forum.openmediavault.org/index.php?board/29-guides/>`_ section.  Whether a user's 
 preference is videos or printed text, there's something for everyone among the numerous “How-To's”.  
 Beginners and Advanced users alike should take a few minutes to familiarize themselves with the 
 content in the Guides section of the Forum.
@@ -2598,7 +2599,8 @@ that may prove to be frustrating for beginners.  To get started, beginners shoul
 Docker, then  Portainer, as found under System, OMV-Extras.  While it's command line oriented, this 
 `Docker Tutorial <https://docker-curriculum.com/>`_ is very helpful for understanding basic concepts.  
 User authored `Docker - How To's <https://forum.openmediavault.org/index.php/Board/29-Guides/>`_ can be 
-found on the |omv| forum.
+found on the |omv| forum in the Guides section.  In addition, there's a forum section dedicated to Docker 
+issues and questions.
 
 
 So, What is a “Docker”?
@@ -2801,7 +2803,7 @@ The First Resource – The Internet
 =================================
 
 Users should search the internet first.  The solutions for many generic problems can be found with 
-`google <https://www.google.com/>`_ ,  `yippy <https://yippy.com/>`_ ,  `duckduckgo <https://duckduckgo.com/>`_ , and 
+`google <https://www.google.com/>`_ ,  `duckduckgo <https://duckduckgo.com/>`_ , and 
 other search engines.  When searching on key words that match error message or the problem users may be 
 having, in some cases, answers can be found quickly in real time.  This is the fastest and often the best way to learn how 
 to fix server problems.  Since |omv| is based on “**Debian**”, it may be a useful search term.

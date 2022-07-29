@@ -436,7 +436,7 @@ Installation guides for → `SBC installations <https://wiki.omv-extras.org/>`_ 
 Installing on i386 32-bit Platforms
 ***********************************
 
-Installation guides for → `32-bit installations <https://wiki.omv-extras.org/>`_ .
+Installation guide for → `32-bit installations <https://wiki.omv-extras.org/doku.php?id=omv5:i386_32-bit_install>`_ .
 
 
 .. image:: /new_user_guide/images/divider2.png
@@ -630,7 +630,7 @@ CD/DVD drive or USB boot to the top of the boot order.  This link may provide
 assistance on this topic. → `How To Enter BIOS <https://www.lifewire.com/how-to-enter-bios-2624481>`_
 
 If difficulties are encountered during the ISO installation, consider
-the → `Alternate 64bit installation guide <https://wiki.omv-extras.org/doku.php?id=installing_omv5_i386_32_bit_pc/>`_ .
+the → `Alternate 64bit installation guide <https://wiki.omv-extras.org/doku.php?id=omv5:i386_32-bit_install>`_ .
 
 ----
 

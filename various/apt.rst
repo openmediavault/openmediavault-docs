@@ -110,6 +110,6 @@ finds the closest mirror automatically. This is can be used as default for Debia
 Debian provides the :file:`/etc/apt/sources.d/` folder for adding external
 repositories. If there is need to add a repository from a testing or unstable
 Debian just to install recent software make sure the packages are properly pinned [1]_
-to avoid the system becoming unstable for adding core unsupported software my mistake.
+to avoid the system becoming unstable for adding core unsupported software by mistake.
 
 .. [1] https://wiki.debian.org/AptPreferences

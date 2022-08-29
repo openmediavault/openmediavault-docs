@@ -18,7 +18,7 @@ Installation variants:
 
 	* :doc:`Dedicated drive </installation/via_iso>` - Advised method via ISO image. This runs OMV from its own drive.
 	* :doc:`USB flash drive </installation/on_usb>` - This runs |omv| from a USB flash drive.
-	* :doc:`Debian Operating System </installation/on_debian>` - This runs |omv| as a services on top of a Debian OS.
+	* :doc:`Debian Operating System </installation/on_debian>` - Use an existing Debian OS installation for |omv|.
 	* `Debian Operating System via debootstrap <https://forum.openmediavault.org/index.php/Thread/12070-GUIDE-DEBOOTSTRAP-Installing-Debian-into-a-folder-in-a-running-system/>`_. Use this as a last resort in case the installer does not recognize a specific essential hardware component like hard disk (NVME) or a network card that needs a higher kernel (backport).
 	* :doc:`SD card </installation/via_image>` - This runs |omv| from a SD card.
 
@@ -34,8 +34,8 @@ First time use:
 .. note::
    |omv| will enable SSH access for the user ``root`` by default to be
    able to access a headless system in case of a broken installation or
-   other maintenance situations. You can disable this behaviour in the
-   ``Services | SSH`` page.
+   other maintenance situations. You should disable this behaviour in the
+   ``Services | SSH`` page for security reasons after installation.
 
    To still get ``root`` access you need to create a non-privileged user
    and add them to the ``ssh`` and ``sudo`` groups. After that you can

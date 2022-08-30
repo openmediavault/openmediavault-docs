@@ -20,10 +20,11 @@ installation only. For a step by step install guide have a look into the
 `Debian minimal install guide <https://www.pcsuggest.com/debian-minimal-install-guide/>`_.
 
 On ARM devices, please check if there's an appropriate `Armbian <https://www.armbian.com/download>`_
-image available. After installing Armbian, then use the
-`armbian-config` tool to install OMV in a single step with all performance and reliability
-tweaks included. If there's no Armbian image for your device, simply follow the steps outlined
-below.
+image available. Make sure you are using the correct :doc:`Debian version </releases>`
+that |omv| is based on. After installing Armbian, then use the `armbian-config`
+tool to install OMV in a single step with all performance and reliability tweaks
+included. If there's no Armbian image for your device, simply follow the steps
+outlined below.
 
 On `Raspberry Pi OS <https://www.raspberrypi.org/software/operating-systems/>`_ the below
 instructions only partially work. Please refer to a specific `installation script <https://github.com/OpenMediaVault-Plugin-Developers/installScript>`_

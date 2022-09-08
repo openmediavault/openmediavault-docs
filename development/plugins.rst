@@ -119,9 +119,12 @@ dashboard.d
 
 The following dashboard widget types are available:
 
+- grid
 - datatable
 - rrd
 - chart
+- text
+- value
 
 The available properties of each type can be found in the corresponding `model <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/dashboard/models/dashboard-widget-config.model.ts>`_.
 
@@ -153,6 +156,8 @@ Example:
           - label: Usage
             prop: cpuUsage
             backgroundColor: "#4cd964"
+
+Check out the `Dashboard widgets <https://github.com/openmediavault/openmediavault/tree/master/deb/openmediavault/usr/share/openmediavault/workbench/dashboard.d>`_ that are delivered with |omv| for more examples.
 
 log.d
 -----

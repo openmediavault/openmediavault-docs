@@ -6,12 +6,13 @@ Installation
 Before you begin:
 	- Check if your hardware is supported on the system :doc:`requirements
 	  page </prerequisites>`.
-	- `Download <https://sourceforge.net/projects/openmediavault/files/>`_ an
-	  installation image file for your system. |omv| provides ISO installers
-	  for x86 architecture and several preconfigured images for ARM devices.
 	- Disconnect all disk devices except the one for the system drive. This way you
 	  avoid an accidental install on a storage drive (which will be configured
-	  after installation anyway).
+	  after installation anyway).      
+	- a) for x86/AMD64 architecture `download <https://sourceforge.net/projects/openmediavault/files/>`_ an
+	  ISO installation image file for your system.
+      b) for arm32/64 architecture switch to instructions on <https://github.com/OpenMediaVault-Plugin-Developers/installScript/>`_
+
 
 Installation variants:
 	Choose your installation variant and follow the instructions.

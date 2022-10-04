@@ -29,7 +29,7 @@ outlined below.
 On `Raspberry Pi OS <https://www.raspberrypi.org/software/operating-systems/>`_ the below
 instructions only partially work. Please refer to a specific `installation script <https://github.com/OpenMediaVault-Plugin-Developers/installScript>`_
 
-Install the openmediavault keyring manually::
+Install the |omv| keyring manually::
 
     apt-get install --yes gnupg
     wget -O "/etc/apt/trusted.gpg.d/openmediavault-archive-keyring.asc" https://packages.openmediavault.org/public/archive.key

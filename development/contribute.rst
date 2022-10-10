@@ -27,19 +27,7 @@ Can I submit patches without having signed the CLA?
 
 Contribution rules
 ------------------
-    Code contributions must satisfy the following conditions. Contributions
-    that do not fulfill these conditions will not be accepted.
-
-    * The :doc:`coding guidelines <coding_guideline>` must be followed.
-    * The feature/improvement must be implemented as generic as possible.
-    * The code/feature/improvement must not affect existing functionality.
-    * Each commit message in a `GitHub pull request <https://github.com/openmediavault/openmediavault/pulls>`_
-      must be signed via ``Signed-off-by: Frank Mustermann <frank.mustermann@xxx.yyy>``.
-    * If the PR fixes a `GitHub issue <https://github.com/openmediavault/openmediavault/issues>`_,
-      then the line ``Fixes: https://github.com/openmediavault/openmediavault/issues/<ISSUE_NR>``
-      must be included.
-    * You have to sign the CLA online via GitHub.
-    * Make sure your PR has only one commit.
+    Code contributions are welcome, please see <https://github.com/openmediavault/openmediavault/blob/master/CONTRIBUTING.md> for requirements.
 
 How to become a translator?
 ---------------------------

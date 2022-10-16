@@ -9,6 +9,12 @@ What is OMV?
 Is |omv| a fork of FreeNAS?
 	No
 
+When shall i use |omv|?
+    If you want to set up a NAS really fast and manage it easily, then
+    |omv| is the right solution for you. If you want to use a really
+    free software where you are not a beta tester for a commercial
+    variant, then |omv| is also a solution for you.
+
 Does |omv| have drivers for my hardware?
 	All module drivers are provided by the Debian standard kernel of oldstable
 	release 8.9 (aka Jessie). This distribution ships with kernel 3.16 by
@@ -78,12 +84,12 @@ How can I modify an internal value of some service |omv| has control over?
 	Read :doc:`here <various/advset>` for advanced configurations.
 
 How can I modify or add a network configuration with some custom options the |webui| does not provide?
-    Starting with |omv| 5 systemd-networkd is used to configure the network.
+    Starting with |omv| version 5 ``systemd-networkd`` is used to configure the network.
     The interfaces file :file:`/etc/network/interfaces` is controlled by |omv| but
     not used anymore.
     To add network interfaces that are not configurable through the |webui| or other
     options not present, use :doc:`advanced settings <various/advset>`.
-    Alternatively write your own systemd-networkd configuration files.
+    Alternatively write your own ``systemd-networkd`` configuration files.
 
 Why my disks mount paths have a long alphanumeric number?
 	The long number is called UUID, it is used by fstab to mount disks. This

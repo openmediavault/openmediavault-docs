@@ -14,7 +14,7 @@ PORT          = 8080
 # E.g. `make PORT=8001 autobuild`
 venv:
 	( \
-		virtualenv -p python3 $(VENVDIR); \
+		python3 -m venv $(VENVDIR); \
 		. $(VENVDIR)/bin/activate; \
 		pip install -r requirements.txt; \
 	)
@@ -34,7 +34,7 @@ help:
 clean:
 	rm -rf "$(BUILDDIR)"
 
-lint:
+lint: venv
 	( \
 		. $(VENVDIR)/bin/activate; \
 		rstcheck --recursive *.rst ./administration ./development ./installation ./various \

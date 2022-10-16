@@ -107,9 +107,9 @@ Your script's filename must adhere to the following standards:
 
 	- Must belong to one or more of the following namespaces:
 
-		- The LANANA-assigned namespace (^[a-z0-9]+$)
-		- The LSB hierarchical and reserved namespaces (^_?([a-z0-9_.]+-)+[a-z0-9]+$)
-		- The Debian cron script namespace (^[a-zA-Z0-9_-]+$)
+		- The LANANA-assigned namespace (``^[a-z0-9]+$``)
+		- The LSB hierarchical and reserved namespaces (``^_?([a-z0-9_.]+-)+[a-z0-9]+$``)
+		- The Debian cron script namespace (``^[a-zA-Z0-9_-]+$``)
 
 	- Start with a number like this: :file:`<##>pushnotification`
 

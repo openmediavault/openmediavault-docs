@@ -34,6 +34,12 @@ help:
 clean:
 	rm -rf "$(BUILDDIR)"
 
+lint:
+	( \
+		. $(VENVDIR)/bin/activate; \
+		rstcheck --recursive *.rst ./administration ./development ./installation ./various \
+	)
+
 .PHONY: autobuild buildvenv clean help Makefile
 
 # Catch-all target: route all unknown targets to Sphinx using the new

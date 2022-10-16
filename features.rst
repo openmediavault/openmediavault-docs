@@ -73,11 +73,11 @@ Diagnostics
 
 **Services:** View status (enabled/disabled and running/not running) of services. Detailed information is provided by default for Samba, FTP and SSH. Plugins can use this tab to integrate their service information also.
 
-.. [1] http://postfix.org
+.. [1] https://www.postfix.org/
 .. [2] https://www.avahi.org/
 .. [3] https://www.smartmontools.org/
 .. [4] https://raid.wiki.kernel.org/index.php/RAID_setup
 .. [5] https://www.samba.org/
 .. [6] http://www.proftpd.org/
-.. [7] http://nfs.sourceforge.net/
+.. [7] https://nfs.sourceforge.net/
 .. [8] https://www.openssh.com/

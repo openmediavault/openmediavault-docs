@@ -1,7 +1,6 @@
 Troubleshooting
 ===============
 
-
 * **The web interface has missing fields and/or items showing that have been uninstalled.**
 
     Clear your browser cache.
@@ -37,11 +36,11 @@ Troubleshooting
 
 * **How to troubleshoot an error caused by an "Option" parameter passed to a plug-in**
 
-    To find the root cause, run the faulty systemd unit file yourself by executing:
-	#
-	systemd restart <plug-in-daemon>
+    To find the root cause, run the faulty systemd unit file yourself by executing::
 
-	If output of <plug-in> is now more vebose, then you will get a hint on STDOUT. If not, then you need to run journalctl -f in parallel to get the syslog output. Admittedly, not really novice friendly, but it's really not possible to do it any other way. OMV always tries to be as error/debug friendly as possible; by default.
+        systemd restart <plug-in-daemon>
+
+    If output of <plug-in> is now more verbose, then you will get a hint on STDOUT. If not, then you need to run ``journalctl -f`` in parallel to get the syslog output. Admittedly, not really novice friendly, but it's really not possible to do it any other way. OMV always tries to be as error/debug friendly as possible; by default.
 
 * **I am using JMicron drive enclosures and some of my drives are not appearing.**
 
@@ -49,7 +48,7 @@ Troubleshooting
     |omv| provides an `UDEV rules database <https://github.com/openmediavault/openmediavault/pull/746>`_ which will fix that issue for several USB PATA/SATA bridge controllers.
     If your hardware still does not work, then please provide the information mentioned in that pull request and open a new tracker issue.
 
-    Alternatively you can manually "fix" this by adding a rule to :file:`/lib/udev/rules.d/60-persistent-storage.rules` after the entry for "Fall back usb_id for USB devices"::
+    Alternatively you can manually "fix" this by adding a rule to :file:`/lib/udev/rules.d/60-persistent-storage.rules` after the entry for `Fall back usb_id for USB devices`::
 
         # JMicron drive fix
         KERNEL=="sd*", ENV{ID_VENDOR}=="JMicron", SUBSYSTEMS=="usb", PROGRAM="serial_id %N", ENV{ID_SERIAL}="USB-%c", ENV{ID_SERIAL_SHORT}="%c"

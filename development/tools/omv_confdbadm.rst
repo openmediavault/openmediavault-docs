@@ -59,8 +59,7 @@ Output returns:
 	        "passno": 0,
 	        "type": "none",
 	        "uuid": "dce89b85-f1e1-42e2-8d46-986de599abff"
-	    },
-
+	    }
 	]
 
 

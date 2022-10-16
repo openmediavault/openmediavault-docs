@@ -84,12 +84,12 @@ How can I modify an internal value of some service |omv| has control over?
 	Read :doc:`here <various/advset>` for advanced configurations.
 
 How can I modify or add a network configuration with some custom options the |webui| does not provide?
-    Starting with |omv| version 5 ``systemd-networkd`` is used to configure the network.
+    Starting with |omv| version 5 `systemd-networkd` is used to configure the network.
     The interfaces file :file:`/etc/network/interfaces` is controlled by |omv| but
     not used anymore.
     To add network interfaces that are not configurable through the |webui| or other
     options not present, use :doc:`advanced settings <various/advset>`.
-    Alternatively write your own ``systemd-networkd`` configuration files.
+    Alternatively write your own `systemd-networkd` configuration files.
 
 Why my disks mount paths have a long alphanumeric number?
 	The long number is called UUID, it is used by fstab to mount disks. This

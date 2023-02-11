@@ -4,6 +4,9 @@ Contribute
 If you want to contribute to the |omv| project you have to subscribe a
 `Contributor License Agreement <https://www.openmediavault.org/contributoragreement.html>`_.
 
+You can easily subscribe the CLA with a single mouse click when submitting a
+`pull request <https://github.com/openmediavault/openmediavault/pulls>`_ on GitHub.
+
 Note that the CLA is not a transfer of copyright ownership, this simply is a
 license agreement for contributions. You also do not change your rights to
 use your own contributions for any other purpose.

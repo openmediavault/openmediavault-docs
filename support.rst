@@ -33,7 +33,7 @@ to help you.
 **Discord**
 
 Since last year there is also a discord group. You can get access by clicking
-`here <https://discord.gg/ZjknBdg>`_.
+`here <https://discord.gg/BNTZFPqpcs>`_.
 
 .. note::
    Make sure you provide as much information as you can when posting in the forum

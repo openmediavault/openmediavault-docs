@@ -41,7 +41,7 @@ Access Right Management
 
 **Groups:** Create and manage custom groups. System groups cannot be manipulated here.
 
-**Shared Folders:** Simple shared folder administration. Within this section is also possible to assign ACLs and/or privileges to the shared folders.
+**Shared Folders:** Simple shared folder administration. Within this section is also possible to assign ACLs and/or privileges to the shared folders. Snapshots can be taken manually or via scheduled tasks for shared folders that are located on BTRFS file systems.
 
 Services
 --------

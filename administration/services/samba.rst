@@ -1,7 +1,7 @@
 Samba
 #####
 
-Samba server comes from Debian software repositories. |omv| developer does not maintain this package, all bug, hotfixes and features come from Debian. Advanced features like spotlight server or time machine support is not available because they have not reach yet stable Debian or the Debian developers have not made it available in their build.
+Samba server comes from Debian software repositories. The |omv| project does not maintain this package, all bugs, hotfixes and features come from Debian.
 
 General
 -------
@@ -71,9 +71,10 @@ A default share example:
 	read list =
 	write list = "john"
 
+|omv| automatically configures shadow copies if the |sf| is on a BTRFS file
+system and if there are snapshots available. These are exposed as `Previous Versions` to Windows clients.
 
 It is possible to add extra options in the general and share configuration page. Options that are managed by |omv| can be customized via :doc:`environmental variables </various/advset>`.
-
 
 Privileges
 ----------

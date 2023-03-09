@@ -109,8 +109,9 @@ comment and their information should now be stored in ``config.xml``.
 Shared Folder
 =============
 
-Shared folder in |omv| is an internal database object configuration that
-has been created using the |webui|.
+|sf| are the key functionality in |omv| around which all services revolve.
+If they are located on a BTRFS file system, then it is possible to create snapshots
+of those |sf|. This can be done manually or via scheduled tasks.
 
 Add
 ^^^

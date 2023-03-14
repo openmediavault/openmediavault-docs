@@ -50,6 +50,10 @@ Services
 
 **FTP:** Service based on proftpd [6]_. Intended for accessing shares from remote or local.
 
+.. note::
+
+	This service has been removed from core in |omv| version 6. It can be installed as plugin now.
+
 **RSync:** Server daemon. Shared folders can be defined as rsyncd modules. With scheduled tasks, rsync client can be configured for push or pull jobs.
 
 **NFS:** Network file system protocol [7]_.
@@ -60,7 +64,7 @@ Services
 
 .. note::
 
-	In |omv| version 4 the TFTP has been removed from core, and now it can be installed as an official plugin.
+	This service has been removed from core in |omv| version 4. It can be installed as plugin now.
 
 Diagnostics
 -----------

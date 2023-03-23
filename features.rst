@@ -13,7 +13,7 @@ General settings
 
 **Network configuration:** The |webui| provides configuration options for ethernet, WiFi (only WPA/WPA2 supported), bond and vlan interfaces. This also includes a panel for firewall configuration.
 
-**Certificates:** Create or import existing SSL and SSH certificates. This certificates can be used for securing the |webui| or SSH access. Plugins can use the backend framework to select the available certificates.
+**Certificates:** Create or import existing SSL and SSH certificates. This certificates can be used for securing the |webui| or SSH access. Plugins can use the backend framework to select the available certificates. Automatic scheduled tasks that check for expired SSL certificates, including notification by email.
 
 **Power Management:** Scheduled power management for hibernation (S5), suspend (S3), shutdown and/or reboot.
 
@@ -21,7 +21,7 @@ General settings
 
 **Scheduled Tasks:** Based on cron the webUI can define tasks for running specific commands or custom scripts at certain time or regular intervals.
 
-**Update Manager:** Displays all available packages for upgrade.
+**Update Manager:** Displays all available packages for upgrade. Automatic daily tasks to check for updates, including notification by email. Security updates will be installed unattended.
 
 Storage
 -------
@@ -37,11 +37,11 @@ Storage
 Access Right Management
 -----------------------
 
-**Users:** User and group managing. Using privileges is possible to restrict access/login to shares on network sharing services (FTP, Samba and AFP) without interfering Unix permissions.
+**Users:** User and group managing. Using privileges is possible to restrict access/login to shares on network sharing services (FTP, Samba and AFP) without interfering Unix permissions. Automatic scheduled task that checks for locked/banned users, including notification by email.
 
 **Groups:** Create and manage custom groups. System groups cannot be manipulated here.
 
-**Shared Folders:** Simple shared folder administration. Within this section is also possible to assign ACLs and/or privileges to the shared folders. Snapshots can be taken manually or via scheduled tasks for shared folders that are located on BTRFS file systems.
+**Shared Folders:** Simple shared folder administration. Within this section is also possible to assign ACLs and/or privileges to the shared folders. Snapshots can be taken manually or via scheduled tasks for shared folders that are located on Btrfs file systems. Automatic scheduled tasks for Btrfs file systems to scrub them and check for errors, including notifications via email.
 
 Services
 --------

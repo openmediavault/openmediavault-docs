@@ -37,6 +37,14 @@ Contribution rules
 ------------------
     Code contributions are welcome, please see <https://github.com/openmediavault/openmediavault/blob/master/CONTRIBUTING.md> for requirements.
 
+Anything else?
+--------------
+    First time contributors should have a look into this `talk <https://youtu.be/1tnQLkcToIQ?t=27174>`_.
+
+    Other useful information:
+
+    * `How to write a Git commit message <https://cbea.ms/git-commit/>`_
+
 How to become a translator?
 ---------------------------
     If you want to help translating the |omv| |webui| please do the following:

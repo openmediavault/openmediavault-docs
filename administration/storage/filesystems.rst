@@ -1,7 +1,6 @@
 Filesystems
 ###########
 
-
 Overview
 	The filesystem section of the |omv| |webui| is where you integrate disk volumes to be part of the server. Drives/filesystems that are not mounted through the |webui| are not registered in the backend database, this means you cannot use volumes to create shared folders if they were not mounted properly. *This is very important*, users that come from an existing debian installation with filesystems already present in their fstab file will see that no volumes will be available for creating shared folders even if they are mounted. For the disks to be properly integrated it is better to delete all fstab lines except rootfs and swap, reboot your server and start mounting the disks through the |webui|.
 

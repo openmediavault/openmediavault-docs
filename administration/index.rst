@@ -21,4 +21,5 @@ at the same time, which reduces unnecessary waiting times.
     storage/index
     services/index
     users
+    ../various/apt
     ../various/advset

@@ -30,7 +30,7 @@ that run::
 
 $ ssh-keygen -e -f nameofthekey.pub
 
-Paste the output in the users profile at ``Access Right Management | Users | <USERNAME> | Edit | Public Keys``.
+Paste the output in the users profile at ``Users | Users | <USERNAME> | Edit | Public Keys``.
 
 The number of keys per user is unlimited. A public key in RFC 4716 looks like this::
 

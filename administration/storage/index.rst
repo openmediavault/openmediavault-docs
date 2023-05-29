@@ -4,9 +4,10 @@ Storage
 #######
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
 
-   disks
-   smart
-   raid
-   filesystems
+    disks
+    smart
+    raid
+    filesystems
+    sharedfolders

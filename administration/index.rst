@@ -19,6 +19,6 @@ at the same time, which reduces unnecessary waiting times.
 
     general/index
     storage/index
-    access_rights_management
     services/index
+    users
     ../various/advset

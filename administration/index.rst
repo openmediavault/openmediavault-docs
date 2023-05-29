@@ -21,4 +21,5 @@ at the same time, which reduces unnecessary waiting times.
     storage/index
     access_rights_management
     services/index
+    ../various/apt
     ../various/advset

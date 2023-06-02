@@ -2,8 +2,10 @@ Shared Folders
 ##############
 
 |sf| are the key functionality in |omv| around which all services revolve.
-If they are located on a BTRFS file system, then it is possible to create snapshots
-of those |sf|. This can be done manually or via scheduled tasks.
+They will be created as subvolumes on BTRFS file systems or simple directories
+on all other file systems supported by |omv|. If a |sf| is located on a BTRFS file
+system, then it is possible to create snapshots of it. This can be done manually
+or via scheduled tasks.
 
 Add
 ^^^

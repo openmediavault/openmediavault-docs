@@ -51,6 +51,7 @@ Supported Filesystems
 	jfs,yes,yes
 	xfs,yes,yes
 	btrfs,yes,yes
+	f2fs,yes,yes
 	zfs,no,no
 	ntfs,no,yes
 	hfsplus,no,yes

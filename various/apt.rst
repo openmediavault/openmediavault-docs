@@ -8,28 +8,26 @@ Overview
 standard Debian packages are upgraded using the official Debian mirrors. |omv|
 packages are upgraded using the https://packages.openmediavault.org repository.
 
-Update Manager
---------------
+Update Management
+-----------------
 
-The update manager displays all available packages for upgrade. You can select
-them if you want to do individual or mass upgrade. The server uses ``cron-apt`` to
-perform a daily ``apt-get update`` and fetch upgrade packages automatically. If you
-have notifications enabled you will receive an email every time packages are ready
-for installation.
+Package updates will be displayed under ``System | Update Management | Updates``
+in the |webui|. There you can view the changelog of individual packages or install
+all packages at once.
+
+The software ``cron-apt`` is used by |omv| to perform a daily scheduled job
+to check for new package updates. Security updates will be installed automatically
+in the background. If you have notifications enabled you will receive an email
+every time packages are ready for installation.
 
 Using CLI
 ---------
-
-**apt-get**
-
-If you want to update/upgrade in the console you can use ``apt-get update``
-then ``apt-get upgrade``.
 
 **omv-upgrade**
 
 This is non-interactive wrapper script that basically re-synchronizes the
 package index files from their sources and installs the newest versions of
-all packages currently installed on the system from the sources.
+all packages currently installed on the system.
 
 **omv-release-upgrade**
 
@@ -62,6 +60,11 @@ server.
 
     Better use a container based solution to install additional software
     to do not affect the |omv| operating system.
+
+.. warning::
+    Do not install the ``apache`` webserver package, this leads to the
+    uninstallation of the ``openmediavault`` package and the unusability
+    of the system.
 
 **Install**::
 

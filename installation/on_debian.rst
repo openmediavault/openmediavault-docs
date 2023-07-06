@@ -18,7 +18,7 @@ To do so, simply install the system using the `Debian netinst images
 Please do **not** install a graphical desktop environment or web server,
 use a minimal server installation only (SSH server and standard system utilities).
 For a step by step install guide have a look into the
-`Debian minimal install guide <https://www.pcsuggest.com/debian-minimal-install-guide/>`_.
+`Debian minimal install guide <https://www.howtoforge.com/tutorial/debian-minimal-server/>`_.
 
 On ARM devices, please check if there's an appropriate `Armbian <https://www.armbian.com/download>`_
 image available. Make sure you are using the correct :doc:`Debian version </releases>`

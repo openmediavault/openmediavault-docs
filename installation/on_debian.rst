@@ -15,8 +15,9 @@ You can install |omv| on an existing Debian installation as well.
 
 To do so, simply install the system using the `Debian netinst images
 <https://www.debian.org/CD/netinst/>`_. After that apply the commands below.
-Please do **not** install a graphical desktop environment, use a minimal server
-installation only. For a step by step install guide have a look into the
+Please do **not** install a graphical desktop environment or web server,
+use a minimal server installation only (SSH server and standard system utilities).
+For a step by step install guide have a look into the
 `Debian minimal install guide <https://www.pcsuggest.com/debian-minimal-install-guide/>`_.
 
 On ARM devices, please check if there's an appropriate `Armbian <https://www.armbian.com/download>`_

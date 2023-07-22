@@ -16,12 +16,7 @@ When shall i use |omv|?
     variant, then |omv| is also a solution for you.
 
 Does |omv| have drivers for my hardware?
-	All module drivers are provided by the Debian standard kernel of oldstable
-	release 8.9 (aka Jessie). This distribution ships with kernel 3.16 by
-	default. Optionally is possible to install the backport kernel 4.9. If
-	hardware is supported under Debian Jessie then is supported under |omv|.
-	The Jessie backport kernel 4.9 is the default kernel used by Stretch
-	(Debian 9.3) at the moment, so it provides support for newer hardware.
+	Please consult the Debian hardware compatibility list for more information.
 
 Can I use a usb flash drive (stick) for installing the system?
 	Yes, but the installation does not have any optimizations to reduce writes
@@ -47,8 +42,9 @@ What is the file :file:`/etc/openmediavault/config.xml` for?
 	RPC to/from this file.
 
 Can I upgrade to Debian Testing/Unstable (Debian Testing/Sid) or use Ubuntu as a base distribution?
-	Yes. But the end is most likely a broken |webui| and possibly broken
-	system. |omv| releases are heavily tight to their Debian base distribution.
+    Yes. But the end is most likely a broken |webui| and possibly broken
+    system. |omv| releases are heavily tight to their Debian base distribution.
+    Get more information :doc:`here </various/apt>`.
 
 I´ve lost the |webui| password. How do I reset it?
 	Simply connect via ssh into the server or login locally on the machine
@@ -64,21 +60,21 @@ What is the default HTTP engine of |omv|?
 	NGINX. The last version of |omv| with Apache was 0.5 Sardoukar.
 
 Can I use Apache as HTTP engine?
-	Yes, but is not supported. Eventually every |omv| package upgrade will
-	activate NGINX again leaving the |webui| broken. A parallel Apache
-	instance next to Nginx is possible, just make sure the ports are different
-	otherwise the |omv| |webui| will not work.
+    Yes, but is not supported. Eventually every |omv| package upgrade will
+    activate NGINX again leaving the |webui| broken. A parallel Apache
+    instance next to Nginx is possible, just make sure the ports are different
+    otherwise the |omv| |webui| will not work.
 
 How can use the default HTTP engine to hold my own web page?
-	Do not modify |omv| default NGINX files. Place the website configurations
-	in :file:`/etc/nginx/sites-available` and enable it with
-	:command:`nginx_ensite <SITE>`. Read more information in the
-	`NGINX documentation <http://nginx.org/en/docs/>`_.
+    Do not modify |omv| default NGINX files. Place the website configurations
+    in :file:`/etc/nginx/sites-available` and enable it with
+    :command:`nginx_ensite <SITE>`. Read more information in the
+    `NGINX documentation <http://nginx.org/en/docs/>`_.
 
 Why does the system rewrites a configuration file(s) that I have manually edited?
-	OMV takes full control of some system services. This services include
-	monit, ntp, samba, network, proftpd, nginx, php5-fpm, etc. Read
-	:doc:`here </various/files>`.
+    OMV takes full control of some system services. This services include
+    monit, ntp, samba, network, proftpd, nginx, php5-fpm, etc. Read
+    :doc:`here </various/files>`.
 
 How can I modify an internal value of some service |omv| has control over?
 	Read :doc:`here <various/advset>` for advanced configurations.
@@ -92,17 +88,16 @@ How can I modify or add a network configuration with some custom options the |we
     Alternatively write your own `systemd-networkd` configuration files.
 
 Why my disks mount paths have a long alphanumeric number?
-	The long number is called UUID, it is used by fstab to mount disks. This
-	number is unique per filesystem (or at least unlikely possible that
-	another filesystem comes with an identical one). This helps maintaining the
-	mount points. The old linux way (sda1, sdb1, etc.) is not guaranteed that
-	/dev/sda1 is the same disk on next reboot. If having trouble identifying them
-	in terminal, create a pool with symlinks to each file system with easy to
-	remember names.
+    The long number is called UUID, it is used by fstab to mount disks. This
+    number is unique per filesystem (or at least unlikely possible that
+    another filesystem comes with an identical one). This helps maintaining the
+    mount points. The old linux way (sda1, sdb1, etc.) is not guaranteed that
+    /dev/sda1 is the same disk on next reboot. If having trouble identifying them
+    in terminal, create a pool with symlinks to each file system with easy to
+    remember names.
 
-	This behaviour has been deprecated now in current |omv| releases including
-	stable (Jessie). The default creation of mount paths is documented
-	`here <https://github.com/openmediavault/openmediavault/blob/20ec529737e6eca2e1f98d0b3d1ade16a3c338e1/deb/openmediavault/usr/share/openmediavault/engined/rpc/filesystemmgmt.inc#L823-L833>`_.
+    This behaviour has been deprecated now in current |omv| releases.
+    The default creation of mount paths is documented `here <https://github.com/openmediavault/openmediavault/blob/20ec529737e6eca2e1f98d0b3d1ade16a3c338e1/deb/openmediavault/usr/share/openmediavault/engined/rpc/filesystemmgmt.inc#L823-L833>`_.
 
 I don't have a data disk, and I want to use my OS disk for storing data?
 	The default behaviour of |omv| is to act as NAS server, that means OS

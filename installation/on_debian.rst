@@ -65,4 +65,19 @@ Install the |omv| package::
         --option DPkg::Options::="--force-confold" \
         install openmediavault-keyring openmediavault
 
+Populate the |omv| database with several existing system settings, e.g. the network configuration::
+
     omv-confdbadm populate
+
+.. note::
+    Right now only `/etc/network/interfaces` is parsed to get the current network configuration.
+    If the network is configured a different way (e.g. via `systemd` or `NetworkManager`), then the
+    database is not populated and does not contain the necessary information to deploy the network
+    configuration with `netplan` for `systemd-networkd` and `systemd-resolved`. In that case use
+    `omv-firstaid` to do the initial network configuration instead of the following step.
+
+Re-deploy the network configuration via the services used by |omv|::
+
+    omv-salt deploy run systemd-networkd
+
+Or alternatively use `omv-firstaid` to do the initial network configuration.

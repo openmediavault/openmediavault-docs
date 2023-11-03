@@ -36,6 +36,16 @@ Can I give administrator privileges to non-privileged users to access the web co
 	by `omv-extras.org <https://omv-extras.org>`_.
 	A non-privileged user can become a |webui| administrator by adding them to the ``openmediavault-admin`` group.
 
+I cannot read out SMART data for my storage device
+    For storage devices connected via USB, |omv| relies entirely on the auto-detection
+    functionality of the `smartmontools <https://www.smartmontools.org/>`_ applications.
+    To be always up to date |omv| automatically downloads the `smartctl/smartd database <https://raw.githubusercontent.com/mirror/smartmontools/master/drivedb.h>`_
+    once a week. You can do that manually by running :command:`update-smart-drivedb`
+    in the CLI.
+    Should it nevertheless happen that a storage device is not supported, please
+    submit a request to the smartmontools project. You can find more information in
+    their `FAQ <https://www.smartmontools.org/wiki/FAQ#SmartmontoolsDatabase>`_.
+
 What is the file :file:`/etc/openmediavault/config.xml` for?
 	It is the database configuration store file for |omv|. When a change is
 	performed in the |webui|, the config value is stored and/or retrieved by

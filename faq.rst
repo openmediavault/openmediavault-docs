@@ -45,6 +45,10 @@ I cannot read out SMART data for my storage device
     Should it nevertheless happen that a storage device is not supported, please
     submit a request to the smartmontools project. You can find more information in
     their `FAQ <https://www.smartmontools.org/wiki/FAQ#SmartmontoolsDatabase>`_.
+    If you can not wait till the upstream project has integrated your device, then
+    you can add it manually to a local database at `/etc/smart_drivedb.h`. Please
+    check their `FAQ <https://www.smartmontools.org/wiki/FAQ#Couldmissingdrivedatabaseentriesbeaddedlocally>`_
+    for more information.
 
 What is the file :file:`/etc/openmediavault/config.xml` for?
 	It is the database configuration store file for |omv|. When a change is

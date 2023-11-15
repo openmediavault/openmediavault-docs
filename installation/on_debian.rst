@@ -33,20 +33,20 @@ instructions only partially work. Please refer to a specific `installation scrip
 Install the |omv| keyring manually::
 
     apt-get install --yes gnupg
-    wget --quiet --output-document=- https://packages.openmediavault.org/public/archive.key | gpg --dearmor | tee "/etc/apt/trusted.gpg.d/openmediavault-archive-keyring.gpg"
+    wget --quiet --output-document=- https://packages.openmediavault.org/public/archive.key | gpg --dearmor | tee "/usr/share/keyrings/openmediavault-archive-keyring.gpg"
 
 Add the package repositories::
 
     cat <<EOF >> /etc/apt/sources.list.d/openmediavault.list
-    deb https://packages.openmediavault.org/public shaitan main
-    # deb https://downloads.sourceforge.net/project/openmediavault/packages shaitan main
+    deb [signed-by=/usr/share/keyrings/openmediavault-archive-keyring.gpg] https://packages.openmediavault.org/public shaitan main
+    # deb [signed-by=/usr/share/keyrings/openmediavault-archive-keyring.gpg] https://downloads.sourceforge.net/project/openmediavault/packages shaitan main
     ## Uncomment the following line to add software from the proposed repository.
-    # deb https://packages.openmediavault.org/public shaitan-proposed main
-    # deb https://downloads.sourceforge.net/project/openmediavault/packages shaitan-proposed main
+    # deb [signed-by=/usr/share/keyrings/openmediavault-archive-keyring.gpg] https://packages.openmediavault.org/public shaitan-proposed main
+    # deb [signed-by=/usr/share/keyrings/openmediavault-archive-keyring.gpg] https://downloads.sourceforge.net/project/openmediavault/packages shaitan-proposed main
     ## This software is not part of OpenMediaVault, but is offered by third-party
     ## developers as a service to OpenMediaVault users.
-    # deb https://packages.openmediavault.org/public shaitan partner
-    # deb https://downloads.sourceforge.net/project/openmediavault/packages shaitan partner
+    # deb [signed-by=/usr/share/keyrings/openmediavault-archive-keyring.gpg] https://packages.openmediavault.org/public shaitan partner
+    # deb [signed-by=/usr/share/keyrings/openmediavault-archive-keyring.gpg] https://downloads.sourceforge.net/project/openmediavault/packages shaitan partner
     EOF
 
 .. note::

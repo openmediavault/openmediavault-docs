@@ -63,7 +63,7 @@ Install the |omv| package::
         --no-install-recommends \
         --option DPkg::Options::="--force-confdef" \
         --option DPkg::Options::="--force-confold" \
-        install openmediavault-keyring openmediavault
+        install openmediavault
 
 Populate the |omv| database with several existing system settings, e.g. the network configuration::
 

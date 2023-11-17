@@ -30,6 +30,9 @@ outlined below.
 On `Raspberry Pi OS <https://www.raspberrypi.org/software/operating-systems/>`_ the below
 instructions only partially work. Please refer to a specific `installation script <https://github.com/OpenMediaVault-Plugin-Developers/installScript>`_
 
+.. note::
+    The following commands must be executed as ``root`` user.
+
 Install the |omv| keyring manually::
 
     apt-get install --yes gnupg

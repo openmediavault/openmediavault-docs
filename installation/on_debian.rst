@@ -33,7 +33,7 @@ instructions only partially work. Please refer to a specific `installation scrip
 Install the |omv| keyring manually::
 
     apt-get install --yes gnupg
-    wget --quiet --output-document=- https://packages.openmediavault.org/public/archive.key | gpg --dearmor --output --yes "/usr/share/keyrings/openmediavault-archive-keyring.gpg"
+    wget --quiet --output-document=- https://packages.openmediavault.org/public/archive.key | gpg --dearmor --yes --output "/usr/share/keyrings/openmediavault-archive-keyring.gpg"
 
 Add the package repositories::
 

@@ -20,7 +20,6 @@ Overview
 --------
 
 The following is the list of official plugins by |omv|. Their availability depends on the architecture on which |omv| is installed.
-Podman container-based plugins require Podman to be installed, either manually or through the Podman plug-in.
 
 * **ClamAV**: Provides Clam AntiVirus (ClamAV). It is a free software, cross-platform and open-source antivirus software toolkit able to detect many types of malicious software, including viruses
 * **Diskstats**: Complementary plugin to extend system statistics collection by adding I/O statistic graphs.

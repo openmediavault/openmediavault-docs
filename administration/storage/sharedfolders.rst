@@ -62,7 +62,7 @@ Some of the elements explained:
 
     - **uuid**: Internal database reference number.
     - **name**: logical name given to the |sf|.
-    - **mntent**: the associated filesystem reference. The number is in the :code:`uuid` format, the fstab section in ``config.xml`` should contain a :code:`<mntent>` reference with this number.
+    - **mntentref**: the associated filesystem reference. The number is in the :code:`uuid` format, the fstab section in ``config.xml`` should contain a :code:`<mntent>` reference with this number.
     - **reldirpath**: Path relative to the parent filesystem.
     - **privileges**: Users associated with the |sf| and their access level.
 

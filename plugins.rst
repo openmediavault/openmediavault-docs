@@ -36,6 +36,7 @@ The following is the list of official plugins by |omv|. Their availability depen
 * **USB Backup**: Backup internal data to external disks on scheduled basis or on plug drive event.
 
 Podman container-based plugins:
+
 * **FileBrowser**: File managing interface.
 * **OwnTone**: Provides a DAAP (iTunes), MPD (Music Player Daemon) and RSP (Roku) media server.
 * **PhotoPrism**: AI-powered app for browsing, organizing & sharing your photo collection.

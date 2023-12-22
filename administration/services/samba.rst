@@ -76,11 +76,11 @@ system and if there are snapshots available. These are exposed as `Previous Vers
 
 It is possible to add extra options in the general and share configuration page. Options that are managed by |omv| can be customized via :doc:`environmental variables </various/advset>`.
 
-Privileges
+Permissions
 ----------
 
-The login access in Samba is configured using privileges. This means they will not act in the file system layer, they will run in the Samba authentication layer. From there the access can be controlled to be read only or read/write access and guest account access. This is done with the PRIVILEGES button in the shared folder section, not the ACL.
-Privileges only gets login access and from there determines if user can read or write. If write access is enabled but files/folders have restricted permissions then write access is not possible using Samba.
+The login access in Samba is configured using permissions. This means they will not act in the file system layer, they will run in the Samba authentication layer. From there the access can be controlled to be read only or read/write access and guest account access. This is done with the ``Permissions`` button in the shared folder section, not the ACL.
+Permissions only gets login access and from there determines if user can read or write. If write access is enabled but files/folders have restricted permissions then write access is not possible using Samba.
 
 .. important::
 	Samba does not use PAM for login, it has a different password database. When the admin changes a username password (or the user changes their own) using the |webui| what |omv| does is that it changes both the linux login password and the Samba internal database. If a username changes their password using shell, this will not be reflected in Samba log in.
@@ -111,7 +111,7 @@ This means that every user will have to provide valid OMV credentials to access 
 	read list = User1, @Group1
 	write list = User2, @Group2
 
-Notice here if users are not set up privileges (that means blank tick boxes) anyone will be able to login anyway and have write access.
+Notice here if users are not set up permissions (that means blank tick boxes) anyone will be able to login anyway and have write access.
 
 **Public only:** *The guest user is always used. This is the Guest Only option in the Samba share configuration.*
 

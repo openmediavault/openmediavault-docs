@@ -3,6 +3,9 @@
 Installation
 ############
 
+.. warning::
+    |omv| does not support the installation in LXC or any other container based solution.
+
 Before you begin:
     - Check if your hardware is supported on the system :doc:`requirements
       page </prerequisites>`.

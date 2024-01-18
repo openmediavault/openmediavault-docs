@@ -84,3 +84,9 @@ Re-deploy the network configuration via the services used by |omv|::
     omv-salt deploy run systemd-networkd
 
 Or alternatively use `omv-firstaid` to do the initial network configuration.
+
+.. note::
+    OMV uses chrony as time sync daemon. When running in an LXC container, this leads to problems, as
+    `chronyd` can't be started. Make sure that in `/etc/systemd/system/chronyd.service` you add an `-x`
+    option to the daemon start line: `ExecStart=!/usr/sbin/chronyd -x $DAEMON_OPTS`. This makes sure that
+    chrony doesn't really control the clock.

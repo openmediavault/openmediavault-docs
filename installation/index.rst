@@ -41,5 +41,5 @@ First time use:
        ``Services | SSH`` page for security reasons after installation.
 
        To still get ``root`` access you need to create a non-privileged user
-       and add them to the ``ssh`` and ``sudo`` groups. After that you can
+       and add them to the ``_ssh`` and ``sudo`` groups. After that you can
        SSH into the system with this non-privileged user and run ``sudo su``.

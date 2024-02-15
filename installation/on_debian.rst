@@ -23,7 +23,7 @@ For a step by step install guide have a look into the
 On ARM devices, please check if there's an appropriate `Armbian <https://www.armbian.com/download>`_
 image available. Make sure you are using the correct :doc:`Debian version </releases>`
 that |omv| is based on. After installing Armbian, then use the `armbian-config`
-tool to install OMV in a single step with all performance and reliability tweaks
+tool to install |omv| in a single step with all performance and reliability tweaks
 included. If there's no Armbian image for your device, simply follow the steps
 outlined below.
 
@@ -88,3 +88,13 @@ Or alternatively use `omv-firstaid` to do the initial network configuration.
 .. note::
     The IP address may change during the redeployment of the network configuration, therefore
     you may lose the connection when you are connected via SSH.
+
+By default the `root` user can now access the system via SSH as a fallback if something went
+wrong during the installation, e.g. the UI is not accessible. SSH access for `root` should be
+disabled for security reasons as soon as possible after the installation has been successfully
+finished.
+
+.. note::
+    The user created by the Debian installer will not able to SSH into the system after |omv|
+    has been installed. This is because only users who are assigned to the `_ssh` group are
+    allowed to use SSH.

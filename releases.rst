@@ -15,5 +15,5 @@ Releases
    3.0,Erasmus,Debian 8,EOL,Jun 2016
    4.0,Arrakis,Debian 9,EOL,Apr 2018
    5.0,Usul,Debian 10,EOL,Mar 2020
-   6.0,Shaitan,Debian 11,Stable,May 2022
-   7.0,Sandworm,Debian 12,???,???
+   6.0,Shaitan,Debian 11,Oldstable,May 2022
+   7.0,Sandworm,Debian 12,Stable,Mar 2024

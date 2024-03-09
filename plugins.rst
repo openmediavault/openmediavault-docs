@@ -21,6 +21,7 @@ Overview
 
 The following is the list of official plugins by |omv|. Their availability depends on the architecture on which |omv| is installed.
 
+* **MD**: Create, manage, and monitor software RAIDs based on Linux MD (Multiple Device) devices.
 * **ClamAV**: Provides Clam AntiVirus (ClamAV). It is a free software, cross-platform and open-source antivirus software toolkit able to detect many types of malicious software, including viruses
 * **Diskstats**: Complementary plugin to extend system statistics collection by adding I/O statistic graphs.
 * **Forked-daap**: Provides a daap protocol music server.

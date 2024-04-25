@@ -34,7 +34,7 @@ When a |sf| is created using the add button, the window form displays the follow
 		"Everyone: read/write", 777
 
 This is how a |sf| looks inside the ``config.xml`` database:
-
+:config:
 .. code-block:: xml
     :emphasize-lines: 8-17
 
@@ -98,28 +98,23 @@ Be aware that changing the parent device volume will not move the data from one 
 
 	**NFS Server**: Editing the parent device will not descent into :file:`/etc/fstab`. Make sure you edit the share in the NFS section so the bind can be remounted.
 
-Privileges
-^^^^^^^^^^
+Permissions
+^^^^^^^^^^^
 
-Same as in the user section, the window here is relative to the shared folder.
-It will display for the selected |sf| all the |omv| users/groups and their
-corresponding privileges.
+Set the shared folder's read and write permissions for users and groups.
+These settings are used by the different services (SMB, FTP and AFP). They have no effect on the permissions of the file system.
+It will display all the |omv| users/groups and their corresponding permissions for the selected |sf|.
 
-As you can see from the code block in the `add section <#id3>`_ privileges are
+As you can see from `the code block <config_>`_ in the Add section, permissions are
 expressed in the internal database in the same manner as permissions in Linux, simplified
 using the octal mode: *read/write(7)*, *read-only(5)* *and no access(0)*.
 
-If a privilege is changed, it means a change in the |sf| database section. This database
-event will trigger a reconfiguration of SMB, FTP and AFP, it will also restart all the
-above daemons. A plugin using |sf|, but not the privilege information from the database
-entry should not get reconfigured/restarted if a change occurs just in privileges.
+If a permission is changed, it means a change in the |sf| database section. This database
+event will trigger a reconfiguration of SMB, FTP and AFP, and it will also restart all the
+preceding daemons. A |sf| service not using the permission information from the database
+entry does not get reconfigured/restarted if only a permission change occurs.
 
-Privileges can be edited from `shared folder <#shared-folder>`_ or `users <#user>`_
-section. But it is also possible to edit privileges from the |sf| combo
-selection, just click the :fa:`search` to left side of the drop down menu.
-
-
-ACL (Access Control List)
+Access Control List (ACL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Provides fine grained permission control besides the standard POSIX permissions. The usage of ACL is not recommended for the average home user. If a server is using an extensive list of users then ACL could suit better [1]_ [2]_.

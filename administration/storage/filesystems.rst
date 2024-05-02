@@ -12,7 +12,7 @@ Overview
 	- Filesystem options `<opts>`
 	- Filesystem type (EXT3, EXT4, etc.) `<type>`
 
-	You can inspect a `mntent` entry in ``config.xml`` it should look like this:
+	You can inspect a `mntent` entry in ``config.xml`` located in ``/etc/openmediavault/``, it should look like this:
 
 	.. code-block:: xml
 

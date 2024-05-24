@@ -12,31 +12,31 @@ Add
 
 When a |sf| is created using the add button, the window form displays the following options:
 
-	- **Name:** The logical name. This can override the path name. Typing a
-	  name here will fill the path with the same string.
-	- **Device:** The parent filesystem associated with the |sf|.
-	- **Path:** The relative path to the mounted device. To share the whole
-	  disk just type ``/``.
-	- **Permissions:** The default descriptive text will create the |sf|
-	  with ``root:users`` ownership and ``775`` permission mode.
+    - **Name:** The logical name. This can override the path name. Typing a
+      name here will fill the path with the same string.
+    - **Device:** The parent filesystem associated with the |sf|.
+    - **Path:** The relative path to the mounted device. To share the whole
+      disk just type ``/``.
+    - **Permissions:** The default descriptive text will create the |sf|
+      with ``root:users`` ownership and ``775`` permission mode.
 
-	**Available modes**
+    **Available modes**
 
-	.. csv-table::
-	   :header: "Logical name", "Octal mode"
-	   :widths: 20, 6
+    .. csv-table::
+       :header: "Logical name", "Octal mode"
+       :widths: 20, 6
 
-		"Administrator: read/write, Users: no access, Others: no access", 700
-		"Administrator: read/write, Users: read only, Others: no access", 750
-		"Administrator: read/write, Users: read/write, Everyone: no access",770
-		"Administrator: read/write, Users: read only, Everyone: read-only",755
-		"Administrator: read/write, Users: read/write, Everyone: read-only", 775  (Default)
-		"Everyone: read/write", 777
+        "Administrator: read/write, Users: no access, Others: no access", 700
+        "Administrator: read/write, Users: read only, Others: no access", 750
+        "Administrator: read/write, Users: read/write, Everyone: no access",770
+        "Administrator: read/write, Users: read only, Everyone: read-only",755
+        "Administrator: read/write, Users: read/write, Everyone: read-only", 775  (Default)
+        "Everyone: read/write", 777
 
 This is how a |sf| looks inside the ``config.xml`` database:
-:config:
+
+.. _sf_confdb_example:
 .. code-block:: xml
-    :emphasize-lines: 8-17
 
     <sharedfolder>
         <uuid>9535a292-11e2-4528-8ae2-e1be17cf1fde</uuid>
@@ -83,9 +83,9 @@ to select it in sharing services (FTP, Samba, RSync, etc.) at the same time.
 Plugins can use them also just by using the shared folder combo class.
 
 .. note::
-	- A |sf| belongs to an internal |omv| database filesystem entry. Is not possible to unmount the filesystem without deleting the folder configuration from the |webui|.
-	- If a |sf| is being used by a service (FTP, plugins, etc.) is not possible to delete it. Is necessary to disengage the |sf| from the service(s) or section(s) that is holding it before proceeding with removal. This will also prevent to unmount a device from the |webui| in the filesystem section if there is still a |sf| associated with it.
-	- Due to the design of the software is not possible at the moment to know what section or service is holding which |sf|.
+    - A |sf| belongs to an internal |omv| database filesystem entry. Is not possible to unmount the filesystem without deleting the folder configuration from the |webui|.
+    - If a |sf| is being used by a service (FTP, plugins, etc.) is not possible to delete it. Is necessary to disengage the |sf| from the service(s) or section(s) that is holding it before proceeding with removal. This will also prevent to unmount a device from the |webui| in the filesystem section if there is still a |sf| associated with it.
+    - Due to the design of the software is not possible at the moment to know what section or service is holding which |sf|.
 
 Edit
 ^^^^
@@ -96,7 +96,7 @@ Be aware that changing the parent device volume will not move the data from one 
 
 .. warning::
 
-	**NFS Server**: Editing the parent device will not descent into :file:`/etc/fstab`. Make sure you edit the share in the NFS section so the bind can be remounted.
+    **NFS Server**: Editing the parent device will not descent into :file:`/etc/fstab`. Make sure you edit the share in the NFS section so the bind can be remounted.
 
 Permissions
 ^^^^^^^^^^^
@@ -105,9 +105,11 @@ Set the shared folder's read and write permissions for users and groups.
 These settings are used by the different services (SMB, FTP and AFP). They have no effect on the permissions of the file system.
 It will display all the |omv| users/groups and their corresponding permissions for the selected |sf|.
 
-As you can see from `the code block <config_>`_ in the Add section, permissions are
+As you can see in the `database example <sf_confdb_example_>`_, permissions are
 expressed in the internal database in the same manner as permissions in Linux, simplified
 using the octal mode: *read/write(7)*, *read-only(5)* *and no access(0)*.
+
+Permissions can be edited per :doc:`shared folder </administration/storage/sharedfolders>` or :doc:`user </administration/users>`.
 
 If a permission is changed, it means a change in the |sf| database section. This database
 event will trigger a reconfiguration of SMB, FTP and AFP, and it will also restart all the
@@ -131,8 +133,8 @@ The ACL is applied using :command:`setfacl` [3]_ and read with :command:`getfacl
 
 .. note::
 
-	* |omv| mounts all Linux filesystems with ACL enabled. Only native linux POSIX filesystems support ACL. The button gets disabled for HFS+, NTFS, FAT, etc.
-	* ZFS provides ACL support, just need to enable the pool/dataset property.
+    * |omv| mounts all Linux filesystems with ACL enabled. Only native linux POSIX filesystems support ACL. The button gets disabled for HFS+, NTFS, FAT, etc.
+    * ZFS provides ACL support, just need to enable the pool/dataset property.
 
 .. [1] https://help.ubuntu.com/community/FilePermissionsACLs
 .. [2] http://vanemery.net/Linux/ACL/linux-acl.html

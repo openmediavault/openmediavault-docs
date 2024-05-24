@@ -65,11 +65,11 @@ Example outputs::
 
 Paste the contents into the import dialog.
 
-Privileges
-^^^^^^^^^^
+Permissions
+^^^^^^^^^^^
 
 The button opens a window that displays all current existing |sf| and their
-privileges for selected user from the table. How the privileges are stored is
+permissions for selected user from the table. How the permissions are stored is
 described further down in the :doc:`shared folder </administration/storage/sharedfolders>` section.
 
 Settings

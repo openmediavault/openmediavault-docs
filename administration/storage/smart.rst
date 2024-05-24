@@ -42,7 +42,7 @@ Gives an option to select four different scheduled tests:
 - Short self-test
 - Long self-test
 - Conveyance self-test
-- Offline inmediate
+- Offline immediate test
 
 These tests and what they do are explained `here <https://www.smartmontools.org/wiki/TocDoc#SMARTTesting>`_ and `here <https://www.thomas-krenn.com/en/wiki/SMART_tests_with_smartctl#Long_Test>`_.
 

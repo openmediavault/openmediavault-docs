@@ -65,23 +65,28 @@ Options marked with [D] can be disabled selectively. The rest only when the whol
 Gmail
 =====
 
-Gmail can be used in notifications. If you have 2FA enabled for the account, then is necessary to create an `app password <https://myaccount.google.com/apppasswords>`_. Please use the following settings::
+Gmail can be used to send notifications, but only if you have enabled 2FA for your account.
+The App-Password must then be used as the password in the settings page. You can manage your Google App-Passwords `here <https://myaccount.google.com/apppasswords>`_.
+
+Please use the following settings::
 
 	SMTP Server: smtp.gmail.com
 	SMTP Port: 587
 	Encryption mode: STARTTLS
-	Sender email: rootthe@gmail.com (include domain)
+	Sender email: <USERNAME>@gmail.com
 	Authentication required: Yes
-	Username: rootthe@gmail.com (include domain)
-	Password: <the app password here>
-	Primary email: rootthe@gmail.com
+	Username: <USERNAME>@gmail.com
+	Password: <THE_APP_PASSWORD>
+	Primary email: <USERNAME>@gmail.com
 	Secondary email: optional
 
-.. note::
-	Aliases are allowed. This is good for filtering later in gmail. ``rootthe@gmail.com`` can be ``rootthe+server1@gmail.com`` or ``rootthe+whatever@gmail.com``.
+You can use any email address as your primary address. It can, but does not have to be, the sender address.
 
 .. note::
-	Google removed the "less secure apps" option on May 30, 2022. This means that there is no way to turn it on. An app password must be used as described above.
+	Aliases are allowed. This is good for filtering later in gmail. ``<USERNAME>@gmail.com`` can be ``<USERNAME>+server1@gmail.com`` or ``<USERNAME>+whatever@gmail.com``.
+
+.. note::
+	Google removed the "less secure apps" option on May 30, 2022. This means that there is no way to turn it on. An App-Password must be used instead as described above.
 
 
 Third Party Notifications

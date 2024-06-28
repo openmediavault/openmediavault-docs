@@ -7,12 +7,17 @@ Before installing |omv| make sure your hardware is supported.
 * **RAM**: 1 GiB capacity
 * **HDD**:
 
-  * **System Drive**: min. 4 GiB capacity (but more than the capacity of the RAM)
+  * **System Drive**: min. 4 GiB capacity (plus the capacity of the RAM)
   * **Data Drive**: capacity according to your needs
 
 .. note::
    The whole disc will be occupied by the system and swap space [1]_, so size
    doesn't matter so much. Data storage on the system disc is not supported.
+
+.. note::
+   Take into account in your considerations about the size of the system disk
+   that various plugins such as `openmediavault-podman` or `openmediavault-k8s`
+   store their data (e.g. container images) on the system disk.
 
 Spinning Harddisk, SSD [2]_, Disk-on-Module [3]_, CompactFlash [4]_ or USB thumb
 drive [5]_ type drives can be used as system drive.

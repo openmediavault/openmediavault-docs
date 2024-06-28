@@ -75,23 +75,18 @@ Pressing the edit button with a selected disk will give the following options av
 	- Spindown time (ST)
 	- Write cache
 
-All the above options are configured using hdparm [1]_. The APM values from the interface are resumed in
-seven steps with a small description to make it easier for the user to select. If you want to experiment with intermediate values then
-you can edit :file:`/etc/openmediavault/config.xml` find this xpath ``/storage/hdparm``, change the values for the disk, finally run::
+All the above options are configured using smartmontools [1]_. The APM values from the interface are resumed in
+seven steps with a small description to make it easier for the user to select. If you want to experiment with intermediate values that are not supported via the UI, then
+you can edit the :file:`/etc/openmediavault/config.xml` by editing the XPath ``/system/storage/hdparm``, change the values for the disk, and finally run::
 
-$ omv-salt deploy run hdparm
+$ omv-salt deploy run smartmontools
 
-Reboot, check if APM has been set with::
-
-$ hdparm -I /dev/sdX
-
-When setting a spindown time make sure APM is set bellow 128, otherwise it will not work. The web framework does
-not narrow the APM options if spin down time is set, or disables the spindown menu when a value higher than 128 is selected.
+When setting a spin down time make sure APM is set bellow 128, otherwise it will not work. The UI does
+not narrow the APM options if spin down time is set, or disables the spin down menu when a value higher than 128 is selected.
 
 .. note::
-	For changes to be permanent, settings are stored in this file :file:`/etc/hdparm.conf`, however those settings are
-	applied using a ``UDEV ADD+`` that executes :file:`/lib/udev/hdparm` which parses that file. For changes to be applied
-	inmediatly server needs to be suspended/resumed or rebooted.
+	For changes to be permanent, settings are stored in files that are located in :file:`/etc/smartmontools/hdparm.d/`. You can add custom files there according to the `README <https://github.com/openmediavault/openmediavault/blob/714f214346ff2e04c5ed2003628107e12c6ab29a/deb/openmediavault/etc/smartmontools/hdparm.d/README.md>`_.
+	To apply the settings, run the command ``systemctl restart smartctl-hdparm.service``.
 
 Wipe
 ^^^^
@@ -113,4 +108,4 @@ The secure mode will rewrite the block device entirely. This process takes a lon
 $ shred -v -n 1 /dev/sdX
 
 
-.. [1] https://linux.die.net/man/8/hdparm
+.. [1] https://www.smartmontools.org/

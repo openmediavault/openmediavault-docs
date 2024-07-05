@@ -74,7 +74,7 @@ Add custom states
 If you want to customize the configuration of a service or any other
 application that  is managed by |omv|, then you need to know where to add
 your custom state file first. Start searching the location on `GitHub <https://scm.openmediavault.org/tree/master/deb/openmediavault/srv/salt/omv/deploy>`_.
-You will find the corresponding location below :file:`/src/salt/omv/deploy`
+You will find the corresponding location below :file:`/srv/salt/omv/deploy`
 in the root file system of your system. If there are no files starting
 with a number, e.g. :file:`90cron.sls`, then this service is not customizable.
 It is still possible, but is beyond the scope of this introduction. The

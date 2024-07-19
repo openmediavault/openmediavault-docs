@@ -46,17 +46,22 @@ Supported Filesystems
    :header: "Type", "Format", "Mount"
    :widths: 5, 5, 5
 
-	ext4,yes,yes
-	ext3,yes,yes
-	jfs,yes,yes
-	xfs,yes,yes
-	btrfs,yes,yes
-	f2fs,yes,yes
-	zfs,no,no
-	ntfs,no,yes
-	hfsplus,no,yes
-	ufs,no,yes
-	vfat,no,yes
+    btrfs,yes,yes
+    exfat,no,yes
+    ext3,yes,yes
+    ext4,yes,yes
+    f2fs,yes,yes
+    hfsplus,no,yes
+    iso9660,no,yes
+    jfs,yes,yes
+    msdos,no,yes
+    ntfs,no,yes
+    udf,no,yes
+    ufs,no,yes
+    umsdos,no,yes
+    vfat,no,yes
+    xfs,yes,yes
+    zfs,no,no
 
 .. note::
 	BTRFS

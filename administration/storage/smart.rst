@@ -7,6 +7,12 @@ There are several tools for accessing those attributes. |omv| reads and monitors
 
 Notifications are integrated with smartmontools. Changes in S.M.A.R.T values are reported via mail.
 
+.. note::
+
+    Please note that SMART is not supported by |omv| for disks that are
+    assembled as a RAID via HBA. |omv| only supports SMART for those
+    disks that are connected to an HBA in pass-through mode.
+
 General
 -------
 
@@ -17,8 +23,6 @@ Temperature is a very critical attribute. Select the desired limits for smart mo
 Devices
 -------
 The grid displays all current block devices in the system with SMART capabilities. From this grid by selecting a drive you can configure if you want smartmontools to watch and inform for any SMART attributes changes during uptime using the edit button.
-
-Smartmontools is configured in this file :file:`/etc/smartd.conf`.
 
 The information button displays several tabs which provide friendly parsed information about the drive. The last tab has all the information in raw text.
 

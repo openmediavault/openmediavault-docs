@@ -34,7 +34,9 @@ Installer
 ---------
 	The current ISO installer is reduced to have minimal interaction. You will
 	prompted to select location, language and root password. The installer will
-	pick the first available disk to deploy the the OS.
+	pick the first available disk to deploy the the OS. You will create a root
+	password, but you will be able to create other (administrator) accounts for
+	SSH and |webui| use after first reboot.
 
 	Once the installer finished the system will reboot, make sure you remove the
 	installer and select BIOS to boot from the disk where |omv| was installed.

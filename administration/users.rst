@@ -41,32 +41,44 @@ Allows to select a |sf| as root for *home* place for new users created in the
   * The "skel" templates from Debian will be used always
 
 * If you disabled and re-enabled *User home directory* and viceversa:
-  * Previously existing users created before enabling this setting will 
-    not have their *home* directory moved to this new location.
-  * You can manually edit :file:`/etc/passwd` to point them to the new 
-    location. Also existing users data in default linux location :file:`/home`
-    has to be moved manually.
+
+  * Previously existing users created before enabling/disabling this setting 
+    will not have their *home* directory moved to the new location.
+  * Previously existing users  created before enabling/disabling this setting
+    can change *home* by editing :file:`/etc/passwd` to point them to the new 
+    location.
+  * Also existing users data in default linux location :file:`/home`
+    or previously existing *home* has to be moved manually too.
 
 User
 ====
 
-Here you can create or modify user information and configure the user home folders.
-
-Add
-^^^^
+This allows to *Create* or *Edit* users as well as their permissions, there is a 
+special option that allows batch loading called *Import*. Those are under the "+" 
+button of the configuration panel.
 
 Information
-	The configuration panel gives you options to add, edit or remove users. The table displays all
-	|omv| current users.
+    The table information displays all |omv| current users in listing format. 
+    Using the *table icon* button of the configuration panel, you can customized 
+    the columns  of this listing format by add or remove information columns.
 
+Create
+^^^^
+
+This brings to you the creation form, important fields are:
+
+Name
+    This must be only numbers and letters.
+
+Password
+    This fiel will provide the password of the user.
 
 Group
-	Add or remove users from specific groups. In Linux groups can be used to control
-	access to certain features and also for permissions.
+	This field allows to add or remove users from specific groups. Groups are the means of access 
+    for multiple users to multiple shared resources.
 
-	Adding a user to the ``sudo`` group will give them root privileges, adding
-	a user to ``saned`` will give access to scanners, etc. By default all users created using
-	the |webui| are added to the ``users`` group (``gid=100``).
+    Some groups only affect the system (as of Linux), others are specific to the |omv| system.
+	By default all users created using	the |webui| are added to the ``users`` group (``gid=100``).
 
 Public Key
 	Add or remove :doc:`public keys </administration/services/ssh>` for granting remote access for users.

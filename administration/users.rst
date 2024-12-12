@@ -9,6 +9,10 @@ between the Debian operating system and the OMV software system** internal datab
 
 **Users** in |omv| is divided into three subsections: ``Settings``, ``Users`` and ``Groups``.
 
+With this section we can manage also permissions of shared resources.
+Unlike user permissions, group permissions allow you to define access
+for multiple users to the same resource.
+
 About home user
 ^^^^
 
@@ -53,47 +57,67 @@ Allows to select a |sf| as root for *home* place for new users created in the
 User
 ====
 
-This allows to *Create* or *Edit* users as well as their permissions, there is a 
-special option that allows batch loading called *Import*. Those are under the "+" 
-button of the configuration panel.
+This allows to *Create* or *Edit* users as well as their *Permissions*, there is a
+special option that allows batch loading called *Import*.
+
+The options of *Create* and *Import* are under the "+" button of the configuration panel.
+
+The option of *Edit* an user is next to the "+" button.
+
+The option of *Permissions* are next to the "Edit" button.
+
+Erasing or deleting an user is the "Trash" icon next to the "Permission" button.
 
 Information
-    The table information displays all |omv| current users in listing format. 
-    Using the *table icon* button of the configuration panel, you can customized 
+    The table information displays all |omv| current users in listing format.
+    Using the *table icon* button of the configuration panel, you can customized
     the columns  of this listing format by add or remove information columns.
+
+    Take note that **to edit or delete an user you must select one** from the list.
 
 Create
 ^^^^
 
-This brings to you the creation form, important fields are:
+This brings to you the creation form, this option is offered after hit the "+"
+button of the configuration menu panel of the *Users* subsection. important fields are:
 
 Name
-    This must be only numbers and letters.
+    This must be only numbers and letters. Its the "username" of the login credentials
+    and must be all lowercase to avoid confution.
 
 Password
     This fiel will provide the password of the user.
 
 Group
-	This field allows to add or remove users from specific groups. Groups are the means of access 
+    This field allows to add or remove users from specific groups. Groups are the means of access
     for multiple users to multiple shared resources.
 
     Some groups only affect the system (as of Linux), others are specific to the |omv| system.
-	By default all users created using	the |webui| are added to the ``users`` group (``gid=100``).
+    By default all users created using	the |webui| are added to the ``users`` group (``gid=100``).
+
+Shell
+    The shell is only used for remote access to interact with the server.
+    By default the form will offers :command:`/bin/sh` shell, but is recommended usage of
+    the :command:`/bin/nologin` shell to prevent local and remote console access.
 
 Public Key
-	Add or remove :doc:`public keys </administration/services/ssh>` for granting remote access for users.
+    Add or remove :doc:`public keys </administration/services/ssh>` for granting remote access for users.
 
 
 Import
 ^^^^^^
 
-Designed for bulk user creation. Create a spreadsheet with the corresponding data as
-described in the import dialog window, save it as CSV (make sure the field separator is semicolon :code:`;`), then just
-simply::
+Designed for bulk user creation, it brings a form filed like a spreadsheet to fill up with the
+corresponding data as described in the import dialog window.
 
-$ cat usersfile.csv
+Those fields are the same as the form of the *Create* user subsection.
 
-Example outputs::
+The field of "uid" do not appears on the creation form, must be numeric
+and must be over 1000.
+
+The field of "disallowusermod" is a boolean for allowing user to change their account.
+
+Example data::
 
 	# <name>;<uid>;<tags>;<email>;<password>;<shell>;<group,group,...>;<disallowusermod>
 	user1;1001;user1;user1@myserver.com;password1;/bin/bash;sudo;1
@@ -102,13 +126,21 @@ Example outputs::
 	user4;1004;user4;user4@test.com;password4;;;1
 
 .. note::
-	- :file:`/etc/shells` will give you a list of valid shells.
-	- The last field is	a boolean for allowing the user to change their account.
+    You can create a spreadsheet with the corresponding data as described in the import dialog window
+    save it as CSV using the field separator as semicolon to carry its content in plain text editor,
+    then copy its content and paste the contents into the import dialog.
 
-Paste the contents into the import dialog.
+Edit
+^^^^
+
+The button to edit and modify user details. You only can modify one user per time.
+
+Its basically the same form of the creation option, same rules apply.
 
 Permissions
 ^^^^^^^^^^^
+
+The button to edit and modify users access. You only can modify one user per time.
 
 The button opens a window that displays all current existing |sf| and their
 permissions for selected user from the table. How the permissions are stored is
@@ -118,26 +150,72 @@ described further down in the :doc:`shared folder </administration/storage/share
 Group
 =====
 
+This allows to *Create* or *Edit* groups as well as their *Permissions*, there is a
+special option that allows batch loading called *Import*.
+
+The options of *Create* and *Import* are under the "+" button of the configuration panel.
+
+The option of *Edit* an user is next to the "+" button.
+
+The option of *Permissions* are next to the "Edit" button.
+
+Erasing or deleting an user is the "Trash" icon next to the "Permission" button.
+
+Information
+    The table information displays all |omv| current groups in listing format.
+    Using the *table icon* button of the configuration panel, you can customized
+    the columns  of this listing format by add or remove information columns.
+
+    Take note that **to edit or delete a group you must select one** from the list
+    and **this group must be not in usage** by any shared resource or user.
+
 Add
 ^^^
 
-Create groups and select the members. You can select current |omv| users
-and system accounts. Information is stored in ``config.xml`` and
-:file:`/etc/group`.
+This brings to you the creation form, this option is offered after hit the "+"
+button of the configuration menu panel of the *Users* subsection. important fields are:
+
+Name
+    This must be only numbers and letters. The group information is stored in ``config.xml`` and
+    the :file:`/etc/group` file.
+
+Members
+    This field allows to add or remove users from this group. Groups are the means of access
+    for multiple users to multiple shared resources. You can select current |omv| existing users.
+
+    Some groups only affect the system (as of Linux), others are specific to the |omv| system.
+    By default all users created using	the |webui| are added to the ``users`` group (``gid=100``).
 
 Import
 ^^^^^^
 
-Bulk import works in similar as user account import. Just a csv text,
-delimited with a semicolon :code:`;`. The dialog displays the necessary
-fields.
+Designed for bulk group creation, it brings a form filed like a spreadsheet to fill up with the
+corresponding data as described in the import dialog window; it works in similar as user account import.
+
+Those fields are the same as the form of the *Create* group subsection.
+
+The field of "uid" do not appears on the creation form, must be numeric
+and must be over 1000.
 
 Edit
 ^^^^
-Just to add or remove members from groups. Default groups created in the
-|webui| have a ``GID`` greater than ``1000``. Same as usernames, groups created
-in terminal are not stored in the internal database. Just edit, insert a
-comment and their information should now be stored in ``config.xml``.
+
+The button to edit and modify membership. You only can modify one grup per time,
+and means or implicts that one or several users will be modified at time.
+
+Its basically the same form of the creation option, same rules apply.
+
+Permissions
+^^^^^^^^^^^
+
+The button to edit and modify group access. You only can modify one group per time.
+
+Group permissions allow you to define access for multiple users to the same shared resource.
+
+The button opens a window that displays all current existing |sf| and their
+permissions for selected group from the table. How the permissions are stored is
+described further down in the :doc:`shared folder </administration/storage/sharedfolders>` section.
+
 
 Technical details
 =================
@@ -157,3 +235,4 @@ shell, this will prevent local and remote console access.
 	- The table shows information from internal database and also parses information from :file:`/etc/passwd` lines with a `UID` number higher than 1000. A user created in terminal is not in the internal database. This causes trouble with samba, as there is no user/password entry in the tdbsam file. Just click edit for the user, enter the same or new password, now the user has the linux and samba password synced.
 	- A user can log into the |webui| to see their own profile information. Depending if the administrator has setup the username account to allow changes, they can change their password and mail account.
 	- A non-privileged user can become a |webui| administrator by adding them to the ``openmediavault-admin`` group.
+	- When user or group are created information should now be stored in ``config.xml``.

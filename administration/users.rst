@@ -8,6 +8,7 @@ However, |omv| also maintains control over these users, **so management is a tea
 between the Debian operating system and the OMV software system** internal database.
 
 **Users** in |omv| is divided into three subsections: ``Settings``, ``Users`` and ``Groups``.
+Groups means access for multiple users to multiple shared resources.
 
 With this section we can manage also permissions of shared resources.
 Unlike user permissions, group permissions allow you to define access
@@ -155,11 +156,11 @@ special option that allows batch loading called *Import*.
 
 The options of *Create* and *Import* are under the "+" button of the configuration panel.
 
-The option of *Edit* an user is next to the "+" button.
+The option of *Edit* a group is next to the "+" button.
 
 The option of *Permissions* are next to the "Edit" button.
 
-Erasing or deleting an user is the "Trash" icon next to the "Permission" button.
+Erasing or deleting a group is the "Trash" icon next to the "Permission" button.
 
 Information
     The table information displays all |omv| current groups in listing format.
@@ -167,24 +168,25 @@ Information
     the columns  of this listing format by add or remove information columns.
 
     Take note that **to edit or delete a group you must select one** from the list
-    and **this group must be not in usage** by any shared resource or user.
+    and **this group must be not in usage** by any shared resource or any user..
 
 Add
 ^^^
 
 This brings to you the creation form, this option is offered after hit the "+"
-button of the configuration menu panel of the *Users* subsection. important fields are:
+button of the configuration menu panel of the *Groups* subsection. important fields are:
 
 Name
     This must be only numbers and letters. The group information is stored in ``config.xml`` and
     the :file:`/etc/group` file.
 
 Members
-    This field allows to add or remove users from this group. Groups are the means of access
-    for multiple users to multiple shared resources. You can select current |omv| existing users.
+    This field allows to add or remove users for this group.  You can select
+    current |omv| existing users.
 
-    Some groups only affect the system (as of Linux), others are specific to the |omv| system.
-    By default all users created using	the |webui| are added to the ``users`` group (``gid=100``).
+    Some groups only affect the system (as of Linux), others are specific to
+    the |omv| system. By default all users created using the |webui| are added
+    to the ``users`` group (``gid=100``).
 
 Import
 ^^^^^^
@@ -200,7 +202,7 @@ and must be over 1000.
 Edit
 ^^^^
 
-The button to edit and modify membership. You only can modify one grup per time,
+The button to edit and modify membership. You only can modify one group per time,
 and means or implicts that one or several users will be modified at time.
 
 Its basically the same form of the creation option, same rules apply.
@@ -210,7 +212,7 @@ Permissions
 
 The button to edit and modify group access. You only can modify one group per time.
 
-Group permissions allow you to define access for multiple users to the same shared resource.
+Group permissions allow you to define access (for multiple users) to shared resources.
 
 The button opens a window that displays all current existing |sf| and their
 permissions for selected group from the table. How the permissions are stored is
@@ -224,6 +226,9 @@ When a user is created |omv| backend executes :command:`useradd` in non-interact
 mode with all the information passed from the form fields, this command also creates an
 entry in :file:`/etc/passwd`, a hashed password in :file:`/etc/shadow`. Samba service is watching any changes
 in users database section so it also sets the password in the Samba tdbsam storage backend.
+
+Unless normal action of :command:`useradd`, |omv| backend when performs such action
+do not create a personal group; the non-interactive mode will not demand this.
 
 The mail field is used for cron jobs when the task is selected to run as
 specific user. By default users are created with :command:`/bin/nologin`

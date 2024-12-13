@@ -7,8 +7,11 @@ it runs on.
 However, |omv| also maintains control over these users, **so management is a team effort
 between the Debian operating system and the OMV software system** internal database.
 
-**Users** in |omv| is divided into three subsections: ``Settings``, ``Users`` and ``Groups``.
+**Users** management is divided into three subsections: ``Settings``, ``Users`` and ``Groups``.
+
 Groups means access for multiple users to multiple shared resources.
+
+An user can log into the |webui| to see their own profile information.
 
 With this section we can manage also permissions of shared resources.
 Unlike user permissions, group permissions allow you to define access
@@ -17,11 +20,9 @@ for multiple users to the same resource.
 About home user
 ^^^^
 
-Due to the nature explained, users are supposed to have their own private place for files 
-that is called "*home*".
-
-This private file location or "*home*" place, **depending on the type of service, 
-automatically becomes a shared location**.
+Due to the nature explained, users are supposed to have their own private place for
+files that is called "*home*", depending on the type of service, automatically becomes 
+a personal private shared location.
 
 This place is configured in the ``Settings`` subsection of the |webui| interface 
 of |omv|, as *User home directory*
@@ -94,7 +95,7 @@ Group
     for multiple users to multiple shared resources.
 
     Some groups only affect the system (as of Linux), others are specific to the |omv| system.
-    By default all users created using	the |webui| are added to the ``users`` group (``gid=100``).
+    By default all users created using the |webui| are added to the ``users`` group (``gid=100``).
 
 Shell
     The shell is only used for remote access to interact with the server.
@@ -104,6 +105,11 @@ Shell
 Public Key
     Add or remove :doc:`public keys </administration/services/ssh>` for granting remote access for users.
 
+
+.. attention::
+
+    Depending if the administrator has setup the username account to allow changes,
+    they can change their password and mail account.
 
 Import
 ^^^^^^
@@ -127,6 +133,7 @@ Example data::
 	user4;1004;user4;user4@test.com;password4;;;1
 
 .. note::
+
     You can create a spreadsheet with the corresponding data as described in the import dialog window
     save it as CSV using the field separator as semicolon to carry its content in plain text editor,
     then copy its content and paste the contents into the import dialog.
@@ -224,20 +231,42 @@ Technical details
 
 When a user is created |omv| backend executes :command:`useradd` in non-interactive
 mode with all the information passed from the form fields, this command also creates an
-entry in :file:`/etc/passwd`, a hashed password in :file:`/etc/shadow`. Samba service is watching any changes
-in users database section so it also sets the password in the Samba tdbsam storage backend.
+entry in :file:`/etc/passwd`, a hashed password in :file:`/etc/shadow`.
 
-Unless normal action of :command:`useradd`, |omv| backend when performs such action
-do not create a personal group; the non-interactive mode will not demand this.
+Services will perform sync operations like Samba service, that is watching any changes
+in users database section so it also sets the password in the Samba ``tdbsam`` storage backend;
+others just dont sync such operations like Rsync service, cos has their own user management.
 
 The mail field is used for cron jobs when the task is selected to run as
-specific user. By default users are created with :command:`/bin/nologin`
-shell, this will prevent local and remote console access.
+specific user.
 
 .. attention::
 
-	- The user profile information (except password) is also stored in the internal |omv| database, along with the public keys.
-	- The table shows information from internal database and also parses information from :file:`/etc/passwd` lines with a `UID` number higher than 1000. A user created in terminal is not in the internal database. This causes trouble with samba, as there is no user/password entry in the tdbsam file. Just click edit for the user, enter the same or new password, now the user has the linux and samba password synced.
-	- A user can log into the |webui| to see their own profile information. Depending if the administrator has setup the username account to allow changes, they can change their password and mail account.
-	- A non-privileged user can become a |webui| administrator by adding them to the ``openmediavault-admin`` group.
-	- When user or group are created information should now be stored in ``config.xml``.
+	- The user profile information (except password) is also stored in the
+          internal |omv| database, along with the public keys. So then when
+          user or group are created information should now be stored in ``config.xml``.
+	- The table shows information from internal database and also parses information
+          from :file:`/etc/passwd` lines with a `UID` number higher than 1000.
+	- A non-privileged user can become a |webui| administrator by adding them
+          to the ``openmediavault-admin`` group.
+
+Manual management
+^^^^^^^^^^^^^^^^^
+
+Unless normal action of :command:`useradd`, |omv| backend when performs such action
+do not create a personal group.
+
+A user created in terminal by the :command:`useradd` command will not be in the internal
+database. This causes trouble with some services; by example *Samba*, as there is no
+user/password entry in the ``tdbsam`` database of samba.
+
+To synchronize users or groups that have not been created in the |webui|, simply
+perform an edit action and change the password or membership.
+
+Shared Home
+^^^^^^^^^^^
+
+The private file location or "*home*" place will become a shared resource of any user
+created, if *User Home directory* is already configure and place is valid.
+
+This becomes a shared resource only in some services, mostly Samba and Ftp services.

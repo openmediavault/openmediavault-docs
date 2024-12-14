@@ -1,106 +1,220 @@
 Users
 #####
 
-In this section you can create, edit and access information of |omv| users and groups.
+The user management in |omv| is provided by the user management of the
+operating system on which it is running.
+
+However, |omv| also maintains control over these users, **so management is a team effort**
+between the Debian operating system and the internal database of |omv|.
+
+Users that are managed via the |webui| are so-called *non-system users*.
+Their *UID* is in a specific range, usually from 1000 to 60000. The same applies
+to groups that are managed via the |webui|. Their *GID* is in a specific
+range, usually from 1000 to 60000. Check ``/etc/login.defs`` for more information.
+
+The **Users** management section in the |webui| is divided into three
+subsections: ``Settings``, ``Users`` and ``Groups``.
+
+Users can log into the |webui| to see their own profile information. The
+administrator can prohibit this behaviour for each user individually.
+
+
+Settings
+========
+
+User home directory
+-------------------
+
+Due to the nature explained, users are supposed to have their own private place for
+files that is called "*home*", depending on the type of service, automatically becomes
+a personal private shared location.
+
+You can select a |sf| as root for the *home* directories of all non-system users.
+
+If *User home directory* is disabled and a new user is created, the following happens:
+
+  * No home directory will be created and assigned to the user
+
+If *User home directory* is enabled and a new user is created, the following happens:
+
+  * A home directory will be created in the selected |sf| and assigned to the user
+  * The "skel" templates from Debian will applied to the new home directory
+
+If *User home directory* is enabled, the following actions will be performed:
+
+  * The home directory path will be updated for all existing non-system users.
+  * The previous home directory content will NOT be moved to the new location. This has to be done manually.
+
+If *User home directory* is disabled, the following actions will be performed:
+
+  * The home directory will be unset for all existing non-system users.
+  * The home directory content will NOT be deleted.
+
 
 User
 ====
 
-Here you can create or modify user information and configure the user home folders.
+This page lists all non-system users and allows you to *Create* or *Edit*
+those users as well as their |sf| *Permissions*. There is also a special
+option that allows you to *Import* multiple users at once.
 
-Add
-^^^^
+Create
+------
 
-Information
-	The configuration panel gives you options to add, edit or remove users. The table displays all
-	|omv| current users.
+The following form fields are available:
 
-	When a user is created |omv| backend executes :command:`useradd` in non-interactive
-	mode with all the information passed from the form fields, this command also creates an
-	entry in :file:`/etc/passwd`, a hashed password in :file:`/etc/shadow`. Samba service is watching any changes
-	in users database section so it also sets the password in the Samba tdbsam storage backend.
+Name
+    This must be only numbers and letters. Its the "username" of the login credentials
+    and must be all lowercase to avoid confusion.
 
-	The mail field is used for cron jobs when the task is selected to run as
-	specific user. By default users are created with :command:`/bin/nologin`
-	shell, this will prevent local and remote console access.
+Password
+    This field will provide the password of the user.
 
-Group
-	Add or remove users from specific groups. In Linux groups can be used to control
-	access to certain features and also for permissions.
+Shell
+    The shell is only used for remote access to interact with the server.
+    By default the form will offers :command:`/usr/bin/sh` shell, but is recommended usage of
+    the :command:`/usr/bin/nologin` shell to prevent local and remote console access.
 
-	Adding a user to the ``sudo`` group will give them root privileges, adding
-	a user to ``saned`` will give access to scanners, etc. By default all users created using
-	the |webui| are added to the ``users`` group (``gid=100``).
+Groups
+    This field allows to add or remove users from specific groups. Groups are the means of access
+    for multiple users to multiple shared resources.
 
-Public Key
-	Add or remove :doc:`public keys </administration/services/ssh>` for granting remote access for users.
+    Some groups only affect the system (as of Linux), others are specific to the |omv| system.
+    By default all users created using the |webui| are added to the ``users`` group (``gid=100``).
 
-.. note::
+SSH public keys
+    Add or remove :doc:`public SSH keys </administration/services/ssh>` for granting remote access for users.
 
-	- The user profile information (except password) is also stored in the internal |omv| database, along with the public keys.
-	- The table shows information from internal database and also parses information from :file:`/etc/passwd` lines with a `UID` number higher than 1000. A user created in terminal is not in the internal database. This causes trouble with samba, as there is no user/password entry in the tdbsam file. Just click edit for the user, enter the same or new password, now the user has the linux and samba password synced.
-	- A user can log into the |webui| to see their own profile information. Depending if the administrator has setup the username account to allow changes, they can change their password and mail account.
-	- A non-privileged user can become a |webui| administrator by adding them to the ``openmediavault-admin`` group.
+Disallow account modification
+    Disallow the user to modify their own account information.
+
+Tags
+    Specify tags to categorize the user.
+
 
 Import
-^^^^^^
+------
 
-Designed for bulk user creation. Create a spreadsheet with the corresponding data as
-described in the import dialog window, save it as CSV (make sure the field separator is semicolon :code:`;`), then just
-simply::
+Designed for bulk user creation. The user data must be entered as CSV data.
+An example is prepared as a comment.
 
-$ cat usersfile.csv
+Those fields are the same as the form of the *Create* user page.
 
-Example outputs::
+The field of *UID* must be numeric and must be in the range from 1000 to 60000 (check ``/etc/login.defs`` for more information).
 
-	# <name>;<uid>;<tags>;<email>;<password>;<shell>;<group,group,...>;<disallowusermod>
-	user1;1001;user1;user1@myserver.com;password1;/bin/bash;sudo;1
-	user2;1002;user2;user2@my.com;password2;/bin/sh;;0
-	user3;1003;user3;user3@example.com;password3;/bin/false;;1
-	user4;1004;user4;user4@test.com;password4;;;1
+Example data::
 
-.. note::
-	- :file:`/etc/shells` will give you a list of valid shells.
-	- The last field is	a boolean for allowing the user to change their account.
+    # <name>;<uid>;<tags>;<email>;<password>;<shell>;<group,group,...>;<disallowusermod>
+    user1;1001;user1;user1@myserver.com;password1;/bin/bash;sudo;1
+    user2;1002;user2;user2@my.com;password2;/bin/sh;;0
+    user3;1003;user3;user3@example.com;password3;/bin/false;;1
+    user4;1004;user4;user4@test.com;password4;;;1
 
-Paste the contents into the import dialog.
+Edit
+----
+
+Here you can modify the user information, the fields are the same as the form of the *Create* user page.
 
 Permissions
-^^^^^^^^^^^
+-----------
 
-The button opens a window that displays all current existing |sf| and their
-permissions for selected user from the table. How the permissions are stored is
-described further down in the :doc:`shared folder </administration/storage/sharedfolders>` section.
+All existing |sf| and the access rights of the user to be edited are displayed
+on this page. The following access rights are available:
 
-Settings
-^^^^^^^^
+- Read/Write
+- Read-only
+- No access
 
-Option to select a |sf| as root for home folders for new users created in the
-|webui|. Previously existing users created before enabling this setting will not have
-their home folders moved to this new location. You can manually edit :file:`/etc/passwd`
-to point them to the new location. Also existing users data in default linux location :file:`/home`
-has to be moved manually.
+These settings are used by the services to configure the access rights for the users.
+
+.. note::
+
+    Please note that these settings have no effect on file system permissions.
+
+How the permissions are stored is described further down in the :doc:`shared folder </administration/storage/sharedfolders>` section.
+
 
 Group
 =====
 
-Add
-^^^
+This page lists all non-system groups and allows you to *Create* or *Edit* those groups as well as their |sf| *Permissions*. There is also a special option that allows you to *Import* multiple groups at once.
 
-Create groups and select the members. You can select current |omv| users
-and system accounts. Information is stored in ``config.xml`` and
-:file:`/etc/group`.
+
+Add
+---
+
+The following form fields are available:
+
+Name
+    This must be only numbers and letters.
+
+Members
+    This field allows to add or remove users for this group.
 
 Import
-^^^^^^
+------
 
-Bulk import works in similar as user account import. Just a csv text,
-delimited with a semicolon :code:`;`. The dialog displays the necessary
-fields.
+Designed for bulk group creation. The group data must be entered as CSV data.
+An example is prepared as a comment.
+
+Those fields are the same as the form of the *Create* group page.
+
+The field of *GID* must be numeric and must be in the range from 1000 to 60000 (check ``/etc/login.defs`` for more information).
 
 Edit
-^^^^
-Just to add or remove members from groups. Default groups created in the
-|webui| have a ``GID`` greater than ``1000``. Same as usernames, groups created
-in terminal are not stored in the internal database. Just edit, insert a
-comment and their information should now be stored in ``config.xml``.
+----
+
+Here you can modify the group information, the fields are the same as the form of the *Create* group page.
+
+Permissions
+-----------
+
+All existing |sf| and the access rights of the group to be edited are displayed
+on this page. The following access rights are available:
+
+- Read/Write
+- Read-only
+- No access
+
+These settings are used by the services to configure the access rights for the groups.
+
+.. note::
+
+    Please note that these settings have no effect on file system permissions.
+
+How the permissions are stored is described further down in the :doc:`shared folder </administration/storage/sharedfolders>` section.
+
+
+Technical details
+=================
+
+When a user is created |omv| backend executes :command:`useradd` in non-interactive
+mode with all the information passed from the form fields. This command is responsible for creating an
+entry in :file:`/etc/passwd` and a hashed password in :file:`/etc/shadow`.
+
+The |omv| backend monitors all database changes to users to allow other services to react to these changes.
+This ensures, for example, that the *Samba* user database is updated when a user password is changed.
+
+.. attention::
+
+    - The user profile information (except password) is also stored in the
+      internal |omv| database, along with the public keys.
+    - A non-privileged user can become a |webui| administrator by adding them
+      to the ``openmediavault-admin`` group.
+
+Manual management
+-----------------
+
+If a user is created via the |webui|, no corresponding group with the name of the user is created.
+
+A user created in terminal by the :command:`useradd` command will not be in the |omv| internal
+database. This causes trouble with some services, by example *Samba*, as there is no
+user/password entry in the ``tdbsam`` database of *Samba*.
+
+To synchronize users or groups that have not been created in the |webui|, simply
+perform an *Edit* action and change the password or membership.
+
+Shared home directories
+-----------------------
+
+If *User Home directory* is enabled and configured properly, then the home directories can be shared by some services as well, e.g. *Samba* and *FTP*.

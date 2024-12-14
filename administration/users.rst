@@ -61,7 +61,7 @@ option that allows you to *Import* multiple users at once.
 Create
 ------
 
-The following form fields are available:
+This page is intended for creating a new user. The following form fields are available:
 
 Name
     This must be only numbers and letters. Its the "username" of the login credentials
@@ -140,10 +140,10 @@ Group
 This page lists all non-system groups and allows you to *Create* or *Edit* those groups as well as their |sf| *Permissions*. There is also a special option that allows you to *Import* multiple groups at once.
 
 
-Add
----
+Create
+------
 
-The following form fields are available:
+This page is intended for creating a new group. The following form fields are available:
 
 Name
     This must be only numbers and letters.

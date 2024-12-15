@@ -24,7 +24,7 @@ The following is the list of official plugins by |omv|. Their availability depen
 * **ClamAV**: Provides Clam AntiVirus (ClamAV). It is a free software, cross-platform and open-source antivirus software toolkit able to detect many types of malicious software, including viruses
 * **Diskstats**: Complementary plugin to extend system statistics collection by adding I/O statistic graphs.
 * **Forked-daap**: Provides a daap protocol music server.
-* **FTP**: Provides a modular FTP/SFTP/FTPS server.
+* **FTP**: Provides a modular FTP/FTPS server.
 * **LVM2**: LVM managing. Create volume groups and logical partitions.
 * **NUT**: Controlling and configuring UPS. The driver support is based on NUT.
 * **Onedrive** (amd64, arm64, armhf, i386 only): Synchronizing a shared folder with Microsoft OneDrive cloud storage.

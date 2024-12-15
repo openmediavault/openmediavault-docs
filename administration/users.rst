@@ -8,10 +8,11 @@ However, |omv| also maintains control over these users, **so management is a tea
 between the Debian operating system and the internal database of |omv|.
 
 Users that are managed via the |webui| are so-called *non-system users*.
-Identification is managed by the *UID* and groups by the *GID*.
-Their *UID* is in a specific range, usually from 1000 to 60000. The same applies
-to groups that are managed via the |webui|. Their *GID* is in a specific
-range, usually from 1000 to 60000. Check ``/etc/login.defs`` for more information.
+This type of users are identified by their *UID*, which is in a specific
+range, usually between 1000 and 60000. The same applies to
+*non-system groups* that are managed via the |webui|. They are identified
+by their *GID* which is usually in the range from 1000 to 60000.
+Check ``/etc/login.defs`` for more information.
 
 The **Users** management section in the |webui| is divided into three
 subsections: ``Settings``, ``Users`` and ``Groups``.

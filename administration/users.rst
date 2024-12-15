@@ -8,9 +8,11 @@ However, |omv| also maintains control over these users, **so management is a tea
 between the Debian operating system and the internal database of |omv|.
 
 Users that are managed via the |webui| are so-called *non-system users*.
-Their *UID* is in a specific range, usually from 1000 to 60000. The same applies
-to groups that are managed via the |webui|. Their *GID* is in a specific
-range, usually from 1000 to 60000. Check ``/etc/login.defs`` for more information.
+This type of users are identified by their *UID*, which is in a specific
+range, usually between 1000 and 60000. The same applies to
+*non-system groups* that are managed via the |webui|. They are identified
+by their *GID* which is usually in the range from 1000 to 60000.
+Check ``/etc/login.defs`` for more information.
 
 The **Users** management section in the |webui| is divided into three
 subsections: ``Settings``, ``Users`` and ``Groups``.
@@ -29,7 +31,7 @@ Due to the nature explained, users are supposed to have their own private place 
 files that is called "*home*", depending on the type of service, automatically becomes
 a personal private shared location.
 
-You can select a |sf| as root for the *home* directories of all non-system users.
+You can optionally select a |sf| as root for the *home* directories of all non-system users.
 
 If *User home directory* is disabled and a new user is created, the following happens:
 
@@ -40,12 +42,12 @@ If *User home directory* is enabled and a new user is created, the following hap
   * A home directory will be created in the selected |sf| and assigned to the user
   * The "skel" templates from Debian will applied to the new home directory
 
-If *User home directory* is enabled, the following actions will be performed:
+If *User home directory* is enabled, the following actions will be performed on existing users:
 
   * The home directory path will be updated for all existing non-system users.
   * The previous home directory content will NOT be moved to the new location. This has to be done manually.
 
-If *User home directory* is disabled, the following actions will be performed:
+If *User home directory* is disabled, the following actions will be performed on existing users:
 
   * The home directory will be unset for all existing non-system users.
   * The home directory content will NOT be deleted.

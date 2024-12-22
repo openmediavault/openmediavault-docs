@@ -65,6 +65,8 @@ The `name` field contains the unique identifier of the component. It is
 used to reference the component in a route configuration. The `type`
 field contains one of the following supported page types:
 
+- blankPage
+- `codeEditorPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/intuition/models/code-editor-page-config.type.ts>`_
 - `formPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/intuition/models/form-page-config.type.ts>`_
 - `selectionListPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/intuition/models/selection-list-page-config.type.ts>`_
 - `textPage <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/workbench/src/app/core/components/intuition/models/text-page-config.type.ts>`_

@@ -36,6 +36,7 @@ The following is the list of official plugins by |omv|. Their availability depen
 * **SNMP**: Provides Simple Network Management Protocol (SNMP). SNMP is an Internet Standard protocol for collecting and organizing information about managed devices on IP networks.
 * **TFtp**: Provides Trivial File Transfer Protocol (TFTP). TFTP is a simple lockstep File Transfer Protocol which allows a client to get a file from or put a file onto a remote host.
 * **USB Backup**: Backup internal data to external disks on scheduled basis or on plug drive event.
+* **BCache**: Use an SSD as a read/write cache for another block device.
 
 Podman container-based plugins:
 

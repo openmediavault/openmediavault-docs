@@ -4,11 +4,19 @@ SSH
 Overview
 --------
 
-Secure shell comes disabled by default in |omv|, when installing |omv| on top a
-Debian installation, the systemd unit will be disabled after the server
-packages are installed. Just login into |webui| to re-enable the ssh service.
+Secure shell comes enabled by default in |omv|.
 
-The configuration options are minimal, But is possible to:
+.. note::
+   |omv| will enable SSH access for the user ``root`` by default to be
+   able to access a headless system in case of a broken installation or
+   other maintenance situations. You should disable this behaviour in the
+   ``Services | SSH`` page for security reasons after installation.
+
+   To still get ``root`` access you need to create a non-privileged user
+   and add them to the ``_ssh`` and ``sudo`` groups. After that you can
+   SSH into the system with this non-privileged user and run ``sudo su``.
+
+The configuration options via |webui| are minimal:
 
 - Disable the root login
 - Disable password authentication
@@ -16,23 +24,25 @@ The configuration options are minimal, But is possible to:
 - Enable compression
 - Enable tunneling (for SOCKS and port forward)
 
-An extra text field is provided to enter more options. Examine first the
+An extra options field is provided to enter more options. Examine first the
 file :file:`/etc/ssh/sshd_config` before adding extra options otherwise the
-option will not be applied. In that case is necessary change the environmental variable.
+option will not be applied. You may also check the SSH related :doc:`environmental variables </various/advset>`
+that can be used to customize several options.
+
+Normal users created in the |webui| can access the remote shell by
+adding them to the ``_ssh`` group. Using PKA for users requires keys to be added
+to their profile. This is described in the :doc:`Users </administration/users>` section. The public key has to be
+added in `OpenSSH` or `RFC 4716 <https://tools.ietf.org/html/rfc4716>`_ format.
 
 .. _ssh_convert_rfc4716:
 
-Normal |omv| users created in the |webui| can access the remote shell by
-adding them to the ssh group. Using PKA for users requires keys to be added
-to their profile, this is done in the Users section. The key has to be
-added in `RFC 4716 <https://tools.ietf.org/html/rfc4716>`_ format. To do
-that run::
+To convert a public key run::
 
 $ ssh-keygen -e -f nameofthekey.pub
 
 Paste the output in the users profile at ``Users | Users | <USERNAME> | Edit | Public Keys``.
 
-The number of keys per user is unlimited. A public key in RFC 4716 looks like this::
+A public key in RFC 4716 looks like this::
 
 	---- BEGIN SSH2 PUBLIC KEY ----
 	Comment: "iPhone user1"
@@ -54,13 +64,9 @@ If root login has been disabled and need to perform administrative tasks in the 
 
 $ su
 
-To use sudo for root operations add the user to the sudo group.
-
-The SFTP server comes enabled by default for root and ssh group. So POSIX folder permissions apply to non-root users accessing via SFTP.
-
 .. note::
 	**Remote WAN access**
-		- Forward in router/firewall a port different than 22. This will minimize bots fingering the ssh server.
+		- Forward in router/firewall a port different than 22. This will minimize bots fingering the SSH server.
 		- Always use PKA.
 		- Disable password login.
 		- Disable root login.

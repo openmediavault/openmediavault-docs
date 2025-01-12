@@ -35,7 +35,7 @@ Can I submit patches without having signed the CLA?
 
 Contribution rules
 ------------------
-    Code contributions are welcome, please see <https://github.com/openmediavault/openmediavault/blob/master/CONTRIBUTING.md> for requirements.
+    Code contributions are welcome, please read the `guideline <https://github.com/openmediavault/openmediavault/blob/master/CONTRIBUTING.md>`_ how to do this.
 
 Anything else?
 --------------

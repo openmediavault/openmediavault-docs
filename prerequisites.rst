@@ -37,7 +37,7 @@ System drive storage
   **this system drive (that is in fact a couple or more partitions) 
   cannot officially be used for shared resources or as user data drive**.
   What supported brands and sizes are covered in the software requirements section below.
-  The recommendation for the System drive(s) hardware could be older spinning
+  The recommendation for the system drive(s) hardware could be older spinning
   Hard Disk Drives (HDD), Disk-on-Module [3]_, CompactFlash [4]_ or thumb drives (USB),
   the Solid State Disks (SDD [2]_) must be managed.
 

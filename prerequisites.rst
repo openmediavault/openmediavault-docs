@@ -13,8 +13,8 @@ Hardware requirements
 ======  ================  =========  ==========  ==================================
  Item    supported         Minimal     Best       Recommendation
 ======  ================  =========  ==========  ==================================
- DRIV    SSD/HDD/USB...    1 disk      2 disk     2 disks: 128Gib HDD + 500Gib SSD
- RAM     1Gib+ any          1Gib       4Gig       8Gib+ dual channel DDR4/DDR3
+ DRIV    SSD/HDD/USB...    1 disk      2 disk     2 disks: 128GiB HDD + 500GiB SSD
+ RAM     1GiB+ any          1GiB       4Gig       8GiB+ dual channel DDR4/DDR3
  NIC     WiFi/Ether/USB     any       10Mb NIC    1GiB NIC or 10Gb NICs: SFP fiber
  CPU     arm,x86,x64        32bit      64bit      Intel Dual Core, AMD Ryzen
 ======  ================  =========  ==========  ==================================
@@ -42,24 +42,24 @@ System drive storage
   the Solid State Disks (SDD [2]_) must be managed.
 
 Data drive storage
-  The storage disk drive(s) where the data for the defined or used shares resources
-  wil be stored. **Cannot be the same of the system drive(s) and sizes will
-  depends of the usage of the resources**. Shared resources are managed over
-  partitions, which is discussed in the software requirements topic below.
-  The recommendation for the Data drives must be Solid State Disks (SSD [2]_ disks)
-  for best performance or spinning Hard Disk Drives (HDD).
+  The storage disk drive(s) where the user data will be stored. **Cannot be 
+  the same of the system drive(s) and sizes will depend of the usage of the stored user data**.
+  Shared resources are managed over partitions, which is discussed in the software
+  requirements topic below. The recommendation for the Data drives must be
+  Solid State Disks (SSD [2]_ disks) for best performance or spinning 
+  Hard Disk Drives (HDD) for better device durability over time.
 
 The memory (RAM)
 ^^^^^^^^^^^^^^^^
 
 Enough RAM is vital to maintaining peak performance. There are several combinations
-of installation sizes but the **recommendation is at least 4Gib for novice administrators**.
+of installation sizes but the **recommendation is at least 4GiB for novice administrators**.
 
-For best practice you should have 8GiB of RAM for basic operations in default installation.
+For best practice you should have 8GiB of RAM for basic operations in default installation,
 and no matter the size, RAM must be configured in Dual Channel mode [8]_ 
 inclusivelly if there are little amount of, it will improve performance.
 
-Unless other NAS systems the |omv| system can run in at least 1Gib of RAM, but
+Unless other NAS systems the |omv| system can run in at least 1GiB of RAM, but
 of course will need expertise.
 
 The communication card (NIC)
@@ -70,8 +70,8 @@ most flexible NAS system in the world and allows multiple ways of communication,
 this is becouse |omv| offers several modes of shared resources like RSYNC that 
 do not depends on networking. But there are few key points:
 
-- The NAS write speed to storage is limited to the speed of your NAS computer NIC card
-- The NAS write speed to storage is limited to the speed of your network
+- The NAS write speed to storage is limited to the speed of your NAS computer NIC card.
+- The NAS write speed to storage is limited to the speed of your network.
 - Speed of writing to the storage depends on ratio of the number of users accessing it.
 
 Full-duplex NICs are recommended, half-duplex NICs typically offer 10/100 Mbit/s
@@ -89,8 +89,10 @@ really a reference since it is determined by the support of the operating system
 where |omv| system resides and runs, which is Debian GNU/Linux.
 
 Any computer system supported by the common requirements of Debian operating
-system could be an |omv| system installation target. **Currently we supports
-amd64 (x66 64bits), i386 (x86 32bits), ARMv7+ARMv8 (arm64/armel/armhf)**.
+system could be an |omv| system installation target. **Currently supported are
+AMD64 (x66 64bits), i386 (x86 32bits), ARMv7+ARMv8 (arm64/armel/armhf)**.
+The i386 version stopped its official support in version 6 although it is still 
+being released by the project due the nature of the |omv| technology.
 
 Software requirements
 ---------------------
@@ -102,7 +104,7 @@ Software requirements
  BOOT    BIOS,UBOOT,UEFI    BIOS,mbr        BIOS,gpt        Disable Secure boot, gpt table
  SDS     HDD,SSD,USB...     2 partitions    3 partitions    Root with 120G size, 8G swap size
  DDS     HDD,SSD,USB...     1 partition     1 per share     One disk or part per shared resource
- NET     LAN,WAN,SAN,VPN    LAN             SAN,PAN,LAN     Fiber ipv4, or at least cable LAN
+ NET     LAN,WAN,SAN,VPN    LAN             SAN,PAN,LAN     Fiber IPv4, or at least cable LAN
 ======  =================  ==============  ==============  =======================================
 
 The operating system (OS)
@@ -111,7 +113,7 @@ The operating system (OS)
 The |omv| is a piece of software, it resides and runs under a key software OS
 named Debian GNU/Linux as "the universal operating system" [9]_ 
 
-Supported Debian OS versions can be checked in the :doc:`releases section </releases>`
+**Supported Debian OS versions can be checked in the** :doc:`releases section </releases>`.
 
 While possible to deploy in a virtual environment, depending of the nature of
 virtualization it will degrade the performance access in various ways. Installation
@@ -128,43 +130,51 @@ have any previous installation of any of the programs used by |omv| dependencies
  display GUI    lighdm,xdm..    Desktop install    **Conflicts, any will be deinstalled**
  network man    netplan.io      Networking         network is managed by |omv| with netplan
  ssh server     ssh             Remote access      any configuration will be managed
- mbs server     samba           Shared drives      any configuration will be managed
+ smb server     samba           Shared drives      any configuration will be managed
  quota man      quota           Quota manage       any configuration will be managed
 =============  ==============  =================  ==========================================
 
 The device boot (BOOT)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|omv| will install on any kind of boot device and this will relies on the
-operating system that is Debian. The downloable ISO image ready to use from
-the oficial web page only supports at the moment amd64 with BIOS mode boot.
+The boot type and its support is determined by the Debian operating system
+which supports BIOS, UEFI, PXE, UBOOT and many others, the configurations
+of these depend on the installation of the operating system and once done
+the |omv| can be installed without problems.
 
-The System drive storage (SDS)
+However the downloadable and ready-to-use ISO image from the official |omv| website
+only supports AMD64 with BIOS mode boot at the moment. If you want to have |omv| on
+other computers with another boot type/mode you should install Debian first
+and then manually the |omv| can be installed without problems.
+
+**Supported Debian OS versions can be checked in the** :doc:`releases section </releases>`.
+
+The system drive storage (SDS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Any brand of storage disk will be supported as long as it is supported by
+the Debian operating system version, since it is where |omv| system resides
+and runs, which is Debian GNU/Linux, check it at the :doc:`releases section </releases>`.
+
 The system storage disk will be fully managed and taken over by the |omv| after
-installed. Any brand is supported as is also supported by the Debian system.
-For Flash Drive type storage devices as well as solid state drives being used as
-system storage drives please refer to the last section for technical details.
+installed. In case of the official ISO installation, will automatically partition
+the system storage disk drive into 3 partitons. Consult the next table for.
 
-In case of the official ISO instalation, will automatically partition the system
-storage disk drive into 3 partitons. Consult the next table for.
-
-In case of a manual installation on a previous Debian operating system, this 
+In case of a manual installation on a previous Debian operating system, this
 **drive must have at least two partitions**. Consult the next table for.
 
 ============  ==========  ===========  =======================================
  Partition     Min size    Best size    Mandatory
 ============  ==========  ===========  =======================================
  ``/boot``      256Mib      500Mib      Optional, partition used to boot
- ``/``           4Gi        120Gib      Yes, the partition were system install
- ``swap``       100Mib      16Gib       Yes, the partition for virtual ram
+ ``/``           4Gi        120GiB      Yes, the partition were system install
+ ``swap``       100Mib      16GiB       Yes, the partition for virtual ram
 ============  ==========  ===========  =======================================
 
 The Data drive storage (DDS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The data storage disk will be partially managed by the |omv| after installed,
+The data storage disk will be partially managed by the |omv| after installation,
 and only in customized installation can be a partiton of the same system drive
 storage.
 
@@ -177,7 +187,7 @@ drive can handle one or many shared resources.**
 ==============  ==========  ===========  ========================================
  Partition       Min size    Best size    Mandatory
 ==============  ==========  ===========  ========================================
- ``/srv/<*>``     100Mib       bigger     Yes, size as need! example 128Gib
+ ``/srv/<*>``     100Mib       bigger     Yes, size as need! E.g. 128GiB,500GiB,4TiB
 ==============  ==========  ===========  ========================================
 
 Technical notes
@@ -189,28 +199,28 @@ could be.**.
 |omv| allows for minimal deployment and use of the system with very minimal
 hardware/software requirements, at the cost of the key knowledge, but other NAS
 systems allow ease of use at the cost of high requirements. |omv| allows both as
-well in a well balanced use cases! [7]_
+well in a well balanced use case! [7]_
 
 About minimal or custom setups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It can be noted that |omv| system can be installed on just 4Gib of system partition,
-with no more than 1Gib of RAM and using a WiFi or USB connection to access it
-remotely (cos is a NAS system of course), on any small device such as Raspberry
-ones which are ARM, or old i386s machines no matter is those are 32 or 64 bits, 
+It can be noted that |omv| systems can be installed on just 4GiB of system partition,
+with no more than 1GiB of RAM and using a WiFi or USB connection to access it
+remotely, on any small device such as Raspberry Pi or Banana Pi boars
+which are ARM, or old i386s machines no matter is those are 32 or 64 bits, 
 but of course as more exquisite the configuration more knowledge will be need
 as per `issue comment #131 <https://github.com/openmediavault/openmediavault-docs/issues/131#issuecomment-2546765841>`_.
 
 Technically OMV can be installed on a single storage disk, this is possible if
 it is done on a previously configured Debian system, with a free partition apart
 from the 3 necessary system partitions, previously formatted and configured.
-Of course this is only possible for skilled linux users.
+Of course this is only possible for skilled Linux users.
 
 Drive Storage technical details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 System Drives are not managed as same of Data Drives. System drives are not so
-intensively used, but Data Drives will need triks to extend the useful life.
+intensively used, but Data Drives will need tricks to extend the useful life.
 
 If you use a Flash Drive, select one with static wear leveling 6, without this
 the drive will have a very short lifetime. It is also recommended to install and
@@ -218,10 +228,10 @@ activate the Flash Memory plugin.
 
 In the same Solid State Disk, or rather Drive (SSD) for x86 architectures, is
 usually only recognized properly by the BIOS or UEFI, when in the BIOS/UEFI the
-feature AHCI has been activated for SATA (instead of IDE). Modern computers has
+feature AHCI has been activated for SATA (instead of IDE). Modern computers have that
 by default. But on old machines the default might/could be IDE.
 About ARM based computers this are not a problem, when used SATA interfaces, but
-EMMC ones could need tune up cos are threated as Flash drives.
+eMMCs need some tuning because they are treated like Flash drives.
 
 On SSDs, the cleaning action TRIM is recommended for the good performance in
 the long run. Otherwise it might become slow after some time. Very old SSD's from

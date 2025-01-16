@@ -4,7 +4,7 @@ Requisites
 The |omv| system is the most flexible Network Attached Storage (NAS) on the market,
 this is because it relies on the operating system Debian GNU/Linux [9]_
 
-Any system has software requirements and hardware requirements, also minimal
+Any system has software and hardware requirements, also minimal
 ones and recommended ones..
 
 Hardware requirements

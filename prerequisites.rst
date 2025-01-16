@@ -228,7 +228,7 @@ the long run. Otherwise it might become slow after some time. Very old SSD's fro
 before 2010 usually don't support TRIM.
 
 On SSDs Hibernation (suspend-to-disk) causes a huge amount of write actions,
-|omv| is a server system so xpected to stay always on or off.
+|omv| is a server system so it is expected to stay always on or off.
 
 Partition table technical details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

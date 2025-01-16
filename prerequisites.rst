@@ -35,7 +35,7 @@ The system manages two types of storage unit classification:
 System drive storage
   The Storage Disk Drive(s) used to put the system program files (by partitions), 
   **this system drive (that is in fact a couple or more partitions) 
-  cannot officially be used for shared resources or as data drive**.
+  cannot officially be used for shared resources or as user data drive**.
   What supported brands and sizes are covered in the software requirements section below.
   The recommendation for the System drive(s) hardware could be older spinning
   Hard Disk Drives (HDD), Disk-on-Module [3]_, CompactFlash [4]_ or thumb drives (USB),

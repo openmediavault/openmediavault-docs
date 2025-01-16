@@ -219,7 +219,7 @@ activate the Flash Memory plugin.
 In the same Solid State Disk, or rather Drive (SSD) for x86 architectures, is
 usually only recognized properly by the BIOS or UEFI, when in the BIOS/UEFI the
 feature AHCI has been activated for SATA (instead of IDE). Modern computers has
-as default, so that's fine. But on old machines the default might/could be IDE.
+by default. But on old machines the default might/could be IDE.
 About ARM based computers this are not a problem, when used SATA interfaces, but
 EMMC ones could need tune up cos are threated as Flash drives.
 

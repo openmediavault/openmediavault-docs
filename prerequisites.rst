@@ -90,7 +90,7 @@ where |omv| system resides and runs, which is Debian GNU/Linux.
 
 Any computer system supported by the common requirements of Debian operating
 system could be an |omv| system installation target. **Currently supported are
-AMD64 (x66 64bits), i386 (x86 32bits), ARMv7+ARMv8 (arm64/armel/armhf)**.
+AMD64 (x86/x86-64 64bits), i386 (x86 32bits), ARMv7+ARMv8 (arm64 64bits armel/armhf 32bits)**.
 The i386 version stopped its official support in version 6 although it is still 
 being released by the project due the nature of the |omv| technology.
 
@@ -226,19 +226,32 @@ If you use a Flash Drive, select one with static wear leveling 6, without this
 the drive will have a very short lifetime. It is also recommended to install and
 activate the Flash Memory plugin.
 
-In the same Solid State Disk, or rather Drive (SSD) for x86 architectures, is
+In the same Solid State Disk, or rather Drive (SSD) for x86 based architectures, is
 usually only recognized properly by the BIOS or UEFI, when in the BIOS/UEFI the
 feature AHCI has been activated for SATA (instead of IDE). Modern computers have that
 by default. But on old machines the default might/could be IDE.
-About ARM based computers this are not a problem, when used SATA interfaces, but
-eMMCs need some tuning because they are treated like Flash drives.
+About ARM based computers this is not a problem, when used SATA interfaces, but
+on eMMCs will need some tuning because they are treated like Flash drives.
 
 On SSDs, the cleaning action TRIM is recommended for the good performance in
 the long run. Otherwise it might become slow after some time. Very old SSD's from
 before 2010 usually don't support TRIM.
 
+Take note that eMMCs, SSDs, Flash drives will have a lifetime degradation, 
+excessive overwrites wear out those drives faster, specially in those very cheap.
+
 On SSDs Hibernation (suspend-to-disk) causes a huge amount of write actions,
 |omv| is a server system so it is expected to stay always on or off.
+
+About compresion or encryption
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enabling encryption on SSDs also means more overwrites which wear out SSDs, eMMCs
+or Flash drives faster.
+
+As well as enabling compression on filesystems like Btrfs or ZFS; although Ext4
+has better commit timing; a parameter with commit=600 to 800 is best
+for this particular one.
 
 Partition table technical details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

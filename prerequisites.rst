@@ -26,7 +26,7 @@ This is the key of the system. |omv| supports any drive hardware and any drive
 interface (SATA, ISE, SCSI, USB, SERIAL) but information and management will
 depend on the disk drives supported by the Debian operating system.
 
-Modern hard disks drives have firmware inside that reports several attributes, 
+Modern hard disks drives have firmware inside that reports several attributes.
 Any hard disks drives is supported but |omv| only supports SMART for those
 disks that are connected to an HBA in pass-through mode.
 

@@ -13,7 +13,7 @@ Hardware requirements
 ======  ================  =========  ==========  ==================================
  Item    supported         Minimal     Best       Recommendation
 ======  ================  =========  ==========  ==================================
- DRIV    SSD/HDD/USB...    1 disk      2 disk     2 disks: 128GiB HDD + 500GiB SSD
+ DRIV    SSD/HDD/USB...     1,any     2,KIOXIA    2 disks: Seagate Firecuda, WD Black, IronWolf
  RAM     1GiB+ any          1GiB       4Gig       8GiB+ dual channel DDR4/DDR3
  NIC     WiFi/Ether/USB     any       10Mb NIC    1GiB NIC or 10Gb NICs: SFP fiber
  CPU     arm,x86,x64        32bit      64bit      Intel Dual Core, AMD Ryzen
@@ -25,14 +25,20 @@ The storage drives (DRIV)
 This is the key of the system. |omv| supports any drive hardware and any drive 
 interface (SATA, ISE, SCSI, USB, SERIAL) but information and management will
 depend on the disk drives supported by the Debian operating system.
+**Supported Debian OS versions can be checked in the** :doc:`releases section </releases>`.
 
-Modern hard disks drives have firmware inside that reports several attributes.
-Any hard disks drives is supported but |omv| only supports SMART for those
+However, the manufacturers to consider depend on the type of disks. 
+For HDDs, Seagate FireCuda disks, Western Digital Black disks, 
+and for SSDs, KIOXIA or Toshiba are the best for. In case of USB or EMMC, 
+companies are reluctant to provide information, so avoid the Samsung brand.
+
+Modern storage drives have firmware inside that reports several attributes.
+Any storage drives is supported but |omv| only supports SMART for those
 disks that are connected to an HBA in pass-through mode.
 
 The system manages two types of storage unit classification:
 
-System drive storage
+System drive storage (SDS)
   The Storage Disk Drive(s) used to put the system program files (by partitions), 
   **this system drive (that is in fact a couple or more partitions) 
   cannot officially be used for shared resources or as user data drive**.
@@ -41,7 +47,7 @@ System drive storage
   Hard Disk Drives (HDD), Disk-on-Module [3]_, CompactFlash [4]_ or thumb drives (USB),
   the Solid State Disks (SDD [2]_) must be managed.
 
-Data drive storage
+Data drive storage (DDS)
   The storage disk drive(s) where the user data will be stored. **Cannot be 
   the same of the system drive(s) and sizes will depend of the usage of the stored user data**.
   Shared resources are managed over partitions, which is discussed in the software
@@ -102,8 +108,8 @@ Software requirements
 ======  =================  ==============  ==============  =======================================
  OS      Debian Linux       oldoldstable    stable          Current stable (plus 1 month released)
  BOOT    BIOS,UBOOT,UEFI    BIOS,mbr        BIOS,gpt        Disable Secure boot, gpt table
- SDS     HDD,SSD,USB...     2 partitions    3 partitions    Root with 120G size, 8G swap size
- DDS     HDD,SSD,USB...     1 partition     1 per share     One disk or part per shared resource
+ SDS     HDD,SSD,USB...     1, 4GiB        2, 120+500GiB    Disk drive with 120G root size, 8G swap size
+ DDS     HDD,SSD,USB...     0 or any        1 per share     One disk or part per shared resource
  NET     LAN,WAN,SAN,VPN    LAN             SAN,PAN,LAN     Fiber IPv4, or at least cable LAN
 ======  =================  ==============  ==============  =======================================
 
@@ -164,7 +170,7 @@ In case of a manual installation on a previous Debian operating system, this
 **drive must have at least two partitions**. Consult the next table for.
 
 ============  ==========  ===========  =======================================
- Partition     Min size    Best size    Mandatory
+ Partition     Mininmal    Best size    Mandatory
 ============  ==========  ===========  =======================================
  ``/boot``      256Mib      500Mib      Optional, partition used to boot
  ``/``           4Gi        120GiB      Yes, the partition were system install
@@ -221,6 +227,7 @@ Drive Storage technical details
 
 System Drives are not managed as same of Data Drives. System drives are not so
 intensively used, but Data Drives will need tricks to extend the useful life.
+Drivers support is by the project https://www.smartmontools.org/wiki/TocSupport
 
 If you use a Flash Drive, select one with static wear leveling 6, without this
 the drive will have a very short lifetime. It is also recommended to install and

@@ -13,7 +13,7 @@ Hardware requirements
 ======  ================  =========  ==========  ==================================
  Item    supported         Minimal     Best       Recommendation
 ======  ================  =========  ==========  ==================================
- DRIV    SSD/HDD/USB...     1,any      2,HHD    2 disks: Seagate Firecuda, WD Black, IronWolf
+ DRIV    SSD/HDD/USB...     1,any      2,HHD      2 disks: Seagate Firecuda, WD Black, IronWolf
  RAM     1GiB+ any          1GiB       4Gig       8GiB+ dual channel DDR4/DDR3
  NIC     WiFi/Ether/USB     any       10Mb NIC    1GiB NIC or 10Gb NICs: SFP fiber
  CPU     arm,x86,x64        32bit      64bit      Intel Dual Core, AMD Ryzen
@@ -98,15 +98,15 @@ it is still published by the project due to the nature of |omv| technology.
 Software requirements
 ---------------------
 
-======  =================  ==============  ==============  =======================================
- Item    Software           Minimal         Best            Recommendation
-======  =================  ==============  ==============  =======================================
- OS      Debian Linux       oldstable       stable          Current stable (plus 1 month released)
- BOOT    BIOS,UBOOT,UEFI    BIOS,mbr        BIOS,gpt        Disable Secure boot, gpt table
- SDS     HDD,SSD,USB...     1, 4GiB        2, 120+500GiB    Disk drive with 120G root size, 8G swap size
- DDS     HDD,SSD,USB...     0 or any        HHD,1 per share One disk or part per shared resource
- NET     LAN,WAN,SAN,VPN    LAN             SAN,PAN,LAN     Fiber IPv4, or at least cable LAN
-======  =================  ==============  ==============  =======================================
+======  =================  ==============  ================  =========================================
+ Item    Software           Minimal         Best              Recommendation
+======  =================  ==============  ================  =========================================
+ OS      Debian Linux       oldstable       stable            Current stable (plus 1 month released)
+ BOOT    BIOS,UBOOT,UEFI    BIOS,mbr        BIOS,gpt          Disable Secure boot, gpt table
+ SDS     HDD,SSD,USB...     1, 4GiB         2, 120+500GiB     Disk drive with 120G root size, 8G swap size
+ DDS     HDD,SSD,USB...     0 or any        HHD,1 per share   One disk or part per shared resource
+ NET     LAN,WAN,SAN,VPN    LAN             SAN,PAN,LAN       Fiber IPv4, or at least cable LAN
+======  =================  ==============  ================  =========================================
 
 The operating system (OS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^

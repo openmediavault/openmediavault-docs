@@ -13,7 +13,7 @@ Hardware requirements
 ======  ================  =========  ==========  ==================================
  Item    supported         Minimal     Best       Recommendation
 ======  ================  =========  ==========  ==================================
- DRIV    SSD/HDD/USB...     1,any     2,KIOXIA    2 disks: Seagate Firecuda, WD Black, IronWolf
+ DRIV    SSD/HDD/USB...     1,any      2,HHD    2 disks: Seagate Firecuda, WD Black, IronWolf
  RAM     1GiB+ any          1GiB       4Gig       8GiB+ dual channel DDR4/DDR3
  NIC     WiFi/Ether/USB     any       10Mb NIC    1GiB NIC or 10Gb NICs: SFP fiber
  CPU     arm,x86,x64        32bit      64bit      Intel Dual Core, AMD Ryzen
@@ -27,11 +27,6 @@ interface (SATA, ISE, SCSI, USB, SERIAL) but information and management will
 depend on the disk drives supported by the Debian operating system.
 **Supported Debian OS versions can be checked in the** :doc:`releases section </releases>`.
 
-However, the manufacturers to consider depend on the type of disks. 
-For HDDs, Seagate FireCuda disks, Western Digital Black disks, 
-and for SSDs, KIOXIA or Toshiba are the best for. In case of USB or EMMC, 
-companies are reluctant to provide information, so avoid the Samsung brand.
-
 Modern storage drives have firmware inside that reports several attributes.
 Any storage drives is supported but |omv| only supports SMART for those
 disks that are connected to an HBA in pass-through mode.
@@ -39,13 +34,13 @@ disks that are connected to an HBA in pass-through mode.
 The system manages two types of storage unit classification:
 
 System drive storage (SDS)
-  The Storage Disk Drive(s) used to put the system program files (by partitions), 
-  **this system drive (that is in fact a couple or more partitions) 
+  The Storage Disk Drive(s) used to put the system program files. 
+  **This system drive (which can consist of several partitions) 
   cannot officially be used for shared resources or as user data drive**.
-  What supported brands and sizes are covered in the software requirements section below.
   The recommendation for the system drive(s) hardware could be older spinning
   Hard Disk Drives (HDD), Disk-on-Module [3]_, CompactFlash [4]_ or thumb drives (USB),
-  the Solid State Disks (SDD [2]_) must be managed.
+  the Solid State Disks (SDD [2]_) must be managed. Best option are 
+  the Helium Hard Drives (HHD).
 
 Data drive storage (DDS)
   The storage disk drive(s) where the user data will be stored. **Cannot be 
@@ -97,8 +92,8 @@ where |omv| system resides and runs, which is Debian GNU/Linux.
 Any computer system supported by the common requirements of Debian operating
 system could be an |omv| system installation target. **Currently supported are
 AMD64 (x86/x86-64 64bits), i386 (x86 32bits), ARMv7+ARMv8 (arm64 64bits armel/armhf 32bits)**.
-The i386 version stopped its official support in version 6 although it is still 
-being released by the project due the nature of the |omv| technology.
+The i386 version is no longer officially supported since version 6, although
+it is still published by the project due to the nature of |omv| technology.
 
 Software requirements
 ---------------------
@@ -106,10 +101,10 @@ Software requirements
 ======  =================  ==============  ==============  =======================================
  Item    Software           Minimal         Best            Recommendation
 ======  =================  ==============  ==============  =======================================
- OS      Debian Linux       oldoldstable    stable          Current stable (plus 1 month released)
+ OS      Debian Linux       oldstable       stable          Current stable (plus 1 month released)
  BOOT    BIOS,UBOOT,UEFI    BIOS,mbr        BIOS,gpt        Disable Secure boot, gpt table
  SDS     HDD,SSD,USB...     1, 4GiB        2, 120+500GiB    Disk drive with 120G root size, 8G swap size
- DDS     HDD,SSD,USB...     0 or any        1 per share     One disk or part per shared resource
+ DDS     HDD,SSD,USB...     0 or any        HHD,1 per share One disk or part per shared resource
  NET     LAN,WAN,SAN,VPN    LAN             SAN,PAN,LAN     Fiber IPv4, or at least cable LAN
 ======  =================  ==============  ==============  =======================================
 
@@ -150,8 +145,8 @@ the |omv| can be installed without problems.
 
 However the downloadable and ready-to-use ISO image from the official |omv| website
 only supports AMD64 with BIOS mode boot at the moment. If you want to have |omv| on
-other computers with another boot type/mode you should install Debian first
-and then manually the |omv| can be installed without problems.
+other computers with another boot type/mode, then you should install Debian first
+and then :doc:`manually</installation/on_debian>` |omv|.
 
 **Supported Debian OS versions can be checked in the** :doc:`releases section </releases>`.
 
@@ -162,26 +157,26 @@ Any brand of storage disk will be supported as long as it is supported by
 the Debian operating system version, since it is where |omv| system resides
 and runs, which is Debian GNU/Linux, check it at the :doc:`releases section </releases>`.
 
-The system storage disk will be fully managed and taken over by the |omv| after
+The system storage disk will be fully managed and taken over by |omv| after
 installed. In case of the official ISO installation, will automatically partition
 the system storage disk drive into 3 partitons. Consult the next table for.
 
 In case of a manual installation on a previous Debian operating system, this
-**drive must have at least two partitions**. Consult the next table for.
+**drive should have at least two partitions**. Consult the next table for.
 
 ============  ==========  ===========  =======================================
  Partition     Mininmal    Best size    Mandatory
 ============  ==========  ===========  =======================================
  ``/boot``      256Mib      500Mib      Optional, partition used to boot
  ``/``           4Gi        120GiB      Yes, the partition were system install
- ``swap``       100Mib      16GiB       Yes, the partition for virtual ram
+ ``swap``       100Mib      16GiB       Optional, the partition for virtual ram
 ============  ==========  ===========  =======================================
 
 The Data drive storage (DDS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The data storage disk will be partially managed by the |omv| after installation,
-and only in customized installation can be a partiton of the same system drive
+and only in customized installation this can be a partition of the same system drive
 storage.
 
 Each data storage drive will be managed, but regardless of the partitioning

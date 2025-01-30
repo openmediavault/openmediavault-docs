@@ -9,7 +9,7 @@ Type Files:
 1.   usermgmt
 1.   diagnostics
 
-```shell
+..  code-block:: shell
 
 ├── DEBIAN
 │   ├── changelog
@@ -57,15 +57,17 @@ Type Files:
                     └── network.PLUGINNAME.yaml
 
 
-```
+Files
+-----------
 
-# Files
+rpc
+-----------
 
-### rpc
 
  `` PLUGINNAME.inc ``
  
-```php 
+
+..  code-block:: php
 <?php
 
 #SET NAME filetypePluginame example - ServicesExample
@@ -84,16 +86,18 @@ class ServicesExample extends \OMV\Rpc\ServiceAbstract {
 	}
 }
 ?>
-```
 
-### debian
+
+debian
+-----------
 
 ``changelog``
 ``control`` - Set name and author plugin
 ``postinst`` - Creating a database, directories, and installing the necessary libraries you need
 ``postrm`` - Code used when uninstalling a plugin
 
-### workbench
+workbench
+-----------
 
 # Datatable
 
@@ -105,13 +109,13 @@ class ServicesExample extends \OMV\Rpc\ServiceAbstract {
 
 # Generating the deb file and installing
 
-```shell
+..  code-block:: shell
 cd openmediavault-pluginame
 dpkg-buildpackage -us -uc
-```
 
-``Install``
 
-```shell
+Install
+=======
+
+..  code-block:: shell
 dpkg -i openmediavault-pluginname_VERSION_all.deb
-```

@@ -11,3 +11,4 @@ Development
 	howitworks
 	tools/index
 	plugins
+	plugins-build-plugin

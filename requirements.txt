@@ -3,6 +3,3 @@ sphinx
 sphinx-autobuild
 sphinx_rtd_theme
 sphinx_fontawesome
-myst-parser
-pyyaml
-mdit-py-plugins

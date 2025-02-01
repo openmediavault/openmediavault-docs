@@ -72,9 +72,22 @@ rpc
 
 .. code:: php
 
-   registerMethod('getSettings');
-           $this->registerMethod('setSettings');
-       }
+   <?php
+
+   #SET NAME filetypePluginame example - ServicesExample
+   class ServicesExample extends \OMV\Rpc\ServiceAbstract {
+
+   #SET NAME filetypePluginame example - ServicesExample
+    public function getName() {
+        return "NAME";
+    }
+
+
+   #Register Method to use function
+    public function initialize() {
+        $this->registerMethod('getSettings');
+        $this->registerMethod('setSettings');
+    }
    }
    ?>
 

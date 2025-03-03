@@ -8,6 +8,11 @@ To get a list of all available deployment states::
 
 	# omv-salt deploy list
 
+To get a list of all states that are dirty (saved in the Web UI but not
+yet reconfigured):
+
+	# cat /var/lib/openmediavault/dirtymodules.json
+
 To deploy one or more states run the following command::
 
 	# omv-salt deploy run <NAMES>...
@@ -36,3 +41,7 @@ If you want to deploy all states in one bunch, then you need to execute
 the following command::
 
 	# omv-salt stage run deploy
+
+If you want to deploy only the states that are dirty, run the command:
+
+	# omv-salt deploy run --append-dirty

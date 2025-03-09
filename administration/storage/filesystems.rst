@@ -70,4 +70,4 @@ Supported Filesystems
 
 .. note::
 	ZFS
-		Support for zfs is available through `ZoL <http://zfsonlinux.org/>`_ and requires the use of a third party plugin provided by omv-extras. This includes code added to the OMV filesystem backend. The plugin allows you to create shared folders for ZFS volumes. On AMD64, if ZFS support is desired, it is recommended to first use omv-extras install the third-party openmediavault-kernel plugin and use that to install the ProxMox (PVE) kernel, which has precompiled support for ZFS and may improve stability. After that, install the ZFS plugin.
+		Support for ZFS is available through `ZoL <http://zfsonlinux.org/>`_ and requires the use of a third party plugin provided by omv-extras. This includes code added to the OMV filesystem backend. The plugin allows you to create shared folders for ZFS volumes. On AMD64, if ZFS support is desired, it is recommended to first use omv-extras install the third-party openmediavault-kernel plugin and use that to install the ProxMox (PVE) kernel, which has precompiled support for ZFS and may improve stability. After that, install the ZFS plugin.

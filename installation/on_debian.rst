@@ -51,7 +51,7 @@ Add the package repositories::
     EOF
 
 .. note::
-    If you are a user in mainland China, TUNA provides `mirroring services <https://mirrors.tuna.tsinghua.edu.cn/help/openmediavault/>`_.
+    If you are a user in mainland China, TUNA provides `mirroring services <https://mirrors.tuna.tsinghua.edu.cn/help/OpenMediaVault/>`_.
 
 Install the |omv| package::
 

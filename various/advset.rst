@@ -103,6 +103,6 @@ Example::
 
 For more file modifications please have a look into the `file module <https://docs.saltproject.io/en/latest/ref/modules/all/salt.modules.file.html>`_.
 
-Finally you need to :doc:`deploy </development/internaltools/omv-salt>` your changes by running::
+Finally you need to :doc:`deploy </development/tools/omv_salt>` your changes by running::
 
 	# omv-salt deploy run <SERVICE_NAME>

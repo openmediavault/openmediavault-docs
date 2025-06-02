@@ -72,7 +72,7 @@ Login Group
 	ftp_users, then at the end of the general extra options of the server
 	we add:
 
-	.. code-block:: guess
+	.. code-block:: none
 
 		​<Limit LOGIN>
 		    DenyGroup !ftp_users

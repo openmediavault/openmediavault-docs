@@ -22,7 +22,7 @@ Configuration
 
 The server configures all tasks done in the |webui| creating this file :file:`/etc/cron.d/openmediavault-userdefined` on demand as single lines per job.
 
-.. code-block:: guess
+.. code-block:: none
 
 	SHELL=/bin/sh
 	PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin

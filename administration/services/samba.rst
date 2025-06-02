@@ -8,7 +8,7 @@ General
 
 The server configures Samba as standalone mode. The default global section
 
-.. code-block:: guess
+.. code-block:: ini
 
 	[global]
 	workgroup = HOME
@@ -48,7 +48,7 @@ The server configures Samba as standalone mode. The default global section
 
 A default share example:
 
-.. code-block:: guess
+.. code-block:: ini
 	:emphasize-lines: 16-19
 
 	[MyDocuments]
@@ -89,7 +89,7 @@ Share types
 
 **Non-public (Private):** *Login always required, Guest Allowed denied*
 
-.. code-block:: guess
+.. code-block:: ini
 
 	guest ok = no
 	valid users = User1, User2, @Group1, @Group2 ## this will deny all none authorized users
@@ -104,7 +104,7 @@ This means that every user will have to provide valid OMV credentials to access 
 **Semi-public:**
 *When login is not provided, the guest user is used. This is the "guest allowed" option from the Samba share option*
 
-.. code-block:: guess
+.. code-block:: ini
 
 	guest ok = yes
 	read list = User1, @Group1
@@ -114,7 +114,7 @@ Notice here if users are not set up privileges (that means blank tick boxes) any
 
 **Public only:** *The guest user is always used. This is the Guest Only option in the Samba share configuration.*
 
-.. code-block:: guess
+.. code-block:: ini
 
 	guest ok = yes
 	guest only = yes

@@ -15,14 +15,14 @@ Options
 
 **Username:** Under what user should the command/script be executed. You can select root, system accounts and |omv| users.
 
-**Mail Notification:** Send all the command/script output to the mail defined in the username profile. If the task is running as root, the mail recipient will be the one defined in notifications for primary and secondary delivery. If |omv| user is defined in the task and has an email configured in their :doc:`profile </administration/access_rights_management>` the notification will be sent to that mail address.
+**Mail Notification:** Send all the command/script output to the mail defined in the username profile. If the task is running as root, the mail recipient will be the one defined in notifications for primary and secondary delivery. If |omv| user is defined in the task and has an email configured in their :doc:`profile </administration/users>` the notification will be sent to that mail address.
 
 Configuration
 -------------
 
 The server configures all tasks done in the |webui| creating this file :file:`/etc/cron.d/openmediavault-userdefined` on demand as single lines per job.
 
-.. code-block:: guess
+.. code-block:: none
 
 	SHELL=/bin/sh
 	PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin

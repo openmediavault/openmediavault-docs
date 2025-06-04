@@ -106,6 +106,8 @@ Volker Theile
 * Kevin Leclercq (French)
 * Rudy ten Kate (Dutch)
 * Jonatan Nyberg (Swedish)
+* André Fernandes (Portuguese)
+* Giovanni Scafora (Italian)
 
 **Code**
 

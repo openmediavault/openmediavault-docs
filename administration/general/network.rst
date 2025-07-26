@@ -6,7 +6,9 @@ In this section you can set several system network related settings.
 General
 =======
 
-Hostname and domain settings.
+Hostname and domain settings. If your system is part of a private network
+without a registered domain, use `internal` as suggested by `ICANN <https://datatracker.ietf.org/doc/html/draft-davies-internal-tld-01>`_.
+
 
 Interfaces
 ==========

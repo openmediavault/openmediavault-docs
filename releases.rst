@@ -17,3 +17,4 @@ Releases
    5.0,Usul,Debian 10,EOL - Jun 2022,Mar 2020
    6.0,Shaitan,Debian 11,EOL - Jul 2024,May 2022
    7.0,Sandworm,Debian 12,Stable,Mar 2024
+   8.0,Synchrony,Debian 13,Development,n/a

@@ -65,6 +65,20 @@ Destination/Source Server
 	- **Public Key**: Select a key. These are created/imported from
 	  ``General | Certificates | SSH`` :ref:`section <admin_certificate_ssh>`.
 
+.. note::
+    |omv| will require the host key of the remote server prior to running any
+    job with a remote server. This can be accomplished in a root SSH session by
+    attempting to log into the server, even if the root user does not have a
+    public key on the remote server::
+
+        # ssh example.com
+        The authenticity of host 'example.com (203.0.113.8)' can't be established.
+        ED25519 key fingerprint is SHA256:WohJIIwTqt5aL4ne83TkPEn3wZ9zMWiRvY82Gw93JR8.
+        This key is not known by any other names.
+        Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+        Warning: Permanently added 'example.com (ED25519)' to the list of known hosts
+        root@example.com's password:
+
 These are the options most commonly used in RSync.
 At the end there is an extra text field where you can add more
 `options <http://linux.die.net/man/1/rsync>`_.
@@ -73,7 +87,7 @@ Configuration
 	|omv| makes the tasks run by placing them in
 	:file:`/etc/cron.d/openmediavault-rsync` one line per job. The
 	cron time at the beginning, then user (root) and the target file that holds
-	the actual RSync file with the final command, is configured in the same way as 
+	the actual RSync file with the final command, is configured in the same way as
 	:doc:`scheduled tasks </administration/general/cron>` The files are stored in
 	:file:`/var/lib/openmediavault/cron.d/`, prefixed with :code:`rsync` and a
 	:code:`<uuid>`. A default SSH RSync job looks like this:

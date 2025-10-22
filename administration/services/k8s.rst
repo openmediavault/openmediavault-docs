@@ -56,3 +56,23 @@ Administration
 |omv| offers a rudimentary UI for managing simple tasks in the cluster, but
 it makes sense to use external software that specializes in this area.
 Examples include `Rancher UI <https://www.rancher.com/>`_ (to be installed using a recipe) or `k9s <https://k9scli.io/>`_.
+
+Customization
+-------------
+
+The Kubernetes service in |omv| is can be customized via environment variables to adapt it to personal needs.
+
+.. list-table::
+  :widths: 20 30 45
+  :header-rows: 1
+
+  * - Environment variable
+    - Example
+    - Description
+  * - OMV_K8S_K3S_VERSION
+    - ``v1.33.5+k3s1``
+    - Specifies the K3s version to be used.
+  * - OMV_K8S_TRAEFIK_PORTS
+    - ``{foo: {exposedPort: 3456}}``
+    - Defines additional ports (`entry points <https://doc.traefik.io/traefik/reference/install-configuration/entrypoints/>`_)
+      to be used by the Traefik reverse proxy.

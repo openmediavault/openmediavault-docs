@@ -60,7 +60,7 @@ Examples include `Rancher UI <https://www.rancher.com/>`_ (to be installed using
 Customization
 -------------
 
-The Kubernetes service in |omv| is can be customized via environment variables to adapt it to personal needs.
+The Kubernetes service in |omv| is can be customized via :ref:`environment variables <environmental_variable>` to adapt it to your personal needs.
 
 .. list-table::
   :widths: 20 30 45

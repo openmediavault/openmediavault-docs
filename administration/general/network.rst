@@ -110,7 +110,7 @@ Plugins may also announce their service via Zeroconf/mDNS.
 
 As this is an essential feature, this cannot be switched off in general.
 However, it is possible to deactivate the advertising of individual
-services using :doc:`environment variables </various/advset>`.
+services using :ref:`environment variables <environmental_variable>`.
 
 To get a list of supported environment variables, run the following
 command::
@@ -121,7 +121,7 @@ To enable or disable a service use this command::
 
     # omv-env set -- OMV_XXX_ZEROCONF_ENABLED [yes|true|1|no]
 
-Finally the modified environment variable(s) must be applied by running::
+Finally the modified :ref:`environment variable(s) <environmental_variable>` must be applied by running::
 
     # omv-salt stage run prepare
     # omv-salt deploy run avahi

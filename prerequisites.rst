@@ -22,7 +22,7 @@ Hardware requirements
 The storage drives (DRIV)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This is the key of the system. |omv| supports any drive hardware and any drive 
+This is the key of the system. |omv| supports any drive hardware and any drive
 interface (SATA, ISE, SCSI, USB, SERIAL) but information and management will
 depend on the disk drives supported by the Debian operating system.
 **Supported Debian OS versions can be checked in the** :doc:`releases section </releases>`.
@@ -34,20 +34,20 @@ disks that are connected to an HBA in pass-through mode.
 The system manages two types of storage unit classification:
 
 System drive storage (SDS)
-  The Storage Disk Drive(s) used to put the system program files. 
-  **This system drive (which can consist of several partitions) 
+  The Storage Disk Drive(s) used to put the system program files.
+  **This system drive (which can consist of several partitions)
   cannot officially be used for shared resources or as user data drive**.
   The recommendation for the system drive(s) hardware could be older spinning
   Hard Disk Drives (HDD), Disk-on-Module [3]_, CompactFlash [4]_ or thumb drives (USB),
-  the Solid State Disks (SDD [2]_) must be managed. Best option are 
+  the Solid State Disks (SDD [2]_) must be managed. Best option are
   the Helium Hard Drives (HHD).
 
 Data drive storage (DDS)
-  The storage disk drive(s) where the user data will be stored. **Cannot be 
+  The storage disk drive(s) where the user data will be stored. **Cannot be
   the same of the system drive(s) and sizes will depend of the usage of the stored user data**.
   Shared resources are managed over partitions, which is discussed in the software
   requirements topic below. The recommendation for the Data drives must be
-  Solid State Disks (SSD [2]_ disks) for best performance or spinning 
+  Solid State Disks (SSD [2]_ disks) for best performance or spinning
   Hard Disk Drives (HDD) for better device durability over time.
 
 The memory (RAM)
@@ -57,8 +57,8 @@ Enough RAM is vital to maintaining peak performance. There are several combinati
 of installation sizes but the **recommendation is at least 4GiB for novice administrators**.
 
 For best practice you should have 8GiB of RAM for basic operations in default installation,
-and no matter the size, RAM must be configured in Dual Channel mode [8]_ 
-inclusivelly if there are little amount of, it will improve performance.
+and no matter the size, RAM must be configured in Dual Channel mode [8]_
+inclusively if there are little amount of, it will improve performance.
 
 Unless other NAS systems the |omv| system can run in at least 1GiB of RAM, but
 of course will need expertise.
@@ -67,8 +67,8 @@ The communication card (NIC)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A NAS system as means is a network oriented system, of course |omv| is the
-most flexible NAS system in the world and allows multiple ways of communication, 
-this is becouse |omv| offers several modes of shared resources like RSYNC that 
+most flexible NAS system in the world and allows multiple ways of communication,
+this is because |omv| offers several modes of shared resources like RSYNC that
 do not depends on networking. But there are few key points:
 
 - The NAS write speed to storage is limited to the speed of your NAS computer NIC card.
@@ -112,7 +112,7 @@ The operating system (OS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The |omv| is a piece of software, it resides and runs under a key software OS
-named Debian GNU/Linux as "the universal operating system" [9]_ 
+named Debian GNU/Linux as "the universal operating system" [9]_
 
 **Supported Debian OS versions can be checked in the** :doc:`releases section </releases>`.
 
@@ -159,7 +159,7 @@ and runs, which is Debian GNU/Linux, check it at the :doc:`releases section </re
 
 The system storage disk will be fully managed and taken over by |omv| after
 installed. In case of the official ISO installation, will automatically partition
-the system storage disk drive into 3 partitons. Consult the next table for.
+the system storage disk drive into 3 partitions. Consult the next table for.
 
 In case of a manual installation on a previous Debian operating system, this
 **drive should have at least two partitions**. Consult the next table for.
@@ -208,7 +208,7 @@ About minimal or custom setups
 It can be noted that |omv| systems can be installed on just 4GiB of system partition,
 with no more than 1GiB of RAM and using a WiFi or USB connection to access it
 remotely, on any small device such as Raspberry Pi or Banana Pi boars
-which are ARM, or old i386s machines no matter is those are 32 or 64 bits, 
+which are ARM, or old i386s machines no matter is those are 32 or 64 bits,
 but of course as more exquisite the configuration more knowledge will be need
 as per `issue comment #131 <https://github.com/openmediavault/openmediavault-docs/issues/131#issuecomment-2546765841>`_.
 
@@ -239,14 +239,14 @@ On SSDs, the cleaning action TRIM is recommended for the good performance in
 the long run. Otherwise it might become slow after some time. Very old SSD's from
 before 2010 usually don't support TRIM.
 
-Take note that eMMCs, SSDs, Flash drives will have a lifetime degradation, 
+Take note that eMMCs, SSDs, Flash drives will have a lifetime degradation,
 excessive overwrites wear out those drives faster, specially in those very cheap.
 
 On SSDs Hibernation (suspend-to-disk) causes a huge amount of write actions,
 |omv| is a server system so it is expected to stay always on or off.
 
-About compresion or encryption
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+About compression or encryption
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Enabling encryption on SSDs also means more overwrites which wear out SSDs, eMMCs
 or Flash drives faster.
@@ -261,7 +261,7 @@ Partition table technical details
 Of course, the supported partition tables will depend on the installation mode,
 and |omv| can handle any type of partition table supported by the Debian operating
 system. This is because to manage shares on new or uninitialized storage drives
-it will need to create partitions or at least read structure of thems.
+it will need to create partitions or at least read structure of them.
 
 
 .. [1] https://en.wikipedia.org/wiki/Paging

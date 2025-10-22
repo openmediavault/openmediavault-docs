@@ -73,6 +73,6 @@ The Kubernetes service in |omv| is can be customized via :ref:`environment varia
     - ``v1.33.5+k3s1``
     - Specifies the K3s version to be used.
   * - OMV_K8S_TRAEFIK_PORTS
-    - ``{mpd: {port: 6060, exposedPort: 6060}}``
+    - ``{mpd: {port: 6060, exposedPort: 6060, expose: {default: true}}}``
     - Defines additional ports (`entry points <https://doc.traefik.io/traefik/reference/install-configuration/entrypoints/>`_)
       to be used by the Traefik reverse proxy.

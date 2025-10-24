@@ -72,6 +72,7 @@ The Kubernetes service in |omv| is can be customized via :ref:`environment varia
   * - OMV_K8S_K3S_VERSION
     - ``v1.33.5+k3s1``
     - Specifies the K3s version to be used.
+      To force a reinstallation of K3s with the specified version, create the file :file:`/var/lib/openmediavault/upgrade_k3s` before running :command:`omv-salt deploy run k3s`.
   * - OMV_K8S_TRAEFIK_PORTS
     - ``{mpd: {port: 6060, exposedPort: 6060, expose: {default: true}}}``
     - Defines additional ports (`entry points <https://doc.traefik.io/traefik/reference/install-configuration/entrypoints/>`_)

@@ -108,6 +108,7 @@ Volker Theile
 * Jonatan Nyberg (Swedish)
 * André Fernandes (Portuguese)
 * Giovanni Scafora (Italian)
+* Stephan Paternotte (Dutch)
 
 **Code**
 

@@ -30,6 +30,14 @@ outlined below.
 On `Raspberry Pi OS <https://www.raspberrypi.org/software/operating-systems/>`_ the below
 instructions only partially work. Please refer to a specific `installation script <https://github.com/OpenMediaVault-Plugin-Developers/installScript>`_
 
+.. warning::
+    Before installing the |omv| package as described below, ensure that the
+    `systemd-resolved` package is already installed and configured on the
+    system. Otherwise the package will be installed automatically with
+    |omv|, which will inevitably result in DNS resolution no longer functioning.
+    After installation, this can be fixed by reconfiguring the network using
+    the `omv-firstaid` command.
+
 .. note::
     The following commands must be executed as ``root`` user.
 

@@ -35,18 +35,32 @@ instructions only partially work. Please refer to a specific `installation scrip
     `systemd-resolved` package is already installed and configured on the
     system. Otherwise the package will be installed automatically with
     |omv|, which will inevitably result in DNS resolution no longer functioning.
-    After installation, this can be fixed by reconfiguring the network using
-    the `omv-firstaid` command.
 
 .. note::
     The following commands must be executed as ``root`` user.
 
-Install the |omv| keyring manually::
+Install and configure the `systemd-resolved` if not already installed. The
+configuration is only temporary and gets lost after a reboot.
+After the installation of the |omv| package, this can be made permanently by
+reconfiguring the network using the :command:`omv-firstaid` command.
+
+.. code-block:: bash
+
+    apt-get install --yes systemd-resolved
+    systemctl enable systemd-resolved
+    systemctl start systemd-resolved
+    resolvectl dns <INTERFACE> <DNS_SERVER_IP>
+
+Install the |omv| keyring manually:
+
+.. code-block:: bash
 
     apt-get install --yes gnupg
     wget --quiet --output-document=- https://packages.openmediavault.org/public/archive.key | gpg --dearmor --yes --output "/usr/share/keyrings/openmediavault-archive-keyring.gpg"
 
-Add the package repositories::
+Add the |omv| package repositories:
+
+.. code-block:: bash
 
     cat <<EOF >> /etc/apt/sources.list.d/openmediavault.list
     deb [signed-by=/usr/share/keyrings/openmediavault-archive-keyring.gpg] https://packages.openmediavault.org/public sandworm main
@@ -63,7 +77,9 @@ Add the package repositories::
 .. note::
     If you are a user in mainland China, TUNA provides `mirroring services <https://mirrors.tuna.tsinghua.edu.cn/help/OpenMediaVault/>`_.
 
-Install the |omv| package::
+Install the |omv| package:
+
+.. code-block:: bash
 
     export LANG=C.UTF-8
     export DEBIAN_FRONTEND=noninteractive
@@ -76,7 +92,9 @@ Install the |omv| package::
         --option DPkg::Options::="--force-confold" \
         install openmediavault
 
-Populate the |omv| database with several existing system settings, e.g. the network configuration::
+Populate the |omv| database with several existing system settings, e.g. the network configuration:
+
+.. code-block:: bash
 
     omv-confdbadm populate
 
@@ -87,7 +105,9 @@ Populate the |omv| database with several existing system settings, e.g. the netw
     configuration with `netplan` for `systemd-networkd` and `systemd-resolved`. In that case use
     `omv-firstaid` to do the initial network configuration instead of the following step.
 
-Re-deploy the network configuration via the services used by |omv|::
+Re-deploy the network configuration via the services used by |omv|:
+
+.. code-block:: bash
 
     omv-salt deploy run systemd-networkd
 

@@ -44,7 +44,7 @@ configuration is only temporary and gets lost after a reboot.
 After the installation of the |omv| package, this can be made permanently by
 reconfiguring the network using the :command:`omv-firstaid` command.
 
-.. code-block:: bash
+.. code-block:: console
 
     apt-get install --yes systemd-resolved
     systemctl enable systemd-resolved
@@ -53,14 +53,14 @@ reconfiguring the network using the :command:`omv-firstaid` command.
 
 Install the |omv| keyring manually:
 
-.. code-block:: bash
+.. code-block:: console
 
     apt-get install --yes gnupg
     wget --quiet --output-document=- https://packages.openmediavault.org/public/archive.key | gpg --dearmor --yes --output "/usr/share/keyrings/openmediavault-archive-keyring.gpg"
 
 Add the |omv| package repositories:
 
-.. code-block:: bash
+.. code-block:: console
 
     cat <<EOF >> /etc/apt/sources.list.d/openmediavault.list
     deb [signed-by=/usr/share/keyrings/openmediavault-archive-keyring.gpg] https://packages.openmediavault.org/public sandworm main
@@ -79,7 +79,7 @@ Add the |omv| package repositories:
 
 Install the |omv| package:
 
-.. code-block:: bash
+.. code-block:: console
 
     export LANG=C.UTF-8
     export DEBIAN_FRONTEND=noninteractive
@@ -94,7 +94,7 @@ Install the |omv| package:
 
 Populate the |omv| database with several existing system settings, e.g. the network configuration:
 
-.. code-block:: bash
+.. code-block:: console
 
     omv-confdbadm populate
 
@@ -107,7 +107,7 @@ Populate the |omv| database with several existing system settings, e.g. the netw
 
 Re-deploy the network configuration via the services used by |omv|:
 
-.. code-block:: bash
+.. code-block:: console
 
     omv-salt deploy run systemd-networkd
 

@@ -111,7 +111,7 @@ Re-deploy the network configuration via the services used by |omv|:
 
     omv-salt deploy run systemd-networkd
 
-Or alternatively use :command:`omv-firstaid` to do the initial network configuration.
+Or alternatively use :command:`omv-firstaid` to do the initial network configuration from CLI.
 
 .. note::
     The IP address may change during the redeployment of the network configuration, therefore

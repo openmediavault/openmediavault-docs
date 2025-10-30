@@ -73,19 +73,21 @@ The error `Unable to install GRUB in /dev/sda` occurs.
 	  `Installation step failed`.
 	- In the Debian installer main menu (which should have popped up by now),
 	  select `Execute a shell` and then `Continue`.
-	- Execute the following commands::
+	- Execute the following commands:
 
-		# Chroot.
-		chroot /target
-		# Replace [a-z] with the drive you want to install grub to.
-		# This is normally the drive you've selected to install OpenMediaVault on.
-		grub-install /dev/sd[a-z]
-		# Update GRUB.
-		update-grub
-		# Exit chroot.
-		exit
-		# Exit shell.
-		exit
+        .. code-block:: console
+
+            # Chroot.
+            chroot /target
+            # Replace [a-z] with the drive you want to install grub to.
+            # This is normally the drive you've selected to install OpenMediaVault on.
+            grub-install /dev/sd[a-z]
+            # Update GRUB.
+            update-grub
+            # Exit chroot.
+            exit
+            # Exit shell.
+            exit
 
 	- Select `Continue without boot loader` in the Debian installer main menu and
 	  then `Continue`.

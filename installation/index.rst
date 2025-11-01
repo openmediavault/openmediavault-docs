@@ -4,7 +4,7 @@ Installation
 ############
 
 .. warning::
-    |omv| does not support the installation in LXC or any other container based solution.
+    |omv| does not support installation in LXC or any other container based solution.
 
 Before you begin:
     - Check if your hardware is supported on the system :doc:`requirements
@@ -19,7 +19,7 @@ Installation variants:
         systems based on the ARM32/64 architecture use the :doc:`Debian Operating System </installation/on_debian>`
         variant.
 
-    * :doc:`Dedicated drive </installation/via_iso>` - Advised method via ISO image. This runs OMV from its own drive.
+    * :doc:`Dedicated drive </installation/via_iso>` - Recommended method via ISO image. This runs |omv| from its own drive.
     * :doc:`USB flash drive </installation/on_usb>` - This runs |omv| from a USB flash drive.
     * :doc:`Debian Operating System </installation/on_debian>` - Use an existing Debian OS installation for |omv|.
     * `Debian Operating System via debootstrap <https://forum.openmediavault.org/index.php/Thread/12070-GUIDE-DEBOOTSTRAP-Installing-Debian-into-a-folder-in-a-running-system/>`_. Use this as a last resort in case the installer does not recognize a specific essential hardware component like hard disk (NVME) or a network card that needs a higher kernel (backport).
@@ -28,7 +28,7 @@ Installation variants:
 First time use:
     If you have a screen attached, KVM or IMPI console the login screen will
     display the current IP address assigned for the |webui|. Open your browser
-    and type that IP address. The default |webui| login credential is
+    and type that IP address. The default |webui| login credential are
     ``admin:openmediavault``, the ``root`` password is the one you setup during
     installation.
 

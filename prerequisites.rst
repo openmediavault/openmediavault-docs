@@ -1,8 +1,8 @@
-Requisites
+Prequisites
 =============
 
-The |omv| system is the most flexible Network Attached Storage (NAS) on the market,
-this is because it relies on the operating system Debian GNU/Linux [9]_
+|omv| is the most flexible Network Attached Storage (NAS) on the market,
+this is because it relies on running on the operating system Debian GNU/Linux [9]_
 
 Any system has software and hardware requirements, also minimal
 ones and recommended ones.
@@ -19,12 +19,12 @@ Hardware requirements
  CPU     arm,x86,x64        32bit      64bit      Intel Dual Core, AMD Ryzen
 ======  ================  =========  ==========  ==================================
 
-The storage drives (DRIV)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Storage drives (DRIV)
+^^^^^^^^^^^^^^^^^^^^^^
 
 This is the key of the system. |omv| supports any drive hardware and any drive
 interface (SATA, ISE, SCSI, USB, SERIAL) but information and management will
-depend on the disk drives supported by the Debian operating system.
+depend on the disk drives supported by Debian system.
 **Supported Debian OS versions can be checked in the** :doc:`releases section </releases>`.
 
 Modern storage drives have firmware inside that reports several attributes.
@@ -50,20 +50,20 @@ Data drive storage (DDS)
   Solid State Disks (SSD [2]_ disks) for best performance or spinning
   Hard Disk Drives (HDD) for better device durability over time.
 
-The memory (RAM)
-^^^^^^^^^^^^^^^^
+Memory (RAM)
+^^^^^^^^^^^^
 
-Enough RAM is vital to maintaining peak performance. There are several combinations
+Sufficient RAM is vital to maintaining peak performance. There are several combinations
 of installation sizes but the **recommendation is at least 4GiB for novice administrators**.
 
 For best practice you should have 8GiB of RAM for basic operations in default installation,
 and no matter the size, RAM must be configured in Dual Channel mode [8]_
-inclusively if there are little amount of, it will improve performance.
+which will improve performance in low memory installations.
 
-Unless other NAS systems the |omv| system can run in at least 1GiB of RAM, but
+Unlike other NAS systems |omv| can run in with as low as 1GiB of RAM, but
 of course will need expertise.
 
-The communication card (NIC)
+Network interface card (NIC)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 A NAS system as means is a network oriented system, of course |omv| is the
@@ -71,9 +71,9 @@ most flexible NAS system in the world and allows multiple ways of communication,
 this is because |omv| offers several modes of shared resources like RSYNC that
 do not depends on networking. But there are few key points:
 
-- The NAS write speed to storage is limited to the speed of your NAS computer NIC card.
-- The NAS write speed to storage is limited to the speed of your network.
-- Speed of writing to the storage depends on ratio of the number of users accessing it.
+- NAS write speed to storage is limited to the speed of your NAS computer network interface.
+- NAS write speed to storage is limited to the speed of your network.
+- Write speed to storage depends on ratio of the number of users accessing it.
 
 Full-duplex NICs are recommended, half-duplex NICs typically offer 10/100 Mbit/s
 and storage drives far exceed those speeds but are of course supported by |omv|.
@@ -81,8 +81,8 @@ and storage drives far exceed those speeds but are of course supported by |omv|.
 Any supported NIC vendor is determined by the support of the operating system
 where |omv| system resides and runs, which is Debian GNU/Linux.
 
-The architecture (CPU)
-^^^^^^^^^^^^^^^^^^^^^^
+Architecture (CPU)
+^^^^^^^^^^^^^^^^^^
 
 We have already denoted in the requirements table the supported architectures or
 processors (which reduces and determines which computers can be used) but this is
@@ -101,17 +101,17 @@ Software requirements
 ======  =================  ==============  ================  =========================================
  Item    Software           Minimal         Best              Recommendation
 ======  =================  ==============  ================  =========================================
- OS      Debian Linux       oldstable       stable            Current stable (plus 1 month released)
+ OS      Debian Linux       oldstable       oldstable         Current stable is not yet supported
  BOOT    BIOS,UBOOT,UEFI    BIOS,mbr        BIOS,gpt          Disable Secure boot, gpt table
  SDS     HDD,SSD,USB...     1, 4GiB         2, 120+500GiB     Disk drive with 120G root size, 8G swap size
  DDS     HDD,SSD,USB...     0 or any        HHD,1 per share   One disk or part per shared resource
  NET     LAN,WAN,SAN,VPN    LAN             SAN,PAN,LAN       Fiber IPv4, or at least cable LAN
 ======  =================  ==============  ================  =========================================
 
-The operating system (OS)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Operating system (OS)
+^^^^^^^^^^^^^^^^^^^^^
 
-The |omv| is a piece of software, it resides and runs under a key software OS
+|omv| is a piece of software, it resides and runs under a key software OS
 named Debian GNU/Linux as "the universal operating system" [9]_
 
 **Supported Debian OS versions can be checked in the** :doc:`releases section </releases>`.
@@ -120,7 +120,7 @@ While possible to deploy in a virtual environment, depending of the nature of
 virtualization it will degrade the performance access in various ways. Installation
 in LXC or any other container based solution is not supported.
 
-Whatever the situation, the |omv| assumes that target operating system does not
+Whatever the situation, |omv| assumes that target operating system does not
 have any previous installation of any of the programs used by |omv| dependencies:
 
 =============  ==============  =================  ==========================================
@@ -135,8 +135,8 @@ have any previous installation of any of the programs used by |omv| dependencies
  quota man      quota           Quota manage       any configuration will be managed
 =============  ==============  =================  ==========================================
 
-The device boot (BOOT)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Device boot (BOOT)
+^^^^^^^^^^^^^^^^^^
 
 The boot type and its support is determined by the Debian operating system
 which supports BIOS, UEFI, PXE, UBOOT and many others, the configurations
@@ -150,19 +150,19 @@ and then :doc:`manually</installation/on_debian>` |omv|.
 
 **Supported Debian OS versions can be checked in the** :doc:`releases section </releases>`.
 
-The system drive storage (SDS)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+System drive storage (SDS)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Any brand of storage disk will be supported as long as it is supported by
-the Debian operating system version, since it is where |omv| system resides
-and runs, which is Debian GNU/Linux, check it at the :doc:`releases section </releases>`.
+Debian since it is where |omv| system resides
+and runs, check it at the :doc:`releases section </releases>`.
 
 The system storage disk will be fully managed and taken over by |omv| after
 installed. In case of the official ISO installation, will automatically partition
-the system storage disk drive into 3 partitions. Consult the next table for.
+the system storage disk drive into 3 partitions. See table below for details.
 
 In case of a manual installation on a previous Debian operating system, this
-**drive should have at least two partitions**. Consult the next table for.
+**drive should have at least two partitions**. See table below for details.
 
 ============  ==========  ===========  =======================================
  Partition     Mininmal    Best size    Mandatory
@@ -172,8 +172,8 @@ In case of a manual installation on a previous Debian operating system, this
  ``swap``       100Mib      16GiB       Optional, the partition for virtual ram
 ============  ==========  ===========  =======================================
 
-The Data drive storage (DDS)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Data drive storage (DDS)
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 The data storage disk will be partially managed by the |omv| after installation,
 and only in customized installation this can be a partition of the same system drive
@@ -194,22 +194,22 @@ drive can handle one or many shared resources.**
 Technical notes
 ---------------
 
-Take into **consideration that as more exquisite the customization as less supported
-could be.**.
+Take into **consideration that the more customized the installation is, the less supported
+it could be*.
 
-|omv| allows for minimal deployment and use of the system with very minimal
-hardware/software requirements, at the cost of the key knowledge, but other NAS
-systems allow ease of use at the cost of high requirements. |omv| allows both as
-well in a well balanced use case! [7]_
+|omv| allows for deployments on systems with low hardware/software specification,
+at the hands of knowledgeable operator while other NAS
+systems allow ease of use at the cost of high requirements.
+|omv| allows both as well in a well balanced use case! [7]_
 
 About minimal or custom setups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It can be noted that |omv| systems can be installed on just 4GiB of system partition,
+Please note that |omv| systems can be installed on just 4GiB of system partition,
 with no more than 1GiB of RAM and using a WiFi or USB connection to access it
 remotely, on any small device such as Raspberry Pi or Banana Pi boars
-which are ARM, or old i386s machines no matter is those are 32 or 64 bits,
-but of course as more exquisite the configuration more knowledge will be need
+which are ARM, or old i386s machines no matter if those are 32 or 64 bits,
+but of course as more unique the configuration the more knowledge will be need
 as per `issue comment #131 <https://github.com/openmediavault/openmediavault-docs/issues/131#issuecomment-2546765841>`_.
 
 Technically OMV can be installed on a single storage disk, this is possible if
@@ -235,12 +235,11 @@ by default. But on old machines the default might/could be IDE.
 About ARM based computers this is not a problem, when used SATA interfaces, but
 on eMMCs will need some tuning because they are treated like Flash drives.
 
-On SSDs, the cleaning action TRIM is recommended for the good performance in
-the long run. Otherwise it might become slow after some time. Very old SSD's from
-before 2010 usually don't support TRIM.
+On SSDs, the cleaning action TRIM is recommended for sustained long-term performance.
+Otherwise it might become slow with time. Very old SSD's from before 2010 usually don't support TRIM.
 
 Take note that eMMCs, SSDs, Flash drives will have a lifetime degradation,
-excessive overwrites wear out those drives faster, specially in those very cheap.
+excessive writes wear out those drives faster, specially in they are very cheap.
 
 On SSDs Hibernation (suspend-to-disk) causes a huge amount of write actions,
 |omv| is a server system so it is expected to stay always on or off.
@@ -248,7 +247,7 @@ On SSDs Hibernation (suspend-to-disk) causes a huge amount of write actions,
 About compression or encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Enabling encryption on SSDs also means more overwrites which wear out SSDs, eMMCs
+Enabling encryption on SSDs also means more writes which wear out SSDs, eMMCs
 or Flash drives faster.
 
 As well as enabling compression on filesystems like Btrfs or ZFS; although Ext4
@@ -259,8 +258,8 @@ Partition table technical details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Of course, the supported partition tables will depend on the installation mode,
-and |omv| can handle any type of partition table supported by the Debian operating
-system. This is because to manage shares on new or uninitialized storage drives
+and |omv| can handle any type of partition table supported by the Debian.
+This is because to manage shares on new or uninitialized storage drives
 it will need to create partitions or at least read structure of them.
 
 

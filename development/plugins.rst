@@ -1,7 +1,7 @@
 Plugin Development
 ##################
 
-The range of functions of |omv| can be expanded by means of plugins. This
+The range of functions of |omv| can be expanded by the use of plugins. This
 section describes how to implement such plugins.
 
 Plugins are implemented in a declarative manner, this means no JavaScript

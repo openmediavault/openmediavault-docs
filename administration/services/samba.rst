@@ -77,7 +77,7 @@ system and if there are snapshots available. These are exposed as `Previous Vers
 It is possible to add extra options in the general and share configuration page. Options that are managed by |omv| can be customized via :doc:`environmental variables </various/advset>`.
 
 Permissions
-----------
+-----------
 
 The login access in Samba is configured using permissions. This means they will not act in the file system layer, they will run in the Samba authentication layer. From there the access can be controlled to be read only or read/write access and guest account access. This is done with the ``Permissions`` button in the shared folder section, not the ACL.
 Permissions only gets login access and from there determines if user can read or write. If write access is enabled but files/folders have restricted permissions then write access is not possible using Samba.

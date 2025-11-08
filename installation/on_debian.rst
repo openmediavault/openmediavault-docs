@@ -1,5 +1,5 @@
-Installation on Debian |deb_version|
-####################################
+Installation on Debian
+######################
 
 You can install |omv| on an existing Debian |deb_version| installation as well.
 

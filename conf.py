@@ -54,9 +54,9 @@ author = u'openmediavault team and contributors'
 # built documents.
 #
 # The short X.Y version.
-version = u'7.x'
+version = u'8.x'
 # The full version, including alpha/beta/rc tags.
-release = u'7.x.y'
+release = u'8.x.y'
 
 rst_epilog = """
 .. |omv| replace:: openmediavault

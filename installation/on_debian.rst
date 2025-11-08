@@ -1,7 +1,7 @@
-Installation on Debian
-######################
+Installation on Debian |deb_version|
+####################################
 
-You can install |omv| on an existing Debian installation as well.
+You can install |omv| on an existing Debian |deb_version| installation as well.
 
 .. note::
     The installation of |omv| will be denied if a graphical desktop

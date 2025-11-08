@@ -101,7 +101,7 @@ Software requirements
 ======  =================  ==============  ================  =========================================
  Item    Software           Minimal         Best              Recommendation
 ======  =================  ==============  ================  =========================================
- OS      Debian Linux       12 (Bookworm)   12 (Bookworm)
+ OS      Debian Linux       |deb_version|   |deb_version|
  BOOT    BIOS,UBOOT,UEFI    BIOS,mbr        BIOS, GPT         Disable Secure boot, GPT table
  SDS     HDD,SSD,USB...     1, 4GiB         2, 120+500GiB     Disk drive with 120G root size, 8G swap size
  DDS     HDD,SSD,USB...     0 or any        HHD,1 per share   One disk or part per shared resource

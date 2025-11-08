@@ -101,8 +101,8 @@ Software requirements
 ======  =================  ==============  ================  =========================================
  Item    Software           Minimal         Best              Recommendation
 ======  =================  ==============  ================  =========================================
- OS      Debian Linux       oldstable       oldstable         Current stable is not yet supported
- BOOT    BIOS,UBOOT,UEFI    BIOS,mbr        BIOS,gpt          Disable Secure boot, gpt table
+ OS      Debian Linux       13 (Trixie)     13 (Trixie)       
+ BOOT    BIOS,UBOOT,UEFI    BIOS,mbr        BIOS, GPT         Disable Secure boot, GPT table
  SDS     HDD,SSD,USB...     1, 4GiB         2, 120+500GiB     Disk drive with 120G root size, 8G swap size
  DDS     HDD,SSD,USB...     0 or any        HHD,1 per share   One disk or part per shared resource
  NET     LAN,WAN,SAN,VPN    LAN             SAN,PAN,LAN       Fiber IPv4, or at least cable LAN

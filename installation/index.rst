@@ -46,6 +46,7 @@ First time use:
 
 .. toctree::
     :hidden:
+    :maxdepth: 3
 
     via_iso
     on_usb

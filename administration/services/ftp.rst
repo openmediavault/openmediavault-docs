@@ -57,7 +57,7 @@ FTP(S/ES)
 ---------
 
 |omv| provides two SSL/TLS modes for encrypting the FTP communication, implicit and explicit FTPS.
-The differences and features are explained `here <https://en.wikipedia.org/wiki/FTPS>`_ and `here <http://www.jscape.com/blog/bid/75602/Understanding-Key-Differences-Between-FTP-FTPS-and-SFTP>`_.
+The differences and features are explained `here <https://en.wikipedia.org/wiki/FTPS>`__ and `here <http://www.jscape.com/blog/bid/75602/Understanding-Key-Differences-Between-FTP-FTPS-and-SFTP>`__.
 Enabling FTP over SSL/TLS requires first that you create or import a certificate in the corresponding section. Once the certficate is there you can choose it from SSL/TLS section in FTP. The default FTPS of the server is explicit, you can click the checkbox to enable implicit. If you choose implicit make sure you forward port 900 in your router to port 21 in your NAS server if you're accessing from WAN, otherwise the client will probably display ECONREFUSED.
 
 Tips

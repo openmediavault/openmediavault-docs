@@ -1,5 +1,5 @@
-Installation using an ISO image
-###############################
+Installation via ISO image
+##########################
 
 .. important::
 

@@ -69,10 +69,8 @@ Troubleshooting
 The error `Unable to install GRUB in /dev/sda` occurs.
 	In this case execute the following steps:
 
-	- Select `Continue` in this window and also on the next which says
-	  `Installation step failed`.
-	- In the Debian installer main menu (which should have popped up by now),
-	  select `Execute a shell` and then `Continue`.
+	- Select `Continue` in this window and also on the next which says `Installation step failed`.
+	- In the Debian installer main menu (which should have popped up by now), select `Execute a shell` and then `Continue`.
 	- Execute the following commands:
 
         .. code-block:: bash
@@ -89,6 +87,5 @@ The error `Unable to install GRUB in /dev/sda` occurs.
             # Exit shell.
             exit
 
-	- Select `Continue without boot loader` in the Debian installer main menu and
-	  then `Continue`.
-	- It should now continue the installation successfully.
+    - Select `Continue without boot loader` in the Debian installer main menu and then `Continue`.
+    - It should now continue the installation successfully.

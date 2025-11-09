@@ -195,7 +195,7 @@ Technical notes
 ---------------
 
 Take into **consideration that the more customized the installation is, the less supported
-it could be*.
+it could be**.
 
 |omv| allows for deployments on systems with low hardware/software specification,
 at the hands of knowledgeable operator while other NAS
@@ -263,7 +263,6 @@ This is because to manage shares on new or uninitialized storage drives
 it will need to create partitions or at least read structure of them.
 
 
-.. [1] https://en.wikipedia.org/wiki/Paging
 .. [2] https://en.wikipedia.org/wiki/Solid-state_drive
 .. [3] https://en.wikipedia.org/wiki/Solid-state_drive#DOM
 .. [4] https://en.wikipedia.org/wiki/CompactFlash

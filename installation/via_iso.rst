@@ -75,7 +75,7 @@ The error `Unable to install GRUB in /dev/sda` occurs.
 	  select `Execute a shell` and then `Continue`.
 	- Execute the following commands:
 
-        .. code-block:: console
+        .. code-block:: bash
 
             # Chroot.
             chroot /target

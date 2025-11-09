@@ -9,7 +9,7 @@ General settings
 
 **General settings:** Change |webui| listening port, SSL and force SSL. Change admin password.
 
-**Notification system:** Integrated into several services in the form of email using Postfix [1]_ backend as MTA, these include scheduled tasks, services monitoring, S.M.A.R.T., MDADM and cron-apt. Since |omv| 3.0 is possible to add also third party notification systems by using scripts, more information `here <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/usr/share/openmediavault/notification/sink.d/README>`_ and real example on how to use it `here <https://forum.openmediavault.org/index.php/Thread/14919-GUIDE-Use-Telegram-as-notification-service/>`_.
+**Notification system:** Integrated into several services in the form of email using Postfix [1]_ backend as MTA, these include scheduled tasks, services monitoring, S.M.A.R.T., MDADM and cron-apt. Since |omv| 3.0 it is possible to add also third party notification systems by using scripts, more information can be found `here <https://github.com/openmediavault/openmediavault/blob/master/deb/openmediavault/usr/share/openmediavault/notification/sink.d/README>`__ and real example on how to use it can be found `here <https://forum.openmediavault.org/index.php/Thread/14919-GUIDE-Use-Telegram-as-notification-service/>`__.
 
 **Network configuration:** The |webui| provides configuration options for ethernet, WiFi (only WPA/WPA2 supported), bond and vlan interfaces. This also includes a panel for firewall configuration.
 

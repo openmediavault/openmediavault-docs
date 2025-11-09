@@ -25,7 +25,7 @@ Can I use a usb flash drive (stick) for installing the system?
 	Yes, but the installation does not have any optimizations to reduce writes
 	into the OS disk. The usb media will most likely start failing within a
 	few weeks of usage. Most common symptom is basic command execution does
-	not work, denied login, etc. More information `here <https://forum.openmediavault.org/index.php/Thread/6438-Tutorial-Experimental-Third-party-Plugin-available-Reducing-OMV-s-disk-writes-al/>`_.
+	not work, denied login, etc. More information can be found `here <https://forum.openmediavault.org/index.php/Thread/6438-Tutorial-Experimental-Third-party-Plugin-available-Reducing-OMV-s-disk-writes-al/>`__.
 
 What are the default credentials for the UI?
 --------------------------------------------

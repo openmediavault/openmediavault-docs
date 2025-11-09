@@ -105,4 +105,5 @@ For more file modifications please have a look into the `file module <https://do
 
 Finally you need to :doc:`deploy </development/tools/omv_salt>` your changes by running::
 
-	# omv-salt deploy run <SERVICE_NAME>
+    # omv-salt deploy run <SERVICE_NAME>
+

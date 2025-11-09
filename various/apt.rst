@@ -68,15 +68,15 @@ server.
 
 **Install**::
 
-	$ apt-get install <packagename>
+    $ apt-get install <packagename>
 
 **Remove**::
 
-	$ apt-get remove <packagename>
+    $ apt-get remove <packagename>
 
 **Purge (remove package and configuration files)**::
 
-	$ apt-get purge <packagename>
+    $ apt-get purge <packagename>
 
 Repositories
 ------------

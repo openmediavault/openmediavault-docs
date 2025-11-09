@@ -60,7 +60,7 @@ release = u'8.x.y'
 
 rst_epilog = """
 .. |omv| replace:: openmediavault
-.. |copy| unicode:: 0xA9 .. copyright sign
+.. |copy| unicode:: 0xA9  .. copyright sign
 .. |webui| replace:: web interface
 .. |sf| replace:: shared folder
 .. |deb_version| replace:: 13

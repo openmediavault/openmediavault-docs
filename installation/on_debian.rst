@@ -28,7 +28,7 @@ included. If there's no Armbian image for your device, simply follow the steps
 outlined below.
 
 On `Raspberry Pi OS <https://www.raspberrypi.org/software/operating-systems/>`_ the below
-instructions only partially work. Please refer to a specific `installation script <https://github.com/OpenMediaVault-Plugin-Developers/installScript>`_
+instructions only partially work. Please refer to a specific `installation script <https://github.com/OpenMediaVault-Plugin-Developers/installScript>`_.
 
 .. warning::
     Before installing the |omv| package as described below, ensure that the

@@ -47,8 +47,7 @@ reconfiguring the network using the :command:`omv-firstaid` command.
 .. code-block:: console
 
     apt-get install --yes systemd-resolved
-    systemctl enable systemd-resolved
-    systemctl start systemd-resolved
+    systemctl enable --now systemd-resolved.service
     resolvectl dns <INTERFACE> <DNS_SERVER_IP>
 
 Install the |omv| keyring manually:

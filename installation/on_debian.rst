@@ -53,6 +53,27 @@ reconfiguring the network using the :command:`omv-firstaid` command.
     systemctl enable --now systemd-resolved.service
     resolvectl dns <INTERFACE> <DNS_SERVER_IP>
 
+If the last step fails, you can fix it by manually adding some DNS servers to the
+`systemd-resolved` configuration. Of course you can use any other DNS server(s)
+of your choice.
+
+.. code-block:: console
+
+    mkdir -p /etc/systemd/resolved.conf.d
+    echo -e '[Resolve]\nDNS=8.8.8.8' > /etc/systemd/resolved.conf.d/mydns.conf
+    systemctl restart systemd-resolved
+
+.. note::
+
+    If you don't have a functioning mail system at this point, the |omv|
+    installation will install the `postfix` mailer with the default configuration,
+    which could result in processes hanging for a long time, trying to send mail
+    ... somewhere. To avoid this, you can install `postfix` with
+    ``apt install postfix`` or configure an already installed one with
+    ``dpkg-reconfigure postfix``. Selecting the `Local only` option and redirecting
+    `root`'s mail to the non-root user created during install would get you a
+    working configuration.
+
 Install the |omv| keyring manually:
 
 .. code-block:: console

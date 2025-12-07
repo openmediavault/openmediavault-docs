@@ -56,8 +56,8 @@ reconfiguring the network using the :command:`omv-firstaid` command.
 
 .. note::
 
-    if your IP address is configured by DHCP, the dhcp client may interfere
-    with systemd-resolved, preventing the download of additional packages
+    If your IP address is configured by DHCP, the dhcp client may interfere
+    with `systemd-resolved`, preventing the download of additional packages
     (``apt-get`` and ``wget`` fails).
     In that case, stop it with ``killall dhcpcd`` and repeat the
     ``resolvectl dns <INTERFACE> <DNS_SERVER_IP>`` command.

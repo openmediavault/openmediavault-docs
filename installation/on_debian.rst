@@ -46,9 +46,18 @@ reconfiguring the network using the :command:`omv-firstaid` command.
 
 .. code-block:: console
 
-    apt-get install --yes systemd-resolved
+    apt-get install --yes systemd-resolved psmisc
     systemctl enable --now systemd-resolved.service
+    systemctl restart systemd-resolved.service
     resolvectl dns <INTERFACE> <DNS_SERVER_IP>
+
+.. note::
+
+    If your IP address is configured by DHCP, the dhcp client may interfere
+    with `systemd-resolved`, preventing the download of additional packages
+    (``apt-get`` and ``wget`` fails).
+    In that case, stop it with ``killall dhcpcd`` and repeat the
+    ``resolvectl dns <INTERFACE> <DNS_SERVER_IP>`` command.
 
 Install the |omv| keyring manually:
 

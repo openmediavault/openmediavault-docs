@@ -11,6 +11,11 @@ Installation via ISO image
 	The operating system/root filesystem will consume the whole space of the
 	picked disk device. All existing data on that disk device will get lost.
 
+.. important::
+
+	Ensure that you have a working Internet connection during installation.
+	An offline installation will lead to problems later on.
+
 Download
 --------
 	You can down load the ISO images `here <https://sourceforge.net/projects/openmediavault/files/>`_.

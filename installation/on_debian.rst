@@ -3,7 +3,7 @@ Installation on Debian
 
 You can install |omv| on an existing Debian |deb_version| installation as well.
 
-.. note::
+.. important::
     The installation of |omv| will be denied if a graphical desktop
     environment is detected.
 
@@ -12,6 +12,10 @@ You can install |omv| on an existing Debian |deb_version| installation as well.
     for network and time related settings. Existing settings will be
     overwritten if the service is managed by |omv|. Please reconfigure
     these services via the |webui|.
+
+.. important::
+    Ensure that you have a working Internet connection during installation.
+    An offline installation will lead to problems later on.
 
 To do so, simply install the system using the `Debian netinst images
 <https://www.debian.org/CD/netinst/>`_. After that apply the commands below.

@@ -19,10 +19,6 @@ Installation variants:
         systems based on the ARM32/64 architecture use the :doc:`Debian Operating System </installation/on_debian>`
         variant.
 
-    .. note::
-        Ensure that you have a working Internet connection during installation.
-        An offline installation will lead to problems later on.
-
     * :doc:`Dedicated drive </installation/via_iso>` - Recommended method via ISO image. This runs |omv| from its own drive.
     * :doc:`USB flash drive </installation/on_usb>` - This runs |omv| from a USB flash drive.
     * :doc:`Debian Operating System </installation/on_debian>` - Use an existing Debian OS installation for |omv|.

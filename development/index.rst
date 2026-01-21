@@ -11,3 +11,5 @@ Development
 	howitworks
 	tools/index
 	plugins
+	plugins-build-plugin
+	docker-compose-example-list

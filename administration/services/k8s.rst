@@ -18,12 +18,47 @@ The installed applications can then be accessed via the URL:
 
 .. code-block:: none
 
-    https://<app>.<hostname>.<domainname>
+    https://<APPNAME>.<FQDN>:8443
+
+Example:
+
+.. code-block:: none
+
+    https://whoami.mynas.internal:8443
 
 .. note::
-    It is important that the local router can resolve `<hostname>.<domainname>`.
+    It is important that the local DNS server/router can resolve these hostnames.
 
-Using subdomains (e.g., `app.mynas.internal`) is preferred over path prefixes
+Networking and DNS
+------------------
+
+By default, the Traefik reverse proxy in the |omv| Kubernetes plugin uses
+subdomain-based URLs in the form ``http://<APPNAME>.<FQDN>:8080`` or
+``https://<APPNAME>.<FQDN>:8443``.
+
+If local DNS cannot resolve these names, an alternative is to use
+`sslip.io <https://sslip.io/>`_, which is a public DNS service that maps
+hostnames containing an IP address directly to that IP. This is useful when
+your local DNS server does not provide records for app subdomains.
+
+Pattern:
+
+.. code-block:: none
+
+    https://<APPNAME>.<IP>.sslip.io:8443
+
+Example:
+
+.. code-block:: none
+
+    https://whoami.192.168.1.10.sslip.io:8443
+
+.. hint::
+    Most recipes are already prepared for ``sslip.io`` usage. In many cases,
+    you only need to uncomment the corresponding line in the recipe
+    configuration section.
+
+Using subdomains (e.g., `whoami.mynas.internal`) is preferred over path prefixes
 (e.g., `mynas.internal/app`) for accessing apps via the Traefik reverse proxy
 in the |omv| Kubernetes plugin because:
 

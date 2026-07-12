@@ -50,6 +50,11 @@ Data drive storage (DDS)
   Solid State Disks (SSD [2]_ disks) for best performance or spinning
   Hard Disk Drives (HDD) for better device durability over time.
 
+  For RAID, SnapRAID, or mergerfs setups, prefer CMR drives over SMR. SMR drives can
+  stall during rebuilds and parity sync, and the recording technology usually isn't
+  obvious from the model number. A reference like the
+  `NAS CMR/SMR drive list <https://www.nasdisks.com/cmr-smr/>`_ helps you check before buying.
+
 Memory (RAM)
 ^^^^^^^^^^^^
 

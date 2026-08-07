@@ -117,23 +117,19 @@ Edit
 
 Here you can modify the user information, the fields are the same as the form of the *Create* user page.
 
-Permissions
------------
+Shared Folder Permissions
+-------------------------
 
-All existing |sf| and the access rights of the user to be edited are displayed
-on this page. The following access rights are available:
+This section allows you to define a user's access rights to each |sf|. These permissions are used by services like SMB/CIFS or FTP to configure access at the service level. This provides a different layer of control than filesystem permissions. For a user to have access, the permissions must be sufficient on both the service level and the filesystem level.
 
-- Read/Write
-- Read-only
-- No access
+The available access levels are:
 
-These settings are used by the services to configure the access rights for the users.
+- **Read/Write**: The user can view and modify the contents of the shared folder.
+- **Read-only**: The user can only view the contents of the shared folder.
+- **No access**: The user cannot access the shared folder through the services.
 
 .. note::
-
-    Please note that these settings have no effect on file system permissions.
-
-How the permissions are stored is described further down in the :doc:`shared folder </administration/storage/sharedfolders>` section.
+    For more advanced control over filesystem permissions, please refer to the :ref:`Access Control List (ACL) <access-control-list-acl>` section in the :doc:`shared folders </administration/storage/sharedfolders>` documentation.
 
 
 Group
@@ -168,23 +164,19 @@ Edit
 
 Here you can modify the group information, the fields are the same as the form of the *Create* group page.
 
-Permissions
------------
+Shared Folder Permissions
+-------------------------
 
-All existing |sf| and the access rights of the group to be edited are displayed
-on this page. The following access rights are available:
+This section allows you to define a group's access rights to each |sf|. These permissions are used by services like SMB/CIFS or FTP to configure access at the service level. This provides a different layer of control than filesystem permissions. For a user to have access, the permissions must be sufficient on both the service level and the filesystem level.
 
-- Read/Write
-- Read-only
-- No access
+The available access levels are:
 
-These settings are used by the services to configure the access rights for the groups.
+- **Read/Write**: Group members can view and modify the contents of the shared folder.
+- **Read-only**: Group members can only view the contents of the shared folder.
+- **No access**: Group members cannot access the shared folder through the services.
 
 .. note::
-
-    Please note that these settings have no effect on file system permissions.
-
-How the permissions are stored is described further down in the :doc:`shared folder </administration/storage/sharedfolders>` section.
+    For more advanced control over filesystem permissions, please refer to the :ref:`Access Control List (ACL) <access-control-list-acl>` section in the :doc:`shared folders </administration/storage/sharedfolders>` documentation.
 
 
 Technical details

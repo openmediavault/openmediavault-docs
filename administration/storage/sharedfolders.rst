@@ -102,7 +102,11 @@ Permissions
 ^^^^^^^^^^^
 
 Set the shared folder's read and write permissions for users and groups.
-These settings are used by the different services (SMB, FTP and AFP). They have no effect on the permissions of the file system.
+These permissions are used by services like SMB/CIFS or FTP to configure
+access at the service level. This provides a different layer of control than
+filesystem permissions. For a user to have access, the permissions must be
+sufficient on both the service level and the filesystem level.
+
 It will display all the |omv| users/groups and their corresponding permissions for the selected |sf|.
 
 As you can see in the `database example <sf_confdb_example_>`_, permissions are
@@ -112,7 +116,7 @@ using the octal mode: *read/write(7)*, *read-only(5)* *and no access(0)*.
 Permissions can be edited per :doc:`shared folder </administration/storage/sharedfolders>` or :doc:`user </administration/users>`.
 
 If a permission is changed, it means a change in the |sf| database section. This database
-event will trigger a reconfiguration of SMB, FTP and AFP, and it will also restart all the
+event will trigger a reconfiguration of SMB/CIFS or FTP, and it will also restart the
 preceding daemons. A |sf| service not using the permission information from the database
 entry does not get reconfigured/restarted if only a permission change occurs.
 

@@ -11,4 +11,3 @@ Services
    nfs
    ssh
    rsync
-   k8s

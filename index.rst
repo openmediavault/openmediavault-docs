@@ -29,7 +29,7 @@ plugins are available via the `OMV-Extras repository <http://omv-extras.org/>`_.
    installation/index
    features
    administration/index
-   plugins
+   plugins/index
    faq
    troubleshooting
    development/index

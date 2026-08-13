@@ -4,15 +4,14 @@ Kubernetes
 Overview
 --------
 
-The `Kubernetes <https://kubernetes.io/>`_ service in |omv| is designed to manage and orchestrate
-containerized applications using the Kubernetes platform. It provides a
-user-friendly interface to deploy and manage applications in a cluster
-environment.
+The `openmediavault-k8s` plugin adds a `Kubernetes <https://kubernetes.io/>`_
+service to |omv|, providing a user-friendly interface to deploy and manage
+containerized applications in a cluster environment. The lightweight
+`K3s <https://k3s.io/>`_ is used under the hood, allowing a Kubernetes
+environment to run on SBC systems as well.
 
-The Kubernetes service can be installed via the `openmediavault-k8s` plugin.
-
-The lightweight `K3s <https://k3s.io/>`_ is used under the hood, allowing a
-Kubernetes environment to run on SBC systems as well.
+After installation, the service is available in the navigation menu under
+`Services | Kubernetes`.
 
 The installed applications can then be accessed via the URL:
 

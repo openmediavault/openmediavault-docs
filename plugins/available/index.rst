@@ -1,23 +1,7 @@
-Plugins
-=======
+.. _plugins_available_index:
 
-You can add more features & apps by simply selecting the software you need, we
-call this plugins. Plugins are possible due to the modular design of |omv| and
-are the preferred way to extend your NAS. While it is still possible to install regular software alongside |omv|, installing instead containerized software build with podman or Docker is highly recommended. This recommendation stems from many issues caused by later version updates that made |omv| or other software unusable due to introducing conflicting component dependencies. Plugins only exist for your
-convenience.
-
-Benefits
---------
-
-Compared to adding regular software, plugins offer the following benefits:
-
-* Easier to install - You just click on what you want.
-* Easier to configure - it is often preconfigured so you don't have to.
-* Automatic updates - ensure Stability & Security.
-* A Webinterface - is added when needed for your ease of use.
-
-Overview
---------
+Available Plugins
+#################
 
 The following is the list of official plugins by |omv|. Their availability depends on the architecture on which |omv| is installed.
 
@@ -46,9 +30,8 @@ Podman container-based plugins:
 * **S3**: MinIO based high-performance, S3 compatible object storage.
 * **WeTTY**: Terminal access in browser over HTTP/HTTPS.
 
-.. _plugin_3rd_party:
+.. toctree::
+    :hidden:
 
-3rd party
----------
-
-An overview of the third party plugin list can be found at `omv-extras.org <http://www.omv-extras.org/>`_.
+    md
+    k8s

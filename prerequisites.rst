@@ -1,4 +1,4 @@
-Prequisites
+Prerequisites
 =============
 
 |omv| is the most flexible Network Attached Storage (NAS) on the market,
@@ -14,7 +14,7 @@ Hardware requirements
  Item    supported         Minimal     Best       Recommendation
 ======  ================  =========  ==========  ==================================
  DRIV    SSD/HDD/USB...     1,any      2,HHD      2 disks: Seagate Firecuda, WD Black, IronWolf
- RAM     1GiB+ any          1GiB       4Gig       8GiB+ dual channel DDR4/DDR3
+ RAM     1GiB+ any          1GiB       4GiB       8GiB+ dual channel DDR4/DDR3
  NIC     WiFi/Ether/USB     any       10Mb NIC    1GiB NIC or 10Gb NICs: SFP fiber
  CPU     arm,x86,x64        32bit      64bit      Intel Dual Core, AMD Ryzen
 ======  ================  =========  ==========  ==================================
@@ -170,11 +170,11 @@ In case of a manual installation on a previous Debian operating system, this
 **drive should have at least two partitions**. See table below for details.
 
 ============  ==========  ===========  =======================================
- Partition     Mininmal    Best size    Mandatory
+ Partition     Minimal     Best size    Mandatory
 ============  ==========  ===========  =======================================
- ``/boot``      256Mib      500Mib      Optional, partition used to boot
- ``/``           4Gi        120GiB      Yes, the partition were system install
- ``swap``       100Mib      16GiB       Optional, the partition for virtual ram
+ ``/boot``      256MiB      500MiB      Optional, partition used to boot
+ ``/``           4GiB       120GiB      Yes, the partition were system install
+ ``swap``       100MiB      16GiB       Optional, the partition for virtual ram
 ============  ==========  ===========  =======================================
 
 Data drive storage (DDS)
@@ -193,7 +193,7 @@ drive can handle one or many shared resources.**
 ==============  ==========  ===========  ========================================
  Partition       Min size    Best size    Mandatory
 ==============  ==========  ===========  ========================================
- ``/srv/<*>``     100Mib       bigger     Yes, size as need! E.g. 128GiB,500GiB,4TiB
+ ``/srv/<*>``     100MiB       bigger     Yes, size as need! E.g. 128GiB,500GiB,4TiB
 ==============  ==========  ===========  ========================================
 
 Technical notes

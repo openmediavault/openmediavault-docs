@@ -123,7 +123,7 @@ entry does not get reconfigured/restarted if only a permission change occurs.
 Access Control List (ACL)
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Provides fine grained permission control besides the standard POSIX permissions. The usage of ACL is not recommended for the average home user. If a server is using an extensive list of users then ACL could suit better [1]_ [2]_.
+Provides fine grained permission control besides the standard POSIX permissions. The usage of ACL is not recommended for the average home user. If a server is using an extensive list of users then ACL could suit better [1]_.
 
 The expanded ACL window displays three panels. Left one is a browser of the selected |sf|, so you can see the apply ACL to the current folder or a subdirectory and so on.
 
@@ -133,7 +133,7 @@ The bottom panel displays the standard POSIX permission of the selected folder o
 
 If you want just to reset linux permissions, just use the recursive checkbox and change options only in the bottom panel, and not selecting any ACL user/group in left panel.
 
-The ACL is applied using :command:`setfacl` [3]_ and read with :command:`getfacl` [4]_.
+The ACL is applied using :command:`setfacl` [2]_ and read with :command:`getfacl` [3]_.
 
 .. note::
 
@@ -141,6 +141,5 @@ The ACL is applied using :command:`setfacl` [3]_ and read with :command:`getfacl
     * ZFS provides ACL support, just need to enable the pool/dataset property.
 
 .. [1] https://help.ubuntu.com/community/FilePermissionsACLs
-.. [2] http://vanemery.net/Linux/ACL/linux-acl.html
-.. [3] https://linux.die.net/man/1/setfacl
-.. [4] https://linux.die.net/man/1/getfacl
+.. [2] https://linux.die.net/man/1/setfacl
+.. [3] https://linux.die.net/man/1/getfacl

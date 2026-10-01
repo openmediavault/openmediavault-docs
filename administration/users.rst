@@ -164,21 +164,6 @@ Edit
 
 Here you can modify the group information, the fields are the same as the form of the *Create* group page.
 
-Shared Folder Permissions
--------------------------
-
-This section allows you to define a group's access rights to each |sf|. These permissions are used by services like SMB/CIFS or FTP to configure access at the service level. This provides a different layer of control than filesystem permissions. For a user to have access, the permissions must be sufficient on both the service level and the filesystem level.
-
-The available access levels are:
-
-- **Read/Write**: Group members can view and modify the contents of the shared folder.
-- **Read-only**: Group members can only view the contents of the shared folder.
-- **No access**: Group members cannot access the shared folder through the services.
-
-.. note::
-    For more advanced control over filesystem permissions, please refer to the :ref:`Access Control List (ACL) <access-control-list-acl>` section in the :doc:`shared folders </administration/storage/sharedfolders>` documentation.
-
-
 Technical details
 =================
 

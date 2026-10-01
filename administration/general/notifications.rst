@@ -124,4 +124,4 @@ Your script's filename must adhere to the following standards:
 
 
 .. [1] http://www.postfix.org
-.. [2] http://www.linux-pam.org/Linux-PAM-html/sag-pam_tally2.html
+.. [2] https://man7.org/linux/man-pages/man8/pam_tally2.8.html

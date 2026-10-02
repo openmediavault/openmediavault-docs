@@ -49,7 +49,7 @@ The server will send notifications for this events:
 
 	- Log in from browser (If cookies are allowed, then it just sends once).
 	- Use of sudo by a user not in allowed group.
-	- Summary of locked users by pam_tally2 [2]_. This happens when a user or admin attempts fails to log in for more than three times.
+	- Summary of locked users by pam_faillock [2]_. This happens when a user or admin attempts fails to log in for more than three times.
 	- MD RAID events: degraded, reshape, etc. [D]
 	- Monit software: php-fpm, nginx, netatalk, rrdcached, collectd and omv-engined. [D]
 	- Monit filesystem: usage and mount points. [D]
@@ -123,5 +123,5 @@ Your script's filename must adhere to the following standards:
 	- Make sure the script file is executable. In this case also make sure the script is not a symlink to a mounted filesystem with `noexec` flag.
 
 
-.. [1] http://www.postfix.org
-.. [2] http://www.linux-pam.org/Linux-PAM-html/sag-pam_tally2.html
+.. [1] https://www.postfix.org
+.. [2] https://manpages.debian.org/trixie/libpam-runtime/pam_faillock.8.en.html

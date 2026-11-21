@@ -94,3 +94,7 @@ The error `Unable to install GRUB in /dev/sda` occurs.
 
     - Select `Continue without boot loader` in the Debian installer main menu and then `Continue`.
     - It should now continue the installation successfully.
+
+
+System fails to boot after installation on older Legacy BIOS hardware. (e.g. ``ls /boot/grub`` is missing in GRUB emergency shell)
+	Some older BIOS firmware cannot boot from GPT-partitioned disks. To force an MBR (msdos) partition table during installation, press ``Tab`` at the ISO boot menu, append ``partman-disklabel/default_label=msdos`` to the boot parameters, and press ``Enter``.

@@ -33,6 +33,21 @@ The :code:`<uuid>` suffix is the internal |omv| reference number.
 	also |omv| based, you need to :ref:`convert <ssh_convert_rfc4716>`
 	it the appropiate format.
 
+.. note::
+
+	When a public key is installed on a remote host using the `Install` button,
+	the host key of the remote server is not verified
+	(:code:`StrictHostKeyChecking=no`). This is intentional. There is no
+	interactive prompt in the |webui|, and a
+	fingerprint can only be verified via a second, trusted channel that is
+	usually not available. Strict verification would also make the action fail
+	after the remote host was reinstalled, because the outdated
+	:file:`known_hosts` entry of the root user can not be removed via the
+	|webui|.
+
+	Use this function only in trusted networks, otherwise add the public key to
+	the remote server manually.
+
 .. _admin_certificate_ssl:
 
 SSL (Secure Socket Layer)

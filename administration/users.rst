@@ -69,6 +69,9 @@ Name
     This must be only numbers and letters. Its the "username" of the login credentials
     and must be all lowercase to avoid confusion.
 
+.. warning::
+    User and group names are case sensitive in Linux, but some services (e.g. SMB/CIFS) are not. Do not create names that differ only in case (e.g. ``aurelius`` and ``Aurelius``), they may be treated as the same account by those services.
+
 Password
     This field will provide the password of the user.
 

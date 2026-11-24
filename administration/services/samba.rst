@@ -85,6 +85,9 @@ Permissions only gets login access and from there determines if user can read or
 .. important::
 	Samba does not use PAM for login, it has a different password database. When the admin changes a username password (or the user changes their own) using the |webui| what |omv| does is that it changes both the linux login password and the Samba internal database. If a username changes their password using shell, this will not be reflected in Samba log in.
 
+.. warning::
+	Linux user names are case sensitive, the Samba user database is not. Do not create users whose names differ only in case (e.g. ``aurelius`` and ``Aurelius``). They share a single Samba account, so creating or deleting one of them breaks the SMB login of the other.
+
 Share types
 -----------
 
